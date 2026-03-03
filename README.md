@@ -7,7 +7,7 @@ A visual novel game based on the B.A.R.I.C.A. kognitive agents platform develope
 In the `src` folder install `requirements.txt`:
 
 ```
-pip3 install-r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Instructions
