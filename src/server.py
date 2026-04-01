@@ -13,9 +13,17 @@ app = Flask( __name__, static_folder='static' )
 def home():
     return render_template( 'index.html' )
 
-@app.route( '/agenti' )
-def agenti():
-    return render_template( 'agenti.html' )
+@app.route( '/agent-engineer' )
+def agent_engineer():
+    return render_template( 'engineer.html' )
+
+@app.route( '/agent-analyst' )
+def agent_analyst():
+    return render_template( 'analyst.html' )
+
+@app.route( '/agent-cartographer' )
+def agent_cartographer():
+    return render_template( 'cartographer.html' )
 
 @app.errorhandler( 404 )
 def page_not_found( e ):
@@ -35,18 +43,36 @@ def bcg():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument( "--train", const=True, nargs='?', type=bool, help="Specify if the agent shoud be trained. If not specified agent will be started in default (listening) mode.")
+    parser.add_argument( "--trainEngineer", const=True, nargs='?', type=bool, help="Train engineer?")
+    parser.add_argument( "--trainAnalyst", const=True, nargs='?', type=bool, help="Train analyst?")
+    parser.add_argument( "--trainCartographer", const=True, nargs='?', type=bool, help="Train cartographer?")
     args = parser.parse_args()
 
-    TRAIN = bool( args.train )
+    TRAIN_Engineer = bool( args.trainEngineer )
+    TRAIN_Analyst = bool( args.trainAnalyst )
+    TRAIN_Cartographer = bool( args.trainCartographer )
 
-    chatbot = ChatBot( 'MICKO', read_only=not TRAIN )
+    engineer = ChatBot( 'Engineer', read_only=not TRAIN_Engineer, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'engineer_db.sqlite3') )
+    analyst = ChatBot( 'Analyst', read_only=not TRAIN_Analyst, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'analyst_db.sqlite3') )
+    cartographer = ChatBot( 'Cartographer', read_only=not TRAIN_Cartographer, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'cartographer_db.sqlite3') )
 
-    if TRAIN:
-        from train import *
-        train( chatbot )
+    if TRAIN_Engineer:
+        from train_engineer import *
+        train( engineer )
         sys.exit()
-        
-    server = SimpleWebSocketServer( '0.0.0.0', 8009, NLPController )
+    
+    elif TRAIN_Analyst:
+        from train_analyst import *
+        train( analyst )
+        sys.exit()
+
+    elif TRAIN_Cartographer:
+        from train_cartographer import *
+        train( cartographer )
+        sys.exit()
+
+    server = SimpleWebSocketServer( '0.0.0.0', 8009, EngineerController )
+    server = SimpleWebSocketServer( '0.0.0.0', 8010, AnalystController )
+    server = SimpleWebSocketServer( '0.0.0.0', 8011, CartographerController )
     _thread.start_new_thread( server.serveforever, () )	
     app.run( host='0.0.0.0', debug=False )
