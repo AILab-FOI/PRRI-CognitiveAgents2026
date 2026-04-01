@@ -12,10 +12,12 @@ pip3 install -r requirements.txt
 
 ## Instructions
 
-Before first use you have to train the cognitive agent. To train the agent use:
+Before first use you have to train the cognitive agents. To train the agents use:
 
 ```
-python3 server.py --train
+python3 server.py --trainEngineer
+python3 server.py --trainAnalyst
+python3 server.py --trainCartographer
 ```
 
 To start and test the game position your console to `src/` and start the server:
@@ -28,10 +30,12 @@ Then navigate in your browser to `http://localhost:5000`
 
 
 
-To just test the current agent use:
+To just test the current agents use:
 
 ```
-python3 chat-test.py
+python3 chat-test_engineer.py
+python3 chat-test_analyst.py
+python3 chat-test_cartographer.py
 ```
 
 To edit the game download [Twine](https://twinery.org/) and load the `The Deathworlders.twee` file. When happy with edits use `Publish to file` and publish it as `src/templates/index.html`.  
