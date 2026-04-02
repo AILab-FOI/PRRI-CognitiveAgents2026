@@ -1,0 +1,809 @@
+:: StoryTitle
+THRESHOLD
+
+
+:: StoryData
+{
+  "ifid": "4591AFAB-F511-4846-BC6D-DB58E27A6790",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "StoryInit",
+  "zoom": 1
+}
+
+
+:: Archive {"position":"1500,1450","size":"100,100"}
+
+<>
+
+— Archive — to be written —
+The Cartographer is here. Records of Earth cover every surface — not images, something else. Pattern maps. Disturbance logs.
+
+[[Return to observation deck|Observation Deck]]
+
+
+
+:: Awakening Chamber {"position":"700,100","size":"100,100"}
+
+
+
+The water drains. Something hums in the walls. A voice speaks before you have any context for who or what you are hearing.
+
+
+Taking a moment to get yourself together, you will probably have realised that the environment you're in right now doesn't really fit the typical mould you're used to.
+
+Right now you're aboard an alien ship orbiting around Earth.
+
+That's right. You're not on Earth anymore. I know that's a significant thing to hear. But you're alive, you're unharmed, and that's what matters.
+
+As I am sure you have probably already eyed the two buttons in your pod. I need you to press the right one, it opens the exit seal conveniently. The left one runs a secondary pressure check which you don't need right now.
+
+It's a simple cognitive function test. You should be able to decrypt the marked symbols if there are any.
+
+
+
+[[Press the left button|Left Button]]
+[[Press the right button|Right Button]]
+
+
+
+
+:: Chamber Encounter 3.2 {"position":"900,100","size":"100,100"}
+
+
+
+Three tall figures enter the room. They keep their distance, extending long arms inquisitively toward the chamber. The narrator breaks the silence first.
+
+
+They are the ones who put you in here, but not also the ones who got you aboard this ship. Their nature is incompatible with anything that could harm you in this very moment, you needn't fret.
+
+
+The one nearest to you speaks. Its voice arrives before you process that it's communicating at all.
+
+
+Subject is in a conversational state. Could the subject not have understood the instructive oscillation carvings of his waking chamber? Or was there some other reason for the meeting arrangement?
+
+
+You can ask any of these. None of them closes off the others.
+
+
+[["What is going on here? What are you?"|Chamber Q1]]
+[["What do you want from me?"|Chamber Q2]]
+[["Why did you release me?"|Chamber Q3]]
+[["Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button."|Chamber Q4]]
+
+
+
+
+:: Chamber Exit {"position":"1100,350","size":"100,100"}
+
+The three figures part to let you through. They don't stop observing. They won't.
+
+[[Step into the hallway|Narrator Resumes Hallway]]
+
+
+
+:: Chamber Q1 {"position":"700,200","size":"100,100"}
+
+The tallest of the three responds. Something in the way it moves suggests it has been mapping things for a very long time.
+
+
+This vessel is a research instrument. We are the researchers. You are from the third orbital body of this system called Earth. A world whose life patterns we have been cataloguing for some time. The patterns we see on the planet and by extension all its derivative life follow a path full of disturbance.
+
+What you are, in our current framework, is unprecedented. A living conversational piece of the Deathworld you inhabit.
+
+
+
+[["What do you want from me?"|Chamber Q2]]
+[["Why did you release me?"|Chamber Q3]]
+[["Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button."|Chamber Q4]]
+[["I think I've heard enough for now."|Chamber Exit]]
+
+
+
+
+:: Chamber Q2 {"position":"900,200","size":"100,100"}
+
+
+Want implies desire contingent on absence. Absence is absent.
+
+What does your presence allow us to observe that was not observable before. The answer is considerable.
+
+
+
+[["What is going on here? What are you?"|Chamber Q1]]
+[["Why did you release me?"|Chamber Q3]]
+[["Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button."|Chamber Q4]]
+[["I think I've heard enough for now."|Chamber Exit]]
+
+
+
+
+:: Chamber Q3 {"position":"1100,200","size":"100,100"}
+
+
+Released implies prior restraint imposed with intent. The chamber was a stabilisation environment, a functional requirement of the transfer process, not a containment measure.
+
+You were not held. You were maintained and adapted.
+
+The distinction appears significant to you. We are noting that.
+
+
+
+[["What is going on here? What are you?"|Chamber Q1]]
+[["What do you want from me?"|Chamber Q2]]
+[["Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button."|Chamber Q4]]
+[["I think I've heard enough for now."|Chamber Exit]]
+
+
+
+
+:: Chamber Q4 {"position":"1300,200","size":"100,100"}
+
+<>
+
+The one near the ship systems responds. It seems almost pleased, in whatever way that means for something like this.
+
+
+An experiment. You introduced a variable deviation into a process specifically designed to remove variables.
+
+The resulting outcome, this meeting, was less efficient than the designed outcome but produced equivalent data. Possibly more.
+
+This approach is similar to methods previously observed. It is unusual to observe it arising to this level. Earth seems to thrive in uncertainty.
+
+
+
+[["What is going on here? What are you?"|Chamber Q1]]
+[["What do you want from me?"|Chamber Q2]]
+[["Why did you release me?"|Chamber Q3]]
+[["I think I've heard enough for now."|Chamber Exit]]
+
+
+
+
+:: Engineering Bay {"position":"1700,1450","size":"100,100"}
+
+<>
+
+— Engineering Bay — to be written —
+The narrator hesitates before speaking. Just a fraction.
+
+
+There's not much of interest in here. The other rooms would be more — relevant to your situation.
+
+
+The Engineer stands near a humming column of light. It doesn't acknowledge the narrator.
+
+[[Return to observation deck|Observation Deck]]
+
+
+
+:: Exception A1 {"position":"1300,300","size":"100,100"}
+
+
+What is the true intent behind it (the question)? Particular frequency shows your persistence towards wanting to feel understood. Is that what you would call intent?
+
+
+
+[["Why are you so obsessed with intent?"|Exception A1 Curiosity]]
+[["I guess you can understand me..? What am I even doing here?"|Exception A1 Neutral]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception A1 Curiosity {"position":"1100,200","size":"100,100"}
+
+<>
+
+
+Inquisitive question. Intent is the language of worlds such as yours, in pursuit of understanding many take this into consideration. It is the very reason for this vessel being here.
+
+
+[[Continue|Exception Escape Question]]
+
+
+
+:: Exception A1 Neutral {"position":"1500,200","size":"100,100"}
+
+
+Profound question. Existential in nature if not practical. These are new thoughts not yet arisen you provoke.
+
+
+[[Continue|Exception Escape Question]]
+
+
+
+:: Exception All Philosophical {"position":"1200,980","size":"100,100"}
+
+
+...? Yes. Others are present here as well. Their respective research rooms branch off after the end of the hallway.
+
+
+The alien's attention drifts, or seems to. You're not entirely sure it ever fully arrived.
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Exception Both Lead {"position":"1300,560","size":"100,100"}
+
+
+The organism arrived through a transaction between two parties operating outside their governing structure. The transaction itself was less remarkable than the fact that the organism appears to have expected something different from its situation than what its situation is.
+
+This expectation might imply a prior model of what situation is.
+
+No such classification.
+
+I am somehow left wondering about your vision of events.
+
+
+
+[["What do you mean by that? Didn't you just say I was sold into your hands and against my will?"|Exception Branch Sold]]
+[["I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?"|Exception Branch Voice]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception Branch Sold {"position":"1100,700","size":"100,100"}
+
+
+Sold. A transfer of ownership contingent on the assignation of value to a living organism. The exchange did occur. The concept of will as a variable in such exchanges is not something we have encountered as a consideration before.
+
+It is worth considering.
+
+
+
+[["I want you to bring me back to Earth."|Exception Bring Back]]
+[["You don't know the concept of will? You could have just said you don't care about my consent instead of beating around a bush."|Exception Will Skepticism]]
+[["So you didn't even consider me potentially being uncompliant about this? Have you never done something you didn't want to do?"|Exception Uncompliant]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception Branch Voice {"position":"1500,700","size":"100,100"}
+
+
+The voice is more likely to be human. The voice is felt everywhere on the spacecraft and it raises many of the distinguishing earthly philosophies that are the aim of the research, although its intent is still unknown as the very term intent seems to have shifted its meaning since recent observations of your planet.
+
+
+
+[["How do you know it's a human voice?"|Exception Voice How Know]]
+[["You can also hear it?"|Exception Voice Hear]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception Bring Back {"position":"900,850","size":"100,100"}
+
+<>
+
+
+Precautionary measures aren't yet taken. The research could end if not given time... Why do you want to go?
+
+
+
+[["And what the hell do you want me to do up here then? You still haven't answered what you want from me."|Exception What Do You Want]]
+[["You think I am not willing to fight back?"|Exception Fight Back]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception Escape Question {"position":"1300,400","size":"100,100"}
+
+You ask the question that has been at the back of your mind since the door opened.
+
+"How is it that I escaped so easily?"
+
+
+Escaped. Escaping what? You don't look escaped. What can you tell me about the intent of your interrogation?
+
+
+
+[["Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include me being in a place like this."|Exception Both Lead]]
+[["What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?"|Exception Skepticism Lead]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception Fight Back {"position":"1020,980","size":"100,100"}
+
+<>
+
+
+If I were to gauge, I think you would. That's a part of the reason on what makes you so dangerous, but you won't need to fight back. I don't know how to convey it properly to you.
+
+
+You could walk away. Or you could try something else.
+
+
+[[Walk away|Narrator Resumes Hallway]]
+[[Punch the alien|Exception Punch]]
+
+
+
+
+:: Exception Punch {"position":"1020,1100","size":"100,100"}
+
+<>
+
+Your hand connects with something that feels like stone wrapped in static. Pain shoots up your arm. The alien doesn't move. It doesn't even register the contact as significant.
+
+"...That hurt."
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Exception Skepticism Lead {"position":"1500,400","size":"100,100"}
+
+<>
+[[Continue|Exception Both Lead]]
+
+
+
+:: Exception Their World {"position":"1400,980","size":"100,100"}
+
+<>
+<>
+
+
+Life and death are phases of existence. On our world, death isn't the end. We only ever die when away from our home. Our world wouldn't be accommodating for you, that's why the vessel is adapted to an Earthly environment. It's like emulating a small Earth while orbiting it.
+
+
+"Thanks..?"
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Exception Uncompliant {"position":"1300,850","size":"100,100"}
+
+<>
+
+
+Will and intent are not the same. The intent is an Earthly concept, born from a necessity to survive under limited resources while having a lot of competition. Intent doesn't precede will if the environment is aligned... Doing something you don't want to do does seem counterintuitive to continuing your thoughts, I am starting to see it more clearly.
+
+
+
+[["Are all aliens this philosophical?"|Exception All Philosophical]]
+[["What kind of environment do you guys even live in for you to think so drastically differently from us?"|Exception Their World]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Exception Voice Actually Human {"position":"1500,1100","size":"100,100"}
+
+<>
+
+
+The voice is intent. The voice speaks only when it hears... I think it doesn't hear me.
+
+
+[[Continue|Exception Voice Follow Up]]
+
+
+
+:: Exception Voice Follow Up {"position":"1500,980","size":"100,100"}
+
+
+[["What has the voice been saying?"|Exception Voice What Saying]]
+[["Do you mean it just sounds human or is it an actual human saying it?"|Exception Voice Actually Human]]
+[["Where do I go from here?"|Exception Voice Where Go]]
+
+
+
+
+:: Exception Voice Hear {"position":"1600,860","size":"100,100"}
+
+<>
+
+
+Hear implies a passive reception of sound. What we detect is closer to the opposite, an active signal projecting itself through the vessel's systems, carried in part by the component installed in your skull.
+
+The voice speaks without hearing.
+
+
+[[Continue|Exception Voice Follow Up]]
+
+
+
+:: Exception Voice How Know {"position":"1400,860","size":"100,100"}
+
+<>
+
+
+Frequency. Composition. The particular arrangement of signals that characterises your species and Earthly lifeform in general. But this communication is distinct from anything else we have catalogued.
+
+It is also the only voice on this vessel that modulates when it believes it is not being observed. Otherwise, there's no reason to modulate on the vessel.
+
+
+[[Continue|Exception Voice Follow Up]]
+
+
+
+:: Exception Voice What Saying {"position":"1300,1100","size":"100,100"}
+
+
+A curious question. With that information, the nature of survival on Earth. Thank you. The voice spoke of guidance and assisting with gathering information from my kin.
+
+
+[[Continue|Exception Voice Follow Up]]
+
+
+
+:: Exception Voice Where Go {"position":"1700,1100","size":"100,100"}
+
+
+I don't know. The hallway is long.
+
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Exception What Do You Want {"position":"780,980","size":"100,100"}
+
+
+The question surfaces again with greater force this time. It seems more links are needed in order for you to connect thoughts. This vessel is a research centre, this time specifically we are researching the deathworld called Earth in an undisturbed environment... I think it's not gone as undisturbed perhaps.
+
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Exception Will Skepticism {"position":"1100,850","size":"100,100"}
+
+<>
+
+
+Will as a variable in the exchange having any effect, not will in general. Although.. I am unsure how even being aware of it would affect the current circumstances though, it's a puzzling thought.
+
+
+The alien doesn't follow up. It simply continues observing. You feel something between frustration and unease.
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Hallway Encounter 3.1 {"position":"1100,400","size":"100,100"}
+
+<>
+
+
+
+A figure stands at the far end of the corridor. Tall. Still. Its surface shifts with slow amber light. The narrator says nothing. Something in your skull adjusts — a faint distortion, like crystal settling. Then it passes.
+
+
+[["Hey, can you understand what I am saying?"|Exception A1]]
+[["Don't mind me, just passing through."|Passing Through]]
+
+
+
+
+:: Intro Cinematic {"position":"500,100","size":"100,100"}
+
+
+
+
+In 2071, we stopped feeling alone.
+
+Unannounced and unprovokedly intrusive, or so it would seem. A structure several times bigger than the international space station appeared low in orbit, orbitally locking around the pacific ocean. Several small communities reported a strange unidentified flying object in the night sky, occasionally blowing up on social media and receiving various criticisms over their authenticity. The numerous governments and high standing organisations wasted no time however, containment of the exposure was in full force. The great war that happened a decade prior saw many people draw in the realisation that there might actually be some merit to numerous conspiracies around the elites hoarding the world's wealth. The world wasn't ready for a revelation as big as that was, so the information was classified.
+
+The following years weren't so kind for the existing institutions who have just started trying to survive, the knowledge of an alternate lifeform, worse yet the supposedly enemy governments somehow organising surprisingly well in hiding the fact could have been devastating for the public trust and cooperation.
+
+By 2079 practically everyone knew. Undoubtedly.
+
+What followed wasn't first contact. It was the first of the invisible collapse. People started questioning the current local orders, the very environment they lived in, the people they thought they held close, the distant new force in the sky.
+
+The global economic crisis of the upcoming decade protruded the sentiment even further, the sentiment that never got a call back, at least not from the right people. The fringe groups, all with their own ideologies offered solutions and promises that others wouldn't, the groups people were previously skeptical of, all started receiving more attention from all angles.
+
+Over the next 20 years, seventeen governments fell. The ones that didn't fell later, or were absorbed into something that called itself an order but functioned more like a pressure system, holding everything down so nothing could rise. A strong autocratic "federation" which represents the global order and the interests of all humans.
+
+In the huge gaps it left behind, other things grew. As they always do, but never before on this big of a scale.
+
+Criminal networks. Whole shadow governments. Organisations that don't have names you'd recognise but have reach you'd find impressive. Some of them made contact with the visitors. Not quite as diplomatically as commercially.
+
+It turns out the visitors were curious about us. Not enough to fully intrude, but enough for them to have stuck around for decades since.
+
+The year is 2137. The diplomatic, albeit not entirely documented relations between these unearthly visitors and the human collective have taken a turn that isn't entirely unexpected. Seeing the results and potential prospects of these trades, many groups took to trading various artifacts and trinkets from them, usually in exchange for some mundane items and biological samples.
+
+These samples, unbeknownst to a majority of the people, don't exactly exclude other humans.
+
+Some people were unfortunately, against their own will, caught up in the newly present mercantile system that runs outside of the usual framework, and found that out the hard way.
+
+You are about to be one of them.
+
+
+
+[[Continue|Awakening Chamber]]
+
+
+
+:: Left Button {"position":"900,200","size":"100,100"}
+
+<>
+<>
+<>
+
+The wrong button. A pressure check begins. Then — the door opens. Not from your side.
+
+
+Evidently, the goods don't need to pass many regulation checks to end up here. Don't worry, everything is still fine, but you just made things less adaptively convenient for yourself.
+
+The pressure check is harmless. Just takes a moment longer.
+
+Alright, well.. Things would have been easier if you met these things outside of this pod on your own terms, but I can assure you that they will do you no harm regardless thankfully. The door will open shortly. Not from your side.
+
+When it does, you're going to see something in the corridor that will look alarming. Don't make sudden or unprovoked moves. You will just stay in there now and meet your observers who should know enough about you to just simply release you from this on their own accord.
+
+
+[[Continue|Chamber Encounter 3.2]]
+
+
+
+:: Narrator Resumes Hallway {"position":"1300,1300","size":"100,100"}
+
+
+
+The corridor stretches ahead. The alien is behind you now. The narrator's voice returns.
+
+
+
+Still there. Good. The rooms you need are ahead of you — each one branches off the main corridor. Take your time. I'll be here.
+
+
+[[Continue to observation deck|Observation Deck]]
+
+
+
+:: Observation Deck {"position":"1500,1300","size":"100,100"}
+
+
+
+
+The corridor opens into something vast. The far wall is entirely transparent. Beyond it — stars, and below them, the curve of Earth. Closer than it should feel.
+
+Rooms branch off on either side. A tall figure stands near the transparent wall, its surface pulsing slowly.
+
+
+[[Talk to the figure by the window|Watcher Observation Deck]]
+[[Go to the Specimen Bay|Specimen Bay]]
+[[Go to the Archive|Archive]]
+[[Go to the Engineering Bay|Engineering Bay]]
+
+
+— More rooms and interactions to be added here —
+
+
+
+:: Passing Through {"position":"1700,400","size":"100,100"}
+
+You move past the alien. It doesn't turn around. It doesn't need to — you can feel it tracking your presence without looking, the way something might register a shift in air pressure.
+
+"Don't mind me, just passing through."
+
+A pause.
+
+"I can't believe that worked."
+
+[[Continue|Narrator Resumes Hallway]]
+
+
+
+:: Right Button {"position":"900,400","size":"100,100"}
+
+<>
+
+
+You're feeling alive and well thankfully, that's one hurdle down. Now you need to move on from this room as there are some visitors you may not immediately recognise as conversable. But it's better to meet them on your own terms.
+
+The door ahead of you will open in a moment. Step through when you're ready.
+
+I should explain where you are. You're aboard a vessel. Not a human one. I know how that sounds. I need you to stay calm while I walk you through what's happened, because it's going to sound alarming and it isn't, you aren't in any actual danger as odd as that statement may appear.
+
+What you're going to see in the corridor is going to be strange. I need you to remember that strange doesn't mean dangerous.
+
+It's not going to hurt you.
+
+I'll explain everything once you're moving ahead, that's how confident I am that you're going to be present in the next room and room after that.
+
+Just follow the general directions.
+
+
+[[Step into the hallway|Hallway Encounter 3.1]]
+
+
+
+:: Specimen Bay {"position":"1300,1450","size":"100,100"}
+
+<>
+
+— Specimen Bay — to be written —
+The Analyst is here. Biological specimens line the walls in arrangements that make a kind of sense you can't articulate.
+
+[[Return to observation deck|Observation Deck]]
+
+
+
+:: StoryInit [nobr] {"position":"100,100","size":"100,100"}
+
+<>
+<>
+<>
+<>
+<>
+<>
+<>
+<>
+<>
+
+
+
+:: Title Screen {"position":"300,100","size":"100,100"}
+
+
+  THRESHOLD
+  A cognitive agents visual novel
+  [[Begin|Intro Cinematic]]
+
+
+
+
+:: Watcher Observation Deck {"position":"1700,1400","size":"100,100"}
+
+The figure doesn't turn as you approach. It doesn't need to.
+
+
+
+The organism has moved closer. Its signal is consistent with what we recorded on arrival. The pattern is still shifting.
+
+
+[[Return to observation deck|Observation Deck]]
+
+
+
+:: StoryScript [script]
+
+
+/* ── STORY INIT ── */
+$(document).one(':storyready', function() {
+  /* All variables set in StoryInit passage */
+});
+
+
+
+:: StoryStylesheet [stylesheet]
+
+
+body {
+  background: #070a0f;
+  color: #c8d8e8;
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+#ui-bar { display: none; }
+
+#passages {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 60px 30px 80px;
+}
+
+.passage {
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+a.link-internal {
+  color: #e8a040;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232,160,64,0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+a.link-internal:hover {
+  color: #f0b860;
+  border-color: rgba(232,160,64,0.8);
+}
+
+.narrator {
+  color: #c8d8e8;
+  font-style: italic;
+  border-left: 2px solid rgba(232,160,64,0.4);
+  padding: 12px 0 12px 20px;
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+.alien {
+  color: #4ab8a0;
+  font-style: normal;
+  border-left: 2px solid rgba(74,184,160,0.4);
+  padding: 12px 0 12px 20px;
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+.exception {
+  color: #c87868;
+  font-style: normal;
+  border-left: 2px solid rgba(200,120,104,0.4);
+  padding: 12px 0 12px 20px;
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+.stage {
+  color: #506070;
+  font-size: 14px;
+  font-style: italic;
+  margin: 16px 0;
+}
+
+.choices {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid rgba(120,160,220,0.12);
+  margin: 32px 0;
+}
+
+.title-screen {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.title-screen h1 {
+  font-family: 'Georgia', serif;
+  font-size: 72px;
+  font-weight: normal;
+  color: #dce8f0;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  text-shadow: 0 0 60px rgba(232,160,64,0.15);
+}
+
+.title-screen .subtitle {
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #404f5a;
+  margin-bottom: 60px;
+}
+
+.title-screen a.link-internal {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tracking {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  color: #304050;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  text-align: right;
+}
+
