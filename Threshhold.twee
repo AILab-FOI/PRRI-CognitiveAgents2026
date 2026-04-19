@@ -1,0 +1,645 @@
+:: StoryTitle
+Threshhold
+
+
+:: StoryData
+{
+  "ifid": "A585A5FF-4D47-4A05-99FE-685652D8B33B",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Title Screen",
+  "tag-colors": {
+    "forest": "purple",
+    "nobr": "yellow",
+    "bedroom": "orange",
+    "intro": "blue",
+    "waking": "purple",
+    "contact": "orange",
+    "room1": "green"
+  },
+  "zoom": 1
+}
+
+
+:: Alien Arrival [nobr contact] {"position":"700,700","size":"100,100"}
+<div class="textbox">
+    <<ctp "alienArrival">>
+	    You talk to the aliens
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Move into the hall|Observation Deck]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Archive {"position":"1200,600","size":"100,100"}
+
+
+
+:: Awakening [nobr waking] {"position":"300,500","size":"100,100"}
+<div class="textbox">
+    <div class="speaker">Narrator</div>
+    <<ctp "Awakening">>
+	    The water drains. Something hums in the walls. A voice speaks before you have any context for who or what you are hearing.
+    <<ctpNext clear>>
+	    "Taking a moment to get yourself together, you will probably have realised that the environment you’re in right now doesn’t really fit the typical mould you’re used to."
+    <<ctpNext clear>>
+	    "Right now you're aboard an alien ship orbiting around Earth."
+    <<ctpNext clear>>
+	    "That's right. You're not on Earth anymore. I know that's a significant thing to hear. But you're alive, you're unharmed, and that's what matters."
+    <<ctpNext clear>>
+	    "As I am sure you have probably already eyed the two buttons in your pod. I need you to press the right one, it opens the exit seal conveniently. The left one runs a secondary pressure check which you don't need right now."
+    <<ctpNext clear>>
+	    "It's a simple cognitive function test. You should be able to decrypt the marked symbols if there are any."
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Press the left button|Left Button]]
+            [[Press the right button|Right Button]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Engineering Bay {"position":"1200,700","size":"100,100"}
+
+
+
+:: Exeption #1 [nobr] {"position":"650,200","size":"100,100"}
+<div class="textbox">
+    <<ctp "exeption">>
+	    You talk to the alien
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue down the hall|Hallway #2]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Hallway #1 [nobr] {"position":"500,300","size":"100,100"}
+<div class="textbox">
+    <div class="speaker">Narrator</div>
+    <<ctp "hallway">>
+	    The wrong button. A pressure check begins. Then — the door opens. Not from your side.
+    <<ctpNext clear>>
+	    "Evidently, the goods don't need to pass many regulation checks to end up here. Don't worry, everything is still fine, but you just made things less adaptively convenient for yourself."
+    <<ctpNext clear>>
+	    "The pressure check is harmless. Just takes a moment longer."
+    <<ctpNext clear>>
+	    "Alright, well.. Things would have been easier if you met these things outside of this pod on your own terms, but I can assure you that they will do you no harm regardless thankfully. The door will open shortly. Not from your side."
+    <<ctpNext clear>>
+	    "When it does, you're going to see something in the corridor that will look alarming. Don't make sudden or unprovoked moves. You will just stay in there now and meet your observers who should know enough about you to just simply release you from this on their own accord."
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Try talking to the alien|Exeption #1]]
+            [[Move past|Hallway #2]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Hallway #2 [nobr] {"position":"800,300","size":"100,100"}
+<div class="textbox">
+    <<ctp "hallway2">>
+	    You move past the alien. It doesn't turn around. It doesn't need to — you can feel it tracking your presence without looking, the way something might register a shift in air pressure.
+    <<ctpNext clear>>
+	    "Don't mind me, just passing through."
+    <<ctpNext>>
+	    A pause.
+    <<ctpNext clear>>
+	    "I can't believe that worked."
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue down the hall|Observation Deck]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Intro Cinematic [nobr intro] {"position":"200,500","size":"100,100"}
+<<audio awakening play>>
+
+<div class="textbox">
+    <<ctp "Intro">>
+	    In 2071, we stopped feeling alone.
+    <<ctpNext clear>>
+      Unannounced and unprovokedly intrusive, or so it would seem. A structure several times bigger than the international space station appeared low in orbit, orbitally locking around the pacific ocean. Several small communities reported a strange unidentified flying object in the night sky, occassionally blowing up on social media and recieving various criticisms over their authenticity. The numerous governments and high standing organisations wasted no time however, containment of the exposure was in full force. The great war that happened a decade prior saw many people draw in the realisation that there might actually be some merit to numerous conspiracies around the elites hoarding the world’s wealth. The world wasn’t ready for a revelation as big as that was, so the information was classified.
+    <<ctpNext clear>>
+      The following years weren’t so kind for the existing institutions who have just started trying to survive, the knowledge of an alternate lifeform, worse yet the supposedly enemy governments somehow organising surprisingly well in hiding the fact could have been devastating for the public trust and cooperation. 
+    <<ctpNext clear>>
+      By 2079 practically everyone knew. Undoubtedly.
+    <<ctpNext clear>>
+      What followed wasn't first contact. It was the first of the invisible collapse. People started questioning the current local orders, the very environment they lived in, the people they thought they held close, the distant new force in the sky. 
+    <<ctpNext clear>>
+      The global econimic crisis of the upcoming decade portruded the sentiment even further, the sentiment that never got a call back, at least not from the right people. The fringe groups, all with their own idelogies offered solutions and promises that others wouldn’t, the groups people were previously skeptical of, all started recieving more attention from all angles. 
+    <<ctpNext clear>>
+      Over the next 20 years, seventeen governments fell. The ones that didn't fell, later, or were absorbed into something that called itself an order but functioned more like a pressure system, holding everything down so nothing could rise. A strong autoractic “federation” which represents the global order and the interests of all humans. 
+    <<ctpNext clear>>
+      In the huge gaps it left behind, other things grew. As they always do, but never before on this big of a scale. 
+    <<ctpNext clear>>
+      Criminal networks. Whole shadow governments. Organisations that don't have names you'd recognise but have reach you'd find impressive. Some of them made contact with the visitors. Not diplomatically quite as diplomatically as commercially.
+  It turns out the visitors were curious about us. Not enough to fully intrude, but enough for them to have stuck around for decades since.
+    <<ctpNext clear>>
+      The year is 2137. The diplomatic, albeit, not entirely documented relations between these unearthly visitors and the human collective have taken a.. turn that isn’t entirely unexpected. Seeing the results and potential prospects of these trades, many groups took to trading various artifacts and trinkets from them, usually in exchange for some mundane  items and biological samples.
+    <<ctpNext clear>>
+      These samples unbeknownst to a majority of the people don’t exactly exclude.. other humans.
+    <<ctpNext clear>>
+      Some people were unfortunately, against their own will, caught up in the newly present mercantile system that runs outside of the usual framework, and found that out the hard way.
+    <<ctpNext clear>>
+      You are about to be one of them.
+    <<ctpNext clear>>
+      <div class="choice">[[Wake up|Awakening]]</div>
+  <</ctp>>
+</div>
+
+
+
+:: Left Button [nobr waking] {"position":"600,700","size":"100,100"}
+<<set $skepticism = $skepticism+1>>
+<<set $curiosity = $curiosity+1>>
+
+<div class="textbox">
+    <div class="speaker">Narrator</div>
+    <<ctp "leftButton">>
+	    The wrong button. A pressure check begins. Then — the door opens. Not from your side.
+    <<ctpNext clear>>
+	    "Evidently, the goods don't need to pass many regulation checks to end up here. Don't worry, everything is still fine, but you just made things less adaptively convenient for yourself."
+    <<ctpNext clear>>
+	    "The pressure check is harmless. Just takes a moment longer."
+    <<ctpNext clear>>
+	    "Alright, well.. Things would have been easier if you met these things outside of this pod on your own terms, but I can assure you that they will do you no harm regardless thankfully. The door will open shortly. Not from your side."
+    <<ctpNext clear>>
+	    "When it does, you're going to see something in the corridor that will look alarming. Don't make sudden or unprovoked moves. You will just stay in there now and meet your observers who should know enough about you to just simply release you from this on their own accord."
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Wait|Alien Arrival]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Observation Deck [nobr] {"position":"1000,500","size":"100,100"}
+<div class="textbox">
+    <<ctp "observation">>
+	    The corridor opens into something vast. The far wall is entirely transparent. Beyond it — stars, and below them, the curve of Earth. Closer than it should feel.
+    <<ctpNext clear>>
+	    Rooms branch off on either side. A tall figure stands near the transparent wall, its surface pulsing slowly.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Talk to the figure by the window|Watcher Observation Deck]]
+	        [[Go to the Specimen Bay|Specimen Bay]]
+	        [[Go to the Archive|Archive]]
+	        [[Go to the Engineering Bay|Engineering Bay]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Right Button [nobr room1] {"position":"400,300","size":"100,100"}
+<<set $compliance = $compliance+1>>
+
+<div class="textbox">
+    <div class="speaker">Narrator</div>
+    <<ctp "rightButton">>
+	    "You're feeling alive and well thankfully, that's one hurdle down. Now you need to move on from this room as there are some visitors you may not immediately recognise as conversable. But it's better to meet them on your own terms."
+    <<ctpNext clear>>
+	    "The door ahead of you will open in a moment. Step through when you're ready."
+    <<ctpNext clear>>
+	    "I should explain where you are. You're aboard a vessel. Not a human one. I know how that sounds. I need you to stay calm while I walk you through what's happened, because it's going to sound alarming and it isn't, you aren't in any actual danger as odd as that statement may appear."
+    <<ctpNext clear>>
+	    "What you're going to see in the corridor is going to be strange. I need you to remember that strange doesn't mean dangerous."
+    <<ctpNext clear>>
+	    "It's not going to hurt you."
+    <<ctpNext clear>>
+	    "I'll explain everything once you're moving ahead, that's how confident I am that you're going to be present in the next room and room after that."
+    <<ctpNext clear>>
+	    "Just follow the general directions."
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Step into the hallway|Hallway #1]]
+        </div>
+  <</ctp>>
+</div>
+
+
+
+:: Specimen Bay {"position":"1200,400","size":"100,100"}
+
+
+
+:: StoryInit {"position":"100,200","size":"200,100"}
+<<set $curiosity = 0>>
+<<set $skepticism = 0>>
+<<set $compliance = 0>>
+<<set $aggression = 0>>
+
+<<cacheaudio "archives" "media/archives.mp3">>
+<<cacheaudio "awakening" "media/awakening.mp3">>
+
+
+:: Title Screen {"position":"100,500","size":"100,100"}
+THRESHOLD
+
+[[Start|Intro Cinematic]]
+
+
+:: Watcher Observation Deck {"position":"1200,300","size":"100,100"}
+
+
+
+:: StoryScript [script]
+(() => {
+	"use strict";
+
+	$(document).on(":passageinit", () => {
+		CTP.Logs.forEach((_, id) => {
+			if (!CTP.Repository.get(id)?.persist) CTP.Logs.delete(id);
+		});
+		CTP.Repository.forEach(({ persist }, id) => {
+			if (!persist) CTP.Repository.delete(id);
+		});
+	});
+
+	var CTP = class _CTP {
+		constructor(id, persist = false) {
+			this.stack = [];
+			this.clears = [];
+			this.options = {};
+			if (!id?.trim()) throw new Error(`No ID specified!`);
+			this.id = id;
+			this.persist = persist;
+			_CTP.Repository.set(id, this);
+		}
+		static get Repository() {
+			if (!setup["@CTP/Repository"]) setup["@CTP/Repository"] = new Map();
+			return setup["@CTP/Repository"];
+		}
+		static get Logs() {
+			if (!variables()["@CTP/Logs"]) variables()["@CTP/Logs"] = new Map();
+			return variables()["@CTP/Logs"];
+		}
+		get log() {
+			if (!_CTP.Logs.get(this.id)) _CTP.Logs.set(this.id, { lastClear: -1, index: -1, seen: -1 });
+			return _CTP.Logs.get(this.id);
+		}
+		static getCTP(id) {
+			return _CTP.Repository.get(id);
+		}
+		add(content, options = {}) {
+			if (options.clear) this.clears.push(this.stack.length);
+			this.stack.push({
+				options,
+				content,
+				index: this.stack.length,
+				element: $()
+			});
+			return this;
+		}
+		print(index) {
+			const { content, options: iOpts } = this.stack[index];
+			const options = {
+				...this.options,
+				...iOpts
+			};
+			const element = $(document.createElement(options.element || "span")).addClass("--macro-ctp-hidden").attr({
+				"data-macro-ctp-id": this.id,
+				"data-macro-ctp-index": index
+			}).on("update-internal.macro-ctp", (event, firstTime) => {
+				if ($(event.target).is(element)) {
+					if (index === this.log.index) {
+						if (firstTime) {
+							if (typeof content === "string") element.wiki(content);
+							else element.append(content);
+							element.addClass(options.transition ? "--macro-ctp-t8n" : "");
+						}
+						element.removeClass("--macro-ctp-hidden");
+					} else {
+						if (index < this.log.seen) element.removeClass("--macro-ctp-t8n");
+						element.toggleClass("--macro-ctp-hidden", index > this.log.index || index < this.log.lastClear);
+					}
+				}
+			});
+			this.stack[index].element = element;
+			return element;
+		}
+
+		output() {
+			const wrapper = document.createDocumentFragment();
+			for (let i = 0; i < this.stack.length; i++) {
+				this.print(i).appendTo(wrapper);
+			}
+			return wrapper;
+		}
+
+		advance() {
+			if (this.log.index < this.stack.length - 1) {
+				this.log.index++;
+				const firstTime = this.log.index > this.log.seen;
+				this.log.seen = Math.max(this.log.seen, this.log.index);
+				this.log.lastClear = this.clears.slice().reverse().find((el) => el <= this.log.index) ?? -1;
+				$(document).trigger("update.macro-ctp", ["advance", this.id, this.log.index]);
+				this.stack.forEach(({ element }) => element.trigger("update-internal.macro-ctp", [firstTime, "advance", this.id, this.log.index]));
+			}
+			return this;
+		}
+
+		back() {
+			if (this.log.index > 0) {
+				this.log.index--;
+				this.log.lastClear = this.clears.slice().reverse().find((el) => el <= this.log.index) ?? -1;
+				$(document).trigger("update.macro-ctp", ["back", this.id, this.log.index]);
+				this.stack.forEach(({ element }) => element.trigger("update-internal.macro-ctp", [false, "back", this.id, this.log.index]));
+			}
+			return this;
+		}
+	};
+	window.CTP = CTP;
+
+	Macro.add("ctp", {
+		tags: ["ctpNext"],
+		handler() {
+			const id = this.args[0];
+			const persist = this.args.slice(1).includes("persist");
+			const ctp = new CTP(id, persist);
+			const _passage = passage();
+			this.payload.forEach(({ args, name, contents }) => {
+				const options = {};
+				if (args.includes("clear")) options.clear = true;
+				if (args.includesAny("t8n", "transition")) options.transition = true;
+				const elementArg = args.find((el) => el.startsWith("element:")) ?? "";
+				if (elementArg) options.element = elementArg.replace("element:", "");
+				if (name === "ctp") ctp.options = { ...options };
+				ctp.add(contents, options);
+			});
+			$(this.output).append(ctp.output());
+			
+			if (_passage === passage()) {
+				const i = Math.max(ctp.log.index, 0);
+				ctp.log.index = -1;
+				ctp.log.seen = -1;
+				while (ctp.log.index < i) ctp.advance();
+			}
+		}
+	});
+
+	Macro.add("ctpAdvance", {
+		handler() {
+			const id = this.args[0];
+			if (id) {
+				const ctp = CTP.getCTP(id);
+				if (ctp) ctp.advance();
+				else throw new Error(`No CTP with ID '${id}' found!`);
+			} else throw new Error(`No ID specified!`);
+		}
+	});
+
+	Macro.add("ctpBack", {
+		handler() {
+			const id = this.args[0];
+			if (id) {
+				const ctp = CTP.getCTP(id);
+				if (ctp) ctp.back();
+				else throw new Error(`No CTP with ID '${id}' found!`);
+			} else throw new Error(`No ID specified!`);
+		}
+	});
+})();
+
+/* --- Click-to-Advance & Passage Progress Script --- */
+$("#story").on("click", function (event) {
+	if (event.originalEvent !== undefined) {
+		var ignore = ["<a ", "<button ", "<input "], i, n = 0;
+		for (i = 0; i < ignore.length; i++) {
+			if (event.target && event.target.outerHTML && event.target.outerHTML.indexOf(ignore[i]) === 0) {
+				n++
+			}
+		}
+		if (n === 0) {
+            var ctpAdvanced = false;
+            
+            // 1. Look for the CTP ID directly from the elements it creates
+            var $ctpElement = $("[data-macro-ctp-id]").first();
+            if ($ctpElement.length) {
+                var id = $ctpElement.attr("data-macro-ctp-id");
+                
+                // 2. Fetch the actual CTP macro instance from the window
+                if (window.CTP) {
+                    var ctpInstance = window.CTP.getCTP(id);
+                    
+                    // 3. If there is still dialogue left to reveal, advance it!
+                    if (ctpInstance && ctpInstance.log.index < ctpInstance.stack.length - 1) {
+                        ctpInstance.advance();
+                        ctpAdvanced = true;
+                    }
+                }
+            }
+            
+            // 4. If dialogue is fully revealed and there is exactly 1 link, progress the passage
+			if (!ctpAdvanced && $("#passages a").length === 1) {
+				$("#passages a").click();
+			}
+		}
+	}
+});
+
+:: StoryStylesheet [stylesheet]
+.--macro-ctp-hidden {
+	display: none;
+}
+
+.--macro-ctp-t8n {
+	animation: macro-ctp-t8n 400ms ease-in;
+}
+
+@keyframes macro-ctp-t8n {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/*For click to progress*/
+#story {
+    min-height: 100vh;
+    margin: 0; 
+    padding-bottom: 50px;
+}
+#passages {
+    padding: 2.5em 0;
+}
+
+/*Background*/
+body {
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+}
+
+body[data-tags~="intro"] {
+    background-image: url('/media/Intro.png');
+}
+
+body[data-tags~="waking"] {
+    background-image: url('/media/Waking.png');
+}
+
+body[data-tags~="contact"] {
+    background-image: url('/media/Contact.png');
+}
+
+body[data-tags~="room1"] {
+    background-image: url('/media/Room.png');
+}
+
+/*Textbox*/
+.textbox {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 35px 30px 20px 30px; 
+    min-height: 120px;
+    color: #ffffff;
+    font-size: 1.2em;
+    z-index: 10;
+}
+
+/*Speaker*/
+.speaker {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    background-color: #222222;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #ffeb3b;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/*Choice*/
+.choice {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.choice a {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    border: 1px solid #aaaaaa;
+    padding: 12px 40px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.choice a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+/*Bottom menu*/
+#ui-bar {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 45px !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-right: none !important;
+    border-top: 1px solid #555 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    z-index: 200 !important;
+    transition: none !important; 
+    margin: 0 !important;
+}
+
+#ui-bar-toggle, #title, #story-caption { 
+    display: none !important; 
+}
+
+/*Back/forward arrows*/
+#ui-bar-tray {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    border: none !important;
+    padding: 0 15px !important;
+    width: auto !important;
+}
+
+#ui-bar-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    height: 100% !important;
+    overflow: visible !important;
+    background: transparent !important;
+}
+
+/*Save/Restart*/
+#menu {
+    display: flex !important;
+    flex-direction: row !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#menu-core, #menu-story {
+    display: flex !important;
+    flex-direction: row !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    list-style: none !important;
+}
+
+#menu li { 
+    border: none !important; 
+    margin: 0 !important;
+}
+
+#menu li a { 
+    border: none !important; 
+    padding: 0 20px !important; 
+    text-transform: uppercase !important; 
+    font-size: 0.9em !important; 
+    color: #ccc !important;
+    background-color: transparent !important;
+    display: inline-block !important;
+}
+
+#menu li a:hover { 
+    color: #fff !important; 
+    background-color: rgba(255, 255, 255, 0.1) !important; 
+}

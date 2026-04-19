@@ -11,7 +11,7 @@ app = Flask( __name__, static_folder='static' )
 
 @app.route( '/' )
 def home():
-    return render_template( 'index.html' )
+    return app.send_static_file('index.html')
 
 @app.route( '/agent-engineer' )
 def agent_engineer():
@@ -37,9 +37,9 @@ def server_error( e ):
 def favicon():
     return app.send_static_file('favicon.ico')
 
-@app.route('/media/school.jpg')
-def bcg():
-    return app.send_static_file('media/school.jpg')
+@app.route('/media/<path:filename>')
+def serve_media(filename):
+    return app.send_static_file(f'media/{filename}')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
