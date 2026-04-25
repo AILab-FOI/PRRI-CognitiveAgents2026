@@ -13,6 +13,10 @@ app = Flask( __name__, static_folder='static' )
 def home():
     return app.send_static_file('index.html')
 
+@app.route( '/agent-exception' )
+def agent_jura():
+    return render_template( 'exception.html' )
+
 @app.route( '/agent-engineer' )
 def agent_engineer():
     return render_template( 'engineer.html' )
@@ -43,11 +47,13 @@ def serve_media(filename):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument( "--trainException", const=True, nargs='?', type=bool, help="Train exception?")
     parser.add_argument( "--trainEngineer", const=True, nargs='?', type=bool, help="Train engineer?")
     parser.add_argument( "--trainAnalyst", const=True, nargs='?', type=bool, help="Train analyst?")
     parser.add_argument( "--trainCartographer", const=True, nargs='?', type=bool, help="Train cartographer?")
     args = parser.parse_args()
 
+    TRAIN_Exception = bool( args.trainException )
     TRAIN_Engineer = bool( args.trainEngineer )
     TRAIN_Analyst = bool( args.trainAnalyst )
     TRAIN_Cartographer = bool( args.trainCartographer )
@@ -55,6 +61,7 @@ if __name__ == '__main__':
     engineer = ChatBot( 'Engineer', read_only=not TRAIN_Engineer, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'engineer_db.sqlite3') )
     analyst = ChatBot( 'Analyst', read_only=not TRAIN_Analyst, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'analyst_db.sqlite3') )
     cartographer = ChatBot( 'Cartographer', read_only=not TRAIN_Cartographer, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'cartographer_db.sqlite3') )
+    exception = ChatBot( 'Exception', read_only=not TRAIN_Exception, logic_adapters=LOGIC_ADAPTER, database=os.path.join(FOLDER, 'exception_db.sqlite3'))
 
     if TRAIN_Engineer:
         from train_engineer import *
@@ -71,8 +78,14 @@ if __name__ == '__main__':
         train( cartographer )
         sys.exit()
 
+    elif TRAIN_Exception:
+        from train_exception import *
+        train( exception )
+        sys.exit()
+
     server = SimpleWebSocketServer( '0.0.0.0', 8009, EngineerController )
     server = SimpleWebSocketServer( '0.0.0.0', 8010, AnalystController )
     server = SimpleWebSocketServer( '0.0.0.0', 8011, CartographerController )
+    server = SimpleWebSocketServer( '0.0.0.0', 8012, ExceptionController )
     _thread.start_new_thread( server.serveforever, () )	
     app.run( host='0.0.0.0', debug=False )
