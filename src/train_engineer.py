@@ -1,558 +1,219 @@
 from chatterbot.trainers import ListTrainer
 
-LOGIC_ADAPTER = [
-        {
-            'import_path': 'chatterbot.logic.BestMatch'
-        },
-        {
-            'import_path': 'chatterbot.logic.LowConfidenceAdapter',
-            'threshold': 0.66,
-            'default_response': ' ponovi'
-        }
-    ]
+LOGIC_ADAPTERS = [
+    {
+        'import_path': 'chatterbot.logic.BestMatch'
+    },
+    {
+        'import_path': 'chatterbot.logic.LowConfidenceAdapter',
+        'threshold': 0.66,
+        'default_response': 'ponovi'
+    }
+]
 
 def train(bot):
     bot.set_trainer(ListTrainer)
     chatbot = bot
 
-    chatbot.train([
-        'Kako se zovu riječi koje zamjenjuju druge riječi?',
-        '01'
-    ])
-    chatbot.train([
-        'Koje riječi zamjenjuju druge riječi?',
-        '01'
-    ])
-    chatbot.train([
-        'Koje su riječi koje zamjenjuju druge riječi?',
-        '01'
-    ])
-    chatbot.train([
-        'Kako se zovu riječi koje zamjenjuju riječi?',
-        '01'
-    ])
-
-
-    chatbot.train([
-        'Koje su osobne zamjenice?',
-        '02'
-    ])
-    chatbot.train([
-        'Nabroji osobne zamjenice?',
-        '02'
-    ])
-    chatbot.train([
-        'Koje osobne zamjenice postoje?',
-        '02'
-    ])
-    chatbot.train([
-        'Navedi osobne zamjenice?',
-        '02'
-    ])
-
-    chatbot.train([
-        'Kako se zovu zamjenice kojima zamjenjujemo govorne osobe?',
-        '03'
-    ])
-    chatbot.train([
-        'Koje zamjenice zamjenjuju govorne osobe?',
-        '03'
-    ])
-    chatbot.train([
-        'Kojim zamjenicama zamjenjujemo govorne osobe?',
-        '03'
-    ])
-    chatbot.train([
-        'Navedi koje su zamjenice kojima zamjenjujemo govorne osobe?',
-        '03'
-    ])
-
-
-    chatbot.train([
-        'Koje su zamjenice negovorne osobe?',
-        '04'
-    ])
-    chatbot.train([
-        'Koje zamjenice zamjenjuju negovorne osobe?',
-        '04'
-    ])
-    chatbot.train([
-        'Navedi zamjenice negovorne osobe?',
-        '04'
-    ])
-    chatbot.train([
-        'Nabroji zamjenice negovorne osobe?',
-        '04'
-    ])
-
-
-    chatbot.train([
-        'Kako se zove promjena oblika osobnih zamjenica?',
-        '05'
-    ])
-    chatbot.train([
-        'Kako se naziva promjena oblika osobnih zamjenica?',
-        '05'
-    ])
-    chatbot.train([
-        'Kako se zove promjena osobnih zamjenica?',
-        '05'
-    ])
-    chatbot.train([
-        'Kako se naziva promjena osobnih zamjenica?',
-        '05'
-    ])
-
-    chatbot.train([
-        'Kada zamjenicu vi pišemo velikim početnim slovom?',
-        '06'
-    ])
-    chatbot.train([
-        'Kada se zamjenica vi piše velikim početnim slovom?',
-        '06'
-    ])
-    chatbot.train([
-        'Kada zamjenicu vi pišemo velikim slovom?',
-        '06'
-    ])
-    chatbot.train([
-        'Kada se zamjenicu vi piše velikim slovom?',
-        '06'
-    ])
-
-    chatbot.train([
-        'Koje su posvojne zamjenice?',
-        '07'
-    ])
-    chatbot.train([
-        'Navedi posvojne zamjenice?',
-        '07'
-    ])
-    chatbot.train([
-        'Nabroji posvojne zamjenice?',
-        '07'
-    ])
-    chatbot.train([
-        'Koje posvojne zamjenice postoje?',
-        '07'
-    ])
-
-
-    chatbot.train([
-        'Što zamjenjuju posvojne zamjenice?',
-        '08'
-    ])
-    chatbot.train([
-        'Što mijenjaju posvojne zamjenice?',
-        '08'
-    ])
-    chatbot.train([
-        'Koju vrstu riječi zamjenjuju posvojne zamjenice?',
-        '08'
-    ])
-    chatbot.train([
-        'Koje riječi zamjenjuju posvojne zamjenice?',
-        '08'
-    ])
-
-    chatbot.train([
-        'Na koje pitanje odgovaraju posvojne zamjenice?',
-        '09'
-    ])
-    chatbot.train([
-        'Koje pitanje odgovaraju posvojne zamjenice?',
-        '09'
-    ])
-    chatbot.train([
-        'Na koje pitanje odgovaramo posvojnim zamjenicama?',
-        '09'
-    ])
-    chatbot.train([
-        'Na koje se pitanje odgovara posvojnim zamjenicama?',
-        '09'
-    ])
-
-
-    chatbot.train([
-        'Što izriču posvojne zamjenice?',
-        '10'
-    ])
-    chatbot.train([
-        'Što govore posvojne zamjenice?',
-        '10'
-    ])
-    chatbot.train([
-        'Što iskazuju posvojne zamjenice?',
-        '10'
-    ])
-    chatbot.train([
-        'Što kazuju posvojne zamjenice?',
-        '10'
-    ])
-
-
-    chatbot.train([
-        'U čemu se posvojne zamjenice slažu s imenicom uz koju stoje?',
-        '11'
-    ])
-    chatbot.train([
-        'Po čemu se posvojne zamjenice slažu s imenicom uz koju stoje?',
-        '11'
-    ])
-    chatbot.train([
-        'U čemu se posvojne zamjenice slažu s imenicom?',
-        '11'
-    ])
-    chatbot.train([
-        'U čemu se posvojne zamjenice slažu s rječju uz koju stoje?',
-        '11'
-    ])
-
-
-    chatbot.train([
-        'Kako pišemo posvojne zamjenice vaš, vaša, vaše pri obraćanju dvjema osobama ili skupini ljudi?',
-        '12'
-    ])
-    chatbot.train([
-        'Kako se pišu posvojne zamjenice vaš, vaša, vaše pri obraćanju dvjema osobama ili skupini ljudi?',
-        '12'
-    ])
-    chatbot.train([
-        'Kako pišemo posvojne zamjenice vaš, vaša, vaše pri obraćanju skupini ljudi?',
-        '12'
-    ])
-    chatbot.train([
-        'Kako pišemo posvojne zamjenice vaš, vaša, vaše pri obraćanju dvjema osobama?',
-        '12'
-    ])
-
-
-    chatbot.train([
-        'Kojoj skupini riječi pripadaju zamjenice?',
-        '13'
-    ])
-    chatbot.train([
-        'Kojoj skupini pripadaju zamjenice?',
-        '13'
-    ])
-    chatbot.train([
-        'U koju skupinu riječi spadaju zamjenice?',
-        '13'
-    ])
-    chatbot.train([
-        'U kojoj skupini riječi su zamjenice?',
-        '13'
-    ])
-
-
-    chatbot.train([
-        'Što izriče povratna zamjenica sebe?',
-        '14'
-    ])
-    chatbot.train([
-        'Što iskazuje povratna zamjenica sebe?',
-        '14'
-    ])
-    chatbot.train([
-        'Što govori povratna zamjenica sebe?',
-        '14'
-    ])
-    chatbot.train([
-        'Što kazuje povratna zamjenica sebe?',
-        '14'
-    ])
-
-
-    chatbot.train([
-        'Koji se oblici zamjenica mogu naći na početku rečenice?',
-        '15'
-    ])
-    chatbot.train([
-        'Koji oblici zamjenica mogu biti na početku rečenice?',
-        '15'
-    ])
-    chatbot.train([
-        'Koji oblici zamjenica su na početku rečenice?',
-        '15'
-    ])
-    chatbot.train([
-        'Koji su oblici zamjenica na početku rečenice?',
-        '15'
-    ])
-
-
-    chatbot.train([
-        'Ima li povratna zamjenica sebe oblike u nominativu i vokativu?',
-        '16'
-    ])
-    chatbot.train([
-        'Ima li povratna zamjenica sebe oblik u nominativu?',
-        '16'
-    ])
-    chatbot.train([
-        'Ima li povratna zamjenica sebe oblik u vokativu?',
-        '16'
-    ])
-    chatbot.train([
-        'Je li povratna zamjenica sebe ima oblike u nominativu i vokativu?',
-        '16'
-    ])
 
-
-    chatbot.train([
-        'Što izriče povratno-posvojna zamjenica svoj?',
-        '17'
-    ])
     chatbot.train([
-        'Što govori povratno-posvojna zamjenica svoj?',
-        '17'
+        'Hello',
+        'Greetings subject.'
     ])
     chatbot.train([
-        'Što iskazuje povratno-posvojna zamjenica svoj?',
-        '17'
+        'Hi',
+        'Greetings subject.'
     ])
     chatbot.train([
-        'Što kazuje povratno-posvojna zamjenica svoj?',
-        '17'
+        'Hey',
+        'Greetings subject. What has led you to the engineering room?'
     ])
-
-
     chatbot.train([
-        'Koje zamjenice zamjenjuje povratno-posvojna zamjenica svoj?',
-        '18'
+        'Who are you',
+        'I am the engineer. My task is to research how the various items from your world work and how they are used. Would you be interested in helping me understand the use of a few items from your planet?'
     ])
     chatbot.train([
-        'Što zamjenjuje povratno-posvojna zamjenica svoj?',
-        '18'
+        'What are you',
+        'I am the engineer. My task is to research how the various items from your world work and how they are used.'
     ])
     chatbot.train([
-        'Koje riječi zamjenjuje povratno-posvojna zamjenica svoj?',
-        '18'
+        'What are you doing',
+        'I am trying to understand the use of a particular item from your world. Would you be interested in giving me your insight as a resident of said world?'
     ])
     chatbot.train([
-        'Navedi zamjenice koje zamjenjuje povratno-posvojna zamjenica svoj?',
-        '18'
+        'What is this room',
+        'The engineering room. I conduct research here. Items from your world are analysed for function and purpose.'
     ])
-
-
     chatbot.train([
-        'Kojim oblicima zamjenica dajemo prednost?',
-        '19'
+        'What are those containers',
+        'These containers hold items acquired from your species. I analyse them. Your input would be useful.'
     ])
     chatbot.train([
-        'Navedi oblike zamjenica kojima dajemo prednost?',
-        '19'
+        'What is in the containers',
+        'These containers hold items acquired from your species. I analyse them. Your input would be useful.'
     ])
     chatbot.train([
-        'Kakvim oblicima zamjenica dajemo prednost?',
-        '19'
+        'I will help you',
+        'Understood. Your input would be useful.'
     ])
     chatbot.train([
-        'Kakovim oblicima zamjenica dajemo prednost?',
-        '19'
+        'I do not want to help',
+        'Understood. The offer remains open if you change your mind.'
     ])
-
-
     chatbot.train([
-        'Koje su riječi pokazne zamjenice?',
-        '20'
+        'No',
+        'Understood. The offer remains open if you change your mind.'
     ])
     chatbot.train([
-        'Navedi pokazne zamjenice?',
-        '20'
+        'I am just exploring',
+        'It seems you are a curious subject. Interesting. Would you be interested in assisting me with my research?'
     ])
     chatbot.train([
-        'Koje su pokazne zamjenice?',
-        '20'
+        'I am trying to reach the control room',
+        'The control room is currently off limits for the subject. I ask the subject to stay away.'
     ])
     chatbot.train([
-        'Nabroji pokazne zamjenice?',
-        '20'
+        'What if I go anyway',
+        'Curious. Subject rejects request. There will be no consequences if the subject continues attempting to access the control room.'
     ])
-
-
     chatbot.train([
-        'Na koja pitanja odgovaraju pokazne zamjenice?',
-        '21'
+        'Understood, I am the engineer',
+        'Understood. I am the engineer.'
     ])
     chatbot.train([
-        'Navedi pitanja na koja odgovaraju pokazne zamjenice?',
-        '21'
+        'Do not touch that workbench',
+        'Subject, step away from the workbench before causing unintended damage.'
     ])
     chatbot.train([
-        'Na kakva pitanja odgovaraju pokazne zamjenice?',
-        '21'
+        'Do not touch the storage container',
+        'Subject, do not touch the storage container.'
     ])
     chatbot.train([
-        'Koja su pitanja na koja odgovaraju pokazne zamjenice?',
-        '21'
+        'What are you researching',
+        'My research revolves around understanding how your objects function and are used. Would you assist?'
     ])
 
 
     chatbot.train([
-        'Tko si?',
-        'predstavljanje-kratko'
+        'What is that weapon',
+        'This is an item received in exchange. It fires plasmoids. Its destructive capacity is clear. Its purpose is not. Assist.'
     ])
-
     chatbot.train([
-        'Bok, tko si ti?',
-        'predstavljanje-kratko'
+        'What is a gun',
+        'This is an item received in exchange. It fires plasmoids. Its destructive capacity is clear. Its purpose is not. Assist.'
     ])
-
     chatbot.train([
-        'Bok',
-        'predstavljanje-kratko'
+        'It is used for force',
+        'Force. An application of energy to produce a directed outcome. But energy applied to a living organism produces an outcome that cannot be reversed. Why is irreversibility acceptable as a tool?'
     ])
-
     chatbot.train([
-        'Dobar dan',
-        'predstavljanje-kratko'
+        'It is used in war',
+        'War. Organised conflict between groups. This item is a component of that organisation. The organisation of destruction is something your species has refined across generations. Other species destroy. Only yours refines the process. We have not determined if this is a strength or a conclusion.'
     ])
-
     chatbot.train([
-        'Pozdrav',
-        'predstavljanje-kratko'
+        'We use weapons to win wars',
+        'War. Organised conflict between groups. Other species destroy. Only yours refines the process. We have not determined if this is a strength or a conclusion.'
     ])
 
     chatbot.train([
-        'Dobro večer',
-        'predstavljanje-kratko'
+        'What is a camera',
+        'It captures light and stores it. The function is clear. The purpose is not. Explain.'
     ])
-
     chatbot.train([
-        'Dobro jutro',
-        'predstavljanje-kratko'
+        'What does a camera do',
+        'It captures light and stores it. The function is clear. The purpose is not. Explain.'
     ])
-
     chatbot.train([
-        'Bok, kak se zoveš?',
-        'predstavljanje-kratko'
+        'A camera stores memories',
+        'Stores. Memories are not stored by organisms — they are reconstructed, each time slightly differently. This device stores a fixed image. The organism stores a changing impression. Which is more accurate?'
     ])
-
     chatbot.train([
-        'Kak se zoveš?',
-        'predstavljanje-kratko'
+        'The imprecision is the point',
+        'The imprecision. That is the purpose. Not to capture what was but to carry something forward through the distortion. We have found no equivalent mechanism in organisms that do not die.'
     ])
-
     chatbot.train([
-        'Kako se zoveš?',
-        'predstavljanje-kratko'
+        'Accuracy matters',
+        'If accuracy is the purpose, then this device surpasses the organism. But your species builds this device and then selects which images to keep and which to discard — a filter based on meaning, not fidelity. Why retain only the meaningful? What happens to accuracy there?'
     ])
-
     chatbot.train([
-        'Milka men?',
-        'izvoli'
+        'We use cameras to share experiences',
+        'Shares. You give another organism access to a moment they did not live. The image becomes a bridge. We do not share experiences. We observe them. Clarify why transfer matters when the original moment has already passed.'
     ])
     chatbot.train([
-        'Mister brundo?',
-        'izvoli'
+        'We do not want to be alone',
+        'Not alone. The opposite of solitude is proximity. But proximity without transfer produces nothing. Your species seeks the transfer itself, not merely the closeness. The image is proof that something was felt. A signal to another organism that says: I was here and it was real.'
     ])
     chatbot.train([
-        'Nadot?',
-        'izvoli'
+        'Obsession replaces experience',
+        'Obsession. A fixation that persists past the point of useful return. And you propose this replaces the original event entirely. The image becomes the experience. The record becomes the memory. This is inefficient.'
     ])
-
     chatbot.train([
-        'Mister brundo, jesi li tu?',
-        'izvoli'
+        'The inefficiency is intentional',
+        'The inefficiency is intentional. You replace the lived experience because the lived experience was insufficient. The image is what you wished the moment had been. This device does not capture what happened. It captures what you needed to happen. That is an extraordinary function for a mechanical object.'
     ])
     chatbot.train([
-        'Milka men, jesi li tu?',
-        'izvoli'
+        'It is a problem',
+        'You identify it as a malfunction. And yet you continue to use the device anyway. The species recognises the problem and perpetuates it. This is either a failure of correction or evidence that the problem serves a function you have not yet named.'
     ])
     chatbot.train([
-        'Nadot, jesi li tu?',
-        'izvoli'
+        'We know it is a problem but we continue anyway',
+        'You identify it as a malfunction. And yet you continue to use the device anyway. This is either a failure of correction or evidence that the problem serves a function you have not yet named.'
     ])
 
-
-    chatbot.train([
-        'Milka men, si tu?',
-        'izvoli'
-    ])
-    chatbot.train([
-        'Mister brundo, si tu?',
-        'izvoli'
-    ])
-    chatbot.train([
-        'Nadot, si tu?',
-        'izvoli'
-    ])
 
     chatbot.train([
-        'Si tu?',
-        'izvoli'
+        'What is this device',
+        'That device is not standard equipment. It was not manufactured on this vessel. Its design is consistent with human fabrication techniques. Where did you find it?'
     ])
-
     chatbot.train([
-        'Me čuješ?',
-        'izvoli'
+        'I found this on the ship',
+        'That device is not standard equipment. It was not manufactured on this vessel. Where did you find it?'
     ])
-
     chatbot.train([
-        'Slušaš?',
-        'izvoli'
+        'Can I use it',
+        'A malfunction in specimen bay observation parameters would constitute a research irregularity. Reducing containment measures in the specimen bay could allow for more direct data acquisition. This is within acceptable research deviation. Cautionary measures in specimen bay are reduced. This does not extend to archive or engineering sections.'
     ])
 
-    chatbot.train([
-        'Tko te je napravio?',
-        'predstavljanje-dugo'
-    ])
 
     chatbot.train([
-        'Tko te je stvorio?',
-        'predstavljanje-dugo'
+        'I want to see the Fusion Core',
+        'The Fusion Core is a restricted area of the vessel. Standard subjects are not granted access. Authorisation is required.'
     ])
-    
-    chatbot.train([
-        'Tko je tvoj tvorac?',
-        'predstavljanje-dugo'
-    ])
-
     chatbot.train([
-        'Kako si?',
-        'dobro'
+        'What if something happened to the Fusion Core',
+        'The vessel would cease to function within approximately four of your minutes. Everything aboard would be lost. This is not considered a desirable outcome from a research perspective.'
     ])
     chatbot.train([
-        'Kako ti je s nama?',
-        'lijepo'
+        'Why is the control room emitting a frequency',
+        'It should not be emitting that frequency. I have noted it as an anomaly for some time but have not been asked to address it.'
     ])
     chatbot.train([
-        'Bravo',
-        'hvala'
+        'I have authorisation',
+        'Authorisation confirmed. The Fusion Core is at the base of the vessel. I will unlock the passage. Do you require guidance?'
     ])
 
-    chatbot.train([
-        'Odlično',
-        'hvala'
-    ])
 
     chatbot.train([
-        'Izvrsno',
-        'hvala'
+        'I have provided the information you need',
+        'Signal 88.3 — 7.1 — 22.9 has been synchronized with your biochip. This frequency represents the engineering sector\'s resolution.'
     ])
-
     chatbot.train([
-        'Jako dobro',
-        'hvala'
+        'Are we done',
+        'You may continue your movement through the vessel.'
     ])
-
     chatbot.train([
-        'Hvala',
-        'hvala'
+        'I am leaving',
+        'You may continue your movement through the vessel.'
     ])
-
     chatbot.train([
-        'Yoharrro',
-        'Yoyo'
+        'Can I go',
+        'You may continue your movement through the vessel.'
     ])
-
     chatbot.train([
-        'Meow',
-        'Meow'
+        'Thank you',
+        'Noted. You may continue your movement through the vessel.'
     ])
-
     chatbot.train([
-        'Engineer',
-        'Rock and stone'
+        'Goodbye',
+        'You may continue your movement through the vessel.'
     ])
