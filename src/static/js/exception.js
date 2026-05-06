@@ -93,6 +93,47 @@ function connect() {
     console.log(msg.data);
     console.log(msg.data.toString());
     play_part(msg.data.toString());
+
+    if (msg.data.toString() === "A") {
+      // Send a message to the parent window (Twine)
+      window.parent.postMessage(
+        {
+          action: "advance_passage",
+          targetPassage: "3.1. Choice A",
+        },
+        "*",
+      );
+    } else if (msg.data.toString() === "A-Obsessed") {
+      // Send a message to the parent window (Twine)
+      window.parent.postMessage(
+        {
+          action: "advance_passage",
+          targetPassage: "3.1. A Obsessed",
+        },
+        "*",
+      );
+    }
+    if (msg.data.toString() === "A-Philosophical") {
+      // Send a message to the parent window (Twine)
+      window.parent.postMessage(
+        {
+          action: "advance_passage",
+          targetPassage: "3.1. A Philosophical",
+        },
+        "*",
+      );
+    }
+    if (msg.data.toString() === "A-Environment") {
+      // Send a message to the parent window (Twine)
+      window.parent.postMessage(
+        {
+          action: "advance_passage",
+          targetPassage: "3.1. A Environment",
+        },
+        "*",
+      );
+    }
+
     /*if( msg.data.toString() == '01' )
 	{
 	    console.log( '01' );

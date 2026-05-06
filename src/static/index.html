@@ -491,8 +491,46 @@ $("#story").on("click", function (event) {
 
 
 
+//Agent stuff
+$(document).ready(function() {
+    var agentContainer = $('<div id="agent-container"></div>').css({
+        'display': 'none',
+        'position': 'fixed',
+        'top': '50px',
+        'right': '50px',
+        'width': '600px',
+        'height': '400px',
+        'z-index': '1000'
+    });
 
-</script><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="bedroom" color="orange"></tw-tag><tw-tag name="intro" color="blue"></tw-tag><tw-tag name="waking" color="purple"></tw-tag><tw-tag name="contact" color="orange"></tw-tag><tw-tag name="room1" color="green"></tw-tag><tw-tag name="agent" color="green"></tw-tag><tw-tag name="missing-dialog" color="red"></tw-tag><tw-tag name="missing-features" color="blue"></tw-tag><tw-tag name="agenmt" color="purple"></tw-tag><tw-passagedata pid="1" name="Title Screen" tags="nobr" position="100,1300" size="100,100">THRESHOLD
+    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone"></iframe>';
+    
+    agentContainer.append(iframeHtml);
+    $('body').append(agentContainer);
+});
+
+
+
+// Listen for messages coming from iframes
+$(window).on('message', function (event) {
+    // Extract the data sent via postMessage
+    var data = event.originalEvent.data;
+
+    // Check if the message is the one we expect from the agent
+    if (data && data.action === 'advance_passage') {
+        
+        // Ensure the target passage actually exists before trying to play it
+        if (Story.has(data.targetPassage)) {
+            // Tell SugarCube's engine to transition to the new passage
+            Engine.play(data.targetPassage);
+        } else {
+            console.error("Agent tried to navigate to a passage that doesn't exist: " + data.targetPassage);
+        }
+    }
+});
+
+
+</script><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="bedroom" color="orange"></tw-tag><tw-tag name="intro" color="blue"></tw-tag><tw-tag name="waking" color="purple"></tw-tag><tw-tag name="contact" color="orange"></tw-tag><tw-tag name="room1" color="green"></tw-tag><tw-tag name="agent" color="green"></tw-tag><tw-tag name="missing-dialog" color="red"></tw-tag><tw-tag name="missing-features" color="blue"></tw-tag><tw-tag name="agenmt" color="purple"></tw-tag><tw-tag name="nobre" color="green"></tw-tag><tw-tag name="non" color="red"></tw-tag><tw-passagedata pid="1" name="Title Screen" tags="nobr" position="100,1300" size="100,100">THRESHOLD
 
 [[Start|Awakening Chamber]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="100,1100" size="200,100">&lt;&lt;set $curiosity = 0&gt;&gt;
 &lt;&lt;set $skepticism = 0&gt;&gt;
@@ -504,6 +542,19 @@ $("#story").on("click", function (event) {
 
 &lt;&lt;widget &quot;speaker&quot;&gt;&gt;\
     &lt;div class=&quot;speaker&quot;&gt;_args[0]&lt;/div&gt;\
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;showAgent&quot;&gt;&gt;
+    &lt;&lt;set _agentUrl to &quot;http://localhost:5000/agent-&quot; + _args[0]&gt;&gt;
+    
+    &lt;&lt;run $(&#39;#agent-iframe&#39;).attr(&#39;src&#39;, _agentUrl)&gt;&gt;
+    &lt;&lt;run $(&#39;#agent-container&#39;).show()&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;hideAgent&quot;&gt;&gt;
+    &lt;&lt;run $(&#39;#agent-container&#39;).hide()&gt;&gt;
+    
+    &lt;&lt;run $(&#39;#agent-iframe&#39;).attr(&#39;src&#39;, &#39;&#39;)&gt;&gt; 
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Awakening Chamber" tags="nobr waking" position="200,1300" size="100,100">&lt;&lt;audio awakening play&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;awakeningChamber&quot;&gt;&gt;
@@ -574,7 +625,9 @@ $("#story").on("click", function (event) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="6" name="3.1. Hallway" tags="nobr" position="500,1100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="3.1. Hallway" tags="nobr" position="500,1100" size="100,100">&lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;hallway1&quot;&gt;&gt;
         You step into the corridor. It is long. Strange light. Then: movement ahead. An alien — the Exception — drifts at the far end, not approaching, not retreating. Just present.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -586,12 +639,15 @@ $("#story").on("click", function (event) {
         What is the true intent behind it? You&#39;re trying to be understood. Is that what you call intent, or does our definition differ?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Try talking to the alien|3.1. Exception]]
+            [[&quot;Hey, can you understand what I am saying?&quot;|3.1. Choice A]]
+			[[&quot;I guess you can understand me..? What am I even doing here?&quot;|3.1. Choice B]]
+			[[&quot;How is it that I escaped so easily?&quot;|3.1. Choice C]]
+			[[&quot;I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?&quot;|3.1. Choice Voice]]
             [[Don&#39;t mind me, just passing through.|3.1. Passing Through]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="7" name="3.1. Exception" tags="nobr agent" position="600,1000" size="100,100">&lt;&lt;script&gt;&gt;
+</tw-passagedata><tw-passagedata pid="7" name="3.1. Exception" tags="nobr agent" position="750,950" size="100,100">&lt;&lt;script&gt;&gt;
             function addAgent(name) {
                 const iframe = document.createElement(&#39;iframe&#39;);
                 iframe.width = &#39;400&#39;;
@@ -631,7 +687,9 @@ $("#story").on("click", function (event) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="9" name="Hallway Convergence" tags="nobr" position="1400,1250" size="100,200">&lt;div class=&quot;textbox&quot;&gt;
+</tw-passagedata><tw-passagedata pid="9" name="Hallway Convergence" tags="nobr" position="1400,1250" size="100,200">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;hallwayConvergance&quot;&gt;&gt;
         The hallway. Long. Ahead is a room.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -2834,6 +2892,273 @@ Oh yeah, good luck by the way.
             [[Leave the room.|Death C]] 
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="132" name="3.1. Choice A" tags="agent nobr" position="175,1650" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.choiceA&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        Hey, can you understand what I am saying?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Intent. You treat it as language.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Why are you so obsessed with intent?|3.1. A Obsessed]]
+            [[I guess you can understand me..? What am I even doing here?|3.1. A Doing Here]]
+            [[How is it that I escaped so easily?|3.1. A Escaped]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="133" name="3.1. A Obsessed" tags="agent nobr" position="75,1750" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.AObsessed&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Intent isn&#39;t specific to your world. The focus is. If the environment aligns, intent doesn&#39;t need to come first.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Are all aliens this philosophical?|3.1. A Philosophical]]
+            [[What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth?|3.1. A Environment]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="134" name="3.1. A Doing Here" tags="nobr agent" position="250,1850" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.ADoingHere&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Existential. Not practical. You&#39;re introducing thoughts that weren&#39;t there before.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Who or what brought me here? I don&#39;t exactly remember my past, but I am sure it didn&#39;t include a place like this.|3.1. B Who Brought]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="135" name="3.1. A Escaped" tags="nobr agent" position="375,1850" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.AEscaped&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Escaped. Escaping what? You don&#39;t look escaped.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Who or what brought me here? I don&#39;t exactly remember my past, but I am sure it didn&#39;t include a place like this.|3.1. B Who Brought]]
+[[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don&#39;t even question how I got out of that thing?|3.1. C Trade]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="136" name="3.1. A Environment" tags="nobr agent" position="175,1975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.AEnvironment&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Life and death are phases of existence. Death isn&#39;t the end. We only ever die when away from our home. Our world wouldn&#39;t be accommodating for you. This is like emulating a small Earth while orbiting it.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        Thanks..?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Continue into the hallway.|Hallway Convergence]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="137" name="3.1. A Philosophical" tags="nobr agent" position="25,1975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.APhilosophical&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Yes. Others are present here as well. Their respective research rooms branch off after the end of the hallway.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Continue into the hallway.|Hallway Convergence]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="138" name="3.1. B Who Brought" tags="nobr agent" position="350,1975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.BWhoBrought&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        You were bought. A simple trade of currency for biomass. Why does the concept of &#39;will&#39; change the math for you? What did you expect instead?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[What do you mean by that? Didn&#39;t you just say I was sold into your hands and against my will?|3.1. Sold Against Will]]
+            [[I want you to bring me back to Earth.|3.1. Back to Earth]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="139" name="3.1. Choice Voice" tags="nobr agent" position="625,1775" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.ChoiceVoice&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        The voice is more likely to be human. The voice is felt everywhere on the vessel and its agenda would point to philosophy. The intent is still unknown.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[How do you know it&#39;s a human voice?|3.1. Human Voice]]
+            [[You can also hear it?|3.1. Also Hear]]
+            [[Where do I go from here?|3.1. Where Go]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="140" name="3.1. Choice C" tags="nobr agent" position="500,1775" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.ChoiceC&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Escaped. Escaping what? You don&#39;t look escaped.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Who or what brought me here? I don&#39;t exactly remember my past, but I am sure it didn&#39;t include a place like this.|3.1. B Who Brought]]
+            [[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don&#39;t even question how I got out of that thing?|3.1. C Trade]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="141" name="3.1. Choice B" tags="nobr agent" position="325,1700" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.B&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Existential. Not practical. You&#39;re introducing thoughts that weren&#39;t there before.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Who or what brought me here? I don&#39;t exactly remember my past, but I am sure it didn&#39;t include a place like this.|3.1. B Who Brought]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="142" name="3.1. C Trade" tags="nobr agent" position="500,1975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.CTrade&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        You were bought. A simple trade of currency for biomass. Why does the concept of &#39;will&#39; change the math for you? What did you expect instead?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Didn&#39;t you just say I was sold into your hands against my will?|3.1. Sold Against Will]]
+            [[I want you to bring me back to Earth.|3.1. Back to Earth]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="143" name="3.1. Sold Against Will" tags="nobr agent" position="275,2100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.SoldAgainstWill&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Sold. A transfer of ownership contingent on the assignation of value to a living organism. The concept of will as a variable in such exchanges is not something we have encountered.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[You don&#39;t know the concept of will? You could have just said you don&#39;t care about my consent instead of beating around a bush.|3.1. No Consent]]
+            [[So you didn&#39;t even consider me potentially being uncompliant about this? Have you never done something you didn&#39;t want to do?|3.1. Uncompliant]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="144" name="3.1. Back to Earth" tags="nobr agent" position="475,2125" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.BackToEarth&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Precautionary measures aren&#39;t yet taken. The research could end if not given time... Why do you want to go?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[And what the hell do you want me to do up here then? You still haven&#39;t answered what you want from me.|3.1. What Do You Want]]
+            [[You think I am not willing to fight back?|3.1. Fight Back]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="145" name="3.1. No Consent" tags="nobr agent" position="125,2275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.NoConsent&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Will as a variable in the exchange having any effect, not will in general. Although.. how do you think being aware of it would affect the current circumstances?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The answer goes nowhere you can follow. There is nothing to do but move.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Continue into the hallway.|Hallway Convergence]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="146" name="3.1. Uncompliant" tags="agent nobr" position="275,2275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.Uncomplitant&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Intent isn&#39;t specific to your world. The focus is. If the environment aligns, intent doesn&#39;t need to come first.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Are all aliens this philosophical?|3.1. A Philosophical]]
+            [[What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth?|3.1. A Environment]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="147" name="3.1. What Do You Want" tags="nobr" position="500,2225" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.WhatDoYouWant&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        You&#39;re asking again. The connection didn&#39;t form. This vessel is a research centre. Your home is the subject. It was meant to be undisturbed. It isn&#39;t.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Walk away.|3.1. Walk Away]]
+            [[Try to punch the alien.|3.1. Punch]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="148" name="3.1. Fight Back" tags="nobr" position="625,2225" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.FightBack&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        You would. That aligns with what I&#39;ve observed.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Walk away.|3.1. Walk Away]]
+            [[Try to punch the alien.|3.1. Punch]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="149" name="3.1. Walk Away" tags="nobr" position="437.5,2350" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.WalkAway&quot;&gt;&gt;
+        (You turn and walk. The alien watches — or whatever it does instead of watching.)
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Continue into the hallway.|Hallway Convergence]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="150" name="3.1. Punch" tags="nobr" position="562.5,2350" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.Punch&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        You swing. Your hand connects with something that is not like flesh. The alien doesn&#39;t react. Your hand does.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You retreat, shaking your fingers. The alien stands exactly as it was.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Walk it off. Continue into the hallway.|Hallway Convergence]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="151" name="3.1. Human Voice" tags="nobr agent" position="625,1900" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.HumanVoice&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Frequency. Composition. The particular arrangement of signals that characterises your species and Earthly lifeform in general. But this communication is distinct from anything else we have catalogued. It is also the only voice on this vessel that modulates when it believes it is not being observed. Otherwise, there&#39;s no reason to modulate on the vessel.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[What has the voice been saying?|3.1. Voice Saying]]
+            [[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+            [[Where do I go from here?|3.1. Where Go]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="152" name="3.1. Also Hear" tags="nobr agent" position="750,1900" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.AlsoHear&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        What I detect is closer to the opposite — an active signal projecting itself through the vessel&#39;s systems, carried in part by the component installed in your skull. The voice speaks without hearing.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[What has the voice been saying?|3.1. Voice Saying]]
+            [[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+            [[Where do I go from here?|3.1. Where Go]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="153" name="3.1. Where Go" tags="nobr agent" position="875,1900" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.WhereGo&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        &quot;I don&#39;t know. The hallway is long.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Continue into the hallway.|Hallway Convergence]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="154" name="3.1. Voice Saying" tags="nobr agent" position="625,2025" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.VoiceSaying&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        The voice spoke of guidance and assisting with gathering information from my kin.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Where do I go from here?|3.1. Where Go]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="155" name="3.1. Actually Human" tags="nobr agent" position="750,2025" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;3.1.ActuallyHuman&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        The voice speaks only when it hears... I think it doesn&#39;t hear me.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Where do I go from here?|3.1. Where Go]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">

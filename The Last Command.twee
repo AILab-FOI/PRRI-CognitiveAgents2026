@@ -19,13 +19,229 @@ The Last Command
     "agent": "green",
     "missing-dialog": "red",
     "missing-features": "blue",
-    "agenmt": "purple"
+    "agenmt": "purple",
+    "nobre": "green",
+    "non": "red"
   },
   "zoom": 1
 }
 
 
-:: 3.1. Exception [nobr agent] {"position":"600,1000","size":"100,100"}
+:: 3.1. A Doing Here [nobr agent] {"position":"250,1850","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.ADoingHere">>
+        <<speaker "Exception">>
+        Existential. Not practical. You're introducing thoughts that weren't there before.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. A Environment [nobr agent] {"position":"175,1975","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.AEnvironment">>
+        <<speaker "Exception">>
+        Life and death are phases of existence. Death isn't the end. We only ever die when away from our home. Our world wouldn't be accommodating for you. This is like emulating a small Earth while orbiting it.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Thanks..?
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue into the hallway.|Hallway Convergence]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. A Escaped [nobr agent] {"position":"375,1850","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.AEscaped">>
+        <<speaker "Exception">>
+        Escaped. Escaping what? You don't look escaped.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
+[[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?|3.1. C Trade]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. A Obsessed [agent nobr] {"position":"75,1750","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.AObsessed">>
+        <<speaker "Exception">>
+        Intent isn't specific to your world. The focus is. If the environment aligns, intent doesn't need to come first.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Are all aliens this philosophical?|3.1. A Philosophical]]
+            [[What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth?|3.1. A Environment]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. A Philosophical [nobr agent] {"position":"25,1975","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.APhilosophical">>
+        <<speaker "Exception">>
+        Yes. Others are present here as well. Their respective research rooms branch off after the end of the hallway.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue into the hallway.|Hallway Convergence]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Actually Human [nobr agent] {"position":"750,2025","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.ActuallyHuman">>
+        <<speaker "Exception">>
+        The voice speaks only when it hears... I think it doesn't hear me.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Where do I go from here?|3.1. Where Go]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Also Hear [nobr agent] {"position":"750,1900","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.AlsoHear">>
+        <<speaker "Exception">>
+        What I detect is closer to the opposite — an active signal projecting itself through the vessel's systems, carried in part by the component installed in your skull. The voice speaks without hearing.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[What has the voice been saying?|3.1. Voice Saying]]
+            [[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+            [[Where do I go from here?|3.1. Where Go]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. B Who Brought [nobr agent] {"position":"350,1975","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.BWhoBrought">>
+        <<speaker "Exception">>
+        You were bought. A simple trade of currency for biomass. Why does the concept of 'will' change the math for you? What did you expect instead?
+    <<ctpNext clear>>
+        <div class="choice">
+            [[What do you mean by that? Didn't you just say I was sold into your hands and against my will?|3.1. Sold Against Will]]
+            [[I want you to bring me back to Earth.|3.1. Back to Earth]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Back to Earth [nobr agent] {"position":"475,2125","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.BackToEarth">>
+        <<speaker "Exception">>
+        Precautionary measures aren't yet taken. The research could end if not given time... Why do you want to go?
+    <<ctpNext clear>>
+        <div class="choice">
+            [[And what the hell do you want me to do up here then? You still haven't answered what you want from me.|3.1. What Do You Want]]
+            [[You think I am not willing to fight back?|3.1. Fight Back]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. C Trade [nobr agent] {"position":"500,1975","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.CTrade">>
+        <<speaker "Exception">>
+        You were bought. A simple trade of currency for biomass. Why does the concept of 'will' change the math for you? What did you expect instead?
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Didn't you just say I was sold into your hands against my will?|3.1. Sold Against Will]]
+            [[I want you to bring me back to Earth.|3.1. Back to Earth]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Choice A [agent nobr] {"position":"175,1650","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.choiceA">>
+        <<speaker "You">>
+        Hey, can you understand what I am saying?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        Intent. You treat it as language.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Why are you so obsessed with intent?|3.1. A Obsessed]]
+            [[I guess you can understand me..? What am I even doing here?|3.1. A Doing Here]]
+            [[How is it that I escaped so easily?|3.1. A Escaped]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Choice B [nobr agent] {"position":"325,1700","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.B">>
+        <<speaker "Exception">>
+        Existential. Not practical. You're introducing thoughts that weren't there before.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Choice C [nobr agent] {"position":"500,1775","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.ChoiceC">>
+        <<speaker "Exception">>
+        Escaped. Escaping what? You don't look escaped.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
+            [[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?|3.1. C Trade]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Choice Voice [nobr agent] {"position":"625,1775","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.ChoiceVoice">>
+        <<speaker "Exception">>
+        The voice is more likely to be human. The voice is felt everywhere on the vessel and its agenda would point to philosophy. The intent is still unknown.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[How do you know it's a human voice?|3.1. Human Voice]]
+            [[You can also hear it?|3.1. Also Hear]]
+            [[Where do I go from here?|3.1. Where Go]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Exception [nobr agent] {"position":"750,950","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -55,7 +271,24 @@ The Last Command
 
 
 
+:: 3.1. Fight Back [nobr] {"position":"625,2225","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.FightBack">>
+        <<speaker "Exception">>
+        You would. That aligns with what I've observed.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Walk away.|3.1. Walk Away]]
+            [[Try to punch the alien.|3.1. Punch]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
 :: 3.1. Hallway [nobr] {"position":"500,1100","size":"100,100"}
+<<showAgent "exception">>
+
 <div class="textbox">
     <<ctp "hallway1">>
         You step into the corridor. It is long. Strange light. Then: movement ahead. An alien — the Exception — drifts at the far end, not approaching, not retreating. Just present.
@@ -68,8 +301,43 @@ The Last Command
         What is the true intent behind it? You're trying to be understood. Is that what you call intent, or does our definition differ?
     <<ctpNext clear>>
         <div class="choice">
-            [[Try talking to the alien|3.1. Exception]]
+            [["Hey, can you understand what I am saying?"|3.1. Choice A]]
+			[["I guess you can understand me..? What am I even doing here?"|3.1. Choice B]]
+			[["How is it that I escaped so easily?"|3.1. Choice C]]
+			[["I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?"|3.1. Choice Voice]]
             [[Don't mind me, just passing through.|3.1. Passing Through]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Human Voice [nobr agent] {"position":"625,1900","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.HumanVoice">>
+        <<speaker "Exception">>
+        Frequency. Composition. The particular arrangement of signals that characterises your species and Earthly lifeform in general. But this communication is distinct from anything else we have catalogued. It is also the only voice on this vessel that modulates when it believes it is not being observed. Otherwise, there's no reason to modulate on the vessel.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[What has the voice been saying?|3.1. Voice Saying]]
+            [[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+            [[Where do I go from here?|3.1. Where Go]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. No Consent [nobr agent] {"position":"125,2275","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.NoConsent">>
+        <<speaker "Exception">>
+        Will as a variable in the exchange having any effect, not will in general. Although.. how do you think being aware of it would affect the current circumstances?
+    <<ctpNext clear>>
+        The answer goes nowhere you can follow. There is nothing to do but move.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue into the hallway.|Hallway Convergence]]
         </div>
   <</ctp>> 
 </div>
@@ -85,6 +353,108 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "You">>
         I can't believe that worked.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue into the hallway.|Hallway Convergence]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Punch [nobr] {"position":"562.5,2350","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.Punch">>
+        <<speaker "Exception">>
+        You swing. Your hand connects with something that is not like flesh. The alien doesn't react. Your hand does.
+    <<ctpNext clear>>
+        You retreat, shaking your fingers. The alien stands exactly as it was.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Walk it off. Continue into the hallway.|Hallway Convergence]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Sold Against Will [nobr agent] {"position":"275,2100","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.SoldAgainstWill">>
+        <<speaker "Exception">>
+        Sold. A transfer of ownership contingent on the assignation of value to a living organism. The concept of will as a variable in such exchanges is not something we have encountered.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[You don't know the concept of will? You could have just said you don't care about my consent instead of beating around a bush.|3.1. No Consent]]
+            [[So you didn't even consider me potentially being uncompliant about this? Have you never done something you didn't want to do?|3.1. Uncompliant]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Uncompliant [agent nobr] {"position":"275,2275","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.Uncomplitant">>
+        <<speaker "Exception">>
+        Intent isn't specific to your world. The focus is. If the environment aligns, intent doesn't need to come first.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Are all aliens this philosophical?|3.1. A Philosophical]]
+            [[What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth?|3.1. A Environment]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Voice Saying [nobr agent] {"position":"625,2025","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.VoiceSaying">>
+        <<speaker "Exception">>
+        The voice spoke of guidance and assisting with gathering information from my kin.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Where do I go from here?|3.1. Where Go]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Walk Away [nobr] {"position":"437.5,2350","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.WalkAway">>
+        (You turn and walk. The alien watches — or whatever it does instead of watching.)
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue into the hallway.|Hallway Convergence]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. What Do You Want [nobr] {"position":"500,2225","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.WhatDoYouWant">>
+        <<speaker "Exception">>
+        You're asking again. The connection didn't form. This vessel is a research centre. Your home is the subject. It was meant to be undisturbed. It isn't.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Walk away.|3.1. Walk Away]]
+            [[Try to punch the alien.|3.1. Punch]]
+        </div>
+  <</ctp>> 
+</div>
+
+
+
+:: 3.1. Where Go [nobr agent] {"position":"875,1900","size":"100,100"}
+<div class="textbox">
+    <<ctp "3.1.WhereGo">>
+        <<speaker "Exception">>
+        "I don't know. The hallway is long.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue into the hallway.|Hallway Convergence]]
@@ -2520,6 +2890,8 @@ END OF CURRENT DRAFT
 
 
 :: Hallway Convergence [nobr] {"position":"1400,1250","size":"100,200"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "hallwayConvergance">>
         The hallway. Long. Ahead is a room.
@@ -2851,6 +3223,19 @@ END OF CURRENT DRAFT
     <div class="speaker">_args[0]</div>\
 <</widget>>
 
+<<widget "showAgent">>
+    <<set _agentUrl to "http://localhost:5000/agent-" + _args[0]>>
+    
+    <<run $('#agent-iframe').attr('src', _agentUrl)>>
+    <<run $('#agent-container').show()>>
+<</widget>>
+
+<<widget "hideAgent">>
+    <<run $('#agent-container').hide()>>
+    
+    <<run $('#agent-iframe').attr('src', '')>> 
+<</widget>>
+
 
 :: Successful Artifact Ending [nobr] {"position":"3500,1700","size":"100,100"}
 <div class="textbox">
@@ -3088,6 +3473,44 @@ $("#story").on("click", function (event) {
 });
 
 
+
+//Agent stuff
+$(document).ready(function() {
+    var agentContainer = $('<div id="agent-container"></div>').css({
+        'display': 'none',
+        'position': 'fixed',
+        'top': '50px',
+        'right': '50px',
+        'width': '600px',
+        'height': '400px',
+        'z-index': '1000'
+    });
+
+    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone"></iframe>';
+    
+    agentContainer.append(iframeHtml);
+    $('body').append(agentContainer);
+});
+
+
+
+// Listen for messages coming from iframes
+$(window).on('message', function (event) {
+    // Extract the data sent via postMessage
+    var data = event.originalEvent.data;
+
+    // Check if the message is the one we expect from the agent
+    if (data && data.action === 'advance_passage') {
+        
+        // Ensure the target passage actually exists before trying to play it
+        if (Story.has(data.targetPassage)) {
+            // Tell SugarCube's engine to transition to the new passage
+            Engine.play(data.targetPassage);
+        } else {
+            console.error("Agent tried to navigate to a passage that doesn't exist: " + data.targetPassage);
+        }
+    }
+});
 
 
 
