@@ -169,3 +169,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+venv/
+src/venv/
+novo_venv/
+src/novo_venv/
+__pycache__/
+*.pyc
