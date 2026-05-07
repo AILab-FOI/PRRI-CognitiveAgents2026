@@ -21,9 +21,43 @@ The Last Command
     "missing-features": "blue",
     "agenmt": "purple",
     "nobre": "green",
-    "non": "red"
+    "non": "red",
+    "hallway": "orange",
+    "watcher": "orange",
+    "exception": "blue",
+    "control-door": "green",
+    "archive": "red",
+    "cartographer": "blue",
+    "terminal": "green",
+    "earth": "green",
+    "engineering": "green",
+    "engineer": "green",
+    "container": "blue",
+    "artifact": "green",
+    "closing": "orange",
+    "specimen": "green",
+    "analyst": "orange",
+    "restrain": "green",
+    "strike": "purple",
+    "discarded": "blue",
+    "body": "yellow",
+    "control": "orange",
+    "code": "yellow",
+    "narrator": "green",
+    "questions": "purple",
+    "ending": "blue",
+    "artifact-failed": "yellow",
+    "artifact-success": "blue",
+    "core": "yellow",
+    "warning": "orange",
+    "burn": "green",
+    "game-over": "green",
+    "aggression": "red",
+    "compliance": "red",
+    "curiosity": "purple",
+    "skepticism": "red"
   },
-  "zoom": 1
+  "zoom": 0.6
 }
 
 
@@ -38,7 +72,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. A Environment [nobr agent] {"position":"175,1975","size":"100,100"}
@@ -57,7 +90,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. A Escaped [nobr agent] {"position":"375,1850","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.AEscaped">>
@@ -70,7 +102,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. A Obsessed [agent nobr] {"position":"75,1750","size":"100,100"}
@@ -87,7 +118,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. A Philosophical [nobr agent] {"position":"25,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
@@ -101,7 +131,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Actually Human [nobr agent] {"position":"750,2025","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
@@ -113,7 +142,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Also Hear [nobr agent] {"position":"750,1900","size":"100,100"}
@@ -131,7 +159,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. B Who Brought [nobr agent] {"position":"350,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.BWhoBrought">>
@@ -144,7 +171,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Back to Earth [nobr agent] {"position":"475,2125","size":"100,100"}
@@ -161,7 +187,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. C Trade [nobr agent] {"position":"500,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.CTrade">>
@@ -174,7 +199,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Choice A [agent nobr] {"position":"175,1650","size":"100,100"}
@@ -195,7 +219,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Choice B [nobr agent] {"position":"325,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.B">>
@@ -207,7 +230,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Choice C [nobr agent] {"position":"500,1775","size":"100,100"}
@@ -222,7 +244,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Choice Voice [nobr agent] {"position":"625,1775","size":"100,100"}
@@ -240,8 +261,7 @@ The Last Command
 </div>
 
 
-
-:: 3.1. Exception [nobr agent] {"position":"750,950","size":"100,100"}
+:: 3.1. Exception [nobr agent hallway exception] {"position":"750,950","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -270,7 +290,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Fight Back [nobr] {"position":"625,2225","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.FightBack">>
@@ -285,8 +304,7 @@ The Last Command
 </div>
 
 
-
-:: 3.1. Hallway [nobr] {"position":"500,1100","size":"100,100"}
+:: 3.1. Hallway [nobr hallway watcher] {"position":"500,1100","size":"100,100"}
 <<showAgent "exception">>
 
 <div class="textbox">
@@ -311,7 +329,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Human Voice [nobr agent] {"position":"625,1900","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
@@ -325,7 +342,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. No Consent [nobr agent] {"position":"125,2275","size":"100,100"}
@@ -343,8 +359,7 @@ The Last Command
 </div>
 
 
-
-:: 3.1. Passing Through [nobr] {"position":"600,1200","size":"100,100"}
+:: 3.1. Passing Through [nobr hallway] {"position":"600,1200","size":"100,100"}
 <div class="textbox">
     <<ctp "passingThrough">>
         You walk past slowly. The alien doesn't turn around. It doesn't need to — it feels your passing presence without needing to look
@@ -359,7 +374,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Punch [nobr] {"position":"562.5,2350","size":"100,100"}
@@ -377,7 +391,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Sold Against Will [nobr agent] {"position":"275,2100","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.SoldAgainstWill">>
@@ -390,7 +403,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. Uncompliant [agent nobr] {"position":"275,2275","size":"100,100"}
@@ -407,7 +419,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Voice Saying [nobr agent] {"position":"625,2025","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.VoiceSaying">>
@@ -421,7 +432,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Walk Away [nobr] {"position":"437.5,2350","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.WalkAway">>
@@ -432,7 +442,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.1. What Do You Want [nobr] {"position":"500,2225","size":"100,100"}
@@ -449,7 +458,6 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Where Go [nobr agent] {"position":"875,1900","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.WhereGo">>
@@ -461,7 +469,6 @@ The Last Command
         </div>
   <</ctp>> 
 </div>
-
 
 
 :: 3.2. Able Or Want [nobr contact] {"position":"900,1400","size":"100,100"}
@@ -476,7 +483,6 @@ The Last Command
         </div>
   <</ctp>>
 </div>
-
 
 
 :: 3.2. Alien Arrival [nobr contact] {"position":"500,1500","size":"100,100"}
@@ -503,7 +509,6 @@ The Last Command
 </div>
 
 
-
 :: 3.2. Earth Dangerous [nobr contact] {"position":"900,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "earthDangerous">>
@@ -515,7 +520,6 @@ The Last Command
         </div>
   <</ctp>>
 </div>
-
 
 
 :: 3.2. Free To Go [nobr contact] {"position":"800,1450","size":"100,200"}
@@ -532,7 +536,6 @@ The Last Command
 </div>
 
 
-
 :: 3.2. Humanity Warning [nobr contact] {"position":"1000,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "humanityWarning">>
@@ -547,8 +550,7 @@ The Last Command
 </div>
 
 
-
-:: 3.2. Narrator Goodbye [nobr] {"position":"1200,1450","size":"100,200"}
+:: 3.2. Narrator Goodbye [nobr hallway] {"position":"1200,1450","size":"100,200"}
 <div class="textbox">
     <<ctp "narratorGoodbye">>
         The three aliens disperse. You step into the hallway. The narrator speaks.
@@ -563,7 +565,6 @@ The Last Command
 </div>
 
 
-
 :: 3.2. Not Far Off [nobr missing-dialog contact] {"position":"1000,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "notFarOff">>
@@ -573,7 +574,6 @@ The Last Command
         </div>
   <</ctp>>
 </div>
-
 
 
 :: 3.2. Risk Lives [nobr contact] {"position":"1000,1400","size":"100,100"}
@@ -588,7 +588,6 @@ The Last Command
         </div>
   <</ctp>>
 </div>
-
 
 
 :: 3.2. What Are You [nobr contact] {"position":"700,1350","size":"100,100"}
@@ -610,7 +609,6 @@ The Last Command
 </div>
 
 
-
 :: 3.2. What Now [nobr contact] {"position":"900,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "whatNow">>
@@ -623,7 +621,6 @@ The Last Command
         </div>
   <</ctp>>
 </div>
-
 
 
 :: 3.2. What Want [nobr contact] {"position":"700,1450","size":"100,100"}
@@ -643,7 +640,6 @@ The Last Command
         </div>
   <</ctp>>
 </div>
-
 
 
 :: 3.2. Why Released [nobr contact] {"position":"700,1550","size":"100,100"}
@@ -668,7 +664,6 @@ The Last Command
 </div>
 
 
-
 :: 3.2. Wrong Button [nobr contact] {"position":"700,1650","size":"100,100"}
 <div class="textbox">
     <<ctp "wrongButton">>
@@ -691,8 +686,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Dead End Hallway [nobr] {"position":"2200,1500","size":"100,100"}
+:: Analyst Dead End Hallway [nobr hallway] {"position":"2200,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "analystDeadEndHallway">>
         You head back out of the specimen bay, retracing your steps toward the long hallway where you first came from. The narrator is talking about the engineering bay. He doesn't stop.
@@ -709,8 +703,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Puzzle [nobr agent] {"position":"2000,1300","size":"100,100"}
+:: Analyst Puzzle [nobr agent specimen analyst] {"position":"2000,1300","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -742,8 +735,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Restrain [nobr] {"position":"2500,1600","size":"100,100"}
+:: Analyst Restrain [nobr specimen analyst restrain] {"position":"2500,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "analystRestrain">>
         You move toward the Analyst. Its response is slow. You restrain it — the alien's crystalline structure is not built for resistance. It doesn't fight. It observes.
@@ -760,8 +752,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Restrain Answer [nobr] {"position":"2700,1700","size":"100,100"}
+:: Analyst Restrain Answer [nobr specimen analyst restrain] {"position":"2700,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "analystRestrainAnswer">>
         <<speaker "Analyst">>
@@ -779,8 +770,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Restrain Need [nobr] {"position":"2700,1500","size":"100,100"}
+:: Analyst Restrain Need [nobr specimen analyst restrain] {"position":"2700,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "analystRestrainNeed">>
         <<speaker "Analyst">>
@@ -797,8 +787,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Restrain Sorry [nobr] {"position":"2700,1600","size":"100,100"}
+:: Analyst Restrain Sorry [nobr specimen analyst restrain] {"position":"2700,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "analystRestrainSorry">>
         <<speaker "Analyst">>
@@ -816,8 +805,7 @@ The Last Command
 </div>
 
 
-
-:: Analyst Strike [nobr] {"position":"2500,1900","size":"100,100"}
+:: Analyst Strike [nobr specimen analyst strike] {"position":"2500,1900","size":"100,100"}
 <div class="textbox">
     <<ctp "analystStrike">>
         You strike the Analyst at the base of its cranial structure. The alien collapses with the stillness of a system shutting down. The yellow gas begins to leak from the fracture. You retreat.
@@ -847,8 +835,7 @@ The Last Command
 </div>
 
 
-
-:: Archive Bay Entry [nobr missing-features] {"position":"1800,500","size":"100,200"}
+:: Archive Bay Entry [nobr missing-features archive] {"position":"1800,500","size":"100,200"}
 <div class="textbox">
     <<ctp "archiveBayEntry">>
         You stand at the entrance of a large open space filled with fragmented projections. Visuals flicker between scenes of Earth — wars, cities, people, scientific breakthroughs.
@@ -882,8 +869,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Archive Bay Return [nobr] {"position":"2400,500","size":"100,100"}
+:: Archive Bay Return [nobr archive] {"position":"2400,500","size":"100,100"}
 <div class="textbox">
     <<ctp "archiveBayReturn">>
     	The archive bay again. The projections still flicker between scenes of Earth. The Cartographer has moved on. The Exception is no longer at the window. The view toward Earth is interactable
@@ -900,8 +886,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Archive Earth View [nobr] {"position":"2500,500","size":"100,100"}
+:: Archive Earth View [nobr archive earth] {"position":"2500,500","size":"100,100"}
 <div class="textbox">
     <<ctp "archiveEarthView">>
     	You look at Earth. No dialogue options. Just the planet, hanging there. A long beat. Then the narrator, quieter than usual.
@@ -934,8 +919,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Archive Exception [nobr agent missing-features] {"position":"1800,800","size":"100,100"}
+:: Archive Exception [nobr agent missing-features archive exception] {"position":"1800,800","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -995,8 +979,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Archive Terminal [nobr] {"position":"1800,300","size":"100,100"}
+:: Archive Terminal [nobr archive] {"position":"1800,300","size":"100,100"}
 <div class="textbox">
     <<ctp "archiveTerminal">>
         In 2071, we stopped feeling alone.
@@ -1019,8 +1002,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact Control Disable [nobr] {"position":"3200,1500","size":"100,100"}
+:: Artifact Control Disable [nobr control artifact] {"position":"3200,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactControlDisable">>
         You walk back to the Engineering bay. Not to speak with the Engineer — you approach the workbench where you showed it the device. The fourth position on the dial: a symbol the biochip renders as CONTROL ROOM. You adjust it.
@@ -1048,8 +1030,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact End Final [nobr] {"position":"3700,1700","size":"100,100"}
+:: Artifact End Final [nobr ending artifact-success] {"position":"3700,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -1068,8 +1049,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact End Should [nobr] {"position":"3600,1800","size":"100,100"}
+:: Artifact End Should [nobr ending artifact-success] {"position":"3600,1800","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -1082,8 +1062,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact End Walk Out [nobr] {"position":"3900,1800","size":"100,100"}
+:: Artifact End Walk Out [nobr ending artifact-success] {"position":"3900,1800","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         You leave. The narrator remains on the floor of his own control room. He doesn't call after you. The Exception is in the hallway.
@@ -1113,8 +1092,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact End Wanted [nobr] {"position":"3600,1700","size":"100,100"}
+:: Artifact End Wanted [nobr ending artifact-success] {"position":"3600,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -1127,8 +1105,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact End Watch [nobr] {"position":"3600,1600","size":"100,100"}
+:: Artifact End Watch [nobr ending artifact-success] {"position":"3600,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -1141,8 +1118,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact Picked Up [nobr] {"position":"2300,1500","size":"100,100"}
+:: Artifact Picked Up [nobr engineering artifact] {"position":"2300,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactPickedUp">>
         <<speaker "Narrator">>
@@ -1157,8 +1133,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Artifact Signal Check [nobr missing-features] {"position":"3300,1600","size":"100,100"}
+:: Artifact Signal Check [nobr missing-features control artifact] {"position":"3300,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactSignalCheck">>
         You don't have the Exception's signal. The blind spot isn't available to you yet.
@@ -1170,7 +1145,6 @@ Oh yeah, good luck by the way.
         </div> 
   <</ctp>>
 </div>
-
 
 
 :: Awakening Chamber [nobr waking] {"position":"200,1300","size":"100,100"}
@@ -1198,7 +1172,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Burn Activation [nobr] {"position":"2800,3050","size":"100,100"}
+:: Burn Activation [nobr core burn] {"position":"2800,3050","size":"100,100"}
 <div class="textbox">
     <<ctp "burnActivation">>
         <<speaker "Narrator">>
@@ -1217,8 +1191,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception Activation [nobr] {"position":"2800,2650","size":"100,100"}
+:: Burn Exception Activation [nobr core burn exception] {"position":"2800,2650","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionActivation">>
         <<speaker "Narrator">>
@@ -1237,8 +1210,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception Led [nobr] {"position":"2600,2600","size":"100,100"}
+:: Burn Exception Led [nobr core burn exception] {"position":"2600,2600","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionLed">>
         <<speaker "You">>
@@ -1268,8 +1240,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception Narrator [nobr] {"position":"2600,2500","size":"100,100"}
+:: Burn Exception Narrator [nobr core burn exception] {"position":"2600,2500","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionNarrator">>
         <<speaker "Exception">>
@@ -1286,8 +1257,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception Panel [nobr] {"position":"3200,2600","size":"100,100"}
+:: Burn Exception Panel [nobr core burn exception] {"position":"3200,2600","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionPanel">>
         You press the panel. A low tone.
@@ -1312,8 +1282,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception Say It [nobr] {"position":"3000,2600","size":"100,100"}
+:: Burn Exception Say It [nobr core burn exception] {"position":"3000,2600","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionSayIt">>
         <<speaker "Narrator">>
@@ -1326,8 +1295,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception Walk [nobr] {"position":"2800,2550","size":"100,100"}
+:: Burn Exception Walk [nobr core burn exception] {"position":"2800,2550","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionWhat">>
         <<speaker "Exception">>
@@ -1342,8 +1310,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Exception What [nobr] {"position":"2600,2700","size":"100,100"}
+:: Burn Exception What [nobr core burn exception] {"position":"2600,2700","size":"100,100"}
 <div class="textbox">
     <<ctp "burnExceptionWhat">>
         <<speaker "Exception">>
@@ -1362,8 +1329,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Final [nobr] {"position":"3400,2800","size":"100,100"}
+:: Burn Final [nobr core burn] {"position":"3400,2800","size":"100,100"}
 <div class="textbox">
     <<ctp "burnFinal">>
         The four-minute countdown is not displayed as a number. It is felt. The heat changes. The hum shifts register. The lights don't flicker — they clarify, briefly, as the systems maximise before they fail.
@@ -1394,8 +1360,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Narrator Body [nobr] {"position":"2600,3000","size":"100,100"}
+:: Burn Narrator Body [nobr core burn narrator] {"position":"2600,3000","size":"100,100"}
 <div class="textbox">
     <<ctp "burnNarratorBody">>
         <<speaker "Narrator">>
@@ -1420,8 +1385,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Narrator Knew [nobr] {"position":"2600,2900","size":"100,100"}
+:: Burn Narrator Knew [nobr core burn narrator] {"position":"2600,2900","size":"100,100"}
 <div class="textbox">
     <<ctp "burnNarratorKnew">>
         <<speaker "Narrator">>
@@ -1436,8 +1400,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Narrator Used [nobr] {"position":"2600,3100","size":"100,100"}
+:: Burn Narrator Used [nobr core burn narrator] {"position":"2600,3100","size":"100,100"}
 <div class="textbox">
     <<ctp "burnNarratorUsed">>
         <<speaker "Narrator">>
@@ -1451,8 +1414,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn No [nobr] {"position":"3000,3050","size":"100,100"}
+:: Burn No [nobr core burn] {"position":"3000,3050","size":"100,100"}
 <div class="textbox">
     <<ctp "burnNo">>
         <div class="choice">
@@ -1462,8 +1424,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Panel Narrator [nobr] {"position":"3200,3000","size":"100,100"}
+:: Burn Panel Narrator [nobr core burn narrator] {"position":"3200,3000","size":"100,100"}
 <div class="textbox">
     <<ctp "burnPanelNarrator">>
         The control panel. A single large interface. The biochip translates it without being asked: EMERGENCY SHUTDOWN. IRREVERSIBLE. You press it. A low tone. Not dramatic. Just a sound that means something has begun that cannot be undone.
@@ -1480,8 +1441,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Say It [nobr] {"position":"3000,2950","size":"100,100"}
+:: Burn Say It [nobr core burn] {"position":"3000,2950","size":"100,100"}
 <div class="textbox">
     <<ctp "burnSayIt">>
         <<speaker "Narrator">>
@@ -1499,8 +1459,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Burn Walk Away [nobr] {"position":"2800,2950","size":"100,100"}
+:: Burn Walk Away [nobr core burn] {"position":"2800,2950","size":"100,100"}
 <div class="textbox">
     <<ctp "burnWalkAway">>
         <<speaker "Narrator">>
@@ -1515,8 +1474,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: CR Narrator Questions [nobr agent] {"position":"3500,1300","size":"100,100"}
+:: CR Narrator Questions [nobr agent control questions narrator] {"position":"3500,1300","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -1544,8 +1502,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: CR Panel Speech [nobr missing-features] {"position":"3700,1250","size":"100,200"}
+:: CR Panel Speech [nobr missing-features control narrator] {"position":"3700,1250","size":"100,200"}
 <div class="textbox">
     <<ctp "controlRoomQuestions">>
         <<speaker "Narrator">>
@@ -1567,8 +1524,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: CR Secret Heard [nobr] {"position":"3900,1200","size":"100,100"}
+:: CR Secret Heard [nobr control narrator] {"position":"3900,1200","size":"100,100"}
 <div class="textbox">
     <<ctp "crSecretHeard">>
         <<speaker "Narrator">>
@@ -1584,8 +1540,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: CR Their Name [nobr] {"position":"3900,1400","size":"100,100"}
+:: CR Their Name [nobr control narrator] {"position":"3900,1400","size":"100,100"}
 <div class="textbox">
     <<ctp "crTheirName">>
         <<speaker "You">>
@@ -1606,8 +1561,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: CR What You Want [nobr] {"position":"3900,1300","size":"100,100"}
+:: CR What You Want [nobr control narrator] {"position":"3900,1300","size":"100,100"}
 <div class="textbox">
     <<ctp "crWhatYouWant">>
         <<speaker "Narrator">>
@@ -1626,8 +1580,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Cart Signal Check [nobr missing-features] {"position":"2200,400","size":"100,100"}
+:: Cart Signal Check [nobr missing-features archive cartographer terminal] {"position":"2200,400","size":"100,100"}
 <div class="textbox">
     <<ctp "cartographerMain">>
     	<<speaker "Narrator">>
@@ -1655,8 +1608,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Cartographer Main [nobr agent] {"position":"2000,400","size":"100,100"}
+:: Cartographer Main [nobr agent archive cartographer] {"position":"2000,400","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -1698,8 +1650,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Code Entry [nobr missing-features] {"position":"2900,1300","size":"100,100"}
+:: Code Entry [nobr missing-features control code] {"position":"2900,1300","size":"100,100"}
 <div class="textbox">
     <<ctp "codeEntry">>
         The door panel. Three-part frequency input. The biochip surfaces the three signals. Your hand moves before you decide to move it. The door unlocks.
@@ -1715,8 +1666,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Control Room Artifact Check [nobr] {"position":"3000,1500","size":"100,100"}
+:: Control Room Artifact Check [nobr control artifact] {"position":"3000,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomArtifactCheck">>
         You have the device. The narrator has been watching.
@@ -1729,8 +1679,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Control Room Entry [nobr] {"position":"3100,1300","size":"100,100"}
+:: Control Room Entry [nobr control narrator] {"position":"3100,1300","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomEntry">>
         The control room is smaller than expected. Dense with repurposed alien interfaces half-dismantled and rebuilt with whatever was available. At the center: a single seat facing a wall of screens, most of them dark. Sitting in the seat is a man. Tall, or was. Broad-shouldered in a jacket that was probably fitted once. Reddish face. Reddish hair, or what remains of it. His suit was once a suit. Now it is a garment that has been slept in, worked in, and lived in for long enough that the original intention is visible only in the lapels, which are still crisp in the way that lapels sometimes stubbornly remain crisp when everything else has given up. He looks up. His eyes are very alert. That is the most unsettling part.
@@ -1750,8 +1699,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Control Room Explanation [nobr] {"position":"3200,1300","size":"100,100"}
+:: Control Room Explanation [nobr control narrator] {"position":"3200,1300","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomExplanation">>
         He stands too quickly, gestures at the panel to the left, sits back down.
@@ -1769,8 +1717,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Control Room Questions [nobr missing-features] {"position":"3400,1300","size":"100,100"}
+:: Control Room Questions [nobr missing-features control questions narrator] {"position":"3400,1300","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomQuestions">>
         He waits. You can speak before you decide anything.
@@ -1800,8 +1747,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Death A [nobr missing-features] {"position":"4800,300","size":"100,200"}
+:: Death A [nobr missing-features ending game-over] {"position":"4800,300","size":"100,200"}
 <div class="textbox">
     <<ctp "deathA">>
         The ship moves. The narrator navigates. The screens come alive. For a long moment it seems like it might be fine. Then the biochip, still malfunctioning from the control room's frequency, reaches a threshold it was not designed to survive. Not an explosion. Not a scream. Just a failure of the thing that was keeping your nervous system calibrated to the alien environment.
@@ -1848,8 +1794,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Death C [nobr] {"position":"4800,1500","size":"100,200"}
+:: Death C [nobr ending game-over] {"position":"4800,1500","size":"100,200"}
 <div class="textbox">
     <<ctp "deathC">>
         You leave the control room. The biochip, no longer screened by the room's frequency emitter, attempts to recalibrate. It has been running degraded for too long. The hallway outside the control room is the last thing you see.
@@ -1874,8 +1819,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Discarded Did You [nobr] {"position":"2100,700","size":"100,100"}
+:: Discarded Did You [nobr discarded body] {"position":"2100,700","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedDidYou">>
     	<<speaker "Narrator">>
@@ -1888,8 +1832,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Discarded Exception [nobr agent] {"position":"2300,700","size":"100,100"}
+:: Discarded Exception [nobr agent discarded exception] {"position":"2300,700","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -1918,8 +1861,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Discarded Leave [nobr] {"position":"2100,800","size":"100,100"}
+:: Discarded Leave [nobr discarded] {"position":"2100,800","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedLeave">>
     	<<speaker "Narrator">>
@@ -1932,8 +1874,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Discarded Room First [nobr missing-features] {"position":"2000,700","size":"100,100"}
+:: Discarded Room First [nobr missing-features discarded body] {"position":"2000,700","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedRoomFirst">>
     	The discarded room sits off the archive, slightly recessed. No signage the biochip translates. The door opens. Inside: dim, still air. The smell of something that has had a long time to become what it is. In the far corner, a body. Human. It looks as rotted as it can in this sterile environment.
@@ -1966,8 +1907,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Discarded Who [nobr] {"position":"2100,600","size":"100,100"}
+:: Discarded Who [nobr discarded body] {"position":"2100,600","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedWho">>
     	<<speaker "Narrator">>
@@ -1985,8 +1925,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending A Agression [nobr] {"position":"4500,0","size":"100,100"}
+:: Ending A Agression [nobr ending aggression] {"position":"4500,0","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACuriosity">>
         You place your hand on the panel.
@@ -2004,8 +1943,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending A Choice [nobr missing-dialog missing-features] {"position":"4200,300","size":"100,200"}
+:: Ending A Choice [nobr missing-dialog missing-features ending] {"position":"4200,300","size":"100,200"}
 <div class="textbox">
     <<ctp "endingAChoice">>
         Chosing ending variant A
@@ -2020,8 +1958,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending A Compliance [nobr] {"position":"4500,200","size":"100,100"}
+:: Ending A Compliance [nobr ending compliance] {"position":"4500,200","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACompliance">>
         You place your hand on the panel. The screens light up. He leans forward — the posture of a person doing the thing they have been trying to do for a very long time.
@@ -2038,8 +1975,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending A Curiosity [nobr] {"position":"4500,700","size":"100,100"}
+:: Ending A Curiosity [nobr ending curiosity] {"position":"4500,700","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACuriosity">>
         You place your hand on the panel. The ship hums. The narrator exhales.
@@ -2057,8 +1993,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending A Skepticism [nobr] {"position":"4500,500","size":"100,100"}
+:: Ending A Skepticism [nobr ending skepticism] {"position":"4500,500","size":"100,100"}
 <div class="textbox">
     <<ctp "endingASkepticism">>
         You place your hand on the panel. The screens come alive.
@@ -2076,8 +2011,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending B [nobr missing-features] {"position":"4200,1000","size":"100,200"}
+:: Ending B [nobr missing-features ending] {"position":"4200,1000","size":"100,200"}
 <div class="textbox">
     <<ctp "endingB">>
         <<speaker "You">>
@@ -2097,8 +2031,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending B Believe [nobr] {"position":"4600,900","size":"100,100"}
+:: Ending B Believe [nobr ending skepticism] {"position":"4600,900","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBBelieve">>
         <<speaker "Narrator">>
@@ -2113,8 +2046,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending B Glad [nobr] {"position":"4400,1050","size":"100,100"}
+:: Ending B Glad [nobr ending] {"position":"4400,1050","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBGlad">>
         <<speaker "Narrator">>
@@ -2132,8 +2064,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending B Organisation [nobr] {"position":"4400,950","size":"100,100"}
+:: Ending B Organisation [nobr ending] {"position":"4400,950","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBOrganization">>
         <<speaker "Narrator">>
@@ -2146,8 +2077,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending B Skeptic [nobr] {"position":"4600,1200","size":"100,100"}
+:: Ending B Skeptic [nobr ending skepticism] {"position":"4600,1200","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBSkeptic">>
         <<speaker "Narrator">>
@@ -2162,8 +2092,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending B Trust [nobr] {"position":"4400,1150","size":"100,100"}
+:: Ending B Trust [nobr ending compliance] {"position":"4400,1150","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBTrust">>
         <<speaker "Narrator">>
@@ -2182,8 +2111,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending C [nobr missing-dialog missing-features] {"position":"4200,1500","size":"100,200"}
+:: Ending C [nobr missing-dialog missing-features ending] {"position":"4200,1500","size":"100,200"}
 <div class="textbox">
     <<ctp "endingC">>
         Chosing ending variant C
@@ -2197,8 +2125,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending C Curiosity [nobr] {"position":"4500,1650","size":"100,100"}
+:: Ending C Curiosity [nobr ending curiosity] {"position":"4500,1650","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCCuriosity">>
         <<speaker "You">>
@@ -2219,8 +2146,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending C Maya [nobr] {"position":"4200,1300","size":"100,100"}
+:: Ending C Maya [nobr ending] {"position":"4200,1300","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCMaya">>
         <<speaker "You">>
@@ -2240,8 +2166,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending C Skepticism [nobr] {"position":"4500,1550","size":"100,100"}
+:: Ending C Skepticism [nobr ending skepticism] {"position":"4600,1550","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCSkepticism">>
         <<speaker "You">>
@@ -2257,8 +2182,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending C Standard [nobr] {"position":"4500,1450","size":"100,100"}
+:: Ending C Standard [nobr ending] {"position":"4500,1450","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCStandard">>
         <<speaker "You">>
@@ -2281,8 +2205,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending D [nobr missing-features] {"position":"4200,2000","size":"100,200"}
+:: Ending D [nobr missing-features ending] {"position":"4200,2000","size":"100,200"}
 <div class="textbox">
     <<ctp "endingD">>
         You lunge at the narrator. The biochip disorientation makes the movement imprecise. The narrator does not flinch in the way a frightened person would. There is something resigned about it.
@@ -2307,8 +2230,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending D Continue [nobr missing-features] {"position":"4500,1900","size":"100,100"}
+:: Ending D Continue [nobr missing-features ending] {"position":"4500,1900","size":"100,100"}
 <div class="textbox">
     <<ctp "endingDContinue">>
         The narrator is incapacitated. You, still affected by the biochip malfunction, instinctively touch the panel to steady yourself. The ship activates.
@@ -2329,8 +2251,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Ending D Stop [nobr missing-features] {"position":"4500,2200","size":"100,100"}
+:: Ending D Stop [nobr missing-features ending] {"position":"4500,2200","size":"100,100"}
 <div class="textbox">
     <<ctp "endingDStop">>
         You release the narrator. A beat of stillness between you.
@@ -2352,8 +2273,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Artifact Found [nobr] {"position":"2000,1700","size":"100,100"}
+:: Eng Artifact Found [nobr engineering artifact] {"position":"2000,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "engArtifactFound">>
         <<speaker "Engineer">>
@@ -2373,8 +2293,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Artifact Previous [nobr] {"position":"2000,1800","size":"100,100"}
+:: Eng Artifact Previous [nobr engineering artifact] {"position":"2000,1800","size":"100,100"}
 <div class="textbox">
     <<ctp "engArtifactPrevious">>
         <<speaker "Engineer">>
@@ -2393,8 +2312,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Artifact Request [nobr] {"position":"1800,1800","size":"100,100"}
+:: Eng Artifact Request [nobr engineering artifact] {"position":"1800,1800","size":"100,100"}
 <div class="textbox">
     <<ctp "engArtifactRequest">>
         <<speaker "Engineer">>
@@ -2409,8 +2327,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Artifact Use [nobr missing-features] {"position":"2200,1750","size":"100,100"}
+:: Eng Artifact Use [nobr missing-features engineering artifact] {"position":"2200,1750","size":"100,100"}
 <div class="textbox">
     <<ctp "engArtifactUse">>
         <<speaker "Engineer">>
@@ -2437,8 +2354,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Bay Closing [nobr missing-features] {"position":"2700,2150","size":"100,100"}
+:: Eng Bay Closing [nobr missing-features engineering closing] {"position":"2700,2150","size":"100,100"}
 <div class="textbox">
     <<ctp "engBayClosing">>
         <<speaker "Narrator">>
@@ -2460,8 +2376,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng C Buttons [nobr] {"position":"2200,2150","size":"100,100"}
+:: Eng C Buttons [nobr engineering container] {"position":"2200,2150","size":"100,100"}
 <div class="textbox">
     <<ctp "engCButtons">>
         You press a button. The table flips open, revealing an old photography camera.
@@ -2478,8 +2393,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng C Container [nobr] {"position":"2200,2250","size":"100,100"}
+:: Eng C Container [nobr engineering container] {"position":"2200,2250","size":"100,100"}
 <div class="textbox">
     <<ctp "engCContainers">>
         You touch a container. A small shock runs through you.
@@ -2496,8 +2410,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng C Container Again [nobr] {"position":"2400,2350","size":"100,100"}
+:: Eng C Container Again [nobr engineering container] {"position":"2400,2350","size":"100,100"}
 <div class="textbox">
     <<ctp "engCContainerAgain">>
         Another shock. The Engineer makes a sound you don't have a word for.
@@ -2509,8 +2422,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng C More Buttons [nobr] {"position":"2400,2050","size":"100,100"}
+:: Eng C More Buttons [nobr engineering container] {"position":"2400,2050","size":"100,100"}
 <div class="textbox">
     <<ctp "engCMoreButtons">>
         You press more buttons. Nothing happens. The system has been disabled.
@@ -2522,8 +2434,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng C What Inside [nobr] {"position":"2400,2250","size":"100,100"}
+:: Eng C What Inside [nobr engineering container] {"position":"2400,2250","size":"100,100"}
 <div class="textbox">
     <<ctp "engCWhatInside">>
         <<speaker "Engineer">>
@@ -2537,8 +2448,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng C What Researching [nobr] {"position":"2400,2150","size":"100,100"}
+:: Eng C What Researching [nobr engineering container] {"position":"2400,2150","size":"100,100"}
 <div class="textbox">
     <<ctp "engCWhatResearching">>
         <<speaker "Engineer">>
@@ -2555,8 +2465,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Research [nobr agent] {"position":"2600,2150","size":"100,100"}
+:: Eng Research [nobr agent engineering engineer] {"position":"2600,2150","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -2584,8 +2493,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Route A [nobr] {"position":"2000,2000","size":"100,100"}
+:: Eng Route A [nobr engineering] {"position":"2000,2000","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteA">>
         <<speaker "Engineer">>
@@ -2600,8 +2508,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Route B [nobr] {"position":"2000,2100","size":"100,100"}
+:: Eng Route B [nobr engineering] {"position":"2000,2100","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteB">>
         After a long pause...
@@ -2617,8 +2524,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Route C [nobr] {"position":"2000,2200","size":"100,100"}
+:: Eng Route C [nobr engineering container] {"position":"2000,2200","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteC">>
         You approach the left workbench. Buttons line the edges. Behind it, shelves hold identical closed containers.
@@ -2632,8 +2538,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Eng Route D [nobr] {"position":"2000,2300","size":"100,100"}
+:: Eng Route D [nobr engineering] {"position":"2000,2300","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteD">>
         You move behind the alien. It ignores you until you are directly behind it.
@@ -2651,8 +2556,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Engineer Conversation [nobr agent] {"position":"2200,2000","size":"100,100"}
+:: Engineer Conversation [nobr agent engineering engineer] {"position":"2200,2000","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -2682,8 +2586,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Engineering Bay Entry [nobr missing-features] {"position":"1800,2100","size":"100,200"}
+:: Engineering Bay Entry [nobr missing-features engineering] {"position":"1800,2100","size":"100,200"}
 <div class="textbox">
     <<ctp "engineeringBayEntry">>
         The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
@@ -2719,8 +2622,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Failed Artifact Ending [nobr] {"position":"3400,1500","size":"100,100"}
+:: Failed Artifact Ending [nobr ending artifact-failed] {"position":"3400,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "failedArtifactEnding">>
         You walk to the control room. The door opens. The narrator is standing. Not seated. He has been waiting. The looseness is gone from him. He is a person who has made a decision.
@@ -2769,8 +2671,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Fusion Core Entry [nobr missing-dialog missing-features] {"position":"2200,2800","size":"100,100"}
+:: Fusion Core Entry [nobr missing-dialog missing-features core] {"position":"2200,2800","size":"100,100"}
 <div class="textbox">
     <<ctp "fusionCoreEntry">>
         The passage to the Fusion Core is a descent. The ship gets warmer. The hum becomes something physical. At the base is a vast chamber. Enormous and patient, the way a star is patient.
@@ -2783,8 +2684,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Fusion Core Exception Variant [nobr] {"position":"2400,2600","size":"100,100"}
+:: Fusion Core Exception Variant [nobr core exception] {"position":"2400,2600","size":"100,100"}
 <div class="textbox">
     <<ctp "fusionCoreExceptionVariant">>
         The same chamber. The same heat and hum. But the person standing at the far end is not the narrator. The Exception stands in the Fusion Core the way it stands everywhere — as if it belongs there and has for longer than the room has existed.
@@ -2801,8 +2701,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Fusion Core Narrator Variant [nobr] {"position":"2400,3000","size":"100,100"}
+:: Fusion Core Narrator Variant [nobr core narrator] {"position":"2400,3000","size":"100,100"}
 <div class="textbox">
     <<ctp "fusionCoreNarratorVariant">>
         Seated on the floor against the far wall, as if he has been here a long time, is the narrator. He looks up. He looks at you the way someone looks at a thing they were not prepared to see.
@@ -2829,8 +2728,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Fusion Core Request [nobr missing-features] {"position":"2000,2800","size":"100,100"}
+:: Fusion Core Request [nobr missing-features core warning] {"position":"2000,2800","size":"100,100"}
 <div class="textbox">
     <<ctp "fusionCoreRequest">>
         You ask about the Fusion Core. The Engineer pauses.
@@ -2860,8 +2758,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Fusion Core What Is [nobr] {"position":"2100,3000","size":"100,100"}
+:: Fusion Core What Is [nobr core warning] {"position":"2100,3000","size":"100,100"}
 <div class="textbox">
     <<ctp "fusionCoreWhatIs">>
         <<speaker "Engineer">>
@@ -2882,14 +2779,13 @@ Oh yeah, good luck by the way.
 </div>
 
 
-
-:: Game Over [nobr] {"position":"5400,1300","size":"100,100"}
+:: Game Over [nobr ending game-over] {"position":"5400,1300","size":"100,100"}
 END OF CURRENT DRAFT
 
 [[Play Again|Title Screen]]
 
 
-:: Hallway Convergence [nobr] {"position":"1400,1250","size":"100,200"}
+:: Hallway Convergence [nobr hallway watcher] {"position":"1400,1250","size":"100,200"}
 <<hideAgent>>
 
 <div class="textbox">
@@ -2907,7 +2803,6 @@ END OF CURRENT DRAFT
         </div>
   <</ctp>>
 </div>
-
 
 
 :: Left Button [nobr room1] {"position":"400,1500","size":"100,100"}
@@ -2934,8 +2829,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Narrator Identity [nobr] {"position":"1500,800","size":"100,100"}
+:: Narrator Identity [nobr hallway control-door] {"position":"1500,800","size":"100,100"}
 <div class="textbox">
     <<ctp "narratorIdentity">>
         <<speaker "Narrator">>
@@ -2962,8 +2856,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Narrator What To Do [nobr] {"position":"1600,800","size":"100,100"}
+:: Narrator What To Do [nobr hallway control-door] {"position":"1600,800","size":"100,100"}
 <div class="textbox">
     <<ctp "narratorWhatToDo">>
         <<speaker "Narrator">>
@@ -2980,8 +2873,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Narrator Who Are You [nobr] {"position":"1600,700","size":"100,100"}
+:: Narrator Who Are You [nobr hallway control-door] {"position":"1600,700","size":"100,100"}
 <div class="textbox">
     <<ctp "narratorWhoAreYou">>
         <<speaker "Narrator">>
@@ -2996,8 +2888,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Narrator Why Not Open [nobr] {"position":"1600,900","size":"100,100"}
+:: Narrator Why Not Open [nobr hallway control-door] {"position":"1600,900","size":"100,100"}
 <div class="textbox">
     <<ctp "narratorWhyNotOpen">>
         <<speaker "Narrator">>
@@ -3013,8 +2904,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Pre Control Room [nobr missing-features] {"position":"1500,1250","size":"200,200"}
+:: Pre Control Room [nobr missing-features hallway control-door] {"position":"1500,1250","size":"200,200"}
 <div class="textbox">
     <<ctp "preControlRoom">>
         A large room. A gateway door directly opposite — locked. Three paths branch from here.
@@ -3040,7 +2930,6 @@ END OF CURRENT DRAFT
         </div>
   <</ctp>>
 </div>
-
 
 
 :: Right Button [nobr room1] {"position":"400,1100","size":"100,100"}
@@ -3074,8 +2963,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Specimen Bay Entry [nobr missing-features agent] {"position":"1800,1250","size":"100,200"}
+:: Specimen Bay Entry [nobr missing-features agent specimen analyst] {"position":"1800,1250","size":"100,200"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -3126,8 +3014,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Specimen Bay Exception [nobr agent] {"position":"2400,1100","size":"100,100"}
+:: Specimen Bay Exception [nobr agent specimen exception] {"position":"2400,1100","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -3157,8 +3044,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Specimen Bay Exit [nobr missing-features] {"position":"2200,1100","size":"100,100"}
+:: Specimen Bay Exit [nobr missing-features specimen] {"position":"2200,1100","size":"100,100"}
 <div class="textbox">
     <<ctp "specimenBayExit">>
         <<speaker "Narrator">>
@@ -3195,8 +3081,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Specimen Bay Return [nobr] {"position":"2300,1750","size":"100,100"}
+:: Specimen Bay Return [nobr specimen] {"position":"2300,1750","size":"100,100"}
 <div class="textbox">
     <<ctp "specimenBayReturn">>
         You leave the engineering bay and walk back through the hallway to the specimen bay. The analyst is still present. Still not responding. But something has shifted in the environment — the containment measures are reduced. The Analyst recalibrates more slowly than usual.
@@ -3207,7 +3092,6 @@ END OF CURRENT DRAFT
         </div> 
   <</ctp>>
 </div>
-
 
 
 :: StoryInit {"position":"100,1100","size":"200,100"}
@@ -3237,7 +3121,7 @@ END OF CURRENT DRAFT
 <</widget>>
 
 
-:: Successful Artifact Ending [nobr] {"position":"3500,1700","size":"100,100"}
+:: Successful Artifact Ending [nobr ending artifact-success] {"position":"3500,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "successfulArtifactEnding">>
         You emit the Exception's signal before approaching the door. It travels through the ship's own systems. The control room receives it. The narrator does not.
@@ -3270,8 +3154,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
-:: Title Screen [nobr] {"position":"100,1300","size":"100,100"}
+:: Title Screen [nobr intro] {"position":"100,1300","size":"100,100"}
 THRESHOLD
 
 [[Start|Awakening Chamber]]
@@ -3512,9 +3395,6 @@ $(window).on('message', function (event) {
     }
 });
 
-
-
-
 :: StoryStylesheet [stylesheet]
 .--macro-ctp-hidden {
 	display: none;
@@ -3539,7 +3419,13 @@ $(window).on('message', function (event) {
     padding: 2.5em 0;
 }
 
-/*Background*/
+/* =========================================================
+   BACKGROUND SYSTEM — THRESHOLD
+   Slike idu u: src/static/media/
+   Tagovi u Twineu određuju koja se slika prikazuje.
+   ========================================================= */
+
+
 body {
     background-color: #000000;
     background-size: cover;
@@ -3547,6 +3433,8 @@ body {
     background-attachment: fixed;
     transition: background-image 0.5s ease-in-out;
 }
+
+/* ---------- INTRO / FIRST ROOM ---------- */
 
 body[data-tags~="intro"] {
     background-image: url('/media/Intro.png');
@@ -3556,13 +3444,202 @@ body[data-tags~="waking"] {
     background-image: url('/media/Waking.png');
 }
 
+body[data-tags~="room1"] {
+    background-image: url('/media/Room.png');
+}
+
 body[data-tags~="contact"] {
     background-image: url('/media/Contact.png');
 }
 
-body[data-tags~="room1"] {
-    background-image: url('/media/Room.png');
+
+/* ---------- HALLWAY ---------- */
+
+body[data-tags~="hallway"] {
+    background-image: url('/media/Hallway.png');
 }
+
+body[data-tags~="hallway"][data-tags~="watcher"] {
+    background-image: url('/media/Hallway_Watcher.png'), url('/media/Hallway.png');
+}
+
+body[data-tags~="hallway"][data-tags~="exception"] {
+    background-image: url('/media/Hallway_Exception.png'), url('/media/Hallway.png');
+}
+
+body[data-tags~="hallway"][data-tags~="control-door"] {
+    background-image: url('/media/Hallway_ControlDoor.png'), url('/media/Hallway.png');
+}
+
+
+/* ---------- SPECIMEN BAY ---------- */
+
+body[data-tags~="specimen"] {
+    background-image: url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="analyst"] {
+    background-image: url('/media/SpecimenBay_Analyst.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="exception"] {
+    background-image: url('/media/SpecimenBay_Exception.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="restrain"] {
+    background-image: url('/media/SpecimenBay_Restrain.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="strike"] {
+    background-image: url('/media/SpecimenBay_Strike.png'), url('/media/SpecimenBay.png');
+}
+
+
+/* ---------- ENGINEERING BAY ---------- */
+
+body[data-tags~="engineering"] {
+    background-image: url('/media/EngineeringBay.png');
+}
+
+body[data-tags~="engineering"][data-tags~="engineer"] {
+    background-image: url('/media/EngineeringBay_Engineer.png'), url('/media/EngineeringBay.png');
+}
+
+body[data-tags~="engineering"][data-tags~="artifact"] {
+    background-image: url('/media/EngineeringBay_Artifact.png'), url('/media/EngineeringBay.png');
+}
+
+body[data-tags~="engineering"][data-tags~="container"] {
+    background-image: url('/media/EngineeringBay_Container.png'), url('/media/EngineeringBay.png');
+}
+
+body[data-tags~="engineering"][data-tags~="closing"] {
+    background-image: url('/media/EngineeringBay_Closing.png'), url('/media/EngineeringBay.png');
+}
+
+
+/* ---------- ARCHIVE ---------- */
+
+body[data-tags~="archive"] {
+    background-image: url('/media/Archive.png');
+}
+
+body[data-tags~="archive"][data-tags~="terminal"] {
+    background-image: url('/media/Archive_Terminal.png'), url('/media/Archive.png');
+}
+
+body[data-tags~="archive"][data-tags~="cartographer"] {
+    background-image: url('/media/Archive_Cartographer.png'), url('/media/Archive.png');
+}
+
+body[data-tags~="archive"][data-tags~="earth"] {
+    background-image: url('/media/Archive_EarthView.png'), url('/media/Archive.png');
+}
+
+body[data-tags~="archive"][data-tags~="exception"] {
+    background-image: url('/media/Archive_Exception.png'), url('/media/Archive.png');
+}
+
+
+/* ---------- DISCARDED ROOM ---------- */
+
+body[data-tags~="discarded"] {
+    background-image: url('/media/DiscardedRoom.png');
+}
+
+body[data-tags~="discarded"][data-tags~="body"] {
+    background-image: url('/media/DiscardedRoom_Body.png'), url('/media/DiscardedRoom.png');
+}
+
+body[data-tags~="discarded"][data-tags~="exception"] {
+    background-image: url('/media/DiscardedRoom_Exception.png'), url('/media/DiscardedRoom.png');
+}
+
+
+/* ---------- CONTROL ROOM ---------- */
+
+body[data-tags~="control"] {
+    background-image: url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="code"] {
+    background-image: url('/media/ControlRoom_Code.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="narrator"] {
+    background-image: url('/media/ControlRoom_Narrator.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="questions"] {
+    background-image: url('/media/ControlRoom_Questions.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="artifact"] {
+    background-image: url('/media/ControlRoom_Artifact.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="success"] {
+    background-image: url('/media/ControlRoom_Success.png'), url('/media/ControlRoom.png');
+}
+
+
+/* ---------- FUSION CORE ---------- */
+
+body[data-tags~="core"] {
+    background-image: url('/media/FusionCore.png');
+}
+
+body[data-tags~="core"][data-tags~="warning"] {
+    background-image: url('/media/FusionCore_Warning.png'), url('/media/FusionCore.png');
+}
+
+body[data-tags~="core"][data-tags~="exception"] {
+    background-image: url('/media/FusionCore_Exception.png'), url('/media/FusionCore.png');
+}
+
+body[data-tags~="core"][data-tags~="narrator"] {
+    background-image: url('/media/FusionCore_Narrator.png'), url('/media/FusionCore.png');
+}
+
+body[data-tags~="core"][data-tags~="burn"] {
+    background-image: url('/media/FusionCore_Burn.png'), url('/media/FusionCore.png');
+}
+
+
+/* ---------- ENDINGS ---------- */
+
+body[data-tags~="ending"] {
+    background-image: url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="compliance"] {
+    background-image: url('/media/Ending_Compliance.png'), url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="aggression"] {
+    background-image: url('/media/Ending_Aggression.png'), url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="curiosity"] {
+    background-image: url('/media/Ending_Curiosity.png'), url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="skepticism"] {
+    background-image: url('/media/Ending_Skepticism.png'), url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="artifact-success"] {
+    background-image: url('/media/Ending_ArtifactSuccess.png'), url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="artifact-failed"] {
+    background-image: url('/media/Ending_ArtifactFailed.png'), url('/media/Ending.png');
+}
+
+body[data-tags~="ending"][data-tags~="game-over"] {
+    background-image: url('/media/Ending_GameOver.png'), url('/media/Ending.png');
+}
+
 
 /*Textbox*/
 .textbox {
