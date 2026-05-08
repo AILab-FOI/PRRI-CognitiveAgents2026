@@ -2904,6 +2904,10 @@ END OF CURRENT DRAFT
 </div>
 
 
+:: PassageHeader {"position":"50,750","size":"100,100"}
+
+
+
 :: Pre Control Room [nobr missing-features hallway control-door] {"position":"1500,1250","size":"200,200"}
 <div class="textbox">
     <<ctp "preControlRoom">>
@@ -3119,6 +3123,259 @@ END OF CURRENT DRAFT
     
     <<run $('#agent-iframe').attr('src', '')>> 
 <</widget>>
+
+<<script>>
+(function () {
+    function createBackgroundVideo() {
+        let video = document.getElementById("bgVideo");
+
+        if (!video) {
+            video = document.createElement("video");
+            video.id = "bgVideo";
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.style.display = "none";
+            document.body.prepend(video);
+        }
+
+        return video;
+    }
+
+    window.setBackgroundVideo = function (videoFile) {
+        const video = createBackgroundVideo();
+
+        if (!videoFile) {
+            video.pause();
+            video.removeAttribute("src");
+            video.style.display = "none";
+            video.load();
+            return;
+        }
+
+        const newSrc = "/media/live/" + videoFile;
+
+        if (video.getAttribute("src") !== newSrc) {
+            video.onerror = function () {
+                console.log("Video nije pronađen:", newSrc);
+                video.pause();
+                video.removeAttribute("src");
+                video.style.display = "none";
+                video.load();
+            };
+
+            video.setAttribute("src", newSrc);
+            video.style.display = "block";
+            video.style.opacity = "1";
+            video.load();
+
+            video.play().catch(function (error) {
+                console.log("Video autoplay problem:", error);
+            });
+        }
+    };
+
+    window.updateBackgroundVideoByTags = function () {
+        const tagString = document.body.getAttribute("data-tags") || "";
+        const tags = tagString.split(" ").filter(Boolean);
+
+        let video = null;
+
+        if (tags.includes("intro") && tags.includes("earth")) {
+            video = "Intro_Earth.mp4";
+        }
+        else if (tags.includes("intro") && tags.includes("arrival")) {
+            video = "Intro_Arrival.mp4";
+        }
+        else if (tags.includes("intro") && tags.includes("riots")) {
+            video = "Intro_Riots.mp4";
+        }
+        else if (tags.includes("intro") && tags.includes("kidnapping")) {
+            video = "Intro_Kidnapping.mp4";
+        }
+        else if (tags.includes("intro")) {
+            video = "Intro.mp4";
+        }
+
+        else if (tags.includes("waking")) {
+            video = "Waking.mp4";
+        }
+        else if (tags.includes("room1") && tags.includes("device")) {
+            video = "Room_Device.mp4";
+        }
+        else if (tags.includes("room1")) {
+            video = "Room.mp4";
+        }
+        else if (tags.includes("contact") && tags.includes("device")) {
+            video = "Contact_Device.mp4";
+        }
+        else if (tags.includes("contact")) {
+            video = "Contact.mp4";
+        }
+
+        else if (tags.includes("hallway") && tags.includes("watcher")) {
+            video = "Hallway_Watcher.mp4";
+        }
+        else if (tags.includes("hallway") && tags.includes("control-door")) {
+            video = "Hallway_ControlDoor.mp4";
+        }
+        else if (tags.includes("hallway") && tags.includes("dark")) {
+            video = "Hallway_Dark.mp4";
+        }
+        else if (tags.includes("hallway") && tags.includes("exception")) {
+            video = "Hallway_Exception.mp4";
+        }
+        else if (tags.includes("hallway")) {
+            video = "Hallway.mp4";
+        }
+
+        else if (tags.includes("archive") && tags.includes("cartographer")) {
+            video = "Archive_Cartographer.mp4";
+        }
+        else if (tags.includes("archive") && tags.includes("terminal")) {
+            video = "Archive_Terminal.mp4";
+        }
+        else if (tags.includes("archive") && tags.includes("earth")) {
+            video = "Archive_EarthView.mp4";
+        }
+        else if (tags.includes("archive") && tags.includes("exception")) {
+            video = "Archive_Exception.mp4";
+        }
+        else if (tags.includes("archive")) {
+            video = "Archive.mp4";
+        }
+
+        else if (tags.includes("engineering") && tags.includes("engineer")) {
+            video = "EngineeringBay_Engineer.mp4";
+        }
+        else if (tags.includes("engineering") && tags.includes("artifact")) {
+            video = "EngineeringBay_Artifact.mp4";
+        }
+        else if (tags.includes("engineering") && tags.includes("container")) {
+            video = "EngineeringBay_Container.mp4";
+        }
+        else if (tags.includes("engineering") && tags.includes("closing")) {
+            video = "EngineeringBay_Closing.mp4";
+        }
+        else if (tags.includes("engineering")) {
+            video = "EngineeringBay.mp4";
+        }
+
+        else if (tags.includes("specimen") && tags.includes("analyst") && tags.includes("restrain")) {
+            video = "SpecimenBay_Restrain.mp4";
+        }
+        else if (tags.includes("specimen") && tags.includes("analyst") && tags.includes("strike")) {
+            video = "SpecimenBay_Strike.mp4";
+        }
+        else if (tags.includes("specimen") && tags.includes("analyst")) {
+            video = "SpecimenBay_Analyst.mp4";
+        }
+        else if (tags.includes("specimen") && tags.includes("exception")) {
+            video = "SpecimenBay_Exception.mp4";
+        }
+        else if (tags.includes("specimen")) {
+            video = "SpecimenBay.mp4";
+        }
+
+        else if (tags.includes("discarded") && tags.includes("exception")) {
+            video = "DiscardedRoom_Exception.mp4";
+        }
+        else if (tags.includes("discarded") && tags.includes("body")) {
+            video = "DiscardedRoom_Body.mp4";
+        }
+        else if (tags.includes("discarded")) {
+            video = "DiscardedRoom.mp4";
+        }
+
+        else if (tags.includes("control") && tags.includes("code")) {
+            video = "ControlRoom_Code.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("narrator")) {
+            video = "ControlRoom_Narrator.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("questions")) {
+            video = "ControlRoom_Questions.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("artifact")) {
+            video = "ControlRoom_Artifact.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("success")) {
+            video = "ControlRoom_Success.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("door")) {
+            video = "ControlRoom_Door.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("distant")) {
+            video = "ControlRoom_Distant.mp4";
+        }
+        else if (tags.includes("control") && tags.includes("final")) {
+            video = "ControlRoom_Final.mp4";
+        }
+        else if (tags.includes("control")) {
+            video = "ControlRoom.mp4";
+        }
+
+        else if (tags.includes("core") && tags.includes("brightburn")) {
+            video = "FusionCore_BrightBurn.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("overload")) {
+            video = "FusionCore_Overload.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("finalchoice")) {
+            video = "FusionCore_FinalChoice.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("warning")) {
+            video = "FusionCore_Warning.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("exception")) {
+            video = "FusionCore_Exception.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("narrator")) {
+            video = "FusionCore_Narrator.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("burn")) {
+            video = "FusionCore_Burn.mp4";
+        }
+        else if (tags.includes("core")) {
+            video = "FusionCore.mp4";
+        }
+
+        else if (tags.includes("ending") && tags.includes("compliance")) {
+            video = "Ending_Compliance.mp4";
+        }
+        else if (tags.includes("ending") && tags.includes("aggression")) {
+            video = "Ending_Aggression.mp4";
+        }
+        else if (tags.includes("ending") && tags.includes("curiosity")) {
+            video = "Ending_Curiosity.mp4";
+        }
+        else if (tags.includes("ending") && tags.includes("skepticism")) {
+            video = "Ending_Skepticism.mp4";
+        }
+        else if (tags.includes("ending") && tags.includes("artifact-success")) {
+            video = "Ending_ArtifactSuccess.mp4";
+        }
+        else if (tags.includes("ending") && tags.includes("artifact-failed")) {
+            video = "Ending_ArtifactFailed.mp4";
+        }
+        else if (tags.includes("ending") && tags.includes("game-over")) {
+            video = "Ending_GameOver.mp4";
+        }
+        else if (tags.includes("ending")) {
+            video = "Ending.mp4";
+        }
+
+        window.setBackgroundVideo(video);
+    };
+
+    $(document).on(":passagedisplay", function () {
+        setTimeout(function () {
+            window.updateBackgroundVideoByTags();
+        }, 50);
+    });
+})();
+<</script>>
 
 
 :: Successful Artifact Ending [nobr ending artifact-success] {"position":"3500,1700","size":"100,100"}
@@ -3425,12 +3682,12 @@ $(window).on('message', function (event) {
    Tagovi u Twineu određuju koja se slika prikazuje.
    ========================================================= */
 
-
 body {
     background-color: #000000;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     transition: background-image 0.5s ease-in-out;
 }
 
@@ -3641,6 +3898,23 @@ body[data-tags~="ending"][data-tags~="game-over"] {
 }
 
 
+body[data-tags~="intro"],
+body[data-tags~="waking"],
+body[data-tags~="room1"],
+body[data-tags~="contact"],
+body[data-tags~="hallway"],
+body[data-tags~="archive"],
+body[data-tags~="engineering"],
+body[data-tags~="specimen"],
+body[data-tags~="discarded"],
+body[data-tags~="control"],
+body[data-tags~="core"],
+body[data-tags~="ending"] {
+    background-image: none !important;
+    background-color: #000000;
+}
+
+
 /*Textbox*/
 .textbox {
     position: fixed;
@@ -3784,4 +4058,99 @@ body[data-tags~="ending"][data-tags~="game-over"] {
 #menu li a:hover { 
     color: #fff !important; 
     background-color: rgba(255, 255, 255, 0.1) !important; 
+}
+
+/* =========================
+   LIVE BACKGROUND EFFECTS
+   ========================= */
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* lagani puls ambijenta */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.08), transparent 25%),
+        radial-gradient(circle at 80% 60%, rgba(255, 170, 50, 0.06), transparent 28%);
+    animation: ambientPulse 7s ease-in-out infinite;
+}
+
+/* sitne lebdeće čestice */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.30), transparent),
+        radial-gradient(1px 1px at 30% 75%, rgba(0,255,255,0.28), transparent),
+        radial-gradient(1px 1px at 55% 40%, rgba(255,255,255,0.20), transparent),
+        radial-gradient(1px 1px at 75% 15%, rgba(0,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.20), transparent);
+    animation: particleDrift 14s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes ambientPulse {
+    0% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.85;
+        transform: scale(1.03);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+}
+
+@keyframes particleDrift {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.45;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0.45;
+    }
+}
+
+/* =========================
+   LIVE VIDEO BACKGROUND
+   ========================= */
+
+#bgVideo {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: black;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Twine tekst i izbori moraju biti iznad videa */
+#story {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ako koristiš sidebar / UI, i on neka bude iznad */
+#ui-bar {
+    position: relative;
+    z-index: 3;
 }
