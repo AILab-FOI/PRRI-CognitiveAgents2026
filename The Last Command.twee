@@ -57,13 +57,22 @@ The Last Command
     "curiosity": "purple",
     "skepticism": "red",
     "entrance": "green",
-    "sample": "purple"
+    "sample": "purple",
+    "backstory": "blue",
+    "arrival": "orange",
+    "exchange": "green",
+    "riots": "blue",
+    "kidnapping": "red",
+    "artifactsuccess": "green",
+    "artifactfailed": "red",
+    "gameover": "green",
+    "control-": "green"
   },
   "zoom": 0.6
 }
 
 
-:: 3.1. A Doing Here [nobr agent] {"position":"250,1850","size":"100,100"}
+:: 3.1. A Doing Here [nobr agent hallway watcher] {"position":"250,1850","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.ADoingHere">>
         <<speaker "Exception">>
@@ -76,7 +85,7 @@ The Last Command
 </div>
 
 
-:: 3.1. A Environment [nobr agent] {"position":"175,1975","size":"100,100"}
+:: 3.1. A Environment [nobr agent hallway watcher] {"position":"175,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
@@ -92,7 +101,7 @@ The Last Command
 </div>
 
 
-:: 3.1. A Escaped [nobr agent] {"position":"375,1850","size":"100,100"}
+:: 3.1. A Escaped [nobr agent hallway watcher] {"position":"375,1850","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.AEscaped">>
         <<speaker "Exception">>
@@ -106,7 +115,7 @@ The Last Command
 </div>
 
 
-:: 3.1. A Obsessed [agent nobr] {"position":"75,1750","size":"100,100"}
+:: 3.1. A Obsessed [agent nobr hallway watcher] {"position":"75,1750","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.AObsessed">>
         <<speaker "Exception">>
@@ -120,7 +129,7 @@ The Last Command
 </div>
 
 
-:: 3.1. A Philosophical [nobr agent] {"position":"25,1975","size":"100,100"}
+:: 3.1. A Philosophical [nobr agent hallway watcher] {"position":"25,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
@@ -133,7 +142,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Actually Human [nobr agent] {"position":"750,2025","size":"100,100"}
+:: 3.1. Actually Human [nobr agent hallway watcher] {"position":"750,2025","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
         <<speaker "Exception">>
@@ -146,7 +155,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Also Hear [nobr agent] {"position":"750,1900","size":"100,100"}
+:: 3.1. Also Hear [nobr agent hallway watcher] {"position":"750,1900","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.AlsoHear">>
         <<speaker "Exception">>
@@ -161,7 +170,7 @@ The Last Command
 </div>
 
 
-:: 3.1. B Who Brought [nobr agent] {"position":"350,1975","size":"100,100"}
+:: 3.1. B Who Brought [nobr agent hallway watcher] {"position":"350,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.BWhoBrought">>
         <<speaker "Exception">>
@@ -175,7 +184,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Back to Earth [nobr agent] {"position":"475,2125","size":"100,100"}
+:: 3.1. Back to Earth [nobr agent hallway watcher] {"position":"475,2125","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.BackToEarth">>
         <<speaker "Exception">>
@@ -189,7 +198,7 @@ The Last Command
 </div>
 
 
-:: 3.1. C Trade [nobr agent] {"position":"500,1975","size":"100,100"}
+:: 3.1. C Trade [nobr agent hallway watcher] {"position":"500,1975","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.CTrade">>
         <<speaker "Exception">>
@@ -203,7 +212,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Choice A [agent nobr] {"position":"175,1650","size":"100,100"}
+:: 3.1. Choice A [agent nobr hallway watcher] {"position":"200,1650","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.choiceA">>
         <<speaker "You">>
@@ -221,7 +230,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Choice B [nobr agent] {"position":"325,1700","size":"100,100"}
+:: 3.1. Choice B [nobr agent hallway watcher] {"position":"325,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.B">>
         <<speaker "Exception">>
@@ -234,7 +243,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Choice C [nobr agent] {"position":"500,1775","size":"100,100"}
+:: 3.1. Choice C [nobr agent hallway watcher] {"position":"500,1775","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.ChoiceC">>
         <<speaker "Exception">>
@@ -248,7 +257,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Choice Voice [nobr agent] {"position":"625,1775","size":"100,100"}
+:: 3.1. Choice Voice [nobr agent hallway watcher] {"position":"625,1775","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.ChoiceVoice">>
         <<speaker "Exception">>
@@ -292,7 +301,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Fight Back [nobr] {"position":"625,2225","size":"100,100"}
+:: 3.1. Fight Back [nobr hallway watcher] {"position":"625,2225","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.FightBack">>
         <<speaker "Exception">>
@@ -331,7 +340,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Human Voice [nobr agent] {"position":"625,1900","size":"100,100"}
+:: 3.1. Human Voice [nobr agent watcher hallway] {"position":"625,1900","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
         <<speaker "Exception">>
@@ -346,7 +355,7 @@ The Last Command
 </div>
 
 
-:: 3.1. No Consent [nobr agent] {"position":"125,2275","size":"100,100"}
+:: 3.1. No Consent [nobr agent hallway watcher] {"position":"125,2275","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.NoConsent">>
         <<speaker "Exception">>
@@ -378,7 +387,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Punch [nobr] {"position":"562.5,2350","size":"100,100"}
+:: 3.1. Punch [nobr hallway watcher] {"position":"550,2350","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.Punch">>
         <<speaker "Exception">>
@@ -393,7 +402,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Sold Against Will [nobr agent] {"position":"275,2100","size":"100,100"}
+:: 3.1. Sold Against Will [nobr agent hallway watcher] {"position":"275,2100","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.SoldAgainstWill">>
         <<speaker "Exception">>
@@ -407,7 +416,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Uncompliant [agent nobr] {"position":"275,2275","size":"100,100"}
+:: 3.1. Uncompliant [agent nobr hallway watcher] {"position":"275,2275","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.Uncomplitant">>
         <<speaker "Exception">>
@@ -421,7 +430,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Voice Saying [nobr agent] {"position":"625,2025","size":"100,100"}
+:: 3.1. Voice Saying [nobr agent hallway watcher] {"position":"625,2025","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.VoiceSaying">>
         <<speaker "Exception">>
@@ -434,7 +443,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Walk Away [nobr] {"position":"437.5,2350","size":"100,100"}
+:: 3.1. Walk Away [nobr hallway watcher] {"position":"437.5,2350","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.WalkAway">>
         (You turn and walk. The alien watches — or whatever it does instead of watching.)
@@ -446,7 +455,7 @@ The Last Command
 </div>
 
 
-:: 3.1. What Do You Want [nobr] {"position":"500,2225","size":"100,100"}
+:: 3.1. What Do You Want [nobr hallway watcher] {"position":"500,2225","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.WhatDoYouWant">>
         <<speaker "Exception">>
@@ -981,7 +990,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Archive Terminal [nobr archive] {"position":"1800,300","size":"100,100"}
+:: Archive Terminal [nobr archive terminal] {"position":"1800,300","size":"100,100"}
 <div class="textbox">
     <<ctp "archiveTerminal">>
         In 2071, we stopped feeling alone.
@@ -1032,7 +1041,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Artifact End Final [nobr ending artifact-success] {"position":"3700,1700","size":"100,100"}
+:: Artifact End Final [nobr ending artifactsuccess] {"position":"3700,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -1051,7 +1060,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Artifact End Should [nobr ending artifact-success] {"position":"3600,1800","size":"100,100"}
+:: Artifact End Should [nobr ending artifactsuccess] {"position":"3600,1800","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -1064,7 +1073,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Artifact End Walk Out [nobr ending artifact-success] {"position":"3900,1800","size":"100,100"}
+:: Artifact End Walk Out [nobr ending artifactsuccess] {"position":"3900,1800","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         You leave. The narrator remains on the floor of his own control room. He doesn't call after you. The Exception is in the hallway.
@@ -1094,7 +1103,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Artifact End Wanted [nobr ending artifact-success] {"position":"3600,1700","size":"100,100"}
+:: Artifact End Wanted [nobr ending artifactsuccess] {"position":"3600,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -1107,7 +1116,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Artifact End Watch [nobr ending artifact-success] {"position":"3600,1600","size":"100,100"}
+:: Artifact End Watch [nobr ending artifactsuccess] {"position":"3600,1600","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -1149,7 +1158,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Awakening Chamber [nobr waking] {"position":"200,1300","size":"100,100"}
+:: Awakening Chamber [nobr waking] {"position":"250,1300","size":"100,100"}
 <<audio awakening play>>
 <div class="textbox">
     <<ctp "awakeningChamber">>
@@ -1582,7 +1591,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Cart Signal Check [nobr missing-features archive cartographer terminal] {"position":"2200,400","size":"100,100"}
+:: Cart Signal Check [nobr archive cartographer missing-features] {"position":"2200,400","size":"100,100"}
 <div class="textbox">
     <<ctp "cartographerMain">>
     	<<speaker "Narrator">>
@@ -1749,7 +1758,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Death A [nobr missing-features ending game-over] {"position":"4800,300","size":"100,200"}
+:: Death A [nobr missing-features ending control gameover] {"position":"4800,300","size":"100,200"}
 <div class="textbox">
     <<ctp "deathA">>
         The ship moves. The narrator navigates. The screens come alive. For a long moment it seems like it might be fine. Then the biochip, still malfunctioning from the control room's frequency, reaches a threshold it was not designed to survive. Not an explosion. Not a scream. Just a failure of the thing that was keeping your nervous system calibrated to the alien environment.
@@ -1796,7 +1805,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Death C [nobr ending game-over] {"position":"4800,1500","size":"100,200"}
+:: Death C [nobr ending control gameover] {"position":"4800,1500","size":"100,200"}
 <div class="textbox">
     <<ctp "deathC">>
         You leave the control room. The biochip, no longer screened by the room's frequency emitter, attempts to recalibrate. It has been running degraded for too long. The hallway outside the control room is the last thing you see.
@@ -1863,6 +1872,8 @@ Oh yeah, good luck by the way.
 </div>
 
 
+
+
 :: Discarded Leave [nobr discarded] {"position":"2100,800","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedLeave">>
@@ -1927,7 +1938,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Ending A Agression [nobr ending aggression] {"position":"4500,0","size":"100,100"}
+:: Ending A Aggression [nobr ending aggression] {"position":"4500,0","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACuriosity">>
         You place your hand on the panel.
@@ -1954,7 +1965,7 @@ Oh yeah, good luck by the way.
             [[A Compliance|Ending A Compliance]]
             [[A Skepticism|Ending A Skepticism]]
             [[A Curiosity|Ending A Curiosity]]
-            [[A Agression|Ending A Agression]]
+            [[A Agression|Ending A Aggression]]
         </div> 
   <</ctp>>
 </div>
@@ -2624,7 +2635,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Failed Artifact Ending [nobr ending artifact-failed] {"position":"3400,1500","size":"100,100"}
+:: Failed Artifact Ending [nobr ending artifactfailed] {"position":"3400,1500","size":"100,100"}
 <div class="textbox">
     <<ctp "failedArtifactEnding">>
         You walk to the control room. The door opens. The narrator is standing. Not seated. He has been waiting. The looseness is gone from him. He is a person who has made a decision.
@@ -2781,7 +2792,7 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Game Over [nobr ending game-over] {"position":"5400,1300","size":"100,100"}
+:: Game Over [nobr ending gameover control] {"position":"5400,1300","size":"100,100"}
 END OF CURRENT DRAFT
 
 [[Play Again|Title Screen]]
@@ -2804,6 +2815,54 @@ END OF CURRENT DRAFT
             [[Reach the room before the control room.|Pre Control Room]]
         </div>
   <</ctp>>
+</div>
+
+
+:: Intro Arrival [nobr intro arrival] {"position":"275,725","size":"100,100"}
+<div class="textbox">
+Their arrival did not unite humanity. It destabilised it.
+
+[[Continue|Intro Riots]]
+</div>
+
+
+:: Intro Backstory [nobr intro backstory] {"position":"25,725","size":"100,100"}
+<div class="textbox">
+The year is 2137. Long before you woke on the ship, Earth had already changed.
+
+[[Continue|Intro Earth]]
+</div>
+
+
+:: Intro Earth [nobr intro earth] {"position":"150,725","size":"100,100"}
+<div class="textbox">
+The first vessels appeared over Earth decades ago.
+
+[[Continue|Intro Arrival]]
+</div>
+
+
+:: Intro Exchange [nobr intro exchange] {"position":"225,875","size":"100,100"}
+<div class="textbox">
+Some people learned that the visitors would trade for living specimens.
+
+[[Continue|Intro Kidnapping]]
+</div>
+
+
+:: Intro Kidnapping [nobr intro kidnapping] {"position":"150,1025","size":"100,100"}
+<div class="textbox">
+You were one of them.
+
+[[Continue|Awakening Chamber]]
+</div>
+
+
+:: Intro Riots [nobr intro riots] {"position":"75,875","size":"100,100"}
+<div class="textbox">
+Governments fell. New powers formed in the gaps.
+
+[[Continue|Intro Exchange]]
 </div>
 
 
@@ -2904,10 +2963,6 @@ END OF CURRENT DRAFT
         </div>
   <</ctp>>
 </div>
-
-
-:: PassageHeader {"position":"50,750","size":"100,100"}
-
 
 
 :: Pre Control Room [nobr missing-features hallway control-door] {"position":"1500,1250","size":"200,200"}
@@ -3100,7 +3155,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: StoryInit {"position":"100,1100","size":"200,100"}
+:: StoryInit {"position":"500,600","size":"200,100"}
 <<set $curiosity = 0>>
 <<set $skepticism = 0>>
 <<set $compliance = 0>>
@@ -3184,7 +3239,10 @@ END OF CURRENT DRAFT
 
         let video = null;
 
-        if (tags.includes("intro") && tags.includes("earth")) {
+        if (tags.includes("intro") && tags.includes("backstory")) {
+            video = "Intro_Backstory.mp4";
+        }
+        else if (tags.includes("intro") && tags.includes("earth")) {
             video = "Intro_Earth.mp4";
         }
         else if (tags.includes("intro") && tags.includes("arrival")) {
@@ -3193,13 +3251,15 @@ END OF CURRENT DRAFT
         else if (tags.includes("intro") && tags.includes("riots")) {
             video = "Intro_Riots.mp4";
         }
+        else if (tags.includes("intro") && tags.includes("exchange")) {
+            video = "Intro_Exchange.mp4";
+        }
         else if (tags.includes("intro") && tags.includes("kidnapping")) {
             video = "Intro_Kidnapping.mp4";
         }
         else if (tags.includes("intro")) {
-            video = "Intro.mp4";
+            video = "Intro_Backstory.mp4";
         }
-
         else if (tags.includes("waking")) {
             video = "Waking.mp4";
         }
@@ -3216,17 +3276,17 @@ END OF CURRENT DRAFT
             video = "Contact.mp4";
         }
 
+        else if (tags.includes("hallway") && tags.includes("exception")) {
+             video = "Hallway_Exception.mp4";
+        }
         else if (tags.includes("hallway") && tags.includes("watcher")) {
             video = "Hallway_Watcher.mp4";
-        }
-        else if (tags.includes("hallway") && tags.includes("control-door")) {
-            video = "Hallway_ControlDoor.mp4";
         }
         else if (tags.includes("hallway") && tags.includes("dark")) {
             video = "Hallway_Dark.mp4";
         }
-        else if (tags.includes("hallway") && tags.includes("exception")) {
-            video = "Hallway_Exception.mp4";
+         else if (tags.includes("hallway") && tags.includes("controldoor")) {
+            video = "Hallway_ControlDoor.mp4";
         }
         else if (tags.includes("hallway")) {
             video = "Hallway.mp4";
@@ -3286,11 +3346,14 @@ END OF CURRENT DRAFT
     		video = "SpecimenBay.mp4";
 		}
 
-        else if (tags.includes("discarded") && tags.includes("exception")) {
+     	else if (tags.includes("discarded") && tags.includes("exception")) {
             video = "DiscardedRoom_Exception.mp4";
         }
         else if (tags.includes("discarded") && tags.includes("body")) {
             video = "DiscardedRoom_Body.mp4";
+        }
+        else if (tags.includes("discarded") && tags.includes("empty")) {
+            video = "DiscardedRoom.mp4";
         }
         else if (tags.includes("discarded")) {
             video = "DiscardedRoom.mp4";
@@ -3317,6 +3380,27 @@ END OF CURRENT DRAFT
         else if (tags.includes("control") && tags.includes("distant")) {
             video = "ControlRoom_Distant.mp4";
         }
+        else if (tags.includes("control") && tags.includes("gameover")) {
+    		video = "Ending_GameOver.mp4";
+		}
+        else if (tags.includes("control") && tags.includes("artifactsuccess")) {
+    		video = "Ending_ArtifactSuccess.mp4";
+		}
+		else if (tags.includes("control") && tags.includes("artifactfailed")) {
+    		video = "Ending_ArtifactFailed.mp4";
+		}
+        else if (tags.includes("control") && tags.includes("skepticism")) {
+      		video = "Ending_Skepticism.mp4";
+		}
+        else if (tags.includes("control") && tags.includes("curiosity")) {
+    		video = "Ending_Curiosity.mp4";
+		}
+        else if (tags.includes("control") && tags.includes("aggression")) {
+  			 video = "Ending_Aggression.mp4";
+		}
+        else if (tags.includes("control") && tags.includes("compliance")) {
+    		video = "Ending_Compliance.mp4";
+		}
         else if (tags.includes("control") && tags.includes("final")) {
             video = "ControlRoom_Final.mp4";
         }
@@ -3386,7 +3470,7 @@ END OF CURRENT DRAFT
 <</script>>
 
 
-:: Successful Artifact Ending [nobr ending artifact-success] {"position":"3500,1700","size":"100,100"}
+:: Successful Artifact Ending [nobr ending artifactsuccess] {"position":"3500,1700","size":"100,100"}
 <div class="textbox">
     <<ctp "successfulArtifactEnding">>
         You emit the Exception's signal before approaching the door. It travels through the ship's own systems. The control room receives it. The narrator does not.
@@ -3419,10 +3503,11 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Title Screen [nobr intro] {"position":"100,1300","size":"100,100"}
+:: Title Screen [nobr intro] {"position":"0,1300","size":"100,100"}
+\:: Title Screen [nobr intro]
 THRESHOLD
 
-[[Start|Awakening Chamber]]
+[[Start|Intro Backstory]]
 
 
 :: StoryScript [script]
@@ -3701,20 +3786,28 @@ body {
 
 /* ---------- INTRO / FIRST ROOM ---------- */
 
-body[data-tags~="intro"] {
-    background-image: url('/media/Intro.png');
+body[data-tags~="intro"][data-tags~="backstory"] {
+    background-image: url('/media/Intro_Backstory.png');
 }
 
-body[data-tags~="waking"] {
-    background-image: url('/media/Waking.png');
+body[data-tags~="intro"][data-tags~="earth"] {
+    background-image: url('/media/Intro_Earth.png'), url('/media/Intro_Backstory.png');
 }
 
-body[data-tags~="room1"] {
-    background-image: url('/media/Room.png');
+body[data-tags~="intro"][data-tags~="arrival"] {
+    background-image: url('/media/Intro_Arrival.png'), url('/media/Intro_Backstory.png');
 }
 
-body[data-tags~="contact"] {
-    background-image: url('/media/Contact.png');
+body[data-tags~="intro"][data-tags~="riots"] {
+    background-image: url('/media/Intro_Riots.png'), url('/media/Intro_Backstory.png');
+}
+
+body[data-tags~="intro"][data-tags~="exchange"] {
+    background-image: url('/media/Intro_Exchange.png'), url('/media/Intro_Backstory.png');
+}
+
+body[data-tags~="intro"][data-tags~="kidnapping"] {
+    background-image: url('/media/Intro_Kidnapping.png'), url('/media/Intro_Backstory.png');
 }
 
 
@@ -3743,10 +3836,6 @@ body[data-tags~="specimen"] {
     background-image: url('/media/SpecimenBay.png');
 }
 
-body[data-tags~="specimen"][data-tags~="entrance"] {
-    background-image: url('/media/SpecimenBay_Entrance.png'), url('/media/SpecimenBay.png');
-}
-
 body[data-tags~="specimen"][data-tags~="analyst"] {
     background-image: url('/media/SpecimenBay_Analyst.png'), url('/media/SpecimenBay.png');
 }
@@ -3755,12 +3844,12 @@ body[data-tags~="specimen"][data-tags~="sample"] {
     background-image: url('/media/SpecimenBay_Sample.png'), url('/media/SpecimenBay.png');
 }
 
-body[data-tags~="specimen"][data-tags~="exception"] {
-    background-image: url('/media/SpecimenBay_Exception.png'), url('/media/SpecimenBay.png');
-}
-
 body[data-tags~="specimen"][data-tags~="restrain"] {
     background-image: url('/media/SpecimenBay_Restrain.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="exception"] {
+    background-image: url('/media/SpecimenBay_Exception.png'), url('/media/SpecimenBay.png');
 }
 
 body[data-tags~="specimen"][data-tags~="strike"] {
@@ -3820,6 +3909,10 @@ body[data-tags~="discarded"] {
     background-image: url('/media/DiscardedRoom.png');
 }
 
+body[data-tags~="discarded"][data-tags~="empty"] {
+    background-image: url('/media/DiscardedRoom.png');
+}
+
 body[data-tags~="discarded"][data-tags~="body"] {
     background-image: url('/media/DiscardedRoom_Body.png'), url('/media/DiscardedRoom.png');
 }
@@ -3853,6 +3946,38 @@ body[data-tags~="control"][data-tags~="artifact"] {
 
 body[data-tags~="control"][data-tags~="success"] {
     background-image: url('/media/ControlRoom_Success.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="final"] {
+    background-image: url('/media/ControlRoom_Final.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="compliance"] {
+    background-image: url('/media/Ending_Compliance.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="aggression"] {
+    background-image: url('/media/Ending_Aggression.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="curiosity"] {
+    background-image: url('/media/Ending_Curiosity.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="skepticism"] {
+    background-image: url('/media/Ending_Skepticism.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="artifactsuccess"] {
+    background-image: url('/media/Ending_ArtifactSuccess.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="artifactfailed"] {
+    background-image: url('/media/Ending_ArtifactFailed.png'), url('/media/ControlRoom.png');
+}
+
+body[data-tags~="control"][data-tags~="gameover"] {
+    background-image: url('/media/Ending_GameOver.png'), url('/media/ControlRoom.png');
 }
 
 
@@ -3914,21 +4039,6 @@ body[data-tags~="ending"][data-tags~="game-over"] {
 }
 
 
-body[data-tags~="intro"],
-body[data-tags~="waking"],
-body[data-tags~="room1"],
-body[data-tags~="contact"],
-body[data-tags~="hallway"],
-body[data-tags~="archive"],
-body[data-tags~="engineering"],
-body[data-tags~="specimen"],
-body[data-tags~="discarded"],
-body[data-tags~="control"],
-body[data-tags~="core"],
-body[data-tags~="ending"] {
-    background-image: none !important;
-    background-color: #000000;
-}
 
 
 /*Textbox*/
