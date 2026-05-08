@@ -55,7 +55,9 @@ The Last Command
     "aggression": "red",
     "compliance": "red",
     "curiosity": "purple",
-    "skepticism": "red"
+    "skepticism": "red",
+    "entrance": "green",
+    "sample": "purple"
   },
   "zoom": 0.6
 }
@@ -703,7 +705,7 @@ The Last Command
 </div>
 
 
-:: Analyst Puzzle [nobr agent specimen analyst] {"position":"2000,1300","size":"100,100"}
+:: Analyst Puzzle [nobr agent specimen analyst sample] {"position":"2000,1300","size":"100,100"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -2967,7 +2969,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Specimen Bay Entry [nobr missing-features agent specimen analyst] {"position":"1800,1250","size":"100,200"}
+:: Specimen Bay Entry [nobr missing-features specimen entrance agent] {"position":"1800,1250","size":"100,200"}
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -3048,7 +3050,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Specimen Bay Exit [nobr missing-features specimen] {"position":"2200,1100","size":"100,100"}
+:: Specimen Bay Exit [nobr missing-features specimen exception] {"position":"2200,1100","size":"100,100"}
 <div class="textbox">
     <<ctp "specimenBayExit">>
         <<speaker "Narrator">>
@@ -3085,7 +3087,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Specimen Bay Return [nobr specimen] {"position":"2300,1750","size":"100,100"}
+:: Specimen Bay Return [nobr specimen analyst] {"position":"2300,1750","size":"100,100"}
 <div class="textbox">
     <<ctp "specimenBayReturn">>
         You leave the engineering bay and walk back through the hallway to the specimen bay. The analyst is still present. Still not responding. But something has shifted in the environment — the containment measures are reduced. The Analyst recalibrates more slowly than usual.
@@ -3261,22 +3263,28 @@ END OF CURRENT DRAFT
         else if (tags.includes("engineering")) {
             video = "EngineeringBay.mp4";
         }
-
-        else if (tags.includes("specimen") && tags.includes("analyst") && tags.includes("restrain")) {
-            video = "SpecimenBay_Restrain.mp4";
-        }
-        else if (tags.includes("specimen") && tags.includes("analyst") && tags.includes("strike")) {
-            video = "SpecimenBay_Strike.mp4";
-        }
-        else if (tags.includes("specimen") && tags.includes("analyst")) {
-            video = "SpecimenBay_Analyst.mp4";
-        }
-        else if (tags.includes("specimen") && tags.includes("exception")) {
-            video = "SpecimenBay_Exception.mp4";
-        }
-        else if (tags.includes("specimen")) {
-            video = "SpecimenBay.mp4";
-        }
+        
+        else if (tags.includes("specimen") && tags.includes("strike")) {
+    		video = "SpecimenBay_Strike.mp4";
+		}
+		else if (tags.includes("specimen") && tags.includes("restrain")) {
+    		video = "SpecimenBay_Restrain.mp4";
+		}
+		else if (tags.includes("specimen") && tags.includes("exception")) {
+    		video = "SpecimenBay_Exception.mp4";
+		}
+		else if (tags.includes("specimen") && tags.includes("sample")) {
+    		video = "SpecimenBay_Sample.mp4";
+		}
+		else if (tags.includes("specimen") && tags.includes("entrance")) {
+    		video = "SpecimenBay_Entrance.mp4";
+		}
+		else if (tags.includes("specimen") && tags.includes("analyst")) {
+    		video = "SpecimenBay_Analyst.mp4";
+		}
+		else if (tags.includes("specimen")) {
+    		video = "SpecimenBay.mp4";
+		}
 
         else if (tags.includes("discarded") && tags.includes("exception")) {
             video = "DiscardedRoom_Exception.mp4";
@@ -3735,8 +3743,16 @@ body[data-tags~="specimen"] {
     background-image: url('/media/SpecimenBay.png');
 }
 
+body[data-tags~="specimen"][data-tags~="entrance"] {
+    background-image: url('/media/SpecimenBay_Entrance.png'), url('/media/SpecimenBay.png');
+}
+
 body[data-tags~="specimen"][data-tags~="analyst"] {
     background-image: url('/media/SpecimenBay_Analyst.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="sample"] {
+    background-image: url('/media/SpecimenBay_Sample.png'), url('/media/SpecimenBay.png');
 }
 
 body[data-tags~="specimen"][data-tags~="exception"] {

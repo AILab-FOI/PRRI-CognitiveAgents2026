@@ -186,8 +186,16 @@ body[data-tags~="specimen"] {
     background-image: url('/media/SpecimenBay.png');
 }
 
+body[data-tags~="specimen"][data-tags~="entrance"] {
+    background-image: url('/media/SpecimenBay_Entrance.png'), url('/media/SpecimenBay.png');
+}
+
 body[data-tags~="specimen"][data-tags~="analyst"] {
     background-image: url('/media/SpecimenBay_Analyst.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="sample"] {
+    background-image: url('/media/SpecimenBay_Sample.png'), url('/media/SpecimenBay.png');
 }
 
 body[data-tags~="specimen"][data-tags~="exception"] {
@@ -836,7 +844,7 @@ $(window).on('message', function (event) {
             console.error("Agent tried to navigate to a passage that doesn't exist: " + data.targetPassage);
         }
     }
-});</script><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="bedroom" color="orange"></tw-tag><tw-tag name="intro" color="blue"></tw-tag><tw-tag name="waking" color="purple"></tw-tag><tw-tag name="contact" color="orange"></tw-tag><tw-tag name="room1" color="green"></tw-tag><tw-tag name="agent" color="green"></tw-tag><tw-tag name="missing-dialog" color="red"></tw-tag><tw-tag name="missing-features" color="blue"></tw-tag><tw-tag name="agenmt" color="purple"></tw-tag><tw-tag name="nobre" color="green"></tw-tag><tw-tag name="non" color="red"></tw-tag><tw-tag name="hallway" color="orange"></tw-tag><tw-tag name="watcher" color="orange"></tw-tag><tw-tag name="exception" color="blue"></tw-tag><tw-tag name="control-door" color="green"></tw-tag><tw-tag name="archive" color="red"></tw-tag><tw-tag name="cartographer" color="blue"></tw-tag><tw-tag name="terminal" color="green"></tw-tag><tw-tag name="earth" color="green"></tw-tag><tw-tag name="engineering" color="green"></tw-tag><tw-tag name="engineer" color="green"></tw-tag><tw-tag name="container" color="blue"></tw-tag><tw-tag name="artifact" color="green"></tw-tag><tw-tag name="closing" color="orange"></tw-tag><tw-tag name="specimen" color="green"></tw-tag><tw-tag name="analyst" color="orange"></tw-tag><tw-tag name="restrain" color="green"></tw-tag><tw-tag name="strike" color="purple"></tw-tag><tw-tag name="discarded" color="blue"></tw-tag><tw-tag name="body" color="yellow"></tw-tag><tw-tag name="control" color="orange"></tw-tag><tw-tag name="code" color="yellow"></tw-tag><tw-tag name="narrator" color="green"></tw-tag><tw-tag name="questions" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-tag name="artifact-failed" color="yellow"></tw-tag><tw-tag name="artifact-success" color="blue"></tw-tag><tw-tag name="core" color="yellow"></tw-tag><tw-tag name="warning" color="orange"></tw-tag><tw-tag name="burn" color="green"></tw-tag><tw-tag name="game-over" color="green"></tw-tag><tw-tag name="aggression" color="red"></tw-tag><tw-tag name="compliance" color="red"></tw-tag><tw-tag name="curiosity" color="purple"></tw-tag><tw-tag name="skepticism" color="red"></tw-tag><tw-passagedata pid="1" name="3.1. A Doing Here" tags="nobr agent" position="250,1850" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+});</script><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="bedroom" color="orange"></tw-tag><tw-tag name="intro" color="blue"></tw-tag><tw-tag name="waking" color="purple"></tw-tag><tw-tag name="contact" color="orange"></tw-tag><tw-tag name="room1" color="green"></tw-tag><tw-tag name="agent" color="green"></tw-tag><tw-tag name="missing-dialog" color="red"></tw-tag><tw-tag name="missing-features" color="blue"></tw-tag><tw-tag name="agenmt" color="purple"></tw-tag><tw-tag name="nobre" color="green"></tw-tag><tw-tag name="non" color="red"></tw-tag><tw-tag name="hallway" color="orange"></tw-tag><tw-tag name="watcher" color="orange"></tw-tag><tw-tag name="exception" color="blue"></tw-tag><tw-tag name="control-door" color="green"></tw-tag><tw-tag name="archive" color="red"></tw-tag><tw-tag name="cartographer" color="blue"></tw-tag><tw-tag name="terminal" color="green"></tw-tag><tw-tag name="earth" color="green"></tw-tag><tw-tag name="engineering" color="green"></tw-tag><tw-tag name="engineer" color="green"></tw-tag><tw-tag name="container" color="blue"></tw-tag><tw-tag name="artifact" color="green"></tw-tag><tw-tag name="closing" color="orange"></tw-tag><tw-tag name="specimen" color="green"></tw-tag><tw-tag name="analyst" color="orange"></tw-tag><tw-tag name="restrain" color="green"></tw-tag><tw-tag name="strike" color="purple"></tw-tag><tw-tag name="discarded" color="blue"></tw-tag><tw-tag name="body" color="yellow"></tw-tag><tw-tag name="control" color="orange"></tw-tag><tw-tag name="code" color="yellow"></tw-tag><tw-tag name="narrator" color="green"></tw-tag><tw-tag name="questions" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-tag name="artifact-failed" color="yellow"></tw-tag><tw-tag name="artifact-success" color="blue"></tw-tag><tw-tag name="core" color="yellow"></tw-tag><tw-tag name="warning" color="orange"></tw-tag><tw-tag name="burn" color="green"></tw-tag><tw-tag name="game-over" color="green"></tw-tag><tw-tag name="aggression" color="red"></tw-tag><tw-tag name="compliance" color="red"></tw-tag><tw-tag name="curiosity" color="purple"></tw-tag><tw-tag name="skepticism" color="red"></tw-tag><tw-tag name="entrance" color="green"></tw-tag><tw-tag name="sample" color="purple"></tw-tag><tw-passagedata pid="1" name="3.1. A Doing Here" tags="nobr agent" position="250,1850" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.ADoingHere&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
         Existential. Not practical. You&#39;re introducing thoughts that weren&#39;t there before.
@@ -1314,7 +1322,7 @@ $(window).on('message', function (event) {
             [[Leave it and continue to engineering.|Engineering Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Analyst Puzzle" tags="nobr agent specimen analyst" position="2000,1300" size="100,100">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Analyst Puzzle" tags="nobr agent specimen analyst sample" position="2000,1300" size="100,100">&lt;&lt;script&gt;&gt;
             function addAgent(name) {
                 const iframe = document.createElement(&#39;iframe&#39;);
                 iframe.width = &#39;400&#39;;
@@ -3146,7 +3154,7 @@ Oh yeah, good luck by the way.
             [[Step through the door.|3.1. Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Specimen Bay Entry" tags="nobr missing-features agent specimen analyst" position="1800,1250" size="100,200">&lt;&lt;script&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Specimen Bay Entry" tags="nobr missing-features specimen entrance agent" position="1800,1250" size="100,200">&lt;&lt;script&gt;&gt;
             function addAgent(name) {
                 const iframe = document.createElement(&#39;iframe&#39;);
                 iframe.width = &#39;400&#39;;
@@ -3219,7 +3227,7 @@ Oh yeah, good luck by the way.
             [[Walk back through the hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="Specimen Bay Exit" tags="nobr missing-features specimen" position="2200,1100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="Specimen Bay Exit" tags="nobr missing-features specimen exception" position="2200,1100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayExit&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         You look like you just felt it again. It feels like a routine to you now.
@@ -3252,7 +3260,7 @@ Oh yeah, good luck by the way.
             [[&quot;I&#39;m fine. Just keep moving.&quot;|Pre Control Room]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="Specimen Bay Return" tags="nobr specimen" position="2300,1750" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="Specimen Bay Return" tags="nobr specimen analyst" position="2300,1750" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayReturn&quot;&gt;&gt;
         You leave the engineering bay and walk back through the hallway to the specimen bay. The analyst is still present. Still not responding. But something has shifted in the environment — the containment measures are reduced. The Analyst recalibrates more slowly than usual.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3423,22 +3431,28 @@ Oh yeah, good luck by the way.
         else if (tags.includes(&quot;engineering&quot;)) {
             video = &quot;EngineeringBay.mp4&quot;;
         }
-
-        else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;analyst&quot;) &amp;&amp; tags.includes(&quot;restrain&quot;)) {
-            video = &quot;SpecimenBay_Restrain.mp4&quot;;
-        }
-        else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;analyst&quot;) &amp;&amp; tags.includes(&quot;strike&quot;)) {
-            video = &quot;SpecimenBay_Strike.mp4&quot;;
-        }
-        else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;analyst&quot;)) {
-            video = &quot;SpecimenBay_Analyst.mp4&quot;;
-        }
-        else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;exception&quot;)) {
-            video = &quot;SpecimenBay_Exception.mp4&quot;;
-        }
-        else if (tags.includes(&quot;specimen&quot;)) {
-            video = &quot;SpecimenBay.mp4&quot;;
-        }
+        
+        else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;strike&quot;)) {
+    		video = &quot;SpecimenBay_Strike.mp4&quot;;
+		}
+		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;restrain&quot;)) {
+    		video = &quot;SpecimenBay_Restrain.mp4&quot;;
+		}
+		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;exception&quot;)) {
+    		video = &quot;SpecimenBay_Exception.mp4&quot;;
+		}
+		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;sample&quot;)) {
+    		video = &quot;SpecimenBay_Sample.mp4&quot;;
+		}
+		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;entrance&quot;)) {
+    		video = &quot;SpecimenBay_Entrance.mp4&quot;;
+		}
+		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;analyst&quot;)) {
+    		video = &quot;SpecimenBay_Analyst.mp4&quot;;
+		}
+		else if (tags.includes(&quot;specimen&quot;)) {
+    		video = &quot;SpecimenBay.mp4&quot;;
+		}
 
         else if (tags.includes(&quot;discarded&quot;) &amp;&amp; tags.includes(&quot;exception&quot;)) {
             video = &quot;DiscardedRoom_Exception.mp4&quot;;
