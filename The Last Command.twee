@@ -75,11 +75,27 @@ The Last Command
 }
 
 
-:: 3.1. A Doing Here [nobr agent hallway watcher] {"position":"250,1850","size":"100,100"}
+:: 3.1. A Doing Here [nobr agent hallway exception] {"position":"250,1850","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "3.1.ADoingHere">>
         <<speaker "Exception">>
-        Existential. Not practical. You're introducing thoughts that weren't there before.
+        Existential.
+    <<ctpNext clear>>
+        Not practical.
+    <<ctpNext clear>>
+        You ask what you are doing here as if location requires purpose.
+    <<ctpNext clear>>
+        Your body is here because it was transferred. Your mind is here because it woke before the process was finished.
+    <<ctpNext clear>>
+        The third presence inside you complicates the answer.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Third presence?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        The voice you obeyed before you met me.
     <<ctpNext clear>>
         <div class="choice">
             [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
@@ -88,14 +104,29 @@ The Last Command
 </div>
 
 
-:: 3.1. A Environment [nobr agent hallway watcher] {"position":"175,1975","size":"100,100"}
+:: 3.1. A Environment [nobr agent hallway exception] {"position":"175,1975","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
-        Life and death are phases of existence. Death isn't the end. We only ever die when away from our home. Our world wouldn't be accommodating for you. This is like emulating a small Earth while orbiting it.
+        Your question assumes that a world is a place.
+    <<ctpNext clear>>
+        For you, environment is surface, air, gravity, temperature, shelter.
+    <<ctpNext clear>>
+        For us, environment is sequence. Pressure changes. Chemical memory. Light that arrives too late to warn anything living beneath it.
+    <<ctpNext clear>>
+        Your body would fail there before your mind could name what was happening.
+    <<ctpNext clear>>
+        This vessel imitates a narrow version of your Earth so that you remain coherent.
     <<ctpNext clear>>
         <<speaker "You">>
-        Thanks..?
+        That's supposed to make me feel better?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        No.
+    <<ctpNext clear>>
+        It is only the reason you are still able to ask.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue into the hallway.|Hallway Convergence]]
@@ -104,25 +135,49 @@ The Last Command
 </div>
 
 
-:: 3.1. A Escaped [nobr agent hallway watcher] {"position":"375,1850","size":"100,100"}
+:: 3.1. A Escaped [nobr agent hallway exception] {"position":"375,1850","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "3.1.AEscaped">>
         <<speaker "Exception">>
-        Escaped. Escaping what? You don't look escaped.
+        Escaped.
+    <<ctpNext clear>>
+        Escaping what?
+    <<ctpNext clear>>
+        You do not look escaped.
+    <<ctpNext clear>>
+        The chamber opened. Your body moved. The corridor accepted you. None of those patterns indicate freedom.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That's not exactly comforting.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        Comfort is not required for accuracy.
     <<ctpNext clear>>
         <div class="choice">
             [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
-[[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?|3.1. C Trade]]
+            [[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?|3.1. C Trade]]
         </div>
   <</ctp>> 
 </div>
 
 
-:: 3.1. A Obsessed [agent nobr hallway watcher] {"position":"75,1750","size":"100,100"}
+:: 3.1. A Obsessed [agent nobr hallway exception] {"position":"75,1750","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "3.1.AObsessed">>
         <<speaker "Exception">>
-        Intent isn't specific to your world. The focus is. If the environment aligns, intent doesn't need to come first.
+        Intent is not specific to your world.
+    <<ctpNext clear>>
+        Your focus on it is.
+    <<ctpNext clear>>
+        You search for a mind behind every motion. A reason. A will. A decision that came before the act.
+    <<ctpNext clear>>
+        Where I come from, the environment speaks first. If pressure, hunger, heat, gravity and survival align, action happens before intent can name itself.
+    <<ctpNext clear>>
+        You call that instinct. We call it sequence.
     <<ctpNext clear>>
         <div class="choice">
             [[Are all aliens this philosophical?|3.1. A Philosophical]]
@@ -132,11 +187,27 @@ The Last Command
 </div>
 
 
-:: 3.1. A Philosophical [nobr agent hallway watcher] {"position":"25,1975","size":"100,100"}
+:: 3.1. A Philosophical [nobr agent hallway exception] {"position":"25,1975","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
-        Yes. Others are present here as well. Their respective research rooms branch off after the end of the hallway.
+        Philosophical is your category.
+    <<ctpNext clear>>
+        The others would not use it.
+    <<ctpNext clear>>
+        One measures living systems. One maintains the vessel's structure. One studies your world as a pattern viewed from far away.
+    <<ctpNext clear>>
+        They will each appear different to you, because each of them is listening to a different part of the same problem.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        And the problem is me?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        Not only you.
+    <<ctpNext clear>>
+        Your species.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue into the hallway.|Hallway Convergence]]
@@ -215,14 +286,23 @@ The Last Command
 </div>
 
 
-:: 3.1. Choice A [agent nobr hallway watcher] {"position":"200,1650","size":"100,100"}
+:: 3.1. Choice A [agent nobr hallway exception] {"position":"200,1650","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "3.1.choiceA">>
         <<speaker "You">>
         Hey, can you understand what I am saying?
     <<ctpNext clear>>
+        The alien remains still. For a second, nothing answers you except the low pulse of the corridor.
+    <<ctpNext clear>>
+        Then the biochip catches something.
+    <<ctpNext clear>>
         <<speaker "Exception">>
         Intent. You treat it as language.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        You send sound and expect meaning to arrive intact. That is unusual.
     <<ctpNext clear>>
         <div class="choice">
             [[Why are you so obsessed with intent?|3.1. A Obsessed]]
