@@ -66,7 +66,10 @@ The Last Command
     "artifactsuccess": "green",
     "artifactfailed": "red",
     "gameover": "green",
-    "control-": "green"
+    "control-": "green",
+    "title": "blue",
+    "exit": "green",
+    "wait": "green"
   },
   "zoom": 0.6
 }
@@ -273,31 +276,23 @@ The Last Command
 
 
 :: 3.1. Exception [nobr agent hallway exception] {"position":"750,950","size":"100,100"}
-<<script>>
-            function addAgent(name) {
-                const iframe = document.createElement('iframe');
-                iframe.width = '400';
-                iframe.height = '600';
-                iframe.src = `/${name}`;
-                return iframe;
-            }
-
-            if (!document.getElementById("agent-exception-frame")) {
-                const frame = addAgent('agent-exception');
-                frame.id = "agent-exception-frame";
-                $(output).append(frame);
-            }
-<</script>>
+<<showAgent "exception">>
 
 <div class="textbox">
     <<ctp "exception1">>
-    	<<speaker "Exception">>
-        Conversation
+        The alien does not move closer.
+    <<ctpNext clear>>
+        The air between you distorts slightly, as if the corridor itself is trying to translate something it was never built to carry.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        You may ask. I will answer according to the pattern I can perceive.
+    <<ctpNext clear>>
+        This is not a normal conversation. The biochip does not translate words so much as pressure, intent and fragments of meaning.
     <<ctpNext clear>>
         <div class="choice">
-            [[Conversation Ended|Hallway Convergence]]
+            [[End the conversation.|Hallway Convergence]]
         </div>
-  <</ctp>>
+    <</ctp>>
 </div>
 
 
@@ -315,28 +310,48 @@ The Last Command
 </div>
 
 
-:: 3.1. Hallway [nobr hallway watcher] {"position":"500,1100","size":"100,100"}
-<<showAgent "exception">>
+:: 3.1. Hallway [nobr hallway exception] {"position":"500,1100","size":"100,100"}
+<<hideAgent>>
 
 <div class="textbox">
     <<ctp "hallway1">>
-        You step into the corridor. It is long. Strange light. Then: movement ahead. An alien — the Exception — drifts at the far end, not approaching, not retreating. Just present.
+        You step into the corridor.
     <<ctpNext clear>>
-        The narrator goes quiet. First contact begins
+        It stretches farther than it should, lined with cold lights and walls that seem to breathe with the ship.
     <<ctpNext clear>>
-        Small distortions. Crystal rustling. The biochip adjusts its functions to speech.
+        Then something moves ahead.
+    <<ctpNext clear>>
+        An alien stands at the far end of the hallway. It does not approach. It does not retreat. It simply remains there, as if it was already waiting for the exact moment you arrived.
+    <<ctpNext clear>>
+        The narrator goes quiet.
+    <<ctpNext clear>>
+        Small distortions ripple through the air. Your biochip adjusts, searching for meaning inside a signal that does not sound like speech.
     <<ctpNext clear>>
         <<speaker "Exception">>
-        What is the true intent behind it? You're trying to be understood. Is that what you call intent, or does our definition differ?
+        What is the true intent behind it? You are trying to be understood. Is that what you call intent, or does our definition differ?
     <<ctpNext clear>>
         <div class="choice">
-            [["Hey, can you understand what I am saying?"|3.1. Choice A]]
-			[["I guess you can understand me..? What am I even doing here?"|3.1. Choice B]]
-			[["How is it that I escaped so easily?"|3.1. Choice C]]
-			[["I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?"|3.1. Choice Voice]]
-            [[Don't mind me, just passing through.|3.1. Passing Through]]
+            <<link '"Hey, can you understand what I am saying?"' "3.1. Choice A">>
+                <<set $curiosity += 1>>
+            <</link>>
+
+            <<link '"I guess you can understand me...? What am I even doing here?"' "3.1. Choice B">>
+                <<set $curiosity += 1>>
+            <</link>>
+
+            <<link '"How is it that I escaped so easily?"' "3.1. Choice C">>
+                <<set $skepticism += 1>>
+            <</link>>
+
+            <<link '"I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?"' "3.1. Choice Voice">>
+                <<set $skepticism += 1>>
+            <</link>>
+
+            <<link "Don't mind me, just passing through." "3.1. Passing Through">>
+                <<set $compliance += 1>>
+            <</link>>
         </div>
-  <</ctp>> 
+    <</ctp>>
 </div>
 
 
@@ -370,12 +385,20 @@ The Last Command
 </div>
 
 
-:: 3.1. Passing Through [nobr hallway] {"position":"600,1200","size":"100,100"}
+:: 3.1. Passing Through [nobr hallway exception] {"position":"600,1200","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "passingThrough">>
-        You walk past slowly. The alien doesn't turn around. It doesn't need to — it feels your passing presence without needing to look
+        You move past slowly.
     <<ctpNext clear>>
-        You sigh.
+        The alien does not turn toward you. It does not need to. The air around it shifts as you pass, as if your presence is enough to disturb whatever signal it is listening to.
+    <<ctpNext clear>>
+        For one terrible second, you expect it to stop you.
+    <<ctpNext clear>>
+        It doesn't.
+    <<ctpNext clear>>
+        You exhale only after you are several steps away.
     <<ctpNext clear>>
         <<speaker "You">>
         I can't believe that worked.
@@ -383,7 +406,7 @@ The Last Command
         <div class="choice">
             [[Continue into the hallway.|Hallway Convergence]]
         </div>
-  <</ctp>> 
+    <</ctp>> 
 </div>
 
 
@@ -1159,27 +1182,42 @@ Oh yeah, good luck by the way.
 
 
 :: Awakening Chamber [nobr waking] {"position":"250,1300","size":"100,100"}
+<<hideAgent>>
 <<audio awakening play>>
+
 <div class="textbox">
     <<ctp "awakeningChamber">>
-	    Water drains. Disorientation. You are awake before you understand what that means.
+        Water drains from somewhere above your head.
+    <<ctpNext clear>>
+        For a moment, there is no floor, no ceiling, no memory. Only glass, pressure, and the sound of your own breathing inside your skull.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-	    Okay. You're awake. That's the hard part done, for both of us honestly.
+        Okay. You're awake. That's the hard part done, for both of us, honestly.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-	    You're not on Earth. I know that's a lot to absorb in the first five seconds. Take a breath. The environment is stable.
+        You're not on Earth. I know that's a lot to absorb in the first five seconds. Take a breath. The environment is stable.
+    <<ctpNext clear>>
+        Two illuminated controls pulse on the inside of the chamber.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-	    There are two buttons in front of you. Hit the right one. It opens the exit seal. The left one runs a pressure check you don't need — I've watched people stare at those symbols for twenty minutes and it doesn't get more interesting, I promise you.
+        There are two buttons in front of you. Hit the right one. It opens the exit seal.
     <<ctpNext clear>>
-	    The right button reads: EXIT. The left button reads: ENTER.
+        <<speaker "Narrator">>
+        The left one runs a pressure check you don't need. Trust me, this is not the time to become curious about alien safety procedures.
+    <<ctpNext clear>>
+        The right control reads: EXIT.  
+        The left control reads: ENTER.
     <<ctpNext clear>>
         <div class="choice">
-            [[Press the right button — EXIT.|Right Button]]
-			[[Press the left button — ENTER.|Left Button]]
+            <<link "Press the right button — EXIT." "Right Button">>
+                <<set $compliance += 1>>
+            <</link>>
+
+            <<link "Press the left button — ENTER." "Left Button">>
+                <<set $skepticism += 1>>
+            <</link>>
         </div>
-  <</ctp>> 
+    <</ctp>>
 </div>
 
 
@@ -1870,8 +1908,6 @@ Oh yeah, good luck by the way.
         </div>
   <</ctp>>
 </div>
-
-
 
 
 :: Discarded Leave [nobr discarded] {"position":"2100,800","size":"100,100"}
@@ -2819,74 +2855,178 @@ END OF CURRENT DRAFT
 
 
 :: Intro Arrival [nobr intro arrival] {"position":"275,725","size":"100,100"}
-<div class="textbox">
-Their arrival did not unite humanity. It destabilised it.
+<<hideAgent>>
 
-[[Continue|Intro Riots]]
+<div class="textbox">
+    <<ctp "introArrival">>
+        <<speaker "Narrator">>
+        Their arrival did not unite humanity.
+    <<ctpNext clear>>
+        It gave every government, every army, every movement and every frightened citizen the same question.
+    <<ctpNext clear>>
+        What do you do when something looks down at your entire species and refuses to explain itself?
+    <<ctpNext clear>>
+        For a while, people simply watched.
+    <<ctpNext clear>>
+        Then watching became fear.
+    <<ctpNext clear>>
+        And fear became organization.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue|Intro Riots]]
+        </div>
+    <</ctp>>
 </div>
 
 
 :: Intro Backstory [nobr intro backstory] {"position":"25,725","size":"100,100"}
-<div class="textbox">
-The year is 2137. Long before you woke on the ship, Earth had already changed.
+<<hideAgent>>
 
-[[Continue|Intro Earth]]
+<div class="textbox">
+    <<ctp "introBackstory">>
+        <<speaker "Narrator">>
+        The year is 2137.
+    <<ctpNext clear>>
+        Long before you woke inside the vessel, Earth had already begun to fracture.
+    <<ctpNext clear>>
+        At first, it looked like a communication failure. Lost satellites. Dead emergency channels. Government feeds marked classified before anyone could explain why.
+    <<ctpNext clear>>
+        Then the world learned the signal was not broken.
+    <<ctpNext clear>>
+        Something was answering from above.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue|Intro Earth]]
+        </div>
+    <</ctp>>
 </div>
 
 
 :: Intro Earth [nobr intro earth] {"position":"150,725","size":"100,100"}
-<div class="textbox">
-The first vessels appeared over Earth decades ago.
+<<hideAgent>>
 
-[[Continue|Intro Arrival]]
+<div class="textbox">
+    <<ctp "introEarth">>
+        <<speaker "Narrator">>
+        The first vessels appeared over Earth decades ago.
+    <<ctpNext clear>>
+        They did not attack. They did not land. They simply remained above the atmosphere, silent enough for every nation to imagine its own ending.
+    <<ctpNext clear>>
+        For three days, humanity watched the sky.
+    <<ctpNext clear>>
+        On the fourth, the world stopped pretending it was in control.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue|Intro Arrival]]
+        </div>
+    <</ctp>>
 </div>
 
 
 :: Intro Exchange [nobr intro exchange] {"position":"225,875","size":"100,100"}
-<div class="textbox">
-Some people learned that the visitors would trade for living specimens.
+<<hideAgent>>
 
-[[Continue|Intro Kidnapping]]
+<div class="textbox">
+    <<ctp "introExchange">>
+        <<speaker "Narrator">>
+        In the new order, some people discovered that fear could be organized.
+    <<ctpNext clear>>
+        The visitors did not understand ownership the way humans did. They did not understand ransom, trafficking, betrayal or consent.
+    <<ctpNext clear>>
+        They understood samples. Patterns. Biological records from a violent world.
+    <<ctpNext clear>>
+        So certain human groups gave them exactly that.
+    <<ctpNext clear>>
+        Living specimens, wrapped in paperwork and lies.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue|Intro Kidnapping]]
+        </div>
+    <</ctp>>
 </div>
 
 
 :: Intro Kidnapping [nobr intro kidnapping] {"position":"150,1025","size":"100,100"}
-<div class="textbox">
-You were one of them.
+<<hideAgent>>
 
-[[Continue|Awakening Chamber]]
+<div class="textbox">
+    <<ctp "introKidnapping">>
+        <<speaker "Narrator">>
+        You were not chosen.
+    <<ctpNext clear>>
+        You were listed.
+    <<ctpNext clear>>
+        Moved through hands that never needed your name, only your weight, your blood type and the confirmation that the implant could survive transport.
+    <<ctpNext clear>>
+        Somewhere above you, people negotiated.
+    <<ctpNext clear>>
+        Somewhere beside them, the visitors watched without understanding what had been taken.
+    <<ctpNext clear>>
+        And somewhere inside your skull, the first signal was already waiting to wake.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue|Awakening Chamber]]
+        </div>
+    <</ctp>>
 </div>
 
 
 :: Intro Riots [nobr intro riots] {"position":"75,875","size":"100,100"}
-<div class="textbox">
-Governments fell. New powers formed in the gaps.
+<<hideAgent>>
 
-[[Continue|Intro Exchange]]
+<div class="textbox">
+    <<ctp "introRiots">>
+        <<speaker "Narrator">>
+        Governments fell quietly at first.
+    <<ctpNext clear>>
+        Not all at once. Not in one grand collapse. A missed broadcast here. A military order ignored there. A city left without an answer.
+    <<ctpNext clear>>
+        Then people stopped waiting for the systems to protect them.
+    <<ctpNext clear>>
+        Streets became borders. Movements became armies. Fear became currency.
+    <<ctpNext clear>>
+        And in the spaces where governments used to stand, new powers learned how to sell anything.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Continue|Intro Exchange]]
+        </div>
+    <</ctp>>
 </div>
 
 
-:: Left Button [nobr room1] {"position":"400,1500","size":"100,100"}
+:: Left Button [nobr waking wait] {"position":"400,1500","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "leftButton">>
-        <<speaker "Narrator">>
-        Evidently, the goods don't need to pass many regulation checks to end up here. Don't worry, everything is still fine, but you just made things less adaptively convenient for yourself.
+        The left control accepts your touch.
+    <<ctpNext clear>>
+        Nothing opens.
+    <<ctpNext clear>>
+        A low pressure tone moves through the chamber. The glass stays sealed, and the symbols around the frame begin to pulse in a rhythm you do not understand.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        The pressure check is harmless. Just takes a moment longer.
+        Ah. Right. The other button. Of course.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Alright, well.. Things would have been easier if you met these things outside of this pod on your own terms, but I can assure you that they will do you no harm regardless thankfully. The door will open shortly. Not from your side.
+        It's fine. Not ideal, but fine. You have activated a pressure check, which is exactly as useful as it sounds.
+    <<ctpNext clear>>
+        The chamber vibrates once. Something outside the glass moves.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        When it does, you're going to see something in the corridor that will look alarming. Don't make sudden or unprovoked moves. You will just stay in there now and meet your observers who should know enough about you to just simply release you from this on their own accord.
+        Listen to me carefully. The door is going to open, but not from your side.
     <<ctpNext clear>>
-        The door opens from outside. You wait.
+        <<speaker "Narrator">>
+        When they enter, do not panic. Do not make sudden movements. They are not here to hurt you, regardless of how this is going to look.
+    <<ctpNext clear>>
+        The outer seal unlocks.
+    <<ctpNext clear>>
+        You wait.
     <<ctpNext clear>>
         <div class="choice">
             [[Wait and see what enters.|3.2. Alien Arrival]]
         </div>
-  <</ctp>> 
+    <</ctp>>
 </div>
 
 
@@ -2993,34 +3133,35 @@ Governments fell. New powers formed in the gaps.
 </div>
 
 
-:: Right Button [nobr room1] {"position":"400,1100","size":"100,100"}
+:: Right Button [nobr room1 exit] {"position":"400,1100","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "rightButton">>
-        <<speaker "Narrator">>
-	    You're feeling alive and well thankfully, that's one hurdle down. Now you need to move on from this room as there are some visitors.. you may not immediately recognise as conversable. But it's better to meet them on your own terms.
+        The right control sinks beneath your hand.
+    <<ctpNext clear>>
+        The chamber answers immediately. Locks disengage one by one, and the glass in front of you separates with a wet mechanical sigh.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-	    The door ahead of you will open in a moment. Step through when you're ready.
+        Good. See? Simple. You followed the instruction, the system responded, and nobody had to make this more complicated than it needed to be.
+    <<ctpNext clear>>
+        Cold air hits your skin as you step out of the pod. Your legs almost fail beneath you, but the floor catches your weight before you fall.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-	    You're not on Earth. I know that's a lot to absorb in the first five seconds. Take a breath. The environment is stable.
+        You're doing fine. Now listen carefully. There are others aboard this vessel. They are not human, and they may not understand how alarming this looks from your side.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-	    I should explain where you are. You're aboard a vessel. Not a human one. I know how that sounds. I need you to stay calm while I walk you through what's happened, because it's going to sound alarming and it isn't.
+        Do not panic. Do not provoke them. Just move. The door ahead leads out of this room.
+    <<ctpNext clear>>
+        A seam of light appears across the far door.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        What you're going to see in the corridor is going to be strange. I need you to remember that strange doesn't mean dangerous.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        I'll explain everything once you're moving ahead, that's how confident I am that you're going to be present in the next room and room after that.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        Just follow the general directions.
+        Step through when you're ready.
     <<ctpNext clear>>
         <div class="choice">
             [[Step through the door.|3.1. Hallway]]
         </div>
-  <</ctp>> 
+    <</ctp>>
 </div>
 
 
@@ -3194,6 +3335,7 @@ Governments fell. New powers formed in the gaps.
             video.loop = true;
             video.playsInline = true;
             video.style.display = "none";
+            
             document.body.prepend(video);
         }
 
@@ -3239,7 +3381,10 @@ Governments fell. New powers formed in the gaps.
 
         let video = null;
 
-        if (tags.includes("intro") && tags.includes("backstory")) {
+        if (tags.includes("intro") && tags.includes("title")) {
+            video = null;
+        }
+        else if (tags.includes("intro") && tags.includes("backstory")) {
             video = "Intro_Backstory.mp4";
         }
         else if (tags.includes("intro") && tags.includes("earth")) {
@@ -3260,8 +3405,14 @@ Governments fell. New powers formed in the gaps.
         else if (tags.includes("intro")) {
             video = "Intro_Backstory.mp4";
         }
+        else if (tags.includes("waking") && tags.includes("wait")) {
+            video = "Waking_Wait.mp4";
+        }
         else if (tags.includes("waking")) {
             video = "Waking.mp4";
+        }
+        else if (tags.includes("room1") && tags.includes("exit")) {
+            video = "FirstRoom.mp4";
         }
         else if (tags.includes("room1") && tags.includes("device")) {
             video = "Room_Device.mp4";
@@ -3503,11 +3654,21 @@ Governments fell. New powers formed in the gaps.
 </div>
 
 
-:: Title Screen [nobr intro] {"position":"0,1300","size":"100,100"}
-\:: Title Screen [nobr intro]
-THRESHOLD
+:: Title Screen [nobr intro title] {"position":"0,1300","size":"100,100"}
+<div class="title-screen">
 
-[[Start|Intro Backstory]]
+    <h1>THE LAST COMMAND</h1>
+
+    <div class="title-subtitle">
+        A visual novel about contact, control and human nature
+    </div>
+
+    <div class="title-rule"></div>
+
+    <div class="choice title-choice">
+        [[Start|Intro Backstory]]
+    </div>
+</div>
 
 
 :: StoryScript [script]
@@ -3776,12 +3937,21 @@ $(window).on('message', function (event) {
    ========================================================= */
 
 body {
-    background-color: #000000;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: center center;
     background-repeat: no-repeat;
-    transition: background-image 0.5s ease-in-out;
+    background-color: #000;
+}
+
+#bgVideo {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -10;
+    background: #000;
 }
 
 /* ---------- INTRO / FIRST ROOM ---------- */
@@ -3810,6 +3980,27 @@ body[data-tags~="intro"][data-tags~="kidnapping"] {
     background-image: url('/media/Intro_Kidnapping.png'), url('/media/Intro_Backstory.png');
 }
 
+/* ---------- AWAKENING / FIRST ROOM ---------- */
+
+body[data-tags~="waking"] {
+    background-image: url('/media/Waking.png'), url('/media/Room.png');
+}
+
+body[data-tags~="waking"][data-tags~="wait"] {
+    background-image: url('/media/Waking.png'), url('/media/Room.png');
+}
+
+body[data-tags~="room1"] {
+    background-image: url('/media/Room.png');
+}
+
+body[data-tags~="room1"][data-tags~="exit"] {
+    background-image: url('/media/FirstRoom.png'), url('/media/Room.png');
+}
+
+body[data-tags~="room1"][data-tags~="device"] {
+    background-image: url('/media/Room_Device.png'), url('/media/Room.png');
+}
 
 /* ---------- HALLWAY ---------- */
 
@@ -4558,3 +4749,84 @@ fieldset p {
    END UI MERGE — KOLEGIN MAIN.CSS + INDEX_NJEGOVO.HTML
    ========================================================= */
 
+/* ---------- TITLE SCREEN ---------- */
+
+body[data-tags~="intro"][data-tags~="title"] {
+    background-image: url('/media/TitleScreen.png'), url('/media/Intro_Backstory.png');
+}
+
+.title-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 40px;
+    pointer-events: none;
+}
+
+.title-kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: #00d5ff;
+    opacity: 0.85;
+    margin-bottom: 18px;
+    text-shadow: 0 0 14px rgba(0, 213, 255, 0.65);
+}
+
+.title-screen h1 {
+    margin: 0;
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #eaf7ff;
+    text-shadow:
+        0 0 12px rgba(0, 213, 255, 0.8),
+        0 0 36px rgba(0, 120, 255, 0.65),
+        0 0 90px rgba(0, 0, 0, 0.9);
+}
+
+.title-subtitle {
+    margin-top: 22px;
+    max-width: 760px;
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(230, 241, 255, 0.82);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
+}
+
+.title-rule {
+    width: min(520px, 70vw);
+    height: 1px;
+    margin-top: 30px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 213, 255, 0.85),
+        rgba(255, 180, 80, 0.75),
+        transparent
+    );
+    box-shadow: 0 0 18px rgba(0, 213, 255, 0.45);
+}
+
+.title-choice {
+    pointer-events: auto;
+    width: auto !important;
+    max-width: 340px !important;
+    margin-top: 42px !important;
+    align-items: center !important;
+}
+
+.title-choice a {
+    min-width: 220px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+}
