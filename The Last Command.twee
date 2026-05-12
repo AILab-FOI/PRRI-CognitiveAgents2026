@@ -950,6 +950,8 @@ The Last Command
 
 
 :: Archive Bay Entry [nobr missing-features archive] {"position":"1800,500","size":"100,200"}
+<<audio ":all" stop>>
+<<audio "archives" loop play>>
 <div class="textbox">
     <<ctp "archiveBayEntry">>
         You stand at the entrance of a large open space filled with fragmented projections. Visuals flicker between scenes of Earth — wars, cities, people, scientific breakthroughs.
@@ -1001,6 +1003,8 @@ Oh yeah, good luck by the way.
 
 
 :: Archive Earth View [nobr archive earth] {"position":"2500,500","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "archiveEarth" loop play>>
 <div class="textbox">
     <<ctp "archiveEarthView">>
     	You look at Earth. No dialogue options. Just the planet, hanging there. A long beat. Then the narrator, quieter than usual.
@@ -1262,6 +1266,8 @@ Oh yeah, good luck by the way.
 
 
 :: Awakening Chamber [nobr waking] {"position":"250,1300","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "awakening" loop play>>
 <<hideAgent>>
 <<audio awakening play>>
 
@@ -1459,6 +1465,8 @@ Oh yeah, good luck by the way.
 
 
 :: Burn Final [nobr core burn] {"position":"3400,2800","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "burnEnding" loop play>>
 <div class="textbox">
     <<ctp "burnFinal">>
         The four-minute countdown is not displayed as a number. It is felt. The heat changes. The hum shifts register. The lights don't flicker — they clarify, briefly, as the systems maximise before they fail.
@@ -1809,6 +1817,8 @@ Oh yeah, good luck by the way.
 
 
 :: Control Room Entry [nobr control narrator] {"position":"3100,1300","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "control" loop play>>
 <div class="textbox">
     <<ctp "controlRoomEntry">>
         The control room is smaller than expected. Dense with repurposed alien interfaces half-dismantled and rebuilt with whatever was available. At the center: a single seat facing a wall of screens, most of them dark. Sitting in the seat is a man. Tall, or was. Broad-shouldered in a jacket that was probably fitted once. Reddish face. Reddish hair, or what remains of it. His suit was once a suit. Now it is a garment that has been slept in, worked in, and lived in for long enough that the original intention is visible only in the lapels, which are still crisp in the way that lapels sometimes stubbornly remain crisp when everything else has given up. He looks up. His eyes are very alert. That is the most unsettling part.
@@ -2004,6 +2014,8 @@ Oh yeah, good luck by the way.
 
 
 :: Discarded Room First [nobr missing-features discarded body] {"position":"2000,700","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "discarded" loop play>>
 <div class="textbox">
     <<ctp "discardedRoomFirst">>
     	The discarded room sits off the archive, slightly recessed. No signage the biochip translates. The door opens. Inside: dim, still air. The smell of something that has had a long time to become what it is. In the far corner, a body. Human. It looks as rotted as it can in this sterile environment.
@@ -2716,6 +2728,8 @@ Oh yeah, good luck by the way.
 
 
 :: Engineering Bay Entry [nobr missing-features engineering] {"position":"1800,2100","size":"100,200"}
+<<audio ":all" stop>>
+<<audio "engineering" loop play>>
 <div class="textbox">
     <<ctp "engineeringBayEntry">>
         The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
@@ -2801,6 +2815,8 @@ Oh yeah, good luck by the way.
 
 
 :: Fusion Core Entry [nobr missing-dialog missing-features core] {"position":"2200,2800","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "fusion" loop play>>
 <div class="textbox">
     <<ctp "fusionCoreEntry">>
         The passage to the Fusion Core is a descent. The ship gets warmer. The hum becomes something physical. At the base is a vast chamber. Enormous and patient, the way a star is patient.
@@ -2909,6 +2925,8 @@ Oh yeah, good luck by the way.
 
 
 :: Game Over [nobr ending gameover control] {"position":"5400,1300","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "gameover" loop play>>
 END OF CURRENT DRAFT
 
 [[Play Again|Title Screen]]
@@ -3246,6 +3264,8 @@ END OF CURRENT DRAFT
 
 
 :: Specimen Bay Entry [nobr missing-features specimen entrance agent] {"position":"1800,1250","size":"100,200"}
+<<audio ":all" stop>>
+<<audio "specimen" loop play>>
 <<script>>
             function addAgent(name) {
                 const iframe = document.createElement('iframe');
@@ -3382,8 +3402,17 @@ END OF CURRENT DRAFT
 <<set $compliance = 0>>
 <<set $aggression = 0>>
 
-<<cacheaudio "archives" "media/archives.mp3">>
-<<cacheaudio "awakening" "media/awakening.mp3">>
+<<cacheaudio "title" "media/glazba/title_screen.mp3">>
+<<cacheaudio "awakening" "media/glazba/awakening.mp3">>
+<<cacheaudio "archives" "media/glazba/archives.mp3">>
+<<cacheaudio "archiveEarth" "media/glazba/archive_earth_view.mp3">>
+<<cacheaudio "engineering" "media/glazba/engineering_bay.mp3">>
+<<cacheaudio "control" "media/glazba/control_room.mp3">>
+<<cacheaudio "discarded" "media/glazba/discarded_room.mp3">>
+<<cacheaudio "specimen" "media/glazba/specimen_bay.mp3">>
+<<cacheaudio "fusion" "media/glazba/fusion_core.mp3">>
+<<cacheaudio "burnEnding" "media/glazba/burn_ending.mp3">>
+<<cacheaudio "gameover" "media/glazba/game_over_screen.mp3">>
 
 <<widget "speaker">>\
     <div class="speaker">_args[0]</div>\
@@ -3735,6 +3764,8 @@ END OF CURRENT DRAFT
 
 
 :: Title Screen [nobr intro title] {"position":"0,1300","size":"100,100"}
+<<audio ":all" stop>>
+<<audio "title" loop play>>
 <div class="title-screen">
 
     <h1>THE LAST COMMAND</h1>
