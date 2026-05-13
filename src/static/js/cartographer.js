@@ -2,6 +2,96 @@ var DONT = false;
 var FIRST = true;
 var STOP = false;
 
+var CURRENT_PASSAGE = "initial";
+
+// Defines from which passages which responses are valid
+var PASSAGE_STATES = {
+  "initial": ["Threatening", "Effort", "Deathworld", "Join"],
+  "Cart Threatening": ["Effort", "Deathworld", "Join"],
+  "Cart Effort": ["Join", "Deathworld"],
+  "Cart Deathworld": ["Rage", "Skeptic", "Accept"],
+  "Cart Brain Rage": ["Accept", "Permanent", "Threat", "Join"],
+  "Cart Brain Skeptic": ["Accept", "Permanent", "Join"],
+  "Cart Brain Accept": ["Join"],
+  "Cart Brain Permanent": ["Join"],
+  "Cart Hit Threat": ["Join"], //Hit??
+  "Cart Punch": ["Join"],
+  "Cart Join Research": ["Puzzle-War", "Puzzle-Sacrifice", "Puzzle-Science"],
+  "Cart Puzzle War": ["War-No", "War-Lifeform", "War-Normal", "War-Parallels"],
+  "War No Conflict": ["War-Lifeform", "War-Parallels", "War-Normal", "Signal"],
+  "War Between Lifeforms": ["War-Difference", "War-Parallels", "Signal"],
+  "War Normal": ["War-Shame", "Signal"],
+  "War Parallels": ["Signal"],
+  "War No Difference": ["Signal"],
+  "War Shame": ["Signal"],
+  "Cart Puzzle Science": ["Science-Weapons", "Science-Kind"],
+  "Science Weapons": ["Signal"],
+  "Science Your Kind": ["Signal"],
+  "Cart Puzzle Sacrifice": ["Sacrifice-Death", "Sacrifice-Design", "Sacrifice-Divine", "Sacrifice-Consciousness"],
+  "Sacrifice Consciousness": ["Signal"],
+  "Sacrifice Divine": ["Signal"],
+  "Sacrifice Death": ["Signal", "Sacrifice-Design", "Sacrifice-Divine", "Sacrifice-Consciousness"],
+  "Sacrifice No Design": ["Signal"]
+};
+
+// Checks if valid transition
+function canAdvance(responseCode) {
+  var allowed = PASSAGE_STATES[CURRENT_PASSAGE] || [];
+  return allowed.indexOf(responseCode) !== -1;
+}
+
+function tryAdvancePassage(targetPassage, responseCode) {
+  if (!canAdvance(responseCode)) {
+    console.warn(
+      "[StateMachine] Blocked advance to '" +
+        targetPassage +
+        "'. " +
+        "Response '" +
+        responseCode +
+        "' is not valid from passage '" +
+        CURRENT_PASSAGE +
+        "'.",
+    );
+    return;
+  }
+
+  console.log(
+    "[StateMachine] Advancing from '" +
+      CURRENT_PASSAGE +
+      "' → '" +
+      targetPassage +
+      "'",
+  );
+
+  CURRENT_PASSAGE = targetPassage;
+
+  window.parent.postMessage(
+    {
+      action: "advance_passage",
+      targetPassage: targetPassage,
+    },
+    "*",
+  );
+}
+
+// Updates Current passage if player moved using on screen choices
+window.addEventListener("message", function (event) {
+  if (event.data && event.data.action === "passage_changed") {
+    console.log(
+      "[StateMachine] Twine reported passage change → '" +
+        event.data.passage +
+        "'",
+    );
+    // Only update if we know about this passage; ignore unknown ones.
+    if (
+      Object.prototype.hasOwnProperty.call(PASSAGE_STATES, event.data.passage)
+    ) {
+      CURRENT_PASSAGE = event.data.passage;
+    }
+  }
+});
+
+
 $(window).on("load", function () {
   counter = 0;
 
@@ -25,7 +115,7 @@ $(window).on("load", function () {
 
       window.recognition = recognition;
 
-      recognition.lang = "hr-HR"; // Croatian
+      recognition.lang = "en-US"; 
       recognition.continuous = true;
       recognition.interimResults = false;
 
@@ -52,27 +142,11 @@ $(window).on("load", function () {
     init();
 
     button.onclick = () => {
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) {
-        // Firefox
-        document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) {
-        // Chrome, Safari and Opera
-        document.documentElement.webkitRequestFullscreen();
-      } else if (document.documentElement.msRequestFullscreen) {
-        // IE/Edge
-        document.documentElement.msRequestFullscreen();
-      }
       document.querySelector(".video-container").style.display = "block";
       if (!isMobileBrowser()) recognition.start();
       document.getElementById("startupute").style.display = "none";
-      document.getElementById("questions").style.display = "block";
       play_part("tisina");
       question("bok");
-      if (isMobileBrowser()) {
-        document.getElementById("record").style.display = "block";
-      }
     };
   }
 
@@ -107,145 +181,120 @@ function connect() {
   };
 
   ws.onmessage = function (msg) {
-    console.log(msg.data);
-    console.log(msg.data.toString());
-    play_part(msg.data.toString());
-    /*if( msg.data.toString() == '01' )
-	{
-	    console.log( '01' );
-	    play_part( '01' );
-	}
-	else if( msg.data.toString() == '02' )
-	{
-	    console.log( '02' );
-	    play_part( '02' );
-	}
-	else if( msg.data.toString() == '03' )
-	{
-	    console.log( '03' );
-	    play_part( '03' );
-	}
-	else if( msg.data.toString() == '04' )
-	{
-	    console.log( '04' );
-	    play_part( '04' );
-	}
-	else if( msg.data.toString() == '05' )
-	{
-	    console.log( '05' );
-	    play_part( '05' );
-	}
-	else if( msg.data.toString() == '06' )
-	{
-	    console.log( '06' );
-	    play_part( '06' );
-	}
-	else if( msg.data.toString() == '07' )
-	{
-	    console.log( '07' );
-	    play_part( '07' );
-	}
-	else if( msg.data.toString() == '08' )
-	{
-	    console.log( '08' );
-	    play_part( '08' );
-	}
-	else if( msg.data.toString() == '09' )
-	{
-	    console.log( '09' );
-	    play_part( '09' );
-	}
-	else if( msg.data.toString() == '10' )
-	{
-	    console.log( '10' );
-	    play_part( '10' );
-	}
-	else if( msg.data.toString() == '11' )
-	{
-	    console.log( '11' );
-	    play_part( '11' );
-	}
-	else if( msg.data.toString() == '12' )
-	{
-	    console.log( '12' );
-	    play_part( '12' );
-	}
-	else if( msg.data.toString() == '13' )
-	{
-	    console.log( '13' );
-	    play_part( '13' );
-	}
-	else if( msg.data.toString() == '14' )
-	{
-	    console.log( '14' );
-	    play_part( '14' );
-	}
-	else if( msg.data.toString() == '15' )
-	{
-	    console.log( '15' );
-	    play_part( '15' );
-	}
-	else if( msg.data.toString() == '16' )
-	{
-	    console.log( '16' );
-	    play_part( '16' );
-	}
-	else if( msg.data.toString() == '17' )
-	{
-	    console.log( '17' );
-	    play_part( '17' );
-	}
-	else if( msg.data.toString() == '18' )
-	{
-	    console.log( '18' );
-	    play_part( '18' );
-		}
-	else if( msg.data.toString() == '19' )
-	{
-	    console.log( '19' );
-	    play_part( '19' );
-	}
-	else if( msg.data.toString() == '20' )
-	{
-	    console.log( '20' );
-	    play_part( '20' );
-		}
-	else if( msg.data.toString() == 'hvala' )
-	{
-	    console.log( 'hvala' );
-	    play_part( 'hvala' );
-	}
-	else if( msg.data.toString() == 'dobro' )
-	{
-	    console.log( 'dobro' );
-	    play_part( 'dobro' );
-	}
-	else if( msg.data.toString() == 'predstavljanje-kratko' )
-	{
-	    console.log( 'predstavljanje-kratko' );
-	    play_part( 'predstavljanje-kratko' );
-	}
-	else if( msg.data.toString() == 'izvoli' )
-	{
-	    console.log( 'izvoli' );
-	    play_part( 'izvoli' );
-	}
-	else if( msg.data.toString() == 'ponovi' )
-	{
-	    console.log( 'ponovi' );
-	    play_part( 'ponovi' );
-	}
-	else if( msg.data.toString() == 'predstavljanje-dugo' )
-	{
-	    console.log( 'predstavljanje-dugo' );
-	    play_part( 'predstavljanje-dugo' );
-	}
-	else
-	{
-	    console.log( 'Tišina' );
-	    play_part( 'tisina' );
-	}
-	*/
+    var response = msg.data.toString();
+    console.log("[WS] Received:", response);
+
+    //play_part(response);
+
+    if (response === "ponovi") {
+        play_part("ponovi"); // plays the "please repeat" audio, which ends → tisina → mic restarts
+        return;
+    }
+
+    switch (response) {
+      case "Threatening":
+        tryAdvancePassage("Cart Threatening", response);
+        break;
+
+      case "Effort":
+        tryAdvancePassage("Cart Effort", response);
+        break;
+
+      case "Deathworld":
+        tryAdvancePassage("Cart Deathworld", response);
+        break;
+
+      case "Join":
+        tryAdvancePassage("Cart Join Research", response);
+        break;
+
+      case "Rage":
+        tryAdvancePassage("Cart Brain Rage", response);
+        break;
+
+      case "Skeptic":
+        tryAdvancePassage("Cart Brain Skeptic", response);
+        break;
+
+      case "Accept":
+        tryAdvancePassage("Cart Brain Accept", response);
+        break;
+
+      case "Permanent":
+        tryAdvancePassage("Cart Brain Permanent", response);
+        break;
+
+      case "Threat":
+        tryAdvancePassage("Cart Hit Threat", response);
+        break;
+
+      case "Puzzle-War":
+        tryAdvancePassage("Cart Puzzle War", response);
+        break;
+
+      case "Puzzle-Sacrifice":
+        tryAdvancePassage("Cart Puzzle Sacrifice", response);
+        break;
+
+      case "Puzzle-Science":
+        tryAdvancePassage("Cart Puzzle Science", response);
+        break;
+
+      case "War-No":
+        tryAdvancePassage("War No Conflict", response);
+        break;
+      
+      case "War-Lifeform":
+        tryAdvancePassage("War Between Lifeforms", response);
+        break;
+
+      case "War-Parallels":
+        tryAdvancePassage("War Parallels", response);
+        break;
+
+      case "War-Normal":
+        tryAdvancePassage("War Normal", response);
+        break;
+
+      case "Signal":
+        tryAdvancePassage("Cart Signal Check", response);
+        break;
+
+      case "War-Difference":
+        tryAdvancePassage("War No Difference", response);
+        break;
+
+      case "War-Shame":
+        tryAdvancePassage("War Shame", response);
+        break;
+
+      case "Science-Weapons":
+        tryAdvancePassage("Science Weapons", response);
+        break;
+
+      case "Science-Kind":
+        tryAdvancePassage("Science Your Kind", response);
+        break;
+
+      case "Sacrifice-Death":
+        tryAdvancePassage("Sacrifice Death", response);
+        break;
+
+      case "Sacrifice-Design":
+        tryAdvancePassage("Sacrifice No Design", response);
+        break;
+
+      case "Sacrifice-Divine":
+        tryAdvancePassage("Sacrifice Divine", response);
+        break;
+
+      case "Sacrifice-Consciousness":
+        tryAdvancePassage("Sacrifice Consciousness", response);
+        break;
+
+      default:
+        break;
+    }
   };
 
   ws.onclose = function (e) {

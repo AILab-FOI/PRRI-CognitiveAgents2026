@@ -2,6 +2,98 @@ var DONT = false;
 var FIRST = true;
 var STOP = false;
 
+var CURRENT_PASSAGE = "initial";
+
+// Defines from which passages which responses are valid
+var PASSAGE_STATES = {
+  "initial": ["Brain", "Place", "Alive", "Studying", "Wrong"],
+  "Analyst Brain": ["Memory", "Who-I", "Build"],
+  "Analyst No Memory": ["Place", "Studying", "Puzzle-Intro"],
+  "Analyst Who I Am": ["Place", "Studying", "Puzzle-Intro"],
+  "Analyst Why Build": ["Worse", "Puzzle-Intro", "Recording"],
+  "Analyst Worse": ["Puzzle-Intro"],
+  "Analyst Recording": ["Puzzle-Intro"],
+  "Analyst What Place": ["Compare", "Sample", "Puzzle-Intro"],
+  "Analyst Compare": ["Puzzle-Intro"],
+  "Analyst Sample": ["Puzzle-Intro"],
+  "Analyst Alive": ["Moving", "Feel-Alive", "Blurry"],
+  "Analyst Moving": ["Puzzle-Intro"],
+  "Analyst Feel Alive": ["Puzzle-Intro"],
+  "Analyst Not Blurry": ["Puzzle-Intro"],
+  "Analyst Wrong": ["Consent", "Objects", "Understand"],
+  "Analyst No Consent": ["Puzzle-Intro"],
+  "Analyst Objects": ["Puzzle-Intro"],
+  "Analyst Dont Understand": ["Puzzle-Intro"],
+  "Analyst Studying": ["Course", "Why-Doing", "Learned"],
+  "Analyst Of Course": ["Puzzle-Intro"],
+  "Analyst Why Doing": ["Puzzle-Intro"],
+  "Analyst Learned": ["Puzzle-Intro"],
+  "Analyst Puzzle Intro": ["Left", "Right", "Probability"],
+  "Analyst Left": ["No-Signal", "Greater-Design"],
+  "Analyst Greater Design": ["Carry-Yes", "Carry-Know", "Carry-Used", "Carry-No"],
+  "Analyst Carry Yes": ["Exit"],
+  "Analyst Carry Know": ["Exit"],
+  "Analyst Carry Used Zo": ["Exit"],
+  "Analyst Carry No": ["Exit"]
+};
+
+// Checks if valid transition
+function canAdvance(responseCode) {
+  var allowed = PASSAGE_STATES[CURRENT_PASSAGE] || [];
+  return allowed.indexOf(responseCode) !== -1;
+}
+
+function tryAdvancePassage(targetPassage, responseCode) {
+  if (!canAdvance(responseCode)) {
+    console.warn(
+      "[StateMachine] Blocked advance to '" +
+        targetPassage +
+        "'. " +
+        "Response '" +
+        responseCode +
+        "' is not valid from passage '" +
+        CURRENT_PASSAGE +
+        "'.",
+    );
+    return;
+  }
+
+  console.log(
+    "[StateMachine] Advancing from '" +
+      CURRENT_PASSAGE +
+      "' → '" +
+      targetPassage +
+      "'",
+  );
+  
+  CURRENT_PASSAGE = targetPassage;
+
+  window.parent.postMessage(
+    {
+      action: "advance_passage",
+      targetPassage: targetPassage,
+    },
+    "*",
+  );
+}
+
+// Updates Current passage if player moved using on screen choices
+window.addEventListener("message", function (event) {
+  if (event.data && event.data.action === "passage_changed") {
+    console.log(
+      "[StateMachine] Twine reported passage change → '" +
+        event.data.passage +
+        "'",
+    );
+    // Only update if we know about this passage; ignore unknown ones.
+    if (
+      Object.prototype.hasOwnProperty.call(PASSAGE_STATES, event.data.passage)
+    ) {
+      CURRENT_PASSAGE = event.data.passage;
+    }
+  }
+});
+
 $(window).on("load", function () {
   counter = 0;
 
@@ -25,7 +117,7 @@ $(window).on("load", function () {
 
       window.recognition = recognition;
 
-      recognition.lang = "hr-HR"; // Croatian
+      recognition.lang = "en-US"; 
       recognition.continuous = true;
       recognition.interimResults = false;
 
@@ -52,27 +144,11 @@ $(window).on("load", function () {
     init();
 
     button.onclick = () => {
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) {
-        // Firefox
-        document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) {
-        // Chrome, Safari and Opera
-        document.documentElement.webkitRequestFullscreen();
-      } else if (document.documentElement.msRequestFullscreen) {
-        // IE/Edge
-        document.documentElement.msRequestFullscreen();
-      }
       document.querySelector(".video-container").style.display = "block";
       if (!isMobileBrowser()) recognition.start();
       document.getElementById("startupute").style.display = "none";
-      document.getElementById("questions").style.display = "block";
       play_part("tisina");
       question("bok");
-      if (isMobileBrowser()) {
-        document.getElementById("record").style.display = "block";
-      }
     };
   }
 
@@ -107,145 +183,144 @@ function connect() {
   };
 
   ws.onmessage = function (msg) {
-    console.log(msg.data);
-    console.log(msg.data.toString());
-    play_part(msg.data.toString());
-    /*if( msg.data.toString() == '01' )
-	{
-	    console.log( '01' );
-	    play_part( '01' );
-	}
-	else if( msg.data.toString() == '02' )
-	{
-	    console.log( '02' );
-	    play_part( '02' );
-	}
-	else if( msg.data.toString() == '03' )
-	{
-	    console.log( '03' );
-	    play_part( '03' );
-	}
-	else if( msg.data.toString() == '04' )
-	{
-	    console.log( '04' );
-	    play_part( '04' );
-	}
-	else if( msg.data.toString() == '05' )
-	{
-	    console.log( '05' );
-	    play_part( '05' );
-	}
-	else if( msg.data.toString() == '06' )
-	{
-	    console.log( '06' );
-	    play_part( '06' );
-	}
-	else if( msg.data.toString() == '07' )
-	{
-	    console.log( '07' );
-	    play_part( '07' );
-	}
-	else if( msg.data.toString() == '08' )
-	{
-	    console.log( '08' );
-	    play_part( '08' );
-	}
-	else if( msg.data.toString() == '09' )
-	{
-	    console.log( '09' );
-	    play_part( '09' );
-	}
-	else if( msg.data.toString() == '10' )
-	{
-	    console.log( '10' );
-	    play_part( '10' );
-	}
-	else if( msg.data.toString() == '11' )
-	{
-	    console.log( '11' );
-	    play_part( '11' );
-	}
-	else if( msg.data.toString() == '12' )
-	{
-	    console.log( '12' );
-	    play_part( '12' );
-	}
-	else if( msg.data.toString() == '13' )
-	{
-	    console.log( '13' );
-	    play_part( '13' );
-	}
-	else if( msg.data.toString() == '14' )
-	{
-	    console.log( '14' );
-	    play_part( '14' );
-	}
-	else if( msg.data.toString() == '15' )
-	{
-	    console.log( '15' );
-	    play_part( '15' );
-	}
-	else if( msg.data.toString() == '16' )
-	{
-	    console.log( '16' );
-	    play_part( '16' );
-	}
-	else if( msg.data.toString() == '17' )
-	{
-	    console.log( '17' );
-	    play_part( '17' );
-	}
-	else if( msg.data.toString() == '18' )
-	{
-	    console.log( '18' );
-	    play_part( '18' );
-		}
-	else if( msg.data.toString() == '19' )
-	{
-	    console.log( '19' );
-	    play_part( '19' );
-	}
-	else if( msg.data.toString() == '20' )
-	{
-	    console.log( '20' );
-	    play_part( '20' );
-		}
-	else if( msg.data.toString() == 'hvala' )
-	{
-	    console.log( 'hvala' );
-	    play_part( 'hvala' );
-	}
-	else if( msg.data.toString() == 'dobro' )
-	{
-	    console.log( 'dobro' );
-	    play_part( 'dobro' );
-	}
-	else if( msg.data.toString() == 'predstavljanje-kratko' )
-	{
-	    console.log( 'predstavljanje-kratko' );
-	    play_part( 'predstavljanje-kratko' );
-	}
-	else if( msg.data.toString() == 'izvoli' )
-	{
-	    console.log( 'izvoli' );
-	    play_part( 'izvoli' );
-	}
-	else if( msg.data.toString() == 'ponovi' )
-	{
-	    console.log( 'ponovi' );
-	    play_part( 'ponovi' );
-	}
-	else if( msg.data.toString() == 'predstavljanje-dugo' )
-	{
-	    console.log( 'predstavljanje-dugo' );
-	    play_part( 'predstavljanje-dugo' );
-	}
-	else
-	{
-	    console.log( 'Tišina' );
-	    play_part( 'tisina' );
-	}
-	*/
+    var response = msg.data.toString();
+    console.log("[WS] Received:", response);
+
+    //play_part(response);
+
+    if (response === "ponovi") {
+        play_part("ponovi"); // plays the "please repeat" audio, which ends → tisina → mic restarts
+        return;
+    }
+
+    switch (response) {
+      case "Brain":
+        tryAdvancePassage("Analyst Brain", response);
+        break;
+
+      case "Place":
+        tryAdvancePassage("Analyst What Place", response);
+        break;
+
+      case "Alive":
+        tryAdvancePassage("Analyst Alive", response);
+        break;
+
+      case "Wrong":
+        tryAdvancePassage("Analyst Wrong", response);
+        break;
+
+      case "Memory":
+        tryAdvancePassage("Analyst No Memory", response);
+        break;
+
+      case "Who-I":
+        tryAdvancePassage("Analyst Who I Am", response);
+        break;
+
+      case "Build":
+        tryAdvancePassage("Analyst Why Build", response);
+        break;
+
+      case "Puzzle-Intro":
+        tryAdvancePassage("Analyst Puzzle Intro", response);
+        break;
+
+      case "Worse":
+        tryAdvancePassage("Analyst Worse", response);
+        break;
+
+      case "Recording":
+        tryAdvancePassage("Analyst Recording", response);
+        break;
+
+      case "Compare":
+        tryAdvancePassage("Analyst Compare", response);
+        break;
+
+      case "Sample":
+        tryAdvancePassage("Analyst Sample", response);
+        break;
+
+      case "Moving":
+        tryAdvancePassage("Analyst Movign", response);
+        break;
+
+      case "Feel-Alive":
+        tryAdvancePassage("Analyst Feel Alive", response);
+        break;
+
+      case "Blurry":
+        tryAdvancePassage("Analyst Not Blurry", response);
+        break;
+
+      case "Consent":
+        tryAdvancePassage("Analyst No Consent", response);
+        break;
+
+      case "Objects":
+        tryAdvancePassage("Analyst Objects", response);
+        break;
+
+      case "Understand":
+        tryAdvancePassage("Analyst Dont Understand", response);
+        break;
+
+      case "Course":
+        tryAdvancePassage("Analyst Of Course", response);
+        break;
+
+      case "Why-Doing":
+        tryAdvancePassage("Analyst Why Doing", response);
+        break;
+
+      case "Learned":
+        tryAdvancePassage("Analyst Learned", response);
+        break;
+
+      case "Left":
+        tryAdvancePassage("Analyst Left", response);
+        break;
+
+      case "Right":
+        tryAdvancePassage("Analyst Right", response);
+        break;
+
+      case "Probability":
+        tryAdvancePassage("Analyst Probability", response);
+        break;
+
+      case "No-Signal":
+        tryAdvancePassage("Analyst No Signal", response);
+        break;
+
+      case "Greater-Design":
+        tryAdvancePassage("Analyst Greater Design", response);
+        break;
+
+      case "Carry-Yes":
+        tryAdvancePassage("Analyst Carry Yes", response);
+        break;
+
+      case "Carry-Know":
+        tryAdvancePassage("Analyst Carry Know", response);
+        break;
+
+      case "Carry-Used":
+        tryAdvancePassage("Analyst Carry Used To", response);
+        break;
+
+      case "Carry-No":
+        tryAdvancePassage("Analyst Carry No", response);
+        break;
+
+      case "Exit":
+        tryAdvancePassage("Specimen Bay Exit", response);
+        break;
+
+      default:
+        break;
+    }
   };
 
   ws.onclose = function (e) {

@@ -2,6 +2,89 @@ var DONT = false;
 var FIRST = true;
 var STOP = false;
 
+var CURRENT_PASSAGE = "initial";
+
+// Defines from which passages which responses are valid
+var PASSAGE_STATES = {
+  "initial": ["Hello", "Who", "What", "Rifle", "Camera"],
+  "Eng A Hello": ["Who", "What", "C"],
+  "Eng A Who": ["Research-Intro", "No"],
+  "Eng A What": ["Research-Intro", "No"],
+  "Eng Research Intro": ["Rifle", "Camera"],
+  "Eng Rifle": ["Rifle-Force", "Rifle-Power", "Rifle-War"],
+  "Eng Rifle Force": ["Camera", "Leave"],
+  "Eng Rifle Power": ["Camera", "Leave"],
+  "Eng Rifle War": ["Camera", "Leave"],
+  "Eng Camera": ["Camera-Memory", "Camera-Share", "Camera-Obsession"],
+  "Eng Camera Memory": ["Camera-Imprecision", "Camera-Accuracy"],
+  "Eng Camera Imprecision": ["Leave"],
+  "Eng Camera Accuracy": ["Camera-Alone", "Camera-Residue", "Camera-Obsession"],
+  "Eng Camera Share": ["Camera-Alone", "Camera-Residue"],
+  "Eng Camera Alone": ["Leave"],
+  "Eng Camera Residue": ["Leave"],
+  "Eng Camera Obsession": ["Camera-Point", "Camera-Problem"],
+  "Eng Camera Point": ["Leave"],
+  "Eng Camera Problem": ["Leave"],
+  "Eng A No": ["Who", "What", "C", "Leave"]
+};
+
+// Checks if valid transition
+function canAdvance(responseCode) {
+  var allowed = PASSAGE_STATES[CURRENT_PASSAGE] || [];
+  return allowed.indexOf(responseCode) !== -1;
+}
+
+function tryAdvancePassage(targetPassage, responseCode) {
+  if (!canAdvance(responseCode)) {
+    console.warn(
+      "[StateMachine] Blocked advance to '" +
+        targetPassage +
+        "'. " +
+        "Response '" +
+        responseCode +
+        "' is not valid from passage '" +
+        CURRENT_PASSAGE +
+        "'.",
+    );
+    return;
+  }
+
+  console.log(
+    "[StateMachine] Advancing from '" +
+      CURRENT_PASSAGE +
+      "' → '" +
+      targetPassage +
+      "'",
+  );
+  
+  CURRENT_PASSAGE = targetPassage;
+
+  window.parent.postMessage(
+    {
+      action: "advance_passage",
+      targetPassage: targetPassage,
+    },
+    "*",
+  );
+}
+
+// Updates Current passage if player moved using on screen choices
+window.addEventListener("message", function (event) {
+  if (event.data && event.data.action === "passage_changed") {
+    console.log(
+      "[StateMachine] Twine reported passage change → '" +
+        event.data.passage +
+        "'",
+    );
+    // Only update if we know about this passage; ignore unknown ones.
+    if (
+      Object.prototype.hasOwnProperty.call(PASSAGE_STATES, event.data.passage)
+    ) {
+      CURRENT_PASSAGE = event.data.passage;
+    }
+  }
+});
+
 $(window).on( 'load', function(){
     counter = 0;
     
@@ -28,7 +111,7 @@ $(window).on( 'load', function(){
 	    
 	    window.recognition = recognition;
 	    
-	    recognition.lang = 'hr-HR'; // Croatian
+	    recognition.lang = 'en-US';
 	    recognition.continuous = true;
 	    recognition.interimResults = false;
 	    
@@ -55,27 +138,12 @@ $(window).on( 'load', function(){
 	init();
 	
 	button.onclick = () => {
-	    if (document.documentElement.requestFullscreen) {
-		document.documentElement.requestFullscreen();
-	    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-		document.documentElement.mozRequestFullScreen();
-	    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-		document.documentElement.webkitRequestFullscreen();
-	    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-		document.documentElement.msRequestFullscreen();
-	    }
-	    document.querySelector('.video-container').style.display = 'block';
-	    if( !isMobileBrowser() )
-	    	recognition.start();
-	    document.getElementById('startupute').style.display = 'none';
-	    document.getElementById('questions').style.display = 'block';
-	    play_part( 'tisina' );
-	    question( 'bok' );
-	    if( isMobileBrowser() )
-	    {
-		document.getElementById('record').style.display = 'block';
-	    }
-	};
+      document.querySelector(".video-container").style.display = "block";
+      if (!isMobileBrowser()) recognition.start();
+      document.getElementById("startupute").style.display = "none";
+      play_part("tisina");
+      question("bok");
+    };
     }
 
     record.onclick = () => {
@@ -113,149 +181,107 @@ function connect() {
 	play_part( 'tisina' );
     };
     
-    
-    
-    ws.onmessage = function( msg ) {
-	console.log( msg.data );
-	console.log( msg.data.toString() );
-	play_part( msg.data.toString() );
-	/*if( msg.data.toString() == '01' )
-	{
-	    console.log( '01' );
-	    play_part( '01' );
+
+  ws.onmessage = function (msg) {
+    var response = msg.data.toString();
+    console.log("[WS] Received:", response);
+
+    //play_part(response);
+
+	if (response === "ponovi") {
+        play_part("ponovi"); // plays the "please repeat" audio, which ends → tisina → mic restarts
+        return;
+    }
+
+    switch (response) {
+      	case "Hello":
+        	tryAdvancePassage("Eng A Hello", response);
+        	break;
+
+		case "Who":
+        	tryAdvancePassage("Eng A Who", response);
+        	break;
+
+		case "What":
+        	tryAdvancePassage("Eng A What", response);
+        	break;
+
+		case "C":
+        	tryAdvancePassage("Eng Route C", response);
+        	break;
+
+		case "Research-Intro":
+        	tryAdvancePassage("Eng Research Intro", response);
+        	break;
+
+		case "No":
+        	tryAdvancePassage("Eng A No", response);
+        	break;
+
+		case "Rifle":
+        	tryAdvancePassage("Eng Rifle", response);
+        	break;
+
+		case "Camera":
+        	tryAdvancePassage("Eng Camera", response);
+        	break;
+
+		case "Rifle-Force":
+        	tryAdvancePassage("Eng Rifle Force", response);
+        	break;
+
+		case "Rifle-Power":
+        	tryAdvancePassage("Eng Rifle Power", response);
+        	break;
+
+		case "Rifle-War":
+        	tryAdvancePassage("Eng Rifle War", response);
+        	break;
+
+		case "Leave":
+        	tryAdvancePassage("Eng Bay Closing", response);
+        	break;
+
+		case "Camera-Memory":
+        	tryAdvancePassage("Eng Camera Memory", response);
+        	break;
+
+		case "Camera-Share":
+        	tryAdvancePassage("Eng Camera Share", response);
+        	break;
+
+		case "Camera-Obsession":
+        	tryAdvancePassage("Eng Camera Obsession", response);
+        	break;
+
+		case "Camera-Imprecision":
+        	tryAdvancePassage("Eng Camera Imprecision", response);
+        	break;
+
+		case "Camera-Accuracy":
+        	tryAdvancePassage("Eng Camera Accuracy", response);
+        	break;
+
+		case "Camera-Alone":
+        	tryAdvancePassage("Eng Camera Alone", response);
+        	break;
+
+		case "Camera-Residue":
+        	tryAdvancePassage("Eng Camera Residue", response);
+        	break;
+
+		case "Camera-Point":
+        	tryAdvancePassage("Eng Camera Point", response);
+        	break;
+
+		case "Camera-Problem":
+        	tryAdvancePassage("Eng Camera Problem", response);
+        	break;
+		
+		default:
+			break;
 	}
-	else if( msg.data.toString() == '02' )
-	{
-	    console.log( '02' );
-	    play_part( '02' );
-	}
-	else if( msg.data.toString() == '03' )
-	{
-	    console.log( '03' );
-	    play_part( '03' );
-	}
-	else if( msg.data.toString() == '04' )
-	{
-	    console.log( '04' );
-	    play_part( '04' );
-	}
-	else if( msg.data.toString() == '05' )
-	{
-	    console.log( '05' );
-	    play_part( '05' );
-	}
-	else if( msg.data.toString() == '06' )
-	{
-	    console.log( '06' );
-	    play_part( '06' );
-	}
-	else if( msg.data.toString() == '07' )
-	{
-	    console.log( '07' );
-	    play_part( '07' );
-	}
-	else if( msg.data.toString() == '08' )
-	{
-	    console.log( '08' );
-	    play_part( '08' );
-	}
-	else if( msg.data.toString() == '09' )
-	{
-	    console.log( '09' );
-	    play_part( '09' );
-	}
-	else if( msg.data.toString() == '10' )
-	{
-	    console.log( '10' );
-	    play_part( '10' );
-	}
-	else if( msg.data.toString() == '11' )
-	{
-	    console.log( '11' );
-	    play_part( '11' );
-	}
-	else if( msg.data.toString() == '12' )
-	{
-	    console.log( '12' );
-	    play_part( '12' );
-	}
-	else if( msg.data.toString() == '13' )
-	{
-	    console.log( '13' );
-	    play_part( '13' );
-	}
-	else if( msg.data.toString() == '14' )
-	{
-	    console.log( '14' );
-	    play_part( '14' );
-	}
-	else if( msg.data.toString() == '15' )
-	{
-	    console.log( '15' );
-	    play_part( '15' );
-	}
-	else if( msg.data.toString() == '16' )
-	{
-	    console.log( '16' );
-	    play_part( '16' );
-	}
-	else if( msg.data.toString() == '17' )
-	{
-	    console.log( '17' );
-	    play_part( '17' );
-	}
-	else if( msg.data.toString() == '18' )
-	{
-	    console.log( '18' );
-	    play_part( '18' );
-		}
-	else if( msg.data.toString() == '19' )
-	{
-	    console.log( '19' );
-	    play_part( '19' );
-	}
-	else if( msg.data.toString() == '20' )
-	{
-	    console.log( '20' );
-	    play_part( '20' );
-		}
-	else if( msg.data.toString() == 'hvala' )
-	{
-	    console.log( 'hvala' );
-	    play_part( 'hvala' );
-	}
-	else if( msg.data.toString() == 'dobro' )
-	{
-	    console.log( 'dobro' );
-	    play_part( 'dobro' );
-	}
-	else if( msg.data.toString() == 'predstavljanje-kratko' )
-	{
-	    console.log( 'predstavljanje-kratko' );
-	    play_part( 'predstavljanje-kratko' );
-	}
-	else if( msg.data.toString() == 'izvoli' )
-	{
-	    console.log( 'izvoli' );
-	    play_part( 'izvoli' );
-	}
-	else if( msg.data.toString() == 'ponovi' )
-	{
-	    console.log( 'ponovi' );
-	    play_part( 'ponovi' );
-	}
-	else if( msg.data.toString() == 'predstavljanje-dugo' )
-	{
-	    console.log( 'predstavljanje-dugo' );
-	    play_part( 'predstavljanje-dugo' );
-	}
-	else
-	{
-	    console.log( 'Tišina' );
-	    play_part( 'tisina' );
-	}
-	*/
-    };
+  };
     
     ws.onclose = function(e) {
 	console.log( 'Socket is closed. Reconnect will be attempted in 1 second.', e.reason );

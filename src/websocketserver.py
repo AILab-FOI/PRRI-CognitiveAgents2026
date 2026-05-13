@@ -14,7 +14,7 @@ class EngineerController( WebSocket ) :
         WebSocket.__init__( self, *args, **kwargs )
         self.BUFFER = [ 'tisina' ]
         self.LAST = None
-        self.chatbot = ChatBot( 'Engineer', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'engineer_db.sqlite' ) )
+        self.chatbot = ChatBot( 'Engineer', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'engineer_db.sqlite3' ) )
         print( self.chatbot.get_response( 'tko te napravio' ) )
         _thread.start_new_thread( self.listen, () )
         
@@ -29,7 +29,7 @@ class EngineerController( WebSocket ) :
                     self.sendMessage( str( cmd ) )
                 sleep( 0.1 )
             except Exception as e:
-                print( 'NLPController: There was an error!', e )
+                print( 'EngineerController: There was an error!', e )
 
     def handleMessage( self ):
         print( 'DATA:', self.data )
@@ -55,7 +55,7 @@ class AnalystController( WebSocket ) :
         WebSocket.__init__( self, *args, **kwargs )
         self.BUFFER = [ 'tisina' ]
         self.LAST = None
-        self.chatbot = ChatBot( 'Analyst', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'analyst_db.sqlite' ) )
+        self.chatbot = ChatBot( 'Analyst', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'analyst_db.sqlite3' ) )
         print( self.chatbot.get_response( 'tko te napravio' ) )
         _thread.start_new_thread( self.listen, () )
         
@@ -70,7 +70,7 @@ class AnalystController( WebSocket ) :
                     self.sendMessage( str( cmd ) )
                 sleep( 0.1 )
             except Exception as e:
-                print( 'NLPController: There was an error!', e )
+                print( 'AnalystController: There was an error!', e )
 
     def handleMessage( self ):
         print( 'DATA:', self.data )
@@ -96,7 +96,7 @@ class CartographerController( WebSocket ) :
         WebSocket.__init__( self, *args, **kwargs )
         self.BUFFER = [ 'tisina' ]
         self.LAST = None
-        self.chatbot = ChatBot( 'Cartographer', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'cartographer_db.sqlite' ) )
+        self.chatbot = ChatBot( 'Cartographer', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'cartographer_db.sqlite3' ) )
         print( self.chatbot.get_response( 'tko te napravio' ) )
         _thread.start_new_thread( self.listen, () )
         
@@ -111,7 +111,7 @@ class CartographerController( WebSocket ) :
                     self.sendMessage( str( cmd ) )
                 sleep( 0.1 )
             except Exception as e:
-                print( 'NLPController: There was an error!', e )
+                print( 'CartographerController: There was an error!', e )
 
     def handleMessage( self ):
         print( 'DATA:', self.data )

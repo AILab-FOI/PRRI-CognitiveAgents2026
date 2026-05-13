@@ -83,9 +83,14 @@ if __name__ == '__main__':
         train( exception )
         sys.exit()
 
-    server = SimpleWebSocketServer( '0.0.0.0', 8009, EngineerController )
-    server = SimpleWebSocketServer( '0.0.0.0', 8010, AnalystController )
-    server = SimpleWebSocketServer( '0.0.0.0', 8011, CartographerController )
-    server = SimpleWebSocketServer( '0.0.0.0', 8012, ExceptionController )
-    _thread.start_new_thread( server.serveforever, () )	
+    server_engineer     = SimpleWebSocketServer( '0.0.0.0', 8009, EngineerController )
+    server_analyst      = SimpleWebSocketServer( '0.0.0.0', 8010, AnalystController )
+    server_cartographer = SimpleWebSocketServer( '0.0.0.0', 8011, CartographerController )
+    server_exception    = SimpleWebSocketServer( '0.0.0.0', 8012, ExceptionController )
+
+    _thread.start_new_thread( server_engineer.serveforever, () )
+    _thread.start_new_thread( server_analyst.serveforever, () )
+    _thread.start_new_thread( server_cartographer.serveforever, () )
+    _thread.start_new_thread( server_exception.serveforever, () )
+
     app.run( host='0.0.0.0', debug=False )

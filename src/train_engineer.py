@@ -1,6 +1,6 @@
 from chatterbot.trainers import ListTrainer
 
-LOGIC_ADAPTERS = [
+LOGIC_ADAPTER = [
     {
         'import_path': 'chatterbot.logic.BestMatch'
     },
@@ -15,7 +15,120 @@ def train(bot):
     bot.set_trainer(ListTrainer)
     chatbot = bot
 
+    chatbot.train([
+        'Hello',
+        'Hello'
+    ])
 
+    chatbot.train([
+        'Who are you',
+        'Who'
+    ])
+
+    chatbot.train([
+        'What are you doing',
+        'What'
+    ])
+
+    chatbot.train([
+        'Explore the room',
+        'C'
+    ])
+
+    chatbot.train([
+        'Sure',
+        'Research-Intro'
+    ])
+
+    chatbot.train([
+        'No',
+        'No'
+    ])
+
+    chatbot.train([
+        'The disassembled assault rifle',
+        'Rifle'
+    ])
+
+    chatbot.train([
+        'The photography camera',
+        'Camera'
+    ])
+    chatbot.train([
+        'Switch to the camera',
+        'Camera'
+    ])
+
+    chatbot.train([
+        'Tool of force',
+        'Rifle-Force'
+    ])
+
+    chatbot.train([
+        'Tool of power',
+        'Rifle-Power'
+    ])
+
+    chatbot.train([
+        'Weapon used in war',
+        'Rifle-War'
+    ])
+
+    chatbot.train([
+        'Leave the engineering bay',
+        'Leave'
+    ])
+    chatbot.train([
+        'Exit the engineering bay',
+        'Leave'
+    ])
+
+    chatbot.train([
+        'Stores memories.',
+        'Camera-Memory'
+    ])
+
+    chatbot.train([
+        'Shares experiences.',
+        'Camera-Share'
+    ])
+
+    chatbot.train([
+        'Obsession replaces experience.',
+        'Camera-Obsession'
+    ])
+
+    chatbot.train([
+        'The organisms. The imprecision is the point',
+        'Camera-Imprecision'
+    ])
+
+    chatbot.train([
+        'The device is more accurate. Accuracy is what matters',
+        'Camera-Accuracy'
+    ])
+
+    chatbot.train([
+        'Because we dont want to experience things alone',
+        'Camera-Alone'
+    ])
+
+    chatbot.train([
+        'Because the moment leaves something behind that cant be kept any other way',
+        'Camera-Residue'
+    ])
+
+    chatbot.train([
+        'Thats the point',
+        'Camera-Point'
+    ])
+
+    chatbot.train([
+        'No, thats the problem',
+        'Camera-Problem'
+    ])
+
+    """
     chatbot.train([
         'Hello',
         'Greetings subject.'
@@ -216,4 +329,4 @@ def train(bot):
     chatbot.train([
         'Goodbye',
         'You may continue your movement through the vessel.'
-    ])
+    ])"""

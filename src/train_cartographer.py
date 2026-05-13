@@ -1,13 +1,13 @@
 from chatterbot.trainers import ListTrainer
 
-LOGIC_ADAPTERS = [
+LOGIC_ADAPTER = [
     {
         'import_path': 'chatterbot.logic.BestMatch'
     },
     {
         'import_path': 'chatterbot.logic.LowConfidenceAdapter',
         'threshold': 0.66,
-        'default_response': 'The response does not align with prior patterns.'
+        'default_response': 'ponovi'
     }
 ]
 
@@ -15,8 +15,136 @@ def train(bot):
     bot.set_trainer(ListTrainer)
     chatbot = bot
 
+    chatbot.train([
+        'I was under the impression your kind doesnt know what threatening means?',
+        'Threatening'
+    ])
 
     chatbot.train([
+        'Thats a lot of effort being spent on research.',
+        'Effort'
+    ])
+
+    chatbot.train([
+        'I might have heard that deathworld thing being mentioned before. Surely Earth isnt that dangerous?',
+        'Deathworld'
+    ])
+
+    chatbot.train([
+        'So what is there to do out here? Can I join you in any research?',
+        'Join'
+    ])
+    chatbot.train([
+        'Fine. Can I join you in research',
+        'Join'
+    ])
+
+    chatbot.train([
+        'What?! Is that why youre still alive in front of me and not dead by me?! What have you done to my brain??',
+        'Rage'
+    ])
+
+    chatbot.train([
+        'Youre actually joking. What the hell have you done to me? Will it have any complications',
+        'Skeptic'
+    ])
+    
+    chatbot.train([
+        'Sorry, I didnt think about that. I guess you have a point',
+        'Accept'
+    ])
+
+    chatbot.train([
+        'But will it affect me in any other way? Is it permanent?',
+        'Permanent'
+    ])
+
+    chatbot.train([
+        'Even if you were actually sentient I still wouldnt feel bad for hitting you.',
+        'Threat'
+    ])
+
+    chatbot.train([
+        'An image of war between nations.',
+        'Puzzle-War'
+    ])
+
+    chatbot.train([
+        'An image of people sacrificing themselves for others.',
+        'Puzzle-Sacrifice'
+    ])
+
+    chatbot.train([
+        'An image of scientific discovery.',
+        'Puzzle-Science'
+    ])
+
+    chatbot.train([
+        'Theres no way you never knew conflicts until coming here. Thats impossible.',
+        'War-No'
+    ])
+
+    chatbot.train([
+        'What do you mean conflict isnt usually found between lifeforms',
+        'War-Lifeform'
+    ])
+
+    chatbot.train([
+        'Did you find any parallels between your kind and mine in terms of sociability?',
+        'War-Parallels'
+    ])
+
+    chatbot.train([
+        'War is a normal part of life. The more you dwell on it the more it consumes you',
+        'War-Normal'
+    ])
+
+    chatbot.train([
+        'Continue',
+        'Signal'
+    ])
+
+    chatbot.train([
+        'I guess theres not many differences then, surprisingly',
+        'War-Difference'
+    ])
+
+    chatbot.train([
+        'Yeah, I guess some people do feel shame for their nature and wish to be more than just defined by it.',
+        'War-Shame'
+    ])
+
+    chatbot.train([
+        'Isnt it natural that understanding leads to development which can be weaponised?',
+        'Science-Weapons'
+    ])
+
+    chatbot.train([
+        'And your fundamentals are just sitting around not doing all that, Im guessing?',
+        'Science-Kind'
+    ])
+
+    chatbot.train([
+        'Well yeah, of course it isnt passed down as easily. Because the sacrifice results in death',
+        'Sacrifice-Death'
+    ])
+
+    chatbot.train([
+        'There is no greater design — we just exist inside an existing framework',
+        'Sacrifice-Design'
+    ])
+
+    chatbot.train([
+        'There are many interpretations. Most people attribute it to divine figures',
+        'Sacrifice-Divine'
+    ])
+
+    chatbot.train([
+        'I think its because the consciousness equates the continuation of another to be the continuation of itself',
+        'Sacrifice-Consciousness'
+    ])
+
+    """chatbot.train([
         'Hello',
         'The subject is in a conversational state. What kind of patterns are you observing exactly?'
     ])
@@ -335,4 +463,4 @@ def train(bot):
     chatbot.train([
         'I have classified the records',
         'Classification logged. The data confirms our current model of human disturbance. We are proceeding to the next sector of the Archive.'
-    ])
+    ])"""

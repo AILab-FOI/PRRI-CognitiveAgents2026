@@ -1,13 +1,13 @@
 from chatterbot.trainers import ListTrainer
 
-LOGIC_ADAPTERS = [
+LOGIC_ADAPTER = [
     {
         'import_path': 'chatterbot.logic.BestMatch'
     },
     {
         'import_path': 'chatterbot.logic.LowConfidenceAdapter',
         'threshold': 0.66,
-        'default_response': 'Clarify.'
+        'default_response': 'ponovi'
     }
 ]
 
@@ -15,6 +15,168 @@ def train(bot):
     bot.set_trainer(ListTrainer)
     chatbot = bot
 
+
+    chatbot.train([
+        'Are you the colleague who messed with my brain?',
+        'Brain'
+    ])
+
+    chatbot.train([
+        'What exactly is this place?',
+        'Place'
+    ])
+
+    chatbot.train([
+        'Are those things alive',
+        'Alive'
+    ])
+
+    chatbot.train([
+        'Youre studying me, arent you?',
+        'Studying'
+    ])
+
+    chatbot.train([
+        'This is wrong',
+        'Wrong'
+    ])
+
+    chatbot.train([
+        'I dont remember anything',
+        'Memory'
+    ])
+
+    chatbot.train([
+        'I remember who Im meant to be',
+        'Who-I'
+    ])
+
+    chatbot.train([
+        'Why even build something like this in my brain',
+        'Build'
+    ])
+
+    chatbot.train([
+        'Continue to the specimen test',
+        'Puzzle-Intro'
+    ])
+
+    chatbot.train([
+        'Thats somehow worse than if youd just taken them',
+        'Worse'
+    ])
+
+    chatbot.train([
+        'So Im just a live recording to you.',
+        'Recording'
+    ])
+
+    chatbot.train([
+        'Compare to what?',
+        'Compare'
+    ])
+
+    chatbot.train([
+        'So Im just another sample',
+        'Sample'
+    ])
+
+    chatbot.train([
+        'Theyre moving',
+        'Moving'
+    ])
+
+    chatbot.train([
+        'They feel alive',
+        'Feel-Alive'
+    ])
+
+    chatbot.train([
+        'I feel like the definition cant be that blurry.',
+        'Blurry'
+    ])
+
+    chatbot.train([
+        'Youre experimenting on me without consent',
+        'Consent'
+    ])
+
+    chatbot.train([
+        'Youre treating people like objects',
+        'Objects'
+    ])
+
+    chatbot.train([
+        'You dont even understand what youre doing.',
+        'Understand'
+    ])
+
+    chatbot.train([
+        'Of course its required',
+        'Course'
+    ])
+
+    chatbot.train([
+        'So you dont even know why youre doing this',
+        'Why-Doing'
+    ])
+
+    chatbot.train([
+        'What have you learned so far',
+        'Learned'
+    ])
+
+    chatbot.train([
+        'The left one is structured differently',
+        'Left'
+    ])
+
+    chatbot.train([
+        'The right one feels fake',
+        'Right'
+    ])
+
+    chatbot.train([
+        'One of these is probably wrong',
+        'Probability'
+    ])
+
+    chatbot.train([
+        'No thanks, Ill just keep exploring the ship',
+        'No-Signal'
+    ])
+
+    chatbot.train([
+        'The greater design is a bundle of theories that mean to explain the greater purposes of our existence',
+        'Greater-Design'
+    ])
+
+    chatbot.train([
+        'I suppose I do. Everyone does, whether they admit it or not',
+        'Carry-Yes'
+    ])
+
+    chatbot.train([
+        'Not really. I just know it exists.',
+        'Carry-Know'
+    ])
+
+    chatbot.train([
+        'I used to. Not so much anymore',
+        'Carry-Used'
+    ])
+
+    chatbot.train([
+        'I dont think about it much',
+        'Carry-No'
+    ])
+
+    chatbot.train([
+        'Exit the specimen bay',
+        'Exit'
+    ])
+
+    """
     chatbot.train([
         'Hello',
         'Subject is in a conversational state.'
@@ -320,4 +482,4 @@ def train(bot):
     chatbot.train([
         'We build on unresolved things',
         'Theories. Plural. Unresolved. Your species detected a pattern and produced multiple explanations. Each internally consistent. Each incompatible. Unresolved fundamentals should produce stillness. Yours do not. You build on them anyway. I am not certain whether that is an error or the most efficient behaviour we have observed.'
-    ])
+    ])"""
