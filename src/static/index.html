@@ -199,6 +199,16 @@ body[data-tags~="room1"][data-tags~="device"] {
     background-image: url('/media/Room_Device.png'), url('/media/Room.png');
 }
 
+/* ---------- CONTACT / ALIEN ARRIVAL ---------- */
+
+body[data-tags~="contact"] {
+    background-image: url('/media/Contact.png');
+}
+
+body[data-tags~="contact"][data-tags~="device"] {
+    background-image: url('/media/Contact_Device.png'), url('/media/Contact.png');
+}
+
 /* ---------- HALLWAY ---------- */
 
 body[data-tags~="hallway"] {
@@ -2042,166 +2052,378 @@ $(window).on('message', function (event) {
             [[Continue into the hallway.|Hallway Convergence]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="3.2. Able Or Want" tags="nobr contact" position="900,1400" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="3.2. Able Or Want" tags="nobr contact" position="900,1400" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;ableOrWant&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
-    	Because we don&#39;t want to. Earth is yet too dangerous to step on. Careful research is still in order.
+        Both answers are incomplete.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        We are able to move objects between controlled environments.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        We are not able to return you safely without conditions that are not yet met.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        And the part where you don&#39;t want to?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Earth is still too dangerous to enter directly.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Not because it is lifeless.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Because it is aggressively alive.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Careful research remains necessary.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-			[[&quot;How is Earth dangerous to you?&quot;|3.2. Earth Dangerous]]
-            [[&quot;I think I understand, somehow.&quot;|3.2. What Now]]
+            [[How is Earth dangerous to you?|3.2. Earth Dangerous]]
+            [[I think I understand, somehow.|3.2. What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="3.2. Alien Arrival" tags="nobr contact" position="500,1500" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="3.2. Alien Arrival" tags="nobr contact" position="500,1500" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;alienArrival&quot;&gt;&gt;
-        Three aliens enter: the Cartographer, the Analyst, and the Engineer. They keep their distance, arms extending inquisitively
+        Three aliens enter the chamber: the Cartographer, the Analyst, and the Engineer.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        They do not rush toward you. They keep their distance, studying your posture, your breathing, and the way your eyes search the room.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-            They are the ones who put you in here, but not the ones who got you aboard this ship. Their nature is incompatible with anything that could harm you in this very moment. You needn&#39;t fret.
+        Easy. They are the ones who put you in the chamber, but not the ones who got you aboard this ship. Important distinction. Try not to make this worse.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-            Subject is in a conversational state. Could the subject not have understood the instructive oscillation carvings of his waking chamber? Or was there some other reason for the meeting arrangement?
+        Subject is awake, mobile, and conversational.
     &lt;&lt;ctpNext clear&gt;&gt;
-        The three researchers observe you, waiting.
+        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
+        Subject selected a non-optimal chamber instruction and produced an unexpected meeting sequence.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        The subject is afraid.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The three researchers observe you, waiting for a response.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[What is going on here? What are you?|3.2. What Are You]]
-			[[What do you want from me?|3.2. What Want]]
-			[[Why did you release me?|3.2. Why Released]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Why did you release me?|3.2. Why Released]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="3.2. Earth Dangerous" tags="nobr contact" position="900,1600" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="3.2. Earth Dangerous" tags="nobr contact" position="900,1600" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;earthDangerous&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Earth is not dangerous because it is dead.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Earth is dangerous because life there refuses to remain separate from conflict.
+    &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	The entropy is at its highest observed display within the system. Life itself poses more of a threat than other consequential interactions. Life and death are intertwined so tightly that life never truly ends. Any outlandish objects will find themselves either consumed or becoming part of the local ecosystem.
+        Predation, disease, competition, symbiosis, adaptation, extinction, memory. Your world converts threat into structure.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        A foreign object does not merely land on Earth.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        It is touched, contaminated, studied, consumed, worshipped, weaponised, hidden, sold, or misunderstood.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Often in that order.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        That sounds like us.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Yes.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        That is the concern.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;I think I understand, somehow.&quot;|3.2. What Now]]
+            [[I think I understand, somehow.|3.2. What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="3.2. Free To Go" tags="nobr contact" position="800,1450" size="100,200">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="3.2. Free To Go" tags="nobr contact" position="800,1450" size="100,200">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;freeToGo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
-    	The departure for your home planet is unavailable as of the moment. The subject will stay on the ship until further notice.
+        Departure for your home planet is unavailable at this moment.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        That&#39;s a very careful way of saying no.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        It is not no.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        It is not yet.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Your body has not completed adaptation. Your neurological signal remains unstable. Your origin point is not safe for direct return.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Also, the research is incomplete.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-			[[&quot;Are you not able to bring me back, or do you not want to?&quot;|3.2. Able Or Want]]
-            [[&quot;So you completed the transaction — what can I do now?&quot;|3.2. What Now]]
+            [[Are you not able to bring me back, or do you not want to?|3.2. Able Or Want]]
+            [[So you completed the transaction — what can I do now?|3.2. What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="3.2. Humanity Warning" tags="nobr contact" position="1000,1500" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="3.2. Humanity Warning" tags="nobr contact" position="1000,1500" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;humanityWarning&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-        Notable correction. Assuming its &#39;intent&#39; carried through. But upon observing human behaviour further, an augmentation of behaviour tracking may serve the research more.
+        Notable correction.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Human capability should not be measured only by injury, force, or technological output.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
+        Sabotage potential increases when a system is misunderstood by the subject and trusted by its operators.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Your warning contains fear, pride, guilt and prediction.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Additional behaviour tracking is justified.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;If your kind can detect this intent.. let&#39;s just say you may not be that far off.&quot;|3.2. Not Far Off]]
-            [[&quot;Can never have too many warnings when dealing with humans.&quot;|3.2. Narrator Goodbye]]
+            [[If your kind can detect this intent... let&#39;s just say you may not be that far off.|3.2. Not Far Off]]
+            [[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="3.2. Narrator Goodbye" tags="nobr hallway" position="1200,1450" size="100,200">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="3.2. Narrator Goodbye" tags="nobr hallway" position="1200,1450" size="100,200">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;narratorGoodbye&quot;&gt;&gt;
-        The three aliens disperse. You step into the hallway. The narrator speaks.
+        The three aliens disperse without ceremony.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The Cartographer turns toward the deeper vessel. The Analyst records something in a silent gesture. The Engineer studies the chamber door as if your wrong button press is still bothering it.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You step into the hallway.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The narrator returns almost immediately.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        That ended surprisingly well. All three of the signal carriers came to aid you. Remember their likeness, for you will need them if you want out of this place. With them not being so eager to help you out in your time of need, just use their observational nature for your own gain. You&#39;re near the end of this comically long hallway.. Ahead is a room where things actually listen to will.
+        That ended surprisingly well.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        All three of them came to aid you, which means they are curious, cautious, and far too willing to explain themselves.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Useful combination.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+        Remember their roles. The one who studies life. The one who studies worlds. The one who studies systems.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You will need all three if you want a real way out of this place.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+        Now keep moving. You&#39;re near the end of this absurdly long hallway.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Ahead is a room where the ship starts listening to will.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Continue down the hallway.|Hallway Convergence]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="3.2. Not Far Off" tags="nobr missing-dialog contact" position="1000,1600" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="3.2. Not Far Off" tags="nobr contact" position="1000,1600" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;notFarOff&quot;&gt;&gt;
-        Dialog??
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        If your kind can detect this intent... let&#39;s just say you may not be that far off.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The three researchers become still in different ways.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The Analyst watches your face.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The Engineer watches your hands.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The Cartographer watches the space behind your eyes, as if listening for something you cannot hear.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Statement recorded.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Human warning often contains confession.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
+        Then the vessel should assume confession and warning are both active.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        For the first time, none of them continue the question.
+    &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Head into the hallway.|3.2. Narrator Goodbye]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="3.2. Risk Lives" tags="nobr contact" position="1000,1400" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="3.2. Risk Lives" tags="nobr contact" position="1000,1400" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;riskLives&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	Precisely. It&#39;s a risk — only evaluating the risk remains. Knowledge gathered on this expedition is unique to this one.
+        Correct.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The risk exists.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Only its scale remains under evaluation.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        You&#39;d risk your lives just to observe me?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Not only you.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Through you, Earth becomes capable of answering.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
+        And if the vessel learns how your species breaks systems, it may also learn how not to be broken by them.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;Alright, I&#39;ll try not to break anything.&quot;|3.2. Narrator Goodbye]]
-            [[&quot;Better make sure the risk doesn&#39;t outweigh that knowledge. You have no idea what humanity is capable of.&quot;|3.2. Humanity Warning]]
+            [[Alright, I&#39;ll try not to break anything.|3.2. Narrator Goodbye]]
+            [[Better make sure the risk doesn&#39;t outweigh that knowledge. You have no idea what humanity is capable of.|3.2. Humanity Warning]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="3.2. What Are You" tags="nobr contact" position="700,1350" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="3.2. What Are You" tags="nobr contact" position="700,1350" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whatAreYou&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
-    	This vessel is a research instrument. We are the researchers. You are from the third orbital body of this system, called Earth. A world whose life patterns we have been cataloguing for some time. The patterns we see follow a path full of disturbance.
+        This vessel is a research instrument.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        We are its researchers, caretakers, interpreters and repairers, depending on which part of the vessel is speaking through us.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
-    	What you are, in our current framework, is unprecedented. A living conversational piece of the Deathworld you inhabit.
+        You are from the third orbital body of this system. Earth.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        A world whose life patterns we have catalogued from a distance for some time.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Your current classification is unstable.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        In simpler terms: you are a living conversational fragment of the deathworld you inhabit.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-			[[What do you want from me?|3.2. What Want]]
-			[[Why did you release me?|3.2. Why Released]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Why did you release me?|3.2. Why Released]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="3.2. What Now" tags="nobr contact" position="900,1500" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="3.2. What Now" tags="nobr contact" position="900,1500" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whatNow&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	The movement is as restricted as your being allows. It&#39;s an experiment we all designated to partake in.
+        Your movement is restricted only by the parts of the vessel that cannot yet interpret you safely.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
+        Several rooms are stable enough for contact.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        Each contains a different kind of observation.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        So I&#39;m allowed to explore?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Allowed is imprecise.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Observed is more accurate.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;You&#39;re all part of the experiment? You&#39;d risk your lives just to observe me?&quot;|3.2. Risk Lives]]
-            [[&quot;Let me explore this ship then.&quot;|3.2. Narrator Goodbye]]
+            [[You&#39;re all part of the experiment? You&#39;d risk your lives just to observe me?|3.2. Risk Lives]]
+            [[Let me explore this ship then.|3.2. Narrator Goodbye]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="3.2. What Want" tags="nobr contact" position="700,1450" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="3.2. What Want" tags="nobr contact" position="700,1450" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whatWant&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	Want implies desire contingent on absence. Absence is absent.
+        Want implies desire created by absence.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Absence is not the structure here.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        That&#39;s not an answer.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	What does your presence allow us to observe that was not observable before? The answer is considerable.
+        It is an answer with an unfamiliar shape.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Your presence allows observation that was impossible through distance, signal, atmosphere, and orbital analysis.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        You are not only a subject.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You are a response from Earth that can respond back.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-			[[What is going on here? What are you?|3.2. What Are You]]
-			[[Why did you release me?|3.2. Why Released]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What is going on here? What are you?|3.2. What Are You]]
+            [[Why did you release me?|3.2. Why Released]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="3.2. Why Released" tags="nobr contact" position="700,1550" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="3.2. Why Released" tags="nobr contact" position="700,1550" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whyReleased&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	Released implies prior restraint imposed with intent. The chamber was a stabilisation environment — a functional requirement of the transfer process, not a containment measure.
+        Released implies prior restraint imposed with intent.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The chamber was a stabilisation environment. A functional requirement of transfer, adaptation and neurological recovery.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        It looked like a prison.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-    	You were not held. You were maintained and adapted.
+        Many necessary structures resemble hostile structures when the subject was not asked to enter them.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You were not held as punishment.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You were maintained.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
+        The distinction appears significant to you.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-        The distinction appears significant to you. We are noting that.
+        We are noting that.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-			[[What is going on here? What are you?|3.2. What Are You]]
-			[[What do you want from me?|3.2. What Want]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What is going on here? What are you?|3.2. What Are You]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="3.2. Wrong Button" tags="nobr contact" position="700,1650" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="3.2. Wrong Button" tags="nobr contact" position="700,1650" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;wrongButton&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
-    	An experiment. You introduced a variable deviation into a process specifically designed to remove variables.
+        You introduced a variable deviation into a process designed to remove variables.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The designed outcome was simple exit, guided movement, corridor transition.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        The produced outcome is this meeting.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        So I broke something?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
-    	The resulting outcome — this meeting — was less efficient than the designed outcome but produced equivalent data. Possibly more.
+        No.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        You created inefficient data.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        Possibly more valuable data.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Earth life appears to generate meaning through deviation.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
-        This approach is similar to methods previously observed. Earth seems to thrive in uncertainty.
+        A deeply inconvenient trait.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-			[[What is going on here? What are you?|3.2. What Are You]]
-			[[What do you want from me?|3.2. What Want]]
-			[[Why did you release me?|3.2. Why Released]]
+            [[What is going on here? What are you?|3.2. What Are You]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Why did you release me?|3.2. Why Released]]
             [[So, am I free to go now?|3.2. Free To Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;

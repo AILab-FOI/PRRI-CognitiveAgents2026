@@ -968,37 +968,65 @@ The Last Command
 
 
 :: 3.2. Able Or Want [nobr contact] {"position":"900,1400","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "ableOrWant">>
         <<speaker "Cartographer">>
-    	Because we don't want to. Earth is yet too dangerous to step on. Careful research is still in order.
+        Both answers are incomplete.
+    <<ctpNext clear>>
+        We are able to move objects between controlled environments.
+    <<ctpNext clear>>
+        We are not able to return you safely without conditions that are not yet met.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        And the part where you don't want to?
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Earth is still too dangerous to enter directly.
+    <<ctpNext clear>>
+        Not because it is lifeless.
+    <<ctpNext clear>>
+        Because it is aggressively alive.
+    <<ctpNext clear>>
+        Careful research remains necessary.
     <<ctpNext clear>>
         <div class="choice">
-			[["How is Earth dangerous to you?"|3.2. Earth Dangerous]]
-            [["I think I understand, somehow."|3.2. What Now]]
+            [[How is Earth dangerous to you?|3.2. Earth Dangerous]]
+            [[I think I understand, somehow.|3.2. What Now]]
         </div>
   <</ctp>>
 </div>
 
 
 :: 3.2. Alien Arrival [nobr contact] {"position":"500,1500","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "alienArrival">>
-        Three aliens enter: the Cartographer, the Analyst, and the Engineer. They keep their distance, arms extending inquisitively
+        Three aliens enter the chamber: the Cartographer, the Analyst, and the Engineer.
+    <<ctpNext clear>>
+        They do not rush toward you. They keep their distance, studying your posture, your breathing, and the way your eyes search the room.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-            They are the ones who put you in here, but not the ones who got you aboard this ship. Their nature is incompatible with anything that could harm you in this very moment. You needn't fret.
+        Easy. They are the ones who put you in the chamber, but not the ones who got you aboard this ship. Important distinction. Try not to make this worse.
     <<ctpNext clear>>
         <<speaker "Analyst">>
-            Subject is in a conversational state. Could the subject not have understood the instructive oscillation carvings of his waking chamber? Or was there some other reason for the meeting arrangement?
+        Subject is awake, mobile, and conversational.
     <<ctpNext clear>>
-        The three researchers observe you, waiting.
+        <<speaker "Engineer">>
+        Subject selected a non-optimal chamber instruction and produced an unexpected meeting sequence.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The subject is afraid.
+    <<ctpNext clear>>
+        The three researchers observe you, waiting for a response.
     <<ctpNext clear>>
         <div class="choice">
             [[What is going on here? What are you?|3.2. What Are You]]
-			[[What do you want from me?|3.2. What Want]]
-			[[Why did you release me?|3.2. Why Released]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Why did you release me?|3.2. Why Released]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         </div>
   <</ctp>> 
@@ -1006,53 +1034,125 @@ The Last Command
 
 
 :: 3.2. Earth Dangerous [nobr contact] {"position":"900,1600","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "earthDangerous">>
+        <<speaker "Cartographer">>
+        Earth is not dangerous because it is dead.
+    <<ctpNext clear>>
+        Earth is dangerous because life there refuses to remain separate from conflict.
+    <<ctpNext clear>>
         <<speaker "Analyst">>
-    	The entropy is at its highest observed display within the system. Life itself poses more of a threat than other consequential interactions. Life and death are intertwined so tightly that life never truly ends. Any outlandish objects will find themselves either consumed or becoming part of the local ecosystem.
+        Predation, disease, competition, symbiosis, adaptation, extinction, memory. Your world converts threat into structure.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        A foreign object does not merely land on Earth.
+    <<ctpNext clear>>
+        It is touched, contaminated, studied, consumed, worshipped, weaponised, hidden, sold, or misunderstood.
+    <<ctpNext clear>>
+        Often in that order.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That sounds like us.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Yes.
+    <<ctpNext clear>>
+        That is the concern.
     <<ctpNext clear>>
         <div class="choice">
-            [["I think I understand, somehow."|3.2. What Now]]
+            [[I think I understand, somehow.|3.2. What Now]]
         </div>
   <</ctp>>
 </div>
 
 
 :: 3.2. Free To Go [nobr contact] {"position":"800,1450","size":"100,200"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "freeToGo">>
         <<speaker "Cartographer">>
-    	The departure for your home planet is unavailable as of the moment. The subject will stay on the ship until further notice.
+        Departure for your home planet is unavailable at this moment.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That's a very careful way of saying no.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        It is not no.
+    <<ctpNext clear>>
+        It is not yet.
+    <<ctpNext clear>>
+        Your body has not completed adaptation. Your neurological signal remains unstable. Your origin point is not safe for direct return.
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        Also, the research is incomplete.
     <<ctpNext clear>>
         <div class="choice">
-			[["Are you not able to bring me back, or do you not want to?"|3.2. Able Or Want]]
-            [["So you completed the transaction — what can I do now?"|3.2. What Now]]
+            [[Are you not able to bring me back, or do you not want to?|3.2. Able Or Want]]
+            [[So you completed the transaction — what can I do now?|3.2. What Now]]
         </div>
   <</ctp>>
 </div>
 
 
 :: 3.2. Humanity Warning [nobr contact] {"position":"1000,1500","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "humanityWarning">>
         <<speaker "Analyst">>
-        Notable correction. Assuming its 'intent' carried through. But upon observing human behaviour further, an augmentation of behaviour tracking may serve the research more.
+        Notable correction.
+    <<ctpNext clear>>
+        Human capability should not be measured only by injury, force, or technological output.
+    <<ctpNext clear>>
+        <<speaker "Engineer">>
+        Sabotage potential increases when a system is misunderstood by the subject and trusted by its operators.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Your warning contains fear, pride, guilt and prediction.
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        Additional behaviour tracking is justified.
     <<ctpNext clear>>
         <div class="choice">
-            [["If your kind can detect this intent.. let's just say you may not be that far off."|3.2. Not Far Off]]
-            [["Can never have too many warnings when dealing with humans."|3.2. Narrator Goodbye]]
+            [[If your kind can detect this intent... let's just say you may not be that far off.|3.2. Not Far Off]]
+            [[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
         </div>
   <</ctp>>
 </div>
 
 
 :: 3.2. Narrator Goodbye [nobr hallway] {"position":"1200,1450","size":"100,200"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "narratorGoodbye">>
-        The three aliens disperse. You step into the hallway. The narrator speaks.
+        The three aliens disperse without ceremony.
+    <<ctpNext clear>>
+        The Cartographer turns toward the deeper vessel. The Analyst records something in a silent gesture. The Engineer studies the chamber door as if your wrong button press is still bothering it.
+    <<ctpNext clear>>
+        You step into the hallway.
+    <<ctpNext clear>>
+        The narrator returns almost immediately.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        That ended surprisingly well. All three of the signal carriers came to aid you. Remember their likeness, for you will need them if you want out of this place. With them not being so eager to help you out in your time of need, just use their observational nature for your own gain. You're near the end of this comically long hallway.. Ahead is a room where things actually listen to will.
+        That ended surprisingly well.
+    <<ctpNext clear>>
+        All three of them came to aid you, which means they are curious, cautious, and far too willing to explain themselves.
+    <<ctpNext clear>>
+        Useful combination.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Remember their roles. The one who studies life. The one who studies worlds. The one who studies systems.
+    <<ctpNext clear>>
+        You will need all three if you want a real way out of this place.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Now keep moving. You're near the end of this absurdly long hallway.
+    <<ctpNext clear>>
+        Ahead is a room where the ship starts listening to will.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue down the hallway.|Hallway Convergence]]
@@ -1061,10 +1161,33 @@ The Last Command
 </div>
 
 
-:: 3.2. Not Far Off [nobr missing-dialog contact] {"position":"1000,1600","size":"100,100"}
+:: 3.2. Not Far Off [nobr contact] {"position":"1000,1600","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "notFarOff">>
-        Dialog??
+        <<speaker "You">>
+        If your kind can detect this intent... let's just say you may not be that far off.
+    <<ctpNext clear>>
+        The three researchers become still in different ways.
+    <<ctpNext clear>>
+        The Analyst watches your face.
+    <<ctpNext clear>>
+        The Engineer watches your hands.
+    <<ctpNext clear>>
+        The Cartographer watches the space behind your eyes, as if listening for something you cannot hear.
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        Statement recorded.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Human warning often contains confession.
+    <<ctpNext clear>>
+        <<speaker "Engineer">>
+        Then the vessel should assume confession and warning are both active.
+    <<ctpNext clear>>
+        For the first time, none of them continue the question.
+    <<ctpNext clear>>
         <div class="choice">
             [[Head into the hallway.|3.2. Narrator Goodbye]]
         </div>
@@ -1073,32 +1196,61 @@ The Last Command
 
 
 :: 3.2. Risk Lives [nobr contact] {"position":"1000,1400","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "riskLives">>
         <<speaker "Analyst">>
-    	Precisely. It's a risk — only evaluating the risk remains. Knowledge gathered on this expedition is unique to this one.
+        Correct.
+    <<ctpNext clear>>
+        The risk exists.
+    <<ctpNext clear>>
+        Only its scale remains under evaluation.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        You'd risk your lives just to observe me?
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Not only you.
+    <<ctpNext clear>>
+        Through you, Earth becomes capable of answering.
+    <<ctpNext clear>>
+        <<speaker "Engineer">>
+        And if the vessel learns how your species breaks systems, it may also learn how not to be broken by them.
     <<ctpNext clear>>
         <div class="choice">
-            [["Alright, I'll try not to break anything."|3.2. Narrator Goodbye]]
-            [["Better make sure the risk doesn't outweigh that knowledge. You have no idea what humanity is capable of."|3.2. Humanity Warning]]
+            [[Alright, I'll try not to break anything.|3.2. Narrator Goodbye]]
+            [[Better make sure the risk doesn't outweigh that knowledge. You have no idea what humanity is capable of.|3.2. Humanity Warning]]
         </div>
   <</ctp>>
 </div>
 
 
 :: 3.2. What Are You [nobr contact] {"position":"700,1350","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "whatAreYou">>
         <<speaker "Cartographer">>
-    	This vessel is a research instrument. We are the researchers. You are from the third orbital body of this system, called Earth. A world whose life patterns we have been cataloguing for some time. The patterns we see follow a path full of disturbance.
+        This vessel is a research instrument.
+    <<ctpNext clear>>
+        We are its researchers, caretakers, interpreters and repairers, depending on which part of the vessel is speaking through us.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
-    	What you are, in our current framework, is unprecedented. A living conversational piece of the Deathworld you inhabit.
+        You are from the third orbital body of this system. Earth.
+    <<ctpNext clear>>
+        A world whose life patterns we have catalogued from a distance for some time.
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        Your current classification is unstable.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        In simpler terms: you are a living conversational fragment of the deathworld you inhabit.
     <<ctpNext clear>>
         <div class="choice">
-			[[What do you want from me?|3.2. What Want]]
-			[[Why did you release me?|3.2. Why Released]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Why did you release me?|3.2. Why Released]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         </div>
   <</ctp>>
@@ -1106,32 +1258,62 @@ The Last Command
 
 
 :: 3.2. What Now [nobr contact] {"position":"900,1500","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "whatNow">>
         <<speaker "Analyst">>
-    	The movement is as restricted as your being allows. It's an experiment we all designated to partake in.
+        Your movement is restricted only by the parts of the vessel that cannot yet interpret you safely.
+    <<ctpNext clear>>
+        <<speaker "Engineer">>
+        Several rooms are stable enough for contact.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Each contains a different kind of observation.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        So I'm allowed to explore?
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        Allowed is imprecise.
+    <<ctpNext clear>>
+        Observed is more accurate.
     <<ctpNext clear>>
         <div class="choice">
-            [["You're all part of the experiment? You'd risk your lives just to observe me?"|3.2. Risk Lives]]
-            [["Let me explore this ship then."|3.2. Narrator Goodbye]]
+            [[You're all part of the experiment? You'd risk your lives just to observe me?|3.2. Risk Lives]]
+            [[Let me explore this ship then.|3.2. Narrator Goodbye]]
         </div>
   <</ctp>>
 </div>
 
 
 :: 3.2. What Want [nobr contact] {"position":"700,1450","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "whatWant">>
         <<speaker "Analyst">>
-    	Want implies desire contingent on absence. Absence is absent.
+        Want implies desire created by absence.
+    <<ctpNext clear>>
+        Absence is not the structure here.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That's not an answer.
     <<ctpNext clear>>
         <<speaker "Analyst">>
-    	What does your presence allow us to observe that was not observable before? The answer is considerable.
+        It is an answer with an unfamiliar shape.
+    <<ctpNext clear>>
+        Your presence allows observation that was impossible through distance, signal, atmosphere, and orbital analysis.
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        You are not only a subject.
+    <<ctpNext clear>>
+        You are a response from Earth that can respond back.
     <<ctpNext clear>>
         <div class="choice">
-			[[What is going on here? What are you?|3.2. What Are You]]
-			[[Why did you release me?|3.2. Why Released]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What is going on here? What are you?|3.2. What Are You]]
+            [[Why did you release me?|3.2. Why Released]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         </div>
   <</ctp>>
@@ -1139,21 +1321,35 @@ The Last Command
 
 
 :: 3.2. Why Released [nobr contact] {"position":"700,1550","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "whyReleased">>
         <<speaker "Analyst">>
-    	Released implies prior restraint imposed with intent. The chamber was a stabilisation environment — a functional requirement of the transfer process, not a containment measure.
+        Released implies prior restraint imposed with intent.
+    <<ctpNext clear>>
+        The chamber was a stabilisation environment. A functional requirement of transfer, adaptation and neurological recovery.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        It looked like a prison.
     <<ctpNext clear>>
         <<speaker "Analyst">>
-    	You were not held. You were maintained and adapted.
+        Many necessary structures resemble hostile structures when the subject was not asked to enter them.
+    <<ctpNext clear>>
+        You were not held as punishment.
+    <<ctpNext clear>>
+        You were maintained.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The distinction appears significant to you.
     <<ctpNext clear>>
         <<speaker "Analyst">>
-        The distinction appears significant to you. We are noting that.
+        We are noting that.
     <<ctpNext clear>>
         <div class="choice">
-			[[What is going on here? What are you?|3.2. What Are You]]
-			[[What do you want from me?|3.2. What Want]]
-			[[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
+            [[What is going on here? What are you?|3.2. What Are You]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
             [[So, am I free to go now?|3.2. Free To Go]]
         </div>
   <</ctp>>
@@ -1161,21 +1357,37 @@ The Last Command
 
 
 :: 3.2. Wrong Button [nobr contact] {"position":"700,1650","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "wrongButton">>
         <<speaker "Engineer">>
-    	An experiment. You introduced a variable deviation into a process specifically designed to remove variables.
+        You introduced a variable deviation into a process designed to remove variables.
+    <<ctpNext clear>>
+        The designed outcome was simple exit, guided movement, corridor transition.
+    <<ctpNext clear>>
+        The produced outcome is this meeting.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        So I broke something?
     <<ctpNext clear>>
         <<speaker "Engineer">>
-    	The resulting outcome — this meeting — was less efficient than the designed outcome but produced equivalent data. Possibly more.
+        No.
+    <<ctpNext clear>>
+        You created inefficient data.
+    <<ctpNext clear>>
+        Possibly more valuable data.
+    <<ctpNext clear>>
+        <<speaker "Analyst">>
+        Earth life appears to generate meaning through deviation.
     <<ctpNext clear>>
         <<speaker "Engineer">>
-        This approach is similar to methods previously observed. Earth seems to thrive in uncertainty.
+        A deeply inconvenient trait.
     <<ctpNext clear>>
         <div class="choice">
-			[[What is going on here? What are you?|3.2. What Are You]]
-			[[What do you want from me?|3.2. What Want]]
-			[[Why did you release me?|3.2. Why Released]]
+            [[What is going on here? What are you?|3.2. What Are You]]
+            [[What do you want from me?|3.2. What Want]]
+            [[Why did you release me?|3.2. Why Released]]
             [[So, am I free to go now?|3.2. Free To Go]]
         </div>
   <</ctp>>
@@ -4493,6 +4705,16 @@ body[data-tags~="room1"][data-tags~="exit"] {
 
 body[data-tags~="room1"][data-tags~="device"] {
     background-image: url('/media/Room_Device.png'), url('/media/Room.png');
+}
+
+/* ---------- CONTACT / ALIEN ARRIVAL ---------- */
+
+body[data-tags~="contact"] {
+    background-image: url('/media/Contact.png');
+}
+
+body[data-tags~="contact"][data-tags~="device"] {
+    background-image: url('/media/Contact_Device.png'), url('/media/Contact.png');
 }
 
 /* ---------- HALLWAY ---------- */
