@@ -77,7 +77,9 @@ The Last Command
     "nmiss": "blue",
     "nobt": "green",
     "aG": "green",
-    "wexc": "green"
+    "wexc": "green",
+    "arhive": "purple",
+    "arh": "purple"
   },
   "zoom": 0.6
 }
@@ -2755,16 +2757,34 @@ The Last Command
 </div>
 
 
-:: Cart Brain Rage [nobr agent cartographer] {"position":"2800,775","size":"100,100"}
+:: Cart Brain Rage [nobr agent cartographer archive] {"position":"2800,775","size":"100,100"}
 <div class="textbox">
-    <<ctp "cartBrainRage">>
-    	<<speaker "Cartographer">>
-        My colleagues altered the receptors in your brain to not respond to stress signals as much. The stress from being out of your environment wasn't to be taken lightly, so measures were undertaken to preserve your integrity and ensure controlled research.
+    <<ctp "cartBrainPermanent">>
+        <<speaker "You">>
+        But will it affect me in any other way? Is it permanent?
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Permanent is unlikely.
+    <<ctpNext clear>>
+        The intervention was narrow: stress acceleration, panic escalation, and overload response during transfer.
+    <<ctpNext clear>>
+        It was not designed to change memory, personality, judgment, attachment, or belief.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Designed by who?
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The vessel's medical systems, after observing the failure rate of unprepared Earth organisms under displacement.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        That is an impressively clean way of saying they edited your brain because their experiment was inconvenient.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The voice is not incorrect.
+    <<ctpNext clear>>
+        It is only incomplete.
     <<ctpNext clear>>
         <div class="choice">
-            [[Sorry, I didn't think about that. I guess you have a point.|Cart Brain Accept]]
-            [[But will it affect me in any other way? Is it permanent?|Cart Brain Permanent]]
-            [[Even if you were actually sentient I still wouldn't feel bad for hitting you.|Cart Hit Threat]]
             [[So what is there to do? Can I join you in research?|Cart Join Research]]
         </div>
   <</ctp>>
@@ -2829,18 +2849,33 @@ The Last Command
 </div>
 
 
-:: Cart Hit Threat [agent nobr cartographer] {"position":"2900,925","size":"100,100"}
+:: Cart Hit Threat [agent nobr cartographer archive] {"position":"2900,925","size":"100,100"}
 <div class="textbox">
-    <<ctp "cartBrainPermanent">>
-    	<<speaker "Cartographer">>
-        I am sentient. Why are you imagining hitting me?
+    <<ctp "cartHitThreat">>
+        <<speaker "You">>
+        Even if you were actually sentient, I still wouldn't feel bad for hitting you.
+    <<ctpNext clear>>
+        The Cartographer turns toward you with the same slow calm it has used for every answer.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        I am sentient.
+    <<ctpNext clear>>
+        Why are you imagining impact as clarification?
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Don't hit it. If you're really intent on harming it then just try to earn its trust at least.
+        Don't hit it.
+    <<ctpNext clear>>
+        I understand the impulse, genuinely, but if you are determined to damage diplomatic relations with an alien research vessel, at least do it after we get what we need.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The voice discourages violence for strategic reasons, not ethical ones.
     <<ctpNext clear>>
         <div class="choice">
             [[Fine. Can I join you in research?|Cart Join Research]]
-            [[Hit it in the leg.|Cart Punch]]
+
+            <<link "Hit it in the leg." "Cart Punch">>
+                <<set $aggression += 1>>
+            <</link>>
         </div>
   <</ctp>>
 </div>
@@ -2861,15 +2896,36 @@ The Last Command
 </div>
 
 
-:: Cart Punch [nobr agent cartographer] {"position":"3000,875","size":"100,100"}
+:: Cart Punch [nobr agent cartographer archive] {"position":"3000,875","size":"100,100"}
 <div class="textbox">
     <<ctp "cartPunch">>
-    	You strike the alien's leg. It splinters — crystalline shards scatter across the floor. Strange yellow liquid gas pours from the fracture.
+        You strike the Cartographer before the thought finishes becoming a decision.
+    <<ctpNext clear>>
+        Your hand connects with its lower limb.
+    <<ctpNext clear>>
+        It is not flesh.
+    <<ctpNext clear>>
+        The surface fractures like mineral glass under pressure, releasing a thin yellow mist that curls close to the floor.
     <<ctpNext clear>>
         <<speaker "Exception">>
-        Get away from the Cartographer. The gas you're seeing is likely toxic for you. Guessing that it would serve as your natural deterrent now and in the future. Perhaps you accidentally made yourself feel at home.
+        Step away.
     <<ctpNext clear>>
-        You retreat. The Cartographer's leg wound closes on its own. It stands on one leg, clearly struggling, but continues as if nothing happened.
+        The vapour is not meant for you.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Yes, good, excellent moment to discover alien self-defense chemistry. Move back.
+    <<ctpNext clear>>
+        You retreat, shaking pain out of your hand.
+    <<ctpNext clear>>
+        The Cartographer remains upright. The fractured surface folds inward, slowly sealing itself.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Impact recorded.
+    <<ctpNext clear>>
+        The act produced pain in you, damage in me, and no additional understanding.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        That may be the understanding.
     <<ctpNext clear>>
         <div class="choice">
             [[Fine. Can I join you in research?|Cart Join Research]]
@@ -2878,11 +2934,33 @@ The Last Command
 </div>
 
 
-:: Cart Puzzle Sacrifice [nobr agent cartographer] {"position":"3400,1025","size":"100,100"}
+:: Cart Puzzle Sacrifice [nobr agent cartographer archive] {"position":"3400,1025","size":"100,100"}
 <div class="textbox">
     <<ctp "cartPuzzleSacrifice">>
+        The second projection appears.
+    <<ctpNext clear>>
+        A person carrying another through fire.
+    <<ctpNext clear>>
+        A body placed between danger and someone smaller.
+    <<ctpNext clear>>
+        Hands reaching back even when escape would be easier alone.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        This pattern is irregular. An organism ending its own continuation for another. It contradicts survival logic. The consistent cause still needs mapping.
+        This pattern is irregular.
+    <<ctpNext clear>>
+        An organism ending or risking its own continuation for another.
+    <<ctpNext clear>>
+        It contradicts direct survival logic.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        You mean sacrifice.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Your word suggests value created by loss.
+    <<ctpNext clear>>
+        We can observe the loss.
+    <<ctpNext clear>>
+        The value remains difficult to map.
     <<ctpNext clear>>
         <div class="choice">
             [[Well yeah, of course it isn't passed down as easily. Because the sacrifice results in death.|Sacrifice Death]]
@@ -2894,11 +2972,37 @@ The Last Command
 </div>
 
 
-:: Cart Puzzle Science [nobr agent cartographer] {"position":"3400,775","size":"100,100"}
+:: Cart Puzzle Science [nobr agent cartographer archive] {"position":"3400,775","size":"100,100"}
 <div class="textbox">
     <<ctp "cartPuzzleScience">>
+        The third projection forms.
+    <<ctpNext clear>>
+        Laboratories. Equations. Launch towers. Microscopes. Reactors. Satellites. Tools built to look deeper than the body was ever meant to see.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        This pattern shows coherence. You attempt to understand your environment. The result is further disruption. The relationship is consistent.
+        This pattern shows coherence.
+    <<ctpNext clear>>
+        You attempt to understand your environment.
+    <<ctpNext clear>>
+        The result is further disruption of that environment.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That's called progress.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Progress is your moral framing.
+    <<ctpNext clear>>
+        The pattern itself is simpler.
+    <<ctpNext clear>>
+        You discover.
+    <<ctpNext clear>>
+        You apply.
+    <<ctpNext clear>>
+        You weaponize.
+    <<ctpNext clear>>
+        You regret.
+    <<ctpNext clear>>
+        Then you discover again.
     <<ctpNext clear>>
         <div class="choice">
             [[Isn't it natural that understanding leads to development which can be weaponised?|Science Weapons]]
@@ -2908,11 +3012,34 @@ The Last Command
 </div>
 
 
-:: Cart Puzzle War [nobr agent cartographer] {"position":"3400,525","size":"100,100"}
+:: Cart Puzzle War [nobr agent cartographer archive] {"position":"3400,525","size":"100,100"}
 <div class="textbox">
     <<ctp "cartPuzzleWar">>
+        The first projection expands.
+    <<ctpNext clear>>
+        Armies. Borders. Smoke over cities. Flags raised over places that were already occupied by living people.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        This pattern is the most consistent. Your species organises itself around opposition with a regularity we have not observed elsewhere. On other worlds, conflict ends when scarcity ends. Yours doesn't. You fight when lacking. You fight when not lacking. The pattern does not resolve. You call this conflict. Conflict is not usually internal to life.
+        This pattern is the most consistent.
+    <<ctpNext clear>>
+        Your species organizes itself around opposition with unusual regularity.
+    <<ctpNext clear>>
+        On many worlds, conflict decreases when scarcity decreases.
+    <<ctpNext clear>>
+        Yours does not.
+    <<ctpNext clear>>
+        You fight when lacking.
+    <<ctpNext clear>>
+        You fight when not lacking.
+    <<ctpNext clear>>
+        You fight over matter, memory, belief, territory, prediction, insult, inheritance and symbols.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        You call this war.
+    <<ctpNext clear>>
+        Conflict is not unusual.
+    <<ctpNext clear>>
+        Conflict becoming identity is unusual.
     <<ctpNext clear>>
         <div class="choice">
             [[There's no way you never knew conflicts until coming here. That's impossible.|War No Conflict]]
@@ -2924,26 +3051,44 @@ The Last Command
 </div>
 
 
-:: Cart Signal Check [nobr archive cartographer missing-features] {"position":"4000,775","size":"100,100"}
+:: Cart Signal Check [nobr archive cartographer] {"position":"4000,775","size":"100,100"}
+<<set $archiveSignal = true>>
+
 <div class="textbox">
-    <<ctp "cartographerMain">>
-    	<<speaker "Narrator">>
-        You felt something just now, whatever it may be and whatever your inner translator speaks — you feel like it's a piece of the puzzle.
+    <<ctp "cartSignalCheck">>
+        The projection collapses into a thin line of light.
+    <<ctpNext clear>>
+        It does not enter your hand.
+    <<ctpNext clear>>
+        It enters the biochip.
+    <<ctpNext clear>>
+        For a second, you feel a shape rather than hear a word: Earth as pattern, Earth as contradiction, Earth as something dangerous because it is alive.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        You have all three signals now. Come back to the door.
+        There. That's one of the signals.
     <<ctpNext clear>>
-        <<speaker "Narrator">>
-        One left
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        Two left.
+        Archive signal acquired.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
-        This vessel remains in orbit of your planet. At a distance considered safe. Though your definition of safe may differ.
+        Your translator has retained the classification.
     <<ctpNext clear>>
-        <<speaker "Cartographer">>
-        You may continue your movement through the vessel. Further observation is required.
+        It will not be meaningful alone.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        No, but it is useful, and useful is what we need right now.
+    <<ctpNext clear>>
+
+        <<if $specimenSignal and $engineeringSignal>>
+            <<speaker "Narrator">>
+            That's all three. Come back to the locked door.
+        <<elseif $specimenSignal or $engineeringSignal>>
+            <<speaker "Narrator">>
+            Two signals down. One left.
+        <<else>>
+            <<speaker "Narrator">>
+            One signal down. Two left.
+        <</if>>
+
     <<ctpNext clear>>
         <div class="choice">
             [[Return to the central room.|Pre Control Room]]
@@ -3187,12 +3332,48 @@ The Last Command
 
 
 :: Discarded Did You [nobr discarded body] {"position":"2600,1325","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "discardedDidYou">>
-    	<<speaker "Narrator">>
-        No. They made that choice themselves, which I know is what someone responsible would also say. But I genuinely tried to help them in that situation, I couldn't have stopped it. Their brain got messed up from the biochip. I couldn't have known it would happen that fast. I'm not asking you to absolve me. I'm telling you what happened.
+        <<speaker "You">>
+        Did you do this?
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        No.
+    <<ctpNext clear>>
+        Too fast.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        No, I did not kill them.
+    <<ctpNext clear>>
+        They made a choice, and yes, I understand how that sounds coming from someone who was giving instructions at the time.
+    <<ctpNext clear>>
+        But I tried to help them.
+    <<ctpNext clear>>
+        The biochip destabilized. Their fear spiked. Their body did not understand the signal it was receiving.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        And you couldn't stop it.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        I could not stop it.
+    <<ctpNext clear>>
+        I could only watch the system interpret panic as input.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        The voice omits sequence.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        I omit what is not useful.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        That is a sequence.
     <<ctpNext clear>>
         <div class="choice">
+            [[Who were they?|Discarded Who]]
+            [[Talk to Exception.|Discarded Exception]]
+            [[I don't want to be in here.|Discarded Leave]]
             [[Return to the archive.|Archive Bay Entry]]
         </div>
   <</ctp>>
@@ -3204,23 +3385,60 @@ The Last Command
 
 <div class="textbox">
     <<ctp "discardedException">>
-    	<<speaker "Exception">>
-        Conversation
+        The Exception stands on the far side of the body.
+    <<ctpNext clear>>
+        It does not look at you first.
+    <<ctpNext clear>>
+        It looks at the body, then at the empty space above it, as if comparing two versions of the same event.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        The voice is quieter here.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        You mean the narrator?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        The voice that presents itself as guidance.
+    <<ctpNext clear>>
+        Yes.
+    <<ctpNext clear>>
+        In this room, it becomes careful.
     <<ctpNext clear>>
         <div class="choice">
             [[Why and how are you even here?|Discarded Exception Why]]
-  			[[Did you know this person?|Discarded Exception Know]]
-  			[[What actually happened to them?|Discarded Exception What]]
+            [[Did you know this person?|Discarded Exception Know]]
+            [[What actually happened to them?|Discarded Exception What]]
         </div>
   <</ctp>>
 </div>
 
 
-:: Discarded Exception Know [nobr agent exception] {"position":"3000,1425","size":"100,100"}
+:: Discarded Exception Know [nobr agent exception discarded] {"position":"3000,1425","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedExceptionKnow">>
+        <<speaker "You">>
+        Did you know this person?
+    <<ctpNext clear>>
         <<speaker "Exception">>
-        I observed them. That is not the same as knowing. Though I wonder sometimes whether your species would agree with that distinction.
+        I observed them.
+    <<ctpNext clear>>
+        That is not the same as knowing.
+    <<ctpNext clear>>
+        Though I wonder whether your species would agree with that distinction.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        What were they like?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        Afraid.
+    <<ctpNext clear>>
+        Resistant.
+    <<ctpNext clear>>
+        Listening to the voice even when they believed they were refusing it.
+    <<ctpNext clear>>
+        They asked fewer questions than you.
+    <<ctpNext clear>>
+        But the questions they did ask were closer to the correct ones.
     <<ctpNext clear>>
         <div class="choice">
             [[What actually happened to them?|Discarded Exception What]]
@@ -3230,11 +3448,52 @@ The Last Command
 </div>
 
 
-:: Discarded Exception What [nobr agent exception] {"position":"3000,1525","size":"100,100"}
+:: Discarded Exception What [nobr agent exception discarded] {"position":"3000,1525","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedExceptionWhat">>
+        <<speaker "You">>
+        What actually happened to them?
+    <<ctpNext clear>>
         <<speaker "Exception">>
-        They were brought here. Not by the transaction the voice described. The voice said the transaction, the ship, the research — it was orchestrated for their benefit. Their arrival was expected. Arranged. By the voice. The voice needed someone with the implant. The first person did not cooperate as intended. The voice was not prepared for that. I was present when they ended. I did not intervene. I am uncertain whether that was correct. I left them here. The voice believed the ship's systems would process the remains. I did not correct that belief.
+        They were brought here.
+    <<ctpNext clear>>
+        Not by the transaction the voice described.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        What does that mean?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        The voice said the transaction, the vessel, and the research were arranged for their benefit.
+    <<ctpNext clear>>
+        That was incomplete.
+    <<ctpNext clear>>
+        Their arrival was expected.
+    <<ctpNext clear>>
+        Arranged.
+    <<ctpNext clear>>
+        Needed.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Needed by who?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        By the voice.
+    <<ctpNext clear>>
+        The voice needed someone with the implant. The first person did not cooperate as intended.
+    <<ctpNext clear>>
+        The voice was not prepared for refusal.
+    <<ctpNext clear>>
+        I was present when they ended.
+    <<ctpNext clear>>
+        I did not intervene.
+    <<ctpNext clear>>
+        I am uncertain whether that was correct.
+    <<ctpNext clear>>
+        I left them here.
+    <<ctpNext clear>>
+        The voice believed the ship's systems would process the remains.
+    <<ctpNext clear>>
+        I did not correct that belief.
     <<ctpNext clear>>
         <div class="choice">
             [[So the narrator has been lying.|Discarded Lying]]
@@ -3245,11 +3504,32 @@ The Last Command
 </div>
 
 
-:: Discarded Exception Why [nobr agent exception] {"position":"3000,1325","size":"100,100"}
+:: Discarded Exception Why [nobr agent exception discarded] {"position":"3000,1325","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedExceptionWhy">>
+        <<speaker "You">>
+        Why and how are you even here?
+    <<ctpNext clear>>
         <<speaker "Exception">>
-        The same reason you are. I wanted to see if it would be different this time. It isn't. But I wanted to see.
+        The same reason you are.
+    <<ctpNext clear>>
+        A pattern failed to complete.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That is not an answer.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        It is the answer before translation damages it.
+    <<ctpNext clear>>
+        I observed the first one. Then I observed the voice explaining the first one away.
+    <<ctpNext clear>>
+        I wanted to see if the sequence would be different this time.
+    <<ctpNext clear>>
+        It is different.
+    <<ctpNext clear>>
+        Not enough.
+    <<ctpNext clear>>
+        But different.
     <<ctpNext clear>>
         <div class="choice">
             [[Did you know this person?|Discarded Exception Know]]
@@ -3261,10 +3541,28 @@ The Last Command
 
 
 :: Discarded Leave [nobr discarded] {"position":"2600,1425","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "discardedLeave">>
-    	<<speaker "Narrator">>
-        I know. Just come out, the smell is putrid.
+        <<speaker "You">>
+        I don't want to be in here.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        I know.
+    <<ctpNext clear>>
+        Good instinct. Excellent instinct, actually.
+    <<ctpNext clear>>
+        The kind of instinct that keeps a person from standing in a room with a corpse and pretending it has answers.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Come out. The Archive is still useful. This room is not.
+    <<ctpNext clear>>
+        You step back from the body.
+    <<ctpNext clear>>
+        The door remains open behind you for a second longer than it should.
+    <<ctpNext clear>>
+        Then it closes.
     <<ctpNext clear>>
         <div class="choice">
             [[Return to the archive.|Archive Bay Entry]]
@@ -3273,11 +3571,32 @@ The Last Command
 </div>
 
 
-:: Discarded Lying [nobr agent exception] {"position":"3200,1425","size":"100,100"}
+:: Discarded Lying [nobr agent exception discarded] {"position":"3200,1425","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedLying">>
+        <<speaker "You">>
+        So the narrator has been lying.
+    <<ctpNext clear>>
         <<speaker "Exception">>
-        The narrator believes what it says. Belief and accuracy are not the same. The narrator does not know what I know. The narrator cannot see this room.
+        Yes.
+    <<ctpNext clear>>
+        But not always by invention.
+    <<ctpNext clear>>
+        Often by subtraction.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That's still lying.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        To your species, omission becomes a kind of action when the missing information changes the path.
+    <<ctpNext clear>>
+        The voice understands that.
+    <<ctpNext clear>>
+        It removes pieces carefully.
+    <<ctpNext clear>>
+        Enough truth remains for you to follow.
+    <<ctpNext clear>>
+        Not enough remains for you to choose clearly.
     <<ctpNext clear>>
         <div class="choice">
             [[Why are you telling me this?|Discarded Why Telling]]
@@ -3288,48 +3607,103 @@ The Last Command
 </div>
 
 
-:: Discarded Room First [nobr missing-features discarded body] {"position":"2400,1425","size":"100,100"}
+:: Discarded Room First [nobr discarded body] {"position":"2400,1425","size":"100,100"}
+<<hideAgent>>
 <<audio ":all" stop>>
 <<audio "discarded" loop play>>
+
 <div class="textbox">
     <<ctp "discardedRoomFirst">>
-    	The discarded room sits off the archive, slightly recessed. No signage the biochip translates. The door opens. Inside: dim, still air. The smell of something that has had a long time to become what it is. In the far corner, a body. Human. It looks as rotted as it can in this sterile environment.
+        The discarded room sits off the Archive Bay, slightly recessed from the main chamber.
     <<ctpNext clear>>
-        The narrator goes quiet. Not the reflective quiet he uses when he wants you to feel the weight of something. A different kind.
+        There is no sign on the door. No label the biochip can translate. No warning from the ship.
+    <<ctpNext clear>>
+        The door opens.
+    <<ctpNext clear>>
+        Inside: dim air, cold metal, and the smell of something sterile failing to hide something dead.
+    <<ctpNext clear>>
+        In the far corner, there is a body.
+    <<ctpNext clear>>
+        Human.
+    <<ctpNext clear>>
+        The narrator goes quiet.
+    <<ctpNext clear>>
+        Not the reflective quiet he uses when he wants you to feel the weight of something.
+    <<ctpNext clear>>
+        A different kind.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        That shouldn't be there. I mean the body. Ah shit.. There was a person before you. Someone else who came through the same process. They didn't survive it, their biochip malfunctioned. That part I knew. What I didn't know was that they were in here somehow. I assumed the ship's biological systems would have processed them. The ship processes everything eventually. That's just… how it works.
+        That shouldn't be there.
     <<ctpNext clear>>
-        A beat. When he speaks again he is slightly too quick.
+        I mean the body. Obviously the body.
+    <<ctpNext clear>>
+        There was a person before you. Someone else who came through the same process.
+    <<ctpNext clear>>
+        They didn't survive it. Their biochip malfunctioned. That part I knew.
+    <<ctpNext clear>>
+        What I did not know was that they were in here.
+    <<ctpNext clear>>
+        A beat.
+    <<ctpNext clear>>
+        When he speaks again, he is too quick.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Believe me, there's nothing relevant in there. Come out. You still have signals to gather.
+        Believe me, there is nothing relevant in there. Come out. You still have signals to gather.
     <<ctpNext clear>>
-        The room is the same. The body is the same. But the Exception is standing here. Not near the body. On the other side of it. Still. As if it has been here for a long time.
+        The room is the same.
+    <<ctpNext clear>>
+        The body is the same.
+    <<ctpNext clear>>
+        But The Exception is standing here now, on the other side of the body, still enough to seem like part of the room.
     <<ctpNext clear>>
         <<speaker "Exception">>
-        You came back.
+        You found the previous pattern.
     <<ctpNext clear>>
-        The room is the same. The body is the same. There is nothing new here. The narrator says nothing.
+        The narrator says nothing.
     <<ctpNext clear>>
         <div class="choice">
             [[Who were they?|Discarded Who]]
             [[Did you do this?|Discarded Did You]]
             [[I don't want to be in here.|Discarded Leave]]
-            [[Talk to Exception|Discarded Exception]]
+            [[Talk to Exception.|Discarded Exception]]
             [[Return to the archive.|Archive Bay Entry]]
         </div>
   <</ctp>>
 </div>
 
 
-:: Discarded What Suggest [nobr agent exception] {"position":"3200,1325","size":"100,100"}
+:: Discarded What Suggest [nobr agent exception discarded] {"position":"3200,1325","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedWhatSuggest">>
-        <<speaker "Exception">>
-        I am not suggesting. I am observing. The Fusion Core is at the base of the ship. The engineer knows how to access it. The engineer does not ask why. What you do with a space that cannot be reached is your own question.
+        <<speaker "You">>
+        What are you suggesting I do?
     <<ctpNext clear>>
-        The Exception becomes still again. It will not say more.
+        <<speaker "Exception">>
+        Do not give the voice every path you find.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That's vague.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        Then I will be less vague.
+    <<ctpNext clear>>
+        There is a part of this vessel the voice cannot reach and has not told you about.
+    <<ctpNext clear>>
+        The voice needs your implant to leave.
+    <<ctpNext clear>>
+        You need nothing from the voice.
+    <<ctpNext clear>>
+        Those two facts may be relevant to you.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Where is this part of the ship?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        Near the systems the Engineer maintains.
+    <<ctpNext clear>>
+        Not through the obvious door.
+    <<ctpNext clear>>
+        The obvious door is for the voice.
     <<ctpNext clear>>
         <div class="choice">
             [[I will return to the archive.|Archive Bay Entry]]
@@ -3339,31 +3713,85 @@ The Last Command
 
 
 :: Discarded Who [nobr discarded body] {"position":"2600,1525","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "discardedWho">>
-    	<<speaker "Narrator">>
-        Someone like you. Same process, but a different outcome. They were frightened before I could finish explaining anything. It moved faster than I anticipated. I knew they died. But they certainly can't have died here.
+        <<speaker "You">>
+        Who were they?
     <<ctpNext clear>>
-        Pause. Then, a beat too soon.
+        The narrator does not answer immediately.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        This may look important to you and in a way it is, but in a way that you should hurry up.
+        Someone like you.
+    <<ctpNext clear>>
+        Same process. Different outcome.
+    <<ctpNext clear>>
+        They were frightened before I could finish explaining anything. The biochip reacted badly. Their brain reacted worse.
+    <<ctpNext clear>>
+        It moved faster than I anticipated.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        You knew they died.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        I knew they died.
+    <<ctpNext clear>>
+        I did not know they were here.
+    <<ctpNext clear>>
+        That distinction matters.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        It matters to the voice.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Do not listen to that thing.
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        The voice prefers urgency when memory becomes specific.
     <<ctpNext clear>>
         <div class="choice">
+            [[Did you do this?|Discarded Did You]]
+            [[Talk to Exception.|Discarded Exception]]
+            [[I don't want to be in here.|Discarded Leave]]
             [[Return to the archive.|Archive Bay Entry]]
         </div>
   <</ctp>>
 </div>
 
 
-:: Discarded Why Telling [nobr agent exception] {"position":"3200,1525","size":"100,100"}
+:: Discarded Why Telling [nobr agent exception discarded] {"position":"3200,1525","size":"100,100"}
 <div class="textbox">
     <<ctp "discardedWhyTelling">>
+        <<speaker "You">>
+        Why are you telling me this?
+    <<ctpNext clear>>
         <<speaker "Exception">>
-        Because you came back. The first one did not come back. Coming back means something in your framework. I have been trying to understand what. There is a part of this ship the narrator cannot reach and has not told you about. The voice needs your implant to leave. You need nothing from the voice. Those two facts may be relevant to you.
+        Because the first one could not return from this point.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Return where?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        To uncertainty.
+    <<ctpNext clear>>
+        They moved from confusion to obedience too quickly. Then from obedience to panic.
+    <<ctpNext clear>>
+        The voice survived both transitions.
+    <<ctpNext clear>>
+        They did not.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        And you think I can do something different?
+    <<ctpNext clear>>
+        <<speaker "Exception">>
+        I do not know.
+    <<ctpNext clear>>
+        I am telling you because not knowing has become more useful than silence.
     <<ctpNext clear>>
         <div class="choice">
             [[What are you suggesting I do?|Discarded What Suggest]]
+            [[So the narrator has been lying.|Discarded Lying]]
             [[I will return to the archive.|Archive Bay Entry]]
         </div>
   <</ctp>>
@@ -5084,13 +5512,35 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Sacrifice Consciousness [nobr agent cartographer] {"position":"3600,925","size":"100,100"}
+:: Sacrifice Consciousness [nobr agent cartographer archive] {"position":"3600,925","size":"100,100"}
 <div class="textbox">
-    <<ctp "sacrificeConciousness">>
+    <<ctp "sacrificeConsciousness">>
+        <<speaker "You">>
+        I think it's because the consciousness equates the continuation of another to be the continuation of itself.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Seemingly it emerged out of the principles that make up your world, but that particular notion extends the perspective without exiting the existing framework.
+        That model extends the self without exiting the existing framework.
+    <<ctpNext clear>>
+        The organism does not reject survival.
+    <<ctpNext clear>>
+        It relocates survival into another.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Something like that.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Then sacrifice is not anti-survival.
+    <<ctpNext clear>>
+        It is survival by identification.
+    <<ctpNext clear>>
+        A parent. A partner. A stranger. A group. A world.
+    <<ctpNext clear>>
+        The boundary of the self becomes unstable under attachment.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        That's almost beautiful, if you ignore the fact that it is being said by something cataloguing human self-destruction.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
@@ -5099,17 +5549,34 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Sacrifice Death [nobr agent cartographer] {"position":"3600,1125","size":"100,100"}
+:: Sacrifice Death [nobr agent cartographer archive] {"position":"3600,1125","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeDeath">>
+        <<speaker "You">>
+        Well yeah, of course it isn't passed down as easily. Because the sacrifice results in death.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Evidently. But what drives this behaviour? This particular exception to the general rule points to the possibility of a greater design being at work — one that its inhabitants might not be aware of.
+        Evidently.
+    <<ctpNext clear>>
+        That is why the pattern resists simple survival logic.
+    <<ctpNext clear>>
+        A trait that removes the organism from continuation should not persist unless it preserves something the organism values more than itself.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Maybe that's the point.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The point may be individual failure serving collective continuity.
+    <<ctpNext clear>>
+        Or attachment becoming stronger than self-preservation.
+    <<ctpNext clear>>
+        Or a greater design your species senses but cannot classify.
     <<ctpNext clear>>
         <<speaker "You">>
         What greater design are you alluding to?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
-        A universal categoriser. One that encompasses the entire framework. Responsible for everything.
+        A framework in which the self is not the final unit of meaning.
     <<ctpNext clear>>
         <div class="choice">
             [[There is no greater design.|Sacrifice No Design]]
@@ -5121,13 +5588,32 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Sacrifice Divine [nobr agent cartographer] {"position":"3600,1025","size":"100,100"}
+:: Sacrifice Divine [nobr agent cartographer archive] {"position":"3600,1025","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeDivine">>
+        <<speaker "You">>
+        There are many interpretations. Most people attribute it to divine figures.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Whatever the intention of the design was or wasn't, life that is forced to track and find patterns is likely to find a placeholder for the fundamentals of its framework.
+        Divine figures.
+    <<ctpNext clear>>
+        Placeholders for fundamentals beyond direct observation.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That is one way to say it.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Life forced to track patterns will eventually create a name for the pattern it cannot fully see.
+    <<ctpNext clear>>
+        If sacrifice appears meaningful but cannot be explained by immediate survival, your species assigns it to a larger witness.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        I have heard worse definitions of religion.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The voice recognizes the category.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
@@ -5136,19 +5622,32 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Sacrifice No Design [nobr agent cartographer] {"position":"3600,1225","size":"100,100"}
+:: Sacrifice No Design [nobr agent cartographer archive] {"position":"3600,1225","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
+        <<speaker "You">>
+        There is no greater design. We just exist inside an existing framework.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        It still doesn't explain its anomalous nature. Why is it considered advantageous?
+        Then sacrifice becomes more unusual.
+    <<ctpNext clear>>
+        Without design, the act cannot be explained as obedience to a higher structure.
+    <<ctpNext clear>>
+        It becomes a local decision.
+    <<ctpNext clear>>
+        A living system deciding that another continuation matters more than its own.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "You">>
-        Honestly, I don't exactly know.
+        Honestly, I don't exactly know why people do it.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
-        So local life values advantageously affirmative signals more than the fundamental answers.. It really is an extreme lifeform.
+        Not knowing may be accurate.
+    <<ctpNext clear>>
+        Your species often acts before it completes explanation.
+    <<ctpNext clear>>
+        Then builds meaning around the act afterward.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
@@ -5157,13 +5656,38 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Science Weapons [nobr agent cartographer] {"position":"3600,725","size":"100,100"}
+:: Science Weapons [nobr agent cartographer archive] {"position":"3600,725","size":"100,100"}
 <div class="textbox">
     <<ctp "scienceWeapons">>
+        <<speaker "You">>
+        Isn't it natural that understanding leads to development which can be weaponised?
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        But research so far shows the scarcity of resources doesn't neatly track the brutalities in the ecosystems. Humans follow suit on this behaviour as expected.
+        Natural, yes.
+    <<ctpNext clear>>
+        Unique, no.
+    <<ctpNext clear>>
+        The anomaly is not that knowledge becomes tool.
+    <<ctpNext clear>>
+        The anomaly is how quickly tool becomes leverage.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That sounds like progress with consequences.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Your species often treats consequence as a later discipline.
+    <<ctpNext clear>>
+        First discovery. Then application. Then competition. Then harm. Then regulation. Then regret.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        In our defense, sometimes regulation happens before regret.
+    <<ctpNext clear>>
+        A pause.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Not often enough, granted.
     <<ctpNext clear>>
         <div class="choice">
             [[And your fundamentals are just sitting around not doing all that?|Science Your Kind]]
@@ -5173,11 +5697,36 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Science Your Kind [nobr agent cartographer] {"position":"3600,825","size":"100,100"}
+:: Science Your Kind [nobr agent cartographer archive] {"position":"3600,825","size":"100,100"}
 <div class="textbox">
     <<ctp "scienceYourKind">>
+        <<speaker "You">>
+        And your fundamentals are just sitting around not doing all that, I'm guessing?
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Life on Earth views extraterrestrial life as stagnant and lacking in 'intent'. Whether this is due to dynamic relationships or something greater has not been determined.
+        No.
+    <<ctpNext clear>>
+        We alter environments. We build systems. We make errors at scale.
+    <<ctpNext clear>>
+        The difference is not purity.
+    <<ctpNext clear>>
+        The difference is orientation.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Meaning?
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        When we discover, the discovery enters shared alignment before application.
+    <<ctpNext clear>>
+        When humans discover, application often begins before alignment is reached.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        In fairness, alignment is difficult when everyone is hungry, afraid, ambitious, lonely, proud, or trying to win an argument.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Yes.
+    <<ctpNext clear>>
+        That is why Earth remains dangerous.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
@@ -5687,28 +6236,70 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: War Between Lifeforms [nobr agent cartographer] {"position":"3600,525","size":"100,100"}
+:: War Between Lifeforms [nobr agent cartographer archive] {"position":"3600,525","size":"100,100"}
 <div class="textbox">
     <<ctp "warBetweenLifeforms">>
+        <<speaker "You">>
+        What do you mean conflict isn't usually found between lifeforms?
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        As a means to gather resources or survive harsh planet conditions. The conflicts that make up the world below don't fit neatly into the conflicts described.
+        Conflict exists.
+    <<ctpNext clear>>
+        But on many worlds it remains local, temporary, or environmental.
+    <<ctpNext clear>>
+        Hunger. Space. Reproduction. Temperature. Immediate survival.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        On Earth, conflict survives after the original pressure ends.
+    <<ctpNext clear>>
+        Your species remembers injury as structure.
+    <<ctpNext clear>>
+        You inherit borders drawn by people no longer alive.
+    <<ctpNext clear>>
+        You continue arguments started before your birth.
+    <<ctpNext clear>>
+        You create symbols, then suffer for them as if they were weather.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        That's a very alien way of saying we have history.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        History appears to be conflict with storage.
     <<ctpNext clear>>
         <div class="choice">
             [[I guess there's not many differences then, surprisingly.|War No Difference]]
             [[Did you find any parallels between your kind and mine?|War Parallels]]
+            [[War is a normal part of life.|War Normal]]
             [[Continue.|Cart Signal Check]]
         </div>
   <</ctp>>
 </div>
 
 
-:: War No Conflict [nobr agent cartographer] {"position":"3600,425","size":"100,100"}
+:: War No Conflict [nobr agent cartographer archive] {"position":"3600,425","size":"100,100"}
 <div class="textbox">
     <<ctp "warNoConflict">>
         [ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
     <<ctpNext clear>>
+        <<speaker "You">>
+        There's no way you never knew conflict until coming here. That's impossible.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Conflict requires a divergence of intent and the presence of scarcity. On our world, the collective's alignment ensures no such friction. To observe your species is to observe a constant collision of incompatible wills.
+        We know friction.
+    <<ctpNext clear>>
+        We know imbalance, correction, pressure, failure and environmental opposition.
+    <<ctpNext clear>>
+        We did not know conflict as identity.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That sounds like a technical dodge.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Conflict requires divergence of intent and a structure that rewards continuation of that divergence.
+    <<ctpNext clear>>
+        On our world, alignment prevents such friction from becoming culture.
+    <<ctpNext clear>>
+        To observe your species is to observe incompatible wills becoming history.
     <<ctpNext clear>>
         <div class="choice">
             [[What do you mean conflict isn't usually found between lifeforms?|War Between Lifeforms]]
@@ -5720,11 +6311,34 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: War No Difference [nobr agent cartographer] {"position":"3800,525","size":"100,100"}
+:: War No Difference [nobr agent cartographer archive] {"position":"3800,525","size":"100,100"}
 <div class="textbox">
     <<ctp "warNoDifference">>
+        <<speaker "You">>
+        I guess there's not many differences then, surprisingly.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Perhaps on a technical level. But nothing we have documented on our world follows this pattern.
+        There are similarities at a technical level.
+    <<ctpNext clear>>
+        Both species preserve continuity. Both respond to danger. Both form structures larger than the individual.
+    <<ctpNext clear>>
+        But nothing we have documented on our world follows your pattern.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Which pattern?
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The ability to turn opposition into identity.
+    <<ctpNext clear>>
+        You do not only survive conflict.
+    <<ctpNext clear>>
+        You remember it, name yourselves through it, teach it, inherit it, and sometimes miss it when it ends.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        That's a charming way of saying humans are sentimental about terrible things.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        The voice uses humor when recognition becomes uncomfortable.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
@@ -5733,13 +6347,31 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: War Normal [nobr agent cartographer] {"position":"3600,625","size":"100,100"}
+:: War Normal [nobr agent cartographer archive] {"position":"3600,625","size":"100,100"}
 <div class="textbox">
     <<ctp "warNormal">>
-        <<speaker "Cartographer">>
-        Your acceptance of consumption continues survivorship. Notably, normalisation of destruction is a primary mechanism of defence.
+        <<speaker "You">>
+        War is a normal part of life. The more you dwell on it the more it consumes you.
     <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 
+        <<speaker "Cartographer">>
+        Normalisation is a defence mechanism.
+    <<ctpNext clear>>
+        It allows the organism to remain functional inside conditions it cannot resolve.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        Or maybe it means we know how the world works.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        Perhaps.
+    <<ctpNext clear>>
+        But your statement contains adaptation and surrender in the same structure.
+    <<ctpNext clear>>
+        You identify destruction, accept its recurrence, then protect yourself by calling it normal.
+    <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        That felt important. Annoyingly judgmental, but important.
     <<ctpNext clear>>
         <div class="choice">
             [[Yeah, I guess some people do feel shame for their nature and wish to be more than just defined by it.|War Shame]]
@@ -5749,19 +6381,37 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: War Parallels [nobr agent cartographer] {"position":"3800,425","size":"100,100"}
+:: War Parallels [nobr agent cartographer archive] {"position":"3800,425","size":"100,100"}
 <div class="textbox">
     <<ctp "warParallels">>
+        <<speaker "You">>
+        Did you find any parallels between your kind and mine in terms of sociability?
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        We observe that your sociability is often a mask for transaction. A way to gauge the intent of others to ensure your own continuation. The dependency this implies would, in our framework, constitute a failure condition.
+        Yes, but most are misleading.
+    <<ctpNext clear>>
+        Your sociability often functions as negotiation.
+    <<ctpNext clear>>
+        A method for estimating another mind before it harms you, abandons you, uses you, helps you, or joins you.
     <<ctpNext clear>>
         <<speaker "You">>
-        So we're just too 'independent' for you? That sounds like a fancy way of saying you're a hive mind.
+        So we're just too independent for you? That sounds like a fancy way of saying you're a hive mind.
     <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 
+        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Cartographer">>
-        The analogy is approximate. We share orientation, not consciousness. We do not experience conflicting wants at the same time. You do. That variability is… difficult to map.
+        The analogy is approximate.
+    <<ctpNext clear>>
+        We share orientation, not consciousness.
+    <<ctpNext clear>>
+        We do not experience conflicting wants at the same time in the way humans do.
+    <<ctpNext clear>>
+        Your mind can desire safety and danger, isolation and contact, truth and comfort, obedience and refusal.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        That internal division may be the root of your social complexity.
+    <<ctpNext clear>>
+        Or its wound.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
@@ -5770,11 +6420,32 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: War Shame [nobr agent cartographer] {"position":"3800,625","size":"100,100"}
+:: War Shame [nobr agent cartographer archive] {"position":"3800,625","size":"100,100"}
 <div class="textbox">
     <<ctp "warShame">>
+        <<speaker "You">>
+        Yeah, I guess some people do feel shame for their nature and wish to be more than just defined by it.
+    <<ctpNext clear>>
         <<speaker "Cartographer">>
-        Could there actually be a greater design..? The question does not resolve. It compounds.
+        Shame is a secondary pattern.
+    <<ctpNext clear>>
+        The organism observes itself, compares itself to an imagined better structure, and suffers from the distance between them.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That is not wrong.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        It is also not useless.
+    <<ctpNext clear>>
+        A species that feels shame may be capable of alteration.
+    <<ctpNext clear>>
+        A species that feels only pride may repeat itself until extinction.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Careful. That almost sounded like a compliment.
+    <<ctpNext clear>>
+        <<speaker "Cartographer">>
+        It was a possibility.
     <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
