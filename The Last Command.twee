@@ -84,7 +84,6 @@ The Last Command
 
 
 :: 3.1. A Environment [nobr agent hallway exception] {"position":"1000,1950","size":"100,100"}
-
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
@@ -136,8 +135,6 @@ The Last Command
 
 
 :: 3.1. A Philosophical [nobr agent hallway exception] {"position":"1000,1850","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
@@ -1410,8 +1407,6 @@ The Last Command
 
 
 :: Analyst Dead End Hallway [nobr hallway] {"position":"3600,2575","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystDeadEndHallway">>
         You head back out of the specimen bay, retracing your steps toward the long hallway where you first came from. The narrator is talking about the engineering bay. He doesn't stop.
@@ -1946,32 +1941,31 @@ The Last Command
 
 
 :: Archive Bay Entry [nobr missing-features archive] {"position":"2200,725","size":"100,200"}
-<<audio ":all" stop>>
-<<audio "archives" loop play>>
 <<hideAgent>>
 
 <div class="textbox">
     <<ctp "archiveBayEntry">>
-        You stand at the entrance of a large open space filled with fragmented projections. Visuals flicker between scenes of Earth — wars, cities, people, scientific breakthroughs.
+        The Archive Bay opens into a chamber of suspended light.
+    <<ctpNext clear>>
+        Projection fields flicker between scenes of Earth: cities, borders, fires, launch towers, classrooms, battlefields, coastlines, crowds.
+    <<ctpNext clear>>
+        It is not a museum.
+    <<ctpNext clear>>
+        It is closer to an autopsy performed on history while history is still alive.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        There it is. This one usually resides in this bay — possibly an astronomer or cartographer of some sorts.
-Go talk to it. Don't you just wonder what's beneath its icy skin? Well, crystals or.. icicles..? Look, just make it 'think' using your intrinsic human perspective and give it a reality check, that should let you in on its 'mental state'. If you trust the process you will have felt something.. just something.
-Since this one deals in orbit, topography and social studies, it would make sense to go along with those lines?
+        Archive. Good.
+    <<ctpNext clear>>
+        This is where the Cartographer keeps pretending that watching a world from orbit is the same thing as understanding it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        It already got here. But this is its designated place and it shouldn't scurry off anywhere for now.
-Go talk to it. Don't you just wonder what's beneath its icy skin? Well, crystals or.. icicles..? Look, just make it 'think' using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
-Since this one deals in orbit, topography and social studies, it would make sense to go along with those lines?
+        Be careful with this one. It deals in patterns, which means it will say something broad and then act as if broad means true.
     <<ctpNext clear>>
-        <<speaker "Narrator">>
-        Well now you know what to do I guess. You're free to take it as a challenge though — gather the signals and get to the door. Very innovative I know.
-Oh yeah, good luck by the way.
+        An archive terminal glows to the right.
     <<ctpNext clear>>
-        <<speaker "Narrator">>
-        You're a smooth sailor. Just letting you know.
+        The Cartographer is already present.
     <<ctpNext clear>>
-        An archive terminal glows to the right. The Cartographer is already present. The Exception stands further back, overlooking something beyond the projection field.
+        Further back, The Exception stands near the projection field, staring at something the archive is not showing you.
     <<ctpNext clear>>
         <div class="choice">
             [[Read the archive terminal.|Archive Terminal]]
@@ -1984,12 +1978,24 @@ Oh yeah, good luck by the way.
 
 
 :: Archive Bay Return [nobr archive] {"position":"2200,1425","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "archiveBayReturn">>
-    	The archive bay again. The projections still flicker between scenes of Earth. The Cartographer has moved on. The Exception is no longer at the window. The view toward Earth is interactable
+        You return to the Archive Bay.
+    <<ctpNext clear>>
+        The projections still flicker between scenes of Earth, but the room feels quieter now.
+    <<ctpNext clear>>
+        The Cartographer has moved away from the central projection.
+    <<ctpNext clear>>
+        The Exception is no longer standing where you last saw it.
+    <<ctpNext clear>>
+        The Earth-view projection remains active, brighter than the others, as if the room expects you to look.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        You're looking at it again. The window that isn't a window. I know that view. I have spent quite a lot of time not looking at it, which is almost the same thing.
+        You're looking at it again. The window that isn't a window.
+    <<ctpNext clear>>
+        I know that view. I have spent a great deal of time not looking at it, which is almost the same thing.
     <<ctpNext clear>>
         <div class="choice">
             [[Look at the Earth.|Archive Earth View]]
@@ -2001,36 +2007,51 @@ Oh yeah, good luck by the way.
 
 
 :: Archive Earth View [nobr archive earth] {"position":"2200,1225","size":"100,100"}
-<<audio ":all" stop>>
-<<audio "archiveEarth" loop play>>
+<<hideAgent>>
 
 <div class="textbox">
     <<ctp "archiveEarthView">>
-    	You look at Earth. No dialogue options. Just the planet, hanging there. A long beat. Then the narrator, quieter than usual.
+        You look at Earth.
+    <<ctpNext clear>>
+        No dialogue prompt appears. No researcher interrupts. No system opens a menu.
+    <<ctpNext clear>>
+        Just the planet, hanging below the ship, impossibly familiar from an impossible distance.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        It's strange, isn't it. How much you can love something that has no idea you're looking at it.
+        Strange, isn't it?
+    <<ctpNext clear>>
+        How much you can love something that has no idea you're looking at it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        You know.. I used to think the problem with humanity was the scale. That humanity cared too much about things too small — the patch of ground, the particular people, the specific version of how things should go. But do you see any of that from here clearly? Not yet. Humanity's true strength lies in the abilities it developed around the neolithic campfires — belonging to a community, participating in real, human and dynamic interaction. Humans aren't hive-minded bees, ants, or especially these aliens. Why else would even within a civilisation there be nationalities and distinct groups?
+        I used to think the problem with humanity was scale. That we cared too much about small things. A patch of ground. A room. A family. A version of how the world should go.
+    <<ctpNext clear>>
+        But from here, none of that becomes smaller.
+    <<ctpNext clear>>
+        It becomes harder to lie about.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        You see that in the middle? The ever-constructing global capital. The supposed monument to unity and human greatness. From up here it looks like what it is — an apple that's been eaten from the inside. The skin has to look good. There have to be enough healthy parts for people to risk a bite. If it sells, that's all that matters to the ones holding it.
+        The aliens think Earth is a deathworld because conflict shaped it.
+    <<ctpNext clear>>
+        They're not entirely wrong.
+    <<ctpNext clear>>
+        But they miss the campfire part. The part where people sit close because the dark is large and being alone inside it is worse.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        The aliens have been around for decades and the supposed 'first and only' global government is still in observation mode as much as this ship you're on is. Because humanity doesn't bite hardest when it's aligned. It bites hardest when it's numerous and contradictory and acting from a hundred different angles at once. The campfire, not the capital.
+        Humans are not hive minds. Not bees. Not ants. Not these observers with their clean categories and orbital patience.
+    <<ctpNext clear>>
+        We are contradictory. Local. Numerous. Personal.
+    <<ctpNext clear>>
+        We bite hardest when we are not aligned.
+    <<ctpNext clear>>
+        A long pause follows.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        I've been up here long enough to know that. Long enough that knowing it isn't nearly enough anymore.
+        I have been up here long enough to know that.
     <<ctpNext clear>>
-        A long pause. Then, almost to himself.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        You know it's time to get moving when I've said too much.
+        Long enough that knowing it is no longer enough.
     <<ctpNext clear>>
         <div class="choice">
-            [[Return to the central room.|Pre Control Room]]
-            [[Check the discarded room.|Discarded Room First]]
+            [[Step back from the view.|Archive Bay Return]]
         </div>
   <</ctp>>
 </div>
@@ -2977,18 +2998,34 @@ Oh yeah, good luck by the way.
 </div>
 
 
-:: Code Entry [nobr missing-features control code] {"position":"4600,2575","size":"100,100"}
+:: Code Entry [nobr control code] {"position":"4600,2575","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "codeEntry">>
-        The door panel. Three-part frequency input. The biochip surfaces the three signals. Your hand moves before you decide to move it. The door unlocks.
+        The locked door does not open when you approach.
+    <<ctpNext clear>>
+        Instead, a panel rises from the wall, forming three empty frequency channels.
+    <<ctpNext clear>>
+        The biochip reacts before you do.
+    <<ctpNext clear>>
+        Three signal patterns surface in your vision, not as numbers at first, but as pressure, rhythm, and shape.
+    <<ctpNext clear>>
+        Your hand moves toward the panel.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Good. Now come in. I have been waiting for quite a long time and I'm afraid my patience is genuinely a virtue at this point rather than a preference.
+        Yes. That's it. Let the chip translate it. Don't overthink the part where your body knows what to do before you do.
+    <<ctpNext clear>>
+        The final line locks into place.
+    <<ctpNext clear>>
+        The door opens.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Good. Now come in. I have been waiting for quite a long time, and I am afraid my patience has become less of a virtue and more of a medical condition.
     <<ctpNext clear>>
         <div class="choice">
-            [[Enter the control room.|Control Room Artifact Check]]
             [[Enter the control room.|Control Room Entry]]
-        </div> 
+        </div>
   <</ctp>>
 </div>
 
@@ -4536,18 +4573,24 @@ END OF CURRENT DRAFT
 [[Play Again|Title Screen]]
 
 
-:: Hallway Convergence [nobr hallway watcher] {"position":"1800,2525","size":"100,200"}
+:: Hallway Convergence [nobr hallway] {"position":"1800,2525","size":"100,200"}
 <<hideAgent>>
 
 <div class="textbox">
-    <<ctp "hallwayConvergance">>
-        The hallway. Long. Ahead is a room.
+    <<ctp "hallwayConvergence">>
+        The corridor stretches forward, colder and wider than the one behind you.
+    <<ctpNext clear>>
+        For the first time since waking, both paths feel as if they have collapsed into the same direction.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Good. You're moving. What you met in there — that's the shape of things on this ship. Strange is the baseline here. You'll adjust or you won't, but either way the hallway only goes one direction.
+        Good. You're moving. That is, historically, the part people struggle with.
+    <<ctpNext clear>>
+        What you met back there — the researchers, the Exception, whatever version of this route you took — that's the shape of things on this ship. Strange is the baseline here.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Ahead of you is a room. From there, three branches. Each of them contains something you'll need. Don't think too hard about it yet. Just get to the room.
+        Ahead is the central room before the control door. From there, three branches. Each of them contains something you need.
+    <<ctpNext clear>>
+        Don't worry about understanding all of it yet. Just reach the room.
     <<ctpNext clear>>
         <div class="choice">
             [[Reach the room before the control room.|Pre Control Room]]
@@ -4733,22 +4776,30 @@ END OF CURRENT DRAFT
 
 
 :: Narrator Identity [nobr hallway control-door] {"position":"1900,2075","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "narratorIdentity">>
-        <<speaker "Narrator">>
-        I talk through the means the aliens designated for cases such as this. I help guide you in this dire predicament. I know enough things to keep being useful to you. Now you're likely referring to something more basic — maybe even about the very nature of my existence. 
+        <<speaker "You">>
+        Hold up. Who or what even are you?
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Am I an alien, a human or even a program? You wouldn't be crazy to be thinking I am any of these.
+        I talk through the system the aliens use for cases like this. I help translate, guide, warn, explain, and occasionally prevent you from walking directly into obvious disasters.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        But that's not what I want from you. I have desire that's much better defined. You've probably already realised that the ones you've met so far don't quite operate on the same principles you're used to.
+        That is the useful answer.
+    <<ctpNext clear>>
+        The voice pauses for just long enough to make the next sentence feel rehearsed.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        What both me and you want is inside the room ahead. The room ahead of you — the one that's currently locked — it's not part of their usual routine.
+        The answer you're asking for is more basic. Alien, human, program, hallucination, parasite, ghost in the machine. You would not be irrational to consider any of those.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        It's an exception.. Much like yourself, in a way.
+        But the locked room ahead matters more than my biography.
+    <<ctpNext clear>>
+        What both of us need is behind that door. The room is not part of their usual routine. It is an exception.
+    <<ctpNext clear>>
+        Much like you.
     <<ctpNext clear>>
         <div class="choice">
             [["You still haven't told me who you are."|Narrator Who Are You]]
@@ -4760,13 +4811,26 @@ END OF CURRENT DRAFT
 
 
 :: Narrator What To Do [nobr hallway control-door] {"position":"2000,2075","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "narratorWhatToDo">>
         <<speaker "Narrator">>
-        You're going to move through the adjacent sections of the ship. Each of them serves a purpose. Each of them contains something you'll need.
+        You are going to move through the adjacent sections of the ship.
+    <<ctpNext clear>>
+        Archive. Specimen Bay. Engineering Bay.
+    <<ctpNext clear>>
+        Each of them serves a function. Each of them has a researcher. Each of them contains a signal the door can understand.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        You don't have to understand everything you see. You just need to remember it. Then when you have all three parts of the access code complete, come back to this very room and unlock the door in front of you.
+        You do not need to understand everything you see.
+    <<ctpNext clear>>
+        You need to survive it, remember it, and bring the signals back here.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        When all three parts of the access code are complete, this door opens.
+    <<ctpNext clear>>
+        Then the rest finally becomes simple.
     <<ctpNext clear>>
         <div class="choice">
             [["Why can't you just open the door yourself?"|Narrator Why Not Open]]
@@ -4777,10 +4841,27 @@ END OF CURRENT DRAFT
 
 
 :: Narrator Who Are You [nobr hallway control-door] {"position":"2000,1975","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "narratorWhoAreYou">>
         <<speaker "Narrator">>
-        You can simply call me the narrator. I'm a voice in your head — what else could I be? It feels like a befitting name
+        You can call me the Narrator.
+    <<ctpNext clear>>
+        I know. Dramatic. A little self-important. But accurate enough for our purposes.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That is not an answer.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        It is an answer with excellent branding.
+    <<ctpNext clear>>
+        The important part is this: I am the only voice currently invested in getting you through that door alive.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        The aliens observe. The ship processes. The door waits.
+    <<ctpNext clear>>
+        I guide.
     <<ctpNext clear>>
         <div class="choice">
             [["What do you want me to do?"|Narrator What To Do]]
@@ -4792,13 +4873,29 @@ END OF CURRENT DRAFT
 
 
 :: Narrator Why Not Open [nobr hallway control-door] {"position":"2000,2175","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "narratorWhyNotOpen">>
         <<speaker "Narrator">>
-        You're the one who acts here — not even the aliens can take that away from you. Make use of your humanity, which is always available to you, and give the aliens a little wake-up call. Find out what it is they hide in this room specifically.
+        Because the ship does not respond to me the way it responds to you.
+    <<ctpNext clear>>
+        That is not poetic. It is technical, unfortunately.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        And when you do, humanity will have won.
+        You are mobile. Logged. Biologically current. Connected to the biochip in a way the ship recognises as active.
+    <<ctpNext clear>>
+        I am... less convenient.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        That sounds like a carefully incomplete answer.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        It is.
+    <<ctpNext clear>>
+        But incomplete does not mean false.
+    <<ctpNext clear>>
+        Go to the bays. Gather the signals. Come back to the door.
     <<ctpNext clear>>
         <div class="choice">
             [[Head to the bays.|Pre Control Room]]
@@ -4911,28 +5008,42 @@ END OF CURRENT DRAFT
 </div>
 
 
-:: Pre Control Room [nobr missing-features hallway control-door] {"position":"1900,2525","size":"200,200"}
+:: Pre Control Room [nobr hallway control-door] {"position":"1900,2525","size":"200,200"}
 <<hideAgent>>
 
 <div class="textbox">
     <<ctp "preControlRoom">>
-        A large room. A gateway door directly opposite — locked. Three paths branch from here.
+        You enter a wide central chamber.
+    <<ctpNext clear>>
+        A locked gateway dominates the far wall. Its surface is smooth, dark, and split by three inactive signal lines.
+    <<ctpNext clear>>
+        Three paths branch away from the room.
+    <<ctpNext clear>>
+        One glows with archive projections.
+    <<ctpNext clear>>
+        One smells faintly sterile, chemical, and alive.
+    <<ctpNext clear>>
+        One vibrates with the low pulse of machinery.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        It's definitely locked. It does seem like a way to go doesn't it? But this isn't the only way to go from here. There are three additional paths that diverge from this room — think of all of them as serving a functional purpose relating to the alien's research.
+        There it is. The door.
+    <<ctpNext clear>>
+        Definitely locked, yes. Visually committed to the concept.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        Go talk to them. Specifically the three signal carriers. Each of them should be in their respective rooms right now and certainly aren't hard to miss.
+        The three branches are not decorative. Archive, Specimen Bay, Engineering Bay. Each one contains a signal carrier.
     <<ctpNext clear>>
-        <<speaker "Narrator">>
-        You have all three signals. Come back to the door. Everything after this is mine to explain.
-    <<ctpNext clear>>
-        The door remains locked. The three paths wait.
+        Get the signals. Come back here. Enter the code.
     <<ctpNext clear>>
         <div class="choice">
             [[Approach the locked door and enter the code.|Code Entry]]
-            [[Head to the Archive bay.|Archive Bay Entry]]
-            [[Return to the Archive bay.|Archive Bay Return]]
+
+            <<if visited("Archive Bay Entry")>>
+                [[Return to the Archive bay.|Archive Bay Return]]
+            <<else>>
+                [[Head to the Archive bay.|Archive Bay Entry]]
+            <</if>>
+
             [[Head to the Specimen bay.|Specimen Bay Entry]]
             [[Head to the Engineering bay.|Engineering Bay Entry]]
             [["Hold up. Who or what even are you?"|Narrator Identity]]
@@ -5338,7 +5449,7 @@ END OF CURRENT DRAFT
         else if (tags.includes("hallway") && tags.includes("dark")) {
             video = "Hallway_Dark.mp4";
         }
-         else if (tags.includes("hallway") && tags.includes("controldoor")) {
+        else if (tags.includes("hallway") && (tags.includes("control-door") || tags.includes("controldoor"))) {
             video = "Hallway_ControlDoor.mp4";
         }
         else if (tags.includes("hallway")) {
