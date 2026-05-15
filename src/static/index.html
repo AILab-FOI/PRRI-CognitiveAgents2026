@@ -1026,6 +1026,437 @@ body[data-tags~="intro"][data-tags~="title"] {
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-weight: 700;
+}
+
+/* =========================================================
+   FINAL UI FIXES — PAVO MERGE, BACKGROUND SAFE
+   Ovo ide NA KRAJ StoryStylesheeta.
+   Ne dira background-image pravila za slike po tagovima.
+   ========================================================= */
+
+/* ---------- REMOVE PAGE / BACKGROUND SCROLLBAR ---------- */
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+
+    overflow: hidden !important;
+
+    color: #e6f4ff !important;
+    font-family: "Segoe UI", sans-serif !important;
+
+    background-color: #000 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* ---------- STORY LAYOUT FIX ---------- */
+
+#story {
+    position: relative !important;
+    z-index: 2 !important;
+
+    width: 100% !important;
+    max-width: 1200px !important;
+
+    height: 100vh !important;
+    min-height: 0 !important;
+
+    margin: 0 auto !important;
+    padding: 30px !important;
+
+    overflow: hidden !important;
+
+    transform: none !important;
+    box-sizing: border-box !important;
+}
+
+#passages {
+    max-width: 950px !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    margin: 0 auto !important;
+    padding: 1rem !important;
+
+    position: relative !important;
+
+    overflow: hidden !important;
+
+    transform: none !important;
+    box-sizing: border-box !important;
+}
+
+.passage {
+    background: transparent !important;
+    color: #e6f4ff !important;
+
+    min-height: 0 !important;
+
+    animation: none !important;
+    transform: none !important;
+
+    overflow: hidden !important;
+}
+
+/* ---------- VIDEO BACKGROUND FIX ---------- */
+
+/* ---------- VIDEO BACKGROUND FIX ---------- */
+
+#bgVideo {
+    position: fixed !important;
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    background: #000 !important;
+
+    z-index: 0 !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+}
+
+/* Twine tekst mora biti iznad videa */
+#story,
+#passages,
+.passage {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Donji UI bar iznad svega */
+#ui-bar {
+    z-index: 2000 !important;
+}
+
+/* Textbox iznad videa */
+.textbox {
+    z-index: 1000 !important;
+}
+
+/* ---------- TEXTBOX FIX ---------- */
+
+.textbox {
+    position: fixed !important;
+
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 70px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: fit-content !important;
+    min-width: 360px !important;
+    max-width: 88vw !important;
+
+    min-height: 120px !important;
+
+    margin: 0 auto !important;
+    padding: 34px 42px 28px 42px !important;
+
+    box-sizing: border-box !important;
+
+    background: rgba(5, 12, 24, 0.88) !important;
+
+    border: 1px solid rgba(0, 220, 255, 0.45) !important;
+    border-radius: 22px !important;
+
+    box-shadow:
+        0 0 35px rgba(0, 180, 255, 0.22),
+        inset 0 0 24px rgba(0, 180, 255, 0.05) !important;
+
+    backdrop-filter: blur(7px) !important;
+
+    text-align: center !important;
+
+    z-index: 1000 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    animation: none !important;
+}
+
+/* ---------- SPEAKER FIX ---------- */
+
+.speaker {
+    position: absolute !important;
+
+    top: -32px !important;
+    left: 50% !important;
+    right: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    display: inline-block !important;
+
+    width: auto !important;
+    min-width: 140px !important;
+    max-width: max-content !important;
+
+    margin: 0 !important;
+    padding: 10px 26px !important;
+
+    background: linear-gradient(135deg, #00b4ff, #005eff) !important;
+
+    color: white !important;
+
+    border: none !important;
+    border-radius: 12px !important;
+
+    text-align: center !important;
+    white-space: nowrap !important;
+
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+
+    box-shadow: 0 0 18px rgba(0, 180, 255, 0.45) !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 1002 !important;
+}
+
+/* ---------- TEXT FIX ---------- */
+
+.textbox,
+.textbox p,
+.passage,
+.passage p {
+    color: #e6f4ff !important;
+
+    font-size: 1.12rem !important;
+    line-height: 1.75 !important;
+
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.textbox p,
+.textbox div:not(.speaker),
+.textbox span:not(.speaker) {
+    width: auto !important;
+    max-width: 900px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    text-align: center !important;
+}
+
+/* ---------- CHOICE CONTAINER FIX ---------- */
+
+.choice {
+    position: relative !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 12px !important;
+
+    width: fit-content !important;
+    max-width: 100% !important;
+
+    margin: 24px auto 0 auto !important;
+
+    padding: 8px 10px 8px 10px !important;
+
+    z-index: 1001 !important;
+
+    max-height: 260px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box !important;
+
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(0, 220, 255, 0.75) rgba(5, 12, 24, 0.65) !important;
+}
+
+/* ---------- CHOICE SCROLLBAR ---------- */
+
+.choice::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.choice::-webkit-scrollbar-track {
+    background: rgba(5, 12, 24, 0.65) !important;
+    border-radius: 999px !important;
+}
+
+.choice::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00dfff, #0066ff) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 0 10px rgba(0, 220, 255, 0.65) !important;
+}
+
+.choice::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6ff6ff, #0088ff) !important;
+}
+
+/* ---------- CHOICE BUTTON FIX ---------- */
+
+.choice a,
+.choice a.link-internal,
+.choice .macro-link,
+#passages .passage a.link-internal,
+#passages .passage a.macro-link,
+#passages .passage button {
+    display: block !important;
+
+    width: 280px !important;
+    max-width: 420px !important;
+
+    margin: 0 auto !important;
+    padding: 12px 28px !important;
+
+    background: linear-gradient(135deg, #00b4ff, #0066ff) !important;
+    color: white !important;
+
+    border: 2px solid rgba(139, 220, 255, 0.75) !important;
+    border-radius: 14px !important;
+
+    text-align: center !important;
+    text-decoration: none !important;
+
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+
+    box-sizing: border-box !important;
+    box-shadow: 0 0 18px rgba(0, 180, 255, 0.45) !important;
+
+    cursor: pointer !important;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease !important;
+}
+
+/* ---------- CHOICE BUTTON HOVER ---------- */
+
+.choice a:hover,
+.choice a.link-internal:hover,
+.choice .macro-link:hover,
+#passages .passage a.link-internal:hover,
+#passages .passage a.macro-link:hover,
+#passages .passage button:hover {
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 0 26px rgba(0, 220, 255, 0.65),
+        inset 0 0 18px rgba(0, 220, 255, 0.10) !important;
+
+    filter: brightness(1.08) !important;
+}
+
+/* ---------- UI BAR FIX ---------- */
+
+#ui-bar {
+    position: fixed !important;
+
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 48px !important;
+
+    background: rgba(4, 10, 18, 0.96) !important;
+
+    border-right: none !important;
+    border-top: 1px solid rgba(0, 220, 255, 0.35) !important;
+
+    box-shadow: 0 -4px 20px rgba(0, 180, 255, 0.18) !important;
+
+    z-index: 2000 !important;
+}
+
+#ui-bar-toggle,
+#title,
+#story-caption {
+    display: none !important;
+}
+
+/* ---------- MOBILE FIX ---------- */
+
+@media (max-width: 768px) {
+
+    #story {
+        padding: 14px !important;
+    }
+
+    #passages {
+        padding: 0.5rem !important;
+    }
+
+    .textbox {
+        min-width: 0 !important;
+
+        width: calc(100vw - 32px) !important;
+        max-width: calc(100vw - 32px) !important;
+
+        bottom: 55px !important;
+
+        padding: 32px 22px 24px 22px !important;
+
+        border-radius: 16px !important;
+    }
+
+    .speaker {
+        min-width: 120px !important;
+
+        padding: 9px 20px !important;
+
+        font-size: 0.9rem !important;
+    }
+
+    .textbox,
+    .textbox p {
+        font-size: 1rem !important;
+    }
+
+    .choice {
+        max-height: 220px !important;
+
+        padding: 8px 8px 8px 8px !important;
+    }
+
+    .choice a,
+    .choice a.link-internal,
+    .choice .macro-link,
+    #passages .passage a.link-internal,
+    #passages .passage a.macro-link,
+    #passages .passage button {
+        width: 240px !important;
+        max-width: calc(100vw - 80px) !important;
+
+        font-size: 0.9rem !important;
+
+        padding: 11px 22px !important;
+    }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">(() => {
 	"use strict";
 
