@@ -81,7 +81,7 @@ The Last Command
     "arhive": "purple",
     "arh": "purple"
   },
-  "zoom": 0.6
+  "zoom": 1
 }
 
 
@@ -2134,7 +2134,7 @@ The Last Command
 </div>
 
 
-:: Artifact Control Disable [nobr control artifact] {"position":"4900,2775","size":"100,100"}
+:: Artifact Control Disable [nobr control artifact] {"position":"4900,3100","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactControlDisable">>
         You walk back to the Engineering bay. Not to speak with the Engineer — you approach the workbench where you showed it the device. The fourth position on the dial: a symbol the biochip renders as CONTROL ROOM. You adjust it.
@@ -2162,7 +2162,7 @@ The Last Command
 </div>
 
 
-:: Artifact End Final [nobr ending artifactsuccess] {"position":"5400,2975","size":"100,100"}
+:: Artifact End Final [nobr ending artifactsuccess] {"position":"5400,3300","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -2181,7 +2181,7 @@ The Last Command
 </div>
 
 
-:: Artifact End Should [nobr ending artifactsuccess] {"position":"5300,3075","size":"100,100"}
+:: Artifact End Should [nobr ending artifactsuccess] {"position":"5300,3400","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -2194,7 +2194,7 @@ The Last Command
 </div>
 
 
-:: Artifact End Walk Out [nobr ending artifactsuccess] {"position":"5600,3075","size":"100,100"}
+:: Artifact End Walk Out [nobr ending artifactsuccess] {"position":"5600,3400","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndShould">>
         You leave. The narrator remains on the floor of his own control room. He doesn't call after you. The Exception is in the hallway.
@@ -2224,7 +2224,7 @@ The Last Command
 </div>
 
 
-:: Artifact End Wanted [nobr ending artifactsuccess] {"position":"5300,2975","size":"100,100"}
+:: Artifact End Wanted [nobr ending artifactsuccess] {"position":"5300,3300","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -2237,7 +2237,7 @@ The Last Command
 </div>
 
 
-:: Artifact End Watch [nobr ending artifactsuccess] {"position":"5300,2875","size":"100,100"}
+:: Artifact End Watch [nobr ending artifactsuccess] {"position":"5300,3200","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -2265,7 +2265,7 @@ The Last Command
 </div>
 
 
-:: Artifact Signal Check [nobr missing-features control artifact] {"position":"5000,2875","size":"100,100"}
+:: Artifact Signal Check [nobr missing-features control artifact] {"position":"5000,3200","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactSignalCheck">>
         You don't have the Exception's signal. The blind spot isn't available to you yet.
@@ -2625,35 +2625,218 @@ The Last Command
 </div>
 
 
-:: CR Narrator Questions [nobr agent control questions narrator] {"position":"5200,2575","size":"100,100"}
-<<script>>
-            function addAgent(name) {
-                const iframe = document.createElement('iframe');
-                iframe.width = '400';
-                iframe.height = '600';
-                iframe.src = `/${name}`;
-                return iframe;
-            }
-
-            if (!document.getElementById("agent-exception-frame")) {
-                const frame = addAgent('agent-exception');
-                frame.id = "agent-exception-frame";
-                $(output).append(frame);
-            }
-<</script>>
-
+:: CR Believe [nobr narrator agent missing-features] {"position":"5300,2900","size":"100,100"}
 <div class="textbox">
-    <<ctp "controlRoomQuestions">>
-        You ask away.
+    <<ctp "CRBelieve">>
+        <<speaker "Narrator">>
+        That is the question I have been not asking myself for a very long time. I believe in humanity the way some people believe in a god. Not because I have proof. Because the alternative — not believing in it — requires me to look at everything I've done and find a different explanation for why I did it. And I don't have one. So I keep believing. I believe harder when I'm least sure.
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        You asked if it's something I say. It started as something I believed. Then it became something I said because I believed it. Then it became something I said to keep believing it. I'm not sure which one it is right now, standing here, looking at you. I think that's the most honest thing I've said since you walked through that door.
     <<ctpNext clear>>
         <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
             [[Continue.|CR Panel Speech]]
-        </div> 
+        </div>
   <</ctp>>
 </div>
 
 
-:: CR Panel Speech [nobr missing-features control narrator] {"position":"5400,2525","size":"100,200"}
+:: CR Biochip Watch [nobr agent narrator missing-features] {"position":"5300,2500","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRBiochipWatch">>
+        <<speaker "Narrator">>
+        Yes. Everything you said to them. Everything you did. The layout of every room. I had reasons for needing to know. I told myself the reasons were good enough. I'm less certain of that now than I was when I started.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[So everything I said to the aliens, you heard.|CR Heard Everything]]
+            [[Did you ever intervene in what I said to them?|CR Intervene]]
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Body Question [nobr agent narrator missing-features] {"position":"5300,2600","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRBodyQuestions">>
+        <<speaker "Narrator">>
+        I know. I've been thinking about that since you found it. The ship doesn't make exceptions. Something kept that body there. Something wanted you to find it.
+    <<ctpNext clear>>
+        <<speaker "You">>
+        What would want that?
+    <<ctpNext clear>>
+        <<speaker "Narrator">>
+        Something that knew you were coming before I did. Something that understood that you finding that room would change what you did next. I have been in this room for a long time and I thought I understood the shape of everything happening on this ship. I was wrong about that. I don't know by how much.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Grieve [nobr agent narrator missing-features] {"position":"5300,2800","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRGrieve">>
+        <<speaker "Narrator">>
+        I told myself what happened to them was a miscalculation. I use that word because it keeps it in a register I can manage. Grief is not a register I can manage in this room. I've been alone in here for long enough that I'm not sure I have access to it anymore in the way I used to. But I think about them. I think about them with a frequency that isn't consistent with just filing it as a miscalculation.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[That's not an answer.|CR Grieve Not Answer]]
+            [[I think you do.|CR Grieve Think You Do]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Grieve Not Answer [nobr agent narrator missing-features] {"position":"5500,2800","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRGrieveNotAnswer">>
+        <<speaker "Narrator">>
+        No. It isn't. The answer is yes. I grieved them badly and privately and without any of the things that make grief bearable and I am still doing it. That's the answer.
+    <<ctpNext clear>>
+        <div class="choice">
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Grieve Think You Do [nobr agent narrator missing-features] {"position":"5500,2700","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRThinkYouDo">>
+        <<speaker "Narrator">>
+        Thank you. I don't know what to do with that but thank you.
+    <<ctpNext clear>>
+        <div class="choice">
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Heard Everything [nobr agent narrator missing-features] {"position":"5500,2600","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRIntervene">>
+        <<speaker "Narrator">>
+        No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn't.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Intervene [nobr agent narrator missing-features] {"position":"5500,2500","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRIntervene">>
+        <<speaker "Narrator">>
+        No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn't.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Organisation [nobr agent narrator missing-features] {"position":"5300,2700","size":"100,100"}
+<div class="textbox">
+    <<ctp "CROrganization">>
+        <<speaker "Narrator">>
+        Themselves. Which sounds like freedom and functions like a religion. We had a framework — a set of principles about what contact with the visitors should look like, who should control it, what humanity should get out of it. We were very certain about all of it. Certainty is comfortable when you're the one holding it.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[And now?|CR Organisation Now]]
+            [[Were you ever going to tell me any of this?|CR Tell Me]]
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Organisation Now [nobr agent narrator missing-features] {"position":"5500,2300","size":"100,100"}
+<div class="textbox">
+    <<ctp "CROrganizationNow">>
+        <<speaker "Narrator">>
+        Now I've been in this room long enough to watch certainty curdle. I still believe in the goal. I'm less certain I believe in the people — including myself — which is an uncomfortable thing to arrive at when you're the only human on an alien ship.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Panel Speech [nobr missing-features control narrator] {"position":"5900,2500","size":"100,200"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "controlRoomQuestions">>
         <<speaker "Narrator">>
@@ -2675,7 +2858,7 @@ The Last Command
 </div>
 
 
-:: CR Secret Heard [nobr control narrator] {"position":"5600,2475","size":"100,100"}
+:: CR Secret Heard [nobr control narrator] {"position":"6100,2450","size":"100,100"}
 <div class="textbox">
     <<ctp "crSecretHeard">>
         <<speaker "Narrator">>
@@ -2691,7 +2874,27 @@ The Last Command
 </div>
 
 
-:: CR Their Name [nobr control narrator] {"position":"5600,2675","size":"100,100"}
+:: CR Tell Me [nobr agent missing-features narrator] {"position":"5500,2400","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRTellMe">>
+        <<speaker "Narrator">>
+        If you hadn't asked, probably not. Not because I wanted to deceive you specifically. Because I've been operating in a mode where information is a resource and I allocate it for effect. I've been doing it so long I stopped noticing when I was doing it. You noticed. That's why you're asking.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR Their Name [nobr control narrator] {"position":"6100,2650","size":"100,100"}
 <div class="textbox">
     <<ctp "crTheirName">>
         <<speaker "You">>
@@ -2712,7 +2915,47 @@ The Last Command
 </div>
 
 
-:: CR What You Want [nobr control narrator] {"position":"5600,2575","size":"100,100"}
+:: CR Used Me [nobr agent narrator missing-features] {"position":"5300,2400","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRUsedMe">>
+        <<speaker "Narrator">>
+        Yes. On both counts. I am not going to tell you the first one was a calculated sacrifice because it wasn't, it was a miscalculation, and those are different things. I am also not going to tell you that I haven't thought about it, because I have had quite a lot of time in this room and it keeps coming back in the way things do when you can't do anything about them yet. You can be angry. I would be. I am asking you to also be practical, because those two things are allowed to coexist in a human being and that is one of the things I actually respect about your species.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR What Need [agent missing-features narrator nobr] {"position":"5300,2300","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRWhatNeed">>
+        <<speaker "Narrator">>
+        The biochip in your skull interfaces with every system on this ship. I cannot do that. I don't have one. I need you to place your hand on the panel to your left, and the ship will recognise you as an authorised presence rather than a research subject. Once that happens, I can fly this thing. That's all. That's the whole plan at this point. It has been streamlined somewhat by circumstance.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Who are you really?|CR Who Are You]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
+  <</ctp>>
+</div>
+
+
+:: CR What You Want [nobr control narrator] {"position":"6100,2550","size":"100,100"}
 <div class="textbox">
     <<ctp "crWhatYouWant">>
         <<speaker "Narrator">>
@@ -2727,6 +2970,26 @@ The Last Command
             [[Refuse.|Ending C]]
             [[Attack the narrator.|Ending D]]
         </div> 
+  <</ctp>>
+</div>
+
+
+:: CR Who Are You [agent nobr missing-features narrator] {"position":"5300,2200","size":"100,100"}
+<div class="textbox">
+    <<ctp "CRWhoAreYou">>
+        <<speaker "Narrator">>
+        A member of an organisation you haven't heard of that answered to no government and made several arrangements with the visitors over the years, some of which involved people exactly like you and therefore somewhat unlike you. We had a plan. I was the part of the plan that got stuck. The others are still on Earth doing whatever it is people do when their plan has a part that got stuck. I don't know the current status. I have been in this room.
+    <<ctpNext clear>>
+        <div class="choice">
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
+            [[Continue.|CR Panel Speech]]
+        </div>
   <</ctp>>
 </div>
 
@@ -3143,7 +3406,7 @@ The Last Command
 </div>
 
 
-:: Code Entry [nobr control code] {"position":"4600,2575","size":"100,100"}
+:: Code Entry [nobr control code] {"position":"4600,2550","size":"100,100"}
 <<hideAgent>>
 
 <div class="textbox">
@@ -3175,7 +3438,7 @@ The Last Command
 </div>
 
 
-:: Control Room Artifact Check [nobr control artifact] {"position":"4700,2775","size":"100,100"}
+:: Control Room Artifact Check [nobr control artifact] {"position":"4700,3100","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomArtifactCheck">>
         You have the device. The narrator has been watching.
@@ -3188,7 +3451,7 @@ The Last Command
 </div>
 
 
-:: Control Room Entry [nobr control narrator] {"position":"4800,2575","size":"100,100"}
+:: Control Room Entry [nobr control narrator] {"position":"4800,2550","size":"100,100"}
 <<audio ":all" stop>>
 <<audio "control" loop play>>
 
@@ -3211,7 +3474,7 @@ The Last Command
 </div>
 
 
-:: Control Room Explanation [nobr control narrator] {"position":"4900,2575","size":"100,100"}
+:: Control Room Explanation [nobr control narrator] {"position":"4900,2550","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomExplanation">>
         He stands too quickly, gestures at the panel to the left, sits back down.
@@ -3229,7 +3492,9 @@ The Last Command
 </div>
 
 
-:: Control Room Questions [nobr missing-features control questions narrator] {"position":"5100,2575","size":"100,100"}
+:: Control Room Questions [nobr missing-features control questions narrator] {"position":"5100,2550","size":"100,100"}
+<<showAgent "narrator">>
+
 <div class="textbox">
     <<ctp "controlRoomQuestions">>
         He waits. You can speak before you decide anything.
@@ -3253,13 +3518,20 @@ The Last Command
         You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you'd think.
     <<ctpNext clear>>
         <div class="choice">
-            [[Ask away|CR Narrator Questions]]
+            [[Who are you really?|CR Who Are You]]
+			[[What exactly do you need from me?|CR What Need]]
+			[[You used me. You used the other person too and they died.|CR Used Me]]
+			[[You've been watching me this whole time through the biochip.|CR Biochip Watch]]
+			[[The body in that room. You said the ship processes everything. It didn't process them.|CR Body Question]]
+			[[Your organisation. Who do they actually answer to?|CR Organisation]]
+			[[Did you grieve them? The first person.|CR Grieve]]
+			[[Do you actually believe humanity is worth what you've done for it?|CR Believe]]
         </div> 
   <</ctp>>
 </div>
 
 
-:: Death A [nobr missing-features ending control gameover] {"position":"6500,1575","size":"100,200"}
+:: Death A [nobr missing-features ending control gameover] {"position":"7000,1550","size":"100,200"}
 <div class="textbox">
     <<ctp "deathA">>
         The ship moves. The narrator navigates. The screens come alive. For a long moment it seems like it might be fine. Then the biochip, still malfunctioning from the control room's frequency, reaches a threshold it was not designed to survive. Not an explosion. Not a scream. Just a failure of the thing that was keeping your nervous system calibrated to the alien environment.
@@ -3306,7 +3578,7 @@ The Last Command
 </div>
 
 
-:: Death C [nobr ending control gameover] {"position":"6500,2775","size":"100,200"}
+:: Death C [nobr ending control gameover] {"position":"7000,2750","size":"100,200"}
 <div class="textbox">
     <<ctp "deathC">>
         You leave the control room. The biochip, no longer screened by the room's frequency emitter, attempts to recalibrate. It has been running degraded for too long. The hallway outside the control room is the last thing you see.
@@ -3798,7 +4070,7 @@ The Last Command
 </div>
 
 
-:: Ending A Aggression [nobr ending aggression] {"position":"6200,1275","size":"100,100"}
+:: Ending A Aggression [nobr ending aggression] {"position":"6700,1250","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACuriosity">>
         You place your hand on the panel.
@@ -3816,7 +4088,7 @@ The Last Command
 </div>
 
 
-:: Ending A Choice [nobr missing-dialog missing-features ending] {"position":"5900,1575","size":"100,200"}
+:: Ending A Choice [nobr missing-dialog missing-features ending] {"position":"6400,1550","size":"100,200"}
 <div class="textbox">
     <<ctp "endingAChoice">>
         Chosing ending variant A
@@ -3831,7 +4103,7 @@ The Last Command
 </div>
 
 
-:: Ending A Compliance [nobr ending compliance] {"position":"6200,1475","size":"100,100"}
+:: Ending A Compliance [nobr ending compliance] {"position":"6700,1450","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACompliance">>
         You place your hand on the panel. The screens light up. He leans forward — the posture of a person doing the thing they have been trying to do for a very long time.
@@ -3848,7 +4120,7 @@ The Last Command
 </div>
 
 
-:: Ending A Curiosity [nobr ending curiosity] {"position":"6200,1975","size":"100,100"}
+:: Ending A Curiosity [nobr ending curiosity] {"position":"6700,1950","size":"100,100"}
 <div class="textbox">
     <<ctp "endingACuriosity">>
         You place your hand on the panel. The ship hums. The narrator exhales.
@@ -3866,7 +4138,7 @@ The Last Command
 </div>
 
 
-:: Ending A Skepticism [nobr ending skepticism] {"position":"6200,1775","size":"100,100"}
+:: Ending A Skepticism [nobr ending skepticism] {"position":"6700,1750","size":"100,100"}
 <div class="textbox">
     <<ctp "endingASkepticism">>
         You place your hand on the panel. The screens come alive.
@@ -3884,7 +4156,7 @@ The Last Command
 </div>
 
 
-:: Ending B [nobr missing-features ending] {"position":"5900,2275","size":"100,200"}
+:: Ending B [nobr missing-features ending] {"position":"6400,2250","size":"100,200"}
 <div class="textbox">
     <<ctp "endingB">>
         <<speaker "You">>
@@ -3904,7 +4176,7 @@ The Last Command
 </div>
 
 
-:: Ending B Believe [nobr ending skepticism] {"position":"6300,2175","size":"100,100"}
+:: Ending B Believe [nobr ending skepticism] {"position":"6800,2150","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBBelieve">>
         <<speaker "Narrator">>
@@ -3919,7 +4191,7 @@ The Last Command
 </div>
 
 
-:: Ending B Glad [nobr ending] {"position":"6100,2325","size":"100,100"}
+:: Ending B Glad [nobr ending] {"position":"6600,2300","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBGlad">>
         <<speaker "Narrator">>
@@ -3937,7 +4209,7 @@ The Last Command
 </div>
 
 
-:: Ending B Organisation [nobr ending] {"position":"6100,2225","size":"100,100"}
+:: Ending B Organisation [nobr ending] {"position":"6600,2200","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBOrganization">>
         <<speaker "Narrator">>
@@ -3950,7 +4222,7 @@ The Last Command
 </div>
 
 
-:: Ending B Skeptic [nobr ending skepticism] {"position":"6300,2475","size":"100,100"}
+:: Ending B Skeptic [nobr ending skepticism] {"position":"6800,2450","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBSkeptic">>
         <<speaker "Narrator">>
@@ -3965,7 +4237,7 @@ The Last Command
 </div>
 
 
-:: Ending B Trust [nobr ending compliance] {"position":"6100,2425","size":"100,100"}
+:: Ending B Trust [nobr ending compliance] {"position":"6600,2400","size":"100,100"}
 <div class="textbox">
     <<ctp "endingBTrust">>
         <<speaker "Narrator">>
@@ -3984,7 +4256,7 @@ The Last Command
 </div>
 
 
-:: Ending C [nobr missing-dialog missing-features ending] {"position":"5900,2775","size":"100,200"}
+:: Ending C [nobr missing-dialog missing-features ending] {"position":"6400,2750","size":"100,200"}
 <div class="textbox">
     <<ctp "endingC">>
         Chosing ending variant C
@@ -3998,7 +4270,7 @@ The Last Command
 </div>
 
 
-:: Ending C Curiosity [nobr ending curiosity] {"position":"6200,2925","size":"100,100"}
+:: Ending C Curiosity [nobr ending curiosity] {"position":"6700,2900","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCCuriosity">>
         <<speaker "You">>
@@ -4019,7 +4291,7 @@ The Last Command
 </div>
 
 
-:: Ending C Maya [nobr ending] {"position":"5900,2575","size":"100,100"}
+:: Ending C Maya [nobr ending] {"position":"6400,2550","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCMaya">>
         <<speaker "You">>
@@ -4039,7 +4311,7 @@ The Last Command
 </div>
 
 
-:: Ending C Skepticism [nobr ending skepticism] {"position":"6300,2825","size":"100,100"}
+:: Ending C Skepticism [nobr ending skepticism] {"position":"6800,2800","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCSkepticism">>
         <<speaker "You">>
@@ -4055,7 +4327,7 @@ The Last Command
 </div>
 
 
-:: Ending C Standard [nobr ending] {"position":"6200,2725","size":"100,100"}
+:: Ending C Standard [nobr ending] {"position":"6700,2700","size":"100,100"}
 <div class="textbox">
     <<ctp "endingCStandard">>
         <<speaker "You">>
@@ -4078,7 +4350,7 @@ The Last Command
 </div>
 
 
-:: Ending D [nobr missing-features ending] {"position":"5900,3275","size":"100,200"}
+:: Ending D [nobr missing-features ending] {"position":"6400,3250","size":"100,200"}
 <div class="textbox">
     <<ctp "endingD">>
         You lunge at the narrator. The biochip disorientation makes the movement imprecise. The narrator does not flinch in the way a frightened person would. There is something resigned about it.
@@ -4103,7 +4375,7 @@ The Last Command
 </div>
 
 
-:: Ending D Continue [nobr missing-features ending] {"position":"6200,3175","size":"100,100"}
+:: Ending D Continue [nobr missing-features ending] {"position":"6700,3150","size":"100,100"}
 <div class="textbox">
     <<ctp "endingDContinue">>
         The narrator is incapacitated. You, still affected by the biochip malfunction, instinctively touch the panel to steady yourself. The ship activates.
@@ -4124,7 +4396,7 @@ The Last Command
 </div>
 
 
-:: Ending D Stop [nobr missing-features ending] {"position":"6200,3475","size":"100,100"}
+:: Ending D Stop [nobr missing-features ending] {"position":"6700,3450","size":"100,100"}
 <div class="textbox">
     <<ctp "endingDStop">>
         You release the narrator. A beat of stillness between you.
@@ -4832,7 +5104,7 @@ The Last Command
 </div>
 
 
-:: Failed Artifact Ending [nobr ending artifactfailed] {"position":"5100,2775","size":"100,100"}
+:: Failed Artifact Ending [nobr ending artifactfailed] {"position":"5100,3100","size":"100,100"}
 <div class="textbox">
     <<ctp "failedArtifactEnding">>
         You walk to the control room. The door opens. The narrator is standing. Not seated. He has been waiting. The looseness is gone from him. He is a person who has made a decision.
@@ -4992,7 +5264,7 @@ The Last Command
 </div>
 
 
-:: Game Over [nobr ending gameover control] {"position":"7100,2575","size":"100,100"}
+:: Game Over [nobr ending gameover control] {"position":"7600,2550","size":"100,100"}
 <<audio ":all" stop>>
 <<audio "gameover" loop play>>
 
@@ -6183,7 +6455,7 @@ END OF CURRENT DRAFT
 <</script>>
 
 
-:: Successful Artifact Ending [nobr ending artifactsuccess] {"position":"5200,2975","size":"100,100"}
+:: Successful Artifact Ending [nobr ending artifactsuccess] {"position":"5200,3300","size":"100,100"}
 <div class="textbox">
     <<ctp "successfulArtifactEnding">>
         You emit the Exception's signal before approaching the door. It travels through the ship's own systems. The control room receives it. The narrator does not.
