@@ -147,11 +147,12 @@ $(window).on("load", function () {
     init();
 
     button.onclick = () => {
-      document.querySelector(".video-container").style.display = "block";
-      if (!isMobileBrowser()) recognition.start();
-      document.getElementById("startupute").style.display = "none";
+      window.parent.postMessage({ action: 'hide_iframe' }, '*');
+      //document.querySelector(".video-container").style.display = "none";
+      //document.getElementById("startupute").style.display = "none";
       play_part("tisina");
-      question("bok");
+      if (!isMobileBrowser()) recognition.start();
+      //question("bok");
     };
   }
 
@@ -182,19 +183,19 @@ function connect() {
   ws.onopen = function () {
     ws.send("connect");
     DONT = false;
-    play_part("tisina");
+    //play_part("tisina");
   };
 
   ws.onmessage = function (msg) {
     var response = msg.data.toString();
     console.log("[WS] Received:", response);
 
-    //play_part(response);
+    play_part("ponovi");
 
-    if (response === "ponovi") {
+    /*if (response === "ponovi") {
         play_part("ponovi"); // plays the "please repeat" audio, which ends → tisina → mic restarts
         return;
-    }
+    }*/
 
     switch (response) {
       case "A":

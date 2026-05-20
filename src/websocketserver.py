@@ -138,7 +138,7 @@ class ExceptionController( WebSocket ) :
         self.BUFFER = [ 'tisina' ]
         self.LAST = None
         self.chatbot = ChatBot( 'Exception', read_only=True, logic_adapters=LOGIC_ADAPTER, database=os.path.join( FOLDER, 'exception_db.sqlite3' ) )
-        print( self.chatbot.get_response( 'tko te napravio' ) )
+        #print( self.chatbot.get_response( 'tko te napravio' ) )
         _thread.start_new_thread( self.listen, () )
         
     def listen( self ):

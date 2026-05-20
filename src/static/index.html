@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="The Last Command" startnode="245" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="A585A5FF-4D47-4A05-99FE-685652D8B33B" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.--macro-ctp-hidden {
+	<tw-storydata name="The Last Command" startnode="245" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="A585A5FF-4D47-4A05-99FE-685652D8B33B" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.--macro-ctp-hidden {
 	display: none;
 }
 
@@ -1656,10 +1656,10 @@ $("#story").on("click", function (event) {
 //Agent stuff
 $(document).ready(function() {
     var agentContainer = $('<div id="agent-container"></div>').css({
-        'display': 'none',
         'position': 'fixed',
-        'top': '50px',
-        'right': '50px',
+        'bottom': '320px', 
+        'left': '50%',
+        'transform': 'translateX(-50%)', 
         'width': '600px',
         'height': '400px',
         'z-index': '1000'
@@ -1677,6 +1677,11 @@ $(document).ready(function() {
 $(window).on('message', function (event) {
     // Extract the data sent via postMessage
     var data = event.originalEvent.data;
+  
+  	// Hide the iframe when the brain is active
+    if (data && data.action === 'hide_iframe') {
+        $('#agent-container').css('display', 'none');
+    }
 
     // Check if the message is the one we expect from the agent
     if (data && data.action === 'advance_passage') {
