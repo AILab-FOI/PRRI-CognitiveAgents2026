@@ -30,7 +30,7 @@ def agent_cartographer():
     return render_template( 'cartographer.html' )
 
 @app.route( '/agent-narrator' )
-def agent_cartographer():
+def agent_narrator():
     return render_template( 'narrator.html' )
 
 @app.errorhandler( 404 )
