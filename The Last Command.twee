@@ -130,7 +130,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Are all aliens this philosophical?|3.1. A Philosophical]]
-            [[What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth?|3.1. A Environment]]
+             <<link "What kind of world do you come from, to think so differently from anything on Earth?" "3.1. A Environment">>
+        <<set $curiosity += 1>>
+        <<set $skepticism += 1>>
         </div>
   <</ctp>> 
 </div>
@@ -226,7 +228,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[What has the voice been saying?|3.1. Voice Saying]]
-            [[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+             <<link "Do you mean it just sounds human or is it an actual human saying it?" "3.1. Actually Human">>
+        <<set $curiosity += 1>>
+    <</link>>
             [[Where do I go from here?|3.1. Where Go]]
         </div>
   <</ctp>> 
@@ -256,7 +260,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[What do you mean by that? Didn't you just say I was sold into your hands and against my will?|3.1. Sold Against Will]]
-            [[I want you to bring me back to Earth.|3.1. Back to Earth]]
+           <<link "I want you to bring me back to Earth." "3.1. Back to Earth">>
+        <<set $aggression += 1>>
+    <</link>>
         </div>
   <</ctp>> 
 </div>
@@ -293,7 +299,8 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[And what the hell do you want me to do up here then? You still haven't answered what you want from me.|3.1. What Do You Want]]
-            [[You think I am not willing to fight back?|3.1. Fight Back]]
+            <<link "You think I am not willing to fight back?" "3.1. Fight Back">>
+        <<set $aggression += 1>>
         </div>
   <</ctp>> 
 </div>
@@ -417,7 +424,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
-            [[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?|3.1. C Trade]]
+<<link "What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?" "3.1. C Trade">>
+    <<set $skepticism += 1>>
+<</link>>
         </div>
   <</ctp>> 
 </div>
@@ -451,8 +460,12 @@ The Last Command
         I can sense the disturbance it leaves behind.
     <<ctpNext clear>>
         <div class="choice">
-            [[How do you know it's a human voice?|3.1. Human Voice]]
-            [[You can also hear it?|3.1. Also Hear]]
+               <<link "How do you know it's a human voice?" "3.1. Human Voice">>
+        <<set $curiosity += 1>>
+    <</link>>
+ <<link "You can also hear it?" "3.1. Also Hear">>
+        <<set $curiosity += 1>>
+    <</link>>
             [[Where do I go from here?|3.1. Where Go]]
         </div>
   <</ctp>> 
@@ -490,7 +503,8 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Walk away.|3.1. Walk Away]]
-            [[Try to punch the alien.|3.1. Punch]]
+             <<link "Try to punch the alien." "3.1. Punch">>
+        <<set $aggression += 1>>
         </div>
   <</ctp>> 
 </div>
@@ -568,7 +582,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[What has the voice been saying?|3.1. Voice Saying]]
-            [[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+          <<link "Do you mean it just sounds human or is it an actual human saying it?" "3.1. Actually Human">>
+        <<set $curiosity += 1>>
+    <</link>>
             [[Where do I go from here?|3.1. Where Go]]
         </div>
   <</ctp>> 
@@ -697,7 +713,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[You don't know the concept of will? You could have just said you don't care about my consent instead of beating around a bush.|3.1. No Consent]]
-            [[So you didn't even consider me potentially being uncompliant about this? Have you never done something you didn't want to do?|3.1. Uncompliant]]
+         <<link "So you didn't even consider me potentially being uncompliant about this? Have you never done something you didn't want to do?" "3.1. Uncompliant">>
+    <<set $curiosity += 1>>
+<</link>>
         </div>
   <</ctp>> 
 </div>
@@ -829,7 +847,8 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Walk away.|3.1. Walk Away]]
-            [[Try to punch the alien.|3.1. Punch]]
+             <<link "Try to punch the alien." "3.1. Punch">>
+        <<set $aggression += 1>>
         </div>
   <</ctp>> 
 </div>
@@ -894,7 +913,9 @@ The Last Command
         Careful research remains necessary.
     <<ctpNext clear>>
         <div class="choice">
-            [[How is Earth dangerous to you?|3.2. Earth Dangerous]]
+            <<link "How is Earth dangerous to you?" "3.2. Earth Dangerous">>
+        <<set $curiosity += 1>>
+    <</link>>
             [[I think I understand, somehow.|3.2. What Now]]
         </div>
   <</ctp>>
@@ -1019,7 +1040,9 @@ The Last Command
         Additional behaviour tracking is justified.
     <<ctpNext clear>>
         <div class="choice">
-            [[If your kind can detect this intent... let's just say you may not be that far off.|3.2. Not Far Off]]
+            <<link "If your kind can detect this intent... let's just say you may not be that far off." "3.2. Not Far Off">>
+        <<set $aggression += 1>>
+    <</link>>
             [[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
         </div>
   <</ctp>>
@@ -1182,7 +1205,9 @@ The Last Command
         Observed is more accurate.
     <<ctpNext clear>>
         <div class="choice">
-            [[You're all part of the experiment? You'd risk your lives just to observe me?|3.2. Risk Lives]]
+            <<link "You're all part of the experiment? You'd risk your lives just to observe me?" "3.2. Risk Lives">>
+        <<set $skepticism += 1>>
+    <</link>>
             [[Let me explore this ship then.|3.2. Narrator Goodbye]]
         </div>
   <</ctp>>
@@ -2314,6 +2339,7 @@ The Last Command
 
             <<link "Press the left button — ENTER." "Left Button">>
                 <<set $skepticism += 1>>
+                <<set $curiosity += 1>>
             <</link>>
         </div>
     <</ctp>>
