@@ -130,7 +130,7 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Are all aliens this philosophical?|3.1. A Philosophical]]
-            [[What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth?|3.1. A Environment]]
+            [[What kind of world do you come from, to think so differently from anything on Earth?|3.1. A Environment]]
         </div>
   <</ctp>> 
 </div>
@@ -255,7 +255,7 @@ The Last Command
         You attach will to the transfer. That changes its meaning for you. It did not change the exchange for those who completed it.
     <<ctpNext clear>>
         <div class="choice">
-            [[What do you mean by that? Didn't you just say I was sold into your hands and against my will?|3.1. Sold Against Will]]
+            [[Didn't you just say I was sold here against my will?|3.1. Sold Against Will]]
             [[I want you to bring me back to Earth.|3.1. Back to Earth]]
         </div>
   <</ctp>> 
@@ -292,7 +292,7 @@ The Last Command
         Why is return your first definition of safety?
     <<ctpNext clear>>
         <div class="choice">
-            [[And what the hell do you want me to do up here then? You still haven't answered what you want from me.|3.1. What Do You Want]]
+            [[Then what do you actually want from me? You still haven't said.|3.1. What Do You Want]]
             [[You think I am not willing to fight back?|3.1. Fight Back]]
         </div>
   <</ctp>> 
@@ -386,7 +386,7 @@ The Last Command
         The voice you obeyed before you met me.
     <<ctpNext clear>>
         <div class="choice">
-            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
+            [[Who brought me here? Whatever my past was, it didn't include this.|3.1. B Who Brought]]
         </div>
   <</ctp>> 
 </div>
@@ -416,8 +416,8 @@ The Last Command
         Comfort is not required for accuracy.
     <<ctpNext clear>>
         <div class="choice">
-            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
-            [[What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?|3.1. C Trade]]
+            [[Who brought me here? Whatever my past was, it didn't include this.|3.1. B Who Brought]]
+            [[You trade me like cargo and then just… don't question how I got out?|3.1. C Trade]]
         </div>
   <</ctp>> 
 </div>
@@ -427,7 +427,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.ChoiceVoice">>
         <<speaker "You">>
-        I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?
+        A voice told me I was sold here by my own kind. So what's the actual end goal?
     <<ctpNext clear>>
         The alien does not answer immediately.
     <<ctpNext clear>>
@@ -529,7 +529,7 @@ The Last Command
                 <<set $skepticism += 1>>
             <</link>>
 
-            <<link '"I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?"' "3.1. Choice Voice">>
+            <<link '"A voice told me I was sold here by my own kind. So what's the actual end goal?"' "3.1. Choice Voice">>
                 <<set $skepticism += 1>>
             <</link>>
 
@@ -696,8 +696,8 @@ The Last Command
         It did not contain permission.
     <<ctpNext clear>>
         <div class="choice">
-            [[You don't know the concept of will? You could have just said you don't care about my consent instead of beating around a bush.|3.1. No Consent]]
-            [[So you didn't even consider me potentially being uncompliant about this? Have you never done something you didn't want to do?|3.1. Uncompliant]]
+            [[You could have just said you don't care about consent|3.1. No Consent]]
+            [[So you never considered I might not cooperate?|3.1. Uncompliant]]
         </div>
   <</ctp>> 
 </div>
@@ -804,7 +804,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.WhatDoYouWant">>
         <<speaker "You">>
-        And what the hell do you want me to do up here then? You still haven't answered what you want from me.
+        Then what do you actually want from me? You still haven't said.
     <<ctpNext clear>>
         The alien does not react to the anger in your voice. If it recognizes it, it treats it as another form of data.
     <<ctpNext clear>>
@@ -1122,7 +1122,7 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Alright, I'll try not to break anything.|3.2. Narrator Goodbye]]
-            [[Better make sure the risk doesn't outweigh that knowledge. You have no idea what humanity is capable of.|3.2. Humanity Warning]]
+            [[Make sure the risk is worth it. You have no idea what humanity is capable of.|3.2. Humanity Warning]]
         </div>
   <</ctp>>
 </div>
@@ -1515,7 +1515,7 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[No thanks, I'll just keep exploring the ship.|Analyst No Signal]]
-            [[The greater design is a bundle of theories that mean to explain the greater purposes of our existence.|Analyst Greater Design]]
+            [[A bundle of theories trying to explain why any of this exists.|Analyst Greater Design]]
         </div>
   <</ctp>>
 </div>
@@ -2099,7 +2099,7 @@ The Last Command
         Using your eyes, looking at the world below.. What do you think of?
     <<ctpNext clear>>
         <div class="choice">
-            [[I think of home. It's surreal seeing how small everything I ever knew is from here.|Overlook Home]]
+            [[Home. Everything I ever knew looks very small from here.|Overlook Home]]
             [[I am reminded of my family and loved ones.|Overlook Family]]
             [[It feels distant for some reason.|Overlook Distant]]
             [[It feels like many missed opportunities.|Overlook Missed]]
@@ -2850,7 +2850,7 @@ The Last Command
             [[Ask what happens to you afterwards.|Ending B]]
             [[Refuse.|Ending C]]
             [[Attack the narrator.|Ending D]]
-            [[I know you can hear everything. Tell me one thing you heard that you weren't supposed to hear.|CR Secret Heard]]
+            [[Tell me one thing you heard that you weren't supposed to.|CR Secret Heard]]
             [[What do you want to happen after this? Not to me. To you.|CR What You Want]]
             [[Tell me their name.|CR Their Name]]
         </div> 
@@ -3078,8 +3078,8 @@ The Last Command
         You understand. The brain manipulations. You weren't just brought here — you were adjusted.
     <<ctpNext clear>>
         <div class="choice">
-            [[What?! Is that why you're still alive in front of me and not dead by me?! What have you done to my brain??|Cart Brain Rage]]
-            [[You're actually joking. What the hell have you done to me? Will it have any complications?|Cart Brain Skeptic]]
+            [[Is that why I haven't already tried to kill you? What did you do to me?|Cart Brain Rage]]
+            [[What exactly did you do to me? Will it have complications?|Cart Brain Skeptic]]
             [[Sorry, I didn't think about that. I guess you have a point.|Cart Brain Accept]]
         </div>
   <</ctp>>
@@ -3226,10 +3226,10 @@ The Last Command
         The value remains difficult to map.
     <<ctpNext clear>>
         <div class="choice">
-            [[Well yeah, of course it isn't passed down as easily. Because the sacrifice results in death.|Sacrifice Death]]
+            [[Of course it isn't passed on easily. Sacrifice ends with death.|Sacrifice Death]]
             [[There is no greater design — we just exist inside an existing framework.|Sacrifice No Design]]
             [[There are many interpretations. Most people attribute it to divine figures.|Sacrifice Divine]]
-            [[I think it's because the consciousness equates the continuation of another to be the continuation of itself.|Sacrifice Consciousness]]
+            [[The self extends into what it loves. Survival relocates.|Sacrifice Consciousness]]
         </div>
   <</ctp>>
 </div>
@@ -3307,7 +3307,7 @@ The Last Command
         <div class="choice">
             [[There's no way you never knew conflicts until coming here. That's impossible.|War No Conflict]]
             [[What do you mean conflict isn't usually found between lifeforms?|War Between Lifeforms]]
-            [[Did you find any parallels between your kind and mine in terms of sociability?|War Parallels]]
+            [[Did you find any parallels between us in how we socialise?|War Parallels]]
             [[War is a normal part of life. The more you dwell on it the more it consumes you.|War Normal]]
         </div>
   <</ctp>>
@@ -3399,7 +3399,7 @@ The Last Command
         <div class="choice">
             [[I was under the impression your kind doesn't know what threatening means?|Cart Threatening]]
 			[[That's a lot of effort being spent on research.|Cart Effort]]
-			[[I might have heard that deathworld thing being mentioned before. Surely Earth isn't that dangerous?|Cart Deathworld]]
+			[[Surely Earth isn't that dangerous?|Cart Deathworld]]
 			[[So what is there to do out here? Can I join you in any research?|Cart Join Research]]
         </div>
   <</ctp>>
@@ -4491,7 +4491,7 @@ The Last Command
             This device interfaces with the ship's cautionary systems. It can reduce containment measures in specific sections. This is irregular. Why do you have it?
     <<ctpNext clear>>
         <div class="choice">
-            [["Something went wrong in the specimen bay. The Analyst stopped responding to me."|Eng Artifact Use]]
+            [["The Analyst stopped responding. Something went wrong."|Eng Artifact Use]]
             [["I want to use it. I need access to the specimen bay systems."|Eng Artifact Use]]
             [["I think it might help with the research."|Eng Artifact Use]]
         </div> 
@@ -5788,7 +5788,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "sacrificeConsciousness">>
         <<speaker "You">>
-        I think it's because the consciousness equates the continuation of another to be the continuation of itself.
+        The self extends into what it loves. Survival relocates.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         That model extends the self without exiting the existing framework.
@@ -5825,7 +5825,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "sacrificeDeath">>
         <<speaker "You">>
-        Well yeah, of course it isn't passed down as easily. Because the sacrifice results in death.
+        Of course it isn't passed on easily. Sacrifice ends with death.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         Evidently.
@@ -6657,7 +6657,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "warParallels">>
         <<speaker "You">>
-        Did you find any parallels between your kind and mine in terms of sociability?
+        Did you find any parallels between us in how we socialise?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         Yes, but most are misleading.
