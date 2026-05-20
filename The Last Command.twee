@@ -4089,18 +4089,19 @@ The Last Command
 
 
 :: Ending A Choice [nobr missing-dialog missing-features ending] {"position":"6400,1550","size":"100,200"}
-<div class="textbox">
-    <<ctp "endingAChoice">>
-        Chosing ending variant A
-    <<ctpNext clear>>
-        <div class="choice">
-            [[A Compliance|Ending A Compliance]]
-            [[A Skepticism|Ending A Skepticism]]
-            [[A Curiosity|Ending A Curiosity]]
-            [[A Agression|Ending A Aggression]]
-        </div> 
-  <</ctp>>
-</div>
+<<set _c to $curiosity / 34>>
+<<set _s to $skepticism / 37>>
+<<set _co to $compliance / 14>>
+<<set _a to $aggression / 24>>
+<<if _s gte _c and _s gte _co and _s gte _a>>
+<<goto "Ending A Skepticism">>
+<<elseif _c gte _co and _c gte _a>>
+<<goto "Ending A Curiosity">>
+<<elseif _a gte _co>>
+<<goto "Ending A Aggression">>
+<<else>>
+<<goto "Ending A Compliance">>
+<</if>>
 
 
 :: Ending A Compliance [nobr ending compliance] {"position":"6700,1450","size":"100,100"}
@@ -4257,17 +4258,19 @@ The Last Command
 
 
 :: Ending C [nobr missing-dialog missing-features ending] {"position":"6400,2750","size":"100,200"}
-<div class="textbox">
-    <<ctp "endingC">>
-        Chosing ending variant C
-    <<ctpNext clear>>
-        <div class="choice">
-            [[C Standard|Ending C Standard]]
-            [[C Skepticism|Ending C Skepticism]]
-            [[C Curiosity|Ending C Curiosity]]
-        </div> 
-  <</ctp>>
-</div>
+<<set _c to $curiosity / 34>>
+<<set _s to $skepticism / 37>>
+<<set _co to $compliance / 14>>
+<<set _a to $aggression / 24>>
+<<if $madeNarratorSayName>>
+<<goto "Ending C Maya">>
+<<elseif _s gte _c and _s gte _co and _s gte _a>>
+<<goto "Ending C Skepticism">>
+<<elseif _c gte _co and _c gte _a>>
+<<goto "Ending C Curiosity">>
+<<else>>
+<<goto "Ending C Standard">>
+<</if>>
 
 
 :: Ending C Curiosity [nobr ending curiosity] {"position":"6700,2900","size":"100,100"}
