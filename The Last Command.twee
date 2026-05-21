@@ -1707,6 +1707,8 @@ The Last Command
 
 
 :: Analyst Restrain Answer [nobr specimen analyst restrain] {"position":"3100,3725","size":"100,100"}
+ <<set $aggression += 1>>
+ 
 <div class="textbox">
     <<ctp "analystRestrainAnswer">>
         <<speaker "Analyst">>
@@ -1725,6 +1727,8 @@ The Last Command
 
 
 :: Analyst Restrain Need [nobr specimen analyst restrain] {"position":"3100,3525","size":"100,100"}
+<<set $skepticism += 1>>
+
 <div class="textbox">
     <<ctp "analystRestrainNeed">>
         <<speaker "Analyst">>
@@ -1742,6 +1746,8 @@ The Last Command
 
 
 :: Analyst Restrain Sorry [nobr specimen analyst restrain] {"position":"3100,3625","size":"100,100"}
+ <<set $compliance += 1>>
+ 
 <div class="textbox">
     <<ctp "analystRestrainSorry">>
         <<speaker "Analyst">>
@@ -2195,6 +2201,8 @@ The Last Command
 
 
 :: Artifact End Should [nobr ending artifactsuccess] {"position":"5300,3400","size":"100,100"}
+<<set $aggression += 1>>
+
 <div class="textbox">
     <<ctp "artifactEndShould">>
         <<speaker "Narrator">>
@@ -2238,6 +2246,8 @@ The Last Command
 
 
 :: Artifact End Wanted [nobr ending artifactsuccess] {"position":"5300,3300","size":"100,100"}
+<<set $skepticism += 1>>
+
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -2251,6 +2261,8 @@ The Last Command
 
 
 :: Artifact End Watch [nobr ending artifactsuccess] {"position":"5300,3200","size":"100,100"}
+<<set $curiosity += 1>>
+
 <div class="textbox">
     <<ctp "artifactEndWatch">>
         <<speaker "Narrator">>
@@ -2367,6 +2379,7 @@ The Last Command
 
 
 :: Burn Exception Led [nobr core burn exception] {"position":"3000,5100","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "burnExceptionLed">>
         <<speaker "You">>
@@ -2397,6 +2410,7 @@ The Last Command
 
 
 :: Burn Exception Narrator [nobr core burn exception] {"position":"3000,5000","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "burnExceptionNarrator">>
         <<speaker "Exception">>
@@ -2467,6 +2481,7 @@ The Last Command
 
 
 :: Burn Exception What [nobr core burn exception] {"position":"3000,5200","size":"100,100"}
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "burnExceptionWhat">>
         <<speaker "Exception">>
@@ -2545,6 +2560,7 @@ The Last Command
 
 
 :: Burn Narrator Knew [nobr core burn narrator] {"position":"3000,5400","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "burnNarratorKnew">>
         <<speaker "Narrator">>
@@ -2560,6 +2576,7 @@ The Last Command
 
 
 :: Burn Narrator Used [nobr core burn narrator] {"position":"3000,5600","size":"100,100"}
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "burnNarratorUsed">>
         <<speaker "Narrator">>
@@ -2574,6 +2591,7 @@ The Last Command
 
 
 :: Burn No [nobr core burn] {"position":"3400,5550","size":"100,100"}
+<<set $aggression += 1>>
 <div class="textbox">
     <<ctp "burnNo">>
         <div class="choice">
@@ -2601,6 +2619,7 @@ The Last Command
 
 
 :: Burn Say It [nobr core burn] {"position":"3400,5450","size":"100,100"}
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "burnSayIt">>
         <<speaker "Narrator">>
@@ -2725,6 +2744,7 @@ The Last Command
 
 
 :: CR Grieve Not Answer [nobr agent narrator missing-features] {"position":"5500,2800","size":"100,100"}
+<<set $aggression += 1>>
 <div class="textbox">
     <<ctp "CRGrieveNotAnswer">>
         <<speaker "Narrator">>
@@ -2743,6 +2763,7 @@ The Last Command
 
 
 :: CR Grieve Think You Do [nobr agent narrator missing-features] {"position":"5500,2700","size":"100,100"}
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRThinkYouDo">>
         <<speaker "Narrator">>
@@ -2761,6 +2782,7 @@ The Last Command
 
 
 :: CR Heard Everything [nobr agent narrator missing-features] {"position":"5500,2600","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
@@ -2823,6 +2845,7 @@ The Last Command
 
 
 :: CR Organisation Now [nobr agent narrator missing-features] {"position":"5500,2300","size":"100,100"}
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CROrganizationNow">>
         <<speaker "Narrator">>
@@ -2883,6 +2906,7 @@ The Last Command
 
 
 :: CR Tell Me [nobr agent missing-features narrator] {"position":"5500,2400","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRTellMe">>
         <<speaker "Narrator">>
@@ -4202,6 +4226,7 @@ The Last Command
 
 
 :: Ending B Believe [nobr ending skepticism] {"position":"6800,2150","size":"100,100"}
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "endingBBelieve">>
         <<speaker "Narrator">>
@@ -4248,6 +4273,7 @@ The Last Command
 
 
 :: Ending B Skeptic [nobr ending skepticism] {"position":"6800,2450","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "endingBSkeptic">>
         <<speaker "Narrator">>
@@ -4507,7 +4533,15 @@ The Last Command
 
 
 :: Eng Artifact Found [nobr engineering artifact] {"position":"2400,3825","size":"100,100"}
+<<if $artifactChoice is "curiosity">>
+    <<set $curiosity += 1>>
+<</if>>
+
+<<if $artifactChoice is "skeptic">>
+    <<set $skepticism += 1>>
+<</if>>
 <div class="textbox">
+
     <<ctp "engArtifactFound">>
         <<speaker "Engineer">>
         The previous subject. The records indicate a biochip malfunction. The records do not indicate this device. It was not logged.
@@ -4518,15 +4552,28 @@ The Last Command
             This device interfaces with the ship's cautionary systems. It can reduce containment measures in specific sections. This is irregular. Why do you have it?
     <<ctpNext clear>>
         <div class="choice">
-            [["The Analyst stopped responding. Something went wrong."|Eng Artifact Use]]
-            [["I want to use it. I need access to the specimen bay systems."|Eng Artifact Use]]
-            [["I think it might help with the research."|Eng Artifact Use]]
-        </div> 
+  <<link "The Analyst stopped responding. Something went wrong.">>
+    <<set $artifactUseChoice = "compliance">>
+    <<goto "Eng Artifact Use">>
+<</link>>
+
+<<link "I want to use it. I need access to the specimen bay systems.">>
+    <<set $artifactUseChoice = "skepticism">>
+    <<goto "Eng Artifact Use">>
+<</link>>
+
+<<link "I think it might help with the research.">>
+    <<set $artifactUseChoice = "curiosity">>
+    <<goto "Eng Artifact Use">>
+<</link>>
+</div>
   <</ctp>>
 </div>
 
 
 :: Eng Artifact Previous [nobr engineering artifact] {"position":"2400,3925","size":"100,100"}
+<<set $curiosity += 1>>
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "engArtifactPrevious">>
         <<speaker "Engineer">>
@@ -4538,7 +4585,10 @@ The Last Command
             This device interfaces with the ship's cautionary systems. Why do you have it?
     <<ctpNext clear>>
         <div class="choice">
-            [["Something went wrong in the specimen bay."|Eng Artifact Use]]
+           <<link "Something went wrong in the specimen bay.">>
+    <<set $artifactUseChoice = "compliance">>
+    <<goto "Eng Artifact Use">>
+<</link>>
             [["I want to use it on the specimen bay."|Eng Artifact Use]]
         </div> 
   <</ctp>>
@@ -4552,15 +4602,34 @@ The Last Command
         That device is not standard equipment. It was not manufactured on this vessel. Its design is consistent with human fabrication techniques. Where did you find it?
     <<ctpNext clear>>
         <div class="choice">
-            [["In the hallway. Someone left it there."|Eng Artifact Found]]
-            [["I found it. Does it matter?"|Eng Artifact Found]]
-            [["Someone hid it. Someone who was here before me."|Eng Artifact Previous]]
+<<link "In the hallway. Someone left it there.">>
+    <<set $artifactChoice = "curiosity">>
+    <<goto "Eng Artifact Found">>
+<</link>>
+
+<<link "I found it. Does it matter?">>
+    <<set $artifactChoice = "skeptic">>
+    <<goto "Eng Artifact Found">>
+<</link>>
+ [["Someone hid it. Someone who was here before me."|Eng Artifact Previous]]
         </div> 
   <</ctp>>
 </div>
 
 
 :: Eng Artifact Use [nobr missing-features engineering artifact] {"position":"2600,3875","size":"100,100"}
+<<if $artifactUseChoice is "compliance">>
+    <<set $compliance += 1>>
+<</if>>
+
+<<if $artifactUseChoice is "skepticism">>
+    <<set $skepticism += 1>>
+<</if>>
+
+<<if $artifactUseChoice is "curiosity">>
+    <<set $curiosity += 1>>
+<</if>>
+
 <div class="textbox">
     <<ctp "engArtifactUse">>
         <<speaker "Engineer">>
@@ -5189,6 +5258,7 @@ The Last Command
 
 
 :: Fusion Core Entry [nobr missing-dialog missing-features core] {"position":"2600,5300","size":"100,100"}
+<<set $compliance += 1>>
 <<audio ":all" stop>>
 <<audio "fusion" loop play>>
 
@@ -5279,6 +5349,7 @@ The Last Command
 
 
 :: Fusion Core What Is [nobr core warning] {"position":"2500,5500","size":"100,100"}
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "fusionCoreWhatIs">>
         <<speaker "Engineer">>
