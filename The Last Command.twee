@@ -86,6 +86,8 @@ The Last Command
 
 
 :: 3.1. A Environment [nobr agent hallway exception] {"position":"1000,1950","size":"100,100"}
+<<run window.playAgentVideo("A-Enviroment", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
@@ -115,6 +117,8 @@ The Last Command
 
 
 :: 3.1. A Obsessed [agent nobr hallway exception] {"position":"900,1900","size":"100,100"}
+<<run window.playAgentVideo("A-Obsessed", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.AObsessed">>
         <<speaker "Exception">>
@@ -133,12 +137,15 @@ The Last Command
              <<link "What kind of world do you come from, to think so differently from anything on Earth?" "3.1. A Environment">>
         <<set $curiosity += 1>>
         <<set $skepticism += 1>>
+        <</link>>
         </div>
   <</ctp>> 
 </div>
 
 
 :: 3.1. A Philosophical [nobr agent hallway exception] {"position":"1000,1850","size":"100,100"}
+<<run window.playAgentVideo("A-Philosophical", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
@@ -166,6 +173,8 @@ The Last Command
 
 
 :: 3.1. Actually Human [nobr agent hallway exception] {"position":"1100,1550","size":"100,100"}
+<<run window.playAgentVideo("Voice-Actually-Human", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
         <<speaker "You">>
@@ -202,11 +211,10 @@ The Last Command
 
 
 :: 3.1. Also Hear [nobr agent hallway exception] {"position":"900,1500","size":"100,100"}
+<<run window.playAgentVideo("Voice-Also-Hear", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.AlsoHear">>
-        <<speaker "You">>
-        You can also hear it?
-    <<ctpNext clear>>
         <<speaker "Exception">>
         Hear is not accurate.
     <<ctpNext clear>>
@@ -238,6 +246,8 @@ The Last Command
 
 
 :: 3.1. B Who Brought [nobr agent hallway exception] {"position":"900,2150","size":"100,100"}
+<<run window.playAgentVideo("B-Who-Brought", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.BWhoBrought">>
         <<speaker "Exception">>
@@ -259,7 +269,7 @@ The Last Command
         You attach will to the transfer. That changes its meaning for you. It did not change the exchange for those who completed it.
     <<ctpNext clear>>
         <div class="choice">
-            [[What do you mean by that? Didn't you just say I was sold into your hands and against my will?|3.1. Sold Against Will]]
+            [[Didn't you just say I was sold here against my will?|3.1. Sold Against Will]]
            <<link "I want you to bring me back to Earth." "3.1. Back to Earth">>
         <<set $aggression += 1>>
     <</link>>
@@ -269,6 +279,8 @@ The Last Command
 
 
 :: 3.1. Back to Earth [nobr agent hallway exception] {"position":"1100,2200","size":"100,100"}
+<<run window.playAgentVideo("B-Earth", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.BackToEarth">>
         <<speaker "You">>
@@ -298,15 +310,18 @@ The Last Command
         Why is return your first definition of safety?
     <<ctpNext clear>>
         <div class="choice">
-            [[And what the hell do you want me to do up here then? You still haven't answered what you want from me.|3.1. What Do You Want]]
+            [[Then what do you actually want from me? You still haven't said.|3.1. What Do You Want]]
             <<link "You think I am not willing to fight back?" "3.1. Fight Back">>
         <<set $aggression += 1>>
+        <</link>>
         </div>
   <</ctp>> 
 </div>
 
 
 :: 3.1. C Trade [nobr agent hallway exception] {"position":"900,2400","size":"100,100"}
+<<run window.playAgentVideo("C-Trade", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.CTrade">>
         <<speaker "Exception">>
@@ -343,11 +358,10 @@ The Last Command
 
 
 :: 3.1. Choice A [agent nobr hallway exception] {"position":"700,1900","size":"100,100"}
+<<run window.playAgentVideo("", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.choiceA">>
-        <<speaker "You">>
-        Hey, can you understand what I am saying?
-    <<ctpNext clear>>
         The alien remains still. For a second, nothing answers you except the low pulse of the corridor.
     <<ctpNext clear>>
         Then the biochip catches something.
@@ -368,6 +382,8 @@ The Last Command
 
 
 :: 3.1. Choice B [nobr agent hallway exception] {"position":"700,2150","size":"100,100"}
+<<run window.playAgentVideo("B", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.B">>
         <<speaker "You">>
@@ -393,13 +409,15 @@ The Last Command
         The voice you obeyed before you met me.
     <<ctpNext clear>>
         <div class="choice">
-            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
+            [[Who brought me here? Whatever my past was, it didn't include this.|3.1. B Who Brought]]
         </div>
   <</ctp>> 
 </div>
 
 
 :: 3.1. Choice C [nobr agent hallway exception] {"position":"700,2400","size":"100,100"}
+<<run window.playAgentVideo("C", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.ChoiceC">>
         <<speaker "You">>
@@ -423,8 +441,8 @@ The Last Command
         Comfort is not required for accuracy.
     <<ctpNext clear>>
         <div class="choice">
-            [[Who or what brought me here? I don't exactly remember my past, but I am sure it didn't include a place like this.|3.1. B Who Brought]]
-<<link "What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you don't even question how I got out of that thing?" "3.1. C Trade">>
+            [[Who brought me here? Whatever my past was, it didn't include this.|3.1. B Who Brought]]
+<<link "You trade me like cargo and then just… don't question how I got out?" "3.1. C Trade">>
     <<set $skepticism += 1>>
 <</link>>
         </div>
@@ -433,11 +451,10 @@ The Last Command
 
 
 :: 3.1. Choice Voice [nobr agent hallway exception] {"position":"700,1500","size":"100,100"}
+<<run window.playAgentVideo("Voice", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.ChoiceVoice">>
-        <<speaker "You">>
-        I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?
-    <<ctpNext clear>>
         The alien does not answer immediately.
     <<ctpNext clear>>
         For the first time, it seems to look past you rather than at you.
@@ -473,13 +490,10 @@ The Last Command
 
 
 :: 3.1. Fight Back [nobr hallway exception] {"position":"1300,2200","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Fight-Back", 0, 6)>>
 
 <div class="textbox">
     <<ctp "3.1.FightBack">>
-        <<speaker "You">>
-        You think I am not willing to fight back?
-    <<ctpNext clear>>
         The alien does not step away.
     <<ctpNext clear>>
         It does not raise a hand. It does not prepare itself like something expecting violence.
@@ -505,12 +519,13 @@ The Last Command
             [[Walk away.|3.1. Walk Away]]
              <<link "Try to punch the alien." "3.1. Punch">>
         <<set $aggression += 1>>
+        <</link>>
         </div>
   <</ctp>> 
 </div>
 
 
-:: 3.1. Hallway [nobr hallway exception] {"position":"500,2150","size":"100,100"}
+:: 3.1. Hallway [nobr hallway exception agent] {"position":"500,2150","size":"100,100"}
 <<showAgent "exception">>
 
 <div class="textbox">
@@ -543,10 +558,10 @@ The Last Command
                 <<set $skepticism += 1>>
             <</link>>
 
-            <<link '"I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?"' "3.1. Choice Voice">>
+            <<link '"A voice told me I was sold here by my own kind. So what\'s the actual end goal?"' "3.1. Choice Voice">>
                 <<set $skepticism += 1>>
             <</link>>
-
+            
             <<link "Don't mind me, just passing through." "3.1. Passing Through">>
                 <<set $compliance += 1>>
             <</link>>
@@ -556,11 +571,10 @@ The Last Command
 
 
 :: 3.1. Human Voice [nobr agent hallway exception] {"position":"900,1400","size":"100,100"}
+<<run window.playAgentVideo("Voice-Human", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
-        <<speaker "You">>
-        How do you know it's a human voice?
-    <<ctpNext clear>>
         <<speaker "Exception">>
         Frequency.
     <<ctpNext clear>>
@@ -592,7 +606,7 @@ The Last Command
 
 
 :: 3.1. No Consent [nobr agent hallway exception] {"position":"1300,2300","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("No-Consent", 0, 6)>>
 
 <div class="textbox">
     <<ctp "3.1.NoConsent">>
@@ -692,6 +706,8 @@ The Last Command
 
 
 :: 3.1. Sold Against Will [nobr agent hallway exception] {"position":"1100,2300","size":"100,100"}
+<<run window.playAgentVideo("B-Sold", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.SoldAgainstWill">>
         <<speaker "Exception">>
@@ -712,8 +728,8 @@ The Last Command
         It did not contain permission.
     <<ctpNext clear>>
         <div class="choice">
-            [[You don't know the concept of will? You could have just said you don't care about my consent instead of beating around a bush.|3.1. No Consent]]
-         <<link "So you didn't even consider me potentially being uncompliant about this? Have you never done something you didn't want to do?" "3.1. Uncompliant">>
+            [[You could have just said you don't care about consent.|3.1. No Consent]]
+         <<link "So you never considered I might not cooperate?" "3.1. Uncompliant">>
     <<set $curiosity += 1>>
 <</link>>
         </div>
@@ -722,7 +738,7 @@ The Last Command
 
 
 :: 3.1. Uncompliant [agent nobr hallway exception] {"position":"1300,2400","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Uncompliant", 0, 6)>>
 
 <div class="textbox">
     <<ctp "3.1.Uncompliant">>
@@ -763,6 +779,8 @@ The Last Command
 
 
 :: 3.1. Voice Saying [nobr agent hallway exception] {"position":"1100,1450","size":"100,100"}
+<<run window.playAgentVideo("Voice-Saying", 0, 6)>>
+
 <div class="textbox">
     <<ctp "3.1.VoiceSaying">>
         <<speaker "You">>
@@ -817,13 +835,10 @@ The Last Command
 
 
 :: 3.1. What Do You Want [nobr hallway exception] {"position":"1300,2100","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("What-Want", 0, 6)>>
 
 <div class="textbox">
     <<ctp "3.1.WhatDoYouWant">>
-        <<speaker "You">>
-        And what the hell do you want me to do up here then? You still haven't answered what you want from me.
-    <<ctpNext clear>>
         The alien does not react to the anger in your voice. If it recognizes it, it treats it as another form of data.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -849,19 +864,17 @@ The Last Command
             [[Walk away.|3.1. Walk Away]]
              <<link "Try to punch the alien." "3.1. Punch">>
         <<set $aggression += 1>>
+        <</link>>
         </div>
   <</ctp>> 
 </div>
 
 
-:: 3.1. Where Go [nobr agent exception] {"position":"900,1600","size":"100,100"}
-<<hideAgent>>
+:: 3.1. Where Go [nobr agent exception hallway] {"position":"900,1600","size":"100,100"}
+<<run window.playAgentVideo("Where-Go", 0, 6)>>
 
 <div class="textbox">
     <<ctp "3.1.WhereGo">>
-        <<speaker "You">>
-        Where do I go from here?
-    <<ctpNext clear>>
         The alien turns its head toward the length of the corridor.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -1145,7 +1158,7 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Alright, I'll try not to break anything.|3.2. Narrator Goodbye]]
-            [[Better make sure the risk doesn't outweigh that knowledge. You have no idea what humanity is capable of.|3.2. Humanity Warning]]
+            [[Make sure the risk is worth it. You have no idea what humanity is capable of.|3.2. Humanity Warning]]
         </div>
   <</ctp>>
 </div>
@@ -1540,7 +1553,7 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[No thanks, I'll just keep exploring the ship.|Analyst No Signal]]
-            [[The greater design is a bundle of theories that mean to explain the greater purposes of our existence.|Analyst Greater Design]]
+            [[A bundle of theories trying to explain why any of this exists.|Analyst Greater Design]]
         </div>
   <</ctp>>
 </div>
@@ -2124,7 +2137,7 @@ The Last Command
         Using your eyes, looking at the world below.. What do you think of?
     <<ctpNext clear>>
         <div class="choice">
-            [[I think of home. It's surreal seeing how small everything I ever knew is from here.|Overlook Home]]
+            [[Home. Everything I ever knew looks very small from here.|Overlook Home]]
             [[I am reminded of my family and loved ones.|Overlook Family]]
             [[It feels distant for some reason.|Overlook Distant]]
             [[It feels like many missed opportunities.|Overlook Missed]]
@@ -2876,7 +2889,7 @@ The Last Command
             [[Ask what happens to you afterwards.|Ending B]]
             [[Refuse.|Ending C]]
             [[Attack the narrator.|Ending D]]
-            [[I know you can hear everything. Tell me one thing you heard that you weren't supposed to hear.|CR Secret Heard]]
+            [[Tell me one thing you heard that you weren't supposed to.|CR Secret Heard]]
             [[What do you want to happen after this? Not to me. To you.|CR What You Want]]
             [[Tell me their name.|CR Their Name]]
         </div> 
@@ -3104,8 +3117,8 @@ The Last Command
         You understand. The brain manipulations. You weren't just brought here — you were adjusted.
     <<ctpNext clear>>
         <div class="choice">
-            [[What?! Is that why you're still alive in front of me and not dead by me?! What have you done to my brain??|Cart Brain Rage]]
-            [[You're actually joking. What the hell have you done to me? Will it have any complications?|Cart Brain Skeptic]]
+            [[Is that why I haven't already tried to kill you? What did you do to me?|Cart Brain Rage]]
+            [[What exactly did you do to me? Will it have complications?|Cart Brain Skeptic]]
             [[Sorry, I didn't think about that. I guess you have a point.|Cart Brain Accept]]
         </div>
   <</ctp>>
@@ -3252,10 +3265,10 @@ The Last Command
         The value remains difficult to map.
     <<ctpNext clear>>
         <div class="choice">
-            [[Well yeah, of course it isn't passed down as easily. Because the sacrifice results in death.|Sacrifice Death]]
+            [[Of course it isn't passed on easily. Sacrifice ends with death.|Sacrifice Death]]
             [[There is no greater design — we just exist inside an existing framework.|Sacrifice No Design]]
             [[There are many interpretations. Most people attribute it to divine figures.|Sacrifice Divine]]
-            [[I think it's because the consciousness equates the continuation of another to be the continuation of itself.|Sacrifice Consciousness]]
+            [The self extends into what it loves. Survival relocates.|Sacrifice Consciousness]]
         </div>
   <</ctp>>
 </div>
@@ -3333,7 +3346,7 @@ The Last Command
         <div class="choice">
             [[There's no way you never knew conflicts until coming here. That's impossible.|War No Conflict]]
             [[What do you mean conflict isn't usually found between lifeforms?|War Between Lifeforms]]
-            [[Did you find any parallels between your kind and mine in terms of sociability?|War Parallels]]
+            [[Did you find any parallels between us in how we socialise?|War Parallels]]
             [[War is a normal part of life. The more you dwell on it the more it consumes you.|War Normal]]
         </div>
   <</ctp>>
@@ -3425,7 +3438,7 @@ The Last Command
         <div class="choice">
             [[I was under the impression your kind doesn't know what threatening means?|Cart Threatening]]
 			[[That's a lot of effort being spent on research.|Cart Effort]]
-			[[I might have heard that deathworld thing being mentioned before. Surely Earth isn't that dangerous?|Cart Deathworld]]
+			[[Surely Earth isn't that dangerous?|Cart Deathworld]]
 			[[So what is there to do out here? Can I join you in any research?|Cart Join Research]]
         </div>
   <</ctp>>
@@ -4520,7 +4533,7 @@ The Last Command
             This device interfaces with the ship's cautionary systems. It can reduce containment measures in specific sections. This is irregular. Why do you have it?
     <<ctpNext clear>>
         <div class="choice">
-            [["Something went wrong in the specimen bay. The Analyst stopped responding to me."|Eng Artifact Use]]
+            [["The Analyst stopped responding. Something went wrong."|Eng Artifact Use]]
             [["I want to use it. I need access to the specimen bay systems."|Eng Artifact Use]]
             [["I think it might help with the research."|Eng Artifact Use]]
         </div> 
@@ -5816,9 +5829,6 @@ END OF CURRENT DRAFT
 :: Sacrifice Consciousness [nobr agent cartographer archive] {"position":"3600,925","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeConsciousness">>
-        <<speaker "You">>
-        I think it's because the consciousness equates the continuation of another to be the continuation of itself.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         That model extends the self without exiting the existing framework.
     <<ctpNext clear>>
@@ -5853,9 +5863,6 @@ END OF CURRENT DRAFT
 :: Sacrifice Death [nobr agent cartographer archive] {"position":"3600,1125","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeDeath">>
-        <<speaker "You">>
-        Well yeah, of course it isn't passed down as easily. Because the sacrifice results in death.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Evidently.
     <<ctpNext clear>>
@@ -5892,9 +5899,6 @@ END OF CURRENT DRAFT
 :: Sacrifice Divine [nobr agent cartographer archive] {"position":"3600,1025","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeDivine">>
-        <<speaker "You">>
-        There are many interpretations. Most people attribute it to divine figures.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Divine figures.
     <<ctpNext clear>>
@@ -5926,9 +5930,6 @@ END OF CURRENT DRAFT
 :: Sacrifice No Design [nobr agent cartographer archive] {"position":"3600,1225","size":"100,100"}
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
-        <<speaker "You">>
-        There is no greater design. We just exist inside an existing framework.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Then sacrifice becomes more unusual.
     <<ctpNext clear>>
@@ -5960,9 +5961,6 @@ END OF CURRENT DRAFT
 :: Science Weapons [nobr agent cartographer archive] {"position":"3600,725","size":"100,100"}
 <div class="textbox">
     <<ctp "scienceWeapons">>
-        <<speaker "You">>
-        Isn't it natural that understanding leads to development which can be weaponised?
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Natural, yes.
     <<ctpNext clear>>
@@ -6001,9 +5999,6 @@ END OF CURRENT DRAFT
 :: Science Your Kind [nobr agent cartographer archive] {"position":"3600,825","size":"100,100"}
 <div class="textbox">
     <<ctp "scienceYourKind">>
-        <<speaker "You">>
-        And your fundamentals are just sitting around not doing all that, I'm guessing?
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         No.
     <<ctpNext clear>>
@@ -6206,6 +6201,10 @@ END OF CURRENT DRAFT
     }
 
     window.setBackgroundVideo = function (videoFile) {
+    	// Don't let the passage tag system overwrite the video
+    	// while the agent is actively controlling playback.
+    	if (window.agentVideoActive) return;
+
         const video = createBackgroundVideo();
 
         if (!videoFile) {
@@ -6540,9 +6539,6 @@ END OF CURRENT DRAFT
 :: War Between Lifeforms [nobr agent cartographer archive] {"position":"3600,525","size":"100,100"}
 <div class="textbox">
     <<ctp "warBetweenLifeforms">>
-        <<speaker "You">>
-        What do you mean conflict isn't usually found between lifeforms?
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Conflict exists.
     <<ctpNext clear>>
@@ -6582,9 +6578,6 @@ END OF CURRENT DRAFT
     <<ctp "warNoConflict">>
         [ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
     <<ctpNext clear>>
-        <<speaker "You">>
-        There's no way you never knew conflict until coming here. That's impossible.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         We know friction.
     <<ctpNext clear>>
@@ -6615,9 +6608,6 @@ END OF CURRENT DRAFT
 :: War No Difference [nobr agent cartographer archive] {"position":"3800,525","size":"100,100"}
 <div class="textbox">
     <<ctp "warNoDifference">>
-        <<speaker "You">>
-        I guess there's not many differences then, surprisingly.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         There are similarities at a technical level.
     <<ctpNext clear>>
@@ -6651,9 +6641,6 @@ END OF CURRENT DRAFT
 :: War Normal [nobr agent cartographer archive] {"position":"3600,625","size":"100,100"}
 <div class="textbox">
     <<ctp "warNormal">>
-        <<speaker "You">>
-        War is a normal part of life. The more you dwell on it the more it consumes you.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Normalisation is a defence mechanism.
     <<ctpNext clear>>
@@ -6685,9 +6672,6 @@ END OF CURRENT DRAFT
 :: War Parallels [nobr agent cartographer archive] {"position":"3800,425","size":"100,100"}
 <div class="textbox">
     <<ctp "warParallels">>
-        <<speaker "You">>
-        Did you find any parallels between your kind and mine in terms of sociability?
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Yes, but most are misleading.
     <<ctpNext clear>>
@@ -6724,9 +6708,6 @@ END OF CURRENT DRAFT
 :: War Shame [nobr agent cartographer archive] {"position":"3800,625","size":"100,100"}
 <div class="textbox">
     <<ctp "warShame">>
-        <<speaker "You">>
-        Yeah, I guess some people do feel shame for their nature and wish to be more than just defined by it.
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         Shame is a secondary pattern.
     <<ctpNext clear>>
@@ -6913,7 +6894,7 @@ END OF CURRENT DRAFT
 	});
 })();
 
-/* --- Click-to-Advance & Passage Progress Script --- */
+/*Click za next dialog*/
 $("#story").on("click", function (event) {
 	if (event.originalEvent !== undefined) {
 		var ignore = ["<a ", "<button ", "<input "], i, n = 0;
@@ -6925,24 +6906,20 @@ $("#story").on("click", function (event) {
 		if (n === 0) {
             var ctpAdvanced = false;
             
-            // 1. Look for the CTP ID directly from the elements it creates
             var $ctpElement = $("[data-macro-ctp-id]").first();
             if ($ctpElement.length) {
                 var id = $ctpElement.attr("data-macro-ctp-id");
                 
-                // 2. Fetch the actual CTP macro instance from the window
                 if (window.CTP) {
                     var ctpInstance = window.CTP.getCTP(id);
                     
-                    // 3. If there is still dialogue left to reveal, advance it!
                     if (ctpInstance && ctpInstance.log.index < ctpInstance.stack.length - 1) {
                         ctpInstance.advance();
                         ctpAdvanced = true;
                     }
                 }
             }
-            
-            // 4. If dialogue is fully revealed and there is exactly 1 link, progress the passage
+            // Progress further if only one choice
 			if (!ctpAdvanced && $("#passages a").length === 1) {
 				$("#passages a").click();
 			}
@@ -6951,56 +6928,135 @@ $("#story").on("click", function (event) {
 });
 
 
-
 //Agent stuff
+
+
+var currentVideoStart = 0;
+var currentVideoEnd   = 0;
+var currentVideoPart  = "";
+var agentVideoActive  = false;
+
+function ensureAgentVideoListener() {
+    var bgVideo = document.getElementById('bgVideo');
+    if (!bgVideo || bgVideo._hasAgentListener) return;
+    bgVideo._hasAgentListener = true;
+
+    bgVideo.addEventListener('timeupdate', function () {
+        if (!agentVideoActive || currentVideoEnd <= 0) return;
+
+        if (bgVideo.currentTime >= currentVideoEnd) {
+            if (currentVideoPart === "tisina") {
+                bgVideo.currentTime = currentVideoStart;
+                bgVideo.play();
+            } else {
+                bgVideo.pause();
+                agentVideoActive = false;
+                currentVideoEnd  = 0;
+                var iframe = document.getElementById('agent-iframe');
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({ action: 'video_part_ended' }, '*');
+                }
+            }
+        }
+    });
+}
+
+// Iframe
 $(document).ready(function() {
     var agentContainer = $('<div id="agent-container"></div>').css({
-        'position': 'fixed',
-        'bottom': '320px', 
-        'left': '50%',
-        'transform': 'translateX(-50%)', 
-        'width': '600px',
-        'height': '400px',
-        'z-index': '1000'
+        'position':  'fixed',
+        'bottom':    '320px',
+        'left':      '50%',
+        'transform': 'translateX(-50%)',
+        'width':     '770px',
+        'height':    '150px',
+        'z-index':   '1000'
     });
 
-    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone"></iframe>';
-    
+    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone" allowtransparency="true" style="background: transparent; border: none;"></iframe>';
     agentContainer.append(iframeHtml);
     $('body').append(agentContainer);
 });
 
 
-
-// Listen for messages coming from iframes
 $(window).on('message', function (event) {
-    // Extract the data sent via postMessage
     var data = event.originalEvent.data;
-  
-  	// Hide the iframe when the brain is active
+
+    // Hide iframe
     if (data && data.action === 'hide_iframe') {
         $('#agent-container').css('display', 'none');
     }
 
-    // Check if the message is the one we expect from the agent
+    // Passage change
     if (data && data.action === 'advance_passage') {
-        
-        // Ensure the target passage actually exists before trying to play it
         if (Story.has(data.targetPassage)) {
-            // Tell SugarCube's engine to transition to the new passage
             Engine.play(data.targetPassage);
         } else {
-            console.error("Agent tried to navigate to a passage that doesn't exist: " + data.targetPassage);
+            console.error('[Agent] Unknown passage: ' + data.targetPassage);
+        }
+    }
+
+    // Video segment
+    if (data && data.action === 'play_video_part') {
+        var bgVideo = document.getElementById('bgVideo');
+        if (!bgVideo) {
+            window.setBackgroundVideo('Hallway_Exception.mp4');
+            bgVideo = document.getElementById('bgVideo');
+        }
+        if (!bgVideo) return;  
+
+        ensureAgentVideoListener();
+
+        bgVideo.loop = false;
+        agentVideoActive  = true;
+        currentVideoStart = data.start;
+        currentVideoEnd   = data.end;
+        currentVideoPart  = data.part;
+
+        var doSeekAndPlay = function () {
+            bgVideo.currentTime = data.start;
+            bgVideo.play().catch(function (e) {
+                console.warn('[agentVideo] play() blocked:', e);
+            });
+        };
+
+        if (bgVideo.readyState >= 2) {  
+            doSeekAndPlay();
+        } else {
+            bgVideo.addEventListener('canplay', function onReady() {
+                bgVideo.removeEventListener('canplay', onReady);
+                doSeekAndPlay();
+            });
+            if (!bgVideo.src || bgVideo.src === window.location.href) {
+                window.setBackgroundVideo('Hallway_Exception.mp4');
+            }
         }
     }
 });
 
-$(document).on(':passageend', function(ev) {
+$(document).on(':passageend', function (ev) {
     var f = document.getElementById('agent-iframe');
-    if (f) f.contentWindow.postMessage(
-        { action: 'passage_changed', passage: ev.passage.title }, '*'
-    );
+    if (f && f.contentWindow) {
+        f.contentWindow.postMessage({ action: 'passage_changed', passage: ev.passage.title }, '*');
+    }
 });
+
+window.playAgentVideo = function(partName, startTime, endTime) {
+    var bgVideo = document.getElementById('bgVideo');
+    if (bgVideo) {
+        var iframe = document.getElementById('agent-iframe');
+        if (iframe && iframe.contentWindow) {
+             iframe.contentWindow.postMessage({ action: 'stop_mic' }, '*');
+        }
+
+        currentVideoStart = startTime;
+        currentVideoEnd = endTime;
+        currentVideoPart = partName;
+        
+        bgVideo.currentTime = startTime;
+        bgVideo.play();
+    }
+};
 
 :: StoryStylesheet [stylesheet]
 .--macro-ctp-hidden {

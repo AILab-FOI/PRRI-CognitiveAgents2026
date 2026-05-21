@@ -1648,7 +1648,6 @@ $("#story").on("click", function (event) {
 });
 
 
-
 //Agent stuff
 
 
@@ -1689,12 +1688,12 @@ $(document).ready(function() {
         'bottom':    '320px',
         'left':      '50%',
         'transform': 'translateX(-50%)',
-        'width':     '500px',
-        'height':    '50px',
+        'width':     '770px',
+        'height':    '150px',
         'z-index':   '1000'
     });
 
-    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone"></iframe>';
+    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone" allowtransparency="true" style="background: transparent; border: none;"></iframe>';
     agentContainer.append(iframeHtml);
     $('body').append(agentContainer);
 });
@@ -2165,7 +2164,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;&lt;/link&gt;&gt;
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="3.1. Hallway" tags="nobr hallway exception" position="500,2150" size="100,100">&lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="3.1. Hallway" tags="nobr hallway exception agent" position="500,2150" size="100,100">&lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;hallway1&quot;&gt;&gt;
@@ -2197,10 +2196,10 @@ window.playAgentVideo = function(partName, startTime, endTime) {
                 &lt;&lt;set $skepticism += 1&gt;&gt;
             &lt;&lt;/link&gt;&gt;
 
-            &lt;&lt;link &#39;&quot;A voice told me I was sold here by my own kind. So what&#39;s the actual end goal?&quot;&#39; &quot;3.1. Choice Voice&quot;&gt;&gt;
+            &lt;&lt;link &#39;&quot;A voice told me I was sold here by my own kind. So what\&#39;s the actual end goal?&quot;&#39; &quot;3.1. Choice Voice&quot;&gt;&gt;
                 &lt;&lt;set $skepticism += 1&gt;&gt;
             &lt;&lt;/link&gt;&gt;
-
+            
             &lt;&lt;link &quot;Don&#39;t mind me, just passing through.&quot; &quot;3.1. Passing Through&quot;&gt;&gt;
                 &lt;&lt;set $compliance += 1&gt;&gt;
             &lt;&lt;/link&gt;&gt;

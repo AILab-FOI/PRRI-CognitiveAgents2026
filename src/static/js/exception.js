@@ -116,7 +116,8 @@ $(window).on("load", function () {
     document.querySelector(".video-container").style.display = "none";
   } else {
     const output = document.getElementById("output");
-    const button = document.getElementById("start");
+    const buttonYes = document.getElementById("btn-yes");
+    const buttonNo = document.getElementById("btn-no");
     const record = document.getElementById("record");
     window.output = output;
 
@@ -162,9 +163,23 @@ $(window).on("load", function () {
     };
     init();
 
-    button.onclick = () => {
+    buttonYes.onclick = () => {
       window.parent.postMessage({ action: 'hide_iframe' }, '*');
+      //window.parent.postMessage({ action: 'set_voice_mode', enabled: true }, '*'); Here if decide to use different choices in passages depending on choice
+
       play_part("tisina");
+    };
+
+    buttonNo.onclick = () => {
+      window.parent.postMessage({ action: 'hide_iframe' }, '*');
+      //window.parent.postMessage({ action: 'set_voice_mode', enabled: false }, '*'); Here if decide to use different choices in passages depending on choice
+
+      window.parent.postMessage({ 
+        action: 'play_video_part', 
+        part: 'tisina', 
+        start: 5, 
+        end: 5.9 
+    }, '*');
     };
   }
 

@@ -4,6 +4,18 @@
   <title>Exception</title>
   {% include 'header.html' %}
   <script src="{{ url_for('static', filename='js/exception.js') }}"></script>
+  
+  <style>
+    body, html {
+        background: transparent !important;
+    }
+
+    #paper {
+        background-color: rgba(10, 16, 28, 0.6) !important; 
+        border-radius: 15px; /* Optional: smooth the corners */
+        padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +34,11 @@
   </center>
   <div id="startupute">
     <center>
-      <button class="button" id="start">Start conversation with Exception</button>
+      <p style="color: white; font-family: sans-serif; font-size: 1.2rem; margin-bottom: 20px;">
+        Do you wish to use your microphone to speak with Exception?
+      </p>
+      <button class="button" id="btn-yes" style="margin: 0 10px;">Yes, use voice</button>
+      <button class="button" id="btn-no" style="margin: 0 10px;">No, use standard clicks</button>
     </center>
   </div>
 </body>
