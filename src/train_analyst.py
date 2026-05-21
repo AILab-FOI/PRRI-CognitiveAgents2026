@@ -150,6 +150,10 @@ def train(bot):
         'The greater design is a bundle of theories that mean to explain the greater purposes of our existence',
         'Greater-Design'
     ])
+    chatbot.train([
+        'A bundle of theories trying to explain why any of this exists.',
+        'Greater-Design'
+    ])
 
     chatbot.train([
         'I suppose I do. Everyone does, whether they admit it or not',

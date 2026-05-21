@@ -4,7 +4,7 @@ var STOP = false;
 
 var CURRENT_PASSAGE = "initial";
 
-// Defines from which passages which responses are valid
+// Defines valid passages
 var PASSAGE_STATES = {
   "initial": ["A", "B", "C", "Voice", "Passing-Through", "Overlook-Home", "Overlook-Family", "Overlook-Distant", "Overlook-Missed", "Overlook-Nothing", "Overlook-No-Memory", "Overlook-Burned", "Discarded-Why", "Discarded-Know", "Discarded-What", "Exit-Want", "Exit-Following", "Exit-Fine", "Exit-Stopped"],
   "3.1. Choice Voice": ["Voice-Human", "Voice-Also-Hear", "Where-Go"],
@@ -89,12 +89,20 @@ window.addEventListener("message", function (event) {
         event.data.passage +
         "'",
     );
-    // Only update if we know about this passage; ignore unknown ones.
     if (
       Object.prototype.hasOwnProperty.call(PASSAGE_STATES, event.data.passage)
     ) {
       CURRENT_PASSAGE = event.data.passage;
     }
+  }
+
+  if (event.data && event.data.action === "video_part_ended") {
+    play_part("tisina");
+    //if (!FIRST) DONT = true;
+  }
+
+  if (event.data && event.data.action === "stop_mic") {
+      recognition.stop();
   }
 });
 
@@ -136,44 +144,32 @@ $(window).on("load", function () {
 
       recognition.onspeechend = () => {
         window.recognition.stop();
-        //setTimeout(function(){ recognition.start(); }, 400);
+        if (!DONT) {
+            setTimeout(function () {
+                try { window.recognition.start(); } catch (e) {}
+            }, 400);
+        }
       };
 
       recognition.onerror = (event) => {
         window.recognition.stop();
-        //setTimeout(function(){ recognition.start(); }, 400);
+        if (!DONT) {
+            setTimeout(function () {
+                try { window.recognition.start(); } catch (e) {}
+            }, 400);
+        }
       };
     };
     init();
 
     button.onclick = () => {
       window.parent.postMessage({ action: 'hide_iframe' }, '*');
-      //document.querySelector(".video-container").style.display = "none";
-      //document.getElementById("startupute").style.display = "none";
       play_part("tisina");
-      if (!isMobileBrowser()) recognition.start();
-      //question("bok");
     };
   }
 
   record.onclick = () => {
     window.recognition.start();
-  };
-
-  $("#agent")[0].ontimeupdate = function () {
-    var agent = $("#agent")[0];
-    var the_time = agent.currentTime;
-    if (the_time >= END) {
-      agent.pause();
-      play_part("tisina");
-      if (!FIRST) DONT = true;
-    } else {
-      DONT = false;
-    }
-  };
-  $("#agent")[0].loadedmetadata = function () {
-    DONT = false;
-    play_part("tisina");
   };
 });
 
@@ -183,19 +179,16 @@ function connect() {
   ws.onopen = function () {
     ws.send("connect");
     DONT = false;
-    //play_part("tisina");
   };
 
   ws.onmessage = function (msg) {
     var response = msg.data.toString();
     console.log("[WS] Received:", response);
 
-    play_part("ponovi");
-
-    /*if (response === "ponovi") {
-        play_part("ponovi"); // plays the "please repeat" audio, which ends → tisina → mic restarts
-        return;
-    }*/
+    if (response === "ponovi") {
+        play_part("ponovi");
+        return;   
+    }
 
     switch (response) {
       case "A":
@@ -406,138 +399,209 @@ END = 278;
 function play_part(part) {
   LAST_PART = CUR_PART;
   CUR_PART = part;
-  var agent = $("#agent")[0];
+  var start = 0;
   var end = 0;
 
-  agent.play();
-
   DONT = part !== "tisina" ? true : false;
-  if (part === "tisina") FIRST = !FIRST;
 
   recognition.stop();
   switch (part) {
-    case "01":
-      agent.currentTime = 0;
-      end = 3.6;
+    case "A":
+      start = 1;
+      end = 5;
       break;
-    case "02":
-      agent.currentTime = 3.6;
-      end = 11.6;
+    case "B":
+      start = 1;
+      end = 5;
       break;
-    case "03":
-      agent.currentTime = 11.6;
-      end = 16.7;
+    case "C":
+      start = 1;
+      end = 5;
       break;
-    case "04":
-      agent.currentTime = 16.7;
-      end = 22.6;
+    case "Voice":
+      start = 1;
+      end = 5;
       break;
-    case "05":
-      agent.currentTime = 22.6;
-      end = 27.2;
+    case "Voice-Human":
+      start = 1;
+      end = 5;
       break;
-    case "06":
-      agent.currentTime = 27.2;
-      end = 34.2;
+    case "Voice-Also-Hear":
+      start = 1;
+      end = 5;
       break;
-    case "07":
-      agent.currentTime = 34.2;
-      end = 40.9;
+    case "Where-Go":
+      start = 1;
+      end = 5;
       break;
-    case "08":
-      agent.currentTime = 40.9;
-      end = 44.6;
+    case "Voice-Saying":
+      start = 1;
+      end = 5;
       break;
-    case "09":
-      agent.currentTime = 44.6;
-      end = 48.7;
+    case "Voice-Actually-Human":
+      start = 1;
+      end = 5;
       break;
-    case "10":
-      agent.currentTime = 48.7;
-      end = 53;
+    case "Hallway":
+      start = 1;
+      end = 5;
       break;
-    case "11":
-      agent.currentTime = 53;
-      end = 58.8;
+    case "Passing-Through":
+      start = 1;
+      end = 5;
       break;
-    case "12":
-      agent.currentTime = 58.8;
-      end = 67.3;
+    case "A-Obsessed":
+      start = 1;
+      end = 5;
       break;
-    case "13":
-      agent.currentTime = 67.3;
-      end = 72;
+    case "A-Philosophical":
+      start = 1;
+      end = 5;
       break;
-    case "14":
-      agent.currentTime = 72;
-      end = 77.9;
+    case "A-Environment":
+      start = 1;
+      end = 5;
       break;
-    case "15":
-      agent.currentTime = 77.9;
-      end = 82.7;
+    case "B-Who-Brought":
+      start = 1;
+      end = 5;
       break;
-    case "16":
-      agent.currentTime = 82.7;
-      end = 87.5;
+    case "B-Sold":
+      start = 1;
+      end = 5;
       break;
-    case "17":
-      agent.currentTime = 87.5;
-      end = 92.4;
+    case "B-Earth":
+      start = 1;
+      end = 5;
       break;
-    case "18":
-      agent.currentTime = 92.4;
-      end = 100.2;
+    case "What-Want":
+      start = 1;
+      end = 5;
       break;
-    case "19":
-      agent.currentTime = 100.2;
-      end = 103.3;
+    case "Fight-Back":
+      start = 1;
+      end = 5;
       break;
-    case "20":
-      agent.currentTime = 103.3;
-      end = 111.2;
+    case "No-Consent":
+      start = 1;
+      end = 5;
       break;
-    case "21":
-      agent.currentTime = 111.2;
-      end = 116;
+    case "Uncompliant":
+      start = 1;
+      end = 5;
       break;
-    case "dobro":
-      agent.currentTime = 116;
-      end = 118.7;
+    case "C-Trade":
+      start = 1;
+      end = 5;
       break;
-    case "hvala":
-      agent.currentTime = 118.7;
-      end = 120.6;
+    case "Overlook-Home":
+      start = 1;
+      end = 5;
       break;
-    case "izvoli":
-      agent.currentTime = 120.6;
-      end = 122;
+    case "Overlook-Family":
+      start = 1;
+      end = 5;
       break;
-    case "lijepo":
-      agent.currentTime = 122;
-      end = 124.4;
+    case "Overlook-Distant":
+      start = 1;
+      end = 5;
+      break;
+    case "Overlook-Missed":
+      start = 1;
+      end = 5;
+      break;
+    case "Overlook-Nothing":
+      start = 1;
+      end = 5;
+      break;
+    case "Overlook-No-Memory":
+      start = 1;
+      end = 5;
+      break;
+    case "Overlook-Burned":
+      start = 1;
+      end = 5;
+      break;
+    case "Discarded-Why":
+      start = 1;
+      end = 5;
+      break;
+    case "Discarded-Know":
+      start = 1;
+      end = 5;
+      break;
+    case "Discarded-What":
+      start = 1;
+      end = 5;
+      break;
+    case "Archive":
+      start = 1;
+      end = 5;
+      break;
+    case "Discarded-Lying":
+      start = 1;
+      end = 5;
+      break;
+    case "Discarded-Why-Telling":
+      start = 1;
+      end = 5;
+      break;
+    case "Discarded-What-Suggest":
+      start = 1;
+      end = 5;
+      break;
+    case "Exit-Want":
+      start = 1;
+      end = 5;
+      break;
+    case "Exit-Following":
+      start = 1;
+      end = 5;
+      break;
+    case "Exit-Fin":
+      start = 1;
+      end = 5;
+      break;
+    case "Exit-Stopped":
+      start = 1;
+      end = 5;
+      break;
+    case "Exit-Yes":
+      start = 1;
+      end = 5;
+      break;
+    case "Exit-No":
+      start = 1;
+      end = 5;
+      break;
+    case "Pre-Control-Room":
+      start = 1;
+      end = 5;
       break;
     case "ponovi":
-      agent.currentTime = 124.4;
-      end = 129;
+      start = 1;
+      end = 5;
       break;
-    case "predstavljanje-dugo":
-      agent.currentTime = 129;
-      end = 142.8;
-      break;
-    case "predstavljanje-kratko":
-      agent.currentTime = 142.8;
-      end = 145.2;
-      break;
-    default: // 'tisina'
-      agent.currentTime = 145.2;
-      end = 165;
-      try {
-        if (!isMobileBrowser()) window.recognition.start();
-      } catch (e) {}
+    default: // tisina
+      start = 5;
+      end = 5.9;
+      setTimeout(function() {
+        try {
+          if (!isMobileBrowser()) window.recognition.start();
+        } catch (e) {}
+      }, 400);
       break;
   }
 
   END = end;
+
+  // Twine connection
+  window.parent.postMessage({
+    action: "play_video_part",
+    part: part,
+    start: start,
+    end: end
+  }, "*");
 }
 
 function question(q) {

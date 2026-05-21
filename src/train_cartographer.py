@@ -29,6 +29,10 @@ def train(bot):
         'I might have heard that deathworld thing being mentioned before. Surely Earth isnt that dangerous?',
         'Deathworld'
     ])
+    chatbot.train([
+        'Surely Earth isnt that dangerous',
+        'Deathworld'
+    ])
 
     chatbot.train([
         'So what is there to do out here? Can I join you in any research?',
@@ -43,9 +47,17 @@ def train(bot):
         'What?! Is that why youre still alive in front of me and not dead by me?! What have you done to my brain??',
         'Rage'
     ])
+    chatbot.train([
+        'Is that why I havent already tried to kill you? What did you do to me?',
+        'Rage'
+    ])
 
     chatbot.train([
         'Youre actually joking. What the hell have you done to me? Will it have any complications',
+        'Skeptic'
+    ])
+    chatbot.train([
+        'What exactly did you do to me? Will it have complications?',
         'Skeptic'
     ])
     
@@ -93,6 +105,10 @@ def train(bot):
         'Did you find any parallels between your kind and mine in terms of sociability?',
         'War-Parallels'
     ])
+    chatbot.train([
+        'Did you find any parallels between us in how we socialise?',
+        'War-Parallels'
+    ])
 
     chatbot.train([
         'War is a normal part of life. The more you dwell on it the more it consumes you',
@@ -128,6 +144,10 @@ def train(bot):
         'Well yeah, of course it isnt passed down as easily. Because the sacrifice results in death',
         'Sacrifice-Death'
     ])
+    chatbot.train([
+        'Of course it isnt passed on easily. Sacrifice ends with death.',
+        'Sacrifice-Death'
+    ])
 
     chatbot.train([
         'There is no greater design — we just exist inside an existing framework',
@@ -141,6 +161,10 @@ def train(bot):
 
     chatbot.train([
         'I think its because the consciousness equates the continuation of another to be the continuation of itself',
+        'Sacrifice-Consciousness'
+    ])
+    chatbot.train([
+        'The self extends into what it loves. Survival relocates.',
         'Sacrifice-Consciousness'
     ])
 

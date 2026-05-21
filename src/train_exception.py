@@ -34,6 +34,10 @@ def train(bot):
         'I heard a voice telling me that I was kidnapped here by fellow humans and that I am here to be researched on. So what is the end goal here?',
         'Voice'
     ])
+    chatbot.train([
+        'A voice told me I was sold here by my own kind. So whats the actual end goal?',
+        'Voice'
+    ])
 
     chatbot.train([
         'Dont mind me, just passing through.',
@@ -84,14 +88,26 @@ def train(bot):
         'What kind of environment do you guys even live in for you to think so drastically differently from us humans or any other lifeform on Earth',
         'A-Environment'
     ])
+    chatbot.train([
+        'What kind of world do you come from, to think so differently from anything on Earth',
+        'A-Environment'
+    ])
 
     chatbot.train([
         'Who or what brought me here? I dont exactly remember my past, but I am sure it didnt include a place like this.',
         'B-Who-Brought'
     ])
+    chatbot.train([
+        'Who brought me here? Whatever my past was, it didnt include this.',
+        'B-Who-Brought'
+    ])
 
     chatbot.train([
         'What do you mean by that? Didnt you just say I was sold into your hands and against my will?',
+        'B-Sold'
+    ])
+    chatbot.train([
+        'Didnt you just say I was sold here against my will?',
         'B-Sold'
     ])
 
@@ -104,6 +120,10 @@ def train(bot):
         'And what the hell do you want me to do up here then? You still havent answered what you want from me',
         'What-Want'
     ])
+    chatbot.train([
+        'Then what do you actually want from me? You still havent said.',
+        'What-Want'
+    ])
 
     chatbot.train([
         'You think I am not willing to fight back',
@@ -114,9 +134,17 @@ def train(bot):
         'You dont know the concept of will? You could have just said you dont care about my consent instead of beating around a bush.',
         'No-Consent'
     ])
+    chatbot.train([
+        'You could have just said you dont care about consent.',
+        'No-Consent'
+    ])
 
     chatbot.train([
         'So you didnt even consider me potentially being uncompliant about this? Have you never done something you didnt want to do?',
+        'Uncompliant'
+    ])
+    chatbot.train([
+        'So you never considered I might not cooperate?',
         'Uncompliant'
     ])
 
@@ -124,9 +152,17 @@ def train(bot):
         'What is that even supposed to mean? So you capture me or trade me or whatever you did to me and now you dont even question how I got out of that thing?',
         'C-Trade'
     ])
+    chatbot.train([
+        'You trade me like cargo and then just… dont question how I got out',
+        'C-Trade'
+    ])
 
     chatbot.train([
         'I think of home. Its surreal seeing how small everything I ever knew is from here.',
+        'Overlook-Home'
+    ])
+    chatbot.train([
+        'Home. Everything I ever knew looks very small from here.',
         'Overlook-Home'
     ])
 
