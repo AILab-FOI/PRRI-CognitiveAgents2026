@@ -87,7 +87,8 @@ The Last Command
 
 :: 3.1. A Environment [nobr agent hallway exception] {"position":"1000,1950","size":"100,100"}
 <<run window.playAgentVideo("A-Enviroment", 0, 6)>>
-
+<<set $curiosity += 1>>
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
@@ -133,11 +134,8 @@ The Last Command
         You call that instinct. We call it sequence.
     <<ctpNext clear>>
         <div class="choice">
-            [[Are all aliens this philosophical?|3.1. A Philosophical]]
-             <<link "What kind of world do you come from, to think so differently from anything on Earth?" "3.1. A Environment">>
-        <<set $curiosity += 1>>
-        <<set $skepticism += 1>>
-        <</link>>
+ [[Are all aliens this philosophical?|3.1. A Philosophical]]
+[[What kind of world do you come from, to think so differently from anything on Earth?|3.1. A Environment]]
         </div>
   <</ctp>> 
 </div>
@@ -174,7 +172,7 @@ The Last Command
 
 :: 3.1. Actually Human [nobr agent hallway exception] {"position":"1100,1550","size":"100,100"}
 <<run window.playAgentVideo("Voice-Actually-Human", 0, 6)>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
         <<speaker "You">>
@@ -212,7 +210,7 @@ The Last Command
 
 :: 3.1. Also Hear [nobr agent hallway exception] {"position":"900,1500","size":"100,100"}
 <<run window.playAgentVideo("Voice-Also-Hear", 0, 6)>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.AlsoHear">>
         <<speaker "Exception">>
@@ -235,11 +233,9 @@ The Last Command
         That is why it is dangerous to assume it is speaking only to you.
     <<ctpNext clear>>
         <div class="choice">
-            [[What has the voice been saying?|3.1. Voice Saying]]
-             <<link "Do you mean it just sounds human or is it an actual human saying it?" "3.1. Actually Human">>
-        <<set $curiosity += 1>>
-    <</link>>
-            [[Where do I go from here?|3.1. Where Go]]
+[[What has the voice been saying?|3.1. Voice Saying]]
+[[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+[[Where do I go from here?|3.1. Where Go]]
         </div>
   <</ctp>> 
 </div>
@@ -269,10 +265,8 @@ The Last Command
         You attach will to the transfer. That changes its meaning for you. It did not change the exchange for those who completed it.
     <<ctpNext clear>>
         <div class="choice">
-            [[Didn't you just say I was sold here against my will?|3.1. Sold Against Will]]
-           <<link "I want you to bring me back to Earth." "3.1. Back to Earth">>
-        <<set $aggression += 1>>
-    <</link>>
+ [[Didn't you just say I was sold here against my will?|3.1. Sold Against Will]]
+[[I want you to bring me back to Earth.|3.1. Back to Earth]]
         </div>
   <</ctp>> 
 </div>
@@ -280,7 +274,7 @@ The Last Command
 
 :: 3.1. Back to Earth [nobr agent hallway exception] {"position":"1100,2200","size":"100,100"}
 <<run window.playAgentVideo("B-Earth", 0, 6)>>
-
+<<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.BackToEarth">>
         <<speaker "You">>
@@ -310,10 +304,8 @@ The Last Command
         Why is return your first definition of safety?
     <<ctpNext clear>>
         <div class="choice">
-            [[Then what do you actually want from me? You still haven't said.|3.1. What Do You Want]]
-            <<link "You think I am not willing to fight back?" "3.1. Fight Back">>
-        <<set $aggression += 1>>
-        <</link>>
+ [[Then what do you actually want from me? You still haven't said.|3.1. What Do You Want]]
+[[You think I am not willing to fight back?|3.1. Fight Back]]
         </div>
   <</ctp>> 
 </div>
@@ -321,7 +313,7 @@ The Last Command
 
 :: 3.1. C Trade [nobr agent hallway exception] {"position":"900,2400","size":"100,100"}
 <<run window.playAgentVideo("C-Trade", 0, 6)>>
-
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.CTrade">>
         <<speaker "Exception">>
@@ -359,7 +351,7 @@ The Last Command
 
 :: 3.1. Choice A [agent nobr hallway exception] {"position":"700,1900","size":"100,100"}
 <<run window.playAgentVideo("", 0, 6)>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.choiceA">>
         The alien remains still. For a second, nothing answers you except the low pulse of the corridor.
@@ -383,7 +375,7 @@ The Last Command
 
 :: 3.1. Choice B [nobr agent hallway exception] {"position":"700,2150","size":"100,100"}
 <<run window.playAgentVideo("B", 0, 6)>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.B">>
         <<speaker "You">>
@@ -417,7 +409,7 @@ The Last Command
 
 :: 3.1. Choice C [nobr agent hallway exception] {"position":"700,2400","size":"100,100"}
 <<run window.playAgentVideo("C", 0, 6)>>
-
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceC">>
         <<speaker "You">>
@@ -441,10 +433,8 @@ The Last Command
         Comfort is not required for accuracy.
     <<ctpNext clear>>
         <div class="choice">
-            [[Who brought me here? Whatever my past was, it didn't include this.|3.1. B Who Brought]]
-<<link "You trade me like cargo and then just… don't question how I got out?" "3.1. C Trade">>
-    <<set $skepticism += 1>>
-<</link>>
+ [[Who brought me here? Whatever my past was, it didn't include this.|3.1. B Who Brought]]
+[[You trade me like cargo and then just… don't question how I got out?|3.1. C Trade]]
         </div>
   <</ctp>> 
 </div>
@@ -452,7 +442,7 @@ The Last Command
 
 :: 3.1. Choice Voice [nobr agent hallway exception] {"position":"700,1500","size":"100,100"}
 <<run window.playAgentVideo("Voice", 0, 6)>>
-
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceVoice">>
         The alien does not answer immediately.
@@ -477,13 +467,9 @@ The Last Command
         I can sense the disturbance it leaves behind.
     <<ctpNext clear>>
         <div class="choice">
-               <<link "How do you know it's a human voice?" "3.1. Human Voice">>
-        <<set $curiosity += 1>>
-    <</link>>
- <<link "You can also hear it?" "3.1. Also Hear">>
-        <<set $curiosity += 1>>
-    <</link>>
-            [[Where do I go from here?|3.1. Where Go]]
+ [[How do you know it's a human voice?|3.1. Human Voice]]
+[[You can also hear it?|3.1. Also Hear]]
+[[Where do I go from here?|3.1. Where Go]]
         </div>
   <</ctp>> 
 </div>
@@ -491,7 +477,7 @@ The Last Command
 
 :: 3.1. Fight Back [nobr hallway exception] {"position":"1300,2200","size":"100,100"}
 <<run window.playAgentVideo("Fight-Back", 0, 6)>>
-
+<<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.FightBack">>
         The alien does not step away.
@@ -516,10 +502,8 @@ The Last Command
         You are unusual for pausing long enough to ask first.
     <<ctpNext clear>>
         <div class="choice">
-            [[Walk away.|3.1. Walk Away]]
-             <<link "Try to punch the alien." "3.1. Punch">>
-        <<set $aggression += 1>>
-        <</link>>
+[[Walk away.|3.1. Walk Away]]
+[[Try to punch the alien.|3.1. Punch]]
         </div>
   <</ctp>> 
 </div>
@@ -546,25 +530,11 @@ The Last Command
         What is the true intent behind it? You are trying to be understood. Is that what you call intent, or does our definition differ?
     <<ctpNext clear>>
         <div class="choice">
-            <<link '"Hey, can you understand what I am saying?"' "3.1. Choice A">>
-                <<set $curiosity += 1>>
-            <</link>>
-
-            <<link '"I guess you can understand me...? What am I even doing here?"' "3.1. Choice B">>
-                <<set $curiosity += 1>>
-            <</link>>
-
-            <<link '"How is it that I escaped so easily?"' "3.1. Choice C">>
-                <<set $skepticism += 1>>
-            <</link>>
-
-            <<link '"A voice told me I was sold here by my own kind. So what\'s the actual end goal?"' "3.1. Choice Voice">>
-                <<set $skepticism += 1>>
-            <</link>>
-            
-            <<link "Don't mind me, just passing through." "3.1. Passing Through">>
-                <<set $compliance += 1>>
-            <</link>>
+ [["Hey, can you understand what I am saying?"|3.1. Choice A]]
+[["I guess you can understand me...? What am I even doing here?"|3.1. Choice B]]
+[["How is it that I escaped so easily?"|3.1. Choice C]]
+[["A voice told me I was sold here by my own kind. So what's the actual end goal?"|3.1. Choice Voice]]
+[[Don't mind me, just passing through.|3.1. Passing Through]]
         </div>
     <</ctp>>
 </div>
@@ -572,7 +542,7 @@ The Last Command
 
 :: 3.1. Human Voice [nobr agent hallway exception] {"position":"900,1400","size":"100,100"}
 <<run window.playAgentVideo("Voice-Human", 0, 6)>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
         <<speaker "Exception">>
@@ -595,11 +565,9 @@ The Last Command
         Otherwise, there is no reason for a signal aboard this vessel to disguise its shape.
     <<ctpNext clear>>
         <div class="choice">
-            [[What has the voice been saying?|3.1. Voice Saying]]
-          <<link "Do you mean it just sounds human or is it an actual human saying it?" "3.1. Actually Human">>
-        <<set $curiosity += 1>>
-    <</link>>
-            [[Where do I go from here?|3.1. Where Go]]
+[[What has the voice been saying?|3.1. Voice Saying]]
+[[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+[[Where do I go from here?|3.1. Where Go]]
         </div>
   <</ctp>> 
 </div>
@@ -648,7 +616,7 @@ The Last Command
 
 :: 3.1. Passing Through [nobr hallway exception] {"position":"700,2600","size":"100,100"}
 <<hideAgent>>
-
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "passingThrough">>
         You move past slowly.
@@ -673,7 +641,7 @@ The Last Command
 
 :: 3.1. Punch [nobr hallway exception] {"position":"1400,2100","size":"100,100"}
 <<hideAgent>>
-
+<<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.Punch">>
         You swing before you can convince yourself not to.
@@ -728,10 +696,8 @@ The Last Command
         It did not contain permission.
     <<ctpNext clear>>
         <div class="choice">
-            [[You could have just said you don't care about consent.|3.1. No Consent]]
-         <<link "So you never considered I might not cooperate?" "3.1. Uncompliant">>
-    <<set $curiosity += 1>>
-<</link>>
+ [[You could have just said you don't care about consent.|3.1. No Consent]]
+[[So you never considered I might not cooperate?|3.1. Uncompliant]]
         </div>
   <</ctp>> 
 </div>
@@ -739,7 +705,7 @@ The Last Command
 
 :: 3.1. Uncompliant [agent nobr hallway exception] {"position":"1300,2400","size":"100,100"}
 <<run window.playAgentVideo("Uncompliant", 0, 6)>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.Uncompliant">>
         <<speaker "Exception">>
@@ -861,10 +827,8 @@ The Last Command
         You are the event that changed it.
     <<ctpNext clear>>
         <div class="choice">
-            [[Walk away.|3.1. Walk Away]]
-             <<link "Try to punch the alien." "3.1. Punch">>
-        <<set $aggression += 1>>
-        <</link>>
+ [[Walk away.|3.1. Walk Away]]
+[[Try to punch the alien.|3.1. Punch]]
         </div>
   <</ctp>> 
 </div>
@@ -926,11 +890,9 @@ The Last Command
         Careful research remains necessary.
     <<ctpNext clear>>
         <div class="choice">
-            <<link "How is Earth dangerous to you?" "3.2. Earth Dangerous">>
-        <<set $curiosity += 1>>
-    <</link>>
-            [[I think I understand, somehow.|3.2. What Now]]
-        </div>
+ [[How is Earth dangerous to you?|3.2. Earth Dangerous]]
+[[I think I understand, somehow.|3.2. What Now]]
+</div>
   <</ctp>>
 </div>
 
@@ -971,7 +933,7 @@ The Last Command
 
 :: 3.2. Earth Dangerous [nobr contact] {"position":"900,3050","size":"100,100"}
 <<hideAgent>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "earthDangerous">>
         <<speaker "Cartographer">>
@@ -1053,10 +1015,8 @@ The Last Command
         Additional behaviour tracking is justified.
     <<ctpNext clear>>
         <div class="choice">
-            <<link "If your kind can detect this intent... let's just say you may not be that far off." "3.2. Not Far Off">>
-        <<set $aggression += 1>>
-    <</link>>
-            [[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
+  [[If your kind can detect this intent... let's just say you may not be that far off.|3.2. Not Far Off]]
+[[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
         </div>
   <</ctp>>
 </div>
@@ -1101,7 +1061,7 @@ The Last Command
 
 :: 3.2. Not Far Off [nobr missing-dialog contact] {"position":"1000,3050","size":"100,100"}
 <<hideAgent>>
-
+<<set $aggression += 1>>
 <div class="textbox">
     <<ctp "notFarOff">>
         <<speaker "You">>
@@ -1135,7 +1095,7 @@ The Last Command
 
 :: 3.2. Risk Lives [nobr contact] {"position":"1000,2850","size":"100,100"}
 <<hideAgent>>
-
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "riskLives">>
         <<speaker "Analyst">>
@@ -1218,10 +1178,8 @@ The Last Command
         Observed is more accurate.
     <<ctpNext clear>>
         <div class="choice">
-            <<link "You're all part of the experiment? You'd risk your lives just to observe me?" "3.2. Risk Lives">>
-        <<set $skepticism += 1>>
-    <</link>>
-            [[Let me explore this ship then.|3.2. Narrator Goodbye]]
+ [[You're all part of the experiment? You'd risk your lives just to observe me?|3.2. Risk Lives]]
+[[Let me explore this ship then.|3.2. Narrator Goodbye]]
         </div>
   <</ctp>>
 </div>
@@ -2346,14 +2304,8 @@ The Last Command
         The left control reads: ENTER.
     <<ctpNext clear>>
         <div class="choice">
-            <<link "Press the right button — EXIT." "Right Button">>
-                <<set $compliance += 1>>
-            <</link>>
-
-            <<link "Press the left button — ENTER." "Left Button">>
-                <<set $skepticism += 1>>
-                <<set $curiosity += 1>>
-            <</link>>
+        [[Press the right button — EXIT.|Right Button]]
+        [[Press the left button — ENTER.|Left Button]]
         </div>
     <</ctp>>
 </div>
@@ -5483,7 +5435,8 @@ END OF CURRENT DRAFT
 
 :: Left Button [nobr waking wait] {"position":"400,2950","size":"100,100"}
 <<hideAgent>>
-
+<<set $skepticism += 1>>
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "leftButton">>
         The left control accepts your touch.
@@ -5796,7 +5749,7 @@ END OF CURRENT DRAFT
 
 :: Right Button [nobr room1 exit] {"position":"400,2150","size":"100,100"}
 <<hideAgent>>
-
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "rightButton">>
         The right control sinks beneath your hand.
