@@ -1940,7 +1940,7 @@ The Last Command
 
 :: Archive Bay Entry [nobr missing-features archive] {"position":"2200,725","size":"100,200"}
 <<hideAgent>>
-
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "archiveBayEntry">>
         The Archive Bay opens into a chamber of suspended light.
@@ -3352,6 +3352,7 @@ The Last Command
 
 
 :: Cart Threatening [nobr agent cartographer] {"position":"2600,675","size":"100,100"}
+
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
@@ -3595,6 +3596,9 @@ The Last Command
 
 
 :: Discarded Did You [nobr discarded body] {"position":"2600,1325","size":"100,100"}
+<<set $skepticism += 1>>
+<<set $aggression += 1>>
+
 <<hideAgent>>
 
 <div class="textbox">
@@ -3804,6 +3808,8 @@ The Last Command
 
 
 :: Discarded Leave [nobr discarded] {"position":"2600,1425","size":"100,100"}
+<<set $aggression += 1>>
+
 <<hideAgent>>
 
 <div class="textbox">
@@ -3835,6 +3841,7 @@ The Last Command
 
 
 :: Discarded Lying [nobr agent exception discarded] {"position":"3200,1425","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "discardedLying">>
         <<speaker "You">>
@@ -3936,6 +3943,8 @@ The Last Command
 
 
 :: Discarded What Suggest [nobr agent exception discarded] {"position":"3200,1325","size":"100,100"}
+<<set $curiosity += 1>>
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "discardedWhatSuggest">>
         <<speaker "You">>
@@ -3976,6 +3985,8 @@ The Last Command
 
 
 :: Discarded Who [nobr discarded body] {"position":"2600,1525","size":"100,100"}
+<<set $curiosity += 1>>
+
 <<hideAgent>>
 
 <div class="textbox">
@@ -4024,6 +4035,7 @@ The Last Command
 
 
 :: Discarded Why Telling [nobr agent exception discarded] {"position":"3200,1525","size":"100,100"}
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "discardedWhyTelling">>
         <<speaker "You">>
@@ -5507,7 +5519,7 @@ END OF CURRENT DRAFT
 
 :: Narrator What To Do [nobr hallway control-door] {"position":"2000,2075","size":"100,100"}
 <<hideAgent>>
-
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "narratorWhatToDo">>
         <<speaker "Narrator">>
@@ -5537,7 +5549,7 @@ END OF CURRENT DRAFT
 
 :: Narrator Who Are You [nobr hallway control-door] {"position":"2000,1975","size":"100,100"}
 <<hideAgent>>
-
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "narratorWhoAreYou">>
         <<speaker "Narrator">>
@@ -5569,7 +5581,7 @@ END OF CURRENT DRAFT
 
 :: Narrator Why Not Open [nobr hallway control-door] {"position":"2000,2175","size":"100,100"}
 <<hideAgent>>
-
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "narratorWhyNotOpen">>
         <<speaker "Narrator">>
@@ -5881,6 +5893,7 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice No Design [nobr agent cartographer archive] {"position":"3600,1225","size":"100,100"}
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
         <<speaker "Cartographer">>
@@ -5912,6 +5925,7 @@ END OF CURRENT DRAFT
 
 
 :: Science Weapons [nobr agent cartographer archive] {"position":"3600,725","size":"100,100"}
+<<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "scienceWeapons">>
         <<speaker "Cartographer">>
@@ -5950,6 +5964,7 @@ END OF CURRENT DRAFT
 
 
 :: Science Your Kind [nobr agent cartographer archive] {"position":"3600,825","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "scienceYourKind">>
         <<speaker "Cartographer">>
@@ -6490,6 +6505,8 @@ END OF CURRENT DRAFT
 
 
 :: War Between Lifeforms [nobr agent cartographer archive] {"position":"3600,525","size":"100,100"}
+<<set $curiosity += 1>>
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "warBetweenLifeforms">>
         <<speaker "Cartographer">>
@@ -6527,6 +6544,7 @@ END OF CURRENT DRAFT
 
 
 :: War No Conflict [nobr agent cartographer archive] {"position":"3600,425","size":"100,100"}
+<<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "warNoConflict">>
         [ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
@@ -6592,6 +6610,7 @@ END OF CURRENT DRAFT
 
 
 :: War Normal [nobr agent cartographer archive] {"position":"3600,625","size":"100,100"}
+<<set $compliance += 1>>
 <div class="textbox">
     <<ctp "warNormal">>
         <<speaker "Cartographer">>
