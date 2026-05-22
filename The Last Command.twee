@@ -6187,7 +6187,7 @@ END OF CURRENT DRAFT
 
 :: Specimen Bay Exit [nobr missing-features specimen exception] {"position":"3600,2275","size":"100,100"}
 <<hideAgent>>
-
+<<if $analystSignal>><<set $specimenDone to true>><</if>>
 <div class="textbox">
     <<ctp "specimenBayExit">>
         <<speaker "Narrator">>
