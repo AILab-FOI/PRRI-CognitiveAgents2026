@@ -921,11 +921,11 @@ The Last Command
         The three researchers observe you, waiting for a response.
     <<ctpNext clear>>
         <div class="choice">
-            [[What is going on here? What are you?|3.2. What Are You]]
-            [[What do you want from me?|3.2. What Want]]
-            [[Why did you release me?|3.2. Why Released]]
-            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
-            [[So, am I free to go now?|3.2. Free To Go]]
+            <<if not $asked32WhatAreYou>>[[What is going on here? What are you?|3.2. What Are You]]<</if>>
+			<<if not $asked32WhatWant>>[[What do you want from me?|3.2. What Want]]<</if>>
+			<<if not $asked32WhyReleased>>[[Why did you release me?|3.2. Why Released]]<</if>>
+			<<if not $asked32WrongButton>>[[I understood it. I just wondered what the other button did.|3.2. Wrong Button]]<</if>>
+			[[So, am I free to go now?|3.2. Free To Go]]
         </div>
   <</ctp>> 
 </div>
@@ -1126,7 +1126,7 @@ The Last Command
 
 :: 3.2. What Are You [nobr contact] {"position":"700,2800","size":"100,100"}
 <<hideAgent>>
-
+<<set $asked32WhatAreYou to true>>
 <div class="textbox">
     <<ctp "whatAreYou">>
         <<speaker "Cartographer">>
@@ -1187,7 +1187,7 @@ The Last Command
 
 :: 3.2. What Want [nobr contact] {"position":"700,2900","size":"100,100"}
 <<hideAgent>>
-
+<<set $asked32WhatWant to true>>
 <div class="textbox">
     <<ctp "whatWant">>
         <<speaker "Analyst">>
@@ -1220,7 +1220,7 @@ The Last Command
 
 :: 3.2. Why Released [nobr contact] {"position":"700,3000","size":"100,100"}
 <<hideAgent>>
-
+<<set $asked32WhyReleased to true>>
 <div class="textbox">
     <<ctp "whyReleased">>
         <<speaker "Analyst">>
@@ -1256,7 +1256,7 @@ The Last Command
 
 :: 3.2. Wrong Button [nobr contact] {"position":"700,3100","size":"100,100"}
 <<hideAgent>>
-
+<<set $asked32WrongButton to true>>
 <div class="textbox">
     <<ctp "wrongButton">>
         <<speaker "Engineer">>
@@ -1329,6 +1329,7 @@ The Last Command
 
 
 :: Analyst Carry Know [nobr agent analyst] {"position":"3400,2425","size":"100,100"}
+<<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystCarryKnow">>
         <<speaker "Analyst">>
@@ -1344,6 +1345,7 @@ The Last Command
 
 
 :: Analyst Carry No [nobr agent analyst] {"position":"3400,2325","size":"100,100"}
+<<set $specimenDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "analystCarryKnow">>
@@ -1360,6 +1362,7 @@ The Last Command
 
 
 :: Analyst Carry Used To [nobr agent analyst] {"position":"3400,2225","size":"100,100"}
+<<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
         <<speaker "Analyst">>
@@ -1375,6 +1378,7 @@ The Last Command
 
 
 :: Analyst Carry Yes [nobr agent analyst] {"position":"3400,2125","size":"100,100"}
+<<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystCarryYes">>
         <<speaker "Analyst">>
@@ -1708,7 +1712,7 @@ The Last Command
 
 :: Analyst Restrain Answer [nobr specimen analyst restrain] {"position":"3100,3725","size":"100,100"}
  <<set $aggression += 1>>
- 
+ <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystRestrainAnswer">>
         <<speaker "Analyst">>
@@ -1728,7 +1732,7 @@ The Last Command
 
 :: Analyst Restrain Need [nobr specimen analyst restrain] {"position":"3100,3525","size":"100,100"}
 <<set $skepticism += 1>>
-
+<<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystRestrainNeed">>
         <<speaker "Analyst">>
@@ -1747,7 +1751,7 @@ The Last Command
 
 :: Analyst Restrain Sorry [nobr specimen analyst restrain] {"position":"3100,3625","size":"100,100"}
  <<set $compliance += 1>>
- 
+ <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystRestrainSorry">>
         <<speaker "Analyst">>
@@ -1804,6 +1808,7 @@ The Last Command
 
 
 :: Analyst Strike [nobr specimen analyst strike] {"position":"2900,3825","size":"100,100"}
+<<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystStrike">>
         You strike the Analyst at the base of its cranial structure. The alien collapses with the stillness of a system shutting down. The yellow gas begins to leak from the fracture. You retreat.
@@ -1963,6 +1968,7 @@ The Last Command
 
 :: Archive Bay Entry [nobr missing-features archive] {"position":"2200,725","size":"100,200"}
 <<hideAgent>>
+<<set $baysVisited += 1>>
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "archiveBayEntry">>
@@ -2080,7 +2086,7 @@ The Last Command
 
 :: Archive Exception [nobr agent missing-features archive exception] {"position":"2600,325","size":"100,100"}
 <<showAgent "exception">>
-
+<<set $exceptArchiveMet to true>>
 <div class="textbox">
     <<ctp "archiveException">>
     	<<speaker "Narrator">>
@@ -3106,6 +3112,7 @@ The Last Command
 
 
 :: Cart Deathworld [nobr agent cartographer] {"position":"2600,875","size":"100,100"}
+<<set $brainManipAware to true>>
 <div class="textbox">
     <<ctp "cartDeathWorld">>
     	<<speaker "Cartographer">>
@@ -3352,7 +3359,8 @@ The Last Command
 
 :: Cart Signal Check [nobr archive cartographer] {"position":"4000,775","size":"100,100"}
 <<set $archiveSignal = true>>
-
+<<set $cartPuzzleDone to true>>
+<<set $archiveDone to true>>
 <div class="textbox">
     <<ctp "cartSignalCheck">>
         The projection collapses into a thin line of light.
@@ -3923,6 +3931,8 @@ The Last Command
 
 
 :: Discarded Room First [nobr discarded body] {"position":"2400,1425","size":"100,100"}
+<<set $discardedVisits += 1>>
+<<if $discardedVisits eq 1>><<set $foundBody to true>><</if>>
 <<hideAgent>>
 <<audio ":all" stop>>
 <<audio "discarded" loop play>>
@@ -4658,7 +4668,7 @@ The Last Command
 
 :: Eng Bay Closing [nobr missing-features engineering closing] {"position":"4000,4475","size":"100,100"}
 <<hideAgent>>
-
+<<if $engSignal>><<set $engineeringDone to true>><</if>>
 <div class="textbox">
     <<ctp "engBayClosing">>
         <<speaker "Narrator">>
@@ -4803,6 +4813,7 @@ The Last Command
 
 
 :: Eng Camera Alone [nobr agent engineer] {"position":"3600,4175","size":"100,100"}
+<<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "engCameraAlone">>
@@ -4819,6 +4830,7 @@ The Last Command
 
 
 :: Eng Camera Imprecision [nobr agent engineer] {"position":"3600,3975","size":"100,100"}
+<<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "engCameraImprecision">>
@@ -4863,6 +4875,7 @@ The Last Command
 
 
 :: Eng Camera Obsession Point [nobr agent engineer] {"position":"3600,4375","size":"100,100"}
+<<set $engineeringDone to true>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "engCameraObsessionPoint">>
@@ -4879,6 +4892,7 @@ The Last Command
 
 
 :: Eng Camera Obsession Problem [nobr agent engineer] {"position":"3600,4475","size":"100,100"}
+<<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "engCameraObsessionProblem">>
@@ -4895,6 +4909,7 @@ The Last Command
 
 
 :: Eng Camera Residue [nobr agent engineer] {"position":"3600,4275","size":"100,100"}
+<<set $engineeringDone to true>>
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "engCameraResidue">>
@@ -5079,6 +5094,7 @@ The Last Command
 
 
 :: Engineering Bay Entry [nobr missing-features engineering] {"position":"2200,4425","size":"100,200"}
+<<set $baysVisited += 1>>
 <<audio ":all" stop>>
 <<audio "engineering" loop play>>
 <<hideAgent>>
@@ -5817,7 +5833,14 @@ END OF CURRENT DRAFT
 
 :: Pre Control Room [nobr hallway control-door] {"position":"1900,2525","size":"200,200"}
 <<hideAgent>>
-
+<<if not $archiveDone>>
+    <<if visited("Archive Bay Entry")>>[[Return to the Archive bay.|Archive Bay Return]]<<else>>[[Head to the Archive bay.|Archive Bay Entry]]<</if>>
+<<else>>
+    [[Return to the Archive bay.|Archive Bay Return]]
+<</if>>
+<<if not $specimenDone>>[[Head to the Specimen bay.|Specimen Bay Entry]]<</if>>
+<<if not $engineeringDone>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
+<<if $baysVisited eq 0>>[["Hold up. Who or what even are you?"|Narrator Identity]]<</if>>
 <div class="textbox">
     <<ctp "preControlRoom">>
         You enter a wide central chamber.
@@ -6102,10 +6125,11 @@ END OF CURRENT DRAFT
 
 
 :: Specimen Bay Entry [nobr missing-features specimen entrance agent] {"position":"2200,2525","size":"100,200"}
+<<if $analystSignal>><<set $specimenDone to true>><</if>>
 <<audio ":all" stop>>
 <<audio "specimen" loop play>>
 <<showAgent "analyst">>
-
+<<set $baysVisited += 1>>
 <div class="textbox">
     <<ctp "specimenBayEntry">>
         <<speaker "Narrator">>
@@ -6134,7 +6158,7 @@ END OF CURRENT DRAFT
         New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
     <<ctpNext clear>>
         <div class="choice">
-            [[Are you the colleague who messed with my brain?|Analyst Brain]]
+            <<if $brainManipAware>>[[Are you the colleague who messed with my brain?|Analyst Brain]]<</if>>
 			[[What exactly is this place?|Analyst What Place]]
 			[[Are those things alive?|Analyst Alive]]
 			[[You're studying me, aren't you?|Analyst Studying]]
@@ -6218,6 +6242,18 @@ END OF CURRENT DRAFT
 <<set $skepticism = 0>>
 <<set $compliance = 0>>
 <<set $aggression = 0>>
+<<set $baysVisited        to 0>>
+<<set $archiveDone        to false>>
+<<set $specimenDone       to false>>
+<<set $engineeringDone    to false>>
+<<set $cartPuzzleDone     to false>>
+<<set $exceptArchiveMet   to false>>
+<<set $discardedVisits    to 0>>
+<<set $asked32            to 0>>
+<<set $asked32WhatAreYou  to false>>
+<<set $asked32WhatWant    to false>>
+<<set $asked32WhyReleased to false>>
+<<set $asked32WrongButton to false>>
 
 <<cacheaudio "title" "media/glazba/title_screen.mp3">>
 <<cacheaudio "awakening" "media/glazba/awakening.mp3">>
