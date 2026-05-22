@@ -1711,7 +1711,7 @@ The Last Command
 
 
 :: Analyst Restrain Answer [nobr specimen analyst restrain] {"position":"3100,3725","size":"100,100"}
- <<set $aggression += 1>>
+<<set $aggression += 1>>
  <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystRestrainAnswer">>
@@ -1750,7 +1750,7 @@ The Last Command
 
 
 :: Analyst Restrain Sorry [nobr specimen analyst restrain] {"position":"3100,3625","size":"100,100"}
- <<set $compliance += 1>>
+<<set $compliance += 1>>
  <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystRestrainSorry">>
@@ -3405,7 +3405,6 @@ The Last Command
 
 
 :: Cart Threatening [nobr agent cartographer] {"position":"2600,675","size":"100,100"}
-
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
@@ -6187,7 +6186,9 @@ END OF CURRENT DRAFT
 
 :: Specimen Bay Exit [nobr missing-features specimen exception] {"position":"3600,2275","size":"100,100"}
 <<hideAgent>>
+
 <<if $analystSignal>><<set $specimenDone to true>><</if>>
+
 <div class="textbox">
     <<ctp "specimenBayExit">>
         <<speaker "Narrator">>
@@ -6304,46 +6305,56 @@ END OF CURRENT DRAFT
         return video;
     }
 
-    window.setBackgroundVideo = function (videoFile) {
-    	// Don't let the passage tag system overwrite the video
-    	// while the agent is actively controlling playback.
-    	if (window.agentVideoActive) return;
+    window.setBackgroundVideo = function (videoFile, agentControlled) {
+      if (window.agentVideoActive) return;
 
-        const video = createBackgroundVideo();
+      const video = createBackgroundVideo();
 
-        if (!videoFile) {
-            video.pause();
-            video.removeAttribute("src");
-            video.style.display = "none";
-            video.load();
-            return;
-        }
+      if (!videoFile) {
+          video.pause();
+          video.removeAttribute("src");
+          video.style.display = "none";
+          video.load();
+          return;
+      }
 
-        const newSrc = "/media/live/" + videoFile;
+      const newSrc = "/media/live/" + videoFile;
+      const srcChanged = video.getAttribute("src") !== newSrc;
 
-        if (video.getAttribute("src") !== newSrc) {
-            video.onerror = function () {
-                console.log("Video nije pronađen:", newSrc);
-                video.pause();
-                video.removeAttribute("src");
-                video.style.display = "none";
-                video.load();
-            };
+      if (srcChanged) {
+          video.onerror = function () {
+              console.log("Video nije pronađen:", newSrc);
+              video.pause();
+              video.removeAttribute("src");
+              video.style.display = "none";
+              video.load();
+          };
+          video.setAttribute("src", newSrc);
+      }
+      video.style.display = "block";
+      video.style.opacity = "1";
 
-            video.setAttribute("src", newSrc);
-            video.style.display = "block";
-            video.style.opacity = "1";
-            video.load();
-
-            video.play().catch(function (error) {
-                console.log("Video autoplay problem:", error);
-            });
-        }
-    };
+      if (agentControlled) {
+        video.loop=false;
+        video.autoplay=false; 
+        video.removeAttribute("loop");
+        video.removeAttribute("autoplay");  
+        if (srcChanged) video.load();
+    } else {
+        video.loop=true;
+        video.autoplay=true;    
+        if (srcChanged) video.load();
+        video.play().catch(function (error) {
+            console.log("Video autoplay problem:", error);
+        });
+    }
+};
 
     window.updateBackgroundVideoByTags = function () {
         const tagString = document.body.getAttribute("data-tags") || "";
         const tags = tagString.split(" ").filter(Boolean);
+
+        const isAgentPassage = tags.includes("agent");
 
         let video = null;
 
@@ -6575,7 +6586,7 @@ END OF CURRENT DRAFT
             video = "Ending.mp4";
         }
 
-        window.setBackgroundVideo(video);
+        window.setBackgroundVideo(video, isAgentPassage);
     };
 
     $(document).on(":passagedisplay", function () {
@@ -7002,37 +7013,70 @@ END OF CURRENT DRAFT
 	});
 })();
 
-/*Click za next dialog*/
-$("#story").on("click", function (event) {
-	if (event.originalEvent !== undefined) {
-		var ignore = ["<a ", "<button ", "<input "], i, n = 0;
-		for (i = 0; i < ignore.length; i++) {
-			if (event.target && event.target.outerHTML && event.target.outerHTML.indexOf(ignore[i]) === 0) {
-				n++
-			}
-		}
-		if (n === 0) {
-            var ctpAdvanced = false;
-            
-            var $ctpElement = $("[data-macro-ctp-id]").first();
-            if ($ctpElement.length) {
-                var id = $ctpElement.attr("data-macro-ctp-id");
-                
-                if (window.CTP) {
-                    var ctpInstance = window.CTP.getCTP(id);
-                    
-                    if (ctpInstance && ctpInstance.log.index < ctpInstance.stack.length - 1) {
-                        ctpInstance.advance();
-                        ctpAdvanced = true;
-                    }
-                }
+/*Click za next dialog i skip*/
+function advanceText() {
+    var ctpAdvanced = false;
+    var $ctpElement = $("[data-macro-ctp-id]").first();
+    
+    if ($ctpElement.length) {
+        var id = $ctpElement.attr("data-macro-ctp-id");
+        if (window.CTP) {
+            var ctpInstance = window.CTP.getCTP(id);
+            if (ctpInstance && ctpInstance.log.index < ctpInstance.stack.length - 1) {
+                ctpInstance.advance();
+                ctpAdvanced = true;
             }
-            // Progress further if only one choice
-			if (!ctpAdvanced && $("#passages a").length === 1) {
-				$("#passages a").click();
-			}
-		}
-	}
+        }
+    }
+
+    if (!ctpAdvanced) {
+        var $visibleLinks = $("#passages a").filter(":visible");
+
+        if ($visibleLinks.length === 1) {
+            $visibleLinks.first().trigger('click');
+        } else if ($visibleLinks.length > 1) {
+            stopSkipping();
+        } else {
+            stopSkipping();
+        }
+    }
+}
+
+let skipInterval = null;
+
+function stopSkipping() {
+    if (skipInterval !== null) {
+        clearInterval(skipInterval);
+        skipInterval = null;
+    }
+}
+
+$(document).on('keydown', function(e) {
+    if (e.key === "Control" && !skipInterval) {
+        skipInterval = setInterval(function() {
+            advanceText();
+        }, 75); 
+    }
+});
+
+$(document).on('keyup', function(e) {
+    if (e.key === "Control") {
+        stopSkipping();
+    }
+});
+
+$("#story").on("click", function (event) {
+    if (event.originalEvent !== undefined) {
+        var ignore = ["<a ", "<button ", "<input "], i, n = 0;
+        for (i = 0; i < ignore.length; i++) {
+            if (event.target && event.target.outerHTML && event.target.outerHTML.indexOf(ignore[i]) === 0) {
+                n++;
+            }
+        }
+        if (n === 0) {
+            advanceText(); 
+        }
+    }
 });
 
 

@@ -1614,37 +1614,70 @@ body {
 	});
 })();
 
-/*Click za next dialog*/
-$("#story").on("click", function (event) {
-	if (event.originalEvent !== undefined) {
-		var ignore = ["<a ", "<button ", "<input "], i, n = 0;
-		for (i = 0; i < ignore.length; i++) {
-			if (event.target && event.target.outerHTML && event.target.outerHTML.indexOf(ignore[i]) === 0) {
-				n++
-			}
-		}
-		if (n === 0) {
-            var ctpAdvanced = false;
-            
-            var $ctpElement = $("[data-macro-ctp-id]").first();
-            if ($ctpElement.length) {
-                var id = $ctpElement.attr("data-macro-ctp-id");
-                
-                if (window.CTP) {
-                    var ctpInstance = window.CTP.getCTP(id);
-                    
-                    if (ctpInstance && ctpInstance.log.index < ctpInstance.stack.length - 1) {
-                        ctpInstance.advance();
-                        ctpAdvanced = true;
-                    }
-                }
+/*Click za next dialog i skip*/
+function advanceText() {
+    var ctpAdvanced = false;
+    var $ctpElement = $("[data-macro-ctp-id]").first();
+    
+    if ($ctpElement.length) {
+        var id = $ctpElement.attr("data-macro-ctp-id");
+        if (window.CTP) {
+            var ctpInstance = window.CTP.getCTP(id);
+            if (ctpInstance && ctpInstance.log.index < ctpInstance.stack.length - 1) {
+                ctpInstance.advance();
+                ctpAdvanced = true;
             }
-            // Progress further if only one choice
-			if (!ctpAdvanced && $("#passages a").length === 1) {
-				$("#passages a").click();
-			}
-		}
-	}
+        }
+    }
+
+    if (!ctpAdvanced) {
+        var $visibleLinks = $("#passages a").filter(":visible");
+
+        if ($visibleLinks.length === 1) {
+            $visibleLinks.first().trigger('click');
+        } else if ($visibleLinks.length > 1) {
+            stopSkipping();
+        } else {
+            stopSkipping();
+        }
+    }
+}
+
+let skipInterval = null;
+
+function stopSkipping() {
+    if (skipInterval !== null) {
+        clearInterval(skipInterval);
+        skipInterval = null;
+    }
+}
+
+$(document).on('keydown', function(e) {
+    if (e.key === "Control" && !skipInterval) {
+        skipInterval = setInterval(function() {
+            advanceText();
+        }, 75); 
+    }
+});
+
+$(document).on('keyup', function(e) {
+    if (e.key === "Control") {
+        stopSkipping();
+    }
+});
+
+$("#story").on("click", function (event) {
+    if (event.originalEvent !== undefined) {
+        var ignore = ["<a ", "<button ", "<input "], i, n = 0;
+        for (i = 0; i < ignore.length; i++) {
+            if (event.target && event.target.outerHTML && event.target.outerHTML.indexOf(ignore[i]) === 0) {
+                n++;
+            }
+        }
+        if (n === 0) {
+            advanceText(); 
+        }
+    }
 });
 
 
@@ -1777,7 +1810,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         bgVideo.play();
     }
 };</script><tw-tag name="forest" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="bedroom" color="orange"></tw-tag><tw-tag name="intro" color="blue"></tw-tag><tw-tag name="waking" color="purple"></tw-tag><tw-tag name="contact" color="orange"></tw-tag><tw-tag name="room1" color="green"></tw-tag><tw-tag name="agent" color="green"></tw-tag><tw-tag name="missing-dialog" color="red"></tw-tag><tw-tag name="missing-features" color="blue"></tw-tag><tw-tag name="agenmt" color="purple"></tw-tag><tw-tag name="nobre" color="green"></tw-tag><tw-tag name="non" color="red"></tw-tag><tw-tag name="hallway" color="orange"></tw-tag><tw-tag name="watcher" color="orange"></tw-tag><tw-tag name="exception" color="blue"></tw-tag><tw-tag name="control-door" color="green"></tw-tag><tw-tag name="archive" color="red"></tw-tag><tw-tag name="cartographer" color="blue"></tw-tag><tw-tag name="terminal" color="green"></tw-tag><tw-tag name="earth" color="green"></tw-tag><tw-tag name="engineering" color="green"></tw-tag><tw-tag name="engineer" color="green"></tw-tag><tw-tag name="container" color="blue"></tw-tag><tw-tag name="artifact" color="green"></tw-tag><tw-tag name="closing" color="orange"></tw-tag><tw-tag name="specimen" color="green"></tw-tag><tw-tag name="analyst" color="orange"></tw-tag><tw-tag name="restrain" color="green"></tw-tag><tw-tag name="strike" color="purple"></tw-tag><tw-tag name="discarded" color="blue"></tw-tag><tw-tag name="body" color="yellow"></tw-tag><tw-tag name="control" color="orange"></tw-tag><tw-tag name="code" color="yellow"></tw-tag><tw-tag name="narrator" color="green"></tw-tag><tw-tag name="questions" color="purple"></tw-tag><tw-tag name="ending" color="blue"></tw-tag><tw-tag name="artifact-failed" color="yellow"></tw-tag><tw-tag name="artifact-success" color="blue"></tw-tag><tw-tag name="core" color="yellow"></tw-tag><tw-tag name="warning" color="orange"></tw-tag><tw-tag name="burn" color="green"></tw-tag><tw-tag name="game-over" color="green"></tw-tag><tw-tag name="aggression" color="red"></tw-tag><tw-tag name="compliance" color="red"></tw-tag><tw-tag name="curiosity" color="purple"></tw-tag><tw-tag name="skepticism" color="red"></tw-tag><tw-tag name="entrance" color="green"></tw-tag><tw-tag name="sample" color="purple"></tw-tag><tw-tag name="backstory" color="blue"></tw-tag><tw-tag name="arrival" color="orange"></tw-tag><tw-tag name="exchange" color="green"></tw-tag><tw-tag name="riots" color="blue"></tw-tag><tw-tag name="kidnapping" color="red"></tw-tag><tw-tag name="artifactsuccess" color="green"></tw-tag><tw-tag name="artifactfailed" color="red"></tw-tag><tw-tag name="gameover" color="green"></tw-tag><tw-tag name="control-" color="green"></tw-tag><tw-tag name="title" color="blue"></tw-tag><tw-tag name="exit" color="green"></tw-tag><tw-tag name="wait" color="green"></tw-tag><tw-tag name="nopbr" color="blue"></tw-tag><tw-tag name="carft" color="green"></tw-tag><tw-tag name="agwe" color="yellow"></tw-tag><tw-tag name="ag" color="blue"></tw-tag><tw-tag name="nmiss" color="blue"></tw-tag><tw-tag name="nobt" color="green"></tw-tag><tw-tag name="aG" color="green"></tw-tag><tw-tag name="wexc" color="green"></tw-tag><tw-tag name="arhive" color="purple"></tw-tag><tw-tag name="arh" color="purple"></tw-tag><tw-passagedata pid="1" name="3.1. A Environment" tags="nobr agent hallway exception" position="1000,1950" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;A-Enviroment&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.AEnvironment&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
@@ -1819,11 +1853,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         You call that instinct. We call it sequence.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Are all aliens this philosophical?|3.1. A Philosophical]]
-             &lt;&lt;link &quot;What kind of world do you come from, to think so differently from anything on Earth?&quot; &quot;3.1. A Environment&quot;&gt;&gt;
-        &lt;&lt;set $curiosity += 1&gt;&gt;
-        &lt;&lt;set $skepticism += 1&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
+ [[Are all aliens this philosophical?|3.1. A Philosophical]]
+[[What kind of world do you come from, to think so differently from anything on Earth?|3.1. A Environment]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="3.1. A Philosophical" tags="nobr agent hallway exception" position="1000,1850" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;A-Philosophical&quot;, 0, 6)&gt;&gt;
@@ -1852,7 +1883,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="3.1. Actually Human" tags="nobr agent hallway exception" position="1100,1550" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Voice-Actually-Human&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.ActuallyHuman&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -1886,7 +1917,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="3.1. Also Hear" tags="nobr agent hallway exception" position="900,1500" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Voice-Also-Hear&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.AlsoHear&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
@@ -1909,11 +1940,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         That is why it is dangerous to assume it is speaking only to you.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[What has the voice been saying?|3.1. Voice Saying]]
-             &lt;&lt;link &quot;Do you mean it just sounds human or is it an actual human saying it?&quot; &quot;3.1. Actually Human&quot;&gt;&gt;
-        &lt;&lt;set $curiosity += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-            [[Where do I go from here?|3.1. Where Go]]
+[[What has the voice been saying?|3.1. Voice Saying]]
+[[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+[[Where do I go from here?|3.1. Where Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="3.1. B Who Brought" tags="nobr agent hallway exception" position="900,2150" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;B-Who-Brought&quot;, 0, 6)&gt;&gt;
@@ -1939,14 +1968,12 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         You attach will to the transfer. That changes its meaning for you. It did not change the exchange for those who completed it.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Didn&#39;t you just say I was sold here against my will?|3.1. Sold Against Will]]
-           &lt;&lt;link &quot;I want you to bring me back to Earth.&quot; &quot;3.1. Back to Earth&quot;&gt;&gt;
-        &lt;&lt;set $aggression += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
+ [[Didn&#39;t you just say I was sold here against my will?|3.1. Sold Against Will]]
+[[I want you to bring me back to Earth.|3.1. Back to Earth]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="3.1. Back to Earth" tags="nobr agent hallway exception" position="1100,2200" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;B-Earth&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.BackToEarth&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -1976,14 +2003,12 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         Why is return your first definition of safety?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Then what do you actually want from me? You still haven&#39;t said.|3.1. What Do You Want]]
-            &lt;&lt;link &quot;You think I am not willing to fight back?&quot; &quot;3.1. Fight Back&quot;&gt;&gt;
-        &lt;&lt;set $aggression += 1&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
+ [[Then what do you actually want from me? You still haven&#39;t said.|3.1. What Do You Want]]
+[[You think I am not willing to fight back?|3.1. Fight Back]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="3.1. C Trade" tags="nobr agent hallway exception" position="900,2400" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;C-Trade&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.CTrade&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
@@ -2017,7 +2042,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="3.1. Choice A" tags="agent nobr hallway exception" position="700,1900" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.choiceA&quot;&gt;&gt;
         The alien remains still. For a second, nothing answers you except the low pulse of the corridor.
@@ -2037,7 +2062,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="3.1. Choice B" tags="nobr agent hallway exception" position="700,2150" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;B&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.B&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -2067,7 +2092,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="3.1. Choice C" tags="nobr agent hallway exception" position="700,2400" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;C&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.ChoiceC&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -2091,14 +2116,12 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         Comfort is not required for accuracy.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Who brought me here? Whatever my past was, it didn&#39;t include this.|3.1. B Who Brought]]
-&lt;&lt;link &quot;You trade me like cargo and then just… don&#39;t question how I got out?&quot; &quot;3.1. C Trade&quot;&gt;&gt;
-    &lt;&lt;set $skepticism += 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+ [[Who brought me here? Whatever my past was, it didn&#39;t include this.|3.1. B Who Brought]]
+[[You trade me like cargo and then just… don&#39;t question how I got out?|3.1. C Trade]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="3.1. Choice Voice" tags="nobr agent hallway exception" position="700,1500" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Voice&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.ChoiceVoice&quot;&gt;&gt;
         The alien does not answer immediately.
@@ -2123,17 +2146,13 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         I can sense the disturbance it leaves behind.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-               &lt;&lt;link &quot;How do you know it&#39;s a human voice?&quot; &quot;3.1. Human Voice&quot;&gt;&gt;
-        &lt;&lt;set $curiosity += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
- &lt;&lt;link &quot;You can also hear it?&quot; &quot;3.1. Also Hear&quot;&gt;&gt;
-        &lt;&lt;set $curiosity += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-            [[Where do I go from here?|3.1. Where Go]]
+ [[How do you know it&#39;s a human voice?|3.1. Human Voice]]
+[[You can also hear it?|3.1. Also Hear]]
+[[Where do I go from here?|3.1. Where Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="3.1. Fight Back" tags="nobr hallway exception" position="1300,2200" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Fight-Back&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.FightBack&quot;&gt;&gt;
         The alien does not step away.
@@ -2158,10 +2177,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         You are unusual for pausing long enough to ask first.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Walk away.|3.1. Walk Away]]
-             &lt;&lt;link &quot;Try to punch the alien.&quot; &quot;3.1. Punch&quot;&gt;&gt;
-        &lt;&lt;set $aggression += 1&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
+[[Walk away.|3.1. Walk Away]]
+[[Try to punch the alien.|3.1. Punch]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="3.1. Hallway" tags="nobr hallway exception agent" position="500,2150" size="100,100">&lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
@@ -2184,29 +2201,15 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         What is the true intent behind it? You are trying to be understood. Is that what you call intent, or does our definition differ?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            &lt;&lt;link &#39;&quot;Hey, can you understand what I am saying?&quot;&#39; &quot;3.1. Choice A&quot;&gt;&gt;
-                &lt;&lt;set $curiosity += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
-
-            &lt;&lt;link &#39;&quot;I guess you can understand me...? What am I even doing here?&quot;&#39; &quot;3.1. Choice B&quot;&gt;&gt;
-                &lt;&lt;set $curiosity += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
-
-            &lt;&lt;link &#39;&quot;How is it that I escaped so easily?&quot;&#39; &quot;3.1. Choice C&quot;&gt;&gt;
-                &lt;&lt;set $skepticism += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
-
-            &lt;&lt;link &#39;&quot;A voice told me I was sold here by my own kind. So what\&#39;s the actual end goal?&quot;&#39; &quot;3.1. Choice Voice&quot;&gt;&gt;
-                &lt;&lt;set $skepticism += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
-            
-            &lt;&lt;link &quot;Don&#39;t mind me, just passing through.&quot; &quot;3.1. Passing Through&quot;&gt;&gt;
-                &lt;&lt;set $compliance += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
+ [[&quot;Hey, can you understand what I am saying?&quot;|3.1. Choice A]]
+[[&quot;I guess you can understand me...? What am I even doing here?&quot;|3.1. Choice B]]
+[[&quot;How is it that I escaped so easily?&quot;|3.1. Choice C]]
+[[&quot;A voice told me I was sold here by my own kind. So what&#39;s the actual end goal?&quot;|3.1. Choice Voice]]
+[[Don&#39;t mind me, just passing through.|3.1. Passing Through]]
         &lt;/div&gt;
     &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="3.1. Human Voice" tags="nobr agent hallway exception" position="900,1400" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Voice-Human&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.HumanVoice&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
@@ -2229,11 +2232,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         Otherwise, there is no reason for a signal aboard this vessel to disguise its shape.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[What has the voice been saying?|3.1. Voice Saying]]
-          &lt;&lt;link &quot;Do you mean it just sounds human or is it an actual human saying it?&quot; &quot;3.1. Actually Human&quot;&gt;&gt;
-        &lt;&lt;set $curiosity += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-            [[Where do I go from here?|3.1. Where Go]]
+[[What has the voice been saying?|3.1. Voice Saying]]
+[[Do you mean it just sounds human or is it an actual human saying it?|3.1. Actually Human]]
+[[Where do I go from here?|3.1. Where Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="3.1. No Consent" tags="nobr agent hallway exception" position="1300,2300" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;No-Consent&quot;, 0, 6)&gt;&gt;
@@ -2274,7 +2275,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="3.1. Passing Through" tags="nobr hallway exception" position="700,2600" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;passingThrough&quot;&gt;&gt;
         You move past slowly.
@@ -2295,7 +2296,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
     &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="3.1. Punch" tags="nobr hallway exception" position="1400,2100" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.Punch&quot;&gt;&gt;
         You swing before you can convince yourself not to.
@@ -2346,14 +2347,12 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         It did not contain permission.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[You could have just said you don&#39;t care about consent.|3.1. No Consent]]
-         &lt;&lt;link &quot;So you never considered I might not cooperate?&quot; &quot;3.1. Uncompliant&quot;&gt;&gt;
-    &lt;&lt;set $curiosity += 1&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+ [[You could have just said you don&#39;t care about consent.|3.1. No Consent]]
+[[So you never considered I might not cooperate?|3.1. Uncompliant]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="3.1. Uncompliant" tags="agent nobr hallway exception" position="1300,2400" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Uncompliant&quot;, 0, 6)&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.Uncompliant&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
@@ -2463,10 +2462,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         You are the event that changed it.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Walk away.|3.1. Walk Away]]
-             &lt;&lt;link &quot;Try to punch the alien.&quot; &quot;3.1. Punch&quot;&gt;&gt;
-        &lt;&lt;set $aggression += 1&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
+ [[Walk away.|3.1. Walk Away]]
+[[Try to punch the alien.|3.1. Punch]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="3.1. Where Go" tags="nobr agent exception hallway" position="900,1600" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Where-Go&quot;, 0, 6)&gt;&gt;
@@ -2520,11 +2517,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         Careful research remains necessary.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            &lt;&lt;link &quot;How is Earth dangerous to you?&quot; &quot;3.2. Earth Dangerous&quot;&gt;&gt;
-        &lt;&lt;set $curiosity += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-            [[I think I understand, somehow.|3.2. What Now]]
-        &lt;/div&gt;
+ [[How is Earth dangerous to you?|3.2. Earth Dangerous]]
+[[I think I understand, somehow.|3.2. What Now]]
+&lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="3.2. Alien Arrival" tags="nobr contact" position="500,2950" size="100,100">&lt;&lt;hideAgent&gt;&gt;
 
@@ -2549,15 +2544,15 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         The three researchers observe you, waiting for a response.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[What is going on here? What are you?|3.2. What Are You]]
-            [[What do you want from me?|3.2. What Want]]
-            [[Why did you release me?|3.2. Why Released]]
-            [[Yeah, I could understand it. I was just wondering what would happen if I pressed the wrong button.|3.2. Wrong Button]]
-            [[So, am I free to go now?|3.2. Free To Go]]
+            &lt;&lt;if not $asked32WhatAreYou&gt;&gt;[[What is going on here? What are you?|3.2. What Are You]]&lt;&lt;/if&gt;&gt;
+			&lt;&lt;if not $asked32WhatWant&gt;&gt;[[What do you want from me?|3.2. What Want]]&lt;&lt;/if&gt;&gt;
+			&lt;&lt;if not $asked32WhyReleased&gt;&gt;[[Why did you release me?|3.2. Why Released]]&lt;&lt;/if&gt;&gt;
+			&lt;&lt;if not $asked32WrongButton&gt;&gt;[[I understood it. I just wondered what the other button did.|3.2. Wrong Button]]&lt;&lt;/if&gt;&gt;
+			[[So, am I free to go now?|3.2. Free To Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="3.2. Earth Dangerous" tags="nobr contact" position="900,3050" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;earthDangerous&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
@@ -2631,10 +2626,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         Additional behaviour tracking is justified.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            &lt;&lt;link &quot;If your kind can detect this intent... let&#39;s just say you may not be that far off.&quot; &quot;3.2. Not Far Off&quot;&gt;&gt;
-        &lt;&lt;set $aggression += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-            [[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
+  [[If your kind can detect this intent... let&#39;s just say you may not be that far off.|3.2. Not Far Off]]
+[[Can never have too many warnings when dealing with humans.|3.2. Narrator Goodbye]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="3.2. Narrator Goodbye" tags="nobr hallway" position="1200,2900" size="100,200">&lt;&lt;hideAgent&gt;&gt;
@@ -2671,7 +2664,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="3.2. Not Far Off" tags="nobr missing-dialog contact" position="1000,3050" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;notFarOff&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -2701,7 +2694,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="3.2. Risk Lives" tags="nobr contact" position="1000,2850" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;riskLives&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -2728,7 +2721,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="3.2. What Are You" tags="nobr contact" position="700,2800" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $asked32WhatAreYou to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whatAreYou&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
@@ -2776,14 +2769,12 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         Observed is more accurate.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            &lt;&lt;link &quot;You&#39;re all part of the experiment? You&#39;d risk your lives just to observe me?&quot; &quot;3.2. Risk Lives&quot;&gt;&gt;
-        &lt;&lt;set $skepticism += 1&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-            [[Let me explore this ship then.|3.2. Narrator Goodbye]]
+ [[You&#39;re all part of the experiment? You&#39;d risk your lives just to observe me?|3.2. Risk Lives]]
+[[Let me explore this ship then.|3.2. Narrator Goodbye]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="3.2. What Want" tags="nobr contact" position="700,2900" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $asked32WhatWant to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whatWant&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -2812,7 +2803,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="3.2. Why Released" tags="nobr contact" position="700,3000" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $asked32WhyReleased to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;whyReleased&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -2844,7 +2835,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="3.2. Wrong Button" tags="nobr contact" position="700,3100" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $asked32WrongButton to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;wrongButton&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -2905,7 +2896,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Why even build something like this in my brain?|Analyst Why Build]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="Analyst Carry Know" tags="nobr agent analyst" position="3400,2425" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="Analyst Carry Know" tags="nobr agent analyst" position="3400,2425" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryKnow&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Knowing without carrying. Awareness without weight. That is either a very advanced state or a very early one. We have not determined which end of that spectrum your kind occupies. Possibly neither. Possibly both depending on the individual. That variability is what makes classification difficult.
@@ -2916,7 +2908,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Analyst Carry No" tags="nobr agent analyst" position="3400,2325" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Analyst Carry No" tags="nobr agent analyst" position="3400,2325" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryKnow&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         That answer and the previous one are not the same, though your species often uses them interchangeably. Not thinking about something is not the same as having resolved it. It is also not the same as having abandoned it. I will leave that where it lands.
@@ -2927,7 +2921,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Analyst Carry Used To" tags="nobr agent analyst" position="3400,2225" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Analyst Carry Used To" tags="nobr agent analyst" position="3400,2225" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryUsedTo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Used to. A temporal boundary on something your species typically treats as permanent. Something caused you to set it down. You didn&#39;t say what. I notice you didn&#39;t say what. The biochip noted it regardless.
@@ -2938,7 +2933,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Analyst Carry Yes" tags="nobr agent analyst" position="3400,2125" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Analyst Carry Yes" tags="nobr agent analyst" position="3400,2125" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryYes&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Everyone. A universal claim made with certainty about a species that has demonstrated consistent internal disagreement. And yet I believe you. Not because the data confirms it. Because of how quickly you said it. Carrying something unresolved without it stopping you. That may be the closest thing to a defining characteristic we have found. It is not comfortable to catalogue.
@@ -2974,7 +2970,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Leave it and continue to engineering.|Engineering Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Analyst Dont Understand" tags="nobr agent analyst missing-dialog" position="2500,3025" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Analyst Dont Understand" tags="nobr agent analyst missing-dialog" position="2500,3025" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystDontUnderstand&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Empty
@@ -2992,7 +2989,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Analyst Greater Design" tags="nobr agent analyst" position="3200,2275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Analyst Greater Design" tags="nobr agent analyst" position="3200,2275" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystGreaterDesign&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Theories. Plural. Unresolved. Your species detected a pattern and produced multiple explanations. Each internally consistent. Each incompatible. Unresolved fundamentals should produce stillness. Yours don&#39;t. You build on them anyway. I am not certain whether that is an error or the most efficient behaviour we&#39;ve observed.
@@ -3019,7 +3017,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Head to the long hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Analyst Learned" tags="nobr agent analyst missing-dialog" position="2500,3375" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Analyst Learned" tags="nobr agent analyst missing-dialog" position="2500,3375" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystLearned&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Empty
@@ -3100,7 +3099,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[What do I do now?|Analyst What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="Analyst Not Blurry" tags="nobr agent analyst missing-dialog" position="2500,2675" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="Analyst Not Blurry" tags="nobr agent analyst missing-dialog" position="2500,2675" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystNotBlurry&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Empty
@@ -3109,7 +3109,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Analyst Objects" tags="nobr missing-dialog analyst agent" position="2500,2925" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Analyst Objects" tags="nobr missing-dialog analyst agent" position="2500,2925" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystObjects&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Empty
@@ -3118,7 +3119,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Analyst Of Course" tags="nobr agent missing-dialog analyst" position="2500,3175" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Analyst Of Course" tags="nobr agent missing-dialog analyst" position="2500,3175" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystOfCourse&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Empty
@@ -3127,7 +3129,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Analyst Probability" tags="nobr analyst" position="3000,2825" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Analyst Probability" tags="nobr analyst" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryUsedTo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         You&#39;re using probability as a placeholder for certainty you don&#39;t have access to yet. That is either adaptive or telling. On your planet, it appears to function as both simultaneously. Passive research is in accordance instead, to understand this uncertainty.
@@ -3144,7 +3147,10 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[What do I do now?|Analyst What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Analyst Puzzle Intro" tags="nobr agent specimen analyst sample" position="2800,2575" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Analyst Puzzle Intro" tags="nobr agent specimen analyst sample" position="2800,2575" size="100,100">&lt;&lt;if $fromAnalysWhyBuildtRoute is true&gt;&gt;
+    &lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystPuzzle&quot;&gt;&gt;
         Two containers activate.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3157,7 +3163,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
 			[[One of these is probably wrong.|Analyst Probability]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Analyst Recording" tags="agent nobr analyst" position="2600,2025" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Analyst Recording" tags="agent nobr analyst" position="2600,2025" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRecording&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         A recording is passive. You are not passive. You have already altered the conditions of this observation four times since entering this room.
@@ -3179,7 +3186,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Stop categorising me and answer.|Analyst Restrain Answer]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Analyst Restrain Answer" tags="nobr specimen analyst restrain" position="3100,3725" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Analyst Restrain Answer" tags="nobr specimen analyst restrain" position="3100,3725" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+ &lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrainAnswer&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         I am always categorising. The two are not separable. But the signal — yes. You could have asked again. The interaction on our end was concluded but not permanently closed. I would have responded to a renewed approach.
@@ -3193,7 +3202,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="Analyst Restrain Need" tags="nobr specimen analyst restrain" position="3100,3525" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="Analyst Restrain Need" tags="nobr specimen analyst restrain" position="3100,3525" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrainNeed&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         The signal was not provided because the interaction reached a conclusion on our end. You were not notified of the conclusion. I note this as a communication irregularity. The signal can be provided now. The physical intervention was not necessary but is not consequential.
@@ -3206,7 +3217,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Analyst Restrain Sorry" tags="nobr specimen analyst restrain" position="3100,3625" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Analyst Restrain Sorry" tags="nobr specimen analyst restrain" position="3100,3625" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+ &lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrainSorry&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Apology. An expression of regret for an action taken. The action was taken anyway. The apology does not reverse the action. I am noting that your species issues these expressions frequently in situations where the action was deliberate. The function of the expression is unclear.
@@ -3237,7 +3250,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[What do I do now?|Analyst What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="Analyst Sample" tags="nobr agent analyst" position="2500,2275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="Analyst Sample" tags="nobr agent analyst" position="2500,2275" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystSample&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Just&#39; suggests reduction. That&#39;s inaccurate. Static samples don&#39;t alter conditions. You&#39;ve done so seventeen times since entering this bay. You are a process, not an object. That distinction matters. Static samples do not resist classification. You do.
@@ -3249,7 +3263,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="Analyst Strike" tags="nobr specimen analyst strike" position="2900,3825" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="Analyst Strike" tags="nobr specimen analyst strike" position="2900,3825" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystStrike&quot;&gt;&gt;
         You strike the Analyst at the base of its cranial structure. The alien collapses with the stillness of a system shutting down. The yellow gas begins to leak from the fracture. You retreat.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3299,7 +3314,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Head to the long hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="Analyst What Place" tags="nobr agent analyst" position="2400,2225" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="Analyst What Place" tags="nobr agent analyst" position="2400,2225" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystWhatPlace&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         A controlled environment designed to isolate, observe, and compare biological structures under variable conditions. You are now part of this function.
@@ -3324,7 +3340,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="Analyst Why Build" tags="nobr agent analyst" position="2500,1975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="Analyst Why Build" tags="nobr agent analyst" position="2500,1975" size="100,100">&lt;&lt;set $fromAnalysWhyBuildRoute = true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystWhyBuild&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Extraction destroys the source. A static copy of your memories would tell us what happened to you. It would not tell us how you respond to what is happening. The biochip observes you in motion. Memories observed from outside produce incomplete data. You experiencing things produces complete data.
@@ -3344,7 +3361,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="Analyst Worse" tags="nobr agent analyst" position="2600,1925" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="Analyst Worse" tags="nobr agent analyst" position="2600,1925" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystWorse&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         The alternative was your death during transit. We chose continuity.
@@ -3353,7 +3371,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="Analyst Wrong" tags="nobr agent analyst" position="2400,2925" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="Analyst Wrong" tags="nobr agent analyst" position="2400,2925" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystWrong&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         Wrong&#39;. Moral classification. No universal reference point provided, no relative definition present either. Clarify.
@@ -3368,7 +3387,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="Archive Bay Entry" tags="nobr missing-features archive" position="2200,725" size="100,200">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $baysVisited += 1&gt;&gt;
+&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;archiveBayEntry&quot;&gt;&gt;
         The Archive Bay opens into a chamber of suspended light.
@@ -3473,7 +3493,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="Archive Exception" tags="nobr agent missing-features archive exception" position="2600,325" size="100,100">&lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
-
+&lt;&lt;set $exceptArchiveMet to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;archiveException&quot;&gt;&gt;
     	&lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -3578,7 +3598,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Leave him there. Walk out.|Artifact End Walk Out]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="Artifact End Should" tags="nobr ending artifactsuccess" position="5300,3400" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="Artifact End Should" tags="nobr ending artifactsuccess" position="5300,3400" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;artifactEndShould&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Yes. I should have. I catalogued everything on this ship and I looked at that particular alien and filed it as incidental. That&#39;s the kind of error you make when you&#39;re alone for too long and start to think you&#39;ve mapped everything.
@@ -3613,7 +3635,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[End.|Game Over]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="Artifact End Wanted" tags="nobr ending artifactsuccess" position="5300,3300" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="Artifact End Wanted" tags="nobr ending artifactsuccess" position="5300,3300" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;artifactEndWatch&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Did it? Did it want this or did it just provide information and let you decide? That distinction matters to it. It told you that, I imagine. Want implies an absence it&#39;s trying to fill. Maybe it did want it. Maybe that&#39;s what it looks like when it wants something.
@@ -3622,7 +3646,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|Artifact End Final]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="Artifact End Watch" tags="nobr ending artifactsuccess" position="5300,3200" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="Artifact End Watch" tags="nobr ending artifactsuccess" position="5300,3200" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;artifactEndWatch&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Yes. I see that now. Watching me watch you. Waiting for someone to come through this ship and be worth handing a blind spot to. That&#39;s actually extraordinary. I don&#39;t have another word for it.
@@ -3680,14 +3706,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         The left control reads: ENTER.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            &lt;&lt;link &quot;Press the right button — EXIT.&quot; &quot;Right Button&quot;&gt;&gt;
-                &lt;&lt;set $compliance += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
-
-            &lt;&lt;link &quot;Press the left button — ENTER.&quot; &quot;Left Button&quot;&gt;&gt;
-                &lt;&lt;set $skepticism += 1&gt;&gt;
-                &lt;&lt;set $curiosity += 1&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
+        [[Press the right button — EXIT.|Right Button]]
+        [[Press the left button — ENTER.|Left Button]]
         &lt;/div&gt;
     &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="Burn Activation" tags="nobr core burn" position="3200,5550" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
@@ -3720,7 +3740,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[No.|Burn Exception Panel]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="Burn Exception Led" tags="nobr core burn exception" position="3000,5100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="Burn Exception Led" tags="nobr core burn exception" position="3000,5100" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnExceptionLed&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
         You led me here on purpose.
@@ -3746,7 +3767,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Walk away.|Burn Exception Walk]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="Burn Exception Narrator" tags="nobr core burn exception" position="3000,5000" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="Burn Exception Narrator" tags="nobr core burn exception" position="3000,5000" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnExceptionNarrator&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
         In the control room. He cannot reach this part of the ship. The frequency he uses to keep the others out also keeps him in. I wondered how long it would take him to notice that. It has been longer than I expected.
@@ -3800,7 +3822,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Place hand on panel.|Ending A Curiosity]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="Burn Exception What" tags="nobr core burn exception" position="3000,5200" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="Burn Exception What" tags="nobr core burn exception" position="3000,5200" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnExceptionWhat&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
         I want nothing. Want implies an absence I&#39;m trying to fill. I told you that. But I will tell you what I observe. The voice in your head has been in that room for a long time. Long enough to stop being a person in some ways that matter. Long enough to stop being able to see the difference between using someone and helping them. The ship holds data that has taken decades to gather. The voice needs you to leave this room and walk to the control room and place your hand on a panel.
@@ -3866,7 +3889,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Walk away with me.|Burn Walk Away]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="Burn Narrator Knew" tags="nobr core burn narrator" position="3000,5400" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="Burn Narrator Knew" tags="nobr core burn narrator" position="3000,5400" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnNarratorKnew&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         I knew they died. I did not know the body was still there. I want that distinction to mean something and I understand if it doesn&#39;t.
@@ -3877,7 +3901,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Walk away with me.|Burn Walk Away]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="Burn Narrator Used" tags="nobr core burn narrator" position="3000,5600" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="Burn Narrator Used" tags="nobr core burn narrator" position="3000,5600" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnNarratorUsed&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Yes. I think so. I think I have been someone else&#39;s instrument for longer than I was my own plan. And I thought I was so careful. I thought I knew how people worked. It turns out knowing the shape of something and knowing what it will do are not the same. I should have known that. That&#39;s one of the things I used to say.
@@ -3887,7 +3912,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Walk away with me.|Burn Walk Away]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="Burn No" tags="nobr core burn" position="3400,5550" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="Burn No" tags="nobr core burn" position="3400,5550" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnNo&quot;&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Press the panel.|Burn Panel Narrator]]
@@ -3906,7 +3932,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|Burn Final]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="Burn Say It" tags="nobr core burn" position="3400,5450" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="Burn Say It" tags="nobr core burn" position="3400,5450" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;burnSayIt&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         I have spent a long time believing that humanity is worth something. Not in the abstract — I mean specifically worth it, worth the effort of everything I did to get here and everything it cost and everyone it cost. I believed that if I could just get out of this room and get this ship moving then something would change. For the argument. For the idea that we deserve to be part of whatever this is. And maybe I was wrong. Maybe the thing I was trying to prove is exactly what I disproved by trying to prove it.
@@ -4006,7 +4033,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="CR Grieve Not Answer" tags="nobr agent narrator missing-features" position="5500,2800" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="CR Grieve Not Answer" tags="nobr agent narrator missing-features" position="5500,2800" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRGrieveNotAnswer&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         No. It isn&#39;t. The answer is yes. I grieved them badly and privately and without any of the things that make grief bearable and I am still doing it. That&#39;s the answer.
@@ -4020,7 +4048,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="CR Grieve Think You Do" tags="nobr agent narrator missing-features" position="5500,2700" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="CR Grieve Think You Do" tags="nobr agent narrator missing-features" position="5500,2700" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRThinkYouDo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Thank you. I don&#39;t know what to do with that but thank you.
@@ -4034,7 +4063,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="CR Heard Everything" tags="nobr agent narrator missing-features" position="5500,2600" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="CR Heard Everything" tags="nobr agent narrator missing-features" position="5500,2600" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRIntervene&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn&#39;t.
@@ -4084,7 +4114,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="CR Organisation Now" tags="nobr agent narrator missing-features" position="5500,2300" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="CR Organisation Now" tags="nobr agent narrator missing-features" position="5500,2300" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CROrganizationNow&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Now I&#39;ve been in this room long enough to watch certainty curdle. I still believe in the goal. I&#39;m less certain I believe in the people — including myself — which is an uncomfortable thing to arrive at when you&#39;re the only human on an alien ship.
@@ -4132,7 +4163,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Attack the narrator.|Ending D]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="CR Tell Me" tags="nobr agent missing-features narrator" position="5500,2400" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="CR Tell Me" tags="nobr agent missing-features narrator" position="5500,2400" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRTellMe&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         If you hadn&#39;t asked, probably not. Not because I wanted to deceive you specifically. Because I&#39;ve been operating in a mode where information is a resource and I allocate it for effect. I&#39;ve been doing it so long I stopped noticing when I was doing it. You noticed. That&#39;s why you&#39;re asking.
@@ -4165,7 +4197,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Attack the narrator.|Ending D]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="CR Used Me" tags="nobr agent narrator missing-features" position="5300,2400" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="CR Used Me" tags="nobr agent narrator missing-features" position="5300,2400" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRUsedMe&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Yes. On both counts. I am not going to tell you the first one was a calculated sacrifice because it wasn&#39;t, it was a miscalculation, and those are different things. I am also not going to tell you that I haven&#39;t thought about it, because I have had quite a lot of time in this room and it keeps coming back in the way things do when you can&#39;t do anything about them yet. You can be angry. I would be. I am asking you to also be practical, because those two things are allowed to coexist in a human being and that is one of the things I actually respect about your species.
@@ -4181,7 +4215,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="CR What Need" tags="agent missing-features narrator nobr" position="5300,2300" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="CR What Need" tags="agent missing-features narrator nobr" position="5300,2300" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRWhatNeed&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         The biochip in your skull interfaces with every system on this ship. I cannot do that. I don&#39;t have one. I need you to place your hand on the panel to your left, and the ship will recognise you as an authorised presence rather than a research subject. Once that happens, I can fly this thing. That&#39;s all. That&#39;s the whole plan at this point. It has been streamlined somewhat by circumstance.
@@ -4212,7 +4247,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Attack the narrator.|Ending D]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="CR Who Are You" tags="agent nobr missing-features narrator" position="5300,2200" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="CR Who Are You" tags="agent nobr missing-features narrator" position="5300,2200" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRWhoAreYou&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         A member of an organisation you haven&#39;t heard of that answered to no government and made several arrangements with the visitors over the years, some of which involved people exactly like you and therefore somewhat unlike you. We had a plan. I was the part of the plan that got stuck. The others are still on Earth doing whatever it is people do when their plan has a part that got stuck. I don&#39;t know the current status. I have been in this room.
@@ -4287,7 +4323,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[So what is there to do? Can I join you in research?|Cart Join Research]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="Cart Deathworld" tags="nobr agent cartographer" position="2600,875" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="Cart Deathworld" tags="nobr agent cartographer" position="2600,875" size="100,100">&lt;&lt;set $brainManipAware to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;cartDeathWorld&quot;&gt;&gt;
     	&lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
         Upon observing how life defends itself on your world, my colleagues concluded that removing specimens from their habitat and suppressing stress responses reduces key variables in the ecosystem&#39;s unpredictability.
@@ -4501,7 +4538,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="Cart Signal Check" tags="nobr archive cartographer" position="4000,775" size="100,100">&lt;&lt;set $archiveSignal = true&gt;&gt;
-
+&lt;&lt;set $cartPuzzleDone to true&gt;&gt;
+&lt;&lt;set $archiveDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;cartSignalCheck&quot;&gt;&gt;
         The projection collapses into a thin line of light.
@@ -4749,7 +4787,10 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[End.|Game Over]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="Discarded Did You" tags="nobr discarded body" position="2600,1325" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="Discarded Did You" tags="nobr discarded body" position="2600,1325" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;set $aggression += 1&gt;&gt;
+
+&lt;&lt;hideAgent&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;discardedDidYou&quot;&gt;&gt;
@@ -4938,7 +4979,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[I will return to the archive.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="Discarded Leave" tags="nobr discarded" position="2600,1425" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="Discarded Leave" tags="nobr discarded" position="2600,1425" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+
+&lt;&lt;hideAgent&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;discardedLeave&quot;&gt;&gt;
@@ -4965,7 +5008,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Return to the archive.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="Discarded Lying" tags="nobr agent exception discarded" position="3200,1425" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="Discarded Lying" tags="nobr agent exception discarded" position="3200,1425" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;discardedLying&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
         So the narrator has been lying.
@@ -4997,7 +5041,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[I will return to the archive.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="Discarded Room First" tags="nobr discarded body" position="2400,1425" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="Discarded Room First" tags="nobr discarded body" position="2400,1425" size="100,100">&lt;&lt;set $discardedVisits += 1&gt;&gt;
+&lt;&lt;if $discardedVisits eq 1&gt;&gt;&lt;&lt;set $foundBody to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;hideAgent&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;discarded&quot; loop play&gt;&gt;
 
@@ -5058,7 +5104,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Return to the archive.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="Discarded What Suggest" tags="nobr agent exception discarded" position="3200,1325" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="Discarded What Suggest" tags="nobr agent exception discarded" position="3200,1325" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;discardedWhatSuggest&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
         What are you suggesting I do?
@@ -5094,7 +5142,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[I will return to the archive.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="Discarded Who" tags="nobr discarded body" position="2600,1525" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="Discarded Who" tags="nobr discarded body" position="2600,1525" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+
+&lt;&lt;hideAgent&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;discardedWho&quot;&gt;&gt;
@@ -5138,7 +5188,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Return to the archive.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="Discarded Why Telling" tags="nobr agent exception discarded" position="3200,1525" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="Discarded Why Telling" tags="nobr agent exception discarded" position="3200,1525" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;discardedWhyTelling&quot;&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
         Why are you telling me this?
@@ -5255,7 +5306,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Why should I believe you&#39;ll actually take me back?|Ending B Trust]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="Ending B Believe" tags="nobr ending skepticism" position="6800,2150" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="Ending B Believe" tags="nobr ending skepticism" position="6800,2150" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;endingBBelieve&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         I know. Somewhere along the way you decided I was worth that. I&#39;m not sure I deserved it but I find myself grateful for it regardless, which tells me something about the nature of gratitude that I hadn&#39;t quite figured out before. There is more humanity in that word — believe — than any of the aliens have managed to document in all their years of research. The act of choosing to believe someone without proof. It&#39;s profoundly strange. It&#39;s profoundly human.
@@ -5289,7 +5341,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Place hand on panel.|Ending B Believe]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="Ending B Skeptic" tags="nobr ending skepticism" position="6800,2450" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="Ending B Skeptic" tags="nobr ending skepticism" position="6800,2450" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;endingBSkeptic&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         Ha. Yes. Alright. That&#39;s the most honest thing anyone has said to me in quite some time. The aliens mean everything they say or they mean nothing. There&#39;s no room in between. You&#39;re doing the thing in between. Acting on something unresolved. I respect that more than I probably should, given the circumstances. Come on. Let&#39;s see if this works.
@@ -5492,7 +5545,15 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[No.|Eng A No]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="181" name="Eng Artifact Found" tags="nobr engineering artifact" position="2400,3825" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="181" name="Eng Artifact Found" tags="nobr engineering artifact" position="2400,3825" size="100,100">&lt;&lt;if $artifactChoice is &quot;curiosity&quot;&gt;&gt;
+    &lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $artifactChoice is &quot;skeptic&quot;&gt;&gt;
+    &lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
+
     &lt;&lt;ctp &quot;engArtifactFound&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The previous subject. The records indicate a biochip malfunction. The records do not indicate this device. It was not logged.
@@ -5503,12 +5564,25 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             This device interfaces with the ship&#39;s cautionary systems. It can reduce containment measures in specific sections. This is irregular. Why do you have it?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;The Analyst stopped responding. Something went wrong.&quot;|Eng Artifact Use]]
-            [[&quot;I want to use it. I need access to the specimen bay systems.&quot;|Eng Artifact Use]]
-            [[&quot;I think it might help with the research.&quot;|Eng Artifact Use]]
-        &lt;/div&gt; 
+  &lt;&lt;link &quot;The Analyst stopped responding. Something went wrong.&quot;&gt;&gt;
+    &lt;&lt;set $artifactUseChoice = &quot;compliance&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Use&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;I want to use it. I need access to the specimen bay systems.&quot;&gt;&gt;
+    &lt;&lt;set $artifactUseChoice = &quot;skepticism&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Use&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;I think it might help with the research.&quot;&gt;&gt;
+    &lt;&lt;set $artifactUseChoice = &quot;curiosity&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Use&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="182" name="Eng Artifact Previous" tags="nobr engineering artifact" position="2400,3925" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="182" name="Eng Artifact Previous" tags="nobr engineering artifact" position="2400,3925" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engArtifactPrevious&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The previous subject. The records indicate a biochip malfunction. The records do not indicate this device. It was not logged.
@@ -5519,7 +5593,10 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             This device interfaces with the ship&#39;s cautionary systems. Why do you have it?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;Something went wrong in the specimen bay.&quot;|Eng Artifact Use]]
+           &lt;&lt;link &quot;Something went wrong in the specimen bay.&quot;&gt;&gt;
+    &lt;&lt;set $artifactUseChoice = &quot;compliance&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Use&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
             [[&quot;I want to use it on the specimen bay.&quot;|Eng Artifact Use]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
@@ -5529,12 +5606,31 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         That device is not standard equipment. It was not manufactured on this vessel. Its design is consistent with human fabrication techniques. Where did you find it?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[&quot;In the hallway. Someone left it there.&quot;|Eng Artifact Found]]
-            [[&quot;I found it. Does it matter?&quot;|Eng Artifact Found]]
-            [[&quot;Someone hid it. Someone who was here before me.&quot;|Eng Artifact Previous]]
+&lt;&lt;link &quot;In the hallway. Someone left it there.&quot;&gt;&gt;
+    &lt;&lt;set $artifactChoice = &quot;curiosity&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Found&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link &quot;I found it. Does it matter?&quot;&gt;&gt;
+    &lt;&lt;set $artifactChoice = &quot;skeptic&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Found&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+ [[&quot;Someone hid it. Someone who was here before me.&quot;|Eng Artifact Previous]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="Eng Artifact Use" tags="nobr missing-features engineering artifact" position="2600,3875" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="Eng Artifact Use" tags="nobr missing-features engineering artifact" position="2600,3875" size="100,100">&lt;&lt;if $artifactUseChoice is &quot;compliance&quot;&gt;&gt;
+    &lt;&lt;set $compliance += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $artifactUseChoice is &quot;skepticism&quot;&gt;&gt;
+    &lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $artifactUseChoice is &quot;curiosity&quot;&gt;&gt;
+    &lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engArtifactUse&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         A malfunction in specimen bay observation parameters would constitute a research irregularity. Reducing containment measures in the specimen bay could allow for more direct data acquisition. This is within acceptable research deviation.
@@ -5558,7 +5654,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="185" name="Eng Bay Closing" tags="nobr missing-features engineering closing" position="4000,4475" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;if $engSignal&gt;&gt;&lt;&lt;set $engineeringDone to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engBayClosing&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -5655,7 +5751,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Obsession replaces experience.|Eng Camera Obsession]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="Eng Camera Accuracy" tags="nobr agent engineer" position="3600,4075" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="Eng Camera Accuracy" tags="nobr agent engineer" position="3600,4075" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraAccuracy&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         If accuracy is the purpose, then this device surpasses the organism. But your species builds this device and then selects which images to keep and which to discard — a filter based on meaning, not fidelity. Why retain only the meaningful? What happens to accuracy there?
@@ -5666,7 +5763,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Obsession replaces experience.|Eng Camera Obsession]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="Eng Camera Alone" tags="nobr agent engineer" position="3600,4175" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="194" name="Eng Camera Alone" tags="nobr agent engineer" position="3600,4175" size="100,100">&lt;&lt;set $engineeringDone to true&gt;&gt;
+&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraAlone&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         Not alone. The opposite of solitude is proximity. But proximity without transfer produces nothing. Your species seeks the transfer itself, not merely the closeness. The image is proof that something was felt. A signal to another organism that says: I was here and it was real.
@@ -5677,7 +5776,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="Eng Camera Imprecision" tags="nobr agent engineer" position="3600,3975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="Eng Camera Imprecision" tags="nobr agent engineer" position="3600,3975" size="100,100">&lt;&lt;set $engineeringDone to true&gt;&gt;
+&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraImprecision&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The imprecision. That is the purpose. Not to capture what was but to carry something forward through the distortion. We have found no equivalent mechanism in organisms that do not die.
@@ -5708,7 +5809,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[No, that&#39;s the problem.|Eng Camera Obsession Problem]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="198" name="Eng Camera Obsession Point" tags="nobr agent engineer" position="3600,4375" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="198" name="Eng Camera Obsession Point" tags="nobr agent engineer" position="3600,4375" size="100,100">&lt;&lt;set $engineeringDone to true&gt;&gt;
+&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraObsessionPoint&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The inefficiency is intentional. You replace the lived experience because the lived experience was insufficient. The image is what you wished the moment had been. This device does not capture what happened. It captures what you needed to happen. That is an extraordinary function for a mechanical object.
@@ -5719,7 +5822,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="Eng Camera Obsession Problem" tags="nobr agent engineer" position="3600,4475" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="Eng Camera Obsession Problem" tags="nobr agent engineer" position="3600,4475" size="100,100">&lt;&lt;set $engineeringDone to true&gt;&gt;
+&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraObsessionProblem&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         You identify it as a malfunction. And yet you continue to use the device anyway. The species recognises the problem and perpetuates it. This is either a failure of correction or evidence that the problem serves a function you have not yet named.
@@ -5730,7 +5835,9 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[Exit the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="Eng Camera Residue" tags="nobr agent engineer" position="3600,4275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="Eng Camera Residue" tags="nobr agent engineer" position="3600,4275" size="100,100">&lt;&lt;set $engineeringDone to true&gt;&gt;
+&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraResidue&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The residue of experience. You have described a form of preservation that operates outside of the organism&#39;s body. External memory. And yet what is preserved is not information but significance. This device captures neither. What the image holds is something your species added after the fact.
@@ -5865,7 +5972,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
 			[[What are you doing?|Eng A What]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="212" name="Engineering Bay Entry" tags="nobr missing-features engineering" position="2200,4425" size="100,200">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="212" name="Engineering Bay Entry" tags="nobr missing-features engineering" position="2200,4425" size="100,200">&lt;&lt;set $baysVisited += 1&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;engineering&quot; loop play&gt;&gt;
 &lt;&lt;hideAgent&gt;&gt;
 
@@ -5901,7 +6009,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[I want to see the Fusion Core.|Fusion Core Request]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="213" name="Exit Exception Bother No" tags="agent exception nobr" position="4100,2075" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="213" name="Exit Exception Bother No" tags="agent exception nobr" position="4100,2075" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;exceptionBotherNo&quot;&gt;&gt;
         The Exception steps aside without another word.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -5909,7 +6018,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[I don&#39;t know yet.|Pre Control Room]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="214" name="Exit Exception Bother Yes" tags="nobr exception agent" position="4100,1975" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="214" name="Exit Exception Bother Yes" tags="nobr exception agent" position="4100,1975" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;exceptionBotherYes&quot;&gt;&gt;
         The Exception steps aside without another word.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -6010,7 +6120,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[End.|Game Over]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="220" name="Fusion Core Entry" tags="nobr missing-dialog missing-features core" position="2600,5300" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="220" name="Fusion Core Entry" tags="nobr missing-dialog missing-features core" position="2600,5300" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;fusion&quot; loop play&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
@@ -6084,7 +6195,8 @@ window.playAgentVideo = function(partName, startTime, endTime) {
             [[What is the Fusion Core?|Fusion Core What Is]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="224" name="Fusion Core What Is" tags="nobr core warning" position="2500,5500" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="224" name="Fusion Core What Is" tags="nobr core warning" position="2500,5500" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;fusionCoreWhatIs&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The vessel&#39;s primary energy source and propulsion foundation. It maintains the environmental systems, the research bays, and the navigational interface. It is also the source of the frequency the control room has been emitting. It should not be emitting that frequency. I have noted it as an anomaly for some time but have not been asked to address it.&quot;
@@ -6245,7 +6357,8 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
     &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="233" name="Left Button" tags="nobr waking wait" position="400,2950" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;leftButton&quot;&gt;&gt;
         The left control accepts your touch.
@@ -6308,7 +6421,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="235" name="Narrator What To Do" tags="nobr hallway control-door" position="2000,2075" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;narratorWhatToDo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -6334,7 +6447,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="236" name="Narrator Who Are You" tags="nobr hallway control-door" position="2000,1975" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;narratorWhoAreYou&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -6362,7 +6475,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="237" name="Narrator Why Not Open" tags="nobr hallway control-door" position="2000,2175" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;narratorWhyNotOpen&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -6466,7 +6579,14 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="245" name="Pre Control Room" tags="nobr hallway control-door" position="1900,2525" size="200,200">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;if not $archiveDone&gt;&gt;
+    &lt;&lt;if visited(&quot;Archive Bay Entry&quot;)&gt;&gt;[[Return to the Archive bay.|Archive Bay Return]]&lt;&lt;else&gt;&gt;[[Head to the Archive bay.|Archive Bay Entry]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    [[Return to the Archive bay.|Archive Bay Return]]
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not $specimenDone&gt;&gt;[[Head to the Specimen bay.|Specimen Bay Entry]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if not $engineeringDone&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $baysVisited eq 0&gt;&gt;[[&quot;Hold up. Who or what even are you?&quot;|Narrator Identity]]&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;preControlRoom&quot;&gt;&gt;
         You enter a wide central chamber.
@@ -6506,7 +6626,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="246" name="Right Button" tags="nobr room1 exit" position="400,2150" size="100,100">&lt;&lt;hideAgent&gt;&gt;
-
+&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;rightButton&quot;&gt;&gt;
         The right control sinks beneath your hand.
@@ -6622,7 +6742,8 @@ END OF CURRENT DRAFT
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="250" name="Sacrifice No Design" tags="nobr agent cartographer archive" position="3600,1225" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="250" name="Sacrifice No Design" tags="nobr agent cartographer archive" position="3600,1225" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;sacrificeNoDesign&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
         Then sacrifice becomes more unusual.
@@ -6649,7 +6770,8 @@ END OF CURRENT DRAFT
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="251" name="Science Weapons" tags="nobr agent cartographer archive" position="3600,725" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="251" name="Science Weapons" tags="nobr agent cartographer archive" position="3600,725" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;scienceWeapons&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
         Natural, yes.
@@ -6683,7 +6805,8 @@ END OF CURRENT DRAFT
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="252" name="Science Your Kind" tags="nobr agent cartographer archive" position="3600,825" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="252" name="Science Your Kind" tags="nobr agent cartographer archive" position="3600,825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;scienceYourKind&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
         No.
@@ -6716,10 +6839,11 @@ END OF CURRENT DRAFT
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="253" name="Specimen Bay Entry" tags="nobr missing-features specimen entrance agent" position="2200,2525" size="100,200">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="253" name="Specimen Bay Entry" tags="nobr missing-features specimen entrance agent" position="2200,2525" size="100,200">&lt;&lt;if $analystSignal&gt;&gt;&lt;&lt;set $specimenDone to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;specimen&quot; loop play&gt;&gt;
 &lt;&lt;showAgent &quot;analyst&quot;&gt;&gt;
-
+&lt;&lt;set $baysVisited += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayEntry&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -6748,7 +6872,7 @@ END OF CURRENT DRAFT
         New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Are you the colleague who messed with my brain?|Analyst Brain]]
+            &lt;&lt;if $brainManipAware&gt;&gt;[[Are you the colleague who messed with my brain?|Analyst Brain]]&lt;&lt;/if&gt;&gt;
 			[[What exactly is this place?|Analyst What Place]]
 			[[Are those things alive?|Analyst Alive]]
 			[[You&#39;re studying me, aren&#39;t you?|Analyst Studying]]
@@ -6769,6 +6893,8 @@ END OF CURRENT DRAFT
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="255" name="Specimen Bay Exit" tags="nobr missing-features specimen exception" position="3600,2275" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;&lt;if $analystSignal&gt;&gt;&lt;&lt;set $specimenDone to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayExit&quot;&gt;&gt;
@@ -6816,6 +6942,18 @@ END OF CURRENT DRAFT
 &lt;&lt;set $skepticism = 0&gt;&gt;
 &lt;&lt;set $compliance = 0&gt;&gt;
 &lt;&lt;set $aggression = 0&gt;&gt;
+&lt;&lt;set $baysVisited        to 0&gt;&gt;
+&lt;&lt;set $archiveDone        to false&gt;&gt;
+&lt;&lt;set $specimenDone       to false&gt;&gt;
+&lt;&lt;set $engineeringDone    to false&gt;&gt;
+&lt;&lt;set $cartPuzzleDone     to false&gt;&gt;
+&lt;&lt;set $exceptArchiveMet   to false&gt;&gt;
+&lt;&lt;set $discardedVisits    to 0&gt;&gt;
+&lt;&lt;set $asked32            to 0&gt;&gt;
+&lt;&lt;set $asked32WhatAreYou  to false&gt;&gt;
+&lt;&lt;set $asked32WhatWant    to false&gt;&gt;
+&lt;&lt;set $asked32WhyReleased to false&gt;&gt;
+&lt;&lt;set $asked32WrongButton to false&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;title&quot; &quot;media/glazba/title_screen.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;awakening&quot; &quot;media/glazba/awakening.mp3&quot;&gt;&gt;
@@ -6866,46 +7004,56 @@ END OF CURRENT DRAFT
         return video;
     }
 
-    window.setBackgroundVideo = function (videoFile) {
-    	// Don&#39;t let the passage tag system overwrite the video
-    	// while the agent is actively controlling playback.
-    	if (window.agentVideoActive) return;
+    window.setBackgroundVideo = function (videoFile, agentControlled) {
+      if (window.agentVideoActive) return;
 
-        const video = createBackgroundVideo();
+      const video = createBackgroundVideo();
 
-        if (!videoFile) {
-            video.pause();
-            video.removeAttribute(&quot;src&quot;);
-            video.style.display = &quot;none&quot;;
-            video.load();
-            return;
-        }
+      if (!videoFile) {
+          video.pause();
+          video.removeAttribute(&quot;src&quot;);
+          video.style.display = &quot;none&quot;;
+          video.load();
+          return;
+      }
 
-        const newSrc = &quot;/media/live/&quot; + videoFile;
+      const newSrc = &quot;/media/live/&quot; + videoFile;
+      const srcChanged = video.getAttribute(&quot;src&quot;) !== newSrc;
 
-        if (video.getAttribute(&quot;src&quot;) !== newSrc) {
-            video.onerror = function () {
-                console.log(&quot;Video nije pronađen:&quot;, newSrc);
-                video.pause();
-                video.removeAttribute(&quot;src&quot;);
-                video.style.display = &quot;none&quot;;
-                video.load();
-            };
+      if (srcChanged) {
+          video.onerror = function () {
+              console.log(&quot;Video nije pronađen:&quot;, newSrc);
+              video.pause();
+              video.removeAttribute(&quot;src&quot;);
+              video.style.display = &quot;none&quot;;
+              video.load();
+          };
+          video.setAttribute(&quot;src&quot;, newSrc);
+      }
+      video.style.display = &quot;block&quot;;
+      video.style.opacity = &quot;1&quot;;
 
-            video.setAttribute(&quot;src&quot;, newSrc);
-            video.style.display = &quot;block&quot;;
-            video.style.opacity = &quot;1&quot;;
-            video.load();
-
-            video.play().catch(function (error) {
-                console.log(&quot;Video autoplay problem:&quot;, error);
-            });
-        }
-    };
+      if (agentControlled) {
+        video.loop=false;
+        video.autoplay=false; 
+        video.removeAttribute(&quot;loop&quot;);
+        video.removeAttribute(&quot;autoplay&quot;);  
+        if (srcChanged) video.load();
+    } else {
+        video.loop=true;
+        video.autoplay=true;    
+        if (srcChanged) video.load();
+        video.play().catch(function (error) {
+            console.log(&quot;Video autoplay problem:&quot;, error);
+        });
+    }
+};
 
     window.updateBackgroundVideoByTags = function () {
         const tagString = document.body.getAttribute(&quot;data-tags&quot;) || &quot;&quot;;
         const tags = tagString.split(&quot; &quot;).filter(Boolean);
+
+        const isAgentPassage = tags.includes(&quot;agent&quot;);
 
         let video = null;
 
@@ -7137,7 +7285,7 @@ END OF CURRENT DRAFT
             video = &quot;Ending.mp4&quot;;
         }
 
-        window.setBackgroundVideo(video);
+        window.setBackgroundVideo(video, isAgentPassage);
     };
 
     $(document).on(&quot;:passagedisplay&quot;, function () {
@@ -7191,7 +7339,9 @@ END OF CURRENT DRAFT
     &lt;div class=&quot;choice title-choice&quot;&gt;
         [[Start|Intro Backstory]]
     &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="260" name="War Between Lifeforms" tags="nobr agent cartographer archive" position="3600,525" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="260" name="War Between Lifeforms" tags="nobr agent cartographer archive" position="3600,525" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;warBetweenLifeforms&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
         Conflict exists.
@@ -7224,7 +7374,8 @@ END OF CURRENT DRAFT
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="261" name="War No Conflict" tags="nobr agent cartographer archive" position="3600,425" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="261" name="War No Conflict" tags="nobr agent cartographer archive" position="3600,425" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;warNoConflict&quot;&gt;&gt;
         [ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -7281,7 +7432,8 @@ END OF CURRENT DRAFT
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="263" name="War Normal" tags="nobr agent cartographer archive" position="3600,625" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="263" name="War Normal" tags="nobr agent cartographer archive" position="3600,625" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;warNormal&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Cartographer&quot;&gt;&gt;
         Normalisation is a defence mechanism.
