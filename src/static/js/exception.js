@@ -1,10 +1,8 @@
 var DONT = false;
-var FIRST = true;
-var STOP = false;
 
-var CURRENT_PASSAGE = "initial";
+var CURRENT_PASSAGE = "initial"; //Starting passage
 
-// Defines valid passages
+// Defines valid answers from each passage
 var PASSAGE_STATES = {
   "initial": ["A", "B", "C", "Voice", "Passing-Through", "Overlook-Home", "Overlook-Family", "Overlook-Distant", "Overlook-Missed", "Overlook-Nothing", "Overlook-No-Memory", "Overlook-Burned", "Discarded-Why", "Discarded-Know", "Discarded-What", "Exit-Want", "Exit-Following", "Exit-Fine", "Exit-Stopped"],
   "3.1. Choice Voice": ["Voice-Human", "Voice-Also-Hear", "Where-Go"],
@@ -98,7 +96,6 @@ window.addEventListener("message", function (event) {
 
   if (event.data && event.data.action === "video_part_ended") {
     play_part("tisina");
-    //if (!FIRST) DONT = true;
   }
 
   if (event.data && event.data.action === "stop_mic") {
@@ -138,7 +135,6 @@ $(window).on("load", function () {
         const transcript = event.results[current][0].transcript;
 
         window.recognition.stop();
-        STOP = true;
         output.innerHTML = transcript + " ";
         window.ws.send(transcript);
       };
@@ -165,14 +161,11 @@ $(window).on("load", function () {
 
     buttonYes.onclick = () => {
       window.parent.postMessage({ action: 'hide_iframe' }, '*');
-      //window.parent.postMessage({ action: 'set_voice_mode', enabled: true }, '*'); Here if decide to use different choices in passages depending on choice
-
       play_part("tisina");
     };
 
     buttonNo.onclick = () => {
       window.parent.postMessage({ action: 'hide_iframe' }, '*');
-      //window.parent.postMessage({ action: 'set_voice_mode', enabled: false }, '*'); Here if decide to use different choices in passages depending on choice
 
       window.parent.postMessage({ 
         action: 'play_video_part', 
@@ -401,12 +394,6 @@ function connect() {
 
 connect();
 
-right = {
-  "text-align": "right",
-  width: "1000px",
-  "margin-right": "-400px auto",
-};
-
 LAST_PART = "";
 CUR_PART = "tisina";
 END = 278;
@@ -421,178 +408,6 @@ function play_part(part) {
 
   recognition.stop();
   switch (part) {
-    case "A":
-      start = 1;
-      end = 5;
-      break;
-    case "B":
-      start = 1;
-      end = 5;
-      break;
-    case "C":
-      start = 1;
-      end = 5;
-      break;
-    case "Voice":
-      start = 1;
-      end = 5;
-      break;
-    case "Voice-Human":
-      start = 1;
-      end = 5;
-      break;
-    case "Voice-Also-Hear":
-      start = 1;
-      end = 5;
-      break;
-    case "Where-Go":
-      start = 1;
-      end = 5;
-      break;
-    case "Voice-Saying":
-      start = 1;
-      end = 5;
-      break;
-    case "Voice-Actually-Human":
-      start = 1;
-      end = 5;
-      break;
-    case "Hallway":
-      start = 1;
-      end = 5;
-      break;
-    case "Passing-Through":
-      start = 1;
-      end = 5;
-      break;
-    case "A-Obsessed":
-      start = 1;
-      end = 5;
-      break;
-    case "A-Philosophical":
-      start = 1;
-      end = 5;
-      break;
-    case "A-Environment":
-      start = 1;
-      end = 5;
-      break;
-    case "B-Who-Brought":
-      start = 1;
-      end = 5;
-      break;
-    case "B-Sold":
-      start = 1;
-      end = 5;
-      break;
-    case "B-Earth":
-      start = 1;
-      end = 5;
-      break;
-    case "What-Want":
-      start = 1;
-      end = 5;
-      break;
-    case "Fight-Back":
-      start = 1;
-      end = 5;
-      break;
-    case "No-Consent":
-      start = 1;
-      end = 5;
-      break;
-    case "Uncompliant":
-      start = 1;
-      end = 5;
-      break;
-    case "C-Trade":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-Home":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-Family":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-Distant":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-Missed":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-Nothing":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-No-Memory":
-      start = 1;
-      end = 5;
-      break;
-    case "Overlook-Burned":
-      start = 1;
-      end = 5;
-      break;
-    case "Discarded-Why":
-      start = 1;
-      end = 5;
-      break;
-    case "Discarded-Know":
-      start = 1;
-      end = 5;
-      break;
-    case "Discarded-What":
-      start = 1;
-      end = 5;
-      break;
-    case "Archive":
-      start = 1;
-      end = 5;
-      break;
-    case "Discarded-Lying":
-      start = 1;
-      end = 5;
-      break;
-    case "Discarded-Why-Telling":
-      start = 1;
-      end = 5;
-      break;
-    case "Discarded-What-Suggest":
-      start = 1;
-      end = 5;
-      break;
-    case "Exit-Want":
-      start = 1;
-      end = 5;
-      break;
-    case "Exit-Following":
-      start = 1;
-      end = 5;
-      break;
-    case "Exit-Fin":
-      start = 1;
-      end = 5;
-      break;
-    case "Exit-Stopped":
-      start = 1;
-      end = 5;
-      break;
-    case "Exit-Yes":
-      start = 1;
-      end = 5;
-      break;
-    case "Exit-No":
-      start = 1;
-      end = 5;
-      break;
-    case "Pre-Control-Room":
-      start = 1;
-      end = 5;
-      break;
     case "ponovi":
       start = 1;
       end = 5;
@@ -617,12 +432,6 @@ function play_part(part) {
     start: start,
     end: end
   }, "*");
-}
-
-function question(q) {
-  window.recognition.stop();
-  window.output.innerHTML = q + " ";
-  window.ws.send(q);
 }
 
 function isMobileBrowser() {

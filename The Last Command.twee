@@ -1293,6 +1293,8 @@ The Last Command
 
 
 :: Analyst Alive [nobr agent analyst] {"position":"2400,2575","size":"100,100"}
+<<run window.playAgentVideo("Alive", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystAlive">>
         <<speaker "Analyst">>
@@ -1308,6 +1310,8 @@ The Last Command
 
 
 :: Analyst Brain [nobr agent analyst] {"position":"2400,1875","size":"100,100"}
+<<run window.playAgentVideo("Brain", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystBrain">>
         <<speaker "Analyst">>
@@ -1329,6 +1333,8 @@ The Last Command
 
 
 :: Analyst Carry Know [nobr agent analyst] {"position":"3400,2425","size":"100,100"}
+<<run window.playAgentVideo("Carry-Know", 0, 6)>>
+
 <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystCarryKnow">>
@@ -1345,6 +1351,8 @@ The Last Command
 
 
 :: Analyst Carry No [nobr agent analyst] {"position":"3400,2325","size":"100,100"}
+<<run window.playAgentVideo("Carry-No", 0, 6)>>
+
 <<set $specimenDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
@@ -1362,6 +1370,8 @@ The Last Command
 
 
 :: Analyst Carry Used To [nobr agent analyst] {"position":"3400,2225","size":"100,100"}
+<<run window.playAgentVideo("Carry-Used", 0, 6)>>
+
 <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
@@ -1378,6 +1388,8 @@ The Last Command
 
 
 :: Analyst Carry Yes [nobr agent analyst] {"position":"3400,2125","size":"100,100"}
+<<run window.playAgentVideo("Carry-Yes", 0, 6)>>
+
 <<set $specimenDone to true>>
 <div class="textbox">
     <<ctp "analystCarryYes">>
@@ -1394,6 +1406,8 @@ The Last Command
 
 
 :: Analyst Compare [nobr agent analyst] {"position":"2500,2175","size":"100,100"}
+<<run window.playAgentVideo("Compare", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystCompare">>
         <<speaker "Analyst">>
@@ -1427,6 +1441,8 @@ The Last Command
 
 
 :: Analyst Dont Understand [nobr agent analyst missing-dialog] {"position":"2500,3025","size":"100,100"}
+<<run window.playAgentVideo("Understand", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystDontUnderstand">>
@@ -1441,6 +1457,8 @@ The Last Command
 
 
 :: Analyst Feel Alive [nobr agent analyst missing-dialog] {"position":"2500,2575","size":"100,100"}
+<<run window.playAgentVideo("Feel-Alive", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystFeelAlive">>
         <<speaker "Analyst">>
@@ -1454,6 +1472,8 @@ The Last Command
 
 
 :: Analyst Greater Design [nobr agent analyst] {"position":"3200,2275","size":"100,100"}
+<<run window.playAgentVideo("Greater-Design", 0, 6)>>
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "analystGreaterDesign">>
@@ -1490,6 +1510,8 @@ The Last Command
 
 
 :: Analyst Learned [nobr agent analyst missing-dialog] {"position":"2500,3375","size":"100,100"}
+<<run window.playAgentVideo("Learned", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystLearned">>
@@ -1504,6 +1526,8 @@ The Last Command
 
 
 :: Analyst Left [nobr agent analyst] {"position":"3000,2325","size":"100,100"}
+<<run window.playAgentVideo("Left", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystLeft">>
         <<speaker "Analyst">>
@@ -1526,6 +1550,8 @@ The Last Command
 
 
 :: Analyst Moving [nobr agent analyst missing-dialog] {"position":"2500,2475","size":"100,100"}
+<<run window.playAgentVideo("Moving", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystMoving">>
         <<speaker "Analyst">>
@@ -1539,6 +1565,8 @@ The Last Command
 
 
 :: Analyst No Consent [nobr agent analyst missing-dialog] {"position":"2500,2825","size":"100,100"}
+<<run window.playAgentVideo("Consent", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystObjects">>
         <<speaker "Analyst">>
@@ -1552,6 +1580,8 @@ The Last Command
 
 
 :: Analyst No Memory [nobr agent analyst] {"position":"2500,1775","size":"100,100"}
+<<run window.playAgentVideo("Memory", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystNoMemory">>
         <<speaker "Analyst">>
@@ -1567,7 +1597,7 @@ The Last Command
 
 
 :: Analyst No Signal [nobr analyst] {"position":"3200,2375","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("No-Signal", 0, 6)>>
 
 <div class="textbox">
     <<ctp "analystNoSignal">>
@@ -1596,6 +1626,8 @@ The Last Command
 
 
 :: Analyst Not Blurry [nobr agent analyst missing-dialog] {"position":"2500,2675","size":"100,100"}
+<<run window.playAgentVideo("Blurry", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystNotBlurry">>
@@ -1610,6 +1642,8 @@ The Last Command
 
 
 :: Analyst Objects [nobr missing-dialog analyst agent] {"position":"2500,2925","size":"100,100"}
+<<run window.playAgentVideo("Objects", 0, 6)>>
+
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystObjects">>
@@ -1624,6 +1658,8 @@ The Last Command
 
 
 :: Analyst Of Course [nobr agent missing-dialog analyst] {"position":"2500,3175","size":"100,100"}
+<<run window.playAgentVideo("Course", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystOfCourse">>
@@ -1638,6 +1674,8 @@ The Last Command
 
 
 :: Analyst Probability [nobr analyst] {"position":"3000,2825","size":"100,100"}
+<<run window.playAgentVideo("Probability", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
@@ -1660,6 +1698,8 @@ The Last Command
 
 
 :: Analyst Puzzle Intro [nobr agent specimen analyst sample] {"position":"2800,2575","size":"100,100"}
+<<run window.playAgentVideo("Puzzle-Intro", 0, 6)>>
+
 <<if $fromAnalysWhyBuildtRoute is true>>
     <<set $curiosity += 1>>
 <</if>>
@@ -1680,6 +1720,8 @@ The Last Command
 
 
 :: Analyst Recording [agent nobr analyst] {"position":"2600,2025","size":"100,100"}
+<<run window.playAgentVideo("Recording", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystRecording">>
@@ -1770,6 +1812,8 @@ The Last Command
 
 
 :: Analyst Right [nobr agent analyst] {"position":"3000,2575","size":"100,100"}
+<<run window.playAgentVideo("Right", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystRight">>
         <<speaker "Analyst">>
@@ -1791,6 +1835,8 @@ The Last Command
 
 
 :: Analyst Sample [nobr agent analyst] {"position":"2500,2275","size":"100,100"}
+<<run window.playAgentVideo("Sample", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystSample">>
@@ -1839,6 +1885,8 @@ The Last Command
 
 
 :: Analyst Studying [nobr agent analyst] {"position":"2400,3275","size":"100,100"}
+<<run window.playAgentVideo("Studying", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystStudying">>
         <<speaker "Analyst">>
@@ -1871,6 +1919,8 @@ The Last Command
 
 
 :: Analyst What Place [nobr agent analyst] {"position":"2400,2225","size":"100,100"}
+<<run window.playAgentVideo("Place", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystWhatPlace">>
@@ -1890,6 +1940,8 @@ The Last Command
 
 
 :: Analyst Who I Am [nobr agent analyst] {"position":"2500,1875","size":"100,100"}
+<<run window.playAgentVideo("Who_I", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
@@ -1905,6 +1957,8 @@ The Last Command
 
 
 :: Analyst Why Build [nobr agent analyst] {"position":"2500,1975","size":"100,100"}
+<<run window.playAgentVideo("Build", 0, 6)>>
+
 <<set $fromAnalysWhyBuildRoute = true>>
 <div class="textbox">
     <<ctp "analystWhyBuild">>
@@ -1921,6 +1975,8 @@ The Last Command
 
 
 :: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
+<<run window.playAgentVideo("Why-Doing", 0, 6)>>
+
 <div class="textbox">
     <<ctp "analystWhyDoing">>
         <<speaker "Analyst">>
@@ -1934,6 +1990,8 @@ The Last Command
 
 
 :: Analyst Worse [nobr agent analyst] {"position":"2600,1925","size":"100,100"}
+<<run window.playAgentVideo("Worse", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystWorse">>
@@ -1948,6 +2006,8 @@ The Last Command
 
 
 :: Analyst Wrong [nobr agent analyst] {"position":"2400,2925","size":"100,100"}
+<<run window.playAgentVideo("Wrong", 0, 6)>>
+
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystWrong">>
@@ -2659,6 +2719,8 @@ The Last Command
 
 
 :: CR Believe [nobr narrator agent missing-features] {"position":"5300,2900","size":"100,100"}
+<<run window.playAgentVideo("Believe", 0, 6)>>
+
 <div class="textbox">
     <<ctp "CRBelieve">>
         <<speaker "Narrator">>
@@ -2682,6 +2744,8 @@ The Last Command
 
 
 :: CR Biochip Watch [nobr agent narrator missing-features] {"position":"5300,2500","size":"100,100"}
+<<run window.playAgentVideo("Biochip", 0, 6)>>
+
 <div class="textbox">
     <<ctp "CRBiochipWatch">>
         <<speaker "Narrator">>
@@ -2704,6 +2768,8 @@ The Last Command
 
 
 :: CR Body Question [nobr agent narrator missing-features] {"position":"5300,2600","size":"100,100"}
+<<run window.playAgentVideo("Body", 0, 6)>>
+
 <div class="textbox">
     <<ctp "CRBodyQuestions">>
         <<speaker "Narrator">>
@@ -2730,6 +2796,8 @@ The Last Command
 
 
 :: CR Grieve [nobr agent narrator missing-features] {"position":"5300,2800","size":"100,100"}
+<<run window.playAgentVideo("Grieve", 0, 6)>>
+
 <div class="textbox">
     <<ctp "CRGrieve">>
         <<speaker "Narrator">>
@@ -2750,6 +2818,8 @@ The Last Command
 
 
 :: CR Grieve Not Answer [nobr agent narrator missing-features] {"position":"5500,2800","size":"100,100"}
+<<run window.playAgentVideo("Not-Answer", 0, 6)>>
+
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "CRGrieveNotAnswer">>
@@ -2769,6 +2839,8 @@ The Last Command
 
 
 :: CR Grieve Think You Do [nobr agent narrator missing-features] {"position":"5500,2700","size":"100,100"}
+<<run window.playAgentVideo("Think", 0, 6)>>
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRThinkYouDo">>
@@ -2788,6 +2860,8 @@ The Last Command
 
 
 :: CR Heard Everything [nobr agent narrator missing-features] {"position":"5500,2600","size":"100,100"}
+<<run window.playAgentVideo("Heard", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRIntervene">>
@@ -2809,6 +2883,8 @@ The Last Command
 
 
 :: CR Intervene [nobr agent narrator missing-features] {"position":"5500,2500","size":"100,100"}
+<<run window.playAgentVideo("Intervene", 0, 6)>>
+
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
@@ -2829,6 +2905,8 @@ The Last Command
 
 
 :: CR Organisation [nobr agent narrator missing-features] {"position":"5300,2700","size":"100,100"}
+<<run window.playAgentVideo("Organization", 0, 6)>>
+
 <div class="textbox">
     <<ctp "CROrganization">>
         <<speaker "Narrator">>
@@ -2851,6 +2929,8 @@ The Last Command
 
 
 :: CR Organisation Now [nobr agent narrator missing-features] {"position":"5500,2300","size":"100,100"}
+<<run window.playAgentVideo("Now", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CROrganizationNow">>
@@ -2912,6 +2992,8 @@ The Last Command
 
 
 :: CR Tell Me [nobr agent missing-features narrator] {"position":"5500,2400","size":"100,100"}
+<<run window.playAgentVideo("Tell-Me", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRTellMe">>
@@ -2954,6 +3036,8 @@ The Last Command
 
 
 :: CR Used Me [nobr agent narrator missing-features] {"position":"5300,2400","size":"100,100"}
+<<run window.playAgentVideo("Used-Me", 0, 6)>>
+
 <<set $aggression += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -2976,6 +3060,8 @@ The Last Command
 
 
 :: CR What Need [agent missing-features narrator nobr] {"position":"5300,2300","size":"100,100"}
+<<run window.playAgentVideo("What-Need", 0, 6)>>
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRWhatNeed">>
@@ -3016,6 +3102,8 @@ The Last Command
 
 
 :: CR Who Are You [agent nobr missing-features narrator] {"position":"5300,2200","size":"100,100"}
+<<run window.playAgentVideo("Who", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CRWhoAreYou">>
@@ -3037,6 +3125,8 @@ The Last Command
 
 
 :: Cart Brain Accept [nobr agent cartographer] {"position":"2800,975","size":"100,100"}
+<<run window.playAgentVideo("Accept", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartBrainAccept">>
     	<<speaker "Cartographer">>
@@ -3050,6 +3140,8 @@ The Last Command
 
 
 :: Cart Brain Permanent [nobr agent cartographer] {"position":"2900,825","size":"100,100"}
+<<run window.playAgentVideo("Permanent", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
     	<<speaker "Cartographer">>
@@ -3063,6 +3155,8 @@ The Last Command
 
 
 :: Cart Brain Rage [nobr agent cartographer archive] {"position":"2800,775","size":"100,100"}
+<<run window.playAgentVideo("Rage", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
         <<speaker "You">>
@@ -3097,6 +3191,8 @@ The Last Command
 
 
 :: Cart Brain Skeptic [nobr agent cartographer] {"position":"2800,875","size":"100,100"}
+<<run window.playAgentVideo("Skeptic", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartBrainSkeptic">>
     	<<speaker "Cartographer">>
@@ -3112,6 +3208,8 @@ The Last Command
 
 
 :: Cart Deathworld [nobr agent cartographer] {"position":"2600,875","size":"100,100"}
+<<run window.playAgentVideo("Deatthworld", 0, 6)>>
+
 <<set $brainManipAware to true>>
 <div class="textbox">
     <<ctp "cartDeathWorld">>
@@ -3130,6 +3228,8 @@ The Last Command
 
 
 :: Cart Effort [nobr agent cartographer] {"position":"2600,775","size":"100,100"}
+<<run window.playAgentVideo("Effort", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartEffort">>
     	<<speaker "Cartographer">>
@@ -3156,6 +3256,8 @@ The Last Command
 
 
 :: Cart Hit Threat [agent nobr cartographer archive] {"position":"2900,925","size":"100,100"}
+<<run window.playAgentVideo("Threat", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartHitThreat">>
         <<speaker "You">>
@@ -3188,6 +3290,8 @@ The Last Command
 
 
 :: Cart Join Research [nobr agent cartographer] {"position":"3200,775","size":"100,100"}
+<<run window.playAgentVideo("Join", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartJoinResearch">>
         <<speaker "Cartographer">>
@@ -3203,6 +3307,8 @@ The Last Command
 
 
 :: Cart Punch [nobr agent cartographer archive] {"position":"3000,875","size":"100,100"}
+<<run window.playAgentVideo("Punch", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartPunch">>
         You strike the Cartographer before the thought finishes becoming a decision.
@@ -3241,6 +3347,8 @@ The Last Command
 
 
 :: Cart Puzzle Sacrifice [nobr agent cartographer archive] {"position":"3400,1025","size":"100,100"}
+<<run window.playAgentVideo("Puzzle-Sacrifice", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartPuzzleSacrifice">>
         The second projection appears.
@@ -3279,6 +3387,8 @@ The Last Command
 
 
 :: Cart Puzzle Science [nobr agent cartographer archive] {"position":"3400,775","size":"100,100"}
+<<run window.playAgentVideo("Puzzle-Science", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartPuzzleScience">>
         The third projection forms.
@@ -3319,6 +3429,8 @@ The Last Command
 
 
 :: Cart Puzzle War [nobr agent cartographer archive] {"position":"3400,525","size":"100,100"}
+<<run window.playAgentVideo("Puzzle-War", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartPuzzleWar">>
         The first projection expands.
@@ -3358,6 +3470,8 @@ The Last Command
 
 
 :: Cart Signal Check [nobr archive cartographer] {"position":"4000,775","size":"100,100"}
+<<run window.playAgentVideo("Signal", 0, 6)>>
+
 <<set $archiveSignal = true>>
 <<set $cartPuzzleDone to true>>
 <<set $archiveDone to true>>
@@ -3405,6 +3519,8 @@ The Last Command
 
 
 :: Cart Threatening [nobr agent cartographer] {"position":"2600,675","size":"100,100"}
+<<run window.playAgentVideo("Threatening", 0, 6)>>
+
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
@@ -3733,6 +3849,8 @@ The Last Command
 
 
 :: Discarded Exception Know [nobr agent exception discarded] {"position":"3000,1425","size":"100,100"}
+<<run window.playAgentVideo("Discarded-Know", 0, 6)>>
+
 <div class="textbox">
     <<ctp "discardedExceptionKnow">>
         <<speaker "You">>
@@ -3768,6 +3886,8 @@ The Last Command
 
 
 :: Discarded Exception What [nobr agent exception discarded] {"position":"3000,1525","size":"100,100"}
+<<run window.playAgentVideo("Discarded-What", 0, 6)>>
+
 <div class="textbox">
     <<ctp "discardedExceptionWhat">>
         <<speaker "You">>
@@ -3824,6 +3944,8 @@ The Last Command
 
 
 :: Discarded Exception Why [nobr agent exception discarded] {"position":"3000,1325","size":"100,100"}
+<<run window.playAgentVideo("Discarded-Why", 0, 6)>>
+
 <div class="textbox">
     <<ctp "discardedExceptionWhy">>
         <<speaker "You">>
@@ -3893,6 +4015,8 @@ The Last Command
 
 
 :: Discarded Lying [nobr agent exception discarded] {"position":"3200,1425","size":"100,100"}
+<<run window.playAgentVideo("Discarded-Lying", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "discardedLying">>
@@ -3997,6 +4121,8 @@ The Last Command
 
 
 :: Discarded What Suggest [nobr agent exception discarded] {"position":"3200,1325","size":"100,100"}
+<<run window.playAgentVideo("Discarded-What-Suggest", 0, 6)>>
+
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -4089,6 +4215,8 @@ The Last Command
 
 
 :: Discarded Why Telling [nobr agent exception discarded] {"position":"3200,1525","size":"100,100"}
+<<run window.playAgentVideo("Discarded-Why-Telling", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "discardedWhyTelling">>
@@ -4481,6 +4609,8 @@ The Last Command
 
 
 :: Eng A Hello [nobr agent engineer] {"position":"2600,4125","size":"100,100"}
+<<run window.playAgentVideo("Hello", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engAHello">>
         <<speaker "Engineer">>
@@ -4498,6 +4628,8 @@ The Last Command
 
 
 :: Eng A No [nobr agent engineer] {"position":"2800,4125","size":"100,100"}
+<<run window.playAgentVideo("No", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engANo">>
         <<speaker "Engineer">>
@@ -4514,6 +4646,8 @@ The Last Command
 
 
 :: Eng A What [nobr agent engineer] {"position":"2800,4375","size":"100,100"}
+<<run window.playAgentVideo("What", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engAWhat">>
         <<speaker "Engineer">>
@@ -4528,6 +4662,8 @@ The Last Command
 
 
 :: Eng A Who [nobr agent engineer] {"position":"2800,4275","size":"100,100"}
+<<run window.playAgentVideo("Who", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engAWho">>
         <<speaker "Engineer">>
@@ -4779,6 +4915,8 @@ The Last Command
 
 
 :: Eng Camera [nobr agent engineer] {"position":"3200,4225","size":"100,100"}
+<<run window.playAgentVideo("Camera", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engCamera">>
         A camera rises from the workbench.
@@ -4796,6 +4934,8 @@ The Last Command
 
 
 :: Eng Camera Accuracy [nobr agent engineer] {"position":"3600,4075","size":"100,100"}
+<<run window.playAgentVideo("Camera-Accuracy", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "engCameraAccuracy">>
@@ -4812,6 +4952,8 @@ The Last Command
 
 
 :: Eng Camera Alone [nobr agent engineer] {"position":"3600,4175","size":"100,100"}
+<<run window.playAgentVideo("Camera-Alone", 0, 6)>>
+
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
@@ -4829,6 +4971,8 @@ The Last Command
 
 
 :: Eng Camera Imprecision [nobr agent engineer] {"position":"3600,3975","size":"100,100"}
+<<run window.playAgentVideo("Camera-Imprecision", 0, 6)>>
+
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
@@ -4846,6 +4990,8 @@ The Last Command
 
 
 :: Eng Camera Memory [nobr agent engineer] {"position":"3400,4025","size":"100,100"}
+<<run window.playAgentVideo("Camera-Memory", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engCameraMemory">>
         <<speaker "Engineer">>
@@ -4860,6 +5006,8 @@ The Last Command
 
 
 :: Eng Camera Obsession [nobr agent engineer] {"position":"3400,4425","size":"100,100"}
+<<run window.playAgentVideo("Camera-Obsession", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engCameraObsession">>
         <<speaker "Engineer">>
@@ -4874,6 +5022,8 @@ The Last Command
 
 
 :: Eng Camera Obsession Point [nobr agent engineer] {"position":"3600,4375","size":"100,100"}
+<<run window.playAgentVideo("Camera-Point", 0, 6)>>
+
 <<set $engineeringDone to true>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -4891,6 +5041,8 @@ The Last Command
 
 
 :: Eng Camera Obsession Problem [nobr agent engineer] {"position":"3600,4475","size":"100,100"}
+<<run window.playAgentVideo("Camera-Problem", 0, 6)>>
+
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <div class="textbox">
@@ -4908,6 +5060,8 @@ The Last Command
 
 
 :: Eng Camera Residue [nobr agent engineer] {"position":"3600,4275","size":"100,100"}
+<<run window.playAgentVideo("Camera-Residue", 0, 6)>>
+
 <<set $engineeringDone to true>>
 <<set $curiosity += 1>>
 <div class="textbox">
@@ -4925,6 +5079,8 @@ The Last Command
 
 
 :: Eng Camera Share [nobr agent engineer] {"position":"3400,4225","size":"100,100"}
+<<run window.playAgentVideo("Camera-Share", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engCameraShare">>
         <<speaker "Engineer">>
@@ -4954,6 +5110,8 @@ The Last Command
 
 
 :: Eng Rifle [nobr agent engineer] {"position":"3200,4725","size":"100,100"}
+<<run window.playAgentVideo("Rifle", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engRifle">>
         <<speaker "Engineer">>
@@ -4969,6 +5127,8 @@ The Last Command
 
 
 :: Eng Rifle Force [nobr agent engineer] {"position":"3400,4725","size":"100,100"}
+<<run window.playAgentVideo("Rifle-Force", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
@@ -4983,6 +5143,8 @@ The Last Command
 
 
 :: Eng Rifle Power [nobr agent engineer] {"position":"3400,4825","size":"100,100"}
+<<run window.playAgentVideo("Rifle-Power", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
@@ -4997,6 +5159,8 @@ The Last Command
 
 
 :: Eng Rifle War [nobr agent engineer] {"position":"3400,4625","size":"100,100"}
+<<run window.playAgentVideo("Rifle-War", 0, 6)>>
+
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
@@ -5134,6 +5298,8 @@ The Last Command
 
 
 :: Exit Exception Bother No [agent exception nobr] {"position":"4100,2075","size":"100,100"}
+<<run window.playAgentVideo("Exit-No", 0, 6)>>
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "exceptionBotherNo">>
@@ -5147,6 +5313,8 @@ The Last Command
 
 
 :: Exit Exception Bother Yes [nobr exception agent] {"position":"4100,1975","size":"100,100"}
+<<run window.playAgentVideo("Exit-Yes", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "exceptionBotherYes">>
@@ -5160,6 +5328,8 @@ The Last Command
 
 
 :: Exit Exception Fine [nobr agent exception] {"position":"4000,2525","size":"100,100"}
+<<run window.playAgentVideo("Exit-Fine", 0, 6)>>
+
 <div class="textbox">
     <<ctp "exitExceptionFine">>
         The Exception is quiet for a moment — not processing, something closer to surprised.
@@ -5177,6 +5347,8 @@ The Last Command
 
 
 :: Exit Exception Following [nobr agent exception] {"position":"4000,2225","size":"100,100"}
+<<run window.playAgentVideo("Exit-Following", 0, 6)>>
+
 <div class="textbox">
     <<ctp "exitExceptionFollowing">>
         <<speaker "Exception">>
@@ -5190,6 +5362,8 @@ The Last Command
 
 
 :: Exit Exception Stopped [nobr agent exception] {"position":"4000,2325","size":"100,100"}
+<<run window.playAgentVideo("Exit-Stopped", 0, 6)>>
+
 <div class="textbox">
     <<ctp "exitExceptionStopped">>
         <<speaker "Exception">>
@@ -5204,6 +5378,8 @@ The Last Command
 
 
 :: Exit Exception Want [agent exception nobr] {"position":"4000,2025","size":"100,100"}
+<<run window.playAgentVideo("Exit-Want", 0, 6)>>
+
 <div class="textbox">
     <<ctp "exitExceptionWant">>
         <<speaker "Exception">>
@@ -5727,7 +5903,8 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Burned [nobr agent exception] {"position":"2800,425","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-Burned", 0, 6)>>
+
 <div class="textbox">
     <<ctp "overlookBurned">>
         <<speaker "Exception">>
@@ -5745,7 +5922,8 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Distant [nobr exception agent] {"position":"2800,325","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-Distant", 0, 6)>>
+
 <div class="textbox">
     <<ctp "overlookDistant">>
         <<speaker "Exception">>
@@ -5761,7 +5939,8 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Family [nobr agent exception] {"position":"2900,325","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-Family", 0, 6)>>
+
 <div class="textbox">
     <<ctp "overlookFamily">>
         <<speaker "Exception">>
@@ -5775,7 +5954,8 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Home [nobr agent exception] {"position":"2700,425","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-Home", 0, 6)>>
+
 <div class="textbox">
     <<ctp "overlookHome">>
         <<speaker "Exception">>
@@ -5789,7 +5969,9 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Missed [nobr agent exception] {"position":"2700,225","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-Missed", 0, 6)>>
+
+
 <div class="textbox">
     <<ctp "overlookMissed">>
         <<speaker "Exception">>
@@ -5803,7 +5985,8 @@ END OF CURRENT DRAFT
 
 
 :: Overlook No Memory [nobr exception agent] {"position":"2800,225","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-No-Memory", 0, 6)>>
+
 <div class="textbox">
     <<ctp "overlookNoMemory">>
         <<speaker "Exception">>
@@ -5817,7 +6000,8 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Nothing [nobr agent exception] {"position":"2700,325","size":"100,100"}
-<<hideAgent>>
+<<run window.playAgentVideo("Overlook-Nothing", 0, 6)>>
+
 <div class="textbox">
     <<ctp "overlookNothing">>
         <<speaker "Exception">>
@@ -5914,6 +6098,8 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Consciousness [nobr agent cartographer archive] {"position":"3600,925","size":"100,100"}
+<<run window.playAgentVideo("Sacrifice-Consciousness", 0, 6)>>
+
 <div class="textbox">
     <<ctp "sacrificeConsciousness">>
         <<speaker "Cartographer">>
@@ -5948,6 +6134,8 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Death [nobr agent cartographer archive] {"position":"3600,1125","size":"100,100"}
+<<run window.playAgentVideo("Sacrifice-Death", 0, 6)>>
+
 <div class="textbox">
     <<ctp "sacrificeDeath">>
         <<speaker "Cartographer">>
@@ -5984,6 +6172,8 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Divine [nobr agent cartographer archive] {"position":"3600,1025","size":"100,100"}
+<<run window.playAgentVideo("Sacrifice-Divine", 0, 6)>>
+
 <div class="textbox">
     <<ctp "sacrificeDivine">>
         <<speaker "Cartographer">>
@@ -6015,6 +6205,8 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice No Design [nobr agent cartographer archive] {"position":"3600,1225","size":"100,100"}
+<<run window.playAgentVideo("Sacrifice-Design", 0, 6)>>
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
@@ -6047,6 +6239,8 @@ END OF CURRENT DRAFT
 
 
 :: Science Weapons [nobr agent cartographer archive] {"position":"3600,725","size":"100,100"}
+<<run window.playAgentVideo("Science-Weapons", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "scienceWeapons">>
@@ -6086,6 +6280,8 @@ END OF CURRENT DRAFT
 
 
 :: Science Your Kind [nobr agent cartographer archive] {"position":"3600,825","size":"100,100"}
+<<run window.playAgentVideo("Science-Kind", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "scienceYourKind">>
@@ -6652,6 +6848,8 @@ END OF CURRENT DRAFT
 
 
 :: War Between Lifeforms [nobr agent cartographer archive] {"position":"3600,525","size":"100,100"}
+<<run window.playAgentVideo("War-Lifeform", 0, 6)>>
+
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -6691,6 +6889,8 @@ END OF CURRENT DRAFT
 
 
 :: War No Conflict [nobr agent cartographer archive] {"position":"3600,425","size":"100,100"}
+<<run window.playAgentVideo("War-No", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "warNoConflict">>
@@ -6724,6 +6924,8 @@ END OF CURRENT DRAFT
 
 
 :: War No Difference [nobr agent cartographer archive] {"position":"3800,525","size":"100,100"}
+<<run window.playAgentVideo("War-Difference", 0, 6)>>
+
 <div class="textbox">
     <<ctp "warNoDifference">>
         <<speaker "Cartographer">>
@@ -6757,6 +6959,8 @@ END OF CURRENT DRAFT
 
 
 :: War Normal [nobr agent cartographer archive] {"position":"3600,625","size":"100,100"}
+<<run window.playAgentVideo("War-Normal", 0, 6)>>
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "warNormal">>
@@ -6789,6 +6993,8 @@ END OF CURRENT DRAFT
 
 
 :: War Parallels [nobr agent cartographer archive] {"position":"3800,425","size":"100,100"}
+<<run window.playAgentVideo("War-Parallels", 0, 6)>>
+
 <div class="textbox">
     <<ctp "warParallels">>
         <<speaker "Cartographer">>
@@ -6825,6 +7031,8 @@ END OF CURRENT DRAFT
 
 
 :: War Shame [nobr agent cartographer archive] {"position":"3800,625","size":"100,100"}
+<<run window.playAgentVideo("War-Shame", 0, 6)>>
+
 <div class="textbox">
     <<ctp "warShame">>
         <<speaker "Cartographer">>
@@ -6856,6 +7064,8 @@ END OF CURRENT DRAFT
 
 
 :: StoryScript [script]
+//CTP MACRO
+
 (() => {
 	"use strict";
 
@@ -7013,6 +7223,7 @@ END OF CURRENT DRAFT
 	});
 })();
 
+
 /*Click za next dialog i skip*/
 function advanceText() {
     var ctpAdvanced = false;
@@ -7088,6 +7299,25 @@ var currentVideoEnd   = 0;
 var currentVideoPart  = "";
 var agentVideoActive  = false;
 
+
+// Iframe
+$(document).ready(function() {
+    var agentContainer = $('<div id="agent-container"></div>').css({
+        'position':  'fixed',
+        'bottom':    '320px',
+        'left':      '50%',
+        'transform': 'translateX(-50%)',
+        'width':     '770px',
+        'height':    '150px',
+        'z-index':   '1000'
+    });
+
+    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone" allowtransparency="true" style="background: transparent; border: none;"></iframe>';
+    agentContainer.append(iframeHtml);
+    $('body').append(agentContainer);
+});
+
+//Adds the video listener that checks if and when the part that is supposed to be playing ends and then starts playing the "tisina" idle loop
 function ensureAgentVideoListener() {
     var bgVideo = document.getElementById('bgVideo');
     if (!bgVideo || bgVideo._hasAgentListener) return;
@@ -7113,24 +7343,7 @@ function ensureAgentVideoListener() {
     });
 }
 
-// Iframe
-$(document).ready(function() {
-    var agentContainer = $('<div id="agent-container"></div>').css({
-        'position':  'fixed',
-        'bottom':    '320px',
-        'left':      '50%',
-        'transform': 'translateX(-50%)',
-        'width':     '770px',
-        'height':    '150px',
-        'z-index':   '1000'
-    });
-
-    var iframeHtml = '<iframe id="agent-iframe" src="" width="100%" height="100%" frameborder="0" allow="microphone" allowtransparency="true" style="background: transparent; border: none;"></iframe>';
-    agentContainer.append(iframeHtml);
-    $('body').append(agentContainer);
-});
-
-
+//Listens to messages coming from the agent javascrript files
 $(window).on('message', function (event) {
     var data = event.originalEvent.data;
 
@@ -7139,7 +7352,7 @@ $(window).on('message', function (event) {
         $('#agent-container').css('display', 'none');
     }
 
-    // Passage change
+    // Passage change from microphone 
     if (data && data.action === 'advance_passage') {
         if (Story.has(data.targetPassage)) {
             Engine.play(data.targetPassage);
@@ -7151,10 +7364,6 @@ $(window).on('message', function (event) {
     // Video segment
     if (data && data.action === 'play_video_part') {
         var bgVideo = document.getElementById('bgVideo');
-        if (!bgVideo) {
-            window.setBackgroundVideo('Hallway_Exception.mp4');
-            bgVideo = document.getElementById('bgVideo');
-        }
         if (!bgVideo) return;  
 
         ensureAgentVideoListener();
@@ -7171,7 +7380,8 @@ $(window).on('message', function (event) {
                 console.warn('[agentVideo] play() blocked:', e);
             });
         };
-
+		
+      	//Making sure that the video is downloaded
         if (bgVideo.readyState >= 2) {  
             doSeekAndPlay();
         } else {
@@ -7179,13 +7389,11 @@ $(window).on('message', function (event) {
                 bgVideo.removeEventListener('canplay', onReady);
                 doSeekAndPlay();
             });
-            if (!bgVideo.src || bgVideo.src === window.location.href) {
-                window.setBackgroundVideo('Hallway_Exception.mp4');
-            }
         }
     }
 });
 
+//Sends the new passage to the agent javascript
 $(document).on(':passageend', function (ev) {
     var f = document.getElementById('agent-iframe');
     if (f && f.contentWindow) {
@@ -7193,6 +7401,7 @@ $(document).on(':passageend', function (ev) {
     }
 });
 
+//Called from the twine passages to play the needed part of the video (stops microhpone untill it stops the part of the video at which point the microphone is restarted by video_part_ended)
 window.playAgentVideo = function(partName, startTime, endTime) {
     var bgVideo = document.getElementById('bgVideo');
     if (bgVideo) {
