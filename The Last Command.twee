@@ -6791,6 +6791,25 @@ END OF CURRENT DRAFT
         }, 50);
     });
 })();
+
+
+// Audio element for dialoge
+(function() {
+    var va = document.createElement('audio');
+    va.id = 'voiceAudio';
+    va.preload = 'auto';
+    document.body.appendChild(va);
+
+    // Stop voice when passage changes
+    $(document).on(':passagestart', function() {
+        var el = document.getElementById('voiceAudio');
+        if (el) {
+            el.pause();
+            el.removeAttribute('src');
+        }
+    });
+})();
+
 <</script>>
 
 
@@ -7418,6 +7437,24 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         bgVideo.play();
     }
 };
+
+//Macro for dialoge
+Macro.add('voice', {
+    handler: function() {
+        var file = this.args[0];
+        if (!file) return;
+
+        var el = document.getElementById('voiceAudio');
+        if (!el) return;
+
+        el.pause();
+        el.src = '/media/voice/' + file + '.mp3';
+        el.load();
+        el.play().catch(function(e) {
+            console.warn('[voice] Could not play:', file, e);
+        });
+    }
+});
 
 :: StoryStylesheet [stylesheet]
 .--macro-ctp-hidden {
