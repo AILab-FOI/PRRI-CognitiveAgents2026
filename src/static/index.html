@@ -473,23 +473,6 @@ body[data-tags~="ending"][data-tags~="game-over"] {
     z-index: 100;
 }
 
-.choice a {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    border: 1px solid #aaaaaa;
-    padding: 12px 40px;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 1.1em;
-    text-decoration: none;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.choice a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #ffffff;
-}
-
 /*Bottom menu*/
 #ui-bar {
     position: fixed !important;
@@ -767,27 +750,56 @@ body {
 .choice a {
     display: block !important;
     width: 100% !important;
-    box-sizing: border-box !important;
-    background: linear-gradient(135deg, rgba(8, 18, 32, 0.95), rgba(3, 8, 18, 0.95)) !important;
-    color: #e6f1ff !important;
-    border: 1px solid rgba(0, 180, 255, 0.75) !important;
-    border-radius: 14px !important;
-    padding: 20px 26px !important;
-    text-align: center !important;
-    font-size: 1.15em !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.3px !important;
+    padding: 18px 28px !important;
+    border-radius: 18px !important;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,180,255,.92),
+            rgba(0,90,255,.82)
+        ) !important;
+
+    border: 1px solid rgba(120,220,255,.55) !important;
+    color: white !important;
     text-decoration: none !important;
-    box-shadow: inset 0 0 12px rgba(0, 180, 255, 0.08), 0 0 10px rgba(0, 180, 255, 0.12) !important;
-    transition: all 0.25s ease !important;
+    font-size: 1.08rem !important;
+    font-weight: 600 !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    box-shadow:
+        0 0 18px rgba(0,180,255,.35),
+        inset 0 0 16px rgba(255,255,255,.08) !important;
+    transition: all .25s ease !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+.choice a::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 2px;
+
+    background: rgba(255,255,255,.6);
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,.6);
 }
 
 .choice a:hover {
-    background: linear-gradient(135deg, rgba(0, 180, 255, 0.25), rgba(0, 94, 255, 0.18)) !important;
-    border-color: #00d5ff !important;
-    color: #ffffff !important;
-    transform: translateY(-3px) scale(1.01) !important;
-    box-shadow: 0 0 22px rgba(0, 180, 255, 0.65), inset 0 0 18px rgba(0, 180, 255, 0.12) !important;
+    transform: translateY(-4px) scale(1.02) !important;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,210,255,.98),
+            rgba(0,120,255,.9)
+        ) !important;
+    box-shadow:
+        0 0 30px rgba(0,220,255,.6),
+        inset 0 0 20px rgba(255,255,255,.12) !important;
 }
 
 button,
@@ -1156,13 +1168,15 @@ body {
 
     transform: translateX(-50%) !important;
 
-    width: fit-content !important;
-    min-width: 360px !important;
-    max-width: 88vw !important;
+    width: 94vw !important;
+    min-width: 94vw !important;
+    max-width: 94vw !important;
 
-    min-height: 120px !important;
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
 
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 34px 42px 28px 42px !important;
 
     box-sizing: border-box !important;
@@ -1187,48 +1201,58 @@ body {
     align-items: center !important;
     justify-content: center !important;
 
+    overflow: visible !important;
     animation: none !important;
+}
+
+/* Let choices escape the dialogue box */
+.textbox {
+    overflow: visible !important;
+}
+
+/* Move choices above the lower UI bar and keep them visible */
+.textbox .choice,
+.choice {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 18px !important;
+    transform: translateX(-50%) !important;
+
+    width: min(420px, 80vw) !important;
+    max-height: 260px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    z-index: 3000 !important;
+}
+
+/* Make choice buttons smaller so they fit */
+.choice a {
+    padding: 14px 22px !important;
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+    margin: 6px 0 !important;
 }
 
 /* ---------- SPEAKER FIX ---------- */
 
 .speaker {
     position: absolute !important;
-
-    top: -32px !important;
+    top: -36px !important;
     left: 50% !important;
-    right: auto !important;
-
     transform: translateX(-50%) !important;
 
-    display: inline-block !important;
+    min-width: 160px !important;
+    text-align: center !important;
 
-    width: auto !important;
-    min-width: 140px !important;
-    max-width: max-content !important;
-
-    margin: 0 !important;
-    padding: 10px 26px !important;
-
-    background: linear-gradient(135deg, #00b4ff, #005eff) !important;
-
+    background: linear-gradient(135deg,#00b4ff,#0066ff) !important;
     color: white !important;
 
-    border: none !important;
-    border-radius: 12px !important;
+    padding: 10px 24px !important;
+    border-radius: 0 0 14px 14px !important;
 
-    text-align: center !important;
-    white-space: nowrap !important;
-
-    font-size: 1rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.04em !important;
-
-    box-shadow: 0 0 18px rgba(0, 180, 255, 0.45) !important;
-
-    box-sizing: border-box !important;
-
-    z-index: 1002 !important;
+    z-index: 9999 !important;
 }
 
 /* ---------- TEXT FIX ---------- */

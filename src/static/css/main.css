@@ -309,574 +309,225 @@ body[data-tags~="ending"][data-tags~="game-over"] {
 
 
 /*Textbox*/
-.textbox {
-    position: fixed;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80vw;
-    background-color: rgba(0, 0, 0, 0.75);
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    padding: 35px 30px 20px 30px; 
-    min-height: 120px;
-    color: #ffffff;
-    font-size: 1.2em;
-    z-index: 10;
-}
-
-/*Speaker*/
-.speaker {
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    background-color: #222222;
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-    padding: 5px 20px;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #ffeb3b;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-/*Choice*/
-.choice {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 100;
-}
-
-.choice a {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    border: 1px solid #aaaaaa;
-    padding: 12px 40px;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 1.1em;
-    text-decoration: none;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.choice a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #ffffff;
-}
-
-/*Bottom menu*/
-#ui-bar {
-    position: fixed !important;
-    top: auto !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 45px !important;
-    background-color: rgba(0, 0, 0, 0.9) !important;
-    border-right: none !important;
-    border-top: 1px solid #555 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 0 !important;
-    z-index: 200 !important;
-    transition: none !important; 
-    margin: 0 !important;
-}
-
-#ui-bar-toggle, #title, #story-caption { 
-    display: none !important; 
-}
-
-/*Back/forward arrows*/
-#ui-bar-tray {
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    border: none !important;
-    padding: 0 15px !important;
-    width: auto !important;
-}
-
-#ui-bar-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    height: 100% !important;
-    overflow: visible !important;
-    background: transparent !important;
-}
-
-/*Save/Restart*/
-#menu {
-    display: flex !important;
-    flex-direction: row !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#menu-core, #menu-story {
-    display: flex !important;
-    flex-direction: row !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    list-style: none !important;
-}
-
-#menu li { 
-    border: none !important; 
-    margin: 0 !important;
-}
-
-#menu li a { 
-    border: none !important; 
-    padding: 0 20px !important; 
-    text-transform: uppercase !important; 
-    font-size: 0.9em !important; 
-    color: #ccc !important;
-    background-color: transparent !important;
-    display: inline-block !important;
-}
-
-#menu li a:hover { 
-    color: #fff !important; 
-    background-color: rgba(255, 255, 255, 0.1) !important; 
-}
-
-/* =========================
-   LIVE BACKGROUND EFFECTS
-   ========================= */
-
-html, body {
-    overflow-x: hidden;
-}
-
-/* lagani puls ambijenta */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.08), transparent 25%),
-        radial-gradient(circle at 80% 60%, rgba(255, 170, 50, 0.06), transparent 28%);
-    animation: ambientPulse 7s ease-in-out infinite;
-}
-
-/* sitne lebdeće čestice */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-    background-image:
-        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.30), transparent),
-        radial-gradient(1px 1px at 30% 75%, rgba(0,255,255,0.28), transparent),
-        radial-gradient(1px 1px at 55% 40%, rgba(255,255,255,0.20), transparent),
-        radial-gradient(1px 1px at 75% 15%, rgba(0,255,255,0.25), transparent),
-        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.20), transparent);
-    animation: particleDrift 14s linear infinite;
-    opacity: 0.7;
-}
-
-@keyframes ambientPulse {
-    0% {
-        opacity: 0.4;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.85;
-        transform: scale(1.03);
-    }
-    100% {
-        opacity: 0.4;
-        transform: scale(1);
-    }
-}
-
-@keyframes particleDrift {
-    0% {
-        transform: translateY(0px);
-        opacity: 0.45;
-    }
-    50% {
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-20px);
-        opacity: 0.45;
-    }
-}
-
-/* =========================
-   LIVE VIDEO BACKGROUND
-   ========================= */
-
-#bgVideo {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: contain;
-    background: black;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 1;
-}
-
-/* Twine tekst i izbori moraju biti iznad videa */
-#story {
-    position: relative;
-    z-index: 2;
-}
-
-/* Ako koristiš sidebar / UI, i on neka bude iznad */
-#ui-bar {
-    position: relative;
-    z-index: 3;
-}
-
 /* =========================================================
-   UI MERGE — KOLEGIN MAIN.CSS + INDEX_NJEGOVO.HTML
-   Baza je ostala "The Last Command Moje.twee".
-   Ovaj blok dodaje kolegine UI promjene u StoryStylesheet,
-   ali NE koristi background shorthand na bodyju kako ne bi pregazio
-   postojeće slike po tagovima i live video sustav.
+   DIALOGUE / UI SYSTEM (CLEAN)
    ========================================================= */
 
-html,
-body {
-    color: #e6f1ff !important;
-    font-family: 'Segoe UI', sans-serif !important;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-}
-
-#story,
-#passages,
-.passage {
-    background: transparent !important;
-    color: #e6f1ff !important;
-}
-
-#story {
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    padding: 40px !important;
-}
-
-#passages {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem;
-}
-
-.passage {
-    animation: fadeIn 0.4s ease;
-}
-
-/* Kolegine dorade tekstualnog okvira, ali bez brisanja postojeće pozicije. */
-.textbox,
-.dialogue,
-.speech-box,
-.narrator,
-#textbox {
-    background: rgba(10, 16, 28, 0.96) !important;
-    border: 2px solid #00b4ff !important;
-    border-radius: 20px !important;
-    box-shadow: 0 0 35px rgba(0, 180, 255, 0.35) !important;
-    color: #e6f1ff !important;
-}
-
+/* TEXT BOX */
 .textbox {
-    padding: 35px !important;
-    margin-top: 30px !important;
-    max-width: 1200px !important;
-    animation: fadeIn 0.4s ease;
-}
+    position: fixed !important;
 
-.textbox span {
+    left: 50% !important;
+    bottom: 70px !important;
+    transform: translateX(-50%) !important;
+
+    width: 94vw !important;
+    min-width: 94vw !important;
+    max-width: 94vw !important;
+
+    height: 180px !important;
+
+    padding: 55px 35px 25px 35px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    background: rgba(5,12,24,.88) !important;
+
+    border: 1px solid rgba(0,220,255,.45) !important;
+    border-radius: 22px !important;
+
+    box-shadow:
+        0 0 35px rgba(0,180,255,.22),
+        inset 0 0 24px rgba(0,180,255,.05) !important;
+
+    backdrop-filter: blur(7px) !important;
+
     color: #e6f1ff !important;
-    font-size: 1.3rem !important;
-    line-height: 1.8 !important;
-}
-
-/* Kolegina dorada oznake govornika. */
-.speaker {
-    background: linear-gradient(135deg, #00b4ff, #0066ff) !important;
-    color: white !important;
-    display: inline-block !important;
-    padding: 12px 24px !important;
-    border-radius: 12px !important;
-    font-weight: bold !important;
     font-size: 1.2rem !important;
-    margin-bottom: 20px !important;
-    box-shadow: 0 0 20px rgba(0, 180, 255, 0.5) !important;
-    border: none !important;
+
+    overflow: visible !important;
+
+    z-index: 1000 !important;
 }
 
-/* Kolegina najvažnija UI promjena: izbori više nisu fiksirani u sredini ekrana,
-   nego se slažu normalno unutar dijaloškog okvira. */
+/* SPEAKER LABEL */
+.speaker {
+    position: absolute !important;
+
+    top: -20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    min-width: 150px !important;
+
+    padding: 10px 24px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00b4ff,
+            #0066ff
+        ) !important;
+
+    border-radius: 14px !important;
+
+    color: white !important;
+
+    font-weight: bold !important;
+    font-size: 1rem !important;
+
+    text-align: center !important;
+
+    box-shadow:
+        0 0 16px rgba(0,180,255,.55) !important;
+
+    z-index: 2000 !important;
+}
+
+/* CHOICES CONTAINER */
 .choice {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
+    position: absolute !important;
+
+    left: 50% !important;
+    top: -220px !important;
+
+    transform: translateX(-50%) !important;
+
+    width: min(420px,80vw) !important;
+
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    width: 100% !important;
-    margin-top: 24px !important;
-    z-index: 100 !important;
+
+    gap: 14px !important;
+
+    z-index: 3000 !important;
 }
 
+/* CHOICE BUTTONS */
 .choice a {
     display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    background: linear-gradient(135deg, rgba(8, 18, 32, 0.95), rgba(3, 8, 18, 0.95)) !important;
-    color: #e6f1ff !important;
-    border: 1px solid rgba(0, 180, 255, 0.75) !important;
-    border-radius: 14px !important;
-    padding: 20px 26px !important;
-    text-align: center !important;
-    font-size: 1.15em !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.3px !important;
-    text-decoration: none !important;
-    box-shadow: inset 0 0 12px rgba(0, 180, 255, 0.08), 0 0 10px rgba(0, 180, 255, 0.12) !important;
-    transition: all 0.25s ease !important;
-}
 
-.choice a:hover {
-    background: linear-gradient(135deg, rgba(0, 180, 255, 0.25), rgba(0, 94, 255, 0.18)) !important;
-    border-color: #00d5ff !important;
-    color: #ffffff !important;
-    transform: translateY(-3px) scale(1.01) !important;
-    box-shadow: 0 0 22px rgba(0, 180, 255, 0.65), inset 0 0 18px rgba(0, 180, 255, 0.12) !important;
-}
+    padding: 18px 26px !important;
 
-button,
-.link-internal,
-.macro-link {
-    color: #ffffff !important;
-    background: linear-gradient(135deg, #00b4ff, #005eff) !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 10px 16px !important;
-    text-decoration: none !important;
-    transition: 0.25s ease !important;
-    display: inline-block;
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-button:hover,
-.link-internal:hover,
-.macro-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 14px rgba(0, 180, 255, 0.8) !important;
-}
-
-textarea,
-input,
-select {
-    background: #111827 !important;
-    color: white !important;
-    border: 1px solid #3b82f6 !important;
-    border-radius: 10px !important;
-    padding: 10px !important;
-}
-
-#ui-bar,
-#ui-dialog,
-#ui-overlay {
-    background: rgba(5, 10, 18, 0.96) !important;
-    border-color: #00b4ff !important;
-}
-
-#ui-bar {
-    box-shadow: 0 -4px 20px rgba(0, 180, 255, 0.25) !important;
-}
-
-#ui-bar button,
-#ui-bar a,
-#menu li a {
-    background: transparent !important;
-    color: #e6f1ff !important;
-    border: 1px solid #2f4f70 !important;
-    border-radius: 8px !important;
-}
-
-#ui-bar button:hover,
-#ui-bar a:hover,
-#menu li a:hover {
-    background: rgba(0, 180, 255, 0.18) !important;
-    box-shadow: 0 0 10px rgba(0, 180, 255, 0.4) !important;
-}
-
-.agent-frame {
-    border: 2px solid #00b4ff !important;
-    border-radius: 14px !important;
-    box-shadow: 0 0 25px rgba(0, 180, 255, 0.35) !important;
-    background: #0f172a !important;
-}
-
-.hud {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background: rgba(0, 0, 0, 0.55);
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #00b4ff;
-    font-size: 14px;
-}
-
-h1,
-h2,
-h3 {
-    color: #8bdcff !important;
-    text-shadow: 0 0 8px rgba(0, 180, 255, 0.35);
-}
-
-fieldset {
-    background: rgba(10, 16, 28, 0.92) !important;
-    border: 2px solid #00b4ff !important;
     border-radius: 18px !important;
-    box-shadow: 0 0 30px rgba(0, 180, 255, 0.4) !important;
-    padding: 32px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,180,255,.95),
+            rgba(0,90,255,.82)
+        ) !important;
+
+    border: 1px solid rgba(120,220,255,.55) !important;
+
+    color: white !important;
+
+    text-decoration: none !important;
+
+    text-align: center !important;
+
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+
+    box-shadow:
+        0 0 18px rgba(0,180,255,.35),
+        inset 0 0 16px rgba(255,255,255,.08) !important;
+
+    transition: all .25s ease !important;
 }
 
-legend {
-    background: rgba(10, 16, 28, 1) !important;
-    color: #8bdcff !important;
-    border: 2px solid #00b4ff !important;
-    border-radius: 10px !important;
-    padding: 10px 22px !important;
-    text-shadow: 0 0 10px rgba(0, 180, 255, 0.8) !important;
+/* HOVER */
+.choice a:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.02) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,210,255,.98),
+            rgba(0,120,255,.90)
+        ) !important;
+
+    box-shadow:
+        0 0 30px rgba(0,220,255,.6),
+        inset 0 0 20px rgba(255,255,255,.12) !important;
 }
-
-fieldset p {
-    color: #e6f1ff !important;
-    font-size: 1.15rem !important;
-    line-height: 1.7 !important;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    #story {
-        padding: 16px !important;
-    }
-
-    #passages {
-        padding: 1rem;
-    }
-
-    .textbox,
-    .dialogue,
-    .speech-box,
-    .narrator,
-    #textbox {
-        padding: 16px !important;
-        width: calc(100vw - 32px) !important;
-        max-width: none !important;
-    }
-
-    button,
-    .link-internal,
-    .macro-link {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hud {
-        flex-direction: column;
-        gap: 8px;
-    }
-}
-
-/* =========================================================
-   END UI MERGE — KOLEGIN MAIN.CSS + INDEX_NJEGOVO.HTML
-   ========================================================= */
-
 
 .video-container {
-  display: none;
-  position: relative;
-  width: 100%; /* Make this 100% so it takes the full width of its parent */
-  padding-top: 130%; /* This will give you a 16:9 aspect ratio. Adjust this value for other aspect ratios */
-  margin: 1em auto;
-  border: 1px solid #ddd;
-  background: #bbb4ab;
-  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+    display: none !important;
 }
 
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Change fill to cover to maintain aspect ratio */
+/* Startup microphone choice */
+#startupute {
+    position: fixed !important;
+    left: 50% !important;
+    top: 34% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: min(760px, 82vw) !important;
+    padding: 8px 20px !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    z-index: 9999 !important;
+}
+
+#startupute center {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+    background: transparent !important;
+}
+
+#startupute p {
+    flex-basis: 100% !important;
+    margin: 0 0 12px 0 !important;
+
+    color: #e6f1ff !important;
+    font-size: 1.25rem !important;
+    text-align: center !important;
+
+    text-shadow: 0 0 8px rgba(0,0,0,.9) !important;
+}
+
+#startupute #btn-yes,
+#startupute #btn-no {
+    width: 260px !important;
+    height: 62px !important;
+
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+
+    color: rgba(240,248,255,.95) !important;
+    background: rgba(10,20,35,.08) !important;
+
+    border: 1px solid rgba(0,180,255,.28) !important;
+    border-radius: 20px !important;
+
+    box-shadow:
+        inset 0 0 10px rgba(0,180,255,.03),
+        0 0 10px rgba(0,180,255,.08) !important;
+
+    backdrop-filter: blur(4px) !important;
+}
+
+#startupute #btn-yes:hover,
+#startupute #btn-no:hover {
+    background: rgba(0,100,180,.18) !important;
+    box-shadow: 0 0 18px rgba(0,180,255,.20) !important;
 }
 
 
-.video-container:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  transform: rotate(-45deg);
-  z-index: 1;
-}
-
-
-.button {
-  font-family: "Permanent Marker", cursive;
-  color: black;
-  background-color: #bbb4ab;
-  border: solid 3px black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  box-shadow: 0px 5px 0px 0px #333;
-  transition: all 0.3s ease;
-}
-
-.button:active {
-  box-shadow: 0px 2px 0px 0px #333;
-  transform: translateY(3px);
-}
