@@ -2342,6 +2342,7 @@ The Last Command
 
 
 :: Artifact Picked Up [nobr engineering artifact] {"position":"3700,2575","size":"100,100"}
+<<set $hasArtifact to true>>
 <div class="textbox">
     <<ctp "artifactPickedUp">>
         <<speaker "Narrator">>
@@ -5290,7 +5291,7 @@ The Last Command
             [[Stand and wait to be acknowledged.|Eng Route B]]
             [[Explore the room quietly.|Eng Route C]]
             [[Move closer behind it.|Eng Route D]]
-            [[Show the Engineer the device.|Eng Artifact Request]]
+            <<if $hasArtifact>>[[Show the Engineer the device.|Eng Artifact Request]]<</if>>
             [[I want to see the Fusion Core.|Fusion Core Request]]
         </div> 
   <</ctp>>
