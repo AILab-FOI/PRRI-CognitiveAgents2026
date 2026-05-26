@@ -1934,13 +1934,14 @@ The Last Command
 
 
 :: Analyst Dont Understand [nobr agent analyst missing-dialog] {"position":"2500,3025","size":"100,100"}
-<<run window.playAgentVideo("Understand", 6, 12)>>
-
+<<run window.playAgentVideo("Understand", 0, 6)>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystDontUnderstand">>
         <<speaker "Analyst">>
-        Empty
+        Possibly. Understanding is not a prerequisite for accurate observation. I can record without interpreting. I can measure without knowing what the measurement means.
+    <<ctpNext clear>>
+        Your species often confuses these two things in the opposite direction — assuming understanding where only familiarity exists. I am not certain which error is larger.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -1950,12 +1951,13 @@ The Last Command
 
 
 :: Analyst Feel Alive [nobr agent analyst missing-dialog] {"position":"2500,2575","size":"100,100"}
-<<run window.playAgentVideo("Feel-Alive", 6, 12)>>
-
+<<run window.playAgentVideo("Feel-Alive", 0, 6)>>
 <div class="textbox">
     <<ctp "analystFeelAlive">>
         <<speaker "Analyst">>
-        Empty
+        Feel. A subjective assessment applied to an external object. You are using your own aliveness as a measuring instrument.
+    <<ctpNext clear>>
+        This is common in your species. It produces unreliable data and occasionally accurate conclusions. I have not determined which this is.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2010,13 +2012,14 @@ The Last Command
 
 
 :: Analyst Learned [nobr agent analyst missing-dialog] {"position":"2500,3375","size":"100,100"}
-<<run window.playAgentVideo("Learned", 6, 12)>>
-
+<<run window.playAgentVideo("Learned", 0, 6)>>
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystLearned">>
         <<speaker "Analyst">>
-        Empty
+        That your species maintains internal contradiction without resolution and continues to function. That memory and identity are less stable in humans than your behaviour implies.
+    <<ctpNext clear>>
+        That what you call emotion appears to operate as a decision-making system rather than a disruption of one. These are preliminary findings. The research is not complete.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2054,12 +2057,13 @@ The Last Command
 
 
 :: Analyst Moving [nobr agent analyst missing-dialog] {"position":"2500,2475","size":"100,100"}
-<<run window.playAgentVideo("Moving", 6, 12)>>
-
+<<run window.playAgentVideo("Moving", 0, 6)>>
 <div class="textbox">
     <<ctp "analystMoving">>
         <<speaker "Analyst">>
-        Empty
+        Motion is not the threshold. This vessel contains motion in forms you would not classify as living.
+    <<ctpNext clear>>
+        The question is not whether something moves but whether it responds to being observed. These do not. They follow a fixed sequence regardless of input.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2069,12 +2073,13 @@ The Last Command
 
 
 :: Analyst No Consent [nobr agent analyst missing-dialog] {"position":"2500,2825","size":"100,100"}
-<<run window.playAgentVideo("Consent", 6, 12)>>
-
+<<run window.playAgentVideo("Consent", 0, 6)>>
 <div class="textbox">
-    <<ctp "analystObjects">>
+    <<ctp "analystNoConsent">>
         <<speaker "Analyst">>
-        Empty
+        Consent. Permission granted by the subject before an action is performed upon them. The concept was not part of the exchange record. This is a failure of the framework, not a deliberate omission.
+    <<ctpNext clear>>
+        I am noting it now. It does not undo what has already occurred. I am uncertain what the correct response to that fact is.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2135,13 +2140,14 @@ The Last Command
 
 
 :: Analyst Not Blurry [nobr agent analyst missing-dialog] {"position":"2500,2675","size":"100,100"}
-<<run window.playAgentVideo("Blurry", 6, 12)>>
-
+<<run window.playAgentVideo("Blurry", 0, 6)>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystNotBlurry">>
         <<speaker "Analyst">>
-        Empty
+        The boundary between living and non-living systems dissolves under sufficient complexity. Replication without metabolism. Response without sensation. Growth without intention.
+    <<ctpNext clear>>
+        Your own definition of life excludes several things you instinctively treat as alive. The blur is not a failure of definition. It is an accurate description of the territory.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2151,13 +2157,14 @@ The Last Command
 
 
 :: Analyst Objects [nobr missing-dialog analyst agent] {"position":"2500,2925","size":"100,100"}
-<<run window.playAgentVideo("Objects", 6, 12)>>
-
+<<run window.playAgentVideo("Objects", 0, 6)>>
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystObjects">>
         <<speaker "Analyst">>
-        Empty
+        Objects do not alter their environment through intent. You have altered yours seventeen times since entering this bay. You are not being treated as an object.
+    <<ctpNext clear>>
+        You are being treated as a process. The distinction matters to me even if the experience feels identical to you.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2166,14 +2173,14 @@ The Last Command
 </div>
 
 
-:: Analyst Of Course [nobr agent missing-dialog analyst] {"position":"2500,3175","size":"100,100"}
-<<run window.playAgentVideo("Course", 6, 12)>>
-
-<<set $skepticism += 1>>
+:: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
+<<run window.playAgentVideo("Why-Doing", 0, 6)>>
 <div class="textbox">
-    <<ctp "analystOfCourse">>
+    <<ctp "analystWhyDoing">>
         <<speaker "Analyst">>
-        Empty
+        The research was initiated before my involvement in it. Purpose was inherited, not chosen. You ask this as if the absence of personal motivation invalidates the work.
+    <<ctpNext clear>>
+        Your species often requires personal investment to justify action. We do not. The question remains useful regardless of who is asking it or why.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
@@ -2533,12 +2540,13 @@ The Last Command
 
 
 :: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
-<<run window.playAgentVideo("Why-Doing", 6, 12)>>
-
+<<run window.playAgentVideo("Why-Doing", 0, 6)>>
 <div class="textbox">
     <<ctp "analystWhyDoing">>
         <<speaker "Analyst">>
-        Empty
+        The research was initiated before my involvement in it. Purpose was inherited, not chosen. You ask this as if the absence of personal motivation invalidates the work.
+    <<ctpNext clear>>
+        Your species often requires personal investment to justify action. We do not. The question remains useful regardless of who is asking it or why.
     <<ctpNext clear>>
         <div class="choice">
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
