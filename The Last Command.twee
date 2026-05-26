@@ -86,7 +86,6 @@ The Last Command
 
 
 :: 3.1. A Environment [nobr agent hallway exception] {"position":"1000,1950","size":"100,100"}
-
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -136,9 +135,7 @@ The Last Command
 </div>
 
 
-
 :: 3.1. A Obsessed [agent nobr hallway exception] {"position":"900,1900","size":"100,100"}
-
 <div class="textbox">
     <<ctp "3.1.AObsessed">>
         <<speaker "Exception">>
@@ -175,8 +172,6 @@ The Last Command
 
 
 :: 3.1. A Philosophical [nobr agent hallway exception] {"position":"1000,1850","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
@@ -220,7 +215,6 @@ The Last Command
 
 
 :: 3.1. Actually Human [nobr agent hallway exception] {"position":"1100,1550","size":"100,100"}
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
@@ -276,7 +270,6 @@ The Last Command
 
 
 :: 3.1. Also Hear [nobr agent hallway exception] {"position":"900,1500","size":"100,100"}
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.AlsoHear">>
@@ -328,8 +321,6 @@ The Last Command
 
 
 :: 3.1. B Who Brought [nobr agent hallway exception] {"position":"900,2150","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.BWhoBrought">>
         <<speaker "Exception">>
@@ -374,7 +365,6 @@ The Last Command
 
 
 :: 3.1. Back to Earth [nobr agent hallway exception] {"position":"1100,2200","size":"100,100"}
-
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.BackToEarth">>
@@ -432,7 +422,6 @@ The Last Command
 
 
 :: 3.1. C Trade [nobr agent hallway exception] {"position":"900,2400","size":"100,100"}
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.CTrade">>
@@ -496,9 +485,7 @@ The Last Command
 </div>
 
 
-
 :: 3.1. Choice A [agent nobr hallway exception] {"position":"700,1900","size":"100,100"}
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.choiceA">>
@@ -526,7 +513,6 @@ The Last Command
 
 
 :: 3.1. Choice B [nobr agent hallway exception] {"position":"700,2150","size":"100,100"}
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.B">>
@@ -576,7 +562,6 @@ The Last Command
 
 
 :: 3.1. Choice C [nobr agent hallway exception] {"position":"700,2400","size":"100,100"}
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceC">>
@@ -622,8 +607,6 @@ The Last Command
 
 
 :: 3.1. Choice Voice [nobr agent hallway exception] {"position":"700,1500","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceVoice">>
@@ -674,7 +657,6 @@ The Last Command
 
 
 :: 3.1. Fight Back [nobr hallway exception] {"position":"1300,2200","size":"100,100"}
-
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.FightBack">>
@@ -756,7 +738,6 @@ The Last Command
 
 
 :: 3.1. Human Voice [nobr agent hallway exception] {"position":"900,1400","size":"100,100"}
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
@@ -808,8 +789,6 @@ The Last Command
 
 
 :: 3.1. No Consent [nobr agent hallway exception] {"position":"1300,2300","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.NoConsent">>
         <<speaker "Exception">>
@@ -936,8 +915,6 @@ The Last Command
 
 
 :: 3.1. Sold Against Will [nobr agent hallway exception] {"position":"1100,2300","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.SoldAgainstWill">>
         <<speaker "Exception">>
@@ -982,7 +959,6 @@ The Last Command
 
 
 :: 3.1. Uncompliant [agent nobr hallway exception] {"position":"1300,2400","size":"100,100"}
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.Uncompliant">>
@@ -1050,8 +1026,6 @@ The Last Command
 
 
 :: 3.1. Voice Saying [nobr agent hallway exception] {"position":"1100,1450","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.VoiceSaying">>
         <<speaker "You">>
@@ -1125,8 +1099,6 @@ The Last Command
 
 
 :: 3.1. What Do You Want [nobr hallway exception] {"position":"1300,2100","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.WhatDoYouWant">>
         The alien does not react to the anger in your voice. If it recognizes it, it treats it as another form of data.
@@ -1178,8 +1150,6 @@ The Last Command
 
 
 :: 3.1. Where Go [nobr agent exception hallway] {"position":"900,1600","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.WhereGo">>
         The alien turns its head toward the length of the corridor.
@@ -1751,8 +1721,6 @@ The Last Command
 
 
 :: Analyst Alive [nobr agent analyst] {"position":"2400,2575","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystAlive">>
         <<speaker "Analyst">>
@@ -1770,8 +1738,6 @@ The Last Command
 
 
 :: Analyst Brain [nobr agent analyst] {"position":"2400,1875","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystBrain">>
         <<speaker "Analyst">>
@@ -1797,9 +1763,6 @@ The Last Command
 
 
 :: Analyst Carry Know [nobr agent analyst] {"position":"3400,2425","size":"100,100"}
-
-
-
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 <div class="textbox">
@@ -1819,8 +1782,6 @@ The Last Command
 
 
 :: Analyst Carry No [nobr agent analyst] {"position":"3400,2325","size":"100,100"}
-
-
 <<set $analystSignal to true>>	
 <<set $specimenDone to true>>
 <<set $compliance += 1>>
@@ -1841,8 +1802,6 @@ The Last Command
 
 
 :: Analyst Carry Used To [nobr agent analyst] {"position":"3400,2225","size":"100,100"}
-
-
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 <div class="textbox">
@@ -1862,8 +1821,6 @@ The Last Command
 
 
 :: Analyst Carry Yes [nobr agent analyst] {"position":"3400,2125","size":"100,100"}
-
-
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 <div class="textbox">
@@ -1883,8 +1840,6 @@ The Last Command
 
 
 :: Analyst Compare [nobr agent analyst] {"position":"2500,2175","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystCompare">>
         <<speaker "Analyst">>
@@ -1967,8 +1922,6 @@ The Last Command
 
 
 :: Analyst Greater Design [nobr agent analyst] {"position":"3200,2275","size":"100,100"}
-
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "analystGreaterDesign">>
@@ -2029,8 +1982,6 @@ The Last Command
 
 
 :: Analyst Left [nobr agent analyst] {"position":"3000,2325","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystLeft">>
         <<speaker "Analyst">>
@@ -2089,8 +2040,6 @@ The Last Command
 
 
 :: Analyst No Memory [nobr agent analyst] {"position":"2500,1775","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystNoMemory">>
         <<speaker "Analyst">>
@@ -2108,8 +2057,6 @@ The Last Command
 
 
 :: Analyst No Signal [nobr analyst] {"position":"3200,2375","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystNoSignal">>
         <<speaker "Analyst">>
@@ -2173,25 +2120,7 @@ The Last Command
 </div>
 
 
-:: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
-<<run window.playAgentVideo("Why-Doing", 0, 6)>>
-<div class="textbox">
-    <<ctp "analystWhyDoing">>
-        <<speaker "Analyst">>
-        The research was initiated before my involvement in it. Purpose was inherited, not chosen. You ask this as if the absence of personal motivation invalidates the work.
-    <<ctpNext clear>>
-        Your species often requires personal investment to justify action. We do not. The question remains useful regardless of who is asking it or why.
-    <<ctpNext clear>>
-        <div class="choice">
-           [[Continue to the specimen test.|Analyst Puzzle Intro]]
-        </div>
-  <</ctp>>
-</div>
-
-
 :: Analyst Probability [nobr analyst] {"position":"3000,2825","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
@@ -2217,8 +2146,6 @@ The Last Command
 
 
 :: Analyst Puzzle Intro [nobr agent specimen analyst sample] {"position":"2800,2575","size":"100,100"}
-
-
 <<if $fromAnalysWhyBuildtRoute is true>>
     <<set $curiosity += 1>>
 <</if>>
@@ -2241,8 +2168,6 @@ The Last Command
 
 
 :: Analyst Recording [agent nobr analyst] {"position":"2600,2025","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystRecording">>
@@ -2345,8 +2270,6 @@ The Last Command
 
 
 :: Analyst Right [nobr agent analyst] {"position":"3000,2575","size":"100,100"}
-
-
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 
@@ -2380,7 +2303,6 @@ The Last Command
 
 
 :: Analyst Sample [nobr agent analyst] {"position":"2500,2275","size":"100,100"}
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystSample">>
@@ -2437,8 +2359,6 @@ The Last Command
 
 
 :: Analyst Studying [nobr agent analyst] {"position":"2400,3275","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystStudying">>
         <<speaker "Analyst">>
@@ -2477,8 +2397,6 @@ The Last Command
 
 
 :: Analyst What Place [nobr agent analyst] {"position":"2400,2225","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystWhatPlace">>
@@ -2501,8 +2419,6 @@ The Last Command
 
 
 :: Analyst Who I Am [nobr agent analyst] {"position":"2500,1875","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
@@ -2520,8 +2436,6 @@ The Last Command
 
 
 :: Analyst Why Build [nobr agent analyst] {"position":"2500,1975","size":"100,100"}
-
-
 <<set $fromAnalysWhyBuildRoute = true>>
 <div class="textbox">
     <<ctp "analystWhyBuild">>
@@ -2555,9 +2469,23 @@ The Last Command
 </div>
 
 
+:: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
+<<run window.playAgentVideo("Why-Doing", 0, 6)>>
+<div class="textbox">
+    <<ctp "analystWhyDoing">>
+        <<speaker "Analyst">>
+        The research was initiated before my involvement in it. Purpose was inherited, not chosen. You ask this as if the absence of personal motivation invalidates the work.
+    <<ctpNext clear>>
+        Your species often requires personal investment to justify action. We do not. The question remains useful regardless of who is asking it or why.
+    <<ctpNext clear>>
+        <div class="choice">
+           [[Continue to the specimen test.|Analyst Puzzle Intro]]
+        </div>
+  <</ctp>>
+</div>
+
+
 :: Analyst Worse [nobr agent analyst] {"position":"2600,1925","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystWorse">>
@@ -2574,8 +2502,6 @@ The Last Command
 
 
 :: Analyst Wrong [nobr agent analyst] {"position":"2400,2925","size":"100,100"}
-
-
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystWrong">>
@@ -2617,11 +2543,13 @@ The Last Command
             Archive. Good.
         <<else>>
             <<speaker "Narrator">>
+             <<voice "archive_bay_entry_n1">>
             Back again.
         <</if>>
     <<ctpNext clear>>
         <<if visited("Archive Bay Entry") lte 1>>
         	<<speaker "Narrator">>
+             <<voice "archive_bay_entry_n2">>
             This is where the Cartographer keeps pretending that watching a world from orbit is the same thing as understanding it.
         <</if>>
     <<ctpNext clear>>
@@ -2667,6 +2595,7 @@ The Last Command
         You're looking at it again. The window that isn't a window.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_bay_return_n1">>
         I know that view. I have spent a great deal of time not looking at it, which is almost the same thing.
     <<ctpNext clear>>
         <div class="choice">
@@ -2694,6 +2623,7 @@ The Last Command
         Strange, isn't it?
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+       <<voice "archive_earth_view_n1">>
         How much you can love something that has no idea you're looking at it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2701,9 +2631,11 @@ The Last Command
         I used to think the problem with humanity was scale. That we cared too much about small things. A patch of ground. A room. A family. A version of how the world should go.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n2">>
         But from here, none of that becomes smaller.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n3">>
         It becomes harder to lie about.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2711,9 +2643,11 @@ The Last Command
         The aliens think Earth is a deathworld because conflict shaped it.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n4">>
         They're not entirely wrong.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n5">>
         But they miss the campfire part. The part where people sit close because the dark is large and being alone inside it is worse.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2721,9 +2655,11 @@ The Last Command
         Humans are not hive minds. Not bees. Not ants. Not these observers with their clean categories and orbital patience.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n6">>
         We are contradictory. Local. Numerous. Personal.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n7">>
         We bite hardest when we are not aligned.
     <<ctpNext clear>>
         A long pause follows.
@@ -2733,6 +2669,7 @@ The Last Command
         I have been up here long enough to know that.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "archive_earth_view_n8">>
         Long enough that knowing it is no longer enough.
     <<ctpNext clear>>
         <div class="choice">
@@ -3812,8 +3749,6 @@ The Last Command
 
 
 :: Cart Brain Accept [nobr agent cartographer] {"position":"2800,975","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartBrainAccept">>
     	<<speaker "Cartographer">>
@@ -3828,8 +3763,6 @@ The Last Command
 
 
 :: Cart Brain Permanent [nobr agent cartographer] {"position":"2900,825","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
     	<<speaker "Cartographer">>
@@ -3845,8 +3778,6 @@ The Last Command
 
 
 :: Cart Brain Rage [nobr agent cartographer archive] {"position":"2800,775","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
         <<speaker "You">>
@@ -3897,8 +3828,6 @@ The Last Command
 
 
 :: Cart Brain Skeptic [nobr agent cartographer] {"position":"2800,875","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartBrainSkeptic">>
     	<<speaker "Cartographer">>
@@ -3914,10 +3843,7 @@ The Last Command
 </div>
 
 
-
 :: Cart Deathworld [nobr agent cartographer] {"position":"2600,875","size":"100,100"}
-
-
 <<set $brainManipAware to true>>
 <div class="textbox">
     <<ctp "cartDeathWorld">>
@@ -3941,8 +3867,6 @@ The Last Command
 
 
 :: Cart Effort [nobr agent cartographer] {"position":"2600,775","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartEffort">>
     	<<speaker "Cartographer">>
@@ -3975,8 +3899,6 @@ The Last Command
 
 
 :: Cart Hit Threat [agent nobr cartographer archive] {"position":"2900,925","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartHitThreat">>
         <<speaker "You">>
@@ -3999,6 +3921,7 @@ The Last Command
         Don't hit it.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "cart_hit_threat_n1">>
         I understand the impulse, genuinely, but if you are determined to damage diplomatic relations with an alien research vessel, at least do it after we get what we need.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
@@ -4018,8 +3941,6 @@ The Last Command
 
 
 :: Cart Join Research [nobr agent cartographer] {"position":"3200,775","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartJoinResearch">>
         <<speaker "Cartographer">>
@@ -4037,8 +3958,6 @@ The Last Command
 
 
 :: Cart Punch [nobr agent cartographer archive] {"position":"3000,875","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartPunch">>
         You strike the Cartographer before the thought finishes becoming a decision.
@@ -4087,8 +4006,6 @@ The Last Command
 
 
 :: Cart Puzzle Sacrifice [nobr agent cartographer archive] {"position":"3400,1025","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartPuzzleSacrifice">>
         The second projection appears.
@@ -4143,8 +4060,6 @@ The Last Command
 
 
 :: Cart Puzzle Science [nobr agent cartographer archive] {"position":"3400,775","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartPuzzleScience">>
         The third projection forms.
@@ -4213,8 +4128,6 @@ The Last Command
 
 
 :: Cart Puzzle War [nobr agent cartographer archive] {"position":"3400,525","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartPuzzleWar">>
         The first projection expands.
@@ -4282,8 +4195,6 @@ The Last Command
 
 
 :: Cart Signal Check [nobr archive cartographer] {"position":"4000,775","size":"100,100"}
-
-
 <<set $cartSignal to true>>
 <<set $archiveSignal = true>>
 <<set $cartPuzzleDone to true>>
@@ -4339,8 +4250,6 @@ The Last Command
 
 
 :: Cart Threatening [nobr agent cartographer] {"position":"2600,675","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
@@ -4630,12 +4539,15 @@ The Last Command
         No, I did not kill them.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_did_you_n1">>
         They made a choice, and yes, I understand how that sounds coming from someone who was giving instructions at the time.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_did_you_n2">>
         But I tried to help them.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_did_you_n3">>
         The biochip destabilized. Their fear spiked. Their body did not understand the signal it was receiving.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4646,6 +4558,7 @@ The Last Command
         I could not stop it.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_did_you_n4">>
         I could only watch the system interpret panic as input.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -4710,8 +4623,6 @@ The Last Command
 
 
 :: Discarded Exception Know [nobr agent exception discarded] {"position":"3000,1425","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "discardedExceptionKnow">>
         <<speaker "You">>
@@ -4769,8 +4680,6 @@ The Last Command
 
 
 :: Discarded Exception What [nobr agent exception discarded] {"position":"3000,1525","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "discardedExceptionWhat">>
         <<speaker "You">>
@@ -4872,8 +4781,6 @@ The Last Command
 
 
 :: Discarded Exception Why [nobr agent exception discarded] {"position":"3000,1325","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "discardedExceptionWhy">>
         <<speaker "You">>
@@ -4946,9 +4853,11 @@ The Last Command
         I know.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_leave_n1">>
         Good instinct. Excellent instinct, actually.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_leave_n2">>
         The kind of instinct that keeps a person from standing in a room with a corpse and pretending it has answers.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -4969,8 +4878,6 @@ The Last Command
 
 
 :: Discarded Lying [nobr agent exception discarded] {"position":"3200,1425","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "discardedLying">>
@@ -5061,15 +4968,19 @@ The Last Command
         That shouldn't be there.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_room_first_n1">>
         I mean the body. Obviously the body.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_room_first_n2">>
         There was a person before you. Someone else who came through the same process.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_room_first_n3">>
         They didn't survive it. Their biochip malfunctioned. That part I knew.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_room_first_n4">>
         What I did not know was that they were in here.
     <<ctpNext clear>>
         A beat.
@@ -5104,7 +5015,6 @@ The Last Command
 
 
 :: Discarded What Suggest [nobr agent exception discarded] {"position":"3200,1325","size":"100,100"}
-
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -5187,12 +5097,15 @@ The Last Command
         Someone like you.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "discarded_who_n1">>
         Same process. Different outcome.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_who_n2">>
         They were frightened before I could finish explaining anything. The biochip reacted badly. Their brain reacted worse.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_who_n3">>
         It moved faster than I anticipated.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -5203,9 +5116,11 @@ The Last Command
         I knew they died.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_who_n4">>
         I did not know they were here.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "discarded_who_n5">>
         That distinction matters.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -5231,8 +5146,6 @@ The Last Command
 
 
 :: Discarded Why Telling [nobr agent exception discarded] {"position":"3200,1525","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "discardedWhyTelling">>
@@ -5694,8 +5607,6 @@ The Last Command
 
 
 :: Eng A No [nobr agent engineer] {"position":"2800,4125","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engANo">>
         <<speaker "Engineer">>
@@ -5714,8 +5625,6 @@ The Last Command
 
 
 :: Eng A What [nobr agent engineer] {"position":"2800,4375","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engAWhat">>
         <<speaker "Engineer">>
@@ -5732,8 +5641,6 @@ The Last Command
 
 
 :: Eng A Who [nobr agent engineer] {"position":"2800,4275","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engAWho">>
         <<speaker "Engineer">>
@@ -6004,8 +5911,6 @@ The Last Command
 
 
 :: Eng Camera [nobr agent engineer] {"position":"3200,4225","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engCamera">>
         A camera rises from the workbench.
@@ -6025,8 +5930,6 @@ The Last Command
 
 
 :: Eng Camera Accuracy [nobr agent engineer] {"position":"3600,4075","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <<set $engSignal to true>>
 <div class="textbox">
@@ -6046,8 +5949,6 @@ The Last Command
 
 
 :: Eng Camera Alone [nobr agent engineer] {"position":"3600,4175","size":"100,100"}
-
-
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <<set $engSignal to true>>
@@ -6068,8 +5969,6 @@ The Last Command
 
 
 :: Eng Camera Imprecision [nobr agent engineer] {"position":"3600,3975","size":"100,100"}
-
-
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <<set $engSignal to true>>
@@ -6090,8 +5989,6 @@ The Last Command
 
 
 :: Eng Camera Memory [nobr agent engineer] {"position":"3400,4025","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engCameraMemory">>
         <<speaker "Engineer">>
@@ -6108,8 +6005,6 @@ The Last Command
 
 
 :: Eng Camera Obsession [nobr agent engineer] {"position":"3400,4425","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engCameraObsession">>
         <<speaker "Engineer">>
@@ -6126,8 +6021,6 @@ The Last Command
 
 
 :: Eng Camera Obsession Point [nobr agent engineer] {"position":"3600,4375","size":"100,100"}
-
-
 <<set $engineeringDone to true>>
 <<set $skepticism += 1>>
 <<set $engSignal to true>>
@@ -6148,8 +6041,6 @@ The Last Command
 
 
 :: Eng Camera Obsession Problem [nobr agent engineer] {"position":"3600,4475","size":"100,100"}
-
-
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <<set $engSignal to true>>
@@ -6170,8 +6061,6 @@ The Last Command
 
 
 :: Eng Camera Residue [nobr agent engineer] {"position":"3600,4275","size":"100,100"}
-
-
 <<set $engineeringDone to true>>
 <<set $curiosity += 1>>
 <<set $engSignal to true>>
@@ -6192,8 +6081,6 @@ The Last Command
 
 
 :: Eng Camera Share [nobr agent engineer] {"position":"3400,4225","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engCameraShare">>
         <<speaker "Engineer">>
@@ -6225,8 +6112,6 @@ The Last Command
 
 
 :: Eng Rifle [nobr agent engineer] {"position":"3200,4725","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRifle">>
         <<speaker "Engineer">>
@@ -6244,8 +6129,6 @@ The Last Command
 
 
 :: Eng Rifle Force [nobr agent engineer] {"position":"3400,4725","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
@@ -6262,8 +6145,6 @@ The Last Command
 
 
 :: Eng Rifle Power [nobr agent engineer] {"position":"3400,4825","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
@@ -6280,8 +6161,6 @@ The Last Command
 
 
 :: Eng Rifle War [nobr agent engineer] {"position":"3400,4625","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
@@ -6460,8 +6339,6 @@ The Last Command
 
 
 :: Exit Exception Fine [nobr agent exception] {"position":"4000,2525","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "exitExceptionFine">>
         The Exception is quiet for a moment — not processing, something closer to surprised.
@@ -6481,8 +6358,6 @@ The Last Command
 
 
 :: Exit Exception Following [nobr agent exception] {"position":"4000,2225","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "exitExceptionFollowing">>
         <<speaker "Exception">>
@@ -6498,8 +6373,6 @@ The Last Command
 
 
 :: Exit Exception Stopped [nobr agent exception] {"position":"4000,2325","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "exitExceptionStopped">>
         <<speaker "Exception">>
@@ -6516,8 +6389,6 @@ The Last Command
 
 
 :: Exit Exception Want [agent exception nobr] {"position":"4000,2025","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "exitExceptionWant">>
         <<speaker "Exception">>
@@ -6740,6 +6611,7 @@ END OF CURRENT DRAFT
         Good. You're moving. That is, historically, the part people struggle with.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "hallway_convergence_n1">>
         What you met back there — the researchers, the Exception, whatever version of this route you took — that's the shape of things on this ship. Strange is the baseline here.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -6747,6 +6619,7 @@ END OF CURRENT DRAFT
         Ahead is the central room before the control door. From there, three branches. Each of them contains something you need.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "hallway_convergence_n2">>
         Don't worry about understanding all of it yet. Just reach the room.
     <<ctpNext clear>>
         <div class="choice">
@@ -6999,9 +6872,11 @@ END OF CURRENT DRAFT
         But the locked room ahead matters more than my biography.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+     <<voice "narrator_identity_n1">>
         What both of us need is behind that door. The room is not part of their usual routine. It is an exception.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_identity_n2">>
         Much like you.
     <<ctpNext clear>>
         <div class="choice">
@@ -7023,9 +6898,11 @@ END OF CURRENT DRAFT
         You are going to move through the adjacent sections of the ship.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_who_are_you_n1">>
         Archive. Specimen Bay. Engineering Bay.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "narrator_who_are_you_n2">>
         Each of them serves a function. Each of them has a researcher. Each of them contains a signal the door can understand.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7033,6 +6910,7 @@ END OF CURRENT DRAFT
         You do not need to understand everything you see.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_who_are_you_n3">>
         You need to survive it, remember it, and bring the signals back here.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7040,6 +6918,7 @@ END OF CURRENT DRAFT
         When all three parts of the access code are complete, this door opens.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_who_are_you_n4">>
         Then the rest finally becomes simple.
     <<ctpNext clear>>
         <div class="choice">
@@ -7060,6 +6939,7 @@ END OF CURRENT DRAFT
         You can call me the Narrator.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_who_are_you_n1">>
         I know. Dramatic. A little self-important. But accurate enough for our purposes.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7070,6 +6950,7 @@ END OF CURRENT DRAFT
         It is an answer with excellent branding.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_who_are_you_n2">>
         The important part is this: I am the only voice currently invested in getting you through that door alive.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7077,6 +6958,7 @@ END OF CURRENT DRAFT
         The aliens observe. The ship processes. The door waits.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "narrator_who_are_you_n3">>
         I guide.
     <<ctpNext clear>>
         <div class="choice">
@@ -7098,6 +6980,7 @@ END OF CURRENT DRAFT
         Because the ship does not respond to me the way it responds to you.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "narrator_why_not_open_n1">>
         That is not poetic. It is technical, unfortunately.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7105,6 +6988,7 @@ END OF CURRENT DRAFT
         You are mobile. Logged. Biologically current. Connected to the biochip in a way the ship recognises as active.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "narrator_why_not_open_n2">>
         I am... less convenient.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7115,9 +6999,11 @@ END OF CURRENT DRAFT
         It is.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "narrator_why_not_open_n3">>
         But incomplete does not mean false.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+         <<voice "narrator_why_not_open_n4">>
         Go to the bays. Gather the signals. Come back to the door.
     <<ctpNext clear>>
         <div class="choice">
@@ -7128,7 +7014,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Burned [nobr agent exception] {"position":"2800,425","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7150,7 +7035,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Distant [nobr exception agent] {"position":"2800,325","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7170,7 +7054,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Family [nobr agent exception] {"position":"2900,325","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7188,7 +7071,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Home [nobr agent exception] {"position":"2700,425","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7206,7 +7088,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Missed [nobr agent exception] {"position":"2700,225","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 
@@ -7226,7 +7107,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook No Memory [nobr exception agent] {"position":"2800,225","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7244,7 +7124,6 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Nothing [nobr agent exception] {"position":"2700,325","size":"100,100"}
-
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7289,6 +7168,7 @@ END OF CURRENT DRAFT
         The three branches are not decorative. Archive, Specimen Bay, Engineering Bay. Each one contains a signal carrier.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
+        <<voice "pre_control_room_n1">>
         Get the signals. Come back here. Enter the code.
     <<ctpNext clear>>
         <div class="choice">
@@ -7345,8 +7225,6 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Consciousness [nobr agent cartographer archive] {"position":"3600,925","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "sacrificeConsciousness">>
         <<speaker "Cartographer">>
@@ -7401,8 +7279,6 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Death [nobr agent cartographer archive] {"position":"3600,1125","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "sacrificeDeath">>
         <<speaker "Cartographer">>
@@ -7457,8 +7333,6 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Divine [nobr agent cartographer archive] {"position":"3600,1025","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "sacrificeDivine">>
         <<speaker "Cartographer">>
@@ -7503,8 +7377,6 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice No Design [nobr agent cartographer archive] {"position":"3600,1225","size":"100,100"}
-
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
@@ -7556,8 +7428,6 @@ END OF CURRENT DRAFT
 
 
 :: Science Weapons [nobr agent cartographer archive] {"position":"3600,725","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "scienceWeapons">>
@@ -7615,8 +7485,6 @@ END OF CURRENT DRAFT
 
 
 :: Science Your Kind [nobr agent cartographer archive] {"position":"3600,825","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "scienceYourKind">>
@@ -8252,8 +8120,6 @@ END OF CURRENT DRAFT
 
 
 :: War Between Lifeforms [nobr agent cartographer archive] {"position":"3600,525","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -8318,8 +8184,6 @@ END OF CURRENT DRAFT
 
 
 :: War No Conflict [nobr agent cartographer archive] {"position":"3600,425","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "warNoConflict">>
@@ -8369,8 +8233,6 @@ END OF CURRENT DRAFT
 
 
 :: War No Difference [nobr agent cartographer archive] {"position":"3800,525","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "warNoDifference">>
         <<speaker "Cartographer">>
@@ -8422,9 +8284,7 @@ END OF CURRENT DRAFT
 </div>
 
 
-
 :: War Normal [nobr agent cartographer archive] {"position":"3600,625","size":"100,100"}
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "warNormal">>
@@ -8471,8 +8331,6 @@ END OF CURRENT DRAFT
 
 
 :: War Parallels [nobr agent cartographer archive] {"position":"3800,425","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "warParallels">>
         <<speaker "Cartographer">>
@@ -8533,8 +8391,6 @@ END OF CURRENT DRAFT
 
 
 :: War Shame [nobr agent cartographer archive] {"position":"3800,625","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "warShame">>
         <<speaker "Cartographer">>
