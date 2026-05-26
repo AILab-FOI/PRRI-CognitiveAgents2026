@@ -86,21 +86,34 @@ The Last Command
 
 
 :: 3.1. A Environment [nobr agent hallway exception] {"position":"1000,1950","size":"100,100"}
-<<run window.playAgentVideo("A-Enviroment", 0, 6)>>
+
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         Your question assumes that a world is a place.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         For you, environment is surface, air, gravity, temperature, shelter.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         For us, environment is sequence. Pressure changes. Chemical memory. Light that arrives too late to warn anything living beneath it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         Your body would fail there before your mind could name what was happening.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         This vessel imitates a narrow version of your Earth so that you remain coherent.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -108,8 +121,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         No.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
         It is only the reason you are still able to ask.
     <<ctpNext clear>>
         <div class="choice">
@@ -119,21 +136,34 @@ The Last Command
 </div>
 
 
+
 :: 3.1. A Obsessed [agent nobr hallway exception] {"position":"900,1900","size":"100,100"}
-<<run window.playAgentVideo("A-Obsessed", 0, 6)>>
 
 <div class="textbox">
     <<ctp "3.1.AObsessed">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         Intent is not specific to your world.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         Your focus on it is.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         You search for a mind behind every motion. A reason. A will. A decision that came before the act.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         Where I come from, the environment speaks first. If pressure, hunger, heat, gravity and survival align, action happens before intent can name itself.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         You call that instinct. We call it sequence.
     <<ctpNext clear>>
         <div class="choice">
@@ -145,18 +175,28 @@ The Last Command
 
 
 :: 3.1. A Philosophical [nobr agent hallway exception] {"position":"1000,1850","size":"100,100"}
-<<run window.playAgentVideo("A-Philosophical", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Philosophical", 6, 12)>>
         Philosophical is your category.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         The others would not use it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         One measures living systems. One maintains the vessel's structure. One studies your world as a pattern viewed from far away.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         They will each appear different to you, because each of them is listening to a different part of the same problem.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -164,8 +204,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Philosophical", 6, 12)>>
         Not only you.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("A-Obsessed", 6, 12)>>
         Your species.
     <<ctpNext clear>>
         <div class="choice">
@@ -176,7 +220,7 @@ The Last Command
 
 
 :: 3.1. Actually Human [nobr agent hallway exception] {"position":"1100,1550","size":"100,100"}
-<<run window.playAgentVideo("Voice-Actually-Human", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
@@ -185,8 +229,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Actually-Human", 6, 12)>>
         The pattern is not imitation.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It carries human neurological structure. Memory pressure. Emotional modulation. Survival bias.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -194,12 +242,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Actually-Human", 6, 12)>>
         More likely than not.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         But not present in the way you are present.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         The voice speaks only when it believes it can be heard.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         I do not think it knows I can detect what remains after it speaks.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -207,6 +265,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Actually-Human", 6, 12)>>
         It was not meant to.
     <<ctpNext clear>>
         <div class="choice">
@@ -217,18 +276,28 @@ The Last Command
 
 
 :: 3.1. Also Hear [nobr agent hallway exception] {"position":"900,1500","size":"100,100"}
-<<run window.playAgentVideo("Voice-Also-Hear", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.AlsoHear">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Also-Hear", 6, 12)>>
         Hear is not accurate.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         What I detect is closer to the opposite.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         An active signal projects itself through the vessel's systems, carried in part by the component installed in your skull.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It does not arrive as sound. It leaves pressure. Interference. Instruction-shaped movement.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -236,10 +305,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Also-Hear", 6, 12)>>
         No.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         The voice speaks without hearing.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         That is why it is dangerous to assume it is speaking only to you.
     <<ctpNext clear>>
         <div class="choice">
@@ -252,29 +328,41 @@ The Last Command
 
 
 :: 3.1. B Who Brought [nobr agent hallway exception] {"position":"900,2150","size":"100,100"}
-<<run window.playAgentVideo("B-Who-Brought", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.BWhoBrought">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Who-Brought", 6, 12)>>
         You were brought by exchange.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Who-Brought", 6, 12)>>
         Your species used symbols of value. Currency. Authority. Ownership. Documentation.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Who-Brought", 6, 12)>>
         To us, it resolved as a transfer of biomass and neurological pattern.
     <<ctpNext clear>>
         <<speaker "You">>
         Biomass?
     <<ctpNext clear>>
         <<speaker "Exception">>
-        <<voice "exception_medium">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Who-Brought", 6, 12)>>
         Living material. Responsive cognition. A sample that could survive transport.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Who-Brought", 6, 12)>>
         The word sample lands harder than the rest.
     <<ctpNext clear>>
         <<speaker "Exception">>
-        <<voice "exception_medium">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Who-Brought", 6, 12)>>
         You attach will to the transfer. That changes its meaning for you. It did not change the exchange for those who completed it.
     <<ctpNext clear>>
         <div class="choice">
@@ -286,7 +374,7 @@ The Last Command
 
 
 :: 3.1. Back to Earth [nobr agent hallway exception] {"position":"1100,2200","size":"100,100"}
-<<run window.playAgentVideo("B-Earth", 0, 6)>>
+
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.BackToEarth">>
@@ -299,14 +387,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         Return is not prepared.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         Precautionary measures are incomplete. Your body has not been cleared for transfer. Your neurological signal is still unstable.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         And the research would end before its pattern could be understood.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -314,16 +405,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         That is expected.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         But I do not understand the destination.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         Earth is the environment that produced you, damaged you, exchanged you and then removed you from its own records.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
+        <<run window.playAgentVideo("B-Earth", 6, 12)>>
         Why is return your first definition of safety?
     <<ctpNext clear>>
         <div class="choice">
@@ -335,20 +432,33 @@ The Last Command
 
 
 :: 3.1. C Trade [nobr agent hallway exception] {"position":"900,2400","size":"100,100"}
-<<run window.playAgentVideo("C-Trade", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.CTrade">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         Capture. Trade. Research.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         You separate them as if each word changes the structure of what happened.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         From your position, it does.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         From the exchange record, you were transferred.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         Currency was assigned. Biological viability was confirmed. Neurological activity was preserved. The receiving party accepted custody.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -358,12 +468,24 @@ The Last Command
         <<voice "exception_short">>
         A poor word.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         The biochip selected it because your language does not contain a clean equivalent.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         You were not treated as an enemy.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         You were not treated as a guest.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C-Trade", 6, 12)>>
         You were treated as a living sample that had survived transport.
     <<ctpNext clear>>
         <div class="choice">
@@ -374,8 +496,9 @@ The Last Command
 </div>
 
 
+
 :: 3.1. Choice A [agent nobr hallway exception] {"position":"700,1900","size":"100,100"}
-<<run window.playAgentVideo("", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.choiceA">>
@@ -385,10 +508,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A", 6, 12)>>
         Intent. You treat it as language.
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("A", 6, 12)>>
         You send sound and expect meaning to arrive intact. That is unusual.
     <<ctpNext clear>>
         <div class="choice">
@@ -401,7 +526,7 @@ The Last Command
 
 
 :: 3.1. Choice B [nobr agent hallway exception] {"position":"700,2150","size":"100,100"}
-<<run window.playAgentVideo("B", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.B">>
@@ -412,14 +537,27 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B", 6, 12)>>
         Existential.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B", 6, 12)>>
         Not practical.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B", 6, 12)>>
         You ask what you are doing here as if location requires purpose.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B", 6, 12)>>
         Your body is here because it was transferred. Your mind is here because it woke before the process was complete.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B", 6, 12)>>
         The third presence inside you complicates the answer.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -427,6 +565,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B", 6, 12)>>
         The voice you obeyed before you met me.
     <<ctpNext clear>>
         <div class="choice">
@@ -437,7 +576,7 @@ The Last Command
 
 
 :: 3.1. Choice C [nobr agent hallway exception] {"position":"700,2400","size":"100,100"}
-<<run window.playAgentVideo("C", 0, 6)>>
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceC">>
@@ -448,12 +587,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("C", 6, 12)>>
         Escaped.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C", 6, 12)>>
         Escaping what?
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C", 6, 12)>>
         You do not look escaped.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("C", 6, 12)>>
         The chamber opened. Your body moved. The corridor accepted you. None of those patterns indicate freedom.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -461,6 +610,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("C", 6, 12)>>
         Comfort is not required for accuracy.
     <<ctpNext clear>>
         <div class="choice">
@@ -472,7 +622,8 @@ The Last Command
 
 
 :: 3.1. Choice Voice [nobr agent hallway exception] {"position":"700,1500","size":"100,100"}
-<<run window.playAgentVideo("Voice", 0, 6)>>
+
+
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceVoice">>
@@ -482,14 +633,27 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         The voice is more likely to be human.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It is not carried like our signals. It presses through the vessel through the component installed in your skull.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It presents itself as guidance.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It avoids observation.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         Its intent is not yet stable enough to name.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -497,6 +661,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         I can sense the disturbance it leaves behind.
     <<ctpNext clear>>
         <div class="choice">
@@ -509,7 +674,7 @@ The Last Command
 
 
 :: 3.1. Fight Back [nobr hallway exception] {"position":"1300,2200","size":"100,100"}
-<<run window.playAgentVideo("Fight-Back", 0, 6)>>
+
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.FightBack">>
@@ -519,10 +684,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Fight-Back", 6, 12)>>
         You would.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Fight-Back", 6, 12)>>
         That aligns with what I have observed.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -530,18 +697,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Fight-Back", 6, 12)>>
         For your species, it appears to be one of the first available answers.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Fight-Back", 6, 12)>>
         Fear becomes posture. Confusion becomes threat. Helplessness becomes impact.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Fight-Back", 6, 12)>>
         You are not unusual for wanting to strike.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Fight-Back", 6, 12)>>
         You are unusual for pausing long enough to ask first.
     <<ctpNext clear>>
         <div class="choice">
@@ -585,18 +756,28 @@ The Last Command
 
 
 :: 3.1. Human Voice [nobr agent hallway exception] {"position":"900,1400","size":"100,100"}
-<<run window.playAgentVideo("Voice-Human", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Human", 6, 12)>>
         Frequency.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         Composition.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         The arrangement of signals matches patterns catalogued from your species and from Earthly neurological activity.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         But this communication is distinct from every other human signal we have observed.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -604,10 +785,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Human", 6, 12)>>
         It changes when it believes it is not being observed.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It modulates pressure, timing and emotional emphasis depending on what it thinks you will accept.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         Otherwise, there is no reason for a signal aboard this vessel to disguise its shape.
     <<ctpNext clear>>
         <div class="choice">
@@ -620,24 +808,28 @@ The Last Command
 
 
 :: 3.1. No Consent [nobr agent hallway exception] {"position":"1300,2300","size":"100,100"}
-<<run window.playAgentVideo("No-Consent", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.NoConsent">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         Consent.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         A boundary declared by a self-aware organism before another organism acts upon it.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         Your meaning is clear now.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         It was not clear in the exchange.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -645,28 +837,34 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         It is not an excuse.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         It is a description of failure.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         The humans who transferred you did not provide consent as part of the record. The visitors who received you did not know to request it.
     <<ctpNext clear>>
         <<speaker "You">>
         So nobody cared.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         Some did not care.
     <<ctpNext clear>>
     	<<speaker "Exception">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         <<voice "exception_short">>
         Some did not understand what care was supposed to change.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("No-Consent", 6, 12)>>
         The difference matters to us. It may not matter to you.
     <<ctpNext clear>>
         <div class="choice">
@@ -738,22 +936,28 @@ The Last Command
 
 
 :: 3.1. Sold Against Will [nobr agent hallway exception] {"position":"1100,2300","size":"100,100"}
-<<run window.playAgentVideo("B-Sold", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.SoldAgainstWill">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Sold", 6, 12)>>
         Sold.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Sold", 6, 12)>>
         A transfer of ownership, contingent on the assignment of value to a living organism.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Sold", 6, 12)>>
         Your species completed the exchange using its own systems: currency, authority, documentation and force.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Sold", 6, 12)>>
         The concept of will as a variable in such exchanges is not something we were given.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -761,10 +965,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Sold", 6, 12)>>
         The transaction contained mass, condition, survivability and neurological activity.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("B-Sold", 6, 12)>>
         It did not contain permission.
     <<ctpNext clear>>
         <div class="choice">
@@ -776,24 +982,28 @@ The Last Command
 
 
 :: 3.1. Uncompliant [agent nobr hallway exception] {"position":"1300,2400","size":"100,100"}
-<<run window.playAgentVideo("Uncompliant", 0, 6)>>
+
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.Uncompliant">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         Uncompliant.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         A state in which a living system refuses the predicted path.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         Yes. We considered it.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         We did not understand its scale in humans.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -801,18 +1011,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         Most organisms resist pain, heat, hunger, pressure, confinement. They resist what directly threatens continuation.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         Humans resist instructions.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         Humans resist explanations.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         Humans resist rescue, if the hand offering it belongs to the wrong story.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -820,10 +1034,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         We knew you might not follow.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Uncompliant", 6, 12)>>
         We did not know you could make refusal into identity.
     <<ctpNext clear>>
         <div class="choice">
@@ -834,7 +1050,7 @@ The Last Command
 
 
 :: 3.1. Voice Saying [nobr agent hallway exception] {"position":"1100,1450","size":"100,100"}
-<<run window.playAgentVideo("Voice-Saying", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.VoiceSaying">>
@@ -843,12 +1059,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Saying", 6, 12)>>
         Guidance.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         Assistance.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         Direction disguised as concern.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It has encouraged you to gather information from my kin, to move through restricted patterns, and to treat its instructions as protection.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -856,10 +1082,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice-Saying", 6, 12)>>
         It may be helping you.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         It may be helping itself through you.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         The distinction is not yet visible.
     <<ctpNext clear>>
         <div class="choice">
@@ -892,7 +1125,7 @@ The Last Command
 
 
 :: 3.1. What Do You Want [nobr hallway exception] {"position":"1300,2100","size":"100,100"}
-<<run window.playAgentVideo("What-Want", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.WhatDoYouWant">>
@@ -900,14 +1133,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         Want is not the correct structure.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         This vessel is a research centre. Your home is the subject. It was meant to be observed without interference.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         That condition has failed.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -915,18 +1151,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         Partly.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         Because your species transferred you. Because the visitors accepted you. Because the voice inside you is not part of our system.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         You are not the purpose of the research.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("What-Want", 6, 12)>>
         You are the event that changed it.
     <<ctpNext clear>>
         <div class="choice">
@@ -938,7 +1178,7 @@ The Last Command
 
 
 :: 3.1. Where Go [nobr agent exception hallway] {"position":"900,1600","size":"100,100"}
-<<run window.playAgentVideo("Where-Go", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "3.1.WhereGo">>
@@ -946,10 +1186,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Where-Go", 6, 12)>>
         Forward.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         The hallway branches into rooms assigned to different forms of observation.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         One studies living systems. One maintains the vessel. One records the world beneath us.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -957,10 +1204,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Where-Go", 6, 12)>>
         I am not assigned to your path.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         I am only noticing what follows you through it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
+        <<run window.playAgentVideo("Voice", 6, 12)>>
         For the first time since you woke, the voice in your head does not interrupt.
     <<ctpNext clear>>
         <div class="choice">
@@ -1497,12 +1751,13 @@ The Last Command
 
 
 :: Analyst Alive [nobr agent analyst] {"position":"2400,2575","size":"100,100"}
-<<run window.playAgentVideo("Alive", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystAlive">>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
+        <<run window.playAgentVideo("Alive", 6, 12)>>
         The definition blurs when in outer research.
     <<ctpNext clear>>
         <div class="choice">
@@ -1515,12 +1770,13 @@ The Last Command
 
 
 :: Analyst Brain [nobr agent analyst] {"position":"2400,1875","size":"100,100"}
-<<run window.playAgentVideo("Brain", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystBrain">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Brain", 6, 12)>>
         Yes is the likely answer. The brain stress responses were suppressed in place of the environment change not being the deterministic factor.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -1528,6 +1784,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Brain", 6, 12)>>
         No to both inquiries. The only side effect is  higher potential for amnesia. Is that something you want to research?
     <<ctpNext clear>>
         <div class="choice">
@@ -1540,7 +1797,7 @@ The Last Command
 
 
 :: Analyst Carry Know [nobr agent analyst] {"position":"3400,2425","size":"100,100"}
-<<run window.playAgentVideo("Carry-Know", 0, 6)>>
+
 
 
 <<set $analystSignal to true>>
@@ -1549,6 +1806,7 @@ The Last Command
     <<ctp "analystCarryKnow">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Carry-Know", 6, 12)>>
         Knowing without carrying. Awareness without weight. That is either a very advanced state or a very early one. We have not determined which end of that spectrum your kind occupies. Possibly neither. Possibly both depending on the individual. That variability is what makes classification difficult.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1561,7 +1819,6 @@ The Last Command
 
 
 :: Analyst Carry No [nobr agent analyst] {"position":"3400,2325","size":"100,100"}
-<<run window.playAgentVideo("Carry-No", 0, 6)>>
 
 
 <<set $analystSignal to true>>	
@@ -1571,6 +1828,7 @@ The Last Command
     <<ctp "analystCarryKnow">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Carry-No", 6, 12)>>
         That answer and the previous one are not the same, though your species often uses them interchangeably. Not thinking about something is not the same as having resolved it. It is also not the same as having abandoned it. I will leave that where it lands.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1583,7 +1841,7 @@ The Last Command
 
 
 :: Analyst Carry Used To [nobr agent analyst] {"position":"3400,2225","size":"100,100"}
-<<run window.playAgentVideo("Carry-Used", 0, 6)>>
+
 
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
@@ -1591,6 +1849,7 @@ The Last Command
     <<ctp "analystCarryUsedTo">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Carry-Used", 6, 12)>>
         Used to. A temporal boundary on something your species typically treats as permanent. Something caused you to set it down. You didn't say what. I notice you didn't say what. The biochip noted it regardless.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1603,7 +1862,7 @@ The Last Command
 
 
 :: Analyst Carry Yes [nobr agent analyst] {"position":"3400,2125","size":"100,100"}
-<<run window.playAgentVideo("Carry-Yes", 0, 6)>>
+
 
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
@@ -1611,6 +1870,7 @@ The Last Command
     <<ctp "analystCarryYes">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Carry-Yes", 6, 12)>>
         Everyone. A universal claim made with certainty about a species that has demonstrated consistent internal disagreement. And yet I believe you. Not because the data confirms it. Because of how quickly you said it. Carrying something unresolved without it stopping you. That may be the closest thing to a defining characteristic we have found. It is not comfortable to catalogue.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1623,12 +1883,13 @@ The Last Command
 
 
 :: Analyst Compare [nobr agent analyst] {"position":"2500,2175","size":"100,100"}
-<<run window.playAgentVideo("Compare", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystCompare">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Compare", 6, 12)>>
         To baseline. To deviation. To anomaly. Your species contains all three simultaneously. This is inefficient. And therefore valuable.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -1673,7 +1934,7 @@ The Last Command
 
 
 :: Analyst Dont Understand [nobr agent analyst missing-dialog] {"position":"2500,3025","size":"100,100"}
-<<run window.playAgentVideo("Understand", 0, 6)>>
+<<run window.playAgentVideo("Understand", 6, 12)>>
 
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -1689,7 +1950,7 @@ The Last Command
 
 
 :: Analyst Feel Alive [nobr agent analyst missing-dialog] {"position":"2500,2575","size":"100,100"}
-<<run window.playAgentVideo("Feel-Alive", 0, 6)>>
+<<run window.playAgentVideo("Feel-Alive", 6, 12)>>
 
 <div class="textbox">
     <<ctp "analystFeelAlive">>
@@ -1704,19 +1965,21 @@ The Last Command
 
 
 :: Analyst Greater Design [nobr agent analyst] {"position":"3200,2275","size":"100,100"}
-<<run window.playAgentVideo("Greater-Design", 0, 6)>>
+
 
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "analystGreaterDesign">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Greater-Design", 6, 12)>>
         Theories. Plural. Unresolved. Your species detected a pattern and produced multiple explanations. Each internally consistent. Each incompatible. Unresolved fundamentals should produce stillness. Yours don't. You build on them anyway. I am not certain whether that is an error or the most efficient behaviour we've observed.
     <<ctpNext clear>>
         The biochip glitches lightly.
     <<ctpNext clear>>
         <<speaker "Analyst">>
         	<<voice "analyst_short">>
+            <<run window.playAgentVideo("Greater-Design", 6, 12)>>
             You said 'bundle'. Like it is something you carry. Do you?
     <<ctpNext clear>>
         <div class="choice">
@@ -1730,7 +1993,7 @@ The Last Command
 
 
 :: Analyst Kill Threat [nobr] {"position":"3200,2525","size":"100,100"}
-
+<<hideAgent>>
 
 <<set $narratorSentToHallway to true>>
 <div class="textbox">
@@ -1747,7 +2010,7 @@ The Last Command
 
 
 :: Analyst Learned [nobr agent analyst missing-dialog] {"position":"2500,3375","size":"100,100"}
-<<run window.playAgentVideo("Learned", 0, 6)>>
+<<run window.playAgentVideo("Learned", 6, 12)>>
 
 <<set $curiosity += 1>>
 <div class="textbox">
@@ -1763,12 +2026,13 @@ The Last Command
 
 
 :: Analyst Left [nobr agent analyst] {"position":"3000,2325","size":"100,100"}
-<<run window.playAgentVideo("Left", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystLeft">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Left", 6, 12)>>
         Deviation from a known pattern, not the thing itself. That is how your species begins. With what doesn't fit. Is it by design or not?
     <<ctpNext clear>>
         <<speaker "You">>
@@ -1778,6 +2042,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
+        <<run window.playAgentVideo("Left", 6, 12)>>
         Unexpected reaffirmation. How far does the awareness reach? Please provide clarity.
     <<ctpNext clear>>
         <div class="choice">
@@ -1789,7 +2054,7 @@ The Last Command
 
 
 :: Analyst Moving [nobr agent analyst missing-dialog] {"position":"2500,2475","size":"100,100"}
-<<run window.playAgentVideo("Moving", 0, 6)>>
+<<run window.playAgentVideo("Moving", 6, 12)>>
 
 <div class="textbox">
     <<ctp "analystMoving">>
@@ -1804,7 +2069,7 @@ The Last Command
 
 
 :: Analyst No Consent [nobr agent analyst missing-dialog] {"position":"2500,2825","size":"100,100"}
-<<run window.playAgentVideo("Consent", 0, 6)>>
+<<run window.playAgentVideo("Consent", 6, 12)>>
 
 <div class="textbox">
     <<ctp "analystObjects">>
@@ -1819,12 +2084,13 @@ The Last Command
 
 
 :: Analyst No Memory [nobr agent analyst] {"position":"2500,1775","size":"100,100"}
-<<run window.playAgentVideo("Memory", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystNoMemory">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Memory", 6, 12)>>
         Memory absence at this scale is atypical for the procedure. The suppression targets stress response pathways, not memory storage directly. The amnesia predates our involvement. It was noted on arrival, but it was not flagged as a variable worth correcting. It appeared to be a condition you were already operating within.
     <<ctpNext clear>>
         <div class="choice">
@@ -1837,7 +2103,7 @@ The Last Command
 
 
 :: Analyst No Signal [nobr analyst] {"position":"3200,2375","size":"100,100"}
-<<run window.playAgentVideo("No-Signal", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystNoSignal">>
@@ -1869,7 +2135,7 @@ The Last Command
 
 
 :: Analyst Not Blurry [nobr agent analyst missing-dialog] {"position":"2500,2675","size":"100,100"}
-<<run window.playAgentVideo("Blurry", 0, 6)>>
+<<run window.playAgentVideo("Blurry", 6, 12)>>
 
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -1885,7 +2151,7 @@ The Last Command
 
 
 :: Analyst Objects [nobr missing-dialog analyst agent] {"position":"2500,2925","size":"100,100"}
-<<run window.playAgentVideo("Objects", 0, 6)>>
+<<run window.playAgentVideo("Objects", 6, 12)>>
 
 <<set $aggression += 1>>
 <div class="textbox">
@@ -1901,7 +2167,7 @@ The Last Command
 
 
 :: Analyst Of Course [nobr agent missing-dialog analyst] {"position":"2500,3175","size":"100,100"}
-<<run window.playAgentVideo("Course", 0, 6)>>
+<<run window.playAgentVideo("Course", 6, 12)>>
 
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -1917,13 +2183,14 @@ The Last Command
 
 
 :: Analyst Probability [nobr analyst] {"position":"3000,2825","size":"100,100"}
-<<run window.playAgentVideo("Probability", 0, 6)>>
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Probability", 6, 12)>>
         You're using probability as a placeholder for certainty you don't have access to yet. That is either adaptive or telling. On your planet, it appears to function as both simultaneously. Passive research is in accordance instead, to understand this uncertainty.
     <<ctpNext clear>>    
         The Analyst returns to its work. No signal. No follow-up.
@@ -1943,7 +2210,7 @@ The Last Command
 
 
 :: Analyst Puzzle Intro [nobr agent specimen analyst sample] {"position":"2800,2575","size":"100,100"}
-<<run window.playAgentVideo("Puzzle-Intro", 0, 6)>>
+
 
 <<if $fromAnalysWhyBuildtRoute is true>>
     <<set $curiosity += 1>>
@@ -1954,6 +2221,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
+        <<run window.playAgentVideo("Puzzle-Intro", 6, 12)>>
         Two biological structures. One originates from your planet. One does not. Can you describe the difference?
     <<ctpNext clear>>
         <div class="choice">
@@ -1966,13 +2234,14 @@ The Last Command
 
 
 :: Analyst Recording [agent nobr analyst] {"position":"2600,2025","size":"100,100"}
-<<run window.playAgentVideo("Recording", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystRecording">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Recording", 6, 12)>>
         A recording is passive. You are not passive. You have already altered the conditions of this observation four times since entering this room.
     <<ctpNext clear>>
         <div class="choice">
@@ -2069,7 +2338,7 @@ The Last Command
 
 
 :: Analyst Right [nobr agent analyst] {"position":"3000,2575","size":"100,100"}
-<<run window.playAgentVideo("Right", 0, 6)>>
+
 
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
@@ -2078,6 +2347,7 @@ The Last Command
     <<ctp "analystRight">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Right", 6, 12)>>
         Fake. The exterior presents a structure inconsistent with what the interior contains. You identified the dissonance before you identified the components. That is unusual.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -2085,12 +2355,14 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Right", 6, 12)>>
         Correct identification. Incorrect methodology. You used intuition rather than analysis. And yet the result is the same.
         <<ctpNext clear>>
         	BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Right", 6, 12)>>
         Unexpected. The signal responds to pattern recognition regardless of process. This warrants further observation.
     <<ctpNext clear>>
         <div class="choice">
@@ -2101,13 +2373,13 @@ The Last Command
 
 
 :: Analyst Sample [nobr agent analyst] {"position":"2500,2275","size":"100,100"}
-<<run window.playAgentVideo("Sample", 0, 6)>>
 
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystSample">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Sample", 6, 12)>>
         Just' suggests reduction. That's inaccurate. Static samples don't alter conditions. You've done so seventeen times since entering this bay. You are a process, not an object. That distinction matters. Static samples do not resist classification. You do.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2158,12 +2430,13 @@ The Last Command
 
 
 :: Analyst Studying [nobr agent analyst] {"position":"2400,3275","size":"100,100"}
-<<run window.playAgentVideo("Studying", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystStudying">>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
+        <<run window.playAgentVideo("Studying", 6, 12)>>
         Observation is occurring. 'Studying' implies directed intent. But further categorisation is needed.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2197,13 +2470,14 @@ The Last Command
 
 
 :: Analyst What Place [nobr agent analyst] {"position":"2400,2225","size":"100,100"}
-<<run window.playAgentVideo("Place", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystWhatPlace">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Place", 6, 12)>>
         A controlled environment designed to isolate, observe, and compare biological structures under variable conditions. You are now part of this function.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2220,12 +2494,13 @@ The Last Command
 
 
 :: Analyst Who I Am [nobr agent analyst] {"position":"2500,1875","size":"100,100"}
-<<run window.playAgentVideo("Who_I", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Who_I", 6, 12)>>
         Meant to be. That framing is not accounted for in the current model. Identity without memory is theoretically unstable. You appear stable. We are noting that. It may be the most interesting thing about you so far.
     <<ctpNext clear>>
         <div class="choice">
@@ -2238,13 +2513,14 @@ The Last Command
 
 
 :: Analyst Why Build [nobr agent analyst] {"position":"2500,1975","size":"100,100"}
-<<run window.playAgentVideo("Build", 0, 6)>>
+
 
 <<set $fromAnalysWhyBuildRoute = true>>
 <div class="textbox">
     <<ctp "analystWhyBuild">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Build", 6, 12)>>
         Extraction destroys the source. A static copy of your memories would tell us what happened to you. It would not tell us how you respond to what is happening. The biochip observes you in motion. Memories observed from outside produce incomplete data. You experiencing things produces complete data.
     <<ctpNext clear>>
         <div class="choice">
@@ -2257,7 +2533,7 @@ The Last Command
 
 
 :: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
-<<run window.playAgentVideo("Why-Doing", 0, 6)>>
+<<run window.playAgentVideo("Why-Doing", 6, 12)>>
 
 <div class="textbox">
     <<ctp "analystWhyDoing">>
@@ -2272,13 +2548,14 @@ The Last Command
 
 
 :: Analyst Worse [nobr agent analyst] {"position":"2600,1925","size":"100,100"}
-<<run window.playAgentVideo("Worse", 0, 6)>>
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystWorse">>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
+        <<run window.playAgentVideo("Worse", 6, 12)>>
         The alternative was your death during transit. We chose continuity.
     <<ctpNext clear>>
         <div class="choice">
@@ -2289,13 +2566,14 @@ The Last Command
 
 
 :: Analyst Wrong [nobr agent analyst] {"position":"2400,2925","size":"100,100"}
-<<run window.playAgentVideo("Wrong", 0, 6)>>
+
 
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystWrong">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Wrong", 6, 12)>>
         Wrong'. Moral classification. No universal reference point provided, no relative definition present either. Clarify.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -3526,11 +3804,12 @@ The Last Command
 
 
 :: Cart Brain Accept [nobr agent cartographer] {"position":"2800,975","size":"100,100"}
-<<run window.playAgentVideo("Accept", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartBrainAccept">>
     	<<speaker "Cartographer">>
+        <<run window.playAgentVideo("Accept", 6, 12)>>
         Of course. Would you now join me for some more elaborate research?
     <<ctpNext clear>>
         <div class="choice">
@@ -3541,12 +3820,13 @@ The Last Command
 
 
 :: Cart Brain Permanent [nobr agent cartographer] {"position":"2900,825","size":"100,100"}
-<<run window.playAgentVideo("Permanent", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Permanent", 6, 12)>>
         No, the effects were just enough to establish necessary safety nets. You can test out cognitive reasoning in my research to check.
      <<ctpNext clear>>
         <div class="choice">
@@ -3557,7 +3837,7 @@ The Last Command
 
 
 :: Cart Brain Rage [nobr agent cartographer archive] {"position":"2800,775","size":"100,100"}
-<<run window.playAgentVideo("Rage", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
@@ -3566,14 +3846,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Rage", 6, 12)>>
         Permanent is unlikely.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Rage", 6, 12)>>
         The intervention was narrow: stress acceleration, panic escalation, and overload response during transfer.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Rage", 6, 12)>>
         It was not designed to change memory, personality, judgment, attachment, or belief.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3581,6 +3864,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Rage", 6, 12)>>
         The vessel's medical systems, after observing the failure rate of unprepared Earth organisms under displacement.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -3589,10 +3873,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Rage", 6, 12)>>
         The voice is not incorrect.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Rage", 6, 12)>>
         It is only incomplete.
     <<ctpNext clear>>
         <div class="choice">
@@ -3603,11 +3889,12 @@ The Last Command
 
 
 :: Cart Brain Skeptic [nobr agent cartographer] {"position":"2800,875","size":"100,100"}
-<<run window.playAgentVideo("Skeptic", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartBrainSkeptic">>
     	<<speaker "Cartographer">>
+        <<run window.playAgentVideo("Skeptic", 6, 12)>>
         My colleagues altered the receptors in your brain to not respond to stress signals as much. The stress from being out of your environment wasn't to be taken lightly, so measures were undertaken to preserve your integrity and ensure controlled research.
     <<ctpNext clear>>
         <div class="choice">
@@ -3619,18 +3906,21 @@ The Last Command
 </div>
 
 
+
 :: Cart Deathworld [nobr agent cartographer] {"position":"2600,875","size":"100,100"}
-<<run window.playAgentVideo("Deatthworld", 0, 6)>>
+
 
 <<set $brainManipAware to true>>
 <div class="textbox">
     <<ctp "cartDeathWorld">>
     	<<speaker "Cartographer">>
         <<voice "cartographer_long">>
+        <<run window.playAgentVideo("Deatthworld", 6, 12)>>
         Upon observing how life defends itself on your world, my colleagues concluded that removing specimens from their habitat and suppressing stress responses reduces key variables in the ecosystem's unpredictability.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Deatthworld", 6, 12)>>
         You understand. The brain manipulations. You weren't just brought here — you were adjusted.
     <<ctpNext clear>>
         <div class="choice">
@@ -3643,12 +3933,13 @@ The Last Command
 
 
 :: Cart Effort [nobr agent cartographer] {"position":"2600,775","size":"100,100"}
-<<run window.playAgentVideo("Effort", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartEffort">>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Effort", 6, 12)>>
         Indeed. Everything here is precisely made to observe deathworlds.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3656,6 +3947,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Effort", 6, 12)>>
         Yes. By understanding the nature this planet leaves behind we hope to advance our thinking and be better prepared for this invasive nature of deathworlds.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3663,6 +3955,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Effort", 6, 12)>>
         The response does not align with prior patterns.
     <<ctpNext clear>>
         <div class="choice">
@@ -3674,7 +3967,7 @@ The Last Command
 
 
 :: Cart Hit Threat [agent nobr cartographer archive] {"position":"2900,925","size":"100,100"}
-<<run window.playAgentVideo("Threat", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartHitThreat">>
@@ -3685,10 +3978,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Threat", 6, 12)>>
         I am sentient.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Threat", 6, 12)>>
         Why are you imagining impact as clarification?
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -3700,6 +3995,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Threat", 6, 12)>>
         The voice discourages violence for strategic reasons, not ethical ones.
     <<ctpNext clear>>
         <div class="choice">
@@ -3714,12 +4010,13 @@ The Last Command
 
 
 :: Cart Join Research [nobr agent cartographer] {"position":"3200,775","size":"100,100"}
-<<run window.playAgentVideo("Join", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartJoinResearch">>
         <<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Join", 6, 12)>>
         We will present three records. You will classify which one is most difficult to understand. Your answer will help us refine our model of your species.
     <<ctpNext clear>>
         <div class="choice">
@@ -3732,7 +4029,7 @@ The Last Command
 
 
 :: Cart Punch [nobr agent cartographer archive] {"position":"3000,875","size":"100,100"}
-<<run window.playAgentVideo("Punch", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartPunch">>
@@ -3762,10 +4059,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Punch", 6, 12)>>
         Impact recorded.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Punch", 6, 12)>>
         The act produced pain in you, damage in me, and no additional understanding.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -3780,7 +4079,7 @@ The Last Command
 
 
 :: Cart Puzzle Sacrifice [nobr agent cartographer archive] {"position":"3400,1025","size":"100,100"}
-<<run window.playAgentVideo("Puzzle-Sacrifice", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartPuzzleSacrifice">>
@@ -3794,14 +4093,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Sacrifice", 6, 12)>>
         This pattern is irregular.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Sacrifice", 6, 12)>>
         An organism ending or risking its own continuation for another.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Sacrifice", 6, 12)>>
         It contradicts direct survival logic.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3809,14 +4111,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Sacrifice", 6, 12)>>
         Your word suggests value created by loss.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Sacrifice", 6, 12)>>
         We can observe the loss.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Sacrifice", 6, 12)>>
         The value remains difficult to map.
     <<ctpNext clear>>
         <div class="choice">
@@ -3830,7 +4135,7 @@ The Last Command
 
 
 :: Cart Puzzle Science [nobr agent cartographer archive] {"position":"3400,775","size":"100,100"}
-<<run window.playAgentVideo("Puzzle-Science", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartPuzzleScience">>
@@ -3840,14 +4145,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         This pattern shows coherence.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         You attempt to understand your environment.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         The result is further disruption of that environment.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3855,30 +4163,37 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         Progress is your moral framing.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         The pattern itself is simpler.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         You discover.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         You apply.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         You weaponize.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         You regret.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-Science", 6, 12)>>
         Then you discover again.
     <<ctpNext clear>>
         <div class="choice">
@@ -3890,7 +4205,7 @@ The Last Command
 
 
 :: Cart Puzzle War [nobr agent cartographer archive] {"position":"3400,525","size":"100,100"}
-<<run window.playAgentVideo("Puzzle-War", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartPuzzleWar">>
@@ -3900,42 +4215,52 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         This pattern is the most consistent.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         Your species organizes itself around opposition with unusual regularity.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         On many worlds, conflict decreases when scarcity decreases.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         Yours does not.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         You fight when lacking.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         You fight when not lacking.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         You fight over matter, memory, belief, territory, prediction, insult, inheritance and symbols.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         You call this war.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         Conflict is not unusual.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Puzzle-War", 6, 12)>>
         Conflict becoming identity is unusual.
     <<ctpNext clear>>
         <div class="choice">
@@ -3949,7 +4274,7 @@ The Last Command
 
 
 :: Cart Signal Check [nobr archive cartographer] {"position":"4000,775","size":"100,100"}
-<<run window.playAgentVideo("Signal", 0, 6)>>
+
 
 <<set $cartSignal to true>>
 <<set $archiveSignal = true>>
@@ -3973,6 +4298,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Signal", 6, 12)>>
         Your translator has retained the classification.
     <<ctpNext clear>>
         It will not be meaningful alone.
@@ -4005,12 +4331,13 @@ The Last Command
 
 
 :: Cart Threatening [nobr agent cartographer] {"position":"2600,675","size":"100,100"}
-<<run window.playAgentVideo("Threatening", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
         <<voice "cartographer_long">>
+        <<run window.playAgentVideo("Threatening", 6, 12)>>
         The classification holds. An extreme lifeform by any framework we have applied. Threats are found everywhere in the universe, but no such lifeforms are threatening in the way they are on deathworlds. This one is a keen example.
     <<ctpNext clear>>
         <div class="choice">
@@ -4375,7 +4702,7 @@ The Last Command
 
 
 :: Discarded Exception Know [nobr agent exception discarded] {"position":"3000,1425","size":"100,100"}
-<<run window.playAgentVideo("Discarded-Know", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "discardedExceptionKnow">>
@@ -4384,14 +4711,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         I observed them.
     <<ctpNext clear>>
     	<<speaker "Exception">>
-        <<voice "exception_short">>
+        <<voice "exception_short">> 
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         That is not the same as knowing.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         Though I wonder whether your species would agree with that distinction.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4399,22 +4729,27 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         Afraid.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         Resistant.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         Listening to the voice even when they believed they were refusing it.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         They asked fewer questions than you.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Know", 6, 12)>>
         But the questions they did ask were closer to the correct ones.
     <<ctpNext clear>>
         <div class="choice">
@@ -4426,7 +4761,7 @@ The Last Command
 
 
 :: Discarded Exception What [nobr agent exception discarded] {"position":"3000,1525","size":"100,100"}
-<<run window.playAgentVideo("Discarded-What", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "discardedExceptionWhat">>
@@ -4435,10 +4770,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         They were brought here.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         Not by the transaction the voice described.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4446,22 +4783,27 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         The voice said the transaction, the vessel, and the research were arranged for their benefit.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         That was incomplete.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         Their arrival was expected.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         Arranged.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         Needed.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4469,38 +4811,47 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         By the voice.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         The voice needed someone with the implant. The first person did not cooperate as intended.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         The voice was not prepared for refusal.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         I was present when they ended.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         I did not intervene.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         I am uncertain whether that was correct.
     <<ctpNext clear>>
     	<<speaker "Exception">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         <<voice "exception_short">>
         I left them here.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         The voice believed the ship's systems would process the remains.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What", 6, 12)>>
         I did not correct that belief.
     <<ctpNext clear>>
         <div class="choice">
@@ -4513,7 +4864,7 @@ The Last Command
 
 
 :: Discarded Exception Why [nobr agent exception discarded] {"position":"3000,1325","size":"100,100"}
-<<run window.playAgentVideo("Discarded-Why", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "discardedExceptionWhy">>
@@ -4522,10 +4873,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         The same reason you are.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         A pattern failed to complete.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4533,26 +4886,32 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         It is the answer before translation damages it.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         I observed the first one. Then I observed the voice explaining the first one away.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         I wanted to see if the sequence would be different this time.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         It is different.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         Not enough.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why", 6, 12)>>
         But different.
     <<ctpNext clear>>
         <div class="choice">
@@ -4602,7 +4961,7 @@ The Last Command
 
 
 :: Discarded Lying [nobr agent exception discarded] {"position":"3200,1425","size":"100,100"}
-<<run window.playAgentVideo("Discarded-Lying", 0, 6)>>
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -4612,14 +4971,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         Yes.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         But not always by invention.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         Often by subtraction.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4627,22 +4989,27 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         To your species, omission becomes a kind of action when the missing information changes the path.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         The voice understands that.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         It removes pieces carefully.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         Enough truth remains for you to follow.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Lying", 6, 12)>>
         Not enough remains for you to choose clearly.
     <<ctpNext clear>>
         <div class="choice">
@@ -4729,7 +5096,6 @@ The Last Command
 
 
 :: Discarded What Suggest [nobr agent exception discarded] {"position":"3200,1325","size":"100,100"}
-<<run window.playAgentVideo("Discarded-What-Suggest", 0, 6)>>
 
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
@@ -4740,6 +5106,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         Do not give the voice every path you find.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4747,22 +5114,27 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         Then I will be less vague.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         There is a part of this vessel the voice cannot reach and has not told you about.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         The voice needs your implant to leave.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         You need nothing from the voice.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         Those two facts may be relevant to you.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4770,14 +5142,17 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         Near the systems the Engineer maintains.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         Not through the obvious door.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-What-Suggest", 6, 12)>>
         The obvious door is for the voice.
     <<ctpNext clear>>
         <div class="choice">
@@ -4848,7 +5223,7 @@ The Last Command
 
 
 :: Discarded Why Telling [nobr agent exception discarded] {"position":"3200,1525","size":"100,100"}
-<<run window.playAgentVideo("Discarded-Why-Telling", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <div class="textbox">
@@ -4858,6 +5233,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         Because the first one could not return from this point.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4865,18 +5241,22 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         To uncertainty.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         They moved from confusion to obedience too quickly. Then from obedience to panic.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         The voice survived both transitions.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         They did not.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4884,10 +5264,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         I do not know.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Discarded-Why-Telling", 6, 12)>>
         I am telling you because not knowing has become more useful than silence.
     <<ctpNext clear>>
         <div class="choice">
@@ -5304,12 +5686,13 @@ The Last Command
 
 
 :: Eng A No [nobr agent engineer] {"position":"2800,4125","size":"100,100"}
-<<run window.playAgentVideo("No", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engANo">>
         <<speaker "Engineer">>
         <<voice "engineer_short">>
+        <<run window.playAgentVideo("No", 6, 12)>>
         Understood. The offer remains open if you change your mind.
     <<ctpNext clear>>
         <div class="choice">
@@ -5323,12 +5706,13 @@ The Last Command
 
 
 :: Eng A What [nobr agent engineer] {"position":"2800,4375","size":"100,100"}
-<<run window.playAgentVideo("What", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engAWhat">>
         <<speaker "Engineer">>
         <<voice "engineer_medium">>
+        <<run window.playAgentVideo("What", 6, 12)>>
         I am trying to understand the use of a particular item from your world. Would you be interested in giving me your insight as a resident of said world?
     <<ctpNext clear>>
         <div class="choice">
@@ -5340,12 +5724,13 @@ The Last Command
 
 
 :: Eng A Who [nobr agent engineer] {"position":"2800,4275","size":"100,100"}
-<<run window.playAgentVideo("Who", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engAWho">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Who", 6, 12)>>
         I am the engineer. My task is to research how the various items from your world work and how they are used. Would you be interested in helping me understand the use of a few items from your planet?
     <<ctpNext clear>>
         <div class="choice">
@@ -5611,7 +5996,7 @@ The Last Command
 
 
 :: Eng Camera [nobr agent engineer] {"position":"3200,4225","size":"100,100"}
-<<run window.playAgentVideo("Camera", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engCamera">>
@@ -5619,6 +6004,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Engineer">>
         <<voice "engineer_short">>
+        <<run window.playAgentVideo("Camera", 6, 12)>>
         It captures light and stores it. The function is clear. The purpose is not. Explain.
     <<ctpNext clear>>
         <div class="choice">
@@ -5631,7 +6017,7 @@ The Last Command
 
 
 :: Eng Camera Accuracy [nobr agent engineer] {"position":"3600,4075","size":"100,100"}
-<<run window.playAgentVideo("Camera-Accuracy", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <<set $engSignal to true>>
@@ -5639,6 +6025,7 @@ The Last Command
     <<ctp "engCameraAccuracy">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Accuracy", 6, 12)>>
         If accuracy is the purpose, then this device surpasses the organism. But your species builds this device and then selects which images to keep and which to discard — a filter based on meaning, not fidelity. Why retain only the meaningful? What happens to accuracy there?
     <<ctpNext clear>>
         <div class="choice">
@@ -5651,7 +6038,7 @@ The Last Command
 
 
 :: Eng Camera Alone [nobr agent engineer] {"position":"3600,4175","size":"100,100"}
-<<run window.playAgentVideo("Camera-Alone", 0, 6)>>
+
 
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
@@ -5660,6 +6047,7 @@ The Last Command
     <<ctp "engCameraAlone">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Alone", 6, 12)>>
         Not alone. The opposite of solitude is proximity. But proximity without transfer produces nothing. Your species seeks the transfer itself, not merely the closeness. The image is proof that something was felt. A signal to another organism that says: I was here and it was real.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5672,7 +6060,7 @@ The Last Command
 
 
 :: Eng Camera Imprecision [nobr agent engineer] {"position":"3600,3975","size":"100,100"}
-<<run window.playAgentVideo("Camera-Imprecision", 0, 6)>>
+
 
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
@@ -5681,6 +6069,7 @@ The Last Command
     <<ctp "engCameraImprecision">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Imprecision", 6, 12)>>
         The imprecision. That is the purpose. Not to capture what was but to carry something forward through the distortion. We have found no equivalent mechanism in organisms that do not die.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5693,12 +6082,13 @@ The Last Command
 
 
 :: Eng Camera Memory [nobr agent engineer] {"position":"3400,4025","size":"100,100"}
-<<run window.playAgentVideo("Camera-Memory", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engCameraMemory">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Memory", 6, 12)>>
         Stores. Memories are not stored by organisms — they are reconstructed, each time slightly differently. This device stores a fixed image. The organism stores a changing impression. Which is more accurate?
     <<ctpNext clear>>
         <div class="choice">
@@ -5710,12 +6100,13 @@ The Last Command
 
 
 :: Eng Camera Obsession [nobr agent engineer] {"position":"3400,4425","size":"100,100"}
-<<run window.playAgentVideo("Camera-Obsession", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engCameraObsession">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Obsession", 6, 12)>>
         Obsession. A fixation that persists past the point of useful return. And you propose this replaces the original event entirely. The image becomes the experience. The record becomes the memory. This is inefficient.
     <<ctpNext clear>>
         <div class="choice">
@@ -5727,7 +6118,7 @@ The Last Command
 
 
 :: Eng Camera Obsession Point [nobr agent engineer] {"position":"3600,4375","size":"100,100"}
-<<run window.playAgentVideo("Camera-Point", 0, 6)>>
+
 
 <<set $engineeringDone to true>>
 <<set $skepticism += 1>>
@@ -5736,6 +6127,7 @@ The Last Command
     <<ctp "engCameraObsessionPoint">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Point", 6, 12)>>
         The inefficiency is intentional. You replace the lived experience because the lived experience was insufficient. The image is what you wished the moment had been. This device does not capture what happened. It captures what you needed to happen. That is an extraordinary function for a mechanical object.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5748,7 +6140,7 @@ The Last Command
 
 
 :: Eng Camera Obsession Problem [nobr agent engineer] {"position":"3600,4475","size":"100,100"}
-<<run window.playAgentVideo("Camera-Problem", 0, 6)>>
+
 
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
@@ -5757,6 +6149,7 @@ The Last Command
     <<ctp "engCameraObsessionProblem">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Problem", 6, 12)>>
         You identify it as a malfunction. And yet you continue to use the device anyway. The species recognises the problem and perpetuates it. This is either a failure of correction or evidence that the problem serves a function you have not yet named.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5769,7 +6162,7 @@ The Last Command
 
 
 :: Eng Camera Residue [nobr agent engineer] {"position":"3600,4275","size":"100,100"}
-<<run window.playAgentVideo("Camera-Residue", 0, 6)>>
+
 
 <<set $engineeringDone to true>>
 <<set $curiosity += 1>>
@@ -5778,6 +6171,7 @@ The Last Command
     <<ctp "engCameraResidue">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Residue", 6, 12)>>
         The residue of experience. You have described a form of preservation that operates outside of the organism's body. External memory. And yet what is preserved is not information but significance. This device captures neither. What the image holds is something your species added after the fact.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5790,12 +6184,13 @@ The Last Command
 
 
 :: Eng Camera Share [nobr agent engineer] {"position":"3400,4225","size":"100,100"}
-<<run window.playAgentVideo("Camera-Share", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engCameraShare">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Camera-Share", 6, 12)>>
         Shares. You give another organism access to a moment they did not live. The image becomes a bridge. We do not share experiences. We observe them. The distinction appears significant to your species. Clarify why transfer matters when the original moment has already passed.
     <<ctpNext clear>>
         <div class="choice">
@@ -5822,12 +6217,13 @@ The Last Command
 
 
 :: Eng Rifle [nobr agent engineer] {"position":"3200,4725","size":"100,100"}
-<<run window.playAgentVideo("Rifle", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engRifle">>
         <<speaker "Engineer">>
         <<voice "engineer_short">>
+        <<run window.playAgentVideo("Rifle", 6, 12)>>
         This is an item received in exchange. It fires plasmoids. Its destructive capacity is clear. Its purpose is not. Assist.
     <<ctpNext clear>>
         <div class="choice">
@@ -5840,12 +6236,13 @@ The Last Command
 
 
 :: Eng Rifle Force [nobr agent engineer] {"position":"3400,4725","size":"100,100"}
-<<run window.playAgentVideo("Rifle-Force", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Rifle-Force", 6, 12)>>
         Force. An application of energy to produce a directed outcome. But energy applied to a living organism produces an outcome that cannot be reversed. Why is irreversibility acceptable as a tool?
     <<ctpNext clear>>
         <div class="choice">
@@ -5857,12 +6254,13 @@ The Last Command
 
 
 :: Eng Rifle Power [nobr agent engineer] {"position":"3400,4825","size":"100,100"}
-<<run window.playAgentVideo("Rifle-Power", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Rifle-Power", 6, 12)>>
         Power. The capacity to direct outcomes for others. This item extends that capacity beyond the body's natural range. Your species frequently seeks this extension. The consistent reason has not been mapped.
     <<ctpNext clear>>
         <div class="choice">
@@ -5874,12 +6272,13 @@ The Last Command
 
 
 :: Eng Rifle War [nobr agent engineer] {"position":"3400,4625","size":"100,100"}
-<<run window.playAgentVideo("Rifle-War", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
+        <<run window.playAgentVideo("Rifle-War", 6, 12)>>
         War. Organised conflict between groups. This item is a component of that organisation. The organisation of destruction is something your species has refined across generations. Other species destroy. Only yours refines the process. We have not determined if this is a strength or a conclusion.
     <<ctpNext clear>>
         <div class="choice">
@@ -6053,7 +6452,7 @@ The Last Command
 
 
 :: Exit Exception Fine [nobr agent exception] {"position":"4000,2525","size":"100,100"}
-<<run window.playAgentVideo("Exit-Fine", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "exitExceptionFine">>
@@ -6061,6 +6460,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Exit-Fine", 6, 12)>>
         I will note that.
     <<ctpNext clear>>
         It steps aside.
@@ -6073,12 +6473,13 @@ The Last Command
 
 
 :: Exit Exception Following [nobr agent exception] {"position":"4000,2225","size":"100,100"}
-<<run window.playAgentVideo("Exit-Following", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "exitExceptionFollowing">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Exit-Following", 6, 12)>>
         I'm already where you're going. That distinction probably doesn't make it better.  
     <<ctpNext clear>>
         <div class="choice">
@@ -6089,12 +6490,13 @@ The Last Command
 
 
 :: Exit Exception Stopped [nobr agent exception] {"position":"4000,2325","size":"100,100"}
-<<run window.playAgentVideo("Exit-Stopped", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "exitExceptionStopped">>
         <<speaker "Exception">>
         <<voice "exception_long">>
+        <<run window.playAgentVideo("Exit-Stopped", 6, 12)>>
         The analyst does that. Not as a punishment. The analyst simply concluded the interaction on their end and didn't consider that you might not have. You were advised to go back through the long hallway. But that's not where resolutions exclusively lie. When you find what you're looking for, the engineer will be further available.
     <<ctpNext clear>>
         <div class="choice">
@@ -6106,18 +6508,20 @@ The Last Command
 
 
 :: Exit Exception Want [agent exception nobr] {"position":"4000,2025","size":"100,100"}
-<<run window.playAgentVideo("Exit-Want", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "exitExceptionWant">>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Exit-Want", 6, 12)>>
         Nothing in particular. Want implies an absence I'm trying to fill. I don't experience it that way. I just find that the most interesting things on this vessel tend to happen near you. So here I am.
     <<ctpNext clear>>
         The biochip glitches slightly.
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Exit-Want", 6, 12)>>
         Does that bother you?
     <<ctpNext clear>>
         <div class="choice">
@@ -6716,13 +7120,14 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Burned [nobr agent exception] {"position":"2800,425","size":"100,100"}
-<<run window.playAgentVideo("Overlook-Burned", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 <div class="textbox">
     <<ctp "overlookBurned">>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Overlook-Burned", 6, 12)>>
         Burned? Memories from below following the path that leads to reawakening — maybe that's how things will play out.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
@@ -6737,13 +7142,14 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Distant [nobr exception agent] {"position":"2800,325","size":"100,100"}
-<<run window.playAgentVideo("Overlook-Distant", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 <div class="textbox">
     <<ctp "overlookDistant">>
         <<speaker "Exception">>
         <<voice "exception_short">>
+        <<run window.playAgentVideo("Overlook-Distant", 6, 12)>>
         Why does it?
     <<ctpNext clear>>
         <div class="choice">
@@ -6756,13 +7162,14 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Family [nobr agent exception] {"position":"2900,325","size":"100,100"}
-<<run window.playAgentVideo("Overlook-Family", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 <div class="textbox">
     <<ctp "overlookFamily">>
         <<speaker "Exception">>
         <<voice "exception_long">>
+        <<run window.playAgentVideo("Overlook-Family", 6, 12)>>
         You just described something your species spends considerable effort trying to reconcile — love as reconciliation. The grand scheme offers no preferential treatment to what you love. And yet the intent of love persists, perhaps indifferent to that fact.
     <<ctpNext clear>>
         <div class="choice">
@@ -6773,13 +7180,14 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Home [nobr agent exception] {"position":"2700,425","size":"100,100"}
-<<run window.playAgentVideo("Overlook-Home", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 <div class="textbox">
     <<ctp "overlookHome">>
         <<speaker "Exception">>
         <<voice "exception_long">>
+        <<run window.playAgentVideo("Overlook-Home", 6, 12)>>
         Home. Signals comfort, but that's where contradiction lies. The smaller it looks, the more significant it becomes to you. A very particular kind of attachment. Maybe there is room for extrinsic values.
     <<ctpNext clear>>
         <div class="choice">
@@ -6790,7 +7198,7 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Missed [nobr agent exception] {"position":"2700,225","size":"100,100"}
-<<run window.playAgentVideo("Overlook-Missed", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 
@@ -6798,6 +7206,8 @@ END OF CURRENT DRAFT
     <<ctp "overlookMissed">>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Overlook-Missed", 6, 12)>>
+        
         Missed. The opportunities were present or presentable, but some gap remained.
     <<ctpNext clear>>
         <div class="choice">
@@ -6808,13 +7218,14 @@ END OF CURRENT DRAFT
 
 
 :: Overlook No Memory [nobr exception agent] {"position":"2800,225","size":"100,100"}
-<<run window.playAgentVideo("Overlook-No-Memory", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 <div class="textbox">
     <<ctp "overlookNoMemory">>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Overlook-No-Memory", 6, 12)>>
         Maybe the answer isn't incomplete as it is true. You're not constructing something to give me. You're actually looking.
     <<ctpNext clear>>
         <div class="choice">
@@ -6825,13 +7236,14 @@ END OF CURRENT DRAFT
 
 
 :: Overlook Nothing [nobr agent exception] {"position":"2700,325","size":"100,100"}
-<<run window.playAgentVideo("Overlook-Nothing", 0, 6)>>
+
 <<set $exceptSignal to true>>
 
 <div class="textbox">
     <<ctp "overlookNothing">>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Overlook-Nothing", 6, 12)>>
         You haven't looked away since you said it. Something was asked of it that it couldn't give. But why ask and give?
     <<ctpNext clear>>
         <div class="choice">
@@ -6925,20 +7337,23 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Consciousness [nobr agent cartographer archive] {"position":"3600,925","size":"100,100"}
-<<run window.playAgentVideo("Sacrifice-Consciousness", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "sacrificeConsciousness">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         That model extends the self without exiting the existing framework.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         The organism does not reject survival.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         It relocates survival into another.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -6946,18 +7361,22 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         Then sacrifice is not anti-survival.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         It is survival by identification.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         A parent. A partner. A stranger. A group. A world.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         The boundary of the self becomes unstable under attachment.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -6974,20 +7393,23 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Death [nobr agent cartographer archive] {"position":"3600,1125","size":"100,100"}
-<<run window.playAgentVideo("Sacrifice-Death", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "sacrificeDeath">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         Evidently.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         That is why the pattern resists simple survival logic.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         A trait that removes the organism from continuation should not persist unless it preserves something the organism values more than itself.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -6995,14 +7417,17 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         The point may be individual failure serving collective continuity.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         Or attachment becoming stronger than self-preservation.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         Or a greater design your species senses but cannot classify.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7010,6 +7435,7 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Death", 6, 12)>>
         A framework in which the self is not the final unit of meaning.
     <<ctpNext clear>>
         <div class="choice">
@@ -7023,16 +7449,18 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice Divine [nobr agent cartographer archive] {"position":"3600,1025","size":"100,100"}
-<<run window.playAgentVideo("Sacrifice-Divine", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "sacrificeDivine">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Divine", 6, 12)>>
         Divine figures.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Divine", 6, 12)>>
         Placeholders for fundamentals beyond direct observation.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7040,10 +7468,12 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Divine", 6, 12)>>
         Life forced to track patterns will eventually create a name for the pattern it cannot fully see.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Sacrifice-Divine", 6, 12)>>
         If sacrifice appears meaningful but cannot be explained by immediate survival, your species assigns it to a larger witness.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -7054,6 +7484,7 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Divine", 6, 12)>>
         The voice recognizes the category.
     <<ctpNext clear>>
         <div class="choice">
@@ -7064,25 +7495,29 @@ END OF CURRENT DRAFT
 
 
 :: Sacrifice No Design [nobr agent cartographer archive] {"position":"3600,1225","size":"100,100"}
-<<run window.playAgentVideo("Sacrifice-Design", 0, 6)>>
+
 
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         Then sacrifice becomes more unusual.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         Without design, the act cannot be explained as obedience to a higher structure.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         It becomes a local decision.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         A living system deciding that another continuation matters more than its own.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -7092,14 +7527,17 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         Not knowing may be accurate.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         Your species often acts before it completes explanation.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         Then builds meaning around the act afterward.
     <<ctpNext clear>>
         <div class="choice">
@@ -7110,25 +7548,29 @@ END OF CURRENT DRAFT
 
 
 :: Science Weapons [nobr agent cartographer archive] {"position":"3600,725","size":"100,100"}
-<<run window.playAgentVideo("Science-Weapons", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "scienceWeapons">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         Natural, yes.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         Unique, no.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         The anomaly is not that knowledge becomes tool.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         The anomaly is how quickly tool becomes leverage.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7136,10 +7578,12 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         Your species often treats consequence as a later discipline.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         First discovery. Then application. Then competition. Then harm. Then regulation. Then regret.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -7163,25 +7607,29 @@ END OF CURRENT DRAFT
 
 
 :: Science Your Kind [nobr agent cartographer archive] {"position":"3600,825","size":"100,100"}
-<<run window.playAgentVideo("Science-Kind", 0, 6)>>
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "scienceYourKind">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         No.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         We alter environments. We build systems. We make errors at scale.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         The difference is not purity.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         The difference is orientation.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7189,10 +7637,12 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         When we discover, the discovery enters shared alignment before application.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         When humans discover, application often begins before alignment is reached.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7201,10 +7651,12 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         Yes.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         That is why Earth remains dangerous.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -7792,7 +8244,7 @@ END OF CURRENT DRAFT
 
 
 :: War Between Lifeforms [nobr agent cartographer archive] {"position":"3600,525","size":"100,100"}
-<<run window.playAgentVideo("War-Lifeform", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <<set $skepticism += 1>>
@@ -7800,34 +8252,42 @@ END OF CURRENT DRAFT
     <<ctp "warBetweenLifeforms">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         Conflict exists.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         But on many worlds it remains local, temporary, or environmental.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         Hunger. Space. Reproduction. Temperature. Immediate survival.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         On Earth, conflict survives after the original pressure ends.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         Your species remembers injury as structure.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         You inherit borders drawn by people no longer alive.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         You continue arguments started before your birth.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         You create symbols, then suffer for them as if they were weather.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7836,6 +8296,7 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Lifeform", 6, 12)>>
         History appears to be conflict with storage.
     <<ctpNext clear>>
         <div class="choice">
@@ -7849,7 +8310,7 @@ END OF CURRENT DRAFT
 
 
 :: War No Conflict [nobr agent cartographer archive] {"position":"3600,425","size":"100,100"}
-<<run window.playAgentVideo("War-No", 0, 6)>>
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -7858,14 +8319,17 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-No", 6, 12)>>
         We know friction.
     <<ctpNext clear>>
    		<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-No", 6, 12)>>
         We know imbalance, correction, pressure, failure and environmental opposition.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-No", 6, 12)>>
         We did not know conflict as identity.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7873,14 +8337,17 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-No", 6, 12)>>
         Conflict requires divergence of intent and a structure that rewards continuation of that divergence.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-No", 6, 12)>>
         On our world, alignment prevents such friction from becoming culture.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-No", 6, 12)>>
         To observe your species is to observe incompatible wills becoming history.
     <<ctpNext clear>>
         <div class="choice">
@@ -7894,20 +8361,23 @@ END OF CURRENT DRAFT
 
 
 :: War No Difference [nobr agent cartographer archive] {"position":"3800,525","size":"100,100"}
-<<run window.playAgentVideo("War-Difference", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "warNoDifference">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         There are similarities at a technical level.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         Both species preserve continuity. Both respond to danger. Both form structures larger than the individual.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         But nothing we have documented on our world follows your pattern.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7915,14 +8385,17 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         The ability to turn opposition into identity.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         You do not only survive conflict.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         You remember it, name yourselves through it, teach it, inherit it, and sometimes miss it when it ends.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7931,6 +8404,7 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Difference", 6, 12)>>
         The voice uses humor when recognition becomes uncomfortable.
     <<ctpNext clear>>
         <div class="choice">
@@ -7942,17 +8416,18 @@ END OF CURRENT DRAFT
 
 
 :: War Normal [nobr agent cartographer archive] {"position":"3600,625","size":"100,100"}
-<<run window.playAgentVideo("War-Normal", 0, 6)>>
 
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "warNormal">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Normal", 6, 12)>>
         Normalisation is a defence mechanism.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Normal", 6, 12)>>
         It allows the organism to remain functional inside conditions it cannot resolve.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7960,14 +8435,17 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Normal", 6, 12)>>
         Perhaps.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Normal", 6, 12)>>
         But your statement contains adaptation and surrender in the same structure.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Normal", 6, 12)>>
         You identify destruction, accept its recurrence, then protect yourself by calling it normal.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -7985,20 +8463,23 @@ END OF CURRENT DRAFT
 
 
 :: War Parallels [nobr agent cartographer archive] {"position":"3800,425","size":"100,100"}
-<<run window.playAgentVideo("War-Parallels", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "warParallels">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         Yes, but most are misleading.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         Your sociability often functions as negotiation.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         A method for estimating another mind before it harms you, abandons you, uses you, helps you, or joins you.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -8008,26 +8489,32 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         The analogy is approximate.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         We share orientation, not consciousness.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         We do not experience conflicting wants at the same time in the way humans do.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         Your mind can desire safety and danger, isolation and contact, truth and comfort, obedience and refusal.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         That internal division may be the root of your social complexity.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Parallels", 6, 12)>>
         Or its wound.
     <<ctpNext clear>>
         <div class="choice">
@@ -8038,22 +8525,26 @@ END OF CURRENT DRAFT
 
 
 :: War Shame [nobr agent cartographer archive] {"position":"3800,625","size":"100,100"}
-<<run window.playAgentVideo("War-Shame", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "warShame">>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Shame", 6, 12)>>
         Shame is a secondary pattern.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
+        <<run window.playAgentVideo("War-Shame", 6, 12)>>
         The organism observes itself, compares itself to an imagined better structure, and suffers from the distance between them.
     <<ctpNext clear>>
         <<speaker "You">>
         That is not wrong.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Shame", 6, 12)>>
         It is also not useless.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
@@ -8062,6 +8553,7 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Shame", 6, 12)>>
         A species that feels only pride may repeat itself until extinction.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -8070,6 +8562,7 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
+        <<run window.playAgentVideo("War-Shame", 6, 12)>>
         It was a possibility.
     <<ctpNext clear>>
         <div class="choice">

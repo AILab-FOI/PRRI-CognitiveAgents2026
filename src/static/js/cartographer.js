@@ -331,12 +331,12 @@ function play_part(part) {
   recognition.stop();
   switch (part) {
     case "ponovi":
-      start = 1;
-      end = 5;
+      start = 6;
+      end = 12;
       break;
     default: // tisina
-      start = 5;
-      end = 5.9;
+      start = 0;
+      end = 6;
       setTimeout(function() {
         try {
           if (!isMobileBrowser()) window.recognition.start();
