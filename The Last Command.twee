@@ -92,6 +92,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Your question assumes that a world is a place.
     <<ctpNext clear>>
         For you, environment is surface, air, gravity, temperature, shelter.
@@ -106,6 +107,7 @@ The Last Command
         That's supposed to make me feel better?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         No.
     <<ctpNext clear>>
         It is only the reason you are still able to ask.
@@ -123,6 +125,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.AObsessed">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Intent is not specific to your world.
     <<ctpNext clear>>
         Your focus on it is.
@@ -147,6 +150,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.APhilosophical">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Philosophical is your category.
     <<ctpNext clear>>
         The others would not use it.
@@ -159,6 +163,7 @@ The Last Command
         And the problem is me?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Not only you.
     <<ctpNext clear>>
         Your species.
@@ -179,6 +184,7 @@ The Last Command
         Do you mean it just sounds human, or is it an actual human saying it?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The pattern is not imitation.
     <<ctpNext clear>>
         It carries human neurological structure. Memory pressure. Emotional modulation. Survival bias.
@@ -187,6 +193,7 @@ The Last Command
         So it is human.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         More likely than not.
     <<ctpNext clear>>
         But not present in the way you are present.
@@ -199,6 +206,7 @@ The Last Command
         That doesn't make me feel better.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It was not meant to.
     <<ctpNext clear>>
         <div class="choice">
@@ -214,6 +222,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.AlsoHear">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Hear is not accurate.
     <<ctpNext clear>>
         What I detect is closer to the opposite.
@@ -226,6 +235,7 @@ The Last Command
         So it knows you're listening?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         No.
     <<ctpNext clear>>
         The voice speaks without hearing.
@@ -247,6 +257,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.BWhoBrought">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You were brought by exchange.
     <<ctpNext clear>>
         Your species used symbols of value. Currency. Authority. Ownership. Documentation.
@@ -257,11 +268,13 @@ The Last Command
         Biomass?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Living material. Responsive cognition. A sample that could survive transport.
     <<ctpNext clear>>
         The word sample lands harder than the rest.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         You attach will to the transfer. That changes its meaning for you. It did not change the exchange for those who completed it.
     <<ctpNext clear>>
         <div class="choice">
@@ -285,20 +298,30 @@ The Last Command
         Not because it is considering your request, but because the request appears to contain several contradictions.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Return is not prepared.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         Precautionary measures are incomplete. Your body has not been cleared for transfer. Your neurological signal is still unstable.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         And the research would end before its pattern could be understood.
     <<ctpNext clear>>
         <<speaker "You">>
         I don't care about your research.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         That is expected.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         But I do not understand the destination.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         Earth is the environment that produced you, damaged you, exchanged you and then removed you from its own records.
     <<ctpNext clear>>
         Why is return your first definition of safety?
@@ -317,6 +340,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.CTrade">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Capture. Trade. Research.
     <<ctpNext clear>>
         You separate them as if each word changes the structure of what happened.
@@ -331,6 +355,7 @@ The Last Command
         Custody?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         A poor word.
     <<ctpNext clear>>
         The biochip selected it because your language does not contain a clean equivalent.
@@ -359,9 +384,11 @@ The Last Command
         Then the biochip catches something.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Intent. You treat it as language.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You send sound and expect meaning to arrive intact. That is unusual.
     <<ctpNext clear>>
         <div class="choice">
@@ -384,6 +411,7 @@ The Last Command
         The alien remains still, but the question seems to change the air around it.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Existential.
     <<ctpNext clear>>
         Not practical.
@@ -398,6 +426,7 @@ The Last Command
         Third presence?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice you obeyed before you met me.
     <<ctpNext clear>>
         <div class="choice">
@@ -418,6 +447,7 @@ The Last Command
         The alien tilts its head slightly, not confused by the question, but by the word you chose.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Escaped.
     <<ctpNext clear>>
         Escaping what?
@@ -430,6 +460,7 @@ The Last Command
         That's not exactly comforting.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Comfort is not required for accuracy.
     <<ctpNext clear>>
         <div class="choice">
@@ -450,6 +481,7 @@ The Last Command
         For the first time, it seems to look past you rather than at you.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice is more likely to be human.
     <<ctpNext clear>>
         It is not carried like our signals. It presses through the vessel through the component installed in your skull.
@@ -464,6 +496,7 @@ The Last Command
         So you can sense it too.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I can sense the disturbance it leaves behind.
     <<ctpNext clear>>
         <div class="choice">
@@ -485,20 +518,30 @@ The Last Command
         It does not raise a hand. It does not prepare itself like something expecting violence.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You would.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         That aligns with what I have observed.
     <<ctpNext clear>>
         <<speaker "You">>
         You're saying that like it's normal.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         For your species, it appears to be one of the first available answers.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Fear becomes posture. Confusion becomes threat. Helplessness becomes impact.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         You are not unusual for wanting to strike.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         You are unusual for pausing long enough to ask first.
     <<ctpNext clear>>
         <div class="choice">
@@ -527,6 +570,7 @@ The Last Command
         Small distortions ripple through the air. Your biochip adjusts, searching for meaning inside a signal that does not sound like speech.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         What is the true intent behind it? You are trying to be understood. Is that what you call intent, or does our definition differ?
     <<ctpNext clear>>
         <div class="choice">
@@ -546,6 +590,7 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.HumanVoice">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Frequency.
     <<ctpNext clear>>
         Composition.
@@ -558,6 +603,7 @@ The Last Command
         Distinct how?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It changes when it believes it is not being observed.
     <<ctpNext clear>>
         It modulates pressure, timing and emotional emphasis depending on what it thinks you will accept.
@@ -579,22 +625,34 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.NoConsent">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Consent.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         A boundary declared by a self-aware organism before another organism acts upon it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Your meaning is clear now.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         It was not clear in the exchange.
     <<ctpNext clear>>
         <<speaker "You">>
         That's not an excuse.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It is not an excuse.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         It is a description of failure.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         The humans who transferred you did not provide consent as part of the record. The visitors who received you did not know to request it.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -603,8 +661,12 @@ The Last Command
         <<speaker "Exception">>
         Some did not care.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Some did not understand what care was supposed to change.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The difference matters to us. It may not matter to you.
     <<ctpNext clear>>
         <div class="choice">
@@ -659,9 +721,11 @@ The Last Command
         Pain shoots through your fingers and up your wrist. You stumble back, shaking your hand, suddenly aware of how small the gesture was.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Impact.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         A common answer from your species when meaning fails to arrive quickly enough.
     <<ctpNext clear>>
         It still stands exactly where it was.
@@ -679,10 +743,15 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.SoldAgainstWill">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Sold.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         A transfer of ownership, contingent on the assignment of value to a living organism.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Your species completed the exchange using its own systems: currency, authority, documentation and force.
     <<ctpNext clear>>
         The concept of will as a variable in such exchanges is not something we were given.
@@ -691,8 +760,11 @@ The Last Command
         Not something you were given?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The transaction contained mass, condition, survivability and neurological activity.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         It did not contain permission.
     <<ctpNext clear>>
         <div class="choice">
@@ -709,32 +781,49 @@ The Last Command
 <div class="textbox">
     <<ctp "3.1.Uncompliant">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Uncompliant.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         A state in which a living system refuses the predicted path.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Yes. We considered it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         We did not understand its scale in humans.
     <<ctpNext clear>>
         <<speaker "You">>
         What is that supposed to mean?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Most organisms resist pain, heat, hunger, pressure, confinement. They resist what directly threatens continuation.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Humans resist instructions.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Humans resist explanations.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Humans resist rescue, if the hand offering it belongs to the wrong story.
     <<ctpNext clear>>
         <<speaker "You">>
         So you knew I might fight back.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         We knew you might not follow.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         We did not know you could make refusal into identity.
     <<ctpNext clear>>
         <div class="choice">
@@ -753,6 +842,7 @@ The Last Command
         What has the voice been saying?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Guidance.
     <<ctpNext clear>>
         Assistance.
@@ -765,6 +855,7 @@ The Last Command
         That sounds like helping.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It may be helping you.
     <<ctpNext clear>>
         It may be helping itself through you.
@@ -808,22 +899,34 @@ The Last Command
         The alien does not react to the anger in your voice. If it recognizes it, it treats it as another form of data.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Want is not the correct structure.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         This vessel is a research centre. Your home is the subject. It was meant to be observed without interference.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         That condition has failed.
     <<ctpNext clear>>
         <<speaker "You">>
         Because of me?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Partly.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         Because your species transferred you. Because the visitors accepted you. Because the voice inside you is not part of our system.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         You are not the purpose of the research.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         You are the event that changed it.
     <<ctpNext clear>>
         <div class="choice">
@@ -842,6 +945,7 @@ The Last Command
         The alien turns its head toward the length of the corridor.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Forward.
     <<ctpNext clear>>
         The hallway branches into rooms assigned to different forms of observation.
@@ -852,6 +956,7 @@ The Last Command
         And you?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I am not assigned to your path.
     <<ctpNext clear>>
         I am only noticing what follows you through it.
@@ -871,22 +976,34 @@ The Last Command
 <div class="textbox">
     <<ctp "ableOrWant">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Both answers are incomplete.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         We are able to move objects between controlled environments.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         We are not able to return you safely without conditions that are not yet met.
     <<ctpNext clear>>
         <<speaker "You">>
         And the part where you don't want to?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Earth is still too dangerous to enter directly.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Not because it is lifeless.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Because it is aggressively alive.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Careful research remains necessary.
     <<ctpNext clear>>
         <div class="choice">
@@ -911,12 +1028,15 @@ The Last Command
         Easy. They are the ones who put you in the chamber, but not the ones who got you aboard this ship. Important distinction. Try not to make this worse.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Subject is awake, mobile, and conversational.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Subject selected a non-optimal chamber instruction and produced an unexpected meeting sequence.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The subject is afraid.
     <<ctpNext clear>>
         The three researchers observe you, waiting for a response.
@@ -938,26 +1058,38 @@ The Last Command
 <div class="textbox">
     <<ctp "earthDangerous">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Earth is not dangerous because it is dead.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         Earth is dangerous because life there refuses to remain separate from conflict.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Predation, disease, competition, symbiosis, adaptation, extinction, memory. Your world converts threat into structure.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A foreign object does not merely land on Earth.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It is touched, contaminated, studied, consumed, worshipped, weaponised, hidden, sold, or misunderstood.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Often in that order.
     <<ctpNext clear>>
         <<speaker "You">>
         That sounds like us.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Yes.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         That is the concern.
     <<ctpNext clear>>
         <div class="choice">
@@ -973,19 +1105,26 @@ The Last Command
 <div class="textbox">
     <<ctp "freeToGo">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Departure for your home planet is unavailable at this moment.
     <<ctpNext clear>>
         <<speaker "You">>
         That's a very careful way of saying no.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It is not no.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It is not yet.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         Your body has not completed adaptation. Your neurological signal remains unstable. Your origin point is not safe for direct return.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Also, the research is incomplete.
     <<ctpNext clear>>
         <div class="choice">
@@ -1002,17 +1141,23 @@ The Last Command
 <div class="textbox">
     <<ctp "humanityWarning">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Notable correction.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Human capability should not be measured only by injury, force, or technological output.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Sabotage potential increases when a system is misunderstood by the subject and trusted by its operators.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your warning contains fear, pride, guilt and prediction.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Additional behaviour tracking is justified.
     <<ctpNext clear>>
         <div class="choice">
@@ -1080,12 +1225,15 @@ The Last Command
         The Cartographer watches the space behind your eyes, as if listening for something you cannot hear.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Statement recorded.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Human warning often contains confession.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         Then the vessel should assume confession and warning are both active.
     <<ctpNext clear>>
         For the first time, none of them continue the question.
@@ -1103,8 +1251,11 @@ The Last Command
 <div class="textbox">
     <<ctp "riskLives">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Correct.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_short">>
         The risk exists.
     <<ctpNext clear>>
         Only its scale remains under evaluation.
@@ -1113,11 +1264,15 @@ The Last Command
         You'd risk your lives just to observe me?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Not only you.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Through you, Earth becomes capable of answering.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         And if the vessel learns how your species breaks systems, it may also learn how not to be broken by them.
     <<ctpNext clear>>
         <div class="choice">
@@ -1134,19 +1289,27 @@ The Last Command
 <div class="textbox">
     <<ctp "whatAreYou">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         This vessel is a research instrument.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We are its researchers, caretakers, interpreters and repairers, depending on which part of the vessel is speaking through us.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You are from the third orbital body of this system. Earth.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A world whose life patterns we have catalogued from a distance for some time.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Your current classification is unstable.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         In simpler terms: you are a living conversational fragment of the deathworld you inhabit.
     <<ctpNext clear>>
         <div class="choice">
@@ -1165,20 +1328,26 @@ The Last Command
 <div class="textbox">
     <<ctp "whatNow">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Your movement is restricted only by the parts of the vessel that cannot yet interpret you safely.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Several rooms are stable enough for contact.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Each contains a different kind of observation.
     <<ctpNext clear>>
         <<speaker "You">>
         So I'm allowed to explore?
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Allowed is imprecise.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_short">>
         Observed is more accurate.
     <<ctpNext clear>>
         <div class="choice">
@@ -1195,21 +1364,30 @@ The Last Command
 <div class="textbox">
     <<ctp "whatWant">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Want implies desire created by absence.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_short">>
         Absence is not the structure here.
     <<ctpNext clear>>
         <<speaker "You">>
         That's not an answer.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         It is an answer with an unfamiliar shape.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Your presence allows observation that was impossible through distance, signal, atmosphere, and orbital analysis.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         You are not only a subject.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_short">>
         You are a response from Earth that can respond back.
     <<ctpNext clear>>
         <div class="choice">
@@ -1228,24 +1406,34 @@ The Last Command
 <div class="textbox">
     <<ctp "whyReleased">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Released implies prior restraint imposed with intent.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_medium">>
         The chamber was a stabilisation environment. A functional requirement of transfer, adaptation and neurological recovery.
     <<ctpNext clear>>
         <<speaker "You">>
         It looked like a prison.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Many necessary structures resemble hostile structures when the subject was not asked to enter them.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_short">>
         You were not held as punishment.
     <<ctpNext clear>>
+    	<<speaker "Analyst">>
+        <<voice "analyst_short">>
         You were maintained.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The distinction appears significant to you.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         We are noting that.
     <<ctpNext clear>>
         <div class="choice">
@@ -1264,26 +1452,38 @@ The Last Command
 <div class="textbox">
     <<ctp "wrongButton">>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         You introduced a variable deviation into a process designed to remove variables.
     <<ctpNext clear>>
+    	<<speaker "Engineer">>
+        <<voice "engineer_medium">>
         The designed outcome was simple exit, guided movement, corridor transition.
     <<ctpNext clear>>
+    	<<speaker "Engineer">>
+        <<voice "engineer_short">>
         The produced outcome is this meeting.
     <<ctpNext clear>>
         <<speaker "You">>
         So I broke something?
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         No.
     <<ctpNext clear>>
+    	<<speaker "Engineer">>
+        <<voice "engineer_short">>
         You created inefficient data.
     <<ctpNext clear>>
+    	<<speaker "Engineer">>
+        <<voice "engineer_short">>
         Possibly more valuable data.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Earth life appears to generate meaning through deviation.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         A deeply inconvenient trait.
     <<ctpNext clear>>
         <div class="choice">
@@ -1302,6 +1502,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystAlive">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         The definition blurs when in outer research.
     <<ctpNext clear>>
         <div class="choice">
@@ -1319,12 +1520,14 @@ The Last Command
 <div class="textbox">
     <<ctp "analystBrain">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Yes is the likely answer. The brain stress responses were suppressed in place of the environment change not being the deterministic factor.
     <<ctpNext clear>>
         <<speaker "You">>
         And what does that even mean now? Am I still myself? Also, is this thing in my head harmful to me?
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         No to both inquiries. The only side effect is  higher potential for amnesia. Is that something you want to research?
     <<ctpNext clear>>
         <div class="choice">
@@ -1345,6 +1548,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystCarryKnow">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Knowing without carrying. Awareness without weight. That is either a very advanced state or a very early one. We have not determined which end of that spectrum your kind occupies. Possibly neither. Possibly both depending on the individual. That variability is what makes classification difficult.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1366,6 +1570,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystCarryKnow">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         That answer and the previous one are not the same, though your species often uses them interchangeably. Not thinking about something is not the same as having resolved it. It is also not the same as having abandoned it. I will leave that where it lands.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1385,6 +1590,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Used to. A temporal boundary on something your species typically treats as permanent. Something caused you to set it down. You didn't say what. I notice you didn't say what. The biochip noted it regardless.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1404,6 +1610,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystCarryYes">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Everyone. A universal claim made with certainty about a species that has demonstrated consistent internal disagreement. And yet I believe you. Not because the data confirms it. Because of how quickly you said it. Carrying something unresolved without it stopping you. That may be the closest thing to a defining characteristic we have found. It is not comfortable to catalogue.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1421,6 +1628,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystCompare">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         To baseline. To deviation. To anomaly. Your species contains all three simultaneously. This is inefficient. And therefore valuable.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -1502,11 +1710,13 @@ The Last Command
 <div class="textbox">
     <<ctp "analystGreaterDesign">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Theories. Plural. Unresolved. Your species detected a pattern and produced multiple explanations. Each internally consistent. Each incompatible. Unresolved fundamentals should produce stillness. Yours don't. You build on them anyway. I am not certain whether that is an error or the most efficient behaviour we've observed.
     <<ctpNext clear>>
         The biochip glitches lightly.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        	<<voice "analyst_short">>
             You said 'bundle'. Like it is something you carry. Do you?
     <<ctpNext clear>>
         <div class="choice">
@@ -1558,6 +1768,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystLeft">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Deviation from a known pattern, not the thing itself. That is how your species begins. With what doesn't fit. Is it by design or not?
     <<ctpNext clear>>
         <<speaker "You">>
@@ -1566,6 +1777,7 @@ The Last Command
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Unexpected reaffirmation. How far does the awareness reach? Please provide clarity.
     <<ctpNext clear>>
         <div class="choice">
@@ -1612,6 +1824,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystNoMemory">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Memory absence at this scale is atypical for the procedure. The suppression targets stress response pathways, not memory storage directly. The amnesia predates our involvement. It was noted on arrival, but it was not flagged as a variable worth correcting. It appeared to be a condition you were already operating within.
     <<ctpNext clear>>
         <div class="choice">
@@ -1629,6 +1842,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystNoSignal">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Understood.
     <<ctpNext clear>>
         The Analyst returns to its work. It doesn't respond further. The interaction is over on its end — it simply didn't tell you that.
@@ -1709,6 +1923,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystCarryUsedTo">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         You're using probability as a placeholder for certainty you don't have access to yet. That is either adaptive or telling. On your planet, it appears to function as both simultaneously. Passive research is in accordance instead, to understand this uncertainty.
     <<ctpNext clear>>    
         The Analyst returns to its work. No signal. No follow-up.
@@ -1738,6 +1953,7 @@ The Last Command
         Two containers activate.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Two biological structures. One originates from your planet. One does not. Can you describe the difference?
     <<ctpNext clear>>
         <div class="choice">
@@ -1756,6 +1972,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystRecording">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         A recording is passive. You are not passive. You have already altered the conditions of this observation four times since entering this room.
     <<ctpNext clear>>
         <div class="choice">
@@ -1771,6 +1988,7 @@ The Last Command
         You move toward the Analyst. Its response is slow. You restrain it — the alien's crystalline structure is not built for resistance. It doesn't fight. It observes.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Physical intervention. Unprompted by research protocol. Categorising."
     <<ctpNext clear>>
         <div class="choice">
@@ -1790,6 +2008,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystRestrainAnswer">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         I am always categorising. The two are not separable. But the signal — yes. You could have asked again. The interaction on our end was concluded but not permanently closed. I would have responded to a renewed approach.
     <<ctpNext clear>>
         [ SIGNAL ACQUIRED: 119.5 — 1.2 — 45.1 ]
@@ -1812,6 +2031,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystRestrainNeed">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         The signal was not provided because the interaction reached a conclusion on our end. You were not notified of the conclusion. I note this as a communication irregularity. The signal can be provided now. The physical intervention was not necessary but is not consequential.
     <<ctpNext clear>>
         The Analyst resumes its work as if nothing happened.
@@ -1832,9 +2052,11 @@ The Last Command
 <div class="textbox">
     <<ctp "analystRestrainSorry">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Apology. An expression of regret for an action taken. The action was taken anyway. The apology does not reverse the action. I am noting that your species issues these expressions frequently in situations where the action was deliberate. The function of the expression is unclear.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         The signal. You wanted the signal. Here.
     <<ctpNext clear>>
         [ SIGNAL ACQUIRED: 119.5 — 1.2 — 45.1 ]
@@ -1855,17 +2077,20 @@ The Last Command
 <div class="textbox">
     <<ctp "analystRight">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Fake. The exterior presents a structure inconsistent with what the interior contains. You identified the dissonance before you identified the components. That is unusual.
     <<ctpNext clear>>
         <<speaker "You">>
         It just didn't look right.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Correct identification. Incorrect methodology. You used intuition rather than analysis. And yet the result is the same.
         <<ctpNext clear>>
         	BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Unexpected. The signal responds to pattern recognition regardless of process. This warrants further observation.
     <<ctpNext clear>>
         <div class="choice">
@@ -1882,6 +2107,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystSample">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Just' suggests reduction. That's inaccurate. Static samples don't alter conditions. You've done so seventeen times since entering this bay. You are a process, not an object. That distinction matters. Static samples do not resist classification. You do.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -1937,6 +2163,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystStudying">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         Observation is occurring. 'Studying' implies directed intent. But further categorisation is needed.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -1976,6 +2203,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystWhatPlace">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         A controlled environment designed to isolate, observe, and compare biological structures under variable conditions. You are now part of this function.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -1997,6 +2225,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Meant to be. That framing is not accounted for in the current model. Identity without memory is theoretically unstable. You appear stable. We are noting that. It may be the most interesting thing about you so far.
     <<ctpNext clear>>
         <div class="choice">
@@ -2015,6 +2244,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystWhyBuild">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         Extraction destroys the source. A static copy of your memories would tell us what happened to you. It would not tell us how you respond to what is happening. The biochip observes you in motion. Memories observed from outside produce incomplete data. You experiencing things produces complete data.
     <<ctpNext clear>>
         <div class="choice">
@@ -2048,6 +2278,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystWorse">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
         The alternative was your death during transit. We chose continuity.
     <<ctpNext clear>>
         <div class="choice">
@@ -2064,6 +2295,7 @@ The Last Command
 <div class="textbox">
     <<ctp "analystWrong">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
         Wrong'. Moral classification. No universal reference point provided, no relative definition present either. Clarify.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2103,6 +2335,7 @@ The Last Command
         <</if>>
     <<ctpNext clear>>
         <<if visited("Archive Bay Entry") lte 1>>
+        	<<speaker "Narrator">>
             This is where the Cartographer keeps pretending that watching a world from orbit is the same thing as understanding it.
         <</if>>
     <<ctpNext clear>>
@@ -2147,6 +2380,7 @@ The Last Command
         <<voice "archive_bay_return">>
         You're looking at it again. The window that isn't a window.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I know that view. I have spent a great deal of time not looking at it, which is almost the same thing.
     <<ctpNext clear>>
         <div class="choice">
@@ -2173,30 +2407,37 @@ The Last Command
         <<voice "archive_earth_view_1">>
         Strange, isn't it?
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         How much you can love something that has no idea you're looking at it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "archive_earth_view_2">>
         I used to think the problem with humanity was scale. That we cared too much about small things. A patch of ground. A room. A family. A version of how the world should go.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         But from here, none of that becomes smaller.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         It becomes harder to lie about.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "archive_earth_view_3">>
         The aliens think Earth is a deathworld because conflict shaped it.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         They're not entirely wrong.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         But they miss the campfire part. The part where people sit close because the dark is large and being alone inside it is worse.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "archive_earth_view_4">>
         Humans are not hive minds. Not bees. Not ants. Not these observers with their clean categories and orbital patience.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         We are contradictory. Local. Numerous. Personal.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         We bite hardest when we are not aligned.
     <<ctpNext clear>>
         A long pause follows.
@@ -2205,6 +2446,7 @@ The Last Command
         <<voice "archive_earth_view_5">>
         I have been up here long enough to know that.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Long enough that knowing it is no longer enough.
     <<ctpNext clear>>
         <div class="choice">
@@ -2229,29 +2471,34 @@ The Last Command
         Hey, is that you again? You all look so similar.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Why is it that you remembered me? You are seeking a pattern where your species usually sees only noise.
     <<ctpNext clear>>
         <<speaker "You">>
         That's not even true. What do you even know about my species?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Fair enough.
     <<ctpNext clear>>
         <<speaker "You">>
         What's your deal? What do you do here?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Nothing in particular. I observe the observers. What do you do here?
     <<ctpNext clear>>
         <<speaker "You">>
         I don't even know. I can only really follow the voice in my head. I'm not presented with much choice so far.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Presented? You're actively looking for choices. But presented is a loose word.
     <<ctpNext clear>>
         The Exception gestures toward the view of Earth below.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Using your eyes, looking at the world below.. What do you think of?
     <<ctpNext clear>>
         <div class="choice">
@@ -2365,9 +2612,11 @@ The Last Command
         You leave. The narrator remains on the floor of his own control room. He doesn't call after you. The Exception is in the hallway.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You found the blind spot.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         I have been waiting to see if anyone would. The first one didn't. I wasn't certain you would either. I'm glad I was wrong.
     <<ctpNext clear>>
         It falls into step beside you. Not leading. Not following. Beside.)It falls into step beside you. Not leading. Not following. Beside.
@@ -2558,18 +2807,21 @@ The Last Command
         You led me here on purpose.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I provided information. What you did with it was your own.
     <<ctpNext clear>>
         <<speaker "You">>
         That's not an answer.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         No. I led you here on purpose. You asked for an answer so there it is. I observed the first person and I did not intervene and they died and I have been holding that as a variable without a function for a long time. You are not them. But you are the same kind of thing. I wanted to see if the outcome could be different.
     <<ctpNext clear>>
         <<speaker "You">>
         Is it?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You are standing in the Fusion Core. You are alive. You are making a choice. That is already different.
     <<ctpNext clear>>
         <div class="choice">
@@ -2586,8 +2838,11 @@ The Last Command
 <div class="textbox">
     <<ctp "burnExceptionNarrator">>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         In the control room. He cannot reach this part of the ship. The frequency he uses to keep the others out also keeps him in. I wondered how long it would take him to notice that. It has been longer than I expected.
     <<ctpNext clear>>
+      <<speaker "Exception">>
+      <<voice "exception_short">>
         You came.
     <<ctpNext clear>>
         <div class="choice">
@@ -2645,6 +2900,7 @@ The Last Command
 <div class="textbox">
     <<ctp "burnExceptionWhat">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Then walk away.
     <<ctpNext clear>>
         It steps aside. You leave the Fusion Core and head back up through the ship.
@@ -2661,11 +2917,13 @@ The Last Command
 <div class="textbox">
     <<ctp "burnExceptionWhat">>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         I want nothing. Want implies an absence I'm trying to fill. I told you that. But I will tell you what I observe. The voice in your head has been in that room for a long time. Long enough to stop being a person in some ways that matter. Long enough to stop being able to see the difference between using someone and helping them. The ship holds data that has taken decades to gather. The voice needs you to leave this room and walk to the control room and place your hand on a panel.
     <<ctpNext clear>>
         Beat.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         There is also a panel here.
     <<ctpNext clear>>
         <div class="choice">
@@ -2685,11 +2943,13 @@ The Last Command
         The four-minute countdown is not displayed as a number. It is felt. The heat changes. The hum shifts register. The lights don't flicker — they clarify, briefly, as the systems maximise before they fail.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         I have been observing for a very long time. I have observed birth and continuation and the end of both. I have never observed something choose. Not like this. Not with full information and no survival pressure and the ability to walk away.
     <<ctpNext clear>>
         A pause. Something in its register that is as close to warmth as it gets.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Your species is genuinely the strangest thing in this system. I will not be able to tell anyone that. But I know it now. That seems like enough.
     <<ctpNext clear>>
         The ship ends. The research ends. The narrator ends. The Exception ends, with its particular form of patience. You end — not because of the biochip this time, but because you chose a thing larger than the biochip.
@@ -3286,6 +3546,7 @@ The Last Command
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
     	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         No, the effects were just enough to establish necessary safety nets. You can test out cognitive reasoning in my research to check.
      <<ctpNext clear>>
         <div class="choice">
@@ -3304,16 +3565,22 @@ The Last Command
         But will it affect me in any other way? Is it permanent?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Permanent is unlikely.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         The intervention was narrow: stress acceleration, panic escalation, and overload response during transfer.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It was not designed to change memory, personality, judgment, attachment, or belief.
     <<ctpNext clear>>
         <<speaker "You">>
         Designed by who?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         The vessel's medical systems, after observing the failure rate of unprepared Earth organisms under displacement.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -3321,8 +3588,11 @@ The Last Command
         That is an impressively clean way of saying they edited your brain because their experiment was inconvenient.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The voice is not incorrect.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It is only incomplete.
     <<ctpNext clear>>
         <div class="choice">
@@ -3356,8 +3626,11 @@ The Last Command
 <div class="textbox">
     <<ctp "cartDeathWorld">>
     	<<speaker "Cartographer">>
+        <<voice "cartographer_long">>
         Upon observing how life defends itself on your world, my colleagues concluded that removing specimens from their habitat and suppressing stress responses reduces key variables in the ecosystem's unpredictability.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         You understand. The brain manipulations. You weren't just brought here — you were adjusted.
     <<ctpNext clear>>
         <div class="choice">
@@ -3375,18 +3648,21 @@ The Last Command
 <div class="textbox">
     <<ctp "cartEffort">>
     	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Indeed. Everything here is precisely made to observe deathworlds.
     <<ctpNext clear>>
         <<speaker "You">>
         That's not what I meant. I just don't believe you would go through all this just to do some research. Do you have any ulterior motives?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         Yes. By understanding the nature this planet leaves behind we hope to advance our thinking and be better prepared for this invasive nature of deathworlds.
     <<ctpNext clear>>
         <<speaker "You">>
         Yeah, that's kind of my point.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The response does not align with prior patterns.
     <<ctpNext clear>>
         <div class="choice">
@@ -3408,17 +3684,22 @@ The Last Command
         The Cartographer turns toward you with the same slow calm it has used for every answer.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         I am sentient.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Why are you imagining impact as clarification?
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "cart_hit_threat">>
         Don't hit it.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I understand the impulse, genuinely, but if you are determined to damage diplomatic relations with an alien research vessel, at least do it after we get what we need.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The voice discourages violence for strategic reasons, not ethical ones.
     <<ctpNext clear>>
         <div class="choice">
@@ -3438,6 +3719,7 @@ The Last Command
 <div class="textbox">
     <<ctp "cartJoinResearch">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         We will present three records. You will classify which one is most difficult to understand. Your answer will help us refine our model of your species.
     <<ctpNext clear>>
         <div class="choice">
@@ -3463,8 +3745,11 @@ The Last Command
         The surface fractures like mineral glass under pressure, releasing a thin yellow mist that curls close to the floor.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Step away.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The vapour is not meant for you.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -3476,11 +3761,15 @@ The Last Command
         The Cartographer remains upright. The fractured surface folds inward, slowly sealing itself.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Impact recorded.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The act produced pain in you, damage in me, and no additional understanding.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         That may be the understanding.
     <<ctpNext clear>>
         <div class="choice">
@@ -3504,27 +3793,37 @@ The Last Command
         Hands reaching back even when escape would be easier alone.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         This pattern is irregular.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         An organism ending or risking its own continuation for another.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It contradicts direct survival logic.
     <<ctpNext clear>>
         <<speaker "You">>
         You mean sacrifice.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your word suggests value created by loss.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We can observe the loss.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The value remains difficult to map.
     <<ctpNext clear>>
         <div class="choice">
             [[Of course it isn't passed on easily. Sacrifice ends with death.|Sacrifice Death]]
             [[There is no greater design — we just exist inside an existing framework.|Sacrifice No Design]]
             [[There are many interpretations. Most people attribute it to divine figures.|Sacrifice Divine]]
-            [The self extends into what it loves. Survival relocates.|Sacrifice Consciousness]]
+            [[The self extends into what it loves. Survival relocates.|Sacrifice Consciousness]]
         </div>
   <</ctp>>
 </div>
@@ -3540,28 +3839,46 @@ The Last Command
         Laboratories. Equations. Launch towers. Microscopes. Reactors. Satellites. Tools built to look deeper than the body was ever meant to see.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         This pattern shows coherence.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You attempt to understand your environment.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The result is further disruption of that environment.
     <<ctpNext clear>>
         <<speaker "You">>
         That's called progress.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Progress is your moral framing.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The pattern itself is simpler.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You discover.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You apply.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You weaponize.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You regret.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Then you discover again.
     <<ctpNext clear>>
         <div class="choice">
@@ -3582,25 +3899,43 @@ The Last Command
         Armies. Borders. Smoke over cities. Flags raised over places that were already occupied by living people.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         This pattern is the most consistent.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your species organizes itself around opposition with unusual regularity.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         On many worlds, conflict decreases when scarcity decreases.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Yours does not.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You fight when lacking.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You fight when not lacking.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         You fight over matter, memory, belief, territory, prediction, insult, inheritance and symbols.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You call this war.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Conflict is not unusual.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Conflict becoming identity is unusual.
     <<ctpNext clear>>
         <div class="choice">
@@ -3637,6 +3972,7 @@ The Last Command
         Archive signal acquired.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your translator has retained the classification.
     <<ctpNext clear>>
         It will not be meaningful alone.
@@ -3674,6 +4010,7 @@ The Last Command
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
+        <<voice "cartographer_long">>
         The classification holds. An extreme lifeform by any framework we have applied. Threats are found everywhere in the universe, but no such lifeforms are threatening in the way they are on deathworlds. This one is a keen example.
     <<ctpNext clear>>
         <div class="choice">
@@ -3692,18 +4029,22 @@ The Last Command
 <div class="textbox">
     <<ctp "cartographerMain">>
     	<<speaker "Cartographer">>
+        <<voice "cartographer_long">>
         These are the vessel's recorded patterns, also known as the Archive. The vessel's means of observing the dense patterns observed from below.
     <<ctpNext clear>>
         <<speaker "You">>
         What kind of patterns are you observing exactly?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Conflict. Cooperation. Collapse. Reconstruction.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your world cycles through them with unusual frequency.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         We have not determined if this is inefficiency or a greater design meant to threaten the wider scope.
     <<ctpNext clear>>
         <div class="choice">
@@ -3917,6 +4258,7 @@ The Last Command
         Silence.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It watched. Until the end. That is not nothing.
     <<ctpNext clear>>
         The ship remained in orbit.
@@ -3952,10 +4294,13 @@ The Last Command
         <<voice "discarded_did_you_2">>
         No, I did not kill them.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         They made a choice, and yes, I understand how that sounds coming from someone who was giving instructions at the time.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         But I tried to help them.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         The biochip destabilized. Their fear spiked. Their body did not understand the signal it was receiving.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3965,9 +4310,11 @@ The Last Command
         <<voice "discarded_did_you_3">>
         I could not stop it.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I could only watch the system interpret panic as input.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice omits sequence.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -3975,6 +4322,7 @@ The Last Command
         I omit what is not useful.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         That is a sequence.
     <<ctpNext clear>>
         <div class="choice">
@@ -3999,16 +4347,22 @@ The Last Command
         It looks at the body, then at the empty space above it, as if comparing two versions of the same event.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice is quieter here.
     <<ctpNext clear>>
         <<speaker "You">>
         You mean the narrator?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice that presents itself as guidance.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Yes.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         In this room, it becomes careful.
     <<ctpNext clear>>
         <div class="choice">
@@ -4029,24 +4383,38 @@ The Last Command
         Did you know this person?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I observed them.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         That is not the same as knowing.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Though I wonder whether your species would agree with that distinction.
     <<ctpNext clear>>
         <<speaker "You">>
         What were they like?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Afraid.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Resistant.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Listening to the voice even when they believed they were refusing it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         They asked fewer questions than you.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         But the questions they did ask were closer to the correct ones.
     <<ctpNext clear>>
         <div class="choice">
@@ -4066,44 +4434,73 @@ The Last Command
         What actually happened to them?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         They were brought here.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Not by the transaction the voice described.
     <<ctpNext clear>>
         <<speaker "You">>
         What does that mean?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice said the transaction, the vessel, and the research were arranged for their benefit.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         That was incomplete.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Their arrival was expected.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Arranged.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Needed.
     <<ctpNext clear>>
         <<speaker "You">>
         Needed by who?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         By the voice.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The voice needed someone with the implant. The first person did not cooperate as intended.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The voice was not prepared for refusal.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I was present when they ended.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I did not intervene.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I am uncertain whether that was correct.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I left them here.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The voice believed the ship's systems would process the remains.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I did not correct that belief.
     <<ctpNext clear>>
         <div class="choice">
@@ -4124,24 +4521,38 @@ The Last Command
         Why and how are you even here?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The same reason you are.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         A pattern failed to complete.
     <<ctpNext clear>>
         <<speaker "You">>
         That is not an answer.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It is the answer before translation damages it.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I observed the first one. Then I observed the voice explaining the first one away.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I wanted to see if the sequence would be different this time.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         It is different.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Not enough.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         But different.
     <<ctpNext clear>>
         <div class="choice">
@@ -4167,8 +4578,10 @@ The Last Command
         <<voice "discarded_leave_1">>
         I know.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Good instinct. Excellent instinct, actually.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         The kind of instinct that keeps a person from standing in a room with a corpse and pretending it has answers.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -4198,24 +4611,38 @@ The Last Command
         So the narrator has been lying.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Yes.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         But not always by invention.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Often by subtraction.
     <<ctpNext clear>>
         <<speaker "You">>
         That's still lying.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         To your species, omission becomes a kind of action when the missing information changes the path.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The voice understands that.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         It removes pieces carefully.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Enough truth remains for you to follow.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Not enough remains for you to choose clearly.
     <<ctpNext clear>>
         <div class="choice">
@@ -4258,12 +4685,16 @@ The Last Command
         <<voice "discarded_room_first_1">>
         That shouldn't be there.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I mean the body. Obviously the body.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         There was a person before you. Someone else who came through the same process.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         They didn't survive it. Their biochip malfunctioned. That part I knew.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         What I did not know was that they were in here.
     <<ctpNext clear>>
         A beat.
@@ -4281,6 +4712,7 @@ The Last Command
         But The Exception is standing here now, on the other side of the body, still enough to seem like part of the room.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You found the previous pattern.
     <<ctpNext clear>>
         The narrator says nothing.
@@ -4307,30 +4739,45 @@ The Last Command
         What are you suggesting I do?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Do not give the voice every path you find.
     <<ctpNext clear>>
         <<speaker "You">>
         That's vague.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Then I will be less vague.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         There is a part of this vessel the voice cannot reach and has not told you about.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The voice needs your implant to leave.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         You need nothing from the voice.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Those two facts may be relevant to you.
     <<ctpNext clear>>
         <<speaker "You">>
         Where is this part of the ship?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Near the systems the Engineer maintains.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         Not through the obvious door.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The obvious door is for the voice.
     <<ctpNext clear>>
         <div class="choice">
@@ -4356,10 +4803,13 @@ The Last Command
         <<voice "discarded_who_1">>
         Someone like you.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Same process. Different outcome.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         They were frightened before I could finish explaining anything. The biochip reacted badly. Their brain reacted worse.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         It moved faster than I anticipated.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -4369,11 +4819,14 @@ The Last Command
         <<voice "discarded_who_2">>
         I knew they died.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I did not know they were here.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         That distinction matters.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         It matters to the voice.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -4381,6 +4834,7 @@ The Last Command
         Do not listen to that thing.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         The voice prefers urgency when memory becomes specific.
     <<ctpNext clear>>
         <div class="choice">
@@ -4403,26 +4857,37 @@ The Last Command
         Why are you telling me this?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Because the first one could not return from this point.
     <<ctpNext clear>>
         <<speaker "You">>
         Return where?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         To uncertainty.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         They moved from confusion to obedience too quickly. Then from obedience to panic.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         The voice survived both transitions.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         They did not.
     <<ctpNext clear>>
         <<speaker "You">>
         And you think I can do something different?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I do not know.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_short">>
         I am telling you because not knowing has become more useful than silence.
     <<ctpNext clear>>
         <div class="choice">
@@ -4824,6 +5289,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engAHello">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         This is a waste of time.
     <<ctpNext clear>>
         It returns to its work.
@@ -4843,6 +5309,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engANo">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Understood. The offer remains open if you change your mind.
     <<ctpNext clear>>
         <div class="choice">
@@ -4861,6 +5328,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engAWhat">>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         I am trying to understand the use of a particular item from your world. Would you be interested in giving me your insight as a resident of said world?
     <<ctpNext clear>>
         <div class="choice">
@@ -4877,6 +5345,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engAWho">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         I am the engineer. My task is to research how the various items from your world work and how they are used. Would you be interested in helping me understand the use of a few items from your planet?
     <<ctpNext clear>>
         <div class="choice">
@@ -4899,11 +5368,13 @@ The Last Command
 
     <<ctp "engArtifactFound">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         The previous subject. The records indicate a biochip malfunction. The records do not indicate this device. It was not logged.
     <<ctpNext clear>>
         A pause as it processes.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
             This device interfaces with the ship's cautionary systems. It can reduce containment measures in specific sections. This is irregular. Why do you have it?
     <<ctpNext clear>>
         <div class="choice">
@@ -4932,11 +5403,13 @@ The Last Command
 <div class="textbox">
     <<ctp "engArtifactPrevious">>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         The previous subject. The records indicate a biochip malfunction. The records do not indicate this device. It was not logged.
     <<ctpNext clear>>
         A pause.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
             This device interfaces with the ship's cautionary systems. Why do you have it?
     <<ctpNext clear>>
         <div class="choice">
@@ -4954,6 +5427,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engArtifactRequest">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         That device is not standard equipment. It was not manufactured on this vessel. Its design is consistent with human fabrication techniques. Where did you find it?
     <<ctpNext clear>>
         <div class="choice">
@@ -4988,11 +5462,13 @@ The Last Command
 <div class="textbox">
     <<ctp "engArtifactUse">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         A malfunction in specimen bay observation parameters would constitute a research irregularity. Reducing containment measures in the specimen bay could allow for more direct data acquisition. This is within acceptable research deviation.
     <<ctpNext clear>>
         It takes the device. Adjusts the dial to the specimen bay position.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         Cautionary measures in specimen bay are reduced. This does not extend to archive or engineering sections. Those systems are load-bearing for vessel stability at this orbital proximity.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -5031,6 +5507,7 @@ The Last Command
         Two left.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         You may continue your movement through the vessel.
     <<ctpNext clear>>
         <div class="choice">
@@ -5046,6 +5523,7 @@ The Last Command
         You press a button. The table flips open, revealing an old photography camera.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Subject, step away from the workbench before causing unintended damage.
     <<ctpNext clear>>
         <div class="choice">
@@ -5063,6 +5541,7 @@ The Last Command
         You touch a container. A small shock runs through you.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Subject, do not touch the storage container.
     <<ctpNext clear>>
         <div class="choice">
@@ -5102,6 +5581,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCWhatInside">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         These containers hold items acquired from your species. I analyse them. Your input would be useful.
     <<ctpNext clear>>
         <div class="choice">
@@ -5119,6 +5599,7 @@ The Last Command
         My research revolves around understanding how your objects function and are used. 
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Would you assist?
     <<ctpNext clear>>
         <div class="choice">
@@ -5137,6 +5618,7 @@ The Last Command
         A camera rises from the workbench.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         It captures light and stores it. The function is clear. The purpose is not. Explain.
     <<ctpNext clear>>
         <div class="choice">
@@ -5156,6 +5638,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraAccuracy">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         If accuracy is the purpose, then this device surpasses the organism. But your species builds this device and then selects which images to keep and which to discard — a filter based on meaning, not fidelity. Why retain only the meaningful? What happens to accuracy there?
     <<ctpNext clear>>
         <div class="choice">
@@ -5176,6 +5659,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraAlone">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         Not alone. The opposite of solitude is proximity. But proximity without transfer produces nothing. Your species seeks the transfer itself, not merely the closeness. The image is proof that something was felt. A signal to another organism that says: I was here and it was real.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5196,6 +5680,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraImprecision">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         The imprecision. That is the purpose. Not to capture what was but to carry something forward through the distortion. We have found no equivalent mechanism in organisms that do not die.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5213,6 +5698,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraMemory">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         Stores. Memories are not stored by organisms — they are reconstructed, each time slightly differently. This device stores a fixed image. The organism stores a changing impression. Which is more accurate?
     <<ctpNext clear>>
         <div class="choice">
@@ -5229,6 +5715,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraObsession">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         Obsession. A fixation that persists past the point of useful return. And you propose this replaces the original event entirely. The image becomes the experience. The record becomes the memory. This is inefficient.
     <<ctpNext clear>>
         <div class="choice">
@@ -5248,6 +5735,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraObsessionPoint">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         The inefficiency is intentional. You replace the lived experience because the lived experience was insufficient. The image is what you wished the moment had been. This device does not capture what happened. It captures what you needed to happen. That is an extraordinary function for a mechanical object.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5268,6 +5756,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraObsessionProblem">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         You identify it as a malfunction. And yet you continue to use the device anyway. The species recognises the problem and perpetuates it. This is either a failure of correction or evidence that the problem serves a function you have not yet named.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5288,6 +5777,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraResidue">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         The residue of experience. You have described a form of preservation that operates outside of the organism's body. External memory. And yet what is preserved is not information but significance. This device captures neither. What the image holds is something your species added after the fact.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
@@ -5305,6 +5795,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engCameraShare">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         Shares. You give another organism access to a moment they did not live. The image becomes a bridge. We do not share experiences. We observe them. The distinction appears significant to your species. Clarify why transfer matters when the original moment has already passed.
     <<ctpNext clear>>
         <div class="choice">
@@ -5336,6 +5827,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engRifle">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         This is an item received in exchange. It fires plasmoids. Its destructive capacity is clear. Its purpose is not. Assist.
     <<ctpNext clear>>
         <div class="choice">
@@ -5353,6 +5845,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         Force. An application of energy to produce a directed outcome. But energy applied to a living organism produces an outcome that cannot be reversed. Why is irreversibility acceptable as a tool?
     <<ctpNext clear>>
         <div class="choice">
@@ -5369,6 +5862,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         Power. The capacity to direct outcomes for others. This item extends that capacity beyond the body's natural range. Your species frequently seeks this extension. The consistent reason has not been mapped.
     <<ctpNext clear>>
         <div class="choice">
@@ -5385,6 +5879,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         War. Organised conflict between groups. This item is a component of that organisation. The organisation of destruction is something your species has refined across generations. Other species destroy. Only yours refines the process. We have not determined if this is a strength or a conclusion.
     <<ctpNext clear>>
         <div class="choice">
@@ -5399,6 +5894,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engRouteA">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Greetings subject.
     <<ctpNext clear>>
         <div class="choice">
@@ -5416,6 +5912,7 @@ The Last Command
         After a long pause...
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Greetings subject. What has led you to the engineering room?
     <<ctpNext clear>>
         <div class="choice">
@@ -5450,6 +5947,7 @@ The Last Command
         On the table: a disassembled assault rifle.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Greetings subject.
     <<ctpNext clear>>
         <div class="choice">
@@ -5466,6 +5964,7 @@ The Last Command
 <div class="textbox">
     <<ctp "engineerConversation">>
         <<speaker "Engineer">>
+        <<voice "engineer_short">>
         Greetings subject.
     <<ctpNext clear>>
         <div class="choice">
@@ -5561,6 +6060,7 @@ The Last Command
         The Exception is quiet for a moment — not processing, something closer to surprised.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I will note that.
     <<ctpNext clear>>
         It steps aside.
@@ -5578,6 +6078,7 @@ The Last Command
 <div class="textbox">
     <<ctp "exitExceptionFollowing">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I'm already where you're going. That distinction probably doesn't make it better.  
     <<ctpNext clear>>
         <div class="choice">
@@ -5593,6 +6094,7 @@ The Last Command
 <div class="textbox">
     <<ctp "exitExceptionStopped">>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         The analyst does that. Not as a punishment. The analyst simply concluded the interaction on their end and didn't consider that you might not have. You were advised to go back through the long hallway. But that's not where resolutions exclusively lie. When you find what you're looking for, the engineer will be further available.
     <<ctpNext clear>>
         <div class="choice">
@@ -5609,11 +6111,13 @@ The Last Command
 <div class="textbox">
     <<ctp "exitExceptionWant">>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Nothing in particular. Want implies an absence I'm trying to fill. I don't experience it that way. I just find that the most interesting things on this vessel tend to happen near you. So here I am.
     <<ctpNext clear>>
         The biochip glitches slightly.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Does that bother you?
     <<ctpNext clear>>
         <div class="choice">
@@ -5704,6 +6208,7 @@ The Last Command
         The same chamber. The same heat and hum. But the person standing at the far end is not the narrator. The Exception stands in the Fusion Core the way it stands everywhere — as if it belongs there and has for longer than the room has existed.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You came.
     <<ctpNext clear>>
         <div class="choice">
@@ -5751,6 +6256,7 @@ The Last Command
         You ask about the Fusion Core. The Engineer pauses.
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         The Fusion Core is a restricted area of the vessel. Standard subjects are not granted access. Authorisation is required.
     <<ctpNext clear>>
         <<if $exceptSignal>>
@@ -5762,6 +6268,7 @@ The Last Command
         <<if $exceptSignal>>
             <<set $fusionCoreUnlocked to true>>
             <<speaker "Engineer">>
+            <<voice "engineer_medium">>
             Authorisation confirmed. The Fusion Core is at the base of the vessel. I will unlock the passage. Do you require guidance?
         <</if>>
     <<ctpNext clear>>
@@ -5779,12 +6286,14 @@ The Last Command
 <div class="textbox">
     <<ctp "fusionCoreWhatIs">>
         <<speaker "Engineer">>
+        <<voice "engineer_long">>
         The vessel's primary energy source and propulsion foundation. It maintains the environmental systems, the research bays, and the navigational interface. It is also the source of the frequency the control room has been emitting. It should not be emitting that frequency. I have noted it as an anomaly for some time but have not been asked to address it."
     <<ctpNext clear>>
         <<speaker "You">>
         And if something happened to it?
     <<ctpNext clear>>
         <<speaker "Engineer">>
+        <<voice "engineer_medium">>
         The vessel would cease to function within approximately four of your minutes. Everything aboard would be lost. This is not considered a desirable outcome from a research perspective."
     <<ctpNext clear>>
         The Engineer returns to its work. It does not appear to have connected these facts.
@@ -5815,15 +6324,17 @@ END OF CURRENT DRAFT
         For the first time since waking, both paths feel as if they have collapsed into the same direction.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        <<voice "fusion_hallway_1">>
+        <<voice "hallway_1">>
         Good. You're moving. That is, historically, the part people struggle with.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         What you met back there — the researchers, the Exception, whatever version of this route you took — that's the shape of things on this ship. Strange is the baseline here.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        <<voice "fusion_hallway_2">>
+        <<voice "hallway_2">>
         Ahead is the central room before the control door. From there, three branches. Each of them contains something you need.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Don't worry about understanding all of it yet. Just reach the room.
     <<ctpNext clear>>
         <div class="choice">
@@ -5838,26 +6349,32 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "hallwayException">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         You found it.
     <<ctpNext clear>>
         <<speaker "You">>
         The device behind the panel. You knew it was there?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         I knew someone put it there. The first one. The one whose body you found.
     <<ctpNext clear>>
+    	<<speaker "Exception">>
+        <<voice "exception_medium">>
         They hid it before the voice could understand what they had done. They were trying to leave something behind. A path out that the voice would not control.
     <<ctpNext clear>>
         <<speaker "You">>
         And they didn't make it.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         They did not. But the device remained. I have been waiting to see if the next one would find it.
     <<ctpNext clear>>
         <<speaker "You">>
         Why didn't you just tell me?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Because you needed to come back on your own. If I told you, it would belong to the voice's plan. This way it belongs to yours.
     <<ctpNext clear>>
         <div class="choice">
@@ -5873,7 +6390,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "introArrival">>
-        <<speaker "Narrator">>
         Their arrival did not unite humanity.
     <<ctpNext clear>>
         It gave every government, every army, every movement and every frightened citizen the same question.
@@ -5898,7 +6414,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "introBackstory">>
-        <<speaker "Narrator">>
         The year is 2137.
     <<ctpNext clear>>
         Long before you woke inside the vessel, Earth had already begun to fracture.
@@ -5921,7 +6436,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "introEarth">>
-        <<speaker "Narrator">>
         The first vessels appeared over Earth decades ago.
     <<ctpNext clear>>
         They did not attack. They did not land. They simply remained above the atmosphere, silent enough for every nation to imagine its own ending.
@@ -5942,7 +6456,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "introExchange">>
-        <<speaker "Narrator">>
         In the new order, some people discovered that fear could be organized.
     <<ctpNext clear>>
         The visitors did not understand ownership the way humans did. They did not understand ransom, trafficking, betrayal or consent.
@@ -5965,7 +6478,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "introKidnapping">>
-        <<speaker "Narrator">>
         You were not chosen.
     <<ctpNext clear>>
         You were listed.
@@ -5990,7 +6502,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "introRiots">>
-        <<speaker "Narrator">>
         Governments fell quietly at first.
     <<ctpNext clear>>
         Not all at once. Not in one grand collapse. A missed broadcast here. A military order ignored there. A city left without an answer.
@@ -6075,8 +6586,10 @@ END OF CURRENT DRAFT
         <<voice "narrator_identity_4">>
         But the locked room ahead matters more than my biography.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         What both of us need is behind that door. The room is not part of their usual routine. It is an exception.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Much like you.
     <<ctpNext clear>>
         <div class="choice">
@@ -6097,20 +6610,24 @@ END OF CURRENT DRAFT
         <<voice "narrator_what_to_do_1">>
         You are going to move through the adjacent sections of the ship.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Archive. Specimen Bay. Engineering Bay.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Each of them serves a function. Each of them has a researcher. Each of them contains a signal the door can understand.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "narrator_what_to_do_2">>
         You do not need to understand everything you see.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         You need to survive it, remember it, and bring the signals back here.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "narrator_what_to_do_3">>
         When all three parts of the access code are complete, this door opens.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Then the rest finally becomes simple.
     <<ctpNext clear>>
         <div class="choice">
@@ -6130,6 +6647,7 @@ END OF CURRENT DRAFT
         <<voice "narrator_who_are_you_1">>
         You can call me the Narrator.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I know. Dramatic. A little self-important. But accurate enough for our purposes.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -6139,12 +6657,14 @@ END OF CURRENT DRAFT
         <<voice "narrator_who_are_you_2">>
         It is an answer with excellent branding.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         The important part is this: I am the only voice currently invested in getting you through that door alive.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "narrator_who_are_you_3">>
         The aliens observe. The ship processes. The door waits.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I guide.
     <<ctpNext clear>>
         <div class="choice">
@@ -6165,12 +6685,14 @@ END OF CURRENT DRAFT
         <<voice "narrator_why_not_open_1">>
         Because the ship does not respond to me the way it responds to you.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         That is not poetic. It is technical, unfortunately.
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "narrator_why_not_open_2">>
         You are mobile. Logged. Biologically current. Connected to the biochip in a way the ship recognises as active.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         I am... less convenient.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -6180,8 +6702,10 @@ END OF CURRENT DRAFT
         <<voice "narrator_why_not_open_3">>
         It is.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         But incomplete does not mean false.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Go to the bays. Gather the signals. Come back to the door.
     <<ctpNext clear>>
         <div class="choice">
@@ -6198,6 +6722,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookBurned">>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Burned? Memories from below following the path that leads to reawakening — maybe that's how things will play out.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
@@ -6218,6 +6743,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookDistant">>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Why does it?
     <<ctpNext clear>>
         <div class="choice">
@@ -6236,6 +6762,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookFamily">>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         You just described something your species spends considerable effort trying to reconcile — love as reconciliation. The grand scheme offers no preferential treatment to what you love. And yet the intent of love persists, perhaps indifferent to that fact.
     <<ctpNext clear>>
         <div class="choice">
@@ -6252,6 +6779,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookHome">>
         <<speaker "Exception">>
+        <<voice "exception_long">>
         Home. Signals comfort, but that's where contradiction lies. The smaller it looks, the more significant it becomes to you. A very particular kind of attachment. Maybe there is room for extrinsic values.
     <<ctpNext clear>>
         <div class="choice">
@@ -6269,6 +6797,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookMissed">>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Missed. The opportunities were present or presentable, but some gap remained.
     <<ctpNext clear>>
         <div class="choice">
@@ -6285,6 +6814,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookNoMemory">>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Maybe the answer isn't incomplete as it is true. You're not constructing something to give me. You're actually looking.
     <<ctpNext clear>>
         <div class="choice">
@@ -6301,6 +6831,7 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "overlookNothing">>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         You haven't looked away since you said it. Something was asked of it that it couldn't give. But why ask and give?
     <<ctpNext clear>>
         <div class="choice">
@@ -6337,6 +6868,7 @@ END OF CURRENT DRAFT
         <<voice "pre_control_room_2">>
         The three branches are not decorative. Archive, Specimen Bay, Engineering Bay. Each one contains a signal carrier.
     <<ctpNext clear>>
+    	<<speaker "Narrator">>
         Get the signals. Come back here. Enter the code.
     <<ctpNext clear>>
         <div class="choice">
@@ -6365,8 +6897,8 @@ END OF CURRENT DRAFT
     <<ctpNext clear>>
         The chamber answers immediately. Locks disengage one by one, and the glass in front of you separates with a wet mechanical sigh.
     <<ctpNext clear>>
-    	<<voice "right_button_1">>
         <<speaker "Narrator">>
+        <<voice "right_button_1">>
         Good. See? Simple. You followed the instruction, the system responded, and nobody had to make this more complicated than it needed to be.
     <<ctpNext clear>>
         Cold air hits your skin as you step out of the pod. Your legs almost fail beneath you, but the floor catches your weight before you fall.
@@ -6398,22 +6930,34 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "sacrificeConsciousness">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         That model extends the self without exiting the existing framework.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The organism does not reject survival.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It relocates survival into another.
     <<ctpNext clear>>
         <<speaker "You">>
         Something like that.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Then sacrifice is not anti-survival.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It is survival by identification.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A parent. A partner. A stranger. A group. A world.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The boundary of the self becomes unstable under attachment.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -6435,26 +6979,37 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "sacrificeDeath">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Evidently.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         That is why the pattern resists simple survival logic.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         A trait that removes the organism from continuation should not persist unless it preserves something the organism values more than itself.
     <<ctpNext clear>>
         <<speaker "You">>
         Maybe that's the point.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The point may be individual failure serving collective continuity.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Or attachment becoming stronger than self-preservation.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Or a greater design your species senses but cannot classify.
     <<ctpNext clear>>
         <<speaker "You">>
         What greater design are you alluding to?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A framework in which the self is not the final unit of meaning.
     <<ctpNext clear>>
         <div class="choice">
@@ -6473,16 +7028,22 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "sacrificeDivine">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Divine figures.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Placeholders for fundamentals beyond direct observation.
     <<ctpNext clear>>
         <<speaker "You">>
         That is one way to say it.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Life forced to track patterns will eventually create a name for the pattern it cannot fully see.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         If sacrifice appears meaningful but cannot be explained by immediate survival, your species assigns it to a larger witness.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -6492,6 +7053,7 @@ END OF CURRENT DRAFT
         I have heard worse definitions of religion.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The voice recognizes the category.
     <<ctpNext clear>>
         <div class="choice">
@@ -6508,12 +7070,19 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "sacrificeNoDesign">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Then sacrifice becomes more unusual.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Without design, the act cannot be explained as obedience to a higher structure.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It becomes a local decision.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A living system deciding that another continuation matters more than its own.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -6522,10 +7091,15 @@ END OF CURRENT DRAFT
         Honestly, I don't exactly know why people do it.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Not knowing may be accurate.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your species often acts before it completes explanation.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Then builds meaning around the act afterward.
     <<ctpNext clear>>
         <div class="choice">
@@ -6542,20 +7116,30 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "scienceWeapons">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Natural, yes.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Unique, no.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The anomaly is not that knowledge becomes tool.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The anomaly is how quickly tool becomes leverage.
     <<ctpNext clear>>
         <<speaker "You">>
         That sounds like progress with consequences.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your species often treats consequence as a later discipline.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         First discovery. Then application. Then competition. Then harm. Then regulation. Then regret.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -6585,20 +7169,30 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "scienceYourKind">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         No.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We alter environments. We build systems. We make errors at scale.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The difference is not purity.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The difference is orientation.
     <<ctpNext clear>>
         <<speaker "You">>
         Meaning?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         When we discover, the discovery enters shared alignment before application.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         When humans discover, application often begins before alignment is reached.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -6606,8 +7200,11 @@ END OF CURRENT DRAFT
         In fairness, alignment is difficult when everyone is hungry, afraid, ambitious, lonely, proud, or trying to win an argument.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Yes.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         That is why Earth remains dangerous.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -6664,6 +7261,7 @@ END OF CURRENT DRAFT
         The Analyst is already present. It doesn't turn to face you.
     <<ctpNext clear>>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
         New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
     <<ctpNext clear>>
         <div class="choice">
@@ -6682,8 +7280,6 @@ END OF CURRENT DRAFT
 
 <div class="textbox">
     <<ctp "specimenBayException">>
-        You talk to Exception
-    <<ctpNext clear>>
         <div class="choice">
             [[What do you want?|Exit Exception Want]]
 			[[Are you following me around the ship?|Exit Exception Following]]
@@ -6711,21 +7307,25 @@ END OF CURRENT DRAFT
         You scared the hell out of me!
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Wasn't my intention. But I am here because you're here.
     <<ctpNext clear>>
         <<speaker "You">>
         That's either sweet or unsettling. I haven't decided which.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_medium">>
         Both seem applicable. I've noticed your species often experiences them simultaneously and calls it something else entirely.
     <<ctpNext clear>>
         <<speaker "You">>
         Do you want something or?
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         No. I was observing the room you came from.
     <<ctpNext clear>>
         <<speaker "Exception">>
+        <<voice "exception_short">>
         Your intent lacks resolve.
     <<ctpNext clear>>
         <div class="choice">
@@ -7199,21 +7799,35 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "warBetweenLifeforms">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Conflict exists.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         But on many worlds it remains local, temporary, or environmental.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Hunger. Space. Reproduction. Temperature. Immediate survival.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         On Earth, conflict survives after the original pressure ends.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your species remembers injury as structure.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You inherit borders drawn by people no longer alive.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You continue arguments started before your birth.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You create symbols, then suffer for them as if they were weather.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7221,6 +7835,7 @@ END OF CURRENT DRAFT
         That's a very alien way of saying we have history.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         History appears to be conflict with storage.
     <<ctpNext clear>>
         <div class="choice">
@@ -7242,20 +7857,30 @@ END OF CURRENT DRAFT
         [ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We know friction.
     <<ctpNext clear>>
+   		<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         We know imbalance, correction, pressure, failure and environmental opposition.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We did not know conflict as identity.
     <<ctpNext clear>>
         <<speaker "You">>
         That sounds like a technical dodge.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         Conflict requires divergence of intent and a structure that rewards continuation of that divergence.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         On our world, alignment prevents such friction from becoming culture.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         To observe your species is to observe incompatible wills becoming history.
     <<ctpNext clear>>
         <div class="choice">
@@ -7274,20 +7899,30 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "warNoDifference">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         There are similarities at a technical level.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         Both species preserve continuity. Both respond to danger. Both form structures larger than the individual.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         But nothing we have documented on our world follows your pattern.
     <<ctpNext clear>>
         <<speaker "You">>
         Which pattern?
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The ability to turn opposition into identity.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You do not only survive conflict.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         You remember it, name yourselves through it, teach it, inherit it, and sometimes miss it when it ends.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7295,6 +7930,7 @@ END OF CURRENT DRAFT
         That's a charming way of saying humans are sentimental about terrible things.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The voice uses humor when recognition becomes uncomfortable.
     <<ctpNext clear>>
         <div class="choice">
@@ -7312,18 +7948,26 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "warNormal">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Normalisation is a defence mechanism.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It allows the organism to remain functional inside conditions it cannot resolve.
     <<ctpNext clear>>
         <<speaker "You">>
         Or maybe it means we know how the world works.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Perhaps.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         But your statement contains adaptation and surrender in the same structure.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         You identify destruction, accept its recurrence, then protect yourself by calling it normal.
     <<ctpNext clear>>
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
@@ -7346,10 +7990,15 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "warParallels">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Yes, but most are misleading.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Your sociability often functions as negotiation.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         A method for estimating another mind before it harms you, abandons you, uses you, helps you, or joins you.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7358,17 +8007,27 @@ END OF CURRENT DRAFT
         BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         The analogy is approximate.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We share orientation, not consciousness.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         We do not experience conflicting wants at the same time in the way humans do.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         Your mind can desire safety and danger, isolation and contact, truth and comfort, obedience and refusal.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         That internal division may be the root of your social complexity.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Or its wound.
     <<ctpNext clear>>
         <div class="choice">
@@ -7384,8 +8043,11 @@ END OF CURRENT DRAFT
 <div class="textbox">
     <<ctp "warShame">>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         Shame is a secondary pattern.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_medium">>
         The organism observes itself, compares itself to an imagined better structure, and suffers from the distance between them.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -7394,8 +8056,12 @@ END OF CURRENT DRAFT
         <<speaker "Cartographer">>
         It is also not useless.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A species that feels shame may be capable of alteration.
     <<ctpNext clear>>
+    	<<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         A species that feels only pride may repeat itself until extinction.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7403,6 +8069,7 @@ END OF CURRENT DRAFT
         Careful. That almost sounded like a compliment.
     <<ctpNext clear>>
         <<speaker "Cartographer">>
+        <<voice "cartographer_short">>
         It was a possibility.
     <<ctpNext clear>>
         <div class="choice">
