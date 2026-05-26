@@ -2843,9 +2843,11 @@ The Last Command
 <div class="textbox">
     <<ctp "CRBelieve">>
         <<speaker "Narrator">>
+        <<voice "cr_believe_1">>
         That is the question I have been not asking myself for a very long time. I believe in humanity the way some people believe in a god. Not because I have proof. Because the alternative — not believing in it — requires me to look at everything I've done and find a different explanation for why I did it. And I don't have one. So I keep believing. I believe harder when I'm least sure.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "cr_believe_2">>
         You asked if it's something I say. It started as something I believed. Then it became something I said because I believed it. Then it became something I said to keep believing it. I'm not sure which one it is right now, standing here, looking at you. I think that's the most honest thing I've said since you walked through that door.
     <<ctpNext clear>>
         <div class="choice">
@@ -2868,6 +2870,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRBiochipWatch">>
         <<speaker "Narrator">>
+        <<voice "cr_biochip_watch">>
         Yes. Everything you said to them. Everything you did. The layout of every room. I had reasons for needing to know. I told myself the reasons were good enough. I'm less certain of that now than I was when I started.
     <<ctpNext clear>>
         <div class="choice">
@@ -2892,12 +2895,14 @@ The Last Command
 <div class="textbox">
     <<ctp "CRBodyQuestions">>
         <<speaker "Narrator">>
+        <<voice "cr_body_question_1">>
         I know. I've been thinking about that since you found it. The ship doesn't make exceptions. Something kept that body there. Something wanted you to find it.
     <<ctpNext clear>>
         <<speaker "You">>
         What would want that?
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "cr_body_question_2">>
         Something that knew you were coming before I did. Something that understood that you finding that room would change what you did next. I have been in this room for a long time and I thought I understood the shape of everything happening on this ship. I was wrong about that. I don't know by how much.
     <<ctpNext clear>>
         <div class="choice">
@@ -2920,6 +2925,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRGrieve">>
         <<speaker "Narrator">>
+        <<voice "cr_grieve">>
         I told myself what happened to them was a miscalculation. I use that word because it keeps it in a register I can manage. Grief is not a register I can manage in this room. I've been alone in here for long enough that I'm not sure I have access to it anymore in the way I used to. But I think about them. I think about them with a frequency that isn't consistent with just filing it as a miscalculation.
     <<ctpNext clear>>
         <div class="choice">
@@ -2943,6 +2949,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRGrieveNotAnswer">>
         <<speaker "Narrator">>
+        <<voice "cr_grieve_not_answer">>
         No. It isn't. The answer is yes. I grieved them badly and privately and without any of the things that make grief bearable and I am still doing it. That's the answer.
     <<ctpNext clear>>
         <div class="choice">
@@ -2964,6 +2971,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRThinkYouDo">>
         <<speaker "Narrator">>
+        <<voice "cr_grieve_think_you_do">>
         Thank you. I don't know what to do with that but thank you.
     <<ctpNext clear>>
         <div class="choice">
@@ -2985,6 +2993,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
+        <<voice "cr_heard_everything">>
         No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn't.
     <<ctpNext clear>>
         <div class="choice">
@@ -3007,6 +3016,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
+        <<voice "cr_intervene">>
         No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn't.
     <<ctpNext clear>>
         <div class="choice">
@@ -3029,6 +3039,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CROrganization">>
         <<speaker "Narrator">>
+        <<voice "cr_organisation">>
         Themselves. Which sounds like freedom and functions like a religion. We had a framework — a set of principles about what contact with the visitors should look like, who should control it, what humanity should get out of it. We were very certain about all of it. Certainty is comfortable when you're the one holding it.
     <<ctpNext clear>>
         <div class="choice">
@@ -3054,6 +3065,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CROrganizationNow">>
         <<speaker "Narrator">>
+        <<voice "cr_organisation_now">>
         Now I've been in this room long enough to watch certainty curdle. I still believe in the goal. I'm less certain I believe in the people — including myself — which is an uncomfortable thing to arrive at when you're the only human on an alien ship.
     <<ctpNext clear>>
         <div class="choice">
@@ -3076,9 +3088,11 @@ The Last Command
 <div class="textbox">
     <<ctp "controlRoomQuestions">>
         <<speaker "Narrator">>
+        <<voice "cr_panel_speech_1">>
         I want to tell you something while you're standing there deciding. I have watched a lot of human behaviour from this room. The aliens study you like you are a mystery to be solved. I study you because I already know you're not. You're not a mystery. You are completely predictable and completely surprising at the same time, in a way that I find genuinely moving. I have watched you in here. The way you spoke to the aliens. The questions you asked. The ones you didn't ask. There is something very particular about a person who is in an impossible situation and still cares enough to be curious about it. That is not everyone. That is not even most people.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "cr_panel_speech_2">>
         The panel is to your left. I am not going to force you. I am not capable of forcing you. That is the honest truth and also why I needed someone to walk through that door willingly. So. Here we are. What do you do with a choice when you can actually make it?
     <<ctpNext clear>>
         <div class="choice">
@@ -3098,6 +3112,7 @@ The Last Command
 <div class="textbox">
     <<ctp "crSecretHeard">>
         <<speaker "Narrator">>
+        <<voice "cr_secret_heard">>
         You told the Exception you didn't mind it following you. You said it quietly. Like you didn't want me to hear it. I heard it. I didn't use it. I just kept it. I don't know why I kept it. It didn't serve the plan. I think I just wanted there to be something on this ship that was yours and not mine.
     <<ctpNext clear>>
         <div class="choice">
@@ -3117,6 +3132,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRTellMe">>
         <<speaker "Narrator">>
+        <<voice "cr_tell_me">>
         If you hadn't asked, probably not. Not because I wanted to deceive you specifically. Because I've been operating in a mode where information is a resource and I allocate it for effect. I've been doing it so long I stopped noticing when I was doing it. You noticed. That's why you're asking.
     <<ctpNext clear>>
         <div class="choice">
@@ -3142,6 +3158,7 @@ The Last Command
         A very long silence. He sits down in the chair. Not with purpose. Just sits.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "cr_their_name">>
         Maya. Her name was Maya. She was frightened from the moment she woke up. She never stopped being frightened. I kept thinking she would stabilise. She didn't.
     <<ctpNext clear>>
         <div class="choice">
@@ -3162,6 +3179,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRUsedMe">>
         <<speaker "Narrator">>
+        <<voice "cr_used_me">>
         Yes. On both counts. I am not going to tell you the first one was a calculated sacrifice because it wasn't, it was a miscalculation, and those are different things. I am also not going to tell you that I haven't thought about it, because I have had quite a lot of time in this room and it keeps coming back in the way things do when you can't do anything about them yet. You can be angry. I would be. I am asking you to also be practical, because those two things are allowed to coexist in a human being and that is one of the things I actually respect about your species.
     <<ctpNext clear>>
         <div class="choice">
@@ -3185,6 +3203,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRWhatNeed">>
         <<speaker "Narrator">>
+        <<voice "cr_what_need">>
         The biochip in your skull interfaces with every system on this ship. I cannot do that. I don't have one. I need you to place your hand on the panel to your left, and the ship will recognise you as an authorised presence rather than a research subject. Once that happens, I can fly this thing. That's all. That's the whole plan at this point. It has been streamlined somewhat by circumstance.
     <<ctpNext clear>>
         <div class="choice">
@@ -3205,9 +3224,11 @@ The Last Command
 <div class="textbox">
     <<ctp "crWhatYouWant">>
         <<speaker "Narrator">>
+        <<voice "cr_what_you_want_1">>
         I want to go home. I want to sit somewhere that has weather and eat something that was cooked by a person and not think about any of this for a very long time. I want to walk past strangers on a street and feel the specific kind of loneliness that comes from being surrounded by your own species. I didn't know I would miss that specifically. The particular texture of human loneliness. Up here the loneliness has no texture at all.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "cr_what_you_want_2">>
         I want to be someone who did something right. Even partially. Even once. That's what I want.
     <<ctpNext clear>>
         <div class="choice">
@@ -3227,6 +3248,7 @@ The Last Command
 <div class="textbox">
     <<ctp "CRWhoAreYou">>
         <<speaker "Narrator">>
+        <<voice "cr_who_are_you">>
         A member of an organisation you haven't heard of that answered to no government and made several arrangements with the visitors over the years, some of which involved people exactly like you and therefore somewhat unlike you. We had a plan. I was the part of the plan that got stuck. The others are still on Earth doing whatever it is people do when their plan has a part that got stuck. I don't know the current status. I have been in this room.
     <<ctpNext clear>>
         <div class="choice">
@@ -3710,6 +3732,7 @@ The Last Command
         Your hand moves toward the panel.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_entry_1">>
         Yes. That's it. Let the chip translate it. Don't overthink the part where your body knows what to do before you do.
     <<ctpNext clear>>
         The final line locks into place.
@@ -3717,6 +3740,7 @@ The Last Command
         The door opens.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_entry_2">>
         Good. Now come in. I have been waiting for quite a long time, and I am afraid my patience has become less of a virtue and more of a medical condition.
     <<ctpNext clear>>
         <div class="choice">
@@ -3750,9 +3774,11 @@ The Last Command
         The biochip begins to malfunction. Visual distortions. Not painful. But disorienting.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_entry_1">>
         Yes. Yes, that's the room doing that. It's not dangerous. Well. Not immediately. The frequency is calibrated for their range, not yours, so you get a residual. It's unpleasant but it's manageable. I have managed it for quite some time.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_entry_2">>
         Welcome. Apologies for the… all of this."
     <<ctpNext clear>>
         <div class="choice">
@@ -3768,9 +3794,11 @@ The Last Command
         He stands too quickly, gestures at the panel to the left, sits back down.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_explanation_1">>
         The panel. Over there. It reads your biochip. When it does that — when it reads you specifically, a person who's been through the ship, who the ship has logged — it registers an authorised presence instead of a research subject and I get navigational control. That's the whole thing. That's what all of this was for. The code, the signals, the long conversations with the aliens. Those were for you. To get you here in a state where you might actually walk across this room rather than immediately try to— well. No need to dwell on that now.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_explanation_2">>
         You're further along than I expected, for what it's worth.
     <<ctpNext clear>>
         <div class="choice">
@@ -3788,21 +3816,27 @@ The Last Command
         He waits. You can speak before you decide anything.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_questions_1">>
         You made it. I want to say I'm surprised but that would be dishonest and I think you've earned honesty at this point. You've been pulling at threads since the awakening chamber. I noticed. I noticed every time.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_questions_2">>
         You talked to all of them. Really talked to them. I've watched people come through this ship and treat those aliens like obstacles. You treated them like they had something worth hearing. I find that genuinely moving, which is not what I expected to feel right now.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_questions_3">>
         Good. You followed it through. I know that probably sounds like a small thing but it isn't. You had every reason to stop and you didn't. Come in.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_questions_4">>
         Still standing. Still moving. You've been angry since the chamber and it hasn't stopped you once. I respect that more than I probably should. Come in. Let's finish this.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_questions_5">>
         You made it. Come in.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "code_room_questions_6">>
         You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you'd think.
     <<ctpNext clear>>
         <div class="choice">
@@ -3825,19 +3859,23 @@ The Last Command
         The ship moves. The narrator navigates. The screens come alive. For a long moment it seems like it might be fine. Then the biochip, still malfunctioning from the control room's frequency, reaches a threshold it was not designed to survive. Not an explosion. Not a scream. Just a failure of the thing that was keeping your nervous system calibrated to the alien environment.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "death_a_1">>
         No. No no—
     <<ctpNext clear>>
         He is at the panel. He does something frantic and incorrect. Then something else. Then he stops. There is nothing to undo.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "death_a_2">>
         I should have— the exposure time. I knew about the exposure time. I thought— I kept thinking there would be more—
     <<ctpNext clear>>
         He sits down on the floor. Not in the chair. On the floor. Just sits there.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "death_a_3">>
         I'm sorry. That isn't enough but it's what I have.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "death_a_4">>
         They knew. The whole time, they knew what I was doing. And they came through the door anyway. I don't—
     <<ctpNext clear>>
         He stops. There is nothing to finish with.
@@ -3848,6 +3886,7 @@ The Last Command
         It asked good questions. That is not nothing. That is, in fact, considerable.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "death_a_5">>
         They fought the whole way. Right to the end. I want to be able to say that was the problem. I don't think it was the problem.
     <<ctpNext clear>>
         The narrator sits down on the floor. Not in the chair. On the floor. The screens are alive around him. He doesn't look at them for a long time.
@@ -3872,6 +3911,7 @@ The Last Command
         You leave the control room. The biochip, no longer screened by the room's frequency emitter, attempts to recalibrate. It has been running degraded for too long. The hallway outside the control room is the last thing you see.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "death_c">>
         For what it's worth… you were exactly what I thought you'd be. I mean that in the only way that matters.
     <<ctpNext clear>>
         Silence.
@@ -4400,9 +4440,11 @@ The Last Command
         You place your hand on the panel.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_aggression_1">>
         Alright. I expected you to make me work for that. I had arguments prepared. Contingencies. You didn't make me use any of them. I think that's more frightening than if you had. A person who's been angry this whole time and still chooses to help — I don't have a framework for that. The aliens don't either. I checked.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_aggression_2">>
         Don't tell anyone I said that.
     <<ctpNext clear>>
         <div class="choice">
@@ -4434,6 +4476,7 @@ The Last Command
         You place your hand on the panel. The screens light up. He leans forward — the posture of a person doing the thing they have been trying to do for a very long time.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_compliance">>
         Alright. Yes. Good. I had a whole thing prepared about trust. About how it's the mechanism underneath everything your species builds. It was quite good, I think. But you're here and the ship is moving and I find I just— I hope it's somewhere you chose. Where you end up. I hope at some point in the next part of things there is a place you arrive at because you wanted to and not because someone routed you there.
     <<ctpNext clear>>
         He says this to the screens. Not to you.
@@ -4451,9 +4494,11 @@ The Last Command
         You place your hand on the panel. The ship hums. The narrator exhales.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_curiosity_1">>
         Right. Good. That's— yes. I have been thinking about this moment for a long time. I had a thing I was going to say. Something about curiosity and human nature and what it proves about the species. I have had a great deal of time to compose it. It's gone. I can't find it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_curiosity_2">>
         Thank you. For coming through the door. I mean that precisely and without anything else attached to it.
     <<ctpNext clear>>
         <div class="choice">
@@ -4469,9 +4514,11 @@ The Last Command
         You place your hand on the panel. The screens come alive.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_skepticism_1">>
         You knew. You knew what I was doing and what it cost and what I wasn't telling you and you did it anyway. I want to understand that. I've been watching humanity for years and I still want to understand that. I think it might be the most important thing your species does. Acting without complete information because the alternative is standing still. You just — you move. Even when you don't know where.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_a_skepticism_2">>
         Thank you for moving.
     <<ctpNext clear>>
         <div class="choice">
@@ -4488,6 +4535,7 @@ The Last Command
         What happens to me after you have the ship?
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_b">>
         I take you back to Earth. That was always part of it. I am not in the business of collecting people, I'm in the business of getting from one place to another, and you are not a destination for me. You are someone who got caught in something larger than yourself through no particular fault and you deserve to be on the ground again. I cannot give you back the time. I can give you the planet.
     <<ctpNext clear>>
         <div class="choice">
@@ -4506,6 +4554,7 @@ The Last Command
 <div class="textbox">
     <<ctp "endingBBelieve">>
         <<speaker "Narrator">>
+        <<voice "ending_b_believe">>
         I know. Somewhere along the way you decided I was worth that. I'm not sure I deserved it but I find myself grateful for it regardless, which tells me something about the nature of gratitude that I hadn't quite figured out before. There is more humanity in that word — believe — than any of the aliens have managed to document in all their years of research. The act of choosing to believe someone without proof. It's profoundly strange. It's profoundly human.
     <<ctpNext clear>>
         You place your hand on the panel. The ship responds.
@@ -4521,11 +4570,13 @@ The Last Command
 <div class="textbox">
     <<ctp "endingBGlad">>
         <<speaker "Narrator">>
+        <<voice "ending_b_glad_1">>
         Can I ask you something? You don't have to answer.
     <<ctpNext clear>>
         He watches your face. He doesn't finish the question. He doesn't need to.)
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_b_glad_2">>
         I thought so. Me too. I've been trying to remember that.
     <<ctpNext clear>>
         <div class="choice">
@@ -4539,6 +4590,7 @@ The Last Command
 <div class="textbox">
     <<ctp "endingBOrganization">>
         <<speaker "Narrator">>
+        <<voice "ending_b_organization">>
         I don't know the current status of the organisation. I've been in this room. But I want to tell you something about them — about us. We were very good at finding people who could handle things we needed handled and then not thinking too carefully about what it cost those people. I think you should go somewhere they won't find you, at least for a while. I think you've earned that.
     <<ctpNext clear>>
         <div class="choice">
@@ -4553,6 +4605,7 @@ The Last Command
 <div class="textbox">
     <<ctp "endingBSkeptic">>
         <<speaker "Narrator">>
+        <<voice "ending_b_skeptic">>
         Ha. Yes. Alright. That's the most honest thing anyone has said to me in quite some time. The aliens mean everything they say or they mean nothing. There's no room in between. You're doing the thing in between. Acting on something unresolved. I respect that more than I probably should, given the circumstances. Come on. Let's see if this works.
     <<ctpNext clear>>
         He turns to the controls. The ship responds.
@@ -4568,11 +4621,13 @@ The Last Command
 <div class="textbox">
     <<ctp "endingBTrust">>
         <<speaker "Narrator">>
+        <<voice "ending_b_trust_1">>
         You shouldn't, on the basis of evidence. On the basis of evidence I've lied by omission, manipulated your path through this ship, and gotten one person killed. Those are the facts. What I can tell you is that I need you alive to operate this ship, and once we're moving, your continued existence stops being a logistical requirement and becomes a choice. I'm choosing it. I know that's not proof. It's what I have.
     <<ctpNext clear>>
         He watches your face. He doesn't finish the question. He doesn't need to.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_b_trust_2">>
         I thought so. Me too. I've been trying to remember that.
     <<ctpNext clear>>
         <div class="choice">
@@ -4608,9 +4663,11 @@ The Last Command
         A pause that is not angry. Almost thoughtful.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_c_curiosity_1">>
         Alright. I want to understand. Not to change your mind — I'm past that. I just want to understand. You came through the whole ship. You talked to all of them. You found the room. You came to this door. And here, at the last step, you stop. I think I understand it actually. You followed someone else's path this whole time. Even when you were curious, even when you pushed back — the path was still mine. This is the first thing that's entirely yours.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_c_curiosity_2">>
         I respect that. I mean it. Go.
     <<ctpNext clear>>
         <div class="choice">
@@ -4629,6 +4686,7 @@ The Last Command
         The narrator says nothing. You turn to leave. As you reach the door:
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_c_maya">>
         I hope wherever you end up, it's somewhere she would have liked.
     <<ctpNext clear>>
         You leave. The door closes. Silence.
@@ -4647,6 +4705,7 @@ The Last Command
         No.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_c_skepticism">>
         I knew. Not that you'd refuse specifically. But I knew there was a version of you that would get to this room and look at that panel and see not a choice but the last step in someone else's sequence. I built the sequence. I know what it looks like from inside it. You're right to refuse. Not tactically — tactically it costs you. But you're right. There's a difference between acting freely and acting at the end of a very long leash and feeling free. You found the difference. Most people don't. Go. The aliens won't stop you. Neither will I.
     <<ctpNext clear>>
         <div class="choice">
@@ -4665,11 +4724,13 @@ The Last Command
         A silence. The narrator does not argue.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_c_standard_1">>
         Alright. I won't pretend I'm not— I was hoping. I had a plan and the plan required this and now I am sitting here looking at the end of the plan and I realise I hadn't thought very far past it. Which is embarrassing, honestly. I'm usually better than that.
     <<ctpNext clear>>
         He laughs, briefly and without enjoyment.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_c_standard_2">>
         But I want to say this. There are people on Earth who would not have survived this ship at all. There are people who would have broken in that awakening chamber and never left. You got out. You talked to things that have no business being talked to. You found the room. And then you said no. That is one of the most human things I have ever watched happen and I mean that without any irony. The refusal is the freedom. I'm stuck here either way. You at least got to choose. Go. The aliens won't stop you. Good luck down there. I mean it.
     <<ctpNext clear>>
         <div class="choice">
@@ -4685,15 +4746,19 @@ The Last Command
         You lunge at the narrator. The biochip disorientation makes the movement imprecise. The narrator does not flinch in the way a frightened person would. There is something resigned about it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_1">>
         You worked it out. All of it. And this is still where you ended up. I don't know if that means the working out didn't matter or if it means it mattered more than anything.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_2">>
         Of all the— I genuinely didn't predict this specific path. I've thought about it a great deal. Still didn't predict it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_3">>
         Yes. Alright. Yes. I knew this was possible. I told myself it wasn't likely. I was optimistic. That's embarrassing in retrospect.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_4">>
         I have to admit. I was not entirely surprised.
     <<ctpNext clear>>
         <div class="choice">
@@ -4710,12 +4775,15 @@ The Last Command
         The narrator is incapacitated. You, still affected by the biochip malfunction, instinctively touch the panel to steady yourself. The ship activates.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_continue_1">>
         You know what's interesting. I built a plan that required a person to do something willingly. And it turns out willingly has more interpretations than I accounted for. Congratulations. Sincerely. I mean that without irony, which I recognise is exactly what someone being ironic would say, so you'll have to take my word for it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_continue_2">>
         The plan worked anyway. Through a path I didn't map. I have been lying here for approximately twenty seconds thinking about what that says about planning and I believe it is the most interesting thing that has happened on this ship.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_continue_3">>
         You know what's interesting. The plan worked anyway. I genuinely had not predicted this specific path through it. I find it is a very rich topic. Congratulations. Sincerely.
     <<ctpNext clear>>
         <div class="choice">
@@ -4731,12 +4799,15 @@ The Last Command
         You release the narrator. A beat of stillness between you.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_stop_1">>
         You stopped. After everything you knew about me. After all of it. You stopped. I think what it actually proves is something about you specifically. And I don't have a speech for that. You caught me without one. First time in a long time.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_stop_2">>
         You stopped. That's not nothing. You were angry enough to start and you still stopped. That gap — between what you wanted to do and what you did — that is the entire conversation I have been trying to have with these aliens for months and they cannot find it in any of their data. It lives in that pause. You just demonstrated it.
     <<ctpNext clear>>
         <<speaker "Narrator">>
+        <<voice "ending_d_stop_3">>
         The panel is still there. I'm not going to ask you twice. But it's still there.
     <<ctpNext clear>>
         <div class="choice">
