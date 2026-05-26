@@ -473,6 +473,7 @@ body[data-tags~="ending"][data-tags~="game-over"] {
     z-index: 100;
 }
 
+
 /*Bottom menu*/
 #ui-bar {
     position: fixed !important;
@@ -1200,10 +1201,11 @@ body {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-
-    overflow: visible !important;
+	
+  	overflow: visible !important;
     animation: none !important;
 }
+
 
 /* Let choices escape the dialogue box */
 .textbox {
@@ -1213,18 +1215,19 @@ body {
 /* Move choices above the lower UI bar and keep them visible */
 .textbox .choice,
 .choice {
-    position: absolute !important;
-    left: 50% !important;
-    bottom: 18px !important;
+  	position: absolute !important;
+  	left: 50% !important;
+  
+  	bottom: 18px !important;
     transform: translateX(-50%) !important;
-
-    width: min(420px, 80vw) !important;
+  
+  	width: min(420px, 80vw) !important;
     max-height: 260px !important;
-
-    overflow-y: auto !important;
+  
+  	overflow-y: auto !important;
     overflow-x: hidden !important;
-
-    z-index: 3000 !important;
+  
+  	z-index: 3000 !important;
 }
 
 /* Make choice buttons smaller so they fit */
@@ -1242,17 +1245,17 @@ body {
     top: -36px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-
-    min-width: 160px !important;
+  
+  	min-width: 160px !important;
     text-align: center !important;
-
-    background: linear-gradient(135deg,#00b4ff,#0066ff) !important;
+  
+  	background: linear-gradient(135deg,#00b4ff,#0066ff) !important;
     color: white !important;
-
-    padding: 10px 24px !important;
+  
+  	padding: 10px 24px !important;
     border-radius: 0 0 14px 14px !important;
-
-    z-index: 9999 !important;
+  
+  	z-index: 9999 !important;
 }
 
 /* ---------- TEXT FIX ---------- */
@@ -2949,6 +2952,8 @@ Macro.add('voice', {
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="Analyst Carry Know" tags="nobr agent analyst" position="3400,2425" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Carry-Know&quot;, 0, 6)&gt;&gt;
 
+
+&lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryKnow&quot;&gt;&gt;
@@ -2963,6 +2968,8 @@ Macro.add('voice', {
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Analyst Carry No" tags="nobr agent analyst" position="3400,2325" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Carry-No&quot;, 0, 6)&gt;&gt;
 
+
+&lt;&lt;set $analystSignal to true&gt;&gt;	
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
@@ -2978,6 +2985,7 @@ Macro.add('voice', {
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Analyst Carry Used To" tags="nobr agent analyst" position="3400,2225" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Carry-Used&quot;, 0, 6)&gt;&gt;
 
+&lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryUsedTo&quot;&gt;&gt;
@@ -2992,6 +3000,7 @@ Macro.add('voice', {
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Analyst Carry Yes" tags="nobr agent analyst" position="3400,2125" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Carry-Yes&quot;, 0, 6)&gt;&gt;
 
+&lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystCarryYes&quot;&gt;&gt;
@@ -3019,17 +3028,30 @@ Macro.add('voice', {
             [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Analyst Dead End Hallway" tags="nobr hallway" position="3600,2575" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Analyst Dead End Hallway" tags="nobr hallway" position="3600,2575" size="100,100">&lt;&lt;set _narratorSentHere to $narratorSentToHallway&gt;&gt;
+&lt;&lt;if _narratorSentHere&gt;&gt;
+    &lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    &lt;&lt;hideAgent&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystDeadEndHallway&quot;&gt;&gt;
-        You head back out of the specimen bay, retracing your steps toward the long hallway where you first came from. The narrator is talking about the engineering bay. He doesn&#39;t stop.
+        You move through the long hallway.
     &lt;&lt;ctpNext clear&gt;&gt;
-        You slow down. The wall panels here don&#39;t all sit flush. One in particular — you wouldn&#39;t notice it if you weren&#39;t looking. Behind it: something small. Not alien-made. The biochip doesn&#39;t translate it because it doesn&#39;t need to. Human hands shaped this. A device with a single dial and four positions, each marked with a symbol the biochip renders as a section of the ship. One position is already turned. Three are not.
+        &lt;&lt;if _narratorSentHere&gt;&gt;
+            The Exception is here. Standing near the wall panels, still enough to seem like it was always there.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        The narrator is still talking. He doesn&#39;t know you&#39;ve stopped.
+        &lt;&lt;if _narratorSentHere&gt;&gt;
+            One panel in particular doesn&#39;t sit flush. Behind it you can see something small. Not alien-made.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Pick up the device and continue to engineering.|Artifact Picked Up]]
-            [[Leave it and continue to engineering.|Engineering Bay Entry]]
+            &lt;&lt;if _narratorSentHere&gt;&gt;[[Talk to the Exception.|Hallway Exception]]&lt;&lt;/if&gt;&gt;
+            &lt;&lt;if _narratorSentHere and $metException and not $hasArtifact&gt;&gt;[[Take the device from the panel.|Artifact Picked Up]]&lt;&lt;/if&gt;&gt;
+            [[Head back to the central room.|Pre Control Room]]
+            [[Continue to the Awakening Chamber.|Awakening Chamber Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Analyst Dont Understand" tags="nobr agent analyst missing-dialog" position="2500,3025" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Understand&quot;, 0, 6)&gt;&gt;
@@ -3075,7 +3097,9 @@ Macro.add('voice', {
             [[I don&#39;t think about it much.|Analyst Carry No]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Analyst Kill Threat" tags="nobr" position="3200,2525" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Analyst Kill Threat" tags="nobr" position="3200,2525" size="100,100">
+
+&lt;&lt;set $narratorSentToHallway to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystKillThreat&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -3281,7 +3305,9 @@ Macro.add('voice', {
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Analyst Restrain Answer" tags="nobr specimen analyst restrain" position="3100,3725" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
- &lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;&lt;set $analystSignal to true&gt;&gt;
+&lt;&lt;set $specimenDone to true&gt;&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrainAnswer&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -3298,6 +3324,7 @@ Macro.add('voice', {
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="Analyst Restrain Need" tags="nobr specimen analyst restrain" position="3100,3525" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrainNeed&quot;&gt;&gt;
@@ -3313,7 +3340,8 @@ Macro.add('voice', {
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Analyst Restrain Sorry" tags="nobr specimen analyst restrain" position="3100,3625" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
- &lt;&lt;set $specimenDone to true&gt;&gt;
+ &lt;&lt;set $analystSignal to true&gt;&gt;
+&lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrainSorry&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -3330,22 +3358,27 @@ Macro.add('voice', {
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Analyst Right" tags="nobr agent analyst" position="3000,2575" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 0, 6)&gt;&gt;
 
+&lt;&lt;set $analystSignal to true&gt;&gt;
+&lt;&lt;set $specimenDone to true&gt;&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRight&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-        Fake? Not upholding? Not seemingly simple? Or maybe it&#39;s about the intent — the most inconsistent of the variables.
-    &lt;&lt;ctpNext clear&gt;&gt;    
-        The Analyst returns to its work. No signal. No follow-up.
+        Fake. The exterior presents a structure inconsistent with what the interior contains. You identified the dissonance before you identified the components. That is unusual.
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;analyst_right&quot;&gt;&gt;
-        What&#39;s wrong? No signal? Well talk to it again then.
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        It just didn&#39;t look right.
     &lt;&lt;ctpNext clear&gt;&gt;
-        You try. The Analyst doesn&#39;t react.
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Correct identification. Incorrect methodology. You used intuition rather than analysis. And yet the result is the same.
+        &lt;&lt;ctpNext clear&gt;&gt;
+        	BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        Unexpected. The signal responds to pattern recognition regardless of process. This warrants further observation.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[I&#39;ll just kill it.|Analyst Kill Threat]]
-            [[What do I do now?|Analyst What Now]]
+            [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="Analyst Sample" tags="nobr agent analyst" position="2500,2275" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Sample&quot;, 0, 6)&gt;&gt;
@@ -3365,6 +3398,7 @@ Macro.add('voice', {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="Analyst Strike" tags="nobr specimen analyst strike" position="2900,3825" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystStrike&quot;&gt;&gt;
         You strike the Analyst at the base of its cranial structure. The alien collapses with the stillness of a system shutting down. The yellow gas begins to leak from the fracture. You retreat.
@@ -3413,6 +3447,8 @@ Macro.add('voice', {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="Analyst What Now" tags="nobr" position="3200,2625" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;&lt;set $narratorSentToHallway to true&gt;&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystWhatNow&quot;&gt;&gt;
     	&lt;&lt;voice &quot;analyst_what_now&quot;&gt;&gt;
@@ -3522,15 +3558,24 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         It is closer to an autopsy performed on history while history is still alive.
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;archive_bay_entry_1&quot;&gt;&gt;
-        Archive. Good.
+        &lt;&lt;if visited(&quot;Archive Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;archive_bay_entry_1&quot;&gt;&gt;
+            Archive. Good.
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            Back again.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        This is where the Cartographer keeps pretending that watching a world from orbit is the same thing as understanding it.
+        &lt;&lt;if visited(&quot;Archive Bay Entry&quot;) lte 1&gt;&gt;
+            This is where the Cartographer keeps pretending that watching a world from orbit is the same thing as understanding it.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;archive_bay_entry_2&quot;&gt;&gt;
-        Be careful with this one. It deals in patterns, which means it will say something broad and then act as if broad means true.
+        &lt;&lt;if visited(&quot;Archive Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;archive_bay_entry_2&quot;&gt;&gt;
+            Be careful with this one. It deals in patterns, which means it will say something broad and then act as if broad means true.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         An archive terminal glows to the right.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3971,10 +4016,10 @@ Macro.add('voice', {
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
         Then walk away.
     &lt;&lt;ctpNext clear&gt;&gt;
-        It steps aside. No further comment. You arrive at the control room. The narrator is surprised — you took the long way around. He finds this, unexpectedly, moving.
+        It steps aside. You leave the Fusion Core and head back up through the ship.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Place hand on panel.|Ending A Curiosity]]
+            [[Return to the Awakening Chamber.|Awakening Chamber Return]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="Burn Exception What" tags="nobr core burn exception" position="3000,5200" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
@@ -4116,10 +4161,10 @@ Macro.add('voice', {
         &lt;&lt;voice &quot;burn_walk_away&quot;&gt;&gt;
         Alright. Yes. Yes, let&#39;s try that.
     &lt;&lt;ctpNext clear&gt;&gt;
-        You leave the Fusion Core. You arrive at the control room. He is surprised — you took the long way around. He finds this, unexpectedly, moving.
+        You leave the Fusion Core and head back up through the ship.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Place hand on panel.|Ending A Curiosity]]
+            [[Return to the Awakening Chamber.|Awakening Chamber Return]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="CR Believe" tags="nobr narrator agent missing-features" position="5300,2900" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Believe&quot;, 0, 6)&gt;&gt;
@@ -4758,6 +4803,7 @@ Macro.add('voice', {
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="Cart Signal Check" tags="nobr archive cartographer" position="4000,775" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Signal&quot;, 0, 6)&gt;&gt;
 
+&lt;&lt;set $cartSignal to true&gt;&gt;
 &lt;&lt;set $archiveSignal = true&gt;&gt;
 &lt;&lt;set $cartPuzzleDone to true&gt;&gt;
 &lt;&lt;set $archiveDone to true&gt;&gt;
@@ -5062,9 +5108,9 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Who were they?|Discarded Who]]
-            [[Talk to Exception.|Discarded Exception]]
+            &lt;&lt;if $discardedVisits gte 2&gt;&gt;[[Talk to Exception.|Discarded Exception]]&lt;&lt;/if&gt;&gt;
             [[I don&#39;t want to be in here.|Discarded Leave]]
-            [[Return to the archive.|Archive Bay Entry]]
+            [[Return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="Discarded Exception" tags="nobr agent discarded exception" position="2800,1425" size="100,100">&lt;&lt;showAgent &quot;exception&quot;&gt;&gt;
@@ -5126,7 +5172,7 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[What actually happened to them?|Discarded Exception What]]
-            [[I will return to the archive.|Archive Bay Entry]]
+            [[I will return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="Discarded Exception What" tags="nobr agent exception discarded" position="3000,1525" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Discarded-What&quot;, 0, 6)&gt;&gt;
@@ -5214,7 +5260,7 @@ Macro.add('voice', {
         &lt;div class=&quot;choice&quot;&gt;
             [[Did you know this person?|Discarded Exception Know]]
             [[What actually happened to them?|Discarded Exception What]]
-            [[I will return to the archive.|Archive Bay Entry]]
+            [[I will return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="Discarded Leave" tags="nobr discarded" position="2600,1425" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
@@ -5245,7 +5291,7 @@ Macro.add('voice', {
         Then it closes.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Return to the archive.|Archive Bay Entry]]
+            [[Return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="Discarded Lying" tags="nobr agent exception discarded" position="3200,1425" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Discarded-Lying&quot;, 0, 6)&gt;&gt;
@@ -5280,7 +5326,7 @@ Macro.add('voice', {
         &lt;div class=&quot;choice&quot;&gt;
             [[Why are you telling me this?|Discarded Why Telling]]
             [[What are you suggesting I do?|Discarded What Suggest]]
-            [[I will return to the archive.|Archive Bay Entry]]
+            [[I will return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="Discarded Room First" tags="nobr discarded body" position="2400,1425" size="100,100">&lt;&lt;set $discardedVisits += 1&gt;&gt;
@@ -5344,8 +5390,8 @@ Macro.add('voice', {
             [[Who were they?|Discarded Who]]
             [[Did you do this?|Discarded Did You]]
             [[I don&#39;t want to be in here.|Discarded Leave]]
-            [[Talk to Exception.|Discarded Exception]]
-            [[Return to the archive.|Archive Bay Entry]]
+            &lt;&lt;if $discardedVisits gte 2&gt;&gt;[[Talk to Exception.|Discarded Exception]]&lt;&lt;/if&gt;&gt;
+            [[Return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="Discarded What Suggest" tags="nobr agent exception discarded" position="3200,1325" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Discarded-What-Suggest&quot;, 0, 6)&gt;&gt;
@@ -5385,7 +5431,7 @@ Macro.add('voice', {
         The obvious door is for the voice.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[I will return to the archive.|Archive Bay Entry]]
+            [[I will return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="Discarded Who" tags="nobr discarded body" position="2600,1525" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
@@ -5432,9 +5478,9 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Did you do this?|Discarded Did You]]
-            [[Talk to Exception.|Discarded Exception]]
+            &lt;&lt;if $discardedVisits gte 2&gt;&gt;[[Talk to Exception.|Discarded Exception]]&lt;&lt;/if&gt;&gt;
             [[I don&#39;t want to be in here.|Discarded Leave]]
-            [[Return to the archive.|Archive Bay Entry]]
+            [[Return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="Discarded Why Telling" tags="nobr agent exception discarded" position="3200,1525" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Discarded-Why-Telling&quot;, 0, 6)&gt;&gt;
@@ -5471,7 +5517,7 @@ Macro.add('voice', {
         &lt;div class=&quot;choice&quot;&gt;
             [[What are you suggesting I do?|Discarded What Suggest]]
             [[So the narrator has been lying.|Discarded Lying]]
-            [[I will return to the archive.|Archive Bay Entry]]
+            [[I will return to the archive.|Archive Bay Return]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="Ending A Aggression" tags="nobr ending aggression" position="6700,1250" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
@@ -6020,6 +6066,7 @@ Macro.add('voice', {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="193" name="Eng Camera Accuracy" tags="nobr agent engineer" position="3600,4075" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Camera-Accuracy&quot;, 0, 6)&gt;&gt;
 
 &lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;set $engSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraAccuracy&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -6035,6 +6082,7 @@ Macro.add('voice', {
 
 &lt;&lt;set $engineeringDone to true&gt;&gt;
 &lt;&lt;set $compliance += 1&gt;&gt;
+&lt;&lt;set $engSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraAlone&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -6050,6 +6098,7 @@ Macro.add('voice', {
 
 &lt;&lt;set $engineeringDone to true&gt;&gt;
 &lt;&lt;set $compliance += 1&gt;&gt;
+&lt;&lt;set $engSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraImprecision&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -6089,6 +6138,7 @@ Macro.add('voice', {
 
 &lt;&lt;set $engineeringDone to true&gt;&gt;
 &lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;&lt;set $engSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraObsessionPoint&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -6104,6 +6154,7 @@ Macro.add('voice', {
 
 &lt;&lt;set $engineeringDone to true&gt;&gt;
 &lt;&lt;set $compliance += 1&gt;&gt;
+&lt;&lt;set $engSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraObsessionProblem&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -6119,6 +6170,7 @@ Macro.add('voice', {
 
 &lt;&lt;set $engineeringDone to true&gt;&gt;
 &lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;&lt;set $engSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraResidue&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -6273,25 +6325,25 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;engineeringBayEntry&quot;&gt;&gt;
         The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;engineering_bay_entry_1&quot;&gt;&gt;
-        There it is. Go talk to it. This one seems to deal in the practical — how things work, what they&#39;re used for. It would make sense to go along with those lines.
+        &lt;&lt;if visited(&quot;Engineering Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;engineering_bay_entry_1&quot;&gt;&gt;
+            There it is. Go talk to it. This one seems to deal in the practical — how things work, what they&#39;re used for. It would make sense to go along with those lines.
+        &lt;&lt;elseif $foundBody and visited(&quot;Engineering Bay Entry&quot;) is 2&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;engineering_bay_entry_4&quot;&gt;&gt;
+            You found it then. The other one. I was wondering when you would. I&#39;ll be honest with you, I thought you might handle it worse than this. People usually fall apart when they find out they&#39;re not the first. But here you are. Still moving. Still asking questions. That&#39;s the thing about you that keeps surprising me, and I have thought about this ship&#39;s interior quite a lot. More time than I would like to admit, really. Now you know the full picture. Go get that last signal and come back to the door. I won&#39;t waste more of your time.
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;engineering_bay_entry_5&quot;&gt;&gt;
+            You&#39;re a smooth sailor. Just letting you know.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;engineering_bay_entry_2&quot;&gt;&gt;
-        Well now you know what to do I guess. And if you have ever wondered why in the hell you&#39;re even doing all of this, just try and do something else besides this. Yeah this is pretty much it. You&#39;re free to take it as a challenge though.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;engineering_bay_entry_3&quot;&gt;&gt;
-        Oh yeah, good luck by the way.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;engineering_bay_entry_4&quot;&gt;&gt;
-        You found it then. The other one. I was wondering when you would. I&#39;ll be honest with you, I thought you might handle it worse than this. People usually fall apart when they find out they&#39;re not the first. But here you are. Still moving. Still asking questions. That&#39;s the thing about you that keeps surprising me, and I have thought about this ship&#39;s interior quite a lot. More time than I would like to admit, really. Now you know the full picture. Go get that last signal and come back to the door. I won&#39;t waste more of your time.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;engineering_bay_entry_5&quot;&gt;&gt;
-        You&#39;re a smooth sailor. Just letting you know.
+        &lt;&lt;if visited(&quot;Engineering Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;engineering_bay_entry_3&quot;&gt;&gt;
+            Oh yeah, good luck by the way.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         A small, well-lit room. Shelf-like containers line the walls. Three workbenches at the centre. The Engineer is present, engrossed in its work, not acknowledging you
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -6303,7 +6355,7 @@ Macro.add('voice', {
             [[Explore the room quietly.|Eng Route C]]
             [[Move closer behind it.|Eng Route D]]
             &lt;&lt;if $hasArtifact&gt;&gt;[[Show the Engineer the device.|Eng Artifact Request]]&lt;&lt;/if&gt;&gt;
-            [[I want to see the Fusion Core.|Fusion Core Request]]
+            &lt;&lt;if $exceptSignal&gt;&gt;[[I want to see the Fusion Core.|Fusion Core Request]]&lt;&lt;/if&gt;&gt;
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="213" name="Exit Exception Bother No" tags="agent exception nobr" position="4100,2075" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Exit-No&quot;, 0, 6)&gt;&gt;
@@ -6443,10 +6495,11 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;fusionCoreEntry&quot;&gt;&gt;
         The passage to the Fusion Core is a descent. The ship gets warmer. The hum becomes something physical. At the base is a vast chamber. Enormous and patient, the way a star is patient.
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;div class=&quot;choice&quot;&gt;
-            [[Fusion Core Narrator|Fusion Core Narrator Variant]]
-            [[Fusion Core Exception|Fusion Core Exception Variant]]
-        &lt;/div&gt; 
+        &lt;&lt;if $exceptSignal and $discardedVisits gte 2&gt;&gt;
+            &lt;&lt;goto &quot;Fusion Core Exception Variant&quot;&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;goto &quot;Fusion Core Narrator Variant&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="221" name="Fusion Core Exception Variant" tags="nobr core exception" position="2800,5100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;fusionCoreExceptionVariant&quot;&gt;&gt;
@@ -6494,23 +6547,22 @@ Macro.add('voice', {
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         The Fusion Core is a restricted area of the vessel. Standard subjects are not granted access. Authorisation is required.
     &lt;&lt;ctpNext clear&gt;&gt;
-        The biochip activates — but nothing surfaces. You don&#39;t have the right signal.
+        &lt;&lt;if $exceptSignal&gt;&gt;
+            The biochip activates. The Exception&#39;s signal — 44.2 — 0.5 — 91.8 — is interpreted by the Engineer&#39;s systems as a frequency. A correct frequency.
+        &lt;&lt;else&gt;&gt;
+            The biochip activates — but nothing surfaces. You don&#39;t have the right signal.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
-        I want to see the Fusion Core.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
-        The Fusion Core is a restricted area of the vessel. Standard subjects are not granted access. Do you have authorisation?
-    &lt;&lt;ctpNext clear&gt;&gt;
-        The biochip activates. The Exception&#39;s signal — 44.2 — 0.5 — 91.8 — is interpreted by the Engineer&#39;s systems as a frequency. A correct frequency.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
-        Authorisation confirmed. The Fusion Core is at the base of the vessel. I will unlock the passage. Do you require guidance?
+        &lt;&lt;if $exceptSignal&gt;&gt;
+            &lt;&lt;set $fusionCoreUnlocked to true&gt;&gt;
+            &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
+            Authorisation confirmed. The Fusion Core is at the base of the vessel. I will unlock the passage. Do you require guidance?
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Return.|Engineering Bay Entry]]   
-            [[No. Head to the Fusion Core.|Fusion Core Entry]]
-            [[What is the Fusion Core?|Fusion Core What Is]]
+            &lt;&lt;if $exceptSignal&gt;&gt;[[No. Head to the Fusion Core.|Fusion Core Entry]]&lt;&lt;/if&gt;&gt;
+            &lt;&lt;if $exceptSignal&gt;&gt;[[What is the Fusion Core?|Fusion Core What Is]]&lt;&lt;/if&gt;&gt;
+            [[Return.|Engineering Bay Entry]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="224" name="Fusion Core What Is" tags="nobr core warning" position="2500,5500" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
@@ -6840,6 +6892,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="238" name="Overlook Burned" tags="nobr agent exception" position="2800,425" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-Burned&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookBurned&quot;&gt;&gt;
@@ -6855,6 +6908,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="239" name="Overlook Distant" tags="nobr exception agent" position="2800,325" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-Distant&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookDistant&quot;&gt;&gt;
@@ -6868,6 +6922,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="240" name="Overlook Family" tags="nobr agent exception" position="2900,325" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-Family&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookFamily&quot;&gt;&gt;
@@ -6879,6 +6934,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="241" name="Overlook Home" tags="nobr agent exception" position="2700,425" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-Home&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookHome&quot;&gt;&gt;
@@ -6890,6 +6946,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="242" name="Overlook Missed" tags="nobr agent exception" position="2700,225" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-Missed&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 
 &lt;div class=&quot;textbox&quot;&gt;
@@ -6902,6 +6959,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="243" name="Overlook No Memory" tags="nobr exception agent" position="2800,225" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-No-Memory&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookNoMemory&quot;&gt;&gt;
@@ -6913,6 +6971,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="Overlook Nothing" tags="nobr agent exception" position="2700,325" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Overlook-Nothing&quot;, 0, 6)&gt;&gt;
+&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookNothing&quot;&gt;&gt;
@@ -6924,14 +6983,7 @@ END OF CURRENT DRAFT
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="245" name="Pre Control Room" tags="nobr hallway control-door" position="1900,2525" size="200,200">&lt;&lt;hideAgent&gt;&gt;
-&lt;&lt;if not $archiveDone&gt;&gt;
-    &lt;&lt;if visited(&quot;Archive Bay Entry&quot;)&gt;&gt;[[Return to the Archive bay.|Archive Bay Return]]&lt;&lt;else&gt;&gt;[[Head to the Archive bay.|Archive Bay Entry]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-    [[Return to the Archive bay.|Archive Bay Return]]
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if not $specimenDone&gt;&gt;[[Head to the Specimen bay.|Specimen Bay Entry]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if not $engineeringDone&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $baysVisited eq 0&gt;&gt;[[&quot;Hold up. Who or what even are you?&quot;|Narrator Identity]]&lt;&lt;/if&gt;&gt;
+
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;preControlRoom&quot;&gt;&gt;
         You enter a wide central chamber.
@@ -6959,17 +7011,17 @@ END OF CURRENT DRAFT
         Get the signals. Come back here. Enter the code.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Approach the locked door and enter the code.|Code Entry]]
-
-            &lt;&lt;if visited(&quot;Archive Bay Entry&quot;)&gt;&gt;
-                [[Return to the Archive bay.|Archive Bay Return]]
+            &lt;&lt;if $cartSignal and $analystSignal and $engSignal&gt;&gt;[[Approach the locked door and enter the code.|Code Entry]]&lt;&lt;/if&gt;&gt;
+            &lt;&lt;if not $archiveDone&gt;&gt;
+                &lt;&lt;if visited(&quot;Archive Bay Entry&quot;)&gt;&gt;[[Return to the Archive bay.|Archive Bay Return]]&lt;&lt;else&gt;&gt;[[Head to the Archive bay.|Archive Bay Entry]]&lt;&lt;/if&gt;&gt;
             &lt;&lt;else&gt;&gt;
-                [[Head to the Archive bay.|Archive Bay Entry]]
+                [[Return to the Archive bay.|Archive Bay Return]]
             &lt;&lt;/if&gt;&gt;
 
-            [[Head to the Specimen bay.|Specimen Bay Entry]]
-            [[Head to the Engineering bay.|Engineering Bay Entry]]
-            [[&quot;Hold up. Who or what even are you?&quot;|Narrator Identity]]
+            &lt;&lt;if not $specimenDone&gt;&gt;[[Head to the Specimen bay.|Specimen Bay Entry]]&lt;&lt;/if&gt;&gt;
+            &lt;&lt;if not $engineeringDone&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
+            &lt;&lt;if $baysVisited eq 0&gt;&gt;[[&quot;Hold up. Who or what even are you?&quot;|Narrator Identity]]&lt;&lt;/if&gt;&gt;
+            [[Head back down the hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="246" name="Right Button" tags="nobr room1 exit" position="400,2150" size="100,100">&lt;&lt;hideAgent&gt;&gt;
@@ -7214,29 +7266,37 @@ END OF CURRENT DRAFT
 &lt;&lt;set $baysVisited += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayEntry&quot;&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;specimen_bay_entry_1&quot;&gt;&gt;
-    	There it is. This one usually resides in this bay.
+        &lt;&lt;if visited(&quot;Specimen Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;specimen_bay_entry_1&quot;&gt;&gt;
+            There it is. This one usually resides in this bay.
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;specimen_bay_entry_4&quot;&gt;&gt;
+            Well now you know what to do. Gather the signals and get to the door.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;specimen_bay_entry_2&quot;&gt;&gt;
-        Go talk to it. Don&#39;t you just wonder what&#39;s beneath its form? Make it &#39;think&#39; using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
+        &lt;&lt;if visited(&quot;Specimen Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;specimen_bay_entry_2&quot;&gt;&gt;
+            Go talk to it. Don&#39;t you just wonder what&#39;s beneath its form? Make it think using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;specimen_bay_entry_3&quot;&gt;&gt;
-        Since this one seems to deal in data and observation, it would make sense to go along with those lines.
+        &lt;&lt;if visited(&quot;Specimen Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;specimen_bay_entry_3&quot;&gt;&gt;
+            Since this one seems to deal in data and observation, it would make sense to go along with those lines.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;specimen_bay_entry_4&quot;&gt;&gt;
-        Well now you know what to do I guess. Gather the signals and get to the door.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;specimen_bay_entry_5&quot;&gt;&gt;
-        Oh yeah, good luck by the way.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;specimen_bay_entry_6&quot;&gt;&gt;
-        You&#39;re a smooth sailor. Just letting you know.
+        &lt;&lt;if visited(&quot;Specimen Bay Entry&quot;) lte 1&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;specimen_bay_entry_5&quot;&gt;&gt;
+            Oh yeah, good luck by the way.
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;specimen_bay_entry_6&quot;&gt;&gt;
+            You&#39;re a smooth sailor. Just letting you know.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         Sterile environment. Dim light pulses through bio-containers. Inside: organic structures, some familiar, some not. One too familiar.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -7329,6 +7389,13 @@ END OF CURRENT DRAFT
 &lt;&lt;set $asked32WhatWant    to false&gt;&gt;
 &lt;&lt;set $asked32WhyReleased to false&gt;&gt;
 &lt;&lt;set $asked32WrongButton to false&gt;&gt;
+&lt;&lt;set $hasArtifact           to false&gt;&gt;
+&lt;&lt;set $exceptSignal          to false&gt;&gt;
+&lt;&lt;set $cartSignal            to false&gt;&gt;
+&lt;&lt;set $analystSignal         to false&gt;&gt;
+&lt;&lt;set $engSignal             to false&gt;&gt;
+&lt;&lt;set $narratorSentToHallway to false&gt;&gt;
+&lt;&lt;set $fusionCoreUnlocked    to false&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;title&quot; &quot;media/glazba/title_screen.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;awakening&quot; &quot;media/glazba/awakening.mp3&quot;&gt;&gt;
@@ -7931,6 +7998,49 @@ END OF CURRENT DRAFT
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Continue.|Cart Signal Check]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="266" name="Hallway Exception" tags="nobr hallway exception agent" position="3600,2475" size="100,100">&lt;&lt;set $metException to true&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;hallwayException&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        You found it.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        The device behind the panel. You knew it was there?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        I knew someone put it there. The first one. The one whose body you found.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        They hid it before the voice could understand what they had done. They were trying to leave something behind. A path out that the voice would not control.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        And they didn&#39;t make it.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        They did not. But the device remained. I have been waiting to see if the next one would find it.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;You&quot;&gt;&gt;
+        Why didn&#39;t you just tell me?
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
+        Because you needed to come back on your own. If I told you, it would belong to the voice&#39;s plan. This way it belongs to yours.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            [[Take the device.|Artifact Picked Up]]
+            [[Leave it for now.|Analyst Dead End Hallway]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="267" name="Awakening Chamber Return" tags="nobr waking" position="400,2550" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;awakeningChamberReturn&quot;&gt;&gt;
+        The awakening chamber. The pod is still open, drained and cold. The room is exactly as you left it when you first woke.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        On the far side, a door you didn&#39;t notice before — or couldn&#39;t open before. It leads down. The hum from below is different from the rest of the ship. Deeper. More patient.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            &lt;&lt;if $fusionCoreUnlocked&gt;&gt;[[Enter the Fusion Core.|Fusion Core Entry]]&lt;&lt;/if&gt;&gt;
+            [[Head back down the hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata>
