@@ -178,7 +178,7 @@ $(window).on("load", function () {
 });
 
 function connect() {
-  ws = new WebSocket("ws://localhost:8012");
+  ws = new WebSocket("ws://localhost:8010");
   window.ws = ws;
   ws.onopen = function () {
     ws.send("connect");

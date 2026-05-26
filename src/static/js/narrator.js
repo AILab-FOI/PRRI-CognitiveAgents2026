@@ -164,7 +164,7 @@ $(window).on("load", function () {
 });
 
 function connect() {
-  ws = new WebSocket("ws://localhost:8012");
+  ws = new WebSocket("ws://localhost:8013");
   window.ws = ws;
   ws.onopen = function () {
     ws.send("connect");
@@ -284,12 +284,12 @@ function play_part(part) {
   recognition.stop();
   switch (part) {
     case "ponovi":
-      start = 1;
-      end = 5;
+      start = 6;
+      end = 12;
       break;
     default: // tisina
-      start = 5;
-      end = 5.9;
+      start = 0;
+      end = 6;
       setTimeout(function() {
         try {
           if (!isMobileBrowser()) window.recognition.start();
