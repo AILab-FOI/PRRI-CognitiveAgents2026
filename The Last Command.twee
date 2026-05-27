@@ -2120,6 +2120,22 @@ The Last Command
 </div>
 
 
+:: Analyst Of Course [nobr agent analyst] {"position":"2500,3175","size":"100,100"}
+<<run window.playAgentVideo("Course", 6, 12)>>
+<<set $skepticism += 1>>
+
+<div class="textbox">
+    <<ctp "analystOfCourse">>
+        <<speaker "Analyst">>
+        Of course. You are awake, mobile, responsive, and asking questions the model did not predict. That makes you useful. It also makes you difficult to classify. The two conditions overlap more often than our documentation admits.
+    <<ctpNext clear>>
+        <div class="choice">
+           [[Continue to the specimen test.|Analyst Puzzle Intro]]
+        </div>
+  <</ctp>>
+</div>
+
+
 :: Analyst Probability [nobr specimen analyst] {"position":"3000,2825","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -2379,22 +2395,6 @@ The Last Command
 </div>
 
 
-:: Analyst Of Course [nobr agent analyst] {"position":"2500,3175","size":"100,100"}
-<<run window.playAgentVideo("Course", 6, 12)>>
-<<set $skepticism += 1>>
-
-<div class="textbox">
-    <<ctp "analystOfCourse">>
-        <<speaker "Analyst">>
-        Of course. You are awake, mobile, responsive, and asking questions the model did not predict. That makes you useful. It also makes you difficult to classify. The two conditions overlap more often than our documentation admits.
-    <<ctpNext clear>>
-        <div class="choice">
-           [[Continue to the specimen test.|Analyst Puzzle Intro]]
-        </div>
-  <</ctp>>
-</div>
-
-
 :: Analyst What Now [nobr specimen] {"position":"3200,2625","size":"100,100"}
 <<hideAgent>>
 <<set $narratorSentToHallway to true>>
@@ -2483,6 +2483,7 @@ The Last Command
         </div>
   <</ctp>>
 </div>
+
 
 :: Analyst Worse [nobr agent analyst] {"position":"2600,1925","size":"100,100"}
 <<set $skepticism += 1>>
@@ -8656,10 +8657,17 @@ function stopSkipping() {
 }
 
 $(document).on('keydown', function(e) {
+
+    // Hold Control to Skip
     if (e.key === "Control" && !skipInterval) {
         skipInterval = setInterval(function() {
             advanceText();
         }, 75); 
+    } 
+    // Press Spacebar to Advance
+    else if (e.key === " " || e.code === "Space") {
+        e.preventDefault(); // Stop the browser from scrolling down
+        advanceText();
     }
 });
 

@@ -15,318 +15,142 @@ def train(bot):
     bot.set_trainer(ListTrainer)
     chatbot = bot
 
-    chatbot.train([
-        'Hello',
-        'Hello'
-    ])
+    # ── Hello ────────────────────────────────────────────────────────────────
+    chatbot.train(['Hello', 'Hello'])
+    chatbot.train(['Hi there', 'Hello'])
+    chatbot.train(['Hey', 'Hello'])
+    chatbot.train(['Greetings', 'Hello'])
 
-    chatbot.train([
-        'Who are you',
-        'Who'
-    ])
+    # ── Who ──────────────────────────────────────────────────────────────────
+    chatbot.train(['Who are you', 'Who'])
+    chatbot.train(['What are you', 'Who'])
+    chatbot.train(['Can you tell me who you are', 'Who'])
+    chatbot.train(['Introduce yourself', 'Who'])
 
-    chatbot.train([
-        'What are you doing',
-        'What'
-    ])
+    # ── What ─────────────────────────────────────────────────────────────────
+    chatbot.train(['What are you doing', 'What'])
+    chatbot.train(['What are you working on', 'What'])
+    chatbot.train(['What is your function here', 'What'])
+    chatbot.train(['What exactly are you doing right now', 'What'])
 
-    chatbot.train([
-        'Explore the room',
-        'C'
-    ])
+    # ── C (Explore) ──────────────────────────────────────────────────────────
+    chatbot.train(['Explore the room', 'C'])
+    chatbot.train(['I want to look around', 'C'])
+    chatbot.train(['I am just looking around', 'C'])
+    chatbot.train(['Let me explore', 'C'])
+    chatbot.train(['I would like to see what is in here', 'C'])
 
-    chatbot.train([
-        'Sure',
-        'Research-Intro'
-    ])
+    # ── Research-Intro ───────────────────────────────────────────────────────
+    chatbot.train(['Sure', 'Research-Intro'])
+    chatbot.train(['Yes I will help', 'Research-Intro'])
+    chatbot.train(['Alright I am interested', 'Research-Intro'])
+    chatbot.train(['Yes I am willing to assist', 'Research-Intro'])
+    chatbot.train(['Sounds good to me', 'Research-Intro'])
 
-    chatbot.train([
-        'No',
-        'No'
-    ])
+    # ── No ───────────────────────────────────────────────────────────────────
+    chatbot.train(['No', 'No'])
+    chatbot.train(['No thank you', 'No'])
+    chatbot.train(['I am not interested', 'No'])
+    chatbot.train(['I would rather not', 'No'])
+    chatbot.train(['I will pass', 'No'])
 
-    chatbot.train([
-        'The disassembled assault rifle',
-        'Rifle'
-    ])
+    # ── Rifle ────────────────────────────────────────────────────────────────
+    chatbot.train(['The disassembled assault rifle', 'Rifle'])
+    chatbot.train(['The gun', 'Rifle'])
+    chatbot.train(['That weapon over there', 'Rifle'])
+    chatbot.train(['I want to look at the rifle', 'Rifle'])
+    chatbot.train(['Tell me about the rifle', 'Rifle'])
 
-    chatbot.train([
-        'The photography camera',
-        'Camera'
-    ])
-    chatbot.train([
-        'Switch to the camera',
-        'Camera'
-    ])
+    # ── Camera ───────────────────────────────────────────────────────────────
+    chatbot.train(['The photography camera', 'Camera'])
+    chatbot.train(['Switch to the camera', 'Camera'])
+    chatbot.train(['The camera', 'Camera'])
+    chatbot.train(['That camera over there', 'Camera'])
+    chatbot.train(['Tell me about the camera', 'Camera'])
 
-    chatbot.train([
-        'Tool of force',
-        'Rifle-Force'
-    ])
+    # ── Rifle-Force ──────────────────────────────────────────────────────────
+    chatbot.train(['Tool of force', 'Rifle-Force'])
+    chatbot.train(['It is a weapon of force', 'Rifle-Force'])
+    chatbot.train(['It is used to apply force', 'Rifle-Force'])
+    chatbot.train(['A device made to project force', 'Rifle-Force'])
+    chatbot.train(['Something that forces an outcome', 'Rifle-Force'])
 
-    chatbot.train([
-        'Tool of power',
-        'Rifle-Power'
-    ])
+    # ── Rifle-Power ──────────────────────────────────────────────────────────
+    chatbot.train(['Tool of power', 'Rifle-Power'])
+    chatbot.train(['It represents power', 'Rifle-Power'])
+    chatbot.train(['It is a symbol of power', 'Rifle-Power'])
+    chatbot.train(['It gives the user power', 'Rifle-Power'])
+    chatbot.train(['A tool that grants power over others', 'Rifle-Power'])
 
-    chatbot.train([
-        'Weapon used in war',
-        'Rifle-War'
-    ])
+    # ── Rifle-War ────────────────────────────────────────────────────────────
+    chatbot.train(['Weapon used in war', 'Rifle-War'])
+    chatbot.train(['It is used in warfare', 'Rifle-War'])
+    chatbot.train(['A weapon designed for war', 'Rifle-War'])
+    chatbot.train(['It is what soldiers use in war', 'Rifle-War'])
+    chatbot.train(['Something used to fight wars', 'Rifle-War'])
 
-    chatbot.train([
-        'Leave the engineering bay',
-        'Leave'
-    ])
-    chatbot.train([
-        'Exit the engineering bay',
-        'Leave'
-    ])
+    # ── Leave ────────────────────────────────────────────────────────────────
+    chatbot.train(['Leave the engineering bay', 'Leave'])
+    chatbot.train(['Exit the engineering bay', 'Leave'])
+    chatbot.train(['I am leaving the engineering bay', 'Leave'])
+    chatbot.train(['I want to go', 'Leave'])
+    chatbot.train(['I am done here', 'Leave'])
 
-    chatbot.train([
-        'Stores memories.',
-        'Camera-Memory'
-    ])
+    # ── Camera-Memory ────────────────────────────────────────────────────────
+    chatbot.train(['Stores memories.', 'Camera-Memory'])
+    chatbot.train(['It captures and stores memories', 'Camera-Memory'])
+    chatbot.train(['A way to hold onto memories', 'Camera-Memory'])
+    chatbot.train(['It preserves a moment in time', 'Camera-Memory'])
+    chatbot.train(['It keeps a memory alive', 'Camera-Memory'])
 
-    chatbot.train([
-        'Shares experiences.',
-        'Camera-Share'
-    ])
+    # ── Camera-Share ─────────────────────────────────────────────────────────
+    chatbot.train(['Shares experiences.', 'Camera-Share'])
+    chatbot.train(['It lets you share what you have seen', 'Camera-Share'])
+    chatbot.train(['You can share experiences with others through it', 'Camera-Share'])
+    chatbot.train(['A way to show others what you experienced', 'Camera-Share'])
+    chatbot.train(['It is used to communicate moments with other people', 'Camera-Share'])
 
-    chatbot.train([
-        'Obsession replaces experience.',
-        'Camera-Obsession'
-    ])
+    # ── Camera-Obsession ─────────────────────────────────────────────────────
+    chatbot.train(['Obsession replaces experience.', 'Camera-Obsession'])
+    chatbot.train(['Sometimes the obsession with capturing replaces actually living', 'Camera-Obsession'])
+    chatbot.train(['People get so focused on recording that they stop experiencing', 'Camera-Obsession'])
+    chatbot.train(['You stop living the moment and only start recording it', 'Camera-Obsession'])
+    chatbot.train(['The recording becomes the experience and that becomes the problem', 'Camera-Obsession'])
 
-    chatbot.train([
-        'The organisms. The imprecision is the point',
-        'Camera-Imprecision'
-    ])
+    # ── Camera-Imprecision ───────────────────────────────────────────────────
+    chatbot.train(['The organisms. The imprecision is the point', 'Camera-Imprecision'])
+    chatbot.train(['The organisms make it imprecise and that imprecision is the whole point', 'Camera-Imprecision'])
+    chatbot.train(['The living things in it and the blur is part of the purpose', 'Camera-Imprecision'])
+    chatbot.train(['The organisms are captured and the imprecision is what gives it meaning', 'Camera-Imprecision'])
 
-    chatbot.train([
-        'The device is more accurate. Accuracy is what matters',
-        'Camera-Accuracy'
-    ])
+    # ── Camera-Accuracy ──────────────────────────────────────────────────────
+    chatbot.train(['The device is more accurate. Accuracy is what matters', 'Camera-Accuracy'])
+    chatbot.train(['The camera is more precise than human memory and that is the point', 'Camera-Accuracy'])
+    chatbot.train(['Accuracy is the purpose and the device provides that', 'Camera-Accuracy'])
+    chatbot.train(['What matters is precision and the device is more precise than memory', 'Camera-Accuracy'])
 
-    chatbot.train([
-        'Because we dont want to experience things alone',
-        'Camera-Alone'
-    ])
+    # ── Camera-Alone ─────────────────────────────────────────────────────────
+    chatbot.train(['Because we dont want to experience things alone', 'Camera-Alone'])
+    chatbot.train(['We use it so we do not have to experience things alone', 'Camera-Alone'])
+    chatbot.train(['People want to share what they see because they do not want to be alone in it', 'Camera-Alone'])
+    chatbot.train(['So someone else can experience what you experienced', 'Camera-Alone'])
+    chatbot.train(['We do not want to experience things in isolation', 'Camera-Alone'])
 
-    chatbot.train([
-        'Because the moment leaves something behind that cant be kept any other way',
-        'Camera-Residue'
-    ])
+    # ── Camera-Residue ───────────────────────────────────────────────────────
+    chatbot.train(['Because the moment leaves something behind that cant be kept any other way', 'Camera-Residue'])
+    chatbot.train(['Some moments leave something behind that cannot be kept any other way', 'Camera-Residue'])
+    chatbot.train(['There are moments that leave a trace you need to hold onto', 'Camera-Residue'])
+    chatbot.train(['A moment passes and leaves a feeling that disappears unless you capture it', 'Camera-Residue'])
 
-    chatbot.train([
-        'Thats the point',
-        'Camera-Point'
-    ])
+    # ── Camera-Point ─────────────────────────────────────────────────────────
+    chatbot.train(['Thats the point', 'Camera-Point'])
+    chatbot.train(['Yes exactly that is the point', 'Camera-Point'])
+    chatbot.train(['That is precisely the point', 'Camera-Point'])
+    chatbot.train(['Yes that is the whole point of it', 'Camera-Point'])
 
-    chatbot.train([
-        'No, thats the problem',
-        'Camera-Problem'
-    ])
-
-    """
-    chatbot.train([
-        'Hello',
-        'Greetings subject.'
-    ])
-    chatbot.train([
-        'Hi',
-        'Greetings subject.'
-    ])
-    chatbot.train([
-        'Hey',
-        'Greetings subject. What has led you to the engineering room?'
-    ])
-    chatbot.train([
-        'Who are you',
-        'I am the engineer. My task is to research how the various items from your world work and how they are used. Would you be interested in helping me understand the use of a few items from your planet?'
-    ])
-    chatbot.train([
-        'What are you',
-        'I am the engineer. My task is to research how the various items from your world work and how they are used.'
-    ])
-    chatbot.train([
-        'What are you doing',
-        'I am trying to understand the use of a particular item from your world. Would you be interested in giving me your insight as a resident of said world?'
-    ])
-    chatbot.train([
-        'What is this room',
-        'The engineering room. I conduct research here. Items from your world are analysed for function and purpose.'
-    ])
-    chatbot.train([
-        'What are those containers',
-        'These containers hold items acquired from your species. I analyse them. Your input would be useful.'
-    ])
-    chatbot.train([
-        'What is in the containers',
-        'These containers hold items acquired from your species. I analyse them. Your input would be useful.'
-    ])
-    chatbot.train([
-        'I will help you',
-        'Understood. Your input would be useful.'
-    ])
-    chatbot.train([
-        'I do not want to help',
-        'Understood. The offer remains open if you change your mind.'
-    ])
-    chatbot.train([
-        'No',
-        'Understood. The offer remains open if you change your mind.'
-    ])
-    chatbot.train([
-        'I am just exploring',
-        'It seems you are a curious subject. Interesting. Would you be interested in assisting me with my research?'
-    ])
-    chatbot.train([
-        'I am trying to reach the control room',
-        'The control room is currently off limits for the subject. I ask the subject to stay away.'
-    ])
-    chatbot.train([
-        'What if I go anyway',
-        'Curious. Subject rejects request. There will be no consequences if the subject continues attempting to access the control room.'
-    ])
-    chatbot.train([
-        'Understood, I am the engineer',
-        'Understood. I am the engineer.'
-    ])
-    chatbot.train([
-        'Do not touch that workbench',
-        'Subject, step away from the workbench before causing unintended damage.'
-    ])
-    chatbot.train([
-        'Do not touch the storage container',
-        'Subject, do not touch the storage container.'
-    ])
-    chatbot.train([
-        'What are you researching',
-        'My research revolves around understanding how your objects function and are used. Would you assist?'
-    ])
-
-
-    chatbot.train([
-        'What is that weapon',
-        'This is an item received in exchange. It fires plasmoids. Its destructive capacity is clear. Its purpose is not. Assist.'
-    ])
-    chatbot.train([
-        'What is a gun',
-        'This is an item received in exchange. It fires plasmoids. Its destructive capacity is clear. Its purpose is not. Assist.'
-    ])
-    chatbot.train([
-        'It is used for force',
-        'Force. An application of energy to produce a directed outcome. But energy applied to a living organism produces an outcome that cannot be reversed. Why is irreversibility acceptable as a tool?'
-    ])
-    chatbot.train([
-        'It is used in war',
-        'War. Organised conflict between groups. This item is a component of that organisation. The organisation of destruction is something your species has refined across generations. Other species destroy. Only yours refines the process. We have not determined if this is a strength or a conclusion.'
-    ])
-    chatbot.train([
-        'We use weapons to win wars',
-        'War. Organised conflict between groups. Other species destroy. Only yours refines the process. We have not determined if this is a strength or a conclusion.'
-    ])
-
-    chatbot.train([
-        'What is a camera',
-        'It captures light and stores it. The function is clear. The purpose is not. Explain.'
-    ])
-    chatbot.train([
-        'What does a camera do',
-        'It captures light and stores it. The function is clear. The purpose is not. Explain.'
-    ])
-    chatbot.train([
-        'A camera stores memories',
-        'Stores. Memories are not stored by organisms — they are reconstructed, each time slightly differently. This device stores a fixed image. The organism stores a changing impression. Which is more accurate?'
-    ])
-    chatbot.train([
-        'The imprecision is the point',
-        'The imprecision. That is the purpose. Not to capture what was but to carry something forward through the distortion. We have found no equivalent mechanism in organisms that do not die.'
-    ])
-    chatbot.train([
-        'Accuracy matters',
-        'If accuracy is the purpose, then this device surpasses the organism. But your species builds this device and then selects which images to keep and which to discard — a filter based on meaning, not fidelity. Why retain only the meaningful? What happens to accuracy there?'
-    ])
-    chatbot.train([
-        'We use cameras to share experiences',
-        'Shares. You give another organism access to a moment they did not live. The image becomes a bridge. We do not share experiences. We observe them. Clarify why transfer matters when the original moment has already passed.'
-    ])
-    chatbot.train([
-        'We do not want to be alone',
-        'Not alone. The opposite of solitude is proximity. But proximity without transfer produces nothing. Your species seeks the transfer itself, not merely the closeness. The image is proof that something was felt. A signal to another organism that says: I was here and it was real.'
-    ])
-    chatbot.train([
-        'Obsession replaces experience',
-        'Obsession. A fixation that persists past the point of useful return. And you propose this replaces the original event entirely. The image becomes the experience. The record becomes the memory. This is inefficient.'
-    ])
-    chatbot.train([
-        'The inefficiency is intentional',
-        'The inefficiency is intentional. You replace the lived experience because the lived experience was insufficient. The image is what you wished the moment had been. This device does not capture what happened. It captures what you needed to happen. That is an extraordinary function for a mechanical object.'
-    ])
-    chatbot.train([
-        'It is a problem',
-        'You identify it as a malfunction. And yet you continue to use the device anyway. The species recognises the problem and perpetuates it. This is either a failure of correction or evidence that the problem serves a function you have not yet named.'
-    ])
-    chatbot.train([
-        'We know it is a problem but we continue anyway',
-        'You identify it as a malfunction. And yet you continue to use the device anyway. This is either a failure of correction or evidence that the problem serves a function you have not yet named.'
-    ])
-
-
-    chatbot.train([
-        'What is this device',
-        'That device is not standard equipment. It was not manufactured on this vessel. Its design is consistent with human fabrication techniques. Where did you find it?'
-    ])
-    chatbot.train([
-        'I found this on the ship',
-        'That device is not standard equipment. It was not manufactured on this vessel. Where did you find it?'
-    ])
-    chatbot.train([
-        'Can I use it',
-        'A malfunction in specimen bay observation parameters would constitute a research irregularity. Reducing containment measures in the specimen bay could allow for more direct data acquisition. This is within acceptable research deviation. Cautionary measures in specimen bay are reduced. This does not extend to archive or engineering sections.'
-    ])
-
-
-    chatbot.train([
-        'I want to see the Fusion Core',
-        'The Fusion Core is a restricted area of the vessel. Standard subjects are not granted access. Authorisation is required.'
-    ])
-    chatbot.train([
-        'What if something happened to the Fusion Core',
-        'The vessel would cease to function within approximately four of your minutes. Everything aboard would be lost. This is not considered a desirable outcome from a research perspective.'
-    ])
-    chatbot.train([
-        'Why is the control room emitting a frequency',
-        'It should not be emitting that frequency. I have noted it as an anomaly for some time but have not been asked to address it.'
-    ])
-    chatbot.train([
-        'I have authorisation',
-        'Authorisation confirmed. The Fusion Core is at the base of the vessel. I will unlock the passage. Do you require guidance?'
-    ])
-
-
-    chatbot.train([
-        'I have provided the information you need',
-        'Signal 88.3 — 7.1 — 22.9 has been synchronized with your biochip. This frequency represents the engineering sector\'s resolution.'
-    ])
-    chatbot.train([
-        'Are we done',
-        'You may continue your movement through the vessel.'
-    ])
-    chatbot.train([
-        'I am leaving',
-        'You may continue your movement through the vessel.'
-    ])
-    chatbot.train([
-        'Can I go',
-        'You may continue your movement through the vessel.'
-    ])
-    chatbot.train([
-        'Thank you',
-        'Noted. You may continue your movement through the vessel.'
-    ])
-    chatbot.train([
-        'Goodbye',
-        'You may continue your movement through the vessel.'
-    ])"""
+    # ── Camera-Problem ───────────────────────────────────────────────────────
+    chatbot.train(['No, thats the problem', 'Camera-Problem'])
+    chatbot.train(['No actually that is the problem with it', 'Camera-Problem'])
+    chatbot.train(['No that is the flaw in how we use it', 'Camera-Problem'])
+    chatbot.train(['Actually that is what makes it problematic', 'Camera-Problem'])
+    chatbot.train(['No it is more of a problem than a feature', 'Camera-Problem'])

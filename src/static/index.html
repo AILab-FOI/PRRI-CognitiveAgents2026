@@ -1695,10 +1695,17 @@ function stopSkipping() {
 }
 
 $(document).on('keydown', function(e) {
+
+    // Hold Control to Skip
     if (e.key === "Control" && !skipInterval) {
         skipInterval = setInterval(function() {
             advanceText();
         }, 75); 
+    } 
+    // Press Spacebar to Advance
+    else if (e.key === " " || e.code === "Space") {
+        e.preventDefault(); // Stop the browser from scrolling down
+        advanceText();
     }
 });
 
