@@ -12,12 +12,12 @@ var PASSAGE_STATES = {
   "CR Believe": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Organization", "Grieve", "Continue"],
   "CR Biochip Watch": ["Who", "What-Need", "Used-Me", "Body", "Organization", "Grieve", "Believe", "Intervene", "Heard", "Continue"],
   "CR Grieve": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Organization", "Believe", "Continue", "Think", "Not-Answer"],
-  "CR Organization": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Grieve", "Believe", "Continue", "Now", "Tell-Me"],
+  "CR Organisation": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Grieve", "Believe", "Continue", "Now", "Tell-Me"],
   "CR Intervene": ["Who", "What-Need", "Used-Me", "Body", "Organization", "Grieve", "Believe", "Continue"],
   "CR Heard Everything": ["Who", "What-Need", "Used-Me", "Body", "Organization", "Grieve", "Believe", "Continue"],
   "CR Grieve Not Answer": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Organization", "Believe", "Continue"],
   "CR Grieve Think You Do": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Organization", "Believe", "Continue"],
-  "CR Organization Now": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Grieve", "Believe", "Continue"],
+  "CR Organisation Now": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Grieve", "Believe", "Continue"],
   "CR Tell Me": ["Who", "What-Need", "Used-Me", "Biochip", "Body", "Grieve", "Believe", "Continue"]
 };
 
@@ -198,7 +198,7 @@ function connect() {
         break;
 
       case "Organization":
-        tryAdvancePassage("CR Organization", response);
+        tryAdvancePassage("CR Organisation", response);
         break;
 
       case "Grieve":
@@ -215,10 +215,6 @@ function connect() {
 
       case "Who":
         tryAdvancePassage("CR Who Are You", response);
-        break;
-
-      case "Heard":
-        tryAdvancePassage("", response);
         break;
 
       case "Intervene":
@@ -238,7 +234,7 @@ function connect() {
         break;
 
       case "Now":
-        tryAdvancePassage("CR Organization Now", response);
+        tryAdvancePassage("CR Organisation Now", response);
         break;
 
       case "Tell-Me":

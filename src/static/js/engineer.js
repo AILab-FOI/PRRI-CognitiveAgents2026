@@ -21,8 +21,8 @@ var PASSAGE_STATES = {
   "Eng Camera Alone": ["Leave"],
   "Eng Camera Residue": ["Leave"],
   "Eng Camera Obsession": ["Camera-Point", "Camera-Problem"],
-  "Eng Camera Point": ["Leave"],
-  "Eng Camera Problem": ["Leave"],
+  "Eng Camera Obsession Point": ["Leave"],
+  "Eng Camera Obsession Problem": ["Leave"],
   "Eng A No": ["Who", "What", "C", "Leave"]
 };
 
@@ -263,11 +263,11 @@ function connect() {
         	break;
 
 		case "Camera-Point":
-        	tryAdvancePassage("Eng Camera Point", response);
+        	tryAdvancePassage("Eng Camera Obsession Point", response);
         	break;
 
 		case "Camera-Problem":
-        	tryAdvancePassage("Eng Camera Problem", response);
+        	tryAdvancePassage("Eng Camera Obsession Problem", response);
         	break;
 		
 		default:

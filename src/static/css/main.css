@@ -235,11 +235,13 @@ body[data-tags~="control"][data-tags~="skepticism"] {
     background-image: url('/media/Ending_Skepticism.png'), url('/media/ControlRoom.png');
 }
 
-body[data-tags~="control"][data-tags~="artifactsuccess"] {
+body[data-tags~="control"][data-tags~="artifactsuccess"],
+body[data-tags~="control"][data-tags~="artifact-success"] {
     background-image: url('/media/Ending_ArtifactSuccess.png'), url('/media/ControlRoom.png');
 }
 
-body[data-tags~="control"][data-tags~="artifactfailed"] {
+body[data-tags~="control"][data-tags~="artifactfailed"],
+body[data-tags~="control"][data-tags~="artifact-failed"] {
     background-image: url('/media/Ending_ArtifactFailed.png'), url('/media/ControlRoom.png');
 }
 
@@ -293,11 +295,13 @@ body[data-tags~="ending"][data-tags~="skepticism"] {
     background-image: url('/media/Ending_Skepticism.png'), url('/media/Ending.png');
 }
 
-body[data-tags~="ending"][data-tags~="artifact-success"] {
+body[data-tags~="ending"][data-tags~="artifact-success"],
+body[data-tags~="ending"][data-tags~="artifactsuccess"] {
     background-image: url('/media/Ending_ArtifactSuccess.png'), url('/media/Ending.png');
 }
 
-body[data-tags~="ending"][data-tags~="artifact-failed"] {
+body[data-tags~="ending"][data-tags~="artifact-failed"],
+body[data-tags~="ending"][data-tags~="artifactfailed"] {
     background-image: url('/media/Ending_ArtifactFailed.png'), url('/media/Ending.png');
 }
 

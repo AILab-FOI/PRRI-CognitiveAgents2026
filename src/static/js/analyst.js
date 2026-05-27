@@ -31,7 +31,7 @@ var PASSAGE_STATES = {
   "Analyst Greater Design": ["Carry-Yes", "Carry-Know", "Carry-Used", "Carry-No"],
   "Analyst Carry Yes": ["Exit"],
   "Analyst Carry Know": ["Exit"],
-  "Analyst Carry Used Zo": ["Exit"],
+  "Analyst Carry Used To": ["Exit"],
   "Analyst Carry No": ["Exit"]
 };
 
@@ -211,6 +211,10 @@ function connect() {
         tryAdvancePassage("Analyst Wrong", response);
         break;
 
+      case "Studying":
+        tryAdvancePassage("Analyst Studying", response);
+        break;
+
       case "Memory":
         tryAdvancePassage("Analyst No Memory", response);
         break;
@@ -244,7 +248,7 @@ function connect() {
         break;
 
       case "Moving":
-        tryAdvancePassage("Analyst Movign", response);
+        tryAdvancePassage("Analyst Moving", response);
         break;
 
       case "Feel-Alive":
