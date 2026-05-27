@@ -458,6 +458,20 @@ body[data-tags~="ending"][data-tags~="game-over"] {
     z-index: 10;
 }
 
+/* Kada postoje izbori, smanji glavni tekstualni okvir */
+.textbox:has(.choice) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+
+    width: 460px !important;
+    min-width: 460px !important;
+    max-width: 460px !important;
+
+    padding: 0 !important;
+}
+
 /*Speaker*/
 .speaker {
     position: absolute;
@@ -747,17 +761,29 @@ body {
 
 /* Kolegina najvažnija UI promjena: izbori više nisu fiksirani u sredini ekrana,
    nego se slažu normalno unutar dijaloškog okvira. */
+/* FINAL choice sizing fix */
 .choice {
-    position: static !important;
+    position: absolute !important;
+    left: 50% !important;
     top: auto !important;
-    left: auto !important;
-    transform: none !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
+    width: min(420px, 80vw) !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    width: 100% !important;
-    margin-top: 24px !important;
-    z-index: 100 !important;
+    gap: 14px !important;
+
+    height: auto !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-right: 8px !important;
+    z-index: 3000 !important;
+
+    background: rgba(5, 12, 24, 0.72) !important;
+    border: 1px solid rgba(0, 220, 255, 0.35) !important;
+    border-radius: 22px !important;
 }
 
 .choice a {
@@ -1234,7 +1260,6 @@ body {
     transform: translateX(-50%) !important;
   
   	width: min(420px, 80vw) !important;
-    max-height: 260px !important;
   
   	overflow-y: auto !important;
     overflow-x: hidden !important;
@@ -1254,20 +1279,45 @@ body {
 
 .speaker {
     position: absolute !important;
-    top: -36px !important;
+
+    top: -20px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-  
-  	min-width: 160px !important;
+
+    min-width: 180px !important;
+    max-width: 260px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 12px 26px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1aa8ff,
+            #005dff
+        ) !important;
+
+    border-radius: 16px !important;
+
+    color: #e6f1ff !important;
+
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+
     text-align: center !important;
-  
-  	background: linear-gradient(135deg,#00b4ff,#0066ff) !important;
-    color: white !important;
-  
-  	padding: 10px 24px !important;
-    border-radius: 0 0 14px 14px !important;
-  
-  	z-index: 9999 !important;
+    white-space: nowrap !important;
+
+    box-shadow:
+        0 0 18px rgba(0,180,255,.45) !important;
+
+    overflow: hidden !important;
+
+    z-index: 2000 !important;
 }
 
 /* ---------- TEXT FIX ---------- */
@@ -1299,56 +1349,54 @@ body {
 /* ---------- CHOICE CONTAINER FIX ---------- */
 
 .choice {
-    position: relative !important;
+    position: absolute !important;
 
-    left: auto !important;
-    right: auto !important;
+    left: 50% !important;
     top: auto !important;
-    bottom: auto !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
 
-    transform: none !important;
+    width: min(440px, 80vw) !important;
 
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
+    gap: 14px !important;
 
-    gap: 12px !important;
-
-    width: fit-content !important;
-    max-width: 100% !important;
-
-    margin: 24px auto 0 auto !important;
-
-    padding: 8px 10px 8px 10px !important;
-
-    z-index: 1001 !important;
-
+    height: auto !important;
     max-height: 260px !important;
+
     overflow-y: auto !important;
     overflow-x: hidden !important;
 
+    padding: 16px !important;
     box-sizing: border-box !important;
 
-    scrollbar-width: thin !important;
-    scrollbar-color: rgba(0, 220, 255, 0.75) rgba(5, 12, 24, 0.65) !important;
+    background: rgba(5, 12, 24, 0.72) !important;
+    border: 1px solid rgba(0, 220, 255, 0.35) !important;
+    border-radius: 22px !important;
+
+    box-shadow:
+        0 0 26px rgba(0,180,255,.22),
+        inset 0 0 20px rgba(0,180,255,.06) !important;
+
+    backdrop-filter: blur(8px) !important;
+
+    z-index: 3000 !important;
 }
 
 /* ---------- CHOICE SCROLLBAR ---------- */
 
 .choice::-webkit-scrollbar {
-    width: 8px !important;
-}
-
-.choice::-webkit-scrollbar-track {
-    background: rgba(5, 12, 24, 0.65) !important;
-    border-radius: 999px !important;
+    width: 8px;
 }
 
 .choice::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00dfff, #0066ff) !important;
-    border-radius: 999px !important;
-    box-shadow: 0 0 10px rgba(0, 220, 255, 0.65) !important;
+    background: rgba(0, 220, 255, 0.65);
+    border-radius: 10px;
+}
+
+.choice::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.25);
 }
 
 .choice::-webkit-scrollbar-thumb:hover {
