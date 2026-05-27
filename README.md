@@ -18,6 +18,7 @@ Before first use you have to train the cognitive agents. To train the agents use
 python3 server.py --trainEngineer
 python3 server.py --trainAnalyst
 python3 server.py --trainCartographer
+python3 server.py --trainNarrator
 ```
 
 To start and test the game position your console to `src/` and start the server:
@@ -38,7 +39,7 @@ python3 chat-test_analyst.py
 python3 chat-test_cartographer.py
 ```
 
-To edit the game download [Twine](https://twinery.org/) and load the `The Deathworlders.twee` file. When happy with edits use `Publish to file` and publish it as `src/templates/index.html`.  
+To edit the game download [Twine](https://twinery.org/) and load the `The Last Command.twee` file. When happy with edits use `Publish to file` and publish it as `src/templates/index.html`.  
 
 ## Credits
 
