@@ -79,7 +79,9 @@ The Last Command
     "aG": "green",
     "wexc": "green",
     "arhive": "purple",
-    "arh": "purple"
+    "arh": "purple",
+    "specimn": "orange",
+    "specim": "purple"
   },
   "zoom": 0.6
 }
@@ -516,8 +518,6 @@ The Last Command
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.B">>
-        <<speaker "You">>
-        I guess you can understand me...? What am I even doing here?
     <<ctpNext clear>>
         The alien remains still, but the question seems to change the air around it.
     <<ctpNext clear>>
@@ -724,6 +724,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_medium">>
+        <<run window.playAgentVideo("Hallway", 6, 12)>>
         What is the true intent behind it? You are trying to be understood. Is that what you call intent, or does our definition differ?
     <<ctpNext clear>>
         <div class="choice">
@@ -1720,7 +1721,7 @@ The Last Command
 </div>
 
 
-:: Analyst Alive [nobr agent analyst] {"position":"2400,2575","size":"100,100"}
+:: Analyst Alive [nobr agent analyst specimen] {"position":"2400,2575","size":"100,100"}
 <div class="textbox">
     <<ctp "analystAlive">>
         <<speaker "Analyst">>
@@ -1737,7 +1738,7 @@ The Last Command
 </div>
 
 
-:: Analyst Brain [nobr agent analyst] {"position":"2400,1875","size":"100,100"}
+:: Analyst Brain [nobr agent analyst specimen] {"position":"2400,1875","size":"100,100"}
 <div class="textbox">
     <<ctp "analystBrain">>
         <<speaker "Analyst">>
@@ -1762,7 +1763,7 @@ The Last Command
 </div>
 
 
-:: Analyst Carry Know [nobr agent analyst] {"position":"3400,2425","size":"100,100"}
+:: Analyst Carry Know [nobr agent analyst specimen] {"position":"3400,2425","size":"100,100"}
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 <div class="textbox">
@@ -1781,7 +1782,7 @@ The Last Command
 </div>
 
 
-:: Analyst Carry No [nobr agent analyst] {"position":"3400,2325","size":"100,100"}
+:: Analyst Carry No [nobr agent analyst specimen] {"position":"3400,2325","size":"100,100"}
 <<set $analystSignal to true>>	
 <<set $specimenDone to true>>
 <<set $compliance += 1>>
@@ -1801,7 +1802,7 @@ The Last Command
 </div>
 
 
-:: Analyst Carry Used To [nobr agent analyst] {"position":"3400,2225","size":"100,100"}
+:: Analyst Carry Used To [nobr agent analyst specimen] {"position":"3400,2225","size":"100,100"}
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 <div class="textbox">
@@ -1820,7 +1821,7 @@ The Last Command
 </div>
 
 
-:: Analyst Carry Yes [nobr agent analyst] {"position":"3400,2125","size":"100,100"}
+:: Analyst Carry Yes [nobr agent analyst specimen] {"position":"3400,2125","size":"100,100"}
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 <div class="textbox">
@@ -1839,7 +1840,7 @@ The Last Command
 </div>
 
 
-:: Analyst Compare [nobr agent analyst] {"position":"2500,2175","size":"100,100"}
+:: Analyst Compare [nobr agent analyst specimen] {"position":"2500,2175","size":"100,100"}
 <div class="textbox">
     <<ctp "analystCompare">>
         <<speaker "Analyst">>
@@ -1888,7 +1889,7 @@ The Last Command
 </div>
 
 
-:: Analyst Dont Understand [nobr agent analyst missing-dialog] {"position":"2500,3025","size":"100,100"}
+:: Analyst Dont Understand [nobr agent analyst specimen] {"position":"2500,3025","size":"100,100"}
 <<run window.playAgentVideo("Understand", 0, 6)>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -1905,7 +1906,7 @@ The Last Command
 </div>
 
 
-:: Analyst Feel Alive [nobr agent analyst missing-dialog] {"position":"2500,2575","size":"100,100"}
+:: Analyst Feel Alive [nobr agent analyst specimen] {"position":"2500,2575","size":"100,100"}
 <<run window.playAgentVideo("Feel-Alive", 0, 6)>>
 <div class="textbox">
     <<ctp "analystFeelAlive">>
@@ -1921,7 +1922,7 @@ The Last Command
 </div>
 
 
-:: Analyst Greater Design [nobr agent analyst] {"position":"3200,2275","size":"100,100"}
+:: Analyst Greater Design [nobr agent analyst specimen] {"position":"3200,2275","size":"100,100"}
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "analystGreaterDesign">>
@@ -1964,7 +1965,7 @@ The Last Command
 </div>
 
 
-:: Analyst Learned [nobr agent analyst missing-dialog] {"position":"2500,3375","size":"100,100"}
+:: Analyst Learned [nobr agent analyst specimen] {"position":"2500,3375","size":"100,100"}
 <<run window.playAgentVideo("Learned", 0, 6)>>
 <<set $curiosity += 1>>
 <div class="textbox">
@@ -1981,7 +1982,7 @@ The Last Command
 </div>
 
 
-:: Analyst Left [nobr agent analyst] {"position":"3000,2325","size":"100,100"}
+:: Analyst Left [nobr agent analyst specimen] {"position":"3000,2325","size":"100,100"}
 <div class="textbox">
     <<ctp "analystLeft">>
         <<speaker "Analyst">>
@@ -2007,7 +2008,7 @@ The Last Command
 </div>
 
 
-:: Analyst Moving [nobr agent analyst missing-dialog] {"position":"2500,2475","size":"100,100"}
+:: Analyst Moving [nobr agent analyst specimen] {"position":"2500,2475","size":"100,100"}
 <<run window.playAgentVideo("Moving", 0, 6)>>
 <div class="textbox">
     <<ctp "analystMoving">>
@@ -2023,7 +2024,7 @@ The Last Command
 </div>
 
 
-:: Analyst No Consent [nobr agent analyst missing-dialog] {"position":"2500,2825","size":"100,100"}
+:: Analyst No Consent [nobr agent analyst specimen] {"position":"2500,2825","size":"100,100"}
 <<run window.playAgentVideo("Consent", 0, 6)>>
 <div class="textbox">
     <<ctp "analystNoConsent">>
@@ -2039,7 +2040,7 @@ The Last Command
 </div>
 
 
-:: Analyst No Memory [nobr agent analyst] {"position":"2500,1775","size":"100,100"}
+:: Analyst No Memory [nobr agent analyst specimen] {"position":"2500,1775","size":"100,100"}
 <div class="textbox">
     <<ctp "analystNoMemory">>
         <<speaker "Analyst">>
@@ -2086,7 +2087,7 @@ The Last Command
 </div>
 
 
-:: Analyst Not Blurry [nobr agent analyst missing-dialog] {"position":"2500,2675","size":"100,100"}
+:: Analyst Not Blurry [nobr agent analyst specimen] {"position":"2500,2675","size":"100,100"}
 <<run window.playAgentVideo("Blurry", 0, 6)>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -2103,7 +2104,7 @@ The Last Command
 </div>
 
 
-:: Analyst Objects [nobr missing-dialog analyst agent] {"position":"2500,2925","size":"100,100"}
+:: Analyst Objects [nobr analyst agent specimen] {"position":"2500,2925","size":"100,100"}
 <<run window.playAgentVideo("Objects", 0, 6)>>
 <<set $aggression += 1>>
 <div class="textbox">
@@ -2120,7 +2121,7 @@ The Last Command
 </div>
 
 
-:: Analyst Of Course [nobr agent analyst] {"position":"2500,3175","size":"100,100"}
+:: Analyst Of Course [nobr agent analyst specimen] {"position":"2500,3175","size":"100,100"}
 <<run window.playAgentVideo("Course", 6, 12)>>
 <<set $skepticism += 1>>
 
@@ -2183,7 +2184,7 @@ The Last Command
 </div>
 
 
-:: Analyst Recording [agent nobr analyst] {"position":"2600,2025","size":"100,100"}
+:: Analyst Recording [agent nobr analyst specimen] {"position":"2600,2025","size":"100,100"}
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystRecording">>
@@ -2285,7 +2286,7 @@ The Last Command
 </div>
 
 
-:: Analyst Right [nobr agent analyst] {"position":"3000,2575","size":"100,100"}
+:: Analyst Right [nobr agent analyst specimen] {"position":"3000,2575","size":"100,100"}
 <<set $analystSignal to true>>
 <<set $specimenDone to true>>
 
@@ -2318,7 +2319,7 @@ The Last Command
 </div>
 
 
-:: Analyst Sample [nobr agent analyst] {"position":"2500,2275","size":"100,100"}
+:: Analyst Sample [nobr agent analyst specimen] {"position":"2500,2275","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystSample">>
@@ -2374,7 +2375,7 @@ The Last Command
 </div>
 
 
-:: Analyst Studying [nobr agent analyst] {"position":"2400,3275","size":"100,100"}
+:: Analyst Studying [nobr agent analyst specimen] {"position":"2400,3275","size":"100,100"}
 <div class="textbox">
     <<ctp "analystStudying">>
         <<speaker "Analyst">>
@@ -2412,7 +2413,7 @@ The Last Command
 </div>
 
 
-:: Analyst What Place [nobr agent analyst] {"position":"2400,2225","size":"100,100"}
+:: Analyst What Place [nobr agent analyst specimen] {"position":"2400,2225","size":"100,100"}
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystWhatPlace">>
@@ -2434,7 +2435,7 @@ The Last Command
 </div>
 
 
-:: Analyst Who I Am [nobr agent analyst] {"position":"2500,1875","size":"100,100"}
+:: Analyst Who I Am [nobr agent analyst specimen] {"position":"2500,1875","size":"100,100"}
 <div class="textbox">
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
@@ -2451,7 +2452,7 @@ The Last Command
 </div>
 
 
-:: Analyst Why Build [nobr agent analyst] {"position":"2500,1975","size":"100,100"}
+:: Analyst Why Build [nobr agent analyst specimen] {"position":"2500,1975","size":"100,100"}
 <<set $fromAnalysWhyBuildRoute = true>>
 <div class="textbox">
     <<ctp "analystWhyBuild">>
@@ -2469,7 +2470,7 @@ The Last Command
 </div>
 
 
-:: Analyst Why Doing [nobr agent analyst missing-dialog] {"position":"2500,3275","size":"100,100"}
+:: Analyst Why Doing [nobr agent analyst specimen] {"position":"2500,3275","size":"100,100"}
 <<run window.playAgentVideo("Why-Doing", 0, 6)>>
 <div class="textbox">
     <<ctp "analystWhyDoing">>
@@ -2485,7 +2486,7 @@ The Last Command
 </div>
 
 
-:: Analyst Worse [nobr agent analyst] {"position":"2600,1925","size":"100,100"}
+:: Analyst Worse [nobr agent analyst specimen] {"position":"2600,1925","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystWorse">>
@@ -2501,7 +2502,7 @@ The Last Command
 </div>
 
 
-:: Analyst Wrong [nobr agent analyst] {"position":"2400,2925","size":"100,100"}
+:: Analyst Wrong [nobr agent analyst specimen] {"position":"2400,2925","size":"100,100"}
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystWrong">>
@@ -2899,7 +2900,7 @@ The Last Command
 </div>
 
 
-:: Artifact Picked Up [nobr engineering artifact] {"position":"3700,2575","size":"100,100"}
+:: Artifact Picked Up [nobr artifact specimen] {"position":"3700,2575","size":"100,100"}
 <<set $hasArtifact to true>>
 <div class="textbox">
     <<ctp "artifactPickedUp">>
@@ -3756,7 +3757,7 @@ The Last Command
 </div>
 
 
-:: Cart Brain Accept [nobr agent cartographer] {"position":"2800,975","size":"100,100"}
+:: Cart Brain Accept [nobr agent cartographer archive] {"position":"2800,975","size":"100,100"}
 <div class="textbox">
     <<ctp "cartBrainAccept">>
     	<<speaker "Cartographer">>
@@ -3770,7 +3771,7 @@ The Last Command
 </div>
 
 
-:: Cart Brain Permanent [nobr agent cartographer] {"position":"2900,825","size":"100,100"}
+:: Cart Brain Permanent [nobr agent cartographer archive] {"position":"2900,825","size":"100,100"}
 <div class="textbox">
     <<ctp "cartBrainPermanent">>
     	<<speaker "Cartographer">>
@@ -3835,7 +3836,7 @@ The Last Command
 </div>
 
 
-:: Cart Brain Skeptic [nobr agent cartographer] {"position":"2800,875","size":"100,100"}
+:: Cart Brain Skeptic [nobr agent cartographer archive] {"position":"2800,875","size":"100,100"}
 <div class="textbox">
     <<ctp "cartBrainSkeptic">>
     	<<speaker "Cartographer">>
@@ -3851,7 +3852,7 @@ The Last Command
 </div>
 
 
-:: Cart Deathworld [nobr agent cartographer] {"position":"2600,875","size":"100,100"}
+:: Cart Deathworld [nobr agent cartographer archive] {"position":"2600,875","size":"100,100"}
 <<set $brainManipAware to true>>
 <div class="textbox">
     <<ctp "cartDeathWorld">>
@@ -3874,7 +3875,7 @@ The Last Command
 </div>
 
 
-:: Cart Effort [nobr agent cartographer] {"position":"2600,775","size":"100,100"}
+:: Cart Effort [nobr agent cartographer archive] {"position":"2600,775","size":"100,100"}
 <div class="textbox">
     <<ctp "cartEffort">>
     	<<speaker "Cartographer">>
@@ -3948,7 +3949,7 @@ The Last Command
 </div>
 
 
-:: Cart Join Research [nobr agent cartographer] {"position":"3200,775","size":"100,100"}
+:: Cart Join Research [nobr agent cartographer archive] {"position":"3200,775","size":"100,100"}
 <div class="textbox">
     <<ctp "cartJoinResearch">>
         <<speaker "Cartographer">>
@@ -4256,7 +4257,7 @@ The Last Command
 </div>
 
 
-:: Cart Threatening [nobr agent cartographer] {"position":"2600,675","size":"100,100"}
+:: Cart Threatening [nobr agent cartographer archive] {"position":"2600,675","size":"100,100"}
 <div class="textbox">
     <<ctp "cartThreaten">>
     	<<speaker "Cartographer">>
@@ -5595,7 +5596,7 @@ The Last Command
 </div>
 
 
-:: Eng A Hello [nobr agent engineer] {"position":"2600,4125","size":"100,100"}
+:: Eng A Hello [nobr agent engineer engineering] {"position":"2600,4125","size":"100,100"}
 <<run window.playAgentVideo("Hello", 0, 6)>>
 
 <div class="textbox">
@@ -5615,7 +5616,7 @@ The Last Command
 </div>
 
 
-:: Eng A No [nobr agent engineer] {"position":"2800,4125","size":"100,100"}
+:: Eng A No [nobr agent engineer engineering] {"position":"2800,4125","size":"100,100"}
 <div class="textbox">
     <<ctp "engANo">>
         <<speaker "Engineer">>
@@ -5633,7 +5634,7 @@ The Last Command
 </div>
 
 
-:: Eng A What [nobr agent engineer] {"position":"2800,4375","size":"100,100"}
+:: Eng A What [nobr agent engineer engineering] {"position":"2800,4375","size":"100,100"}
 <div class="textbox">
     <<ctp "engAWhat">>
         <<speaker "Engineer">>
@@ -5649,7 +5650,7 @@ The Last Command
 </div>
 
 
-:: Eng A Who [nobr agent engineer] {"position":"2800,4275","size":"100,100"}
+:: Eng A Who [nobr agent engineer engineering] {"position":"2800,4275","size":"100,100"}
 <div class="textbox">
     <<ctp "engAWho">>
         <<speaker "Engineer">>
@@ -5924,7 +5925,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera [nobr agent engineer] {"position":"3200,4225","size":"100,100"}
+:: Eng Camera [nobr agent engineer engineering] {"position":"3200,4225","size":"100,100"}
 <div class="textbox">
     <<ctp "engCamera">>
         A camera rises from the workbench.
@@ -5943,7 +5944,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Accuracy [nobr agent engineer] {"position":"3600,4075","size":"100,100"}
+:: Eng Camera Accuracy [nobr agent engineer engineering] {"position":"3600,4075","size":"100,100"}
 <<set $curiosity += 1>>
 <<set $engSignal to true>>
 <div class="textbox">
@@ -5962,7 +5963,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Alone [nobr agent engineer] {"position":"3600,4175","size":"100,100"}
+:: Eng Camera Alone [nobr agent engineer engineering] {"position":"3600,4175","size":"100,100"}
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <<set $engSignal to true>>
@@ -5982,7 +5983,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Imprecision [nobr agent engineer] {"position":"3600,3975","size":"100,100"}
+:: Eng Camera Imprecision [nobr agent engineer engineering] {"position":"3600,3975","size":"100,100"}
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <<set $engSignal to true>>
@@ -6002,7 +6003,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Memory [nobr agent engineer] {"position":"3400,4025","size":"100,100"}
+:: Eng Camera Memory [nobr agent engineer engineering] {"position":"3400,4025","size":"100,100"}
 <div class="textbox">
     <<ctp "engCameraMemory">>
         <<speaker "Engineer">>
@@ -6018,7 +6019,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Obsession [nobr agent engineer] {"position":"3400,4425","size":"100,100"}
+:: Eng Camera Obsession [nobr agent engineer engineering] {"position":"3400,4425","size":"100,100"}
 <div class="textbox">
     <<ctp "engCameraObsession">>
         <<speaker "Engineer">>
@@ -6034,7 +6035,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Obsession Point [nobr agent engineer] {"position":"3600,4375","size":"100,100"}
+:: Eng Camera Obsession Point [nobr agent engineer engineering] {"position":"3600,4375","size":"100,100"}
 <<set $engineeringDone to true>>
 <<set $skepticism += 1>>
 <<set $engSignal to true>>
@@ -6054,7 +6055,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Obsession Problem [nobr agent engineer] {"position":"3600,4475","size":"100,100"}
+:: Eng Camera Obsession Problem [nobr agent engineer engineering] {"position":"3600,4475","size":"100,100"}
 <<set $engineeringDone to true>>
 <<set $compliance += 1>>
 <<set $engSignal to true>>
@@ -6074,7 +6075,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Residue [nobr agent engineer] {"position":"3600,4275","size":"100,100"}
+:: Eng Camera Residue [nobr agent engineer engineering] {"position":"3600,4275","size":"100,100"}
 <<set $engineeringDone to true>>
 <<set $curiosity += 1>>
 <<set $engSignal to true>>
@@ -6094,7 +6095,7 @@ The Last Command
 </div>
 
 
-:: Eng Camera Share [nobr agent engineer] {"position":"3400,4225","size":"100,100"}
+:: Eng Camera Share [nobr agent engineer engineering] {"position":"3400,4225","size":"100,100"}
 <div class="textbox">
     <<ctp "engCameraShare">>
         <<speaker "Engineer">>
@@ -6125,7 +6126,7 @@ The Last Command
 </div>
 
 
-:: Eng Rifle [nobr agent engineer] {"position":"3200,4725","size":"100,100"}
+:: Eng Rifle [nobr agent engineer engineering] {"position":"3200,4725","size":"100,100"}
 <div class="textbox">
     <<ctp "engRifle">>
         <<speaker "Engineer">>
@@ -6142,7 +6143,7 @@ The Last Command
 </div>
 
 
-:: Eng Rifle Force [nobr agent engineer] {"position":"3400,4725","size":"100,100"}
+:: Eng Rifle Force [nobr agent engineer engineering] {"position":"3400,4725","size":"100,100"}
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
@@ -6158,7 +6159,7 @@ The Last Command
 </div>
 
 
-:: Eng Rifle Power [nobr agent engineer] {"position":"3400,4825","size":"100,100"}
+:: Eng Rifle Power [nobr agent engineer engineering] {"position":"3400,4825","size":"100,100"}
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
@@ -6174,7 +6175,7 @@ The Last Command
 </div>
 
 
-:: Eng Rifle War [nobr agent engineer] {"position":"3400,4625","size":"100,100"}
+:: Eng Rifle War [nobr agent engineer engineering] {"position":"3400,4625","size":"100,100"}
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
@@ -7634,6 +7635,7 @@ The command ends here.
 
 :: Specimen Bay Exit [nobr missing-features specimen exception] {"position":"3600,2275","size":"100,100"}
 <<hideAgent>>
+<<showAgent "exception">>
 
 <<if $analystSignal>><<set $specimenDone to true>><</if>>
 
