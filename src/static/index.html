@@ -244,6 +244,10 @@ body[data-tags~="specimen"][data-tags~="strike"] {
     background-image: url('/media/SpecimenBay_Strike.png'), url('/media/SpecimenBay.png');
 }
 
+body[data-tags~="specimen"][data-tags~="entrance"] {
+    background-image: url('/media/SpecimenBay_Entrance.png'), url('/media/SpecimenBay.png');
+}
+
 
 /* ---------- ENGINEERING BAY ---------- */
 
@@ -5428,7 +5432,6 @@ Macro.add('voice', {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="Cart Signal Check" tags="nobr archive cartographer" position="4000,775" size="100,100">&lt;&lt;set $cartSignal to true&gt;&gt;
-&lt;&lt;set $archiveSignal = true&gt;&gt;
 &lt;&lt;set $cartPuzzleDone to true&gt;&gt;
 &lt;&lt;set $archiveDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
@@ -5608,25 +5611,27 @@ Macro.add('voice', {
         &lt;&lt;voice &quot;control_room_questions_1&quot;&gt;&gt;
         You made it. I want to say I&#39;m surprised but that would be dishonest and I think you&#39;ve earned honesty at this point. You&#39;ve been pulling at threads since the awakening chamber. I noticed. I noticed every time.
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;control_room_questions_2&quot;&gt;&gt;
-        You talked to all of them. Really talked to them. I&#39;ve watched people come through this ship and treat those aliens like obstacles. You treated them like they had something worth hearing. I find that genuinely moving, which is not what I expected to feel right now.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;control_room_questions_3&quot;&gt;&gt;
-        Good. You followed it through. I know that probably sounds like a small thing but it isn&#39;t. You had every reason to stop and you didn&#39;t. Come in.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;control_room_questions_4&quot;&gt;&gt;
-        Still standing. Still moving. You&#39;ve been angry since the chamber and it hasn&#39;t stopped you once. I respect that more than I probably should. Come in. Let&#39;s finish this.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;control_room_questions_5&quot;&gt;&gt;
-        You made it. Come in.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;control_room_questions_6&quot;&gt;&gt;
-        You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you&#39;d think.
+        &lt;&lt;if $curiosity gte $skepticism and $curiosity gte $compliance and $curiosity gte $aggression and $curiosity gt 0&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;control_room_questions_2&quot;&gt;&gt;
+            You talked to all of them. Really talked to them. I&#39;ve watched people come through this ship and treat those aliens like obstacles. You treated them like they had something worth hearing. I find that genuinely moving, which is not what I expected to feel right now.
+        &lt;&lt;elseif $aggression gte $skepticism and $aggression gte $compliance and $aggression gte $curiosity and $aggression gt 0&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;control_room_questions_4&quot;&gt;&gt;
+            Still standing. Still moving. You&#39;ve been angry since the chamber and it hasn&#39;t stopped you once. I respect that more than I probably should. Come in. Let&#39;s finish this.
+        &lt;&lt;elseif $skepticism gte $compliance and $skepticism gte $curiosity and $skepticism gte $aggression and $skepticism gt 0&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;control_room_questions_6&quot;&gt;&gt;
+            You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you&#39;d think.
+        &lt;&lt;elseif $compliance gt 0&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;control_room_questions_3&quot;&gt;&gt;
+            Good. You followed it through. I know that probably sounds like a small thing but it isn&#39;t. You had every reason to stop and you didn&#39;t. Come in.
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;control_room_questions_5&quot;&gt;&gt;
+            You made it. Come in.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Who are you really?|CR Who Are You]]
@@ -6834,17 +6839,19 @@ Macro.add('voice', {
 &lt;&lt;if $engSignal&gt;&gt;&lt;&lt;set $engineeringDone to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engBayClosing&quot;&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;eng_bay_closing_1&quot;&gt;&gt;
-        You have all three signals now. Come back to the door. Everything after this is mine to explain.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;eng_bay_closing_2&quot;&gt;&gt;
-        One left.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;eng_bay_closing_3&quot;&gt;&gt;
-        Two left.
+        &lt;&lt;if $cartSignal and $analystSignal&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;eng_bay_closing_1&quot;&gt;&gt;
+            You have all three signals now. Come back to the door. Everything after this is mine to explain.
+        &lt;&lt;elseif $cartSignal or $analystSignal&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;eng_bay_closing_2&quot;&gt;&gt;
+            One left.
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
+            &lt;&lt;voice &quot;eng_bay_closing_3&quot;&gt;&gt;
+            Two left.
+        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         &lt;&lt;voice &quot;engineer_short&quot;&gt;&gt;
@@ -7734,11 +7741,11 @@ The command ends here.
         You are going to move through the adjacent sections of the ship.
     &lt;&lt;ctpNext clear&gt;&gt;
     	&lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;narrator_who_are_you_n1&quot;&gt;&gt;
+        &lt;&lt;voice &quot;narrator_what_to_do_n1&quot;&gt;&gt;
         Archive. Specimen Bay. Engineering Bay.
     &lt;&lt;ctpNext clear&gt;&gt;
     	&lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-         &lt;&lt;voice &quot;narrator_who_are_you_n2&quot;&gt;&gt;
+         &lt;&lt;voice &quot;narrator_what_to_do_n2&quot;&gt;&gt;
         Each of them serves a function. Each of them has a researcher. Each of them contains a signal the door can understand.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -7746,7 +7753,7 @@ The command ends here.
         You do not need to understand everything you see.
     &lt;&lt;ctpNext clear&gt;&gt;
     	&lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
-        &lt;&lt;voice &quot;narrator_who_are_you_n3&quot;&gt;&gt;
+        &lt;&lt;voice &quot;narrator_what_to_do_n3&quot;&gt;&gt;
         You need to survive it, remember it, and bring the signals back here.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -8451,6 +8458,9 @@ The command ends here.
 &lt;&lt;set $fusionCoreUnlocked    to false&gt;&gt;
 &lt;&lt;set $fromAnalysWhyBuildRoute to false&gt;&gt;
 &lt;&lt;set $madeNarratorSayName   to false&gt;&gt;
+&lt;&lt;set $brainManipAware       to false&gt;&gt;
+&lt;&lt;set $foundBody             to false&gt;&gt;
+&lt;&lt;set $metException          to false&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;title&quot; &quot;media/glazba/title_screen.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;awakening&quot; &quot;media/glazba/awakening.mp3&quot;&gt;&gt;

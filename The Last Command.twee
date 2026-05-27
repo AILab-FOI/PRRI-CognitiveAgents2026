@@ -4202,7 +4202,6 @@ The Last Command
 
 :: Cart Signal Check [nobr archive cartographer] {"position":"4000,775","size":"100,100"}
 <<set $cartSignal to true>>
-<<set $archiveSignal = true>>
 <<set $cartPuzzleDone to true>>
 <<set $archiveDone to true>>
 <div class="textbox">
@@ -4410,25 +4409,27 @@ The Last Command
         <<voice "control_room_questions_1">>
         You made it. I want to say I'm surprised but that would be dishonest and I think you've earned honesty at this point. You've been pulling at threads since the awakening chamber. I noticed. I noticed every time.
     <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "control_room_questions_2">>
-        You talked to all of them. Really talked to them. I've watched people come through this ship and treat those aliens like obstacles. You treated them like they had something worth hearing. I find that genuinely moving, which is not what I expected to feel right now.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "control_room_questions_3">>
-        Good. You followed it through. I know that probably sounds like a small thing but it isn't. You had every reason to stop and you didn't. Come in.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "control_room_questions_4">>
-        Still standing. Still moving. You've been angry since the chamber and it hasn't stopped you once. I respect that more than I probably should. Come in. Let's finish this.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "control_room_questions_5">>
-        You made it. Come in.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "control_room_questions_6">>
-        You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you'd think.
+        <<if $curiosity gte $skepticism and $curiosity gte $compliance and $curiosity gte $aggression and $curiosity gt 0>>
+            <<speaker "Narrator">>
+            <<voice "control_room_questions_2">>
+            You talked to all of them. Really talked to them. I've watched people come through this ship and treat those aliens like obstacles. You treated them like they had something worth hearing. I find that genuinely moving, which is not what I expected to feel right now.
+        <<elseif $aggression gte $skepticism and $aggression gte $compliance and $aggression gte $curiosity and $aggression gt 0>>
+            <<speaker "Narrator">>
+            <<voice "control_room_questions_4">>
+            Still standing. Still moving. You've been angry since the chamber and it hasn't stopped you once. I respect that more than I probably should. Come in. Let's finish this.
+        <<elseif $skepticism gte $compliance and $skepticism gte $curiosity and $skepticism gte $aggression and $skepticism gt 0>>
+            <<speaker "Narrator">>
+            <<voice "control_room_questions_6">>
+            You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you'd think.
+        <<elseif $compliance gt 0>>
+            <<speaker "Narrator">>
+            <<voice "control_room_questions_3">>
+            Good. You followed it through. I know that probably sounds like a small thing but it isn't. You had every reason to stop and you didn't. Come in.
+        <<else>>
+            <<speaker "Narrator">>
+            <<voice "control_room_questions_5">>
+            You made it. Come in.
+        <</if>>
     <<ctpNext clear>>
         <div class="choice">
             [[Who are you really?|CR Who Are You]]
@@ -5800,17 +5801,19 @@ The Last Command
 <<if $engSignal>><<set $engineeringDone to true>><</if>>
 <div class="textbox">
     <<ctp "engBayClosing">>
-        <<speaker "Narrator">>
-        <<voice "eng_bay_closing_1">>
-        You have all three signals now. Come back to the door. Everything after this is mine to explain.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "eng_bay_closing_2">>
-        One left.
-    <<ctpNext clear>>
-        <<speaker "Narrator">>
-        <<voice "eng_bay_closing_3">>
-        Two left.
+        <<if $cartSignal and $analystSignal>>
+            <<speaker "Narrator">>
+            <<voice "eng_bay_closing_1">>
+            You have all three signals now. Come back to the door. Everything after this is mine to explain.
+        <<elseif $cartSignal or $analystSignal>>
+            <<speaker "Narrator">>
+            <<voice "eng_bay_closing_2">>
+            One left.
+        <<else>>
+            <<speaker "Narrator">>
+            <<voice "eng_bay_closing_3">>
+            Two left.
+        <</if>>
     <<ctpNext clear>>
         <<speaker "Engineer">>
         <<voice "engineer_short">>
@@ -6904,11 +6907,11 @@ The command ends here.
         You are going to move through the adjacent sections of the ship.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
-        <<voice "narrator_who_are_you_n1">>
+        <<voice "narrator_what_to_do_n1">>
         Archive. Specimen Bay. Engineering Bay.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
-         <<voice "narrator_who_are_you_n2">>
+         <<voice "narrator_what_to_do_n2">>
         Each of them serves a function. Each of them has a researcher. Each of them contains a signal the door can understand.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -6916,7 +6919,7 @@ The command ends here.
         You do not need to understand everything you see.
     <<ctpNext clear>>
     	<<speaker "Narrator">>
-        <<voice "narrator_who_are_you_n3">>
+        <<voice "narrator_what_to_do_n3">>
         You need to survive it, remember it, and bring the signals back here.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -7709,6 +7712,9 @@ The command ends here.
 <<set $fusionCoreUnlocked    to false>>
 <<set $fromAnalysWhyBuildRoute to false>>
 <<set $madeNarratorSayName   to false>>
+<<set $brainManipAware       to false>>
+<<set $foundBody             to false>>
+<<set $metException          to false>>
 
 <<cacheaudio "title" "media/glazba/title_screen.mp3">>
 <<cacheaudio "awakening" "media/glazba/awakening.mp3">>
@@ -8957,6 +8963,10 @@ body[data-tags~="specimen"][data-tags~="exception"] {
 
 body[data-tags~="specimen"][data-tags~="strike"] {
     background-image: url('/media/SpecimenBay_Strike.png'), url('/media/SpecimenBay.png');
+}
+
+body[data-tags~="specimen"][data-tags~="entrance"] {
+    background-image: url('/media/SpecimenBay_Entrance.png'), url('/media/SpecimenBay.png');
 }
 
 
