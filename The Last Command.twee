@@ -81,7 +81,8 @@ The Last Command
     "arhive": "purple",
     "arh": "purple",
     "specimn": "orange",
-    "specim": "purple"
+    "specim": "purple",
+    "quesi": "blue"
   },
   "zoom": 0.6
 }
@@ -220,9 +221,6 @@ The Last Command
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.ActuallyHuman">>
-        <<speaker "You">>
-        Do you mean it just sounds human, or is it an actual human saying it?
-    <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
         <<run window.playAgentVideo("Voice-Actually-Human", 6, 12)>>
@@ -370,9 +368,6 @@ The Last Command
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.BackToEarth">>
-        <<speaker "You">>
-        I want you to bring me back to Earth.
-    <<ctpNext clear>>
         The alien is silent for a moment.
     <<ctpNext clear>>
         Not because it is considering your request, but because the request appears to contain several contradictions.
@@ -518,7 +513,6 @@ The Last Command
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "3.1.B">>
-    <<ctpNext clear>>
         The alien remains still, but the question seems to change the air around it.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -565,9 +559,6 @@ The Last Command
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "3.1.ChoiceC">>
-        <<speaker "You">>
-        How is it that I escaped so easily?
-    <<ctpNext clear>>
         The alien tilts its head slightly, not confused by the question, but by the word you chose.
     <<ctpNext clear>>
         <<speaker "Exception">>
@@ -656,7 +647,7 @@ The Last Command
 </div>
 
 
-:: 3.1. Fight Back [nobr hallway exception] {"position":"1300,2200","size":"100,100"}
+:: 3.1. Fight Back [nobr hallway exception agent] {"position":"1300,2200","size":"100,100"}
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.FightBack">>
@@ -854,8 +845,8 @@ The Last Command
 </div>
 
 
-:: 3.1. Passing Through [nobr hallway exception] {"position":"700,2600","size":"100,100"}
-<<hideAgent>>
+:: 3.1. Passing Through [nobr hallway exception agent] {"position":"700,2600","size":"100,100"}
+
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "passingThrough">>
@@ -879,8 +870,8 @@ The Last Command
 </div>
 
 
-:: 3.1. Punch [nobr hallway exception] {"position":"1400,2100","size":"100,100"}
-<<hideAgent>>
+:: 3.1. Punch [nobr hallway exception agent] {"position":"1400,2100","size":"100,100"}
+
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.Punch">>
@@ -1029,9 +1020,6 @@ The Last Command
 :: 3.1. Voice Saying [nobr agent hallway exception] {"position":"1100,1450","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.VoiceSaying">>
-        <<speaker "You">>
-        What has the voice been saying?
-    <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
         <<run window.playAgentVideo("Voice-Saying", 6, 12)>>
@@ -1077,8 +1065,8 @@ The Last Command
 </div>
 
 
-:: 3.1. Walk Away [nobr hallway exception] {"position":"1400,2200","size":"100,100"}
-<<hideAgent>>
+:: 3.1. Walk Away [nobr hallway exception agent] {"position":"1400,2200","size":"100,100"}
+
 
 <div class="textbox">
     <<ctp "3.1.WalkAway">>
@@ -1099,7 +1087,7 @@ The Last Command
 </div>
 
 
-:: 3.1. What Do You Want [nobr hallway exception] {"position":"1300,2100","size":"100,100"}
+:: 3.1. What Do You Want [nobr hallway exception agent] {"position":"1300,2100","size":"100,100"}
 <div class="textbox">
     <<ctp "3.1.WhatDoYouWant">>
         The alien does not react to the anger in your voice. If it recognizes it, it treats it as another form of data.
@@ -1438,9 +1426,6 @@ The Last Command
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "notFarOff">>
-        <<speaker "You">>
-        If your kind can detect this intent... let's just say you may not be that far off.
-    <<ctpNext clear>>
         The three researchers become still in different ways.
     <<ctpNext clear>>
         The Analyst watches your face.
@@ -1861,6 +1846,7 @@ The Last Command
 
 :: Analyst Dead End Hallway [nobr hallway] {"position":"3600,2575","size":"100,100"}
 <<set _narratorSentHere to $narratorSentToHallway>>
+<<set $preControlVisited to true>>
 <<if _narratorSentHere>>
     <<showAgent "exception">>
 <<else>>
@@ -1868,24 +1854,31 @@ The Last Command
 <</if>>
 
 <div class="textbox">
-    <<ctp "analystDeadEndHallway">>
+  <<if $if _narratorSentHere>>
+	<<ctp "analystDeadEndHallway">>
         You move through the long hallway.
     <<ctpNext clear>>
-        <<if _narratorSentHere>>
             The Exception is here. Standing near the wall panels, still enough to seem like it was always there.
-        <</if>>
     <<ctpNext clear>>
-        <<if _narratorSentHere>>
             One panel in particular doesn't sit flush. Behind it you can see something small. Not alien-made.
-        <</if>>
     <<ctpNext clear>>
         <div class="choice">
-            <<if _narratorSentHere>>[[Talk to the Exception.|Hallway Exception]]<</if>>
-            <<if _narratorSentHere and $metException and not $hasArtifact>>[[Take the device from the panel.|Artifact Picked Up]]<</if>>
+            [[Talk to the Exception.|Hallway Exception]]
+            [[Take the device from the panel.|Artifact Picked Up]]
+            [[Head back to the central room.|Pre Control Room]]
+        </div>
+  <</ctp>>
+  
+  <<else>>
+  <<ctp "analystDeadEndHallway">>
+        You move through the long hallway.
+    <<ctpNext clear>>
+        <div class="choice">
             [[Head back to the central room.|Pre Control Room]]
             [[Continue to the Awakening Chamber.|Awakening Chamber Return]]
         </div>
   <</ctp>>
+  <</if>>
 </div>
 
 
@@ -1992,8 +1985,6 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "You">>
         You mean the greater design?
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
@@ -2137,7 +2128,7 @@ The Last Command
 </div>
 
 
-:: Analyst Probability [nobr specimen analyst] {"position":"3000,2825","size":"100,100"}
+:: Analyst Probability [nobr specimen agent] {"position":"3000,2825","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystProbability">>
@@ -2304,8 +2295,6 @@ The Last Command
         <<voice "analyst_medium">>
         <<run window.playAgentVideo("Right", 6, 12)>>
         Correct identification. Incorrect methodology. You used intuition rather than analysis. And yet the result is the same.
-        <<ctpNext clear>>
-        	BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
@@ -2530,6 +2519,7 @@ The Last Command
 <<audio "archives" loop play>>
 <<set $baysVisited += 1>>
 <<set $compliance += 1>>
+<<set $preControlVisited to true>>
 <div class="textbox">
     <<ctp "archiveBayEntry">>
         The Archive Bay opens into a chamber of suspended light.
@@ -2569,10 +2559,10 @@ The Last Command
         Further back, The Exception stands near the projection field, staring at something the archive is not showing you.
     <<ctpNext clear>>
         <div class="choice">
-            [[Read the archive terminal.|Archive Terminal]]
-            [["What about that other one?" — approach the Exception.|Archive Exception]]
+            <<if not $terminalDone>>[[Read the archive terminal.|Archive Terminal]]<</if>>
+            <<if not $exceptArchiveMet>>[["What about that other one?" — approach the Exception.|Archive Exception]]<</if>>
             [[Approach the Cartographer.|Cartographer Main]]
-            [[Check the discarded room.|Discarded Room First]]
+            <<if $discardedVisits lte 1>>[[Check the discarded room.|Discarded Room First]]<</if>>
         </div>
   <</ctp>>
 </div>
@@ -2604,8 +2594,8 @@ The Last Command
         I know that view. I have spent a great deal of time not looking at it, which is almost the same thing.
     <<ctpNext clear>>
         <div class="choice">
-            [[Look at the Earth.|Archive Earth View]]
-            [[Check the discarded room.|Discarded Room First]]
+            <<if not $earthViewDone>>[[Look at the Earth.|Archive Earth View]]<</if>>
+            <<if $discardedVisits lte 1>>[[Check the discarded room.|Discarded Room First]]<</if>>
             [[Return to the central room.|Pre Control Room]]
         </div>
   <</ctp>>
@@ -2616,6 +2606,7 @@ The Last Command
 <<hideAgent>>
 <<audio ":all" stop>>
 <<audio "archiveEarth" loop play>>
+<<set $earthViewDone to true>>
 
 <div class="textbox">
     <<ctp "archiveEarthView">>
@@ -2686,7 +2677,7 @@ The Last Command
 </div>
 
 
-:: Archive Exception [nobr agent missing-features archive exception] {"position":"2600,325","size":"100,100"}
+:: Archive Exception [nobr agent archive exception] {"position":"2600,325","size":"100,100"}
 <<showAgent "exception">>
 <<set $exceptArchiveMet to true>>
 <div class="textbox">
@@ -2745,6 +2736,8 @@ The Last Command
 
 
 :: Archive Terminal [nobr archive terminal] {"position":"2200,525","size":"100,100"}
+<<set $terminalDone to true>>
+
 <div class="textbox">
     <<ctp "archiveTerminal">>
         In 2071, we stopped feeling alone.
@@ -2902,6 +2895,7 @@ The Last Command
 
 :: Artifact Picked Up [nobr artifact specimen] {"position":"3700,2575","size":"100,100"}
 <<set $hasArtifact to true>>
+<<set $narratorSentToHallway to false>>
 <div class="textbox">
     <<ctp "artifactPickedUp">>
         <<speaker "Narrator">>
@@ -2918,13 +2912,23 @@ The Last Command
 
 
 :: Artifact Signal Check [nobr missing-features control artifact] {"position":"5000,3200","size":"100,100"}
+
+
 <div class="textbox">
     <<ctp "artifactSignalCheck">>
+    <<if $exceptSignal>>
+    	You have the Exception's signal. You are ready to activate the blind spot.
+    <<else>>
         You don't have the Exception's signal. The blind spot isn't available to you yet.
+    <</if>>
     <<ctpNext clear>>
         <div class="choice">
-            [[Go to the control room.|Failed Artifact Ending]]
-            [[Go back and find the Exception first.|Pre Control Room]]
+            <<if $exceptSignal>>
+              [[Go to the control room.|Successful Artifact Ending]]
+          <<else>>
+              [[Go to the control room.|Failed Artifact Ending]]
+              [[Go back and find the Exception first.|Pre Control Room]]
+          <</if>>
         </div>
   <</ctp>>
 </div>
@@ -2970,7 +2974,7 @@ The Last Command
 </div>
 
 
-:: Awakening Chamber Return [nobr waking] {"position":"400,2550","size":"100,100"}
+:: Awakening Chamber Return [nobr room1 exit] {"position":"400,2550","size":"100,100"}
 <<hideAgent>>
 <<audio ":all" stop>>
 <<audio "awakening" loop play>>
@@ -3328,7 +3332,7 @@ The Last Command
 </div>
 
 
-:: CR Believe [nobr narrator agent missing-features] {"position":"5300,2900","size":"100,100"}
+:: CR Believe [nobr narrator agent missing-features questions] {"position":"5300,2900","size":"100,100"}
 <<run window.playAgentVideo("Believe", 0, 6)>>
 
 <div class="textbox">
@@ -3355,7 +3359,7 @@ The Last Command
 </div>
 
 
-:: CR Biochip Watch [nobr agent narrator missing-features] {"position":"5300,2500","size":"100,100"}
+:: CR Biochip Watch [nobr agent narrator missing-features control questions] {"position":"5300,2500","size":"100,100"}
 <<run window.playAgentVideo("Biochip", 0, 6)>>
 
 <div class="textbox">
@@ -3380,13 +3384,14 @@ The Last Command
 </div>
 
 
-:: CR Body Question [nobr agent narrator missing-features] {"position":"5300,2600","size":"100,100"}
-<<run window.playAgentVideo("Body", 0, 6)>>
+:: CR Body Question [nobr agent narrator missing-features control questions] {"position":"5300,2600","size":"100,100"}
+
 
 <div class="textbox">
     <<ctp "CRBodyQuestions">>
         <<speaker "Narrator">>
         <<voice "cr_body_question_1">>
+        <<run window.playAgentVideo("Body", 0, 6)>>
         I know. I've been thinking about that since you found it. The ship doesn't make exceptions. Something kept that body there. Something wanted you to find it.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3394,6 +3399,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "cr_body_question_2">>
+        <<run window.playAgentVideo("Body2", 0, 6)>>
         Something that knew you were coming before I did. Something that understood that you finding that room would change what you did next. I have been in this room for a long time and I thought I understood the shape of everything happening on this ship. I was wrong about that. I don't know by how much.
     <<ctpNext clear>>
         <div class="choice">
@@ -3410,7 +3416,7 @@ The Last Command
 </div>
 
 
-:: CR Grieve [nobr agent narrator missing-features] {"position":"5300,2800","size":"100,100"}
+:: CR Grieve [nobr agent narrator missing-features questions] {"position":"5300,2800","size":"100,100"}
 <<run window.playAgentVideo("Grieve", 0, 6)>>
 
 <div class="textbox">
@@ -3433,7 +3439,7 @@ The Last Command
 </div>
 
 
-:: CR Grieve Not Answer [nobr agent narrator missing-features] {"position":"5500,2800","size":"100,100"}
+:: CR Grieve Not Answer [nobr agent narrator missing-features questions] {"position":"5500,2800","size":"100,100"}
 <<run window.playAgentVideo("Not-Answer", 0, 6)>>
 
 <<set $aggression += 1>>
@@ -3455,7 +3461,7 @@ The Last Command
 </div>
 
 
-:: CR Grieve Think You Do [nobr agent narrator missing-features] {"position":"5500,2700","size":"100,100"}
+:: CR Grieve Think You Do [nobr agent narrator missing-features questions] {"position":"5500,2700","size":"100,100"}
 <<run window.playAgentVideo("Think", 0, 6)>>
 
 <<set $compliance += 1>>
@@ -3477,7 +3483,7 @@ The Last Command
 </div>
 
 
-:: CR Heard Everything [nobr agent narrator missing-features] {"position":"5500,2600","size":"100,100"}
+:: CR Heard Everything [nobr agent narrator missing-features questions] {"position":"5500,2600","size":"100,100"}
 <<run window.playAgentVideo("Heard", 0, 6)>>
 
 <<set $skepticism += 1>>
@@ -3501,7 +3507,7 @@ The Last Command
 </div>
 
 
-:: CR Intervene [nobr agent narrator missing-features] {"position":"5500,2500","size":"100,100"}
+:: CR Intervene [nobr agent narrator missing-features questions] {"position":"5500,2500","size":"100,100"}
 <<run window.playAgentVideo("Intervene", 0, 6)>>
 
 <div class="textbox">
@@ -3524,7 +3530,7 @@ The Last Command
 </div>
 
 
-:: CR Organisation [nobr agent narrator missing-features] {"position":"5300,2700","size":"100,100"}
+:: CR Organisation [nobr agent narrator missing-features questions] {"position":"5300,2700","size":"100,100"}
 <<run window.playAgentVideo("Organization", 0, 6)>>
 
 <div class="textbox">
@@ -3549,7 +3555,7 @@ The Last Command
 </div>
 
 
-:: CR Organisation Now [nobr agent narrator missing-features] {"position":"5500,2300","size":"100,100"}
+:: CR Organisation Now [nobr agent narrator missing-features questions] {"position":"5500,2300","size":"100,100"}
 <<run window.playAgentVideo("Now", 0, 6)>>
 
 <<set $curiosity += 1>>
@@ -3591,9 +3597,9 @@ The Last Command
             [[Ask what happens to you afterwards.|Ending B]]
             [[Refuse.|Ending C]]
             [[Attack the narrator.|Ending D]]
-            [[Tell me one thing you heard that you weren't supposed to.|CR Secret Heard]]
+            <<if $secretHeard>>[[Tell me one thing you heard that you weren't supposed to.|CR Secret Heard]]<</if>>
             [[What do you want to happen after this? Not to me. To you.|CR What You Want]]
-            [[Tell me their name.|CR Their Name]]
+            <<if $discardedVisits gte 1>>[[Tell me their name.|CR Their Name]]<</if>>
         </div> 
   <</ctp>>
 </div>
@@ -3616,7 +3622,7 @@ The Last Command
 </div>
 
 
-:: CR Tell Me [nobr agent missing-features narrator] {"position":"5500,2400","size":"100,100"}
+:: CR Tell Me [nobr agent missing-features narrator questions] {"position":"5500,2400","size":"100,100"}
 <<run window.playAgentVideo("Tell-Me", 0, 6)>>
 
 <<set $skepticism += 1>>
@@ -3663,7 +3669,7 @@ The Last Command
 </div>
 
 
-:: CR Used Me [nobr agent narrator missing-features] {"position":"5300,2400","size":"100,100"}
+:: CR Used Me [nobr agent narrator missing-features control questions] {"position":"5300,2400","size":"100,100"}
 <<run window.playAgentVideo("Used-Me", 0, 6)>>
 
 <<set $aggression += 1>>
@@ -3688,7 +3694,7 @@ The Last Command
 </div>
 
 
-:: CR What Need [agent missing-features narrator nobr] {"position":"5300,2300","size":"100,100"}
+:: CR What Need [agent missing-features narrator nobr control questions] {"position":"5300,2300","size":"100,100"}
 <<run window.playAgentVideo("What-Need", 0, 6)>>
 
 <<set $compliance += 1>>
@@ -3733,7 +3739,7 @@ The Last Command
 </div>
 
 
-:: CR Who Are You [agent nobr missing-features narrator] {"position":"5300,2200","size":"100,100"}
+:: CR Who Are You [agent nobr missing-features narrator control questions] {"position":"5300,2200","size":"100,100"}
 <<run window.playAgentVideo("Who", 0, 6)>>
 
 <<set $curiosity += 1>>
@@ -3907,7 +3913,7 @@ The Last Command
 </div>
 
 
-:: Cart Hit Threat [agent nobr cartographer archive] {"position":"2900,925","size":"100,100"}
+:: Cart Hit Threat [agent nobr cartographer archive] {"position":"3000,875","size":"100,100"}
 <div class="textbox">
     <<ctp "cartHitThreat">>
         <<speaker "You">>
@@ -3966,7 +3972,7 @@ The Last Command
 </div>
 
 
-:: Cart Punch [nobr agent cartographer archive] {"position":"3000,875","size":"100,100"}
+:: Cart Punch [nobr agent cartographer archive] {"position":"2900,925","size":"100,100"}
 <div class="textbox">
     <<ctp "cartPunch">>
         You strike the Cartographer before the thought finishes becoming a decision.
@@ -4209,6 +4215,8 @@ The Last Command
 <<set $archiveDone to true>>
 <div class="textbox">
     <<ctp "cartSignalCheck">>
+		[ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
+	<<ctpNext clear>>
         The projection collapses into a thin line of light.
     <<ctpNext clear>>
         It does not enter your hand.
@@ -4337,7 +4345,11 @@ The Last Command
         Good. Now come in. I have been waiting for quite a long time, and I am afraid my patience has become less of a virtue and more of a medical condition.
     <<ctpNext clear>>
         <div class="choice">
-            <<if $hasArtifact>>[[Enter the control room.|Control Room Artifact Check]]<<else>>[[Enter the control room.|Control Room Entry]]<</if>>
+            <<if $hasArtifact>>
+            [[Enter the control room.|Control Room Artifact Check]]
+            <<else>>
+            [[Enter the control room.|Control Room Entry]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -4356,7 +4368,7 @@ The Last Command
 </div>
 
 
-:: Control Room Entry [nobr control narrator] {"position":"4800,2550","size":"100,100"}
+:: Control Room Entry [nobr control narrator agent] {"position":"4800,2550","size":"100,100"}
 <<audio ":all" stop>>
 <<audio "control" loop play>>
 
@@ -4381,7 +4393,7 @@ The Last Command
 </div>
 
 
-:: Control Room Explanation [nobr control narrator] {"position":"4900,2550","size":"100,100"}
+:: Control Room Explanation [nobr control narrator agent] {"position":"4900,2550","size":"100,100"}
 <div class="textbox">
     <<ctp "controlRoomExplanation">>
         He stands too quickly, gestures at the panel to the left, sits back down.
@@ -4401,7 +4413,7 @@ The Last Command
 </div>
 
 
-:: Control Room Questions [nobr missing-features control questions narrator] {"position":"5100,2550","size":"100,100"}
+:: Control Room Questions [nobr missing-features control questions narrator agent] {"position":"5100,2550","size":"100,100"}
 <<showAgent "narrator">>
 
 <div class="textbox">
@@ -4409,24 +4421,24 @@ The Last Command
         He waits. You can speak before you decide anything.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        <<voice "control_room_questions_1">>
+        <<run window.playAgentVideo("Question1", 6, 30)>>
         You made it. I want to say I'm surprised but that would be dishonest and I think you've earned honesty at this point. You've been pulling at threads since the awakening chamber. I noticed. I noticed every time.
     <<ctpNext clear>>
         <<if $curiosity gte $skepticism and $curiosity gte $compliance and $curiosity gte $aggression and $curiosity gt 0>>
             <<speaker "Narrator">>
-            <<voice "control_room_questions_2">>
+            <<run window.playAgentVideo("Question2", 30, 54)>>
             You talked to all of them. Really talked to them. I've watched people come through this ship and treat those aliens like obstacles. You treated them like they had something worth hearing. I find that genuinely moving, which is not what I expected to feel right now.
         <<elseif $aggression gte $skepticism and $aggression gte $compliance and $aggression gte $curiosity and $aggression gt 0>>
             <<speaker "Narrator">>
-            <<voice "control_room_questions_4">>
+            <<run window.playAgentVideo("Question4", 70, 89)>>
             Still standing. Still moving. You've been angry since the chamber and it hasn't stopped you once. I respect that more than I probably should. Come in. Let's finish this.
         <<elseif $skepticism gte $compliance and $skepticism gte $curiosity and $skepticism gte $aggression and $skepticism gt 0>>
             <<speaker "Narrator">>
-            <<voice "control_room_questions_6">>
+            <<run window.playAgentVideo("Question6", 89, 112)>>
             You questioned everything I said and then went and asked better questions of your own. I want you to know that I noticed that specifically. The aliens noticed it too, which is rarer than you'd think.
         <<elseif $compliance gt 0>>
             <<speaker "Narrator">>
-            <<voice "control_room_questions_3">>
+            <<run window.playAgentVideo("Question3", 54, 70)>>
             Good. You followed it through. I know that probably sounds like a small thing but it isn't. You had every reason to stop and you didn't. Come in.
         <<else>>
             <<speaker "Narrator">>
@@ -4585,9 +4597,11 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Who were they?|Discarded Who]]
-            <<if $discardedVisits gte 2>>[[Talk to Exception.|Discarded Exception]]<</if>>
             [[I don't want to be in here.|Discarded Leave]]
-            [[Return to the archive.|Archive Bay Return]]
+            
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -4683,7 +4697,9 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[What actually happened to them?|Discarded Exception What]]
-            [[I will return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -4842,7 +4858,9 @@ The Last Command
         <div class="choice">
             [[Did you know this person?|Discarded Exception Know]]
             [[What actually happened to them?|Discarded Exception What]]
-            [[I will return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -4881,7 +4899,9 @@ The Last Command
         Then it closes.
     <<ctpNext clear>>
         <div class="choice">
-            [[Return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -4940,7 +4960,9 @@ The Last Command
         <div class="choice">
             [[Why are you telling me this?|Discarded Why Telling]]
             [[What are you suggesting I do?|Discarded What Suggest]]
-            [[I will return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -4954,7 +4976,8 @@ The Last Command
 <<audio "discarded" loop play>>
 
 <div class="textbox">
-    <<ctp "discardedRoomFirst">>
+	<<if $discardedVisits eq 1>>
+	<<ctp "discardedRoomFirst">>
         The discarded room sits off the Archive Bay, slightly recessed from the main chamber.
     <<ctpNext clear>>
         There is no sign on the door. No label the biochip can translate. No warning from the ship.
@@ -5001,7 +5024,16 @@ The Last Command
         <<voice "discarded_room_first_2">>
         Believe me, there is nothing relevant in there. Come out. You still have signals to gather.
     <<ctpNext clear>>
-        The room is the same.
+        <div class="choice">
+            [[Who were they?|Discarded Who]]
+            [[Did you do this?|Discarded Did You]]
+            [[I don't want to be in here.|Discarded Leave]]
+        </div>
+  <</ctp>>
+  
+  <<else>>
+  <<ctp "discardedRoomFirst">>
+  The room is the same.
     <<ctpNext clear>>
         The body is the same.
     <<ctpNext clear>>
@@ -5014,13 +5046,10 @@ The Last Command
         The narrator says nothing.
     <<ctpNext clear>>
         <div class="choice">
-            [[Who were they?|Discarded Who]]
-            [[Did you do this?|Discarded Did You]]
-            [[I don't want to be in here.|Discarded Leave]]
-            <<if $discardedVisits gte 2>>[[Talk to Exception.|Discarded Exception]]<</if>>
-            [[Return to the archive.|Archive Bay Return]]
+            [[Talk to Exception.|Discarded Exception]]
         </div>
   <</ctp>>
+  <</if>>
 </div>
 
 
@@ -5084,7 +5113,9 @@ The Last Command
         The obvious door is for the voice.
     <<ctpNext clear>>
         <div class="choice">
-            [[I will return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -5147,9 +5178,10 @@ The Last Command
     <<ctpNext clear>>
         <div class="choice">
             [[Did you do this?|Discarded Did You]]
-            <<if $discardedVisits gte 2>>[[Talk to Exception.|Discarded Exception]]<</if>>
             [[I don't want to be in here.|Discarded Leave]]
-            [[Return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -5206,7 +5238,9 @@ The Last Command
         <div class="choice">
             [[What are you suggesting I do?|Discarded What Suggest]]
             [[So the narrator has been lying.|Discarded Lying]]
-            [[I will return to the archive.|Archive Bay Return]]
+            <<if not $cartSignal>>[[Return to the archive.|Archive Bay Entry]]
+            <<else>>[[Return to the archive.|Archive Bay Return]]
+            <</if>>
         </div>
   <</ctp>>
 </div>
@@ -5804,9 +5838,12 @@ The Last Command
 
 :: Eng Bay Closing [nobr missing-features engineering closing] {"position":"4000,4475","size":"100,100"}
 <<hideAgent>>
-<<if $engSignal>><<set $engineeringDone to true>><</if>>
+<<set $engSignal to true>>
+<<set $engineeringDone to true>>
 <div class="textbox">
     <<ctp "engBayClosing">>
+        	BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
+        <<ctpNext clear>>
         <<if $cartSignal and $analystSignal>>
             <<speaker "Narrator">>
             <<voice "eng_bay_closing_1">>
@@ -5946,7 +5983,6 @@ The Last Command
 
 :: Eng Camera Accuracy [nobr agent engineer engineering] {"position":"3600,4075","size":"100,100"}
 <<set $curiosity += 1>>
-<<set $engSignal to true>>
 <div class="textbox">
     <<ctp "engCameraAccuracy">>
         <<speaker "Engineer">>
@@ -5964,17 +6000,15 @@ The Last Command
 
 
 :: Eng Camera Alone [nobr agent engineer engineering] {"position":"3600,4175","size":"100,100"}
-<<set $engineeringDone to true>>
+
 <<set $compliance += 1>>
-<<set $engSignal to true>>
+
 <div class="textbox">
     <<ctp "engCameraAlone">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
         <<run window.playAgentVideo("Camera-Alone", 6, 12)>>
         Not alone. The opposite of solitude is proximity. But proximity without transfer produces nothing. Your species seeks the transfer itself, not merely the closeness. The image is proof that something was felt. A signal to another organism that says: I was here and it was real.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
     <<ctpNext clear>>
         <div class="choice">
             [[Exit the engineering bay.|Eng Bay Closing]]
@@ -5984,17 +6018,14 @@ The Last Command
 
 
 :: Eng Camera Imprecision [nobr agent engineer engineering] {"position":"3600,3975","size":"100,100"}
-<<set $engineeringDone to true>>
+
 <<set $compliance += 1>>
-<<set $engSignal to true>>
 <div class="textbox">
     <<ctp "engCameraImprecision">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
         <<run window.playAgentVideo("Camera-Imprecision", 6, 12)>>
         The imprecision. That is the purpose. Not to capture what was but to carry something forward through the distortion. We have found no equivalent mechanism in organisms that do not die.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
     <<ctpNext clear>>
         <div class="choice">
             [[Exit the engineering bay.|Eng Bay Closing]]
@@ -6036,17 +6067,15 @@ The Last Command
 
 
 :: Eng Camera Obsession Point [nobr agent engineer engineering] {"position":"3600,4375","size":"100,100"}
-<<set $engineeringDone to true>>
+
 <<set $skepticism += 1>>
-<<set $engSignal to true>>
+
 <div class="textbox">
     <<ctp "engCameraObsessionPoint">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
         <<run window.playAgentVideo("Camera-Point", 6, 12)>>
         The inefficiency is intentional. You replace the lived experience because the lived experience was insufficient. The image is what you wished the moment had been. This device does not capture what happened. It captures what you needed to happen. That is an extraordinary function for a mechanical object.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
     <<ctpNext clear>>
         <div class="choice">
             [[Exit the engineering bay.|Eng Bay Closing]]
@@ -6056,17 +6085,15 @@ The Last Command
 
 
 :: Eng Camera Obsession Problem [nobr agent engineer engineering] {"position":"3600,4475","size":"100,100"}
-<<set $engineeringDone to true>>
+
 <<set $compliance += 1>>
-<<set $engSignal to true>>
+
 <div class="textbox">
     <<ctp "engCameraObsessionProblem">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
         <<run window.playAgentVideo("Camera-Problem", 6, 12)>>
         You identify it as a malfunction. And yet you continue to use the device anyway. The species recognises the problem and perpetuates it. This is either a failure of correction or evidence that the problem serves a function you have not yet named.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
     <<ctpNext clear>>
         <div class="choice">
             [[Exit the engineering bay.|Eng Bay Closing]]
@@ -6076,17 +6103,15 @@ The Last Command
 
 
 :: Eng Camera Residue [nobr agent engineer engineering] {"position":"3600,4275","size":"100,100"}
-<<set $engineeringDone to true>>
+
 <<set $curiosity += 1>>
-<<set $engSignal to true>>
+
 <div class="textbox">
     <<ctp "engCameraResidue">>
         <<speaker "Engineer">>
         <<voice "engineer_long">>
         <<run window.playAgentVideo("Camera-Residue", 6, 12)>>
         The residue of experience. You have described a form of preservation that operates outside of the organism's body. External memory. And yet what is preserved is not information but significance. This device captures neither. What the image holds is something your species added after the fact.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 88.3 — 7.1 — 22.9
     <<ctpNext clear>>
         <div class="choice">
             [[Exit the engineering bay.|Eng Bay Closing]]
@@ -6144,6 +6169,8 @@ The Last Command
 
 
 :: Eng Rifle Force [nobr agent engineer engineering] {"position":"3400,4725","size":"100,100"}
+
+
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
@@ -6160,6 +6187,8 @@ The Last Command
 
 
 :: Eng Rifle Power [nobr agent engineer engineering] {"position":"3400,4825","size":"100,100"}
+
+
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
@@ -6176,6 +6205,8 @@ The Last Command
 
 
 :: Eng Rifle War [nobr agent engineer engineering] {"position":"3400,4625","size":"100,100"}
+
+
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
@@ -6191,7 +6222,7 @@ The Last Command
 </div>
 
 
-:: Eng Route A [nobr engineering] {"position":"2400,4325","size":"100,100"}
+:: Eng Route A [nobr engineering agent engineer] {"position":"2400,4325","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteA">>
         <<speaker "Engineer">>
@@ -6207,7 +6238,7 @@ The Last Command
 </div>
 
 
-:: Eng Route B [nobr engineering] {"position":"2400,4425","size":"100,100"}
+:: Eng Route B [nobr engineering agent engineer] {"position":"2400,4425","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteB">>
         After a long pause...
@@ -6240,7 +6271,7 @@ The Last Command
 </div>
 
 
-:: Eng Route D [nobr engineering] {"position":"2400,4625","size":"100,100"}
+:: Eng Route D [nobr engineering agent engineer] {"position":"2400,4625","size":"100,100"}
 <div class="textbox">
     <<ctp "engRouteD">>
         You move behind the alien. It ignores you until you are directly behind it.
@@ -6281,50 +6312,66 @@ The Last Command
 <<set $baysVisited += 1>>
 <<audio ":all" stop>>
 <<audio "engineering" loop play>>
+<<set $preControlVisited to true>>
 <<hideAgent>>
 
 <div class="textbox">
+	<<if $hasArtifact and $engSignal>>
     <<ctp "engineeringBayEntry">>
-        The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
-    <<ctpNext clear>>
-        <<if visited("Engineering Bay Entry") lte 1>>
+    		The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
+		<<ctpNext clear>>
+        A small, well-lit room. Shelf-like containers line the walls. Three workbenches at the centre. The Engineer is present, engrossed in its work, not acknowledging you.
+        <<ctpNext clear>>
+        The device is still in your hand. The Engineer hasn't noticed yet.
+        <<ctpNext clear>>
+        <div class="choice">
+            [[Show the Engineer the device.|Eng Artifact Request]]
+            [[Return|Pre Control Room]]
+        </div> 
+  <</ctp>>
+        
+    <</if>>
+    
+    
+    <<if $exceptSignal and $engSignal>>
+    <<ctp "engineeringBayEntry">>
+    		The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
+		<<ctpNext clear>>
+        A small, well-lit room. Shelf-like containers line the walls. Three workbenches at the centre. The Engineer is present, engrossed in its work, not acknowledging you.
+        <<ctpNext clear>>
+        <div class="choice">
+            [[I want to see the Fusion Core.|Fusion Core Request]]
+            [[Return|Pre Control Room]]
+        </div> 
+  <</ctp>>
+    
+    <<else >>
+    <<ctp "engineeringBayEntry">>
+    		The door. Strange signs above it. The biochip activates, rendering their meaning directly into your understanding: Engineering.
+		<<ctpNext clear>>
+        A small, well-lit room. Shelf-like containers line the walls. Three workbenches at the centre. The Engineer is present, engrossed in its work, not acknowledging you.
+        <<ctpNext clear>>
             <<speaker "Narrator">>
             <<voice "engineering_bay_entry_1">>
             There it is. Go talk to it. This one seems to deal in the practical — how things work, what they're used for. It would make sense to go along with those lines.
-        <<elseif $foundBody and visited("Engineering Bay Entry") is 2>>
-            <<speaker "Narrator">>
-            <<voice "engineering_bay_entry_4">>
-            You found it then. The other one. I was wondering when you would. I'll be honest with you, I thought you might handle it worse than this. People usually fall apart when they find out they're not the first. But here you are. Still moving. Still asking questions. That's the thing about you that keeps surprising me, and I have thought about this ship's interior quite a lot. More time than I would like to admit, really. Now you know the full picture. Go get that last signal and come back to the door. I won't waste more of your time.
-        <<else>>
-            <<speaker "Narrator">>
-            <<voice "engineering_bay_entry_5">>
-            You're a smooth sailor. Just letting you know.
-        <</if>>
-    <<ctpNext clear>>
-        <<if visited("Engineering Bay Entry") lte 1>>
-            <<speaker "Narrator">>
+		<<ctpNext clear>>         
+        	<<speaker "Narrator">>
             <<voice "engineering_bay_entry_3">>
             Oh yeah, good luck by the way.
-        <</if>>
-    <<ctpNext clear>>
-        A small, well-lit room. Shelf-like containers line the walls. Three workbenches at the centre. The Engineer is present, engrossed in its work, not acknowledging you
-    <<ctpNext clear>>
-        The device is still in your hand. The Engineer hasn't noticed yet.
-    <<ctpNext clear>>
+		<<ctpNext clear>>
         <div class="choice">
             [["Greetings."|Eng Route A]]
             [[Stand and wait to be acknowledged.|Eng Route B]]
             [[Explore the room quietly.|Eng Route C]]
             [[Move closer behind it.|Eng Route D]]
-            <<if $hasArtifact>>[[Show the Engineer the device.|Eng Artifact Request]]<</if>>
-            <<if $exceptSignal>>[[I want to see the Fusion Core.|Fusion Core Request]]<</if>>
         </div> 
   <</ctp>>
+    <</if>>
 </div>
 
 
-:: Exit Exception Bother No [agent exception nobr] {"position":"4100,2075","size":"100,100"}
-<<run window.playAgentVideo("Exit-No", 0, 6)>>
+:: Exit Exception Bother No [agent exception nobr specimen] {"position":"4100,2075","size":"100,100"}
+<<set $secretHeard to true>>
 
 <<set $compliance += 1>>
 <div class="textbox">
@@ -6338,8 +6385,8 @@ The Last Command
 </div>
 
 
-:: Exit Exception Bother Yes [nobr exception agent] {"position":"4100,1975","size":"100,100"}
-<<run window.playAgentVideo("Exit-Yes", 0, 6)>>
+:: Exit Exception Bother Yes [nobr exception agent specimen] {"position":"4100,1975","size":"100,100"}
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -6353,7 +6400,9 @@ The Last Command
 </div>
 
 
-:: Exit Exception Fine [nobr agent exception] {"position":"4000,2525","size":"100,100"}
+:: Exit Exception Fine [nobr agent exception specimen] {"position":"4000,2525","size":"100,100"}
+<<set $secretHeard to true>>
+
 <div class="textbox">
     <<ctp "exitExceptionFine">>
         The Exception is quiet for a moment — not processing, something closer to surprised.
@@ -6372,7 +6421,7 @@ The Last Command
 </div>
 
 
-:: Exit Exception Following [nobr agent exception] {"position":"4000,2225","size":"100,100"}
+:: Exit Exception Following [nobr agent exception specimen] {"position":"4000,2225","size":"100,100"}
 <div class="textbox">
     <<ctp "exitExceptionFollowing">>
         <<speaker "Exception">>
@@ -6387,7 +6436,7 @@ The Last Command
 </div>
 
 
-:: Exit Exception Stopped [nobr agent exception] {"position":"4000,2325","size":"100,100"}
+:: Exit Exception Stopped [nobr agent exception specimen] {"position":"4000,2325","size":"100,100"}
 <div class="textbox">
     <<ctp "exitExceptionStopped">>
         <<speaker "Exception">>
@@ -6403,7 +6452,9 @@ The Last Command
 </div>
 
 
-:: Exit Exception Want [agent exception nobr] {"position":"4000,2025","size":"100,100"}
+:: Exit Exception Want [agent exception nobr specimen] {"position":"4000,2025","size":"100,100"}
+
+
 <div class="textbox">
     <<ctp "exitExceptionWant">>
         <<speaker "Exception">>
@@ -6646,6 +6697,7 @@ The command ends here.
 
 :: Hallway Exception [nobr hallway exception agent] {"position":"3600,2475","size":"100,100"}
 <<set $metException to true>>
+<<set $narratorSentToHallway to false>>
 <div class="textbox">
     <<ctp "hallwayException">>
         <<speaker "Exception">>
@@ -6862,6 +6914,8 @@ The command ends here.
 
 :: Narrator Identity [nobr hallway control-door] {"position":"1900,2075","size":"100,100"}
 <<hideAgent>>
+<<set $identityVisited to true>>
+<<set $preControlVisited to true>>
 
 <div class="textbox">
     <<ctp "narratorIdentity">>
@@ -7059,6 +7113,10 @@ The command ends here.
         <<run window.playAgentVideo("Overlook-Distant", 6, 12)>>
         Why does it?
     <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
+    <<ctpNext clear>>
+        Something passes through you. Not unpleasant. Like a frequency you didn't know you were waiting to hear.
+    <<ctpNext clear>>
         <div class="choice">
             [[It feels like many missed opportunities.|Overlook Missed]]
             [[It has nothing more to offer me.|Overlook Nothing]]
@@ -7078,6 +7136,10 @@ The command ends here.
         <<run window.playAgentVideo("Overlook-Family", 6, 12)>>
         You just described something your species spends considerable effort trying to reconcile — love as reconciliation. The grand scheme offers no preferential treatment to what you love. And yet the intent of love persists, perhaps indifferent to that fact.
     <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
+    <<ctpNext clear>>
+        Something passes through you. Not unpleasant. Like a frequency you didn't know you were waiting to hear.
+    <<ctpNext clear>>
         <div class="choice">
             [[Go Back.|Archive Bay Entry]]
         </div>
@@ -7095,6 +7157,10 @@ The command ends here.
         <<run window.playAgentVideo("Overlook-Home", 6, 12)>>
         Home. Signals comfort, but that's where contradiction lies. The smaller it looks, the more significant it becomes to you. A very particular kind of attachment. Maybe there is room for extrinsic values.
     <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
+    <<ctpNext clear>>
+        Something passes through you. Not unpleasant. Like a frequency you didn't know you were waiting to hear.
+    <<ctpNext clear>>
         <div class="choice">
             [[Go Back.|Archive Bay Entry]]
         </div>
@@ -7111,8 +7177,11 @@ The command ends here.
         <<speaker "Exception">>
         <<voice "exception_medium">>
         <<run window.playAgentVideo("Overlook-Missed", 6, 12)>>
-        
         Missed. The opportunities were present or presentable, but some gap remained.
+    <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
+    <<ctpNext clear>>
+        Something passes through you. Not unpleasant. Like a frequency you didn't know you were waiting to hear.
     <<ctpNext clear>>
         <div class="choice">
             [[Go Back.|Archive Bay Entry]]
@@ -7131,6 +7200,10 @@ The command ends here.
         <<run window.playAgentVideo("Overlook-No-Memory", 6, 12)>>
         Maybe the answer isn't incomplete as it is true. You're not constructing something to give me. You're actually looking.
     <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
+    <<ctpNext clear>>
+        Something passes through you. Not unpleasant. Like a frequency you didn't know you were waiting to hear.
+    <<ctpNext clear>>
         <div class="choice">
             [[Go Back.|Archive Bay Entry]]
         </div>
@@ -7148,6 +7221,10 @@ The command ends here.
         <<run window.playAgentVideo("Overlook-Nothing", 6, 12)>>
         You haven't looked away since you said it. Something was asked of it that it couldn't give. But why ask and give?
     <<ctpNext clear>>
+        BIOCHIP DISTORTION — SIGNAL: 44.2 — 0.5 — 91.8
+    <<ctpNext clear>>
+        Something passes through you. Not unpleasant. Like a frequency you didn't know you were waiting to hear.
+    <<ctpNext clear>>
         <div class="choice">
             [[Go Back.|Archive Bay Entry]]
         </div>
@@ -7158,9 +7235,11 @@ The command ends here.
 :: Pre Control Room [nobr hallway control-door] {"position":"1900,2525","size":"200,200"}
 <<hideAgent>>
 
+
 <div class="textbox">
+    <<if not $preControlVisited>>
     <<ctp "preControlRoom">>
-        You enter a wide central chamber.
+    	You enter a wide central chamber.
     <<ctpNext clear>>
         A locked gateway dominates the far wall. Its surface is smooth, dark, and split by three inactive signal lines.
     <<ctpNext clear>>
@@ -7196,10 +7275,33 @@ The command ends here.
 
             <<if not $specimenDone>>[[Head to the Specimen bay.|Specimen Bay Entry]]<</if>>
             <<if not $engineeringDone>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
-            <<if $baysVisited eq 0>>[["Hold up. Who or what even are you?"|Narrator Identity]]<</if>>
+            <<if $baysVisited eq 0 and not $identityVisited>>[["Hold up. Who or what even are you?"|Narrator Identity]]<</if>>
+            <<if $hasArtifact or $exceptSignal>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
             [[Head back down the hallway.|Analyst Dead End Hallway]]
         </div>
   <</ctp>>
+  
+  
+  
+    <<else>>
+    <<ctp "preControlRoom">>
+    	You are back in the central chamber.
+       <<ctpNext clear>>
+        <div class="choice">
+            <<if $cartSignal and $analystSignal and $engSignal>>[[Approach the locked door and enter the code.|Code Entry]]<</if>>
+            <<if not $archiveDone>>
+                <<if visited("Archive Bay Entry")>>[[Return to the Archive bay.|Archive Bay Return]]<<else>>[[Head to the Archive bay.|Archive Bay Entry]]<</if>>
+            <<else>>
+                [[Return to the Archive bay.|Archive Bay Return]]
+            <</if>>
+            <<if not $specimenDone>>[[Head to the Specimen bay.|Specimen Bay Entry]]<</if>>
+            <<if not $engineeringDone>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
+            <<if $baysVisited eq 0 and not $identityVisited>>[["Hold up. Who or what even are you?"|Narrator Identity]]<</if>>
+            <<if $hasArtifact or $exceptSignal>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
+            [[Head back down the hallway.|Analyst Dead End Hallway]]
+        </div>
+  <</ctp>>
+    <</if>> 
 </div>
 
 
@@ -7279,8 +7381,6 @@ The command ends here.
         <<voice "cartographer_short">>
         <<run window.playAgentVideo("Sacrifice-Consciousness", 6, 12)>>
         The boundary of the self becomes unstable under attachment.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "sacrifice_consciousness">>
@@ -7373,8 +7473,6 @@ The command ends here.
         <<run window.playAgentVideo("Sacrifice-Divine", 6, 12)>>
         If sacrifice appears meaningful but cannot be explained by immediate survival, your species assigns it to a larger witness.
     <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
-    <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "sacrifice_divine">>
         I have heard worse definitions of religion.
@@ -7414,8 +7512,6 @@ The command ends here.
         <<voice "cartographer_short">>
         <<run window.playAgentVideo("Sacrifice-Design", 6, 12)>>
         A living system deciding that another continuation matters more than its own.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "You">>
         Honestly, I don't exactly know why people do it.
@@ -7478,8 +7574,6 @@ The command ends here.
         <<voice "cartographer_medium">>
         <<run window.playAgentVideo("Science-Weapons", 6, 12)>>
         First discovery. Then application. Then competition. Then harm. Then regulation. Then regret.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "science_weapons_1">>
@@ -7550,8 +7644,6 @@ The command ends here.
         <<run window.playAgentVideo("Science-Kind", 6, 12)>>
         That is why Earth remains dangerous.
     <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
-    <<ctpNext clear>>
         <div class="choice">
             [[Continue.|Cart Signal Check]]
         </div>
@@ -7565,40 +7657,9 @@ The command ends here.
 <<audio "specimen" loop play>>
 <<showAgent "analyst">>
 <<set $baysVisited += 1>>
+<<set $preControlVisited to true>>
 <div class="textbox">
     <<ctp "specimenBayEntry">>
-        <<if visited("Specimen Bay Entry") lte 1>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_1">>
-            There it is. This one usually resides in this bay.
-        <<else>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_4">>
-            Well now you know what to do. Gather the signals and get to the door.
-        <</if>>
-    <<ctpNext clear>>
-        <<if visited("Specimen Bay Entry") lte 1>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_2">>
-            Go talk to it. Don't you just wonder what's beneath its form? Make it think using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
-        <</if>>
-    <<ctpNext clear>>
-        <<if visited("Specimen Bay Entry") lte 1>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_3">>
-            Since this one seems to deal in data and observation, it would make sense to go along with those lines.
-        <</if>>
-    <<ctpNext clear>>
-        <<if visited("Specimen Bay Entry") lte 1>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_5">>
-            Oh yeah, good luck by the way.
-        <<else>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_6">>
-            You're a smooth sailor. Just letting you know.
-        <</if>>
-    <<ctpNext clear>>
         Sterile environment. Dim light pulses through bio-containers. Inside: organic structures, some familiar, some not. One too familiar.
     <<ctpNext clear>>
         The Analyst is already present. It doesn't turn to face you.
@@ -7606,6 +7667,23 @@ The command ends here.
         <<speaker "Analyst">>
         <<voice "analyst_long">>
         New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
+        <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_1">>
+            There it is. This one usually resides in this bay.
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_2">>
+            Go talk to it. Don't you just wonder what's beneath its form? Make it think using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_3">>
+            Since this one seems to deal in data and observation, it would make sense to go along with those lines.
+        <</if>>
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_5">>
+            Oh yeah, good luck by the way.
     <<ctpNext clear>>
         <div class="choice">
             <<if $brainManipAware>>[[Are you the colleague who messed with my brain?|Analyst Brain]]<</if>>
@@ -7619,7 +7697,7 @@ The command ends here.
 
 
 :: Specimen Bay Exception [nobr agent specimen exception] {"position":"3800,2275","size":"100,100"}
-<<showAgent "exception">>
+
 
 <div class="textbox">
     <<ctp "specimenBayException">>
@@ -7637,10 +7715,13 @@ The command ends here.
 <<hideAgent>>
 <<showAgent "exception">>
 
-<<if $analystSignal>><<set $specimenDone to true>><</if>>
+<<set $analystSignal to true>>
+<<set $specimenDone to true>>
 
 <div class="textbox">
     <<ctp "specimenBayExit">>
+        	BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
+    <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "specimen_bay_exit">>
         You look like you just felt it again. It feels like a routine to you now.
@@ -7700,9 +7781,14 @@ The command ends here.
 <<set $aggression = 0>>
 <<set $baysVisited        to 0>>
 <<set $archiveDone        to false>>
+<<set $secretHeard to false>>
 <<set $specimenDone       to false>>
 <<set $engineeringDone    to false>>
+<<set $identityVisited to true>>
 <<set $cartPuzzleDone     to false>>
+<<set $terminalDone    to false>>
+<<set $preControlVisited to false>>
+<<set $earthViewDone    to false>>
 <<set $exceptArchiveMet   to false>>
 <<set $discardedVisits    to 0>>
 <<set $asked32            to 0>>
@@ -7808,10 +7894,12 @@ The command ends here.
         video.autoplay=false; 
         video.removeAttribute("loop");
         video.removeAttribute("autoplay");  
+        video.muted = false;
         if (srcChanged) video.load();
     } else {
         video.loop=true;
         video.autoplay=true;    
+        video.muted = true;  
         if (srcChanged) video.load();
         video.play().catch(function (error) {
             console.log("Video autoplay problem:", error);
@@ -8210,8 +8298,6 @@ The command ends here.
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "warNoConflict">>
-        [ BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1 ]
-    <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
         <<run window.playAgentVideo("War-No", 6, 12)>>
@@ -8339,8 +8425,6 @@ The command ends here.
         <<run window.playAgentVideo("War-Normal", 6, 12)>>
         You identify destruction, accept its recurrence, then protect yourself by calling it normal.
     <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
-    <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "war_normal">>
         That felt important. Annoyingly judgmental, but important.
@@ -8373,8 +8457,6 @@ The command ends here.
     <<ctpNext clear>>
         <<speaker "You">>
         So we're just too independent for you? That sounds like a fancy way of saying you're a hive mind.
-    <<ctpNext clear>>
-        BIOCHIP DISTORTION — SIGNAL: 119.5 — 1.2 — 45.1
     <<ctpNext clear>>
         <<speaker "Cartographer">>
         <<voice "cartographer_short">>
@@ -8707,7 +8789,7 @@ var agentVideoActive  = false;
 $(document).ready(function() {
     var agentContainer = $('<div id="agent-container"></div>').css({
         'position':  'fixed',
-        'bottom':    '320px',
+        'bottom':    '400px',
         'left':      '50%',
         'transform': 'translateX(-50%)',
         'width':     '770px',
@@ -9196,6 +9278,20 @@ body[data-tags~="ending"][data-tags~="game-over"] {
     z-index: 10;
 }
 
+/* Kada postoje izbori, smanji glavni tekstualni okvir */
+.textbox:has(.choice) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+
+    width: 460px !important;
+    min-width: 460px !important;
+    max-width: 460px !important;
+
+    padding: 0 !important;
+}
+
 /*Speaker*/
 .speaker {
     position: absolute;
@@ -9444,17 +9540,6 @@ body {
 }
 
 /* Kolegine dorade tekstualnog okvira, ali bez brisanja postojeće pozicije. */
-.textbox,
-.dialogue,
-.speech-box,
-.narrator,
-#textbox {
-    background: rgba(10, 16, 28, 0.96) !important;
-    border: 2px solid #00b4ff !important;
-    border-radius: 20px !important;
-    box-shadow: 0 0 35px rgba(0, 180, 255, 0.35) !important;
-    color: #e6f1ff !important;
-}
 
 .textbox {
     padding: 35px !important;
@@ -9485,17 +9570,29 @@ body {
 
 /* Kolegina najvažnija UI promjena: izbori više nisu fiksirani u sredini ekrana,
    nego se slažu normalno unutar dijaloškog okvira. */
+/* FINAL choice sizing fix */
 .choice {
-    position: static !important;
+    position: absolute !important;
+    left: 50% !important;
     top: auto !important;
-    left: auto !important;
-    transform: none !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
+    width: min(420px, 80vw) !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    width: 100% !important;
-    margin-top: 24px !important;
-    z-index: 100 !important;
+    gap: 14px !important;
+
+    height: auto !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-right: 8px !important;
+    z-index: 3000 !important;
+
+    background: rgba(5, 12, 24, 0.72) !important;
+    border: 1px solid rgba(0, 220, 255, 0.35) !important;
+    border-radius: 22px !important;
 }
 
 .choice a {
@@ -9972,7 +10069,6 @@ body {
     transform: translateX(-50%) !important;
   
   	width: min(420px, 80vw) !important;
-    max-height: 260px !important;
   
   	overflow-y: auto !important;
     overflow-x: hidden !important;
@@ -9992,20 +10088,45 @@ body {
 
 .speaker {
     position: absolute !important;
-    top: -36px !important;
+    top: -20px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   
-  	min-width: 160px !important;
+  	min-width: 180px !important;
+    max-width: 260px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 12px 26px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1aa8ff,
+            #005dff
+        ) !important;
+
+    border-radius: 16px !important;
+
+    color: #e6f1ff !important;
+
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+  
     text-align: center !important;
   
-  	background: linear-gradient(135deg,#00b4ff,#0066ff) !important;
-    color: white !important;
-  
-  	padding: 10px 24px !important;
-    border-radius: 0 0 14px 14px !important;
-  
-  	z-index: 9999 !important;
+  	white-space: nowrap !important;
+
+    box-shadow:
+        0 0 18px rgba(0,180,255,.45) !important;
+
+    overflow: hidden !important;
+
+    z-index: 2000 !important;
 }
 
 /* ---------- TEXT FIX ---------- */
@@ -10037,56 +10158,55 @@ body {
 /* ---------- CHOICE CONTAINER FIX ---------- */
 
 .choice {
-    position: relative !important;
+    position: absolute !important;
 
-    left: auto !important;
-    right: auto !important;
+    left: 50% !important;
     top: auto !important;
-    bottom: auto !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
 
-    transform: none !important;
+    width: min(440px, 80vw) !important;
 
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-
-    gap: 12px !important;
-
-    width: fit-content !important;
-    max-width: 100% !important;
-
-    margin: 24px auto 0 auto !important;
-
-    padding: 8px 10px 8px 10px !important;
-
-    z-index: 1001 !important;
-
+  
+    gap: 14px !important;
+  
+	height: auto !important;
     max-height: 260px !important;
+  
     overflow-y: auto !important;
     overflow-x: hidden !important;
-
+	
+  	padding: 16px !important;
     box-sizing: border-box !important;
 
-    scrollbar-width: thin !important;
-    scrollbar-color: rgba(0, 220, 255, 0.75) rgba(5, 12, 24, 0.65) !important;
+    background: rgba(5, 12, 24, 0.72) !important;
+    border: 1px solid rgba(0, 220, 255, 0.35) !important;
+    border-radius: 22px !important;
+
+    box-shadow:
+        0 0 26px rgba(0,180,255,.22),
+        inset 0 0 20px rgba(0,180,255,.06) !important;
+
+    backdrop-filter: blur(8px) !important;
+
+    z-index: 3000 !important; !important;
 }
 
 /* ---------- CHOICE SCROLLBAR ---------- */
 
 .choice::-webkit-scrollbar {
-    width: 8px !important;
-}
-
-.choice::-webkit-scrollbar-track {
-    background: rgba(5, 12, 24, 0.65) !important;
-    border-radius: 999px !important;
+    width: 8px;
 }
 
 .choice::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00dfff, #0066ff) !important;
-    border-radius: 999px !important;
-    box-shadow: 0 0 10px rgba(0, 220, 255, 0.65) !important;
+    background: rgba(0, 220, 255, 0.65);
+    border-radius: 10px;
+}
+
+.choice::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.25);
 }
 
 .choice::-webkit-scrollbar-thumb:hover {
