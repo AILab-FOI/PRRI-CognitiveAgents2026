@@ -66,6 +66,11 @@ def agent_cartographer():
     return render_template("cartographer.html")
 
 
+@app.route("/agent-narrator")
+def agent_narrator():
+    return render_template("narrator.html")
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("404.html"), 404
@@ -116,6 +121,16 @@ AGENT_RULES: Dict[str, List[Rule]] = {
         (("iznimka", "exception", "anomalija"), "predstavljanje-kratko"),
         (("čuješ", "vidiš", "znaš"), "16"),
     ],
+    "narrator": [
+        (("tko si", "who are you", "identitet", "pravo ime"), "Who"),
+        (("što trebaš", "what need", "trebaš od mene", "misija", "zašto sam"), "What-Need"),
+        (("iskoristio", "used me", "upotrijebio", "koristio me"), "Used-Me"),
+        (("biočip", "biochip", "čip", "chip", "gledao si me"), "Biochip"),
+        (("tijelo", "body", "trup", "prethodni", "mrtav"), "Body"),
+        (("organizacija", "organization", "organisation", "naručili", "naručio"), "Organization"),
+        (("tuguješ", "grieve", "žalovao", "žalost", "prva osoba"), "Grieve"),
+        (("vjeruješ", "believe", "vjera", "vrijedi li", "čovječanstvo"), "Believe"),
+    ],
 }
 
 
@@ -136,6 +151,10 @@ AGENT_TEXT: Dict[str, str] = {
         "I detect a secondary signal inside the organism. Its origin does not match "
         "the current biological pattern."
     ),
+    "narrator": (
+        "I have been on this vessel for a very long time. You are the second person "
+        "I have brought here. I am sorry about the first one."
+    ),
 }
 
 
@@ -144,6 +163,7 @@ AGENT_PORTS: Dict[str, int] = {
     "analyst": 8010,
     "cartographer": 8011,
     "exception": 8012,
+    "narrator": 8013,
 }
 
 

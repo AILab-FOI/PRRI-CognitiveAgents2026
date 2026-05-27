@@ -153,6 +153,10 @@ body {
 
 /* ---------- INTRO / FIRST ROOM ---------- */
 
+body[data-tags~="intro"][data-tags~="title"] {
+    background-image: url('/media/TitleScreen.png');
+}
+
 body[data-tags~="intro"][data-tags~="backstory"] {
     background-image: url('/media/Intro_Backstory.png');
 }
@@ -1844,6 +1848,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         
         bgVideo.currentTime = startTime;
         bgVideo.play();
+        agentVideoActive = true;
     }
 };
 
@@ -3533,7 +3538,7 @@ Macro.add('voice', {
             [[I don&#39;t think about it much.|Analyst Carry No]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Analyst Kill Threat" tags="nobr" position="3200,2525" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Analyst Kill Threat" tags="nobr specimen" position="3200,2525" size="100,100">&lt;&lt;hideAgent&gt;&gt;
 
 &lt;&lt;set $narratorSentToHallway to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
@@ -3618,7 +3623,7 @@ Macro.add('voice', {
 			[[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Analyst No Signal" tags="nobr analyst" position="3200,2375" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Analyst No Signal" tags="nobr specimen analyst" position="3200,2375" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystNoSignal&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
@@ -3670,7 +3675,7 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Analyst Probability" tags="nobr analyst" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Analyst Probability" tags="nobr specimen analyst" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystProbability&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -3897,7 +3902,7 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="Analyst What Now" tags="nobr" position="3200,2625" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="Analyst What Now" tags="nobr specimen" position="3200,2625" size="100,100">&lt;&lt;hideAgent&gt;&gt;
 &lt;&lt;set $narratorSentToHallway to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
@@ -4349,8 +4354,7 @@ Macro.add('voice', {
         &lt;div class=&quot;choice&quot;&gt;
             [[Go to the control room.|Failed Artifact Ending]]
             [[Go back and find the Exception first.|Pre Control Room]]
-            [[Emit Exceptions signal|Successful Artifact Ending]]
-        &lt;/div&gt; 
+        &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="Awakening Chamber" tags="nobr waking" position="200,2550" size="100,100">&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;awakening&quot; loop play&gt;&gt;
@@ -4389,6 +4393,8 @@ Macro.add('voice', {
         &lt;/div&gt;
     &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="Awakening Chamber Return" tags="nobr waking" position="400,2550" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;awakening&quot; loop play&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;awakeningChamberReturn&quot;&gt;&gt;
         The awakening chamber. The pod is still open, drained and cold. The room is exactly as you left it when you first woke.
@@ -5552,7 +5558,7 @@ Macro.add('voice', {
         Good. Now come in. I have been waiting for quite a long time, and I am afraid my patience has become less of a virtue and more of a medical condition.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            [[Enter the control room.|Control Room Entry]]
+            &lt;&lt;if $hasArtifact&gt;&gt;[[Enter the control room.|Control Room Artifact Check]]&lt;&lt;else&gt;&gt;[[Enter the control room.|Control Room Entry]]&lt;&lt;/if&gt;&gt;
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="Control Room Artifact Check" tags="nobr control artifact" position="4700,3100" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
@@ -6774,7 +6780,10 @@ Macro.add('voice', {
     &lt;&lt;set $artifactUseChoice = &quot;compliance&quot;&gt;&gt;
     &lt;&lt;goto &quot;Eng Artifact Use&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-            [[&quot;I want to use it on the specimen bay.&quot;|Eng Artifact Use]]
+            &lt;&lt;link &quot;I want to use it on the specimen bay.&quot;&gt;&gt;
+    &lt;&lt;set $artifactUseChoice to &quot;curiosity&quot;&gt;&gt;
+    &lt;&lt;goto &quot;Eng Artifact Use&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="184" name="Eng Artifact Request" tags="nobr engineering artifact" position="2200,3925" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
@@ -7845,7 +7854,7 @@ The command ends here.
             [[Head to the bays.|Pre Control Room]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="240" name="Overlook Burned" tags="nobr agent exception" position="2800,425" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="240" name="Overlook Burned" tags="nobr agent exception archive" position="2800,425" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookBurned&quot;&gt;&gt;
@@ -7862,7 +7871,7 @@ The command ends here.
             [[Go Back.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="241" name="Overlook Distant" tags="nobr exception agent" position="2800,325" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="241" name="Overlook Distant" tags="nobr exception agent archive" position="2800,325" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookDistant&quot;&gt;&gt;
@@ -7877,7 +7886,7 @@ The command ends here.
             [[Go Back.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="242" name="Overlook Family" tags="nobr agent exception" position="2900,325" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="242" name="Overlook Family" tags="nobr agent exception archive" position="2900,325" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookFamily&quot;&gt;&gt;
@@ -7890,7 +7899,7 @@ The command ends here.
             [[Go Back.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="243" name="Overlook Home" tags="nobr agent exception" position="2700,425" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="243" name="Overlook Home" tags="nobr agent exception archive" position="2700,425" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookHome&quot;&gt;&gt;
@@ -7903,7 +7912,7 @@ The command ends here.
             [[Go Back.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="Overlook Missed" tags="nobr agent exception" position="2700,225" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="Overlook Missed" tags="nobr agent exception archive" position="2700,225" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 
 &lt;div class=&quot;textbox&quot;&gt;
@@ -7918,7 +7927,7 @@ The command ends here.
             [[Go Back.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="245" name="Overlook No Memory" tags="nobr exception agent" position="2800,225" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="245" name="Overlook No Memory" tags="nobr exception agent archive" position="2800,225" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookNoMemory&quot;&gt;&gt;
@@ -7931,7 +7940,7 @@ The command ends here.
             [[Go Back.|Archive Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="246" name="Overlook Nothing" tags="nobr agent exception" position="2700,325" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="246" name="Overlook Nothing" tags="nobr agent exception archive" position="2700,325" size="100,100">&lt;&lt;set $exceptSignal to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;overlookNothing&quot;&gt;&gt;
@@ -8461,6 +8470,8 @@ The command ends here.
 &lt;&lt;set $brainManipAware       to false&gt;&gt;
 &lt;&lt;set $foundBody             to false&gt;&gt;
 &lt;&lt;set $metException          to false&gt;&gt;
+&lt;&lt;set $artifactChoice        to &quot;&quot;&gt;&gt;
+&lt;&lt;set $artifactUseChoice     to &quot;&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;title&quot; &quot;media/glazba/title_screen.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;awakening&quot; &quot;media/glazba/awakening.mp3&quot;&gt;&gt;
@@ -8757,11 +8768,11 @@ The command ends here.
         else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;exception&quot;)) {
             video = &quot;FusionCore_Exception.mp4&quot;;
         }
-        else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;narrator&quot;)) {
-            video = &quot;FusionCore_Narrator.mp4&quot;;
-        }
         else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;burn&quot;)) {
             video = &quot;FusionCore_Burn.mp4&quot;;
+        }
+        else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;narrator&quot;)) {
+            video = &quot;FusionCore_Narrator.mp4&quot;;
         }
         else if (tags.includes(&quot;core&quot;)) {
             video = &quot;FusionCore.mp4&quot;;

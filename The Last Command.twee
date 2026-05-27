@@ -1947,7 +1947,7 @@ The Last Command
 </div>
 
 
-:: Analyst Kill Threat [nobr] {"position":"3200,2525","size":"100,100"}
+:: Analyst Kill Threat [nobr specimen] {"position":"3200,2525","size":"100,100"}
 <<hideAgent>>
 
 <<set $narratorSentToHallway to true>>
@@ -2056,7 +2056,7 @@ The Last Command
 </div>
 
 
-:: Analyst No Signal [nobr analyst] {"position":"3200,2375","size":"100,100"}
+:: Analyst No Signal [nobr specimen analyst] {"position":"3200,2375","size":"100,100"}
 <div class="textbox">
     <<ctp "analystNoSignal">>
         <<speaker "Analyst">>
@@ -2120,7 +2120,7 @@ The Last Command
 </div>
 
 
-:: Analyst Probability [nobr analyst] {"position":"3000,2825","size":"100,100"}
+:: Analyst Probability [nobr specimen analyst] {"position":"3000,2825","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystProbability">>
@@ -2395,7 +2395,7 @@ The Last Command
 </div>
 
 
-:: Analyst What Now [nobr] {"position":"3200,2625","size":"100,100"}
+:: Analyst What Now [nobr specimen] {"position":"3200,2625","size":"100,100"}
 <<hideAgent>>
 <<set $narratorSentToHallway to true>>
 
@@ -2923,8 +2923,7 @@ The Last Command
         <div class="choice">
             [[Go to the control room.|Failed Artifact Ending]]
             [[Go back and find the Exception first.|Pre Control Room]]
-            [[Emit Exceptions signal|Successful Artifact Ending]]
-        </div> 
+        </div>
   <</ctp>>
 </div>
 
@@ -2971,6 +2970,8 @@ The Last Command
 
 :: Awakening Chamber Return [nobr waking] {"position":"400,2550","size":"100,100"}
 <<hideAgent>>
+<<audio ":all" stop>>
+<<audio "awakening" loop play>>
 <div class="textbox">
     <<ctp "awakeningChamberReturn">>
         The awakening chamber. The pod is still open, drained and cold. The room is exactly as you left it when you first woke.
@@ -4334,7 +4335,7 @@ The Last Command
         Good. Now come in. I have been waiting for quite a long time, and I am afraid my patience has become less of a virtue and more of a medical condition.
     <<ctpNext clear>>
         <div class="choice">
-            [[Enter the control room.|Control Room Entry]]
+            <<if $hasArtifact>>[[Enter the control room.|Control Room Artifact Check]]<<else>>[[Enter the control room.|Control Room Entry]]<</if>>
         </div>
   <</ctp>>
 </div>
@@ -5724,7 +5725,10 @@ The Last Command
     <<set $artifactUseChoice = "compliance">>
     <<goto "Eng Artifact Use">>
 <</link>>
-            [["I want to use it on the specimen bay."|Eng Artifact Use]]
+            <<link "I want to use it on the specimen bay.">>
+    <<set $artifactUseChoice to "curiosity">>
+    <<goto "Eng Artifact Use">>
+<</link>>
         </div> 
   <</ctp>>
 </div>
@@ -7022,7 +7026,7 @@ The command ends here.
 </div>
 
 
-:: Overlook Burned [nobr agent exception] {"position":"2800,425","size":"100,100"}
+:: Overlook Burned [nobr agent exception archive] {"position":"2800,425","size":"100,100"}
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7043,7 +7047,7 @@ The command ends here.
 </div>
 
 
-:: Overlook Distant [nobr exception agent] {"position":"2800,325","size":"100,100"}
+:: Overlook Distant [nobr exception agent archive] {"position":"2800,325","size":"100,100"}
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7062,7 +7066,7 @@ The command ends here.
 </div>
 
 
-:: Overlook Family [nobr agent exception] {"position":"2900,325","size":"100,100"}
+:: Overlook Family [nobr agent exception archive] {"position":"2900,325","size":"100,100"}
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7079,7 +7083,7 @@ The command ends here.
 </div>
 
 
-:: Overlook Home [nobr agent exception] {"position":"2700,425","size":"100,100"}
+:: Overlook Home [nobr agent exception archive] {"position":"2700,425","size":"100,100"}
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7096,7 +7100,7 @@ The command ends here.
 </div>
 
 
-:: Overlook Missed [nobr agent exception] {"position":"2700,225","size":"100,100"}
+:: Overlook Missed [nobr agent exception archive] {"position":"2700,225","size":"100,100"}
 <<set $exceptSignal to true>>
 
 
@@ -7115,7 +7119,7 @@ The command ends here.
 </div>
 
 
-:: Overlook No Memory [nobr exception agent] {"position":"2800,225","size":"100,100"}
+:: Overlook No Memory [nobr exception agent archive] {"position":"2800,225","size":"100,100"}
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7132,7 +7136,7 @@ The command ends here.
 </div>
 
 
-:: Overlook Nothing [nobr agent exception] {"position":"2700,325","size":"100,100"}
+:: Overlook Nothing [nobr agent exception archive] {"position":"2700,325","size":"100,100"}
 <<set $exceptSignal to true>>
 
 <div class="textbox">
@@ -7715,6 +7719,8 @@ The command ends here.
 <<set $brainManipAware       to false>>
 <<set $foundBody             to false>>
 <<set $metException          to false>>
+<<set $artifactChoice        to "">>
+<<set $artifactUseChoice     to "">>
 
 <<cacheaudio "title" "media/glazba/title_screen.mp3">>
 <<cacheaudio "awakening" "media/glazba/awakening.mp3">>
@@ -8011,11 +8017,11 @@ The command ends here.
         else if (tags.includes("core") && tags.includes("exception")) {
             video = "FusionCore_Exception.mp4";
         }
-        else if (tags.includes("core") && tags.includes("narrator")) {
-            video = "FusionCore_Narrator.mp4";
-        }
         else if (tags.includes("core") && tags.includes("burn")) {
             video = "FusionCore_Burn.mp4";
+        }
+        else if (tags.includes("core") && tags.includes("narrator")) {
+            video = "FusionCore_Narrator.mp4";
         }
         else if (tags.includes("core")) {
             video = "FusionCore.mp4";
@@ -8803,6 +8809,7 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         
         bgVideo.currentTime = startTime;
         bgVideo.play();
+        agentVideoActive = true;
     }
 };
 
@@ -8873,6 +8880,10 @@ body {
 }
 
 /* ---------- INTRO / FIRST ROOM ---------- */
+
+body[data-tags~="intro"][data-tags~="title"] {
+    background-image: url('/media/TitleScreen.png');
+}
 
 body[data-tags~="intro"][data-tags~="backstory"] {
     background-image: url('/media/Intro_Backstory.png');
