@@ -12,7 +12,7 @@ var PASSAGE_STATES = {
   "Cart Brain Skeptic": ["Accept", "Permanent", "Join"],
   "Cart Brain Accept": ["Join"],
   "Cart Brain Permanent": ["Join"],
-  "Cart Hit Threat": ["Join"], //Hit??
+  "Cart Hit Threat": ["Join", "Punch"],
   "Cart Punch": ["Join"],
   "Cart Join Research": ["Puzzle-War", "Puzzle-Sacrifice", "Puzzle-Science"],
   "Cart Puzzle War": ["War-No", "War-Lifeform", "War-Normal", "War-Parallels"],
@@ -226,6 +226,10 @@ function connect() {
 
       case "Threat":
         tryAdvancePassage("Cart Hit Threat", response);
+        break;
+
+      case "Punch":
+        tryAdvancePassage("Cart Punch", response);
         break;
 
       case "Puzzle-War":

@@ -17,8 +17,6 @@ The Last Command
     "contact": "orange",
     "room1": "green",
     "agent": "green",
-    "missing-dialog": "red",
-    "missing-features": "blue",
     "agenmt": "purple",
     "nobre": "green",
     "non": "red",
@@ -96,27 +94,27 @@ The Last Command
     <<ctp "3.1.AEnvironment">>
         <<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         Your question assumes that a world is a place.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         For you, environment is surface, air, gravity, temperature, shelter.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         For us, environment is sequence. Pressure changes. Chemical memory. Light that arrives too late to warn anything living beneath it.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         Your body would fail there before your mind could name what was happening.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         This vessel imitates a narrow version of your Earth so that you remain coherent.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -124,12 +122,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         No.
     <<ctpNext clear>>
     	<<speaker "Exception">>
         <<voice "exception_short">>
-        <<run window.playAgentVideo("A-Enviroment", 6, 12)>>
+        <<run window.playAgentVideo("A-Environment", 6, 12)>>
         It is only the reason you are still able to ask.
     <<ctpNext clear>>
         <div class="choice">
@@ -1418,7 +1416,7 @@ The Last Command
 </div>
 
 
-:: 3.2. Not Far Off [nobr missing-dialog contact] {"position":"1000,3050","size":"100,100"}
+:: 3.2. Not Far Off [nobr contact] {"position":"1000,3050","size":"100,100"}
 <<hideAgent>>
 <<set $aggression += 1>>
 <div class="textbox">
@@ -2434,7 +2432,7 @@ The Last Command
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Who_I", 6, 10)>>
+        <<run window.playAgentVideo("Who-I", 6, 10)>>
         Meant to be. That framing is not accounted for in the current model. Identity without memory is theoretically unstable. You appear stable. We are noting that. It may be the most interesting thing about you so far.
     <<ctpNext clear>>
         <div class="choice">
@@ -2519,7 +2517,7 @@ The Last Command
 </div>
 
 
-:: Archive Bay Entry [nobr missing-features archive] {"position":"2200,725","size":"100,200"}
+:: Archive Bay Entry [nobr archive] {"position":"2200,725","size":"100,200"}
 <<hideAgent>>
 <<audio ":all" stop>>
 <<audio "archives" loop play>>
@@ -2917,7 +2915,7 @@ The Last Command
 </div>
 
 
-:: Artifact Signal Check [nobr missing-features control artifact] {"position":"5000,3200","size":"100,100"}
+:: Artifact Signal Check [nobr control artifact] {"position":"5000,3200","size":"100,100"}
 <div class="textbox">
     <<ctp "artifactSignalCheck">>
     <<if $exceptSignal>>
@@ -3336,7 +3334,7 @@ The Last Command
 </div>
 
 
-:: CR Believe [nobr narrator agent missing-features questions control] {"position":"5300,2900","size":"100,100"}
+:: CR Believe [nobr narrator agent questions control] {"position":"5300,2900","size":"100,100"}
 <div class="textbox">
     <<ctp "CRBelieve">>
         <<speaker "Narrator">>
@@ -3361,7 +3359,7 @@ The Last Command
 </div>
 
 
-:: CR Biochip Watch [nobr agent narrator missing-features control questions] {"position":"5300,2500","size":"100,100"}
+:: CR Biochip Watch [nobr agent narrator control questions] {"position":"5300,2500","size":"100,100"}
 <div class="textbox">
     <<ctp "CRBiochipWatch">>
         <<speaker "Narrator">>
@@ -3384,7 +3382,7 @@ The Last Command
 </div>
 
 
-:: CR Body Question [nobr agent narrator missing-features control questions] {"position":"5300,2600","size":"100,100"}
+:: CR Body Question [nobr agent narrator control questions] {"position":"5300,2600","size":"100,100"}
 <div class="textbox">
     <<ctp "CRBodyQuestions">>
         <<speaker "Narrator">>
@@ -3414,7 +3412,7 @@ The Last Command
 </div>
 
 
-:: CR Grieve [nobr agent narrator missing-features questions control] {"position":"5300,2800","size":"100,100"}
+:: CR Grieve [nobr agent narrator questions control] {"position":"5300,2800","size":"100,100"}
 <div class="textbox">
     <<ctp "CRGrieve">>
         <<speaker "Narrator">>
@@ -3435,7 +3433,7 @@ The Last Command
 </div>
 
 
-:: CR Grieve Not Answer [nobr agent narrator missing-features questions control] {"position":"5500,2800","size":"100,100"}
+:: CR Grieve Not Answer [nobr agent narrator questions control] {"position":"5500,2800","size":"100,100"}
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "CRGrieveNotAnswer">>
@@ -3455,7 +3453,7 @@ The Last Command
 </div>
 
 
-:: CR Grieve Think You Do [nobr agent narrator missing-features questions control] {"position":"5500,2700","size":"100,100"}
+:: CR Grieve Think You Do [nobr agent narrator questions control] {"position":"5500,2700","size":"100,100"}
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRThinkYouDo">>
@@ -3475,7 +3473,7 @@ The Last Command
 </div>
 
 
-:: CR Heard Everything [nobr agent narrator missing-features questions control] {"position":"5500,2600","size":"100,100"}
+:: CR Heard Everything [nobr agent narrator questions control] {"position":"5500,2600","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRHeardEverything">>
@@ -3498,7 +3496,7 @@ The Last Command
 </div>
 
 
-:: CR Intervene [nobr agent narrator missing-features questions control] {"position":"5500,2500","size":"100,100"}
+:: CR Intervene [nobr agent narrator questions control] {"position":"5500,2500","size":"100,100"}
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
@@ -3519,7 +3517,7 @@ The Last Command
 </div>
 
 
-:: CR Organisation [nobr agent narrator missing-features questions control] {"position":"5300,2700","size":"100,100"}
+:: CR Organisation [nobr agent narrator questions control] {"position":"5300,2700","size":"100,100"}
 <div class="textbox">
     <<ctp "CROrganization">>
         <<speaker "Narrator">>
@@ -3542,7 +3540,7 @@ The Last Command
 </div>
 
 
-:: CR Organisation Now [nobr agent narrator missing-features questions control] {"position":"5500,2300","size":"100,100"}
+:: CR Organisation Now [nobr agent narrator questions control] {"position":"5500,2300","size":"100,100"}
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CROrganizationNow">>
@@ -3564,7 +3562,7 @@ The Last Command
 </div>
 
 
-:: CR Panel Speech [nobr missing-features control narrator] {"position":"5900,2500","size":"100,200"}
+:: CR Panel Speech [nobr control narrator] {"position":"5900,2500","size":"100,200"}
 <<hideAgent>>
 
 <div class="textbox">
@@ -3607,7 +3605,7 @@ The Last Command
 </div>
 
 
-:: CR Tell Me [nobr agent missing-features narrator questions control] {"position":"5500,2400","size":"100,100"}
+:: CR Tell Me [nobr agent narrator questions control] {"position":"5500,2400","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRTellMe">>
@@ -3652,7 +3650,7 @@ The Last Command
 </div>
 
 
-:: CR Used Me [nobr agent narrator missing-features control questions] {"position":"5300,2400","size":"100,100"}
+:: CR Used Me [nobr agent narrator control questions] {"position":"5300,2400","size":"100,100"}
 <<set $aggression += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -3675,7 +3673,7 @@ The Last Command
 </div>
 
 
-:: CR What Need [agent missing-features narrator nobr control questions] {"position":"5300,2300","size":"100,100"}
+:: CR What Need [agent narrator nobr control questions] {"position":"5300,2300","size":"100,100"}
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRWhatNeed">>
@@ -3718,7 +3716,7 @@ The Last Command
 </div>
 
 
-:: CR Who Are You [agent nobr missing-features narrator control questions] {"position":"5300,2200","size":"100,100"}
+:: CR Who Are You [agent nobr narrator control questions] {"position":"5300,2200","size":"100,100"}
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CRWhoAreYou">>
@@ -3841,12 +3839,12 @@ The Last Command
     <<ctp "cartDeathWorld">>
     	<<speaker "Cartographer">>
         <<voice "cartographer_long">>
-        <<run window.playAgentVideo("Deatthworld", 6, 12)>>
+        <<run window.playAgentVideo("Deathworld", 6, 12)>>
         Upon observing how life defends itself on your world, my colleagues concluded that removing specimens from their habitat and suppressing stress responses reduces key variables in the ecosystem's unpredictability.
     <<ctpNext clear>>
     	<<speaker "Cartographer">>
         <<voice "cartographer_medium">>
-        <<run window.playAgentVideo("Deatthworld", 6, 12)>>
+        <<run window.playAgentVideo("Deathworld", 6, 12)>>
         You understand. The brain manipulations. You weren't just brought here — you were adjusted.
     <<ctpNext clear>>
         <div class="choice">
@@ -4390,7 +4388,7 @@ The Last Command
 </div>
 
 
-:: Control Room Questions [nobr missing-features control questions narrator agent] {"position":"5100,2550","size":"100,100"}
+:: Control Room Questions [nobr control questions narrator agent] {"position":"5100,2550","size":"100,100"}
 <<showAgent "narrator">>
 
 <div class="textbox">
@@ -4437,7 +4435,7 @@ The Last Command
 </div>
 
 
-:: Death A [nobr missing-features ending control gameover] {"position":"7000,1550","size":"100,200"}
+:: Death A [nobr ending control gameover] {"position":"7000,1550","size":"100,200"}
 <div class="textbox">
     <<ctp "deathA">>
         The ship moves. The narrator navigates. The screens come alive. For a long moment it seems like it might be fine. Then the biochip, still malfunctioning from the control room's frequency, reaches a threshold it was not designed to survive. Not an explosion. Not a scream. Just a failure of the thing that was keeping your nervous system calibrated to the alien environment.
@@ -5243,7 +5241,7 @@ The Last Command
 </div>
 
 
-:: Ending A Choice [nobr missing-dialog missing-features ending] {"position":"6400,1550","size":"100,200"}
+:: Ending A Choice [nobr ending] {"position":"6400,1550","size":"100,200"}
 <<set _c to $curiosity / 34>>
 <<set _s to $skepticism / 37>>
 <<set _co to $compliance / 14>>
@@ -5317,7 +5315,7 @@ The Last Command
 </div>
 
 
-:: Ending B [nobr missing-features ending] {"position":"6400,2250","size":"100,200"}
+:: Ending B [nobr ending] {"position":"6400,2250","size":"100,200"}
 <div class="textbox">
     <<ctp "endingB">>
         <<speaker "You">>
@@ -5427,7 +5425,7 @@ The Last Command
 </div>
 
 
-:: Ending C [nobr missing-dialog missing-features ending] {"position":"6400,2750","size":"100,200"}
+:: Ending C [nobr ending] {"position":"6400,2750","size":"100,200"}
 <<set _c to $curiosity / 34>>
 <<set _s to $skepticism / 37>>
 <<set _co to $compliance / 14>>
@@ -5529,7 +5527,7 @@ The Last Command
 </div>
 
 
-:: Ending D [nobr missing-features ending] {"position":"6400,3250","size":"100,200"}
+:: Ending D [nobr ending] {"position":"6400,3250","size":"100,200"}
 <div class="textbox">
     <<ctp "endingD">>
         You lunge at the narrator. The biochip disorientation makes the movement imprecise. The narrator does not flinch in the way a frightened person would. There is something resigned about it.
@@ -5558,7 +5556,7 @@ The Last Command
 </div>
 
 
-:: Ending D Continue [nobr missing-features ending] {"position":"6700,3150","size":"100,100"}
+:: Ending D Continue [nobr ending] {"position":"6700,3150","size":"100,100"}
 <div class="textbox">
     <<ctp "endingDContinue">>
         The narrator is incapacitated. You, still affected by the biochip malfunction, instinctively touch the panel to steady yourself. The ship activates.
@@ -5582,7 +5580,7 @@ The Last Command
 </div>
 
 
-:: Ending D Stop [nobr missing-features ending] {"position":"6700,3450","size":"100,100"}
+:: Ending D Stop [nobr ending] {"position":"6700,3450","size":"100,100"}
 <div class="textbox">
     <<ctp "endingDStop">>
         You release the narrator. A beat of stillness between you.
@@ -5770,7 +5768,7 @@ The Last Command
 </div>
 
 
-:: Eng Artifact Use [nobr missing-features engineering artifact] {"position":"2600,3875","size":"100,100"}
+:: Eng Artifact Use [nobr engineering artifact] {"position":"2600,3875","size":"100,100"}
 <<if $artifactUseChoice is "compliance">>
     <<set $compliance += 1>>
 <</if>>
@@ -5813,7 +5811,7 @@ The Last Command
 </div>
 
 
-:: Eng Bay Closing [nobr missing-features engineering closing] {"position":"4000,4475","size":"100,100"}
+:: Eng Bay Closing [nobr engineering closing] {"position":"4000,4475","size":"100,100"}
 <<hideAgent>>
 <<set $engSignal to true>>
 <<set $engineeringDone to true>>
@@ -6274,7 +6272,7 @@ The Last Command
 </div>
 
 
-:: Engineering Bay Entry [nobr missing-features engineering] {"position":"2200,4425","size":"100,200"}
+:: Engineering Bay Entry [nobr engineering] {"position":"2200,4425","size":"100,200"}
 <<set $baysVisited += 1>>
 <<audio ":all" stop>>
 <<audio "engineering" loop play>>
@@ -6495,7 +6493,7 @@ The Last Command
 </div>
 
 
-:: Fusion Core Entry [nobr missing-dialog missing-features core] {"position":"2600,5300","size":"100,100"}
+:: Fusion Core Entry [nobr core] {"position":"2600,5300","size":"100,100"}
 <<set $compliance += 1>>
 <<audio ":all" stop>>
 <<audio "fusion" loop play>>
@@ -6561,7 +6559,7 @@ The Last Command
 </div>
 
 
-:: Fusion Core Request [nobr missing-features core warning] {"position":"2400,5300","size":"100,100"}
+:: Fusion Core Request [nobr core warning] {"position":"2400,5300","size":"100,100"}
 <div class="textbox">
     <<ctp "fusionCoreRequest">>
         You ask about the Fusion Core. The Engineer pauses.
@@ -7635,7 +7633,7 @@ The command ends here.
 </div>
 
 
-:: Specimen Bay Entry [nobr missing-features specimen entrance] {"position":"2175,2525","size":"100,200"}
+:: Specimen Bay Entry [nobr specimen entrance] {"position":"2175,2525","size":"100,200"}
 <<if $analystSignal>><<set $specimenDone to true>><</if>>
 <<audio ":all" stop>>
 <<audio "specimen" loop play>>
@@ -7683,7 +7681,7 @@ The command ends here.
 </div>
 
 
-:: Specimen Bay Exit [nobr missing-features specimen exception] {"position":"3600,2275","size":"100,100"}
+:: Specimen Bay Exit [nobr specimen exception] {"position":"3600,2275","size":"100,100"}
 <<hideAgent>>
 <<showAgent "exception">>
 
@@ -7912,7 +7910,7 @@ The command ends here.
             video = "Intro_Backstory.mp4";
         }
         else if (tags.includes("waking") && tags.includes("wait")) {
-            video = "Waking_Wait.mp4";
+            video = "Waking.mp4";
         }
         else if (tags.includes("waking")) {
             video = "Waking.mp4";
@@ -8108,11 +8106,11 @@ The command ends here.
         else if (tags.includes("ending") && (tags.includes("artifactfailed") || tags.includes("artifact-failed"))) {
             video = "Ending_ArtifactFailed.mp4";
         }
-        else if (tags.includes("ending") && tags.includes("game-over")) {
+        else if (tags.includes("ending") && (tags.includes("gameover") || tags.includes("game-over"))) {
             video = "Ending_GameOver.mp4";
         }
         else if (tags.includes("ending")) {
-            video = "Ending.mp4";
+            video = "Ending_GameOver.mp4";
         }
 
         window.setBackgroundVideo(video, isAgentPassage);
