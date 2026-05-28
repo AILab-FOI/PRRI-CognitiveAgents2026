@@ -82,7 +82,8 @@ The Last Command
     "arh": "purple",
     "specimn": "orange",
     "specim": "purple",
-    "quesi": "blue"
+    "quesi": "blue",
+    "controlž": "yellow"
   },
   "zoom": 0.6
 }
@@ -3332,17 +3333,17 @@ The Last Command
 </div>
 
 
-:: CR Believe [nobr narrator agent missing-features questions] {"position":"5300,2900","size":"100,100"}
-<<run window.playAgentVideo("Believe", 0, 6)>>
+:: CR Believe [nobr narrator agent missing-features questions control] {"position":"5300,2900","size":"100,100"}
+
 
 <div class="textbox">
     <<ctp "CRBelieve">>
         <<speaker "Narrator">>
-        <<voice "cr_believe_1">>
+        <<run window.playAgentVideo("Believe1", 315, 350)>>
         That is the question I have been not asking myself for a very long time. I believe in humanity the way some people believe in a god. Not because I have proof. Because the alternative — not believing in it — requires me to look at everything I've done and find a different explanation for why I did it. And I don't have one. So I keep believing. I believe harder when I'm least sure.
     <<ctpNext clear>>
         <<speaker "Narrator">>
-        <<voice "cr_believe_2">>
+        <<run window.playAgentVideo("Believe2", 264, 291)>>
         You asked if it's something I say. It started as something I believed. Then it became something I said because I believed it. Then it became something I said to keep believing it. I'm not sure which one it is right now, standing here, looking at you. I think that's the most honest thing I've said since you walked through that door.
     <<ctpNext clear>>
         <div class="choice">
@@ -3360,12 +3361,12 @@ The Last Command
 
 
 :: CR Biochip Watch [nobr agent narrator missing-features control questions] {"position":"5300,2500","size":"100,100"}
-<<run window.playAgentVideo("Biochip", 0, 6)>>
+
 
 <div class="textbox">
     <<ctp "CRBiochipWatch">>
         <<speaker "Narrator">>
-        <<voice "cr_biochip_watch">>
+        <<run window.playAgentVideo("Biochip", 217, 241)>>
         Yes. Everything you said to them. Everything you did. The layout of every room. I had reasons for needing to know. I told myself the reasons were good enough. I'm less certain of that now than I was when I started.
     <<ctpNext clear>>
         <div class="choice">
@@ -3391,7 +3392,7 @@ The Last Command
     <<ctp "CRBodyQuestions">>
         <<speaker "Narrator">>
         <<voice "cr_body_question_1">>
-        <<run window.playAgentVideo("Body", 0, 6)>>
+        <<run window.playAgentVideo("Body1", 452, 469)>>
         I know. I've been thinking about that since you found it. The ship doesn't make exceptions. Something kept that body there. Something wanted you to find it.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -3399,7 +3400,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Narrator">>
         <<voice "cr_body_question_2">>
-        <<run window.playAgentVideo("Body2", 0, 6)>>
+        <<run window.playAgentVideo("Body2", 291, 315)>>
         Something that knew you were coming before I did. Something that understood that you finding that room would change what you did next. I have been in this room for a long time and I thought I understood the shape of everything happening on this ship. I was wrong about that. I don't know by how much.
     <<ctpNext clear>>
         <div class="choice">
@@ -3416,13 +3417,13 @@ The Last Command
 </div>
 
 
-:: CR Grieve [nobr agent narrator missing-features questions] {"position":"5300,2800","size":"100,100"}
-<<run window.playAgentVideo("Grieve", 0, 6)>>
+:: CR Grieve [nobr agent narrator missing-features questions control] {"position":"5300,2800","size":"100,100"}
+
 
 <div class="textbox">
     <<ctp "CRGrieve">>
         <<speaker "Narrator">>
-        <<voice "cr_grieve">>
+        <<run window.playAgentVideo("Grieve", 374, 411)>>
         I told myself what happened to them was a miscalculation. I use that word because it keeps it in a register I can manage. Grief is not a register I can manage in this room. I've been alone in here for long enough that I'm not sure I have access to it anymore in the way I used to. But I think about them. I think about them with a frequency that isn't consistent with just filing it as a miscalculation.
     <<ctpNext clear>>
         <div class="choice">
@@ -3439,14 +3440,14 @@ The Last Command
 </div>
 
 
-:: CR Grieve Not Answer [nobr agent narrator missing-features questions] {"position":"5500,2800","size":"100,100"}
-<<run window.playAgentVideo("Not-Answer", 0, 6)>>
+:: CR Grieve Not Answer [nobr agent narrator missing-features questions control] {"position":"5500,2800","size":"100,100"}
+
 
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "CRGrieveNotAnswer">>
         <<speaker "Narrator">>
-        <<voice "cr_grieve_not_answer">>
+        <<run window.playAgentVideo("Not-Answer", 350, 374)>>
         No. It isn't. The answer is yes. I grieved them badly and privately and without any of the things that make grief bearable and I am still doing it. That's the answer.
     <<ctpNext clear>>
         <div class="choice">
@@ -3461,14 +3462,14 @@ The Last Command
 </div>
 
 
-:: CR Grieve Think You Do [nobr agent narrator missing-features questions] {"position":"5500,2700","size":"100,100"}
-<<run window.playAgentVideo("Think", 0, 6)>>
+:: CR Grieve Think You Do [nobr agent narrator missing-features questions control] {"position":"5500,2700","size":"100,100"}
+
 
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRThinkYouDo">>
         <<speaker "Narrator">>
-        <<voice "cr_grieve_think_you_do">>
+        <<run window.playAgentVideo("Think", 209, 217)>>
         Thank you. I don't know what to do with that but thank you.
     <<ctpNext clear>>
         <div class="choice">
@@ -3483,14 +3484,15 @@ The Last Command
 </div>
 
 
-:: CR Heard Everything [nobr agent narrator missing-features questions] {"position":"5500,2600","size":"100,100"}
-<<run window.playAgentVideo("Heard", 0, 6)>>
+:: CR Heard Everything [nobr agent narrator missing-features questions control] {"position":"5500,2600","size":"100,100"}
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRHeardEverything">>
         <<speaker "Narrator">>
         <<voice "cr_heard_everything">>
+        <<run window.playAgentVideo("Heard", 241, 264)>>
         No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn't.
     <<ctpNext clear>>
         <div class="choice">
@@ -3507,13 +3509,13 @@ The Last Command
 </div>
 
 
-:: CR Intervene [nobr agent narrator missing-features questions] {"position":"5500,2500","size":"100,100"}
-<<run window.playAgentVideo("Intervene", 0, 6)>>
+:: CR Intervene [nobr agent narrator missing-features questions control] {"position":"5500,2500","size":"100,100"}
+
 
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
-        <<voice "cr_intervene">>
+        <<run window.playAgentVideo("Intervene", 113, 136)>>
         No. I nudged. I framed. I pointed you at things I wanted you to see. But I never put words in your mouth. That was always yours. I want that to mean something even if I understand if it doesn't.
     <<ctpNext clear>>
         <div class="choice">
@@ -3530,13 +3532,13 @@ The Last Command
 </div>
 
 
-:: CR Organisation [nobr agent narrator missing-features questions] {"position":"5300,2700","size":"100,100"}
-<<run window.playAgentVideo("Organization", 0, 6)>>
+:: CR Organisation [nobr agent narrator missing-features questions control] {"position":"5300,2700","size":"100,100"}
+
 
 <div class="textbox">
     <<ctp "CROrganization">>
         <<speaker "Narrator">>
-        <<voice "cr_organisation">>
+        <<run window.playAgentVideo("Organization", 136, 162)>>
         Themselves. Which sounds like freedom and functions like a religion. We had a framework — a set of principles about what contact with the visitors should look like, who should control it, what humanity should get out of it. We were very certain about all of it. Certainty is comfortable when you're the one holding it.
     <<ctpNext clear>>
         <div class="choice">
@@ -3555,14 +3557,14 @@ The Last Command
 </div>
 
 
-:: CR Organisation Now [nobr agent narrator missing-features questions] {"position":"5500,2300","size":"100,100"}
-<<run window.playAgentVideo("Now", 0, 6)>>
+:: CR Organisation Now [nobr agent narrator missing-features questions control] {"position":"5500,2300","size":"100,100"}
+
 
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CROrganizationNow">>
         <<speaker "Narrator">>
-        <<voice "cr_organisation_now">>
+        <<run window.playAgentVideo("Now", 185, 209)>>
         Now I've been in this room long enough to watch certainty curdle. I still believe in the goal. I'm less certain I believe in the people — including myself — which is an uncomfortable thing to arrive at when you're the only human on an alien ship.
     <<ctpNext clear>>
         <div class="choice">
@@ -3622,14 +3624,14 @@ The Last Command
 </div>
 
 
-:: CR Tell Me [nobr agent missing-features narrator questions] {"position":"5500,2400","size":"100,100"}
-<<run window.playAgentVideo("Tell-Me", 0, 6)>>
+:: CR Tell Me [nobr agent missing-features narrator questions control] {"position":"5500,2400","size":"100,100"}
+
 
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRTellMe">>
         <<speaker "Narrator">>
-        <<voice "cr_tell_me">>
+        <<run window.playAgentVideo("Tell-Me", 162, 185)>>
         If you hadn't asked, probably not. Not because I wanted to deceive you specifically. Because I've been operating in a mode where information is a resource and I allocate it for effect. I've been doing it so long I stopped noticing when I was doing it. You noticed. That's why you're asking.
     <<ctpNext clear>>
         <div class="choice">
@@ -3670,14 +3672,14 @@ The Last Command
 
 
 :: CR Used Me [nobr agent narrator missing-features control questions] {"position":"5300,2400","size":"100,100"}
-<<run window.playAgentVideo("Used-Me", 0, 6)>>
+
 
 <<set $aggression += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRUsedMe">>
         <<speaker "Narrator">>
-        <<voice "cr_used_me">>
+        <<run window.playAgentVideo("Used-Me", 500, 548)>>
         Yes. On both counts. I am not going to tell you the first one was a calculated sacrifice because it wasn't, it was a miscalculation, and those are different things. I am also not going to tell you that I haven't thought about it, because I have had quite a lot of time in this room and it keeps coming back in the way things do when you can't do anything about them yet. You can be angry. I would be. I am asking you to also be practical, because those two things are allowed to coexist in a human being and that is one of the things I actually respect about your species.
     <<ctpNext clear>>
         <div class="choice">
@@ -3695,13 +3697,13 @@ The Last Command
 
 
 :: CR What Need [agent missing-features narrator nobr control questions] {"position":"5300,2300","size":"100,100"}
-<<run window.playAgentVideo("What-Need", 0, 6)>>
+
 
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRWhatNeed">>
         <<speaker "Narrator">>
-        <<voice "cr_what_need">>
+        <<run window.playAgentVideo("What-Need", 469, 500)>>
         The biochip in your skull interfaces with every system on this ship. I cannot do that. I don't have one. I need you to place your hand on the panel to your left, and the ship will recognise you as an authorised presence rather than a research subject. Once that happens, I can fly this thing. That's all. That's the whole plan at this point. It has been streamlined somewhat by circumstance.
     <<ctpNext clear>>
         <div class="choice">
@@ -3740,13 +3742,13 @@ The Last Command
 
 
 :: CR Who Are You [agent nobr missing-features narrator control questions] {"position":"5300,2200","size":"100,100"}
-<<run window.playAgentVideo("Who", 0, 6)>>
+
 
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CRWhoAreYou">>
         <<speaker "Narrator">>
-        <<voice "cr_who_are_you">>
+        <<run window.playAgentVideo("Who", 414, 452)>>
         A member of an organisation you haven't heard of that answered to no government and made several arrangements with the visitors over the years, some of which involved people exactly like you and therefore somewhat unlike you. We had a plan. I was the part of the plan that got stuck. The others are still on Earth doing whatever it is people do when their plan has a part that got stuck. I don't know the current status. I have been in this room.
     <<ctpNext clear>>
         <div class="choice">
@@ -4442,7 +4444,7 @@ The Last Command
             Good. You followed it through. I know that probably sounds like a small thing but it isn't. You had every reason to stop and you didn't. Come in.
         <<else>>
             <<speaker "Narrator">>
-            <<voice "control_room_questions_5">>
+            <<run window.playAgentVideo("Question5", 411, 414)>>
             You made it. Come in.
         <</if>>
     <<ctpNext clear>>
@@ -6740,6 +6742,7 @@ The command ends here.
 :: Intro Arrival [nobr intro arrival] {"position":"0,2200","size":"100,100"}
 <<hideAgent>>
 
+
 <div class="textbox">
     <<ctp "introArrival">>
         Their arrival did not unite humanity.
@@ -6827,6 +6830,7 @@ The command ends here.
 
 :: Intro Kidnapping [nobr intro kidnapping] {"position":"100,2100","size":"100,100"}
 <<hideAgent>>
+
 
 <div class="textbox">
     <<ctp "introKidnapping">>
