@@ -1849,7 +1849,7 @@ The Last Command
 <</if>>
 
 <div class="textbox">
-  <<if $if _narratorSentHere>>
+  <<if _narratorSentHere>>
 	<<ctp "analystDeadEndHallway">>
         You move through the long hallway.
     <<ctpNext clear>>
@@ -7238,13 +7238,12 @@ The command ends here.
             <<if not $specimenDone>>[[Head to the Specimen bay.|Specimen Bay Entry]]<</if>>
             <<if not $engineeringDone>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
             <<if $baysVisited eq 0 and not $identityVisited>>[["Hold up. Who or what even are you?"|Narrator Identity]]<</if>>
-            <<if $hasArtifact or $exceptSignal>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
             [[Head back down the hallway.|Analyst Dead End Hallway]]
         </div>
   <</ctp>>
-  
-  
-  
+
+
+
     <<else>>
     <<ctp "preControlRoom">>
     	You are back in the central chamber.
@@ -7259,7 +7258,6 @@ The command ends here.
             <<if not $specimenDone>>[[Head to the Specimen bay.|Specimen Bay Entry]]<</if>>
             <<if not $engineeringDone>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
             <<if $baysVisited eq 0 and not $identityVisited>>[["Hold up. Who or what even are you?"|Narrator Identity]]<</if>>
-            <<if $hasArtifact or $exceptSignal>>[[Head to the Engineering bay.|Engineering Bay Entry]]<</if>>
             [[Head back down the hallway.|Analyst Dead End Hallway]]
         </div>
   <</ctp>>

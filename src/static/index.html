@@ -3498,7 +3498,7 @@ Macro.add('voice', {
 &lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
-  &lt;&lt;if $if _narratorSentHere&gt;&gt;
+  &lt;&lt;if _narratorSentHere&gt;&gt;
 	&lt;&lt;ctp &quot;analystDeadEndHallway&quot;&gt;&gt;
         You move through the long hallway.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -8079,13 +8079,12 @@ The command ends here.
             &lt;&lt;if not $specimenDone&gt;&gt;[[Head to the Specimen bay.|Specimen Bay Entry]]&lt;&lt;/if&gt;&gt;
             &lt;&lt;if not $engineeringDone&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
             &lt;&lt;if $baysVisited eq 0 and not $identityVisited&gt;&gt;[[&quot;Hold up. Who or what even are you?&quot;|Narrator Identity]]&lt;&lt;/if&gt;&gt;
-            &lt;&lt;if $hasArtifact or $exceptSignal&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
             [[Head back down the hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-  
-  
-  
+
+
+
     &lt;&lt;else&gt;&gt;
     &lt;&lt;ctp &quot;preControlRoom&quot;&gt;&gt;
     	You are back in the central chamber.
@@ -8100,7 +8099,6 @@ The command ends here.
             &lt;&lt;if not $specimenDone&gt;&gt;[[Head to the Specimen bay.|Specimen Bay Entry]]&lt;&lt;/if&gt;&gt;
             &lt;&lt;if not $engineeringDone&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
             &lt;&lt;if $baysVisited eq 0 and not $identityVisited&gt;&gt;[[&quot;Hold up. Who or what even are you?&quot;|Narrator Identity]]&lt;&lt;/if&gt;&gt;
-            &lt;&lt;if $hasArtifact or $exceptSignal&gt;&gt;[[Head to the Engineering bay.|Engineering Bay Entry]]&lt;&lt;/if&gt;&gt;
             [[Head back down the hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
