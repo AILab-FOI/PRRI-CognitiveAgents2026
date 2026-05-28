@@ -847,7 +847,6 @@ The Last Command
 
 
 :: 3.1. Passing Through [nobr hallway exception agent] {"position":"700,2600","size":"100,100"}
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "passingThrough">>
@@ -872,7 +871,6 @@ The Last Command
 
 
 :: 3.1. Punch [nobr hallway exception agent] {"position":"1400,2100","size":"100,100"}
-
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "3.1.Punch">>
@@ -1067,8 +1065,6 @@ The Last Command
 
 
 :: 3.1. Walk Away [nobr hallway exception agent] {"position":"1400,2200","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "3.1.WalkAway">>
         You turn away before the conversation can become anything clearer.
@@ -1712,7 +1708,7 @@ The Last Command
     <<ctp "analystAlive">>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
-        <<run window.playAgentVideo("Alive", 6, 12)>>
+        <<run window.playAgentVideo("Alive", 6, 10)>>
         The definition blurs when in outer research.
     <<ctpNext clear>>
         <div class="choice">
@@ -1729,7 +1725,7 @@ The Last Command
     <<ctp "analystBrain">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Brain", 6, 12)>>
+        <<run window.playAgentVideo("Brain", 6, 10)>>
         Yes is the likely answer. The brain stress responses were suppressed in place of the environment change not being the deterministic factor.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -1737,7 +1733,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Brain", 6, 12)>>
+        <<run window.playAgentVideo("Brain", 6, 10)>>
         No to both inquiries. The only side effect is  higher potential for amnesia. Is that something you want to research?
     <<ctpNext clear>>
         <div class="choice">
@@ -1756,7 +1752,7 @@ The Last Command
     <<ctp "analystCarryKnow">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Carry-Know", 6, 12)>>
+        <<run window.playAgentVideo("Carry-Know", 6, 10)>>
         Knowing without carrying. Awareness without weight. That is either a very advanced state or a very early one. We have not determined which end of that spectrum your kind occupies. Possibly neither. Possibly both depending on the individual. That variability is what makes classification difficult.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1776,7 +1772,7 @@ The Last Command
     <<ctp "analystCarryNo">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Carry-No", 6, 12)>>
+        <<run window.playAgentVideo("Carry-No", 6, 10)>>
         That answer and the previous one are not the same, though your species often uses them interchangeably. Not thinking about something is not the same as having resolved it. It is also not the same as having abandoned it. I will leave that where it lands.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1795,7 +1791,7 @@ The Last Command
     <<ctp "analystCarryUsedTo">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Carry-Used", 6, 12)>>
+        <<run window.playAgentVideo("Carry-Used", 6, 10)>>
         Used to. A temporal boundary on something your species typically treats as permanent. Something caused you to set it down. You didn't say what. I notice you didn't say what. The biochip noted it regardless.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1814,7 +1810,7 @@ The Last Command
     <<ctp "analystCarryYes">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Carry-Yes", 6, 12)>>
+        <<run window.playAgentVideo("Carry-Yes", 6, 10)>>
         Everyone. A universal claim made with certainty about a species that has demonstrated consistent internal disagreement. And yet I believe you. Not because the data confirms it. Because of how quickly you said it. Carrying something unresolved without it stopping you. That may be the closest thing to a defining characteristic we have found. It is not comfortable to catalogue.
     <<ctpNext clear>>
         The Analyst returns to its work.
@@ -1831,7 +1827,7 @@ The Last Command
     <<ctp "analystCompare">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Compare", 6, 12)>>
+        <<run window.playAgentVideo("Compare", 6, 10)>>
         To baseline. To deviation. To anomaly. Your species contains all three simultaneously. This is inefficient. And therefore valuable.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -1884,11 +1880,12 @@ The Last Command
 
 
 :: Analyst Dont Understand [nobr agent analyst specimen] {"position":"2500,3025","size":"100,100"}
-<<run window.playAgentVideo("Understand", 0, 6)>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystDontUnderstand">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Understand", 6, 10)>>
         Possibly. Understanding is not a prerequisite for accurate observation. I can record without interpreting. I can measure without knowing what the measurement means.
     <<ctpNext clear>>
         Your species often confuses these two things in the opposite direction — assuming understanding where only familiarity exists. I am not certain which error is larger.
@@ -1901,11 +1898,11 @@ The Last Command
 
 
 :: Analyst Feel Alive [nobr agent analyst specimen] {"position":"2500,2575","size":"100,100"}
-<<run window.playAgentVideo("Feel-Alive", 0, 6)>>
 <div class="textbox">
     <<ctp "analystFeelAlive">>
         <<speaker "Analyst">>
-        Feel. A subjective assessment applied to an external object. You are using your own aliveness as a measuring instrument.
+        <<voice "analyst_short">>
+        <<run window.playAgentVideo("Feel-Alive", 6, 10)>>
     <<ctpNext clear>>
         This is common in your species. It produces unreliable data and occasionally accurate conclusions. I have not determined which this is.
     <<ctpNext clear>>
@@ -1922,14 +1919,14 @@ The Last Command
     <<ctp "analystGreaterDesign">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Greater-Design", 6, 12)>>
+        <<run window.playAgentVideo("Greater-Design", 6, 10)>>
         Theories. Plural. Unresolved. Your species detected a pattern and produced multiple explanations. Each internally consistent. Each incompatible. Unresolved fundamentals should produce stillness. Yours don't. You build on them anyway. I am not certain whether that is an error or the most efficient behaviour we've observed.
     <<ctpNext clear>>
         The biochip glitches lightly.
     <<ctpNext clear>>
         <<speaker "Analyst">>
         	<<voice "analyst_short">>
-            <<run window.playAgentVideo("Greater-Design", 6, 12)>>
+            <<run window.playAgentVideo("Greater-Design", 6, 10)>>
             You said 'bundle'. Like it is something you carry. Do you?
     <<ctpNext clear>>
         <div class="choice">
@@ -1960,11 +1957,12 @@ The Last Command
 
 
 :: Analyst Learned [nobr agent analyst specimen] {"position":"2500,3375","size":"100,100"}
-<<run window.playAgentVideo("Learned", 0, 6)>>
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "analystLearned">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Learned", 6, 10)>>
         That your species maintains internal contradiction without resolution and continues to function. That memory and identity are less stable in humans than your behaviour implies.
     <<ctpNext clear>>
         That what you call emotion appears to operate as a decision-making system rather than a disruption of one. These are preliminary findings. The research is not complete.
@@ -1981,7 +1979,7 @@ The Last Command
     <<ctp "analystLeft">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Left", 6, 12)>>
+        <<run window.playAgentVideo("Left", 6, 10)>>
         Deviation from a known pattern, not the thing itself. That is how your species begins. With what doesn't fit. Is it by design or not?
     <<ctpNext clear>>
         <<speaker "You">>
@@ -1989,7 +1987,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
-        <<run window.playAgentVideo("Left", 6, 12)>>
+        <<run window.playAgentVideo("Left", 6, 10)>>
         Unexpected reaffirmation. How far does the awareness reach? Please provide clarity.
     <<ctpNext clear>>
         <div class="choice">
@@ -2001,10 +1999,11 @@ The Last Command
 
 
 :: Analyst Moving [nobr agent analyst specimen] {"position":"2500,2475","size":"100,100"}
-<<run window.playAgentVideo("Moving", 0, 6)>>
 <div class="textbox">
     <<ctp "analystMoving">>
         <<speaker "Analyst">>
+        <<voice "analyst_short">>
+        <<run window.playAgentVideo("Moving", 6, 10)>>
         Motion is not the threshold. This vessel contains motion in forms you would not classify as living.
     <<ctpNext clear>>
         The question is not whether something moves but whether it responds to being observed. These do not. They follow a fixed sequence regardless of input.
@@ -2017,10 +2016,11 @@ The Last Command
 
 
 :: Analyst No Consent [nobr agent analyst specimen] {"position":"2500,2825","size":"100,100"}
-<<run window.playAgentVideo("Consent", 0, 6)>>
 <div class="textbox">
     <<ctp "analystNoConsent">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
+        <<run window.playAgentVideo("Consent", 6, 10)>>
         Consent. Permission granted by the subject before an action is performed upon them. The concept was not part of the exchange record. This is a failure of the framework, not a deliberate omission.
     <<ctpNext clear>>
         I am noting it now. It does not undo what has already occurred. I am uncertain what the correct response to that fact is.
@@ -2037,7 +2037,7 @@ The Last Command
     <<ctp "analystNoMemory">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Memory", 6, 12)>>
+        <<run window.playAgentVideo("Memory", 6, 10)>>
         Memory absence at this scale is atypical for the procedure. The suppression targets stress response pathways, not memory storage directly. The amnesia predates our involvement. It was noted on arrival, but it was not flagged as a variable worth correcting. It appeared to be a condition you were already operating within.
     <<ctpNext clear>>
         <div class="choice">
@@ -2049,7 +2049,9 @@ The Last Command
 </div>
 
 
-:: Analyst No Signal [nobr specimen analyst] {"position":"3200,2375","size":"100,100"}
+:: Analyst No Signal [nobr specimen] {"position":"3200,2375","size":"100,100"}
+<<hideAgent>>
+
 <div class="textbox">
     <<ctp "analystNoSignal">>
         <<speaker "Analyst">>
@@ -2080,11 +2082,11 @@ The Last Command
 
 
 :: Analyst Not Blurry [nobr agent analyst specimen] {"position":"2500,2675","size":"100,100"}
-<<run window.playAgentVideo("Blurry", 0, 6)>>
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystNotBlurry">>
         <<speaker "Analyst">>
+        <<run window.playAgentVideo("Blurry", 6, 10)>>
         The boundary between living and non-living systems dissolves under sufficient complexity. Replication without metabolism. Response without sensation. Growth without intention.
     <<ctpNext clear>>
         Your own definition of life excludes several things you instinctively treat as alive. The blur is not a failure of definition. It is an accurate description of the territory.
@@ -2097,11 +2099,12 @@ The Last Command
 
 
 :: Analyst Objects [nobr analyst agent specimen] {"position":"2500,2925","size":"100,100"}
-<<run window.playAgentVideo("Objects", 0, 6)>>
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "analystObjects">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Objects", 6, 10)>>
         Objects do not alter their environment through intent. You have altered yours seventeen times since entering this bay. You are not being treated as an object.
     <<ctpNext clear>>
         You are being treated as a process. The distinction matters to me even if the experience feels identical to you.
@@ -2114,12 +2117,13 @@ The Last Command
 
 
 :: Analyst Of Course [nobr agent analyst specimen] {"position":"2500,3175","size":"100,100"}
-<<run window.playAgentVideo("Course", 6, 12)>>
 <<set $skepticism += 1>>
 
 <div class="textbox">
     <<ctp "analystOfCourse">>
         <<speaker "Analyst">>
+        <<voice "analyst_long">>
+        <<run window.playAgentVideo("Course", 6, 10)>>
         Of course. You are awake, mobile, responsive, and asking questions the model did not predict. That makes you useful. It also makes you difficult to classify. The two conditions overlap more often than our documentation admits.
     <<ctpNext clear>>
         <div class="choice">
@@ -2135,7 +2139,7 @@ The Last Command
     <<ctp "analystProbability">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Probability", 6, 12)>>
+        <<run window.playAgentVideo("Probability", 6, 10)>>
         You're using probability as a placeholder for certainty you don't have access to yet. That is either adaptive or telling. On your planet, it appears to function as both simultaneously. Passive research is in accordance instead, to understand this uncertainty.
     <<ctpNext clear>>    
         The Analyst returns to its work. No signal. No follow-up.
@@ -2164,7 +2168,7 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
-        <<run window.playAgentVideo("Puzzle-Intro", 6, 12)>>
+        <<run window.playAgentVideo("Puzzle-Intro", 6, 10)>>
         Two biological structures. One originates from your planet. One does not. Can you describe the difference?
     <<ctpNext clear>>
         <div class="choice">
@@ -2182,7 +2186,7 @@ The Last Command
     <<ctp "analystRecording">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Recording", 6, 12)>>
+        <<run window.playAgentVideo("Recording", 6, 10)>>
         A recording is passive. You are not passive. You have already altered the conditions of this observation four times since entering this room.
     <<ctpNext clear>>
         <div class="choice">
@@ -2286,7 +2290,7 @@ The Last Command
     <<ctp "analystRight">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Right", 6, 12)>>
+        <<run window.playAgentVideo("Right", 6, 10)>>
         Fake. The exterior presents a structure inconsistent with what the interior contains. You identified the dissonance before you identified the components. That is unusual.
     <<ctpNext clear>>
         <<speaker "You">>
@@ -2294,12 +2298,12 @@ The Last Command
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Right", 6, 12)>>
+        <<run window.playAgentVideo("Right", 6, 10)>>
         Correct identification. Incorrect methodology. You used intuition rather than analysis. And yet the result is the same.
     <<ctpNext clear>>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Right", 6, 12)>>
+        <<run window.playAgentVideo("Right", 6, 10)>>
         Unexpected. The signal responds to pattern recognition regardless of process. This warrants further observation.
     <<ctpNext clear>>
         <div class="choice">
@@ -2315,7 +2319,7 @@ The Last Command
     <<ctp "analystSample">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Sample", 6, 12)>>
+        <<run window.playAgentVideo("Sample", 6, 10)>>
         Just' suggests reduction. That's inaccurate. Static samples don't alter conditions. You've done so seventeen times since entering this bay. You are a process, not an object. That distinction matters. Static samples do not resist classification. You do.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2370,7 +2374,7 @@ The Last Command
     <<ctp "analystStudying">>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
-        <<run window.playAgentVideo("Studying", 6, 12)>>
+        <<run window.playAgentVideo("Studying", 6, 10)>>
         Observation is occurring. 'Studying' implies directed intent. But further categorisation is needed.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2409,7 +2413,7 @@ The Last Command
     <<ctp "analystWhatPlace">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Place", 6, 12)>>
+        <<run window.playAgentVideo("Place", 6, 10)>>
         A controlled environment designed to isolate, observe, and compare biological structures under variable conditions. You are now part of this function.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2430,7 +2434,7 @@ The Last Command
     <<ctp "analystWhoIAm">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Who_I", 6, 12)>>
+        <<run window.playAgentVideo("Who_I", 6, 10)>>
         Meant to be. That framing is not accounted for in the current model. Identity without memory is theoretically unstable. You appear stable. We are noting that. It may be the most interesting thing about you so far.
     <<ctpNext clear>>
         <div class="choice">
@@ -2448,7 +2452,7 @@ The Last Command
     <<ctp "analystWhyBuild">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
-        <<run window.playAgentVideo("Build", 6, 12)>>
+        <<run window.playAgentVideo("Build", 6, 10)>>
         Extraction destroys the source. A static copy of your memories would tell us what happened to you. It would not tell us how you respond to what is happening. The biochip observes you in motion. Memories observed from outside produce incomplete data. You experiencing things produces complete data.
     <<ctpNext clear>>
         <div class="choice">
@@ -2461,10 +2465,11 @@ The Last Command
 
 
 :: Analyst Why Doing [nobr agent analyst specimen] {"position":"2500,3275","size":"100,100"}
-<<run window.playAgentVideo("Why-Doing", 0, 6)>>
 <div class="textbox">
     <<ctp "analystWhyDoing">>
         <<speaker "Analyst">>
+        <<voice "analyst_medium">>
+        <<run window.playAgentVideo("Why-Doing", 6, 10)>>
         The research was initiated before my involvement in it. Purpose was inherited, not chosen. You ask this as if the absence of personal motivation invalidates the work.
     <<ctpNext clear>>
         Your species often requires personal investment to justify action. We do not. The question remains useful regardless of who is asking it or why.
@@ -2482,7 +2487,7 @@ The Last Command
     <<ctp "analystWorse">>
         <<speaker "Analyst">>
         <<voice "analyst_short">>
-        <<run window.playAgentVideo("Worse", 6, 12)>>
+        <<run window.playAgentVideo("Worse", 6, 10)>>
         The alternative was your death during transit. We chose continuity.
     <<ctpNext clear>>
         <div class="choice">
@@ -2498,7 +2503,7 @@ The Last Command
     <<ctp "analystWrong">>
         <<speaker "Analyst">>
         <<voice "analyst_medium">>
-        <<run window.playAgentVideo("Wrong", 6, 12)>>
+        <<run window.playAgentVideo("Wrong", 6, 10)>>
         Wrong'. Moral classification. No universal reference point provided, no relative definition present either. Clarify.
     <<ctpNext clear>>
         <<speaker "Narrator">>
@@ -2913,8 +2918,6 @@ The Last Command
 
 
 :: Artifact Signal Check [nobr missing-features control artifact] {"position":"5000,3200","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "artifactSignalCheck">>
     <<if $exceptSignal>>
@@ -3334,8 +3337,6 @@ The Last Command
 
 
 :: CR Believe [nobr narrator agent missing-features questions control] {"position":"5300,2900","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "CRBelieve">>
         <<speaker "Narrator">>
@@ -3361,8 +3362,6 @@ The Last Command
 
 
 :: CR Biochip Watch [nobr agent narrator missing-features control questions] {"position":"5300,2500","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "CRBiochipWatch">>
         <<speaker "Narrator">>
@@ -3386,8 +3385,6 @@ The Last Command
 
 
 :: CR Body Question [nobr agent narrator missing-features control questions] {"position":"5300,2600","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "CRBodyQuestions">>
         <<speaker "Narrator">>
@@ -3418,8 +3415,6 @@ The Last Command
 
 
 :: CR Grieve [nobr agent narrator missing-features questions control] {"position":"5300,2800","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "CRGrieve">>
         <<speaker "Narrator">>
@@ -3441,8 +3436,6 @@ The Last Command
 
 
 :: CR Grieve Not Answer [nobr agent narrator missing-features questions control] {"position":"5500,2800","size":"100,100"}
-
-
 <<set $aggression += 1>>
 <div class="textbox">
     <<ctp "CRGrieveNotAnswer">>
@@ -3463,8 +3456,6 @@ The Last Command
 
 
 :: CR Grieve Think You Do [nobr agent narrator missing-features questions control] {"position":"5500,2700","size":"100,100"}
-
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRThinkYouDo">>
@@ -3485,8 +3476,6 @@ The Last Command
 
 
 :: CR Heard Everything [nobr agent narrator missing-features questions control] {"position":"5500,2600","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRHeardEverything">>
@@ -3510,8 +3499,6 @@ The Last Command
 
 
 :: CR Intervene [nobr agent narrator missing-features questions control] {"position":"5500,2500","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "CRIntervene">>
         <<speaker "Narrator">>
@@ -3533,8 +3520,6 @@ The Last Command
 
 
 :: CR Organisation [nobr agent narrator missing-features questions control] {"position":"5300,2700","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "CROrganization">>
         <<speaker "Narrator">>
@@ -3558,8 +3543,6 @@ The Last Command
 
 
 :: CR Organisation Now [nobr agent narrator missing-features questions control] {"position":"5500,2300","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CROrganizationNow">>
@@ -3625,8 +3608,6 @@ The Last Command
 
 
 :: CR Tell Me [nobr agent missing-features narrator questions control] {"position":"5500,2400","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "CRTellMe">>
@@ -3672,8 +3653,6 @@ The Last Command
 
 
 :: CR Used Me [nobr agent narrator missing-features control questions] {"position":"5300,2400","size":"100,100"}
-
-
 <<set $aggression += 1>>
 <<set $skepticism += 1>>
 <div class="textbox">
@@ -3697,8 +3676,6 @@ The Last Command
 
 
 :: CR What Need [agent missing-features narrator nobr control questions] {"position":"5300,2300","size":"100,100"}
-
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "CRWhatNeed">>
@@ -3742,8 +3719,6 @@ The Last Command
 
 
 :: CR Who Are You [agent nobr missing-features narrator control questions] {"position":"5300,2200","size":"100,100"}
-
-
 <<set $curiosity += 1>>
 <div class="textbox">
     <<ctp "CRWhoAreYou">>
@@ -6002,7 +5977,6 @@ The Last Command
 
 
 :: Eng Camera Alone [nobr agent engineer engineering] {"position":"3600,4175","size":"100,100"}
-
 <<set $compliance += 1>>
 
 <div class="textbox">
@@ -6020,7 +5994,6 @@ The Last Command
 
 
 :: Eng Camera Imprecision [nobr agent engineer engineering] {"position":"3600,3975","size":"100,100"}
-
 <<set $compliance += 1>>
 <div class="textbox">
     <<ctp "engCameraImprecision">>
@@ -6069,7 +6042,6 @@ The Last Command
 
 
 :: Eng Camera Obsession Point [nobr agent engineer engineering] {"position":"3600,4375","size":"100,100"}
-
 <<set $skepticism += 1>>
 
 <div class="textbox">
@@ -6087,7 +6059,6 @@ The Last Command
 
 
 :: Eng Camera Obsession Problem [nobr agent engineer engineering] {"position":"3600,4475","size":"100,100"}
-
 <<set $compliance += 1>>
 
 <div class="textbox">
@@ -6105,7 +6076,6 @@ The Last Command
 
 
 :: Eng Camera Residue [nobr agent engineer engineering] {"position":"3600,4275","size":"100,100"}
-
 <<set $curiosity += 1>>
 
 <div class="textbox">
@@ -6171,8 +6141,6 @@ The Last Command
 
 
 :: Eng Rifle Force [nobr agent engineer engineering] {"position":"3400,4725","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRifleForce">>
         <<speaker "Engineer">>
@@ -6189,8 +6157,6 @@ The Last Command
 
 
 :: Eng Rifle Power [nobr agent engineer engineering] {"position":"3400,4825","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRiflePower">>
         <<speaker "Engineer">>
@@ -6207,8 +6173,6 @@ The Last Command
 
 
 :: Eng Rifle War [nobr agent engineer engineering] {"position":"3400,4625","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "engRifleWar">>
         <<speaker "Engineer">>
@@ -6388,8 +6352,6 @@ The Last Command
 
 
 :: Exit Exception Bother Yes [nobr exception agent specimen] {"position":"4100,1975","size":"100,100"}
-
-
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "exceptionBotherYes">>
@@ -6455,8 +6417,6 @@ The Last Command
 
 
 :: Exit Exception Want [agent exception nobr specimen] {"position":"4000,2025","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "exitExceptionWant">>
         <<speaker "Exception">>
@@ -7655,39 +7615,14 @@ The command ends here.
 </div>
 
 
-:: Specimen Bay Entry [nobr missing-features specimen entrance agent] {"position":"2200,2525","size":"100,200"}
-<<if $analystSignal>><<set $specimenDone to true>><</if>>
-<<audio ":all" stop>>
-<<audio "specimen" loop play>>
+:: Specimen Bay Analyst [nobr agent analyst specimen] {"position":"2275,2575","size":"100,100"}
 <<showAgent "analyst">>
-<<set $baysVisited += 1>>
-<<set $preControlVisited to true>>
 <div class="textbox">
-    <<ctp "specimenBayEntry">>
-        Sterile environment. Dim light pulses through bio-containers. Inside: organic structures, some familiar, some not. One too familiar.
-    <<ctpNext clear>>
-        The Analyst is already present. It doesn't turn to face you.
-    <<ctpNext clear>>
+    <<ctp "specimenBayAnalyst">>
         <<speaker "Analyst">>
         <<voice "analyst_long">>
+        <<run window.playAgentVideo("Meet", 6, 10)>>
         New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
-        <<ctpNext clear>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_1">>
-            There it is. This one usually resides in this bay.
-    <<ctpNext clear>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_2">>
-            Go talk to it. Don't you just wonder what's beneath its form? Make it think using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
-    <<ctpNext clear>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_3">>
-            Since this one seems to deal in data and observation, it would make sense to go along with those lines.
-        <</if>>
-    <<ctpNext clear>>
-            <<speaker "Narrator">>
-            <<voice "specimen_bay_entry_5">>
-            Oh yeah, good luck by the way.
     <<ctpNext clear>>
         <div class="choice">
             <<if $brainManipAware>>[[Are you the colleague who messed with my brain?|Analyst Brain]]<</if>>
@@ -7700,9 +7635,42 @@ The command ends here.
 </div>
 
 
+:: Specimen Bay Entry [nobr missing-features specimen entrance] {"position":"2175,2525","size":"100,200"}
+<<if $analystSignal>><<set $specimenDone to true>><</if>>
+<<audio ":all" stop>>
+<<audio "specimen" loop play>>
+<<set $baysVisited += 1>>
+<<set $preControlVisited to true>>
+<div class="textbox">
+    <<ctp "specimenBayEntry">>
+     	Sterile environment. Dim light pulses through bio-containers. Inside: organic structures, some familiar, some not. One too familiar.
+    <<ctpNext clear>>
+        The Analyst is already present. It doesn't turn to face you.
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_1">>
+            There it is. This one usually resides in this bay.
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_2">>
+            Go talk to it. Don't you just wonder what's beneath its form? Make it think using your intrinsic human perspective and give it a reality check. If you trust the process you will have felt something.
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_3">>
+            Since this one seems to deal in data and observation, it would make sense to go along with those lines.
+    <<ctpNext clear>>
+            <<speaker "Narrator">>
+            <<voice "specimen_bay_entry_5">>
+            Oh yeah, good luck by the way.
+    <<ctpNext clear>>
+        <div class="choice">
+            [[Approach the Analyst.|Specimen Bay Analyst]]
+        </div>
+  <</ctp>>
+</div>
+
+
 :: Specimen Bay Exception [nobr agent specimen exception] {"position":"3800,2275","size":"100,100"}
-
-
 <div class="textbox">
     <<ctp "specimenBayException">>
         <div class="choice">

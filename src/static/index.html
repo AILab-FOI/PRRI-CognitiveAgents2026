@@ -2606,8 +2606,7 @@ Macro.add('voice', {
             [[Continue into the hallway.|Hallway Convergence]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="3.1. Passing Through" tags="nobr hallway exception agent" position="700,2600" size="100,100">
-&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="3.1. Passing Through" tags="nobr hallway exception agent" position="700,2600" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;passingThrough&quot;&gt;&gt;
         You move past slowly.
@@ -2627,8 +2626,7 @@ Macro.add('voice', {
             [[Continue into the hallway.|Hallway Convergence]]
         &lt;/div&gt;
     &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="3.1. Punch" tags="nobr hallway exception agent" position="1400,2100" size="100,100">
-&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="3.1. Punch" tags="nobr hallway exception agent" position="1400,2100" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.Punch&quot;&gt;&gt;
         You swing before you can convince yourself not to.
@@ -2806,9 +2804,7 @@ Macro.add('voice', {
             [[Where do I go from here?|3.1. Where Go]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt; 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="3.1. Walk Away" tags="nobr hallway exception agent" position="1400,2200" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="3.1. Walk Away" tags="nobr hallway exception agent" position="1400,2200" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;3.1.WalkAway&quot;&gt;&gt;
         You turn away before the conversation can become anything clearer.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3387,7 +3383,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystAlive&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Alive&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Alive&quot;, 6, 10)&gt;&gt;
         The definition blurs when in outer research.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3400,7 +3396,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystBrain&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Brain&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Brain&quot;, 6, 10)&gt;&gt;
         Yes is the likely answer. The brain stress responses were suppressed in place of the environment change not being the deterministic factor.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -3408,7 +3404,7 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Brain&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Brain&quot;, 6, 10)&gt;&gt;
         No to both inquiries. The only side effect is  higher potential for amnesia. Is that something you want to research?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3423,7 +3419,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystCarryKnow&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Carry-Know&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Carry-Know&quot;, 6, 10)&gt;&gt;
         Knowing without carrying. Awareness without weight. That is either a very advanced state or a very early one. We have not determined which end of that spectrum your kind occupies. Possibly neither. Possibly both depending on the individual. That variability is what makes classification difficult.
     &lt;&lt;ctpNext clear&gt;&gt;
         The Analyst returns to its work.
@@ -3439,7 +3435,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystCarryNo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Carry-No&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Carry-No&quot;, 6, 10)&gt;&gt;
         That answer and the previous one are not the same, though your species often uses them interchangeably. Not thinking about something is not the same as having resolved it. It is also not the same as having abandoned it. I will leave that where it lands.
     &lt;&lt;ctpNext clear&gt;&gt;
         The Analyst returns to its work.
@@ -3454,7 +3450,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystCarryUsedTo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Carry-Used&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Carry-Used&quot;, 6, 10)&gt;&gt;
         Used to. A temporal boundary on something your species typically treats as permanent. Something caused you to set it down. You didn&#39;t say what. I notice you didn&#39;t say what. The biochip noted it regardless.
     &lt;&lt;ctpNext clear&gt;&gt;
         The Analyst returns to its work.
@@ -3469,7 +3465,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystCarryYes&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Carry-Yes&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Carry-Yes&quot;, 6, 10)&gt;&gt;
         Everyone. A universal claim made with certainty about a species that has demonstrated consistent internal disagreement. And yet I believe you. Not because the data confirms it. Because of how quickly you said it. Carrying something unresolved without it stopping you. That may be the closest thing to a defining characteristic we have found. It is not comfortable to catalogue.
     &lt;&lt;ctpNext clear&gt;&gt;
         The Analyst returns to its work.
@@ -3482,7 +3478,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystCompare&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Compare&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Compare&quot;, 6, 10)&gt;&gt;
         To baseline. To deviation. To anomaly. Your species contains all three simultaneously. This is inefficient. And therefore valuable.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -3527,11 +3523,12 @@ Macro.add('voice', {
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Analyst Dont Understand" tags="nobr agent analyst specimen" position="2500,3025" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Understand&quot;, 0, 6)&gt;&gt;
-&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Analyst Dont Understand" tags="nobr agent analyst specimen" position="2500,3025" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystDontUnderstand&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Understand&quot;, 6, 10)&gt;&gt;
         Possibly. Understanding is not a prerequisite for accurate observation. I can record without interpreting. I can measure without knowing what the measurement means.
     &lt;&lt;ctpNext clear&gt;&gt;
         Your species often confuses these two things in the opposite direction — assuming understanding where only familiarity exists. I am not certain which error is larger.
@@ -3540,11 +3537,11 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Analyst Feel Alive" tags="nobr agent analyst specimen" position="2500,2575" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Feel-Alive&quot;, 0, 6)&gt;&gt;
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Analyst Feel Alive" tags="nobr agent analyst specimen" position="2500,2575" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystFeelAlive&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-        Feel. A subjective assessment applied to an external object. You are using your own aliveness as a measuring instrument.
+        &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Feel-Alive&quot;, 6, 10)&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
         This is common in your species. It produces unreliable data and occasionally accurate conclusions. I have not determined which this is.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3557,14 +3554,14 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystGreaterDesign&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Greater-Design&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Greater-Design&quot;, 6, 10)&gt;&gt;
         Theories. Plural. Unresolved. Your species detected a pattern and produced multiple explanations. Each internally consistent. Each incompatible. Unresolved fundamentals should produce stillness. Yours don&#39;t. You build on them anyway. I am not certain whether that is an error or the most efficient behaviour we&#39;ve observed.
     &lt;&lt;ctpNext clear&gt;&gt;
         The biochip glitches lightly.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         	&lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
-            &lt;&lt;run window.playAgentVideo(&quot;Greater-Design&quot;, 6, 12)&gt;&gt;
+            &lt;&lt;run window.playAgentVideo(&quot;Greater-Design&quot;, 6, 10)&gt;&gt;
             You said &#39;bundle&#39;. Like it is something you carry. Do you?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3587,11 +3584,12 @@ Macro.add('voice', {
             [[Head to the long hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Analyst Learned" tags="nobr agent analyst specimen" position="2500,3375" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Learned&quot;, 0, 6)&gt;&gt;
-&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Analyst Learned" tags="nobr agent analyst specimen" position="2500,3375" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystLearned&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Learned&quot;, 6, 10)&gt;&gt;
         That your species maintains internal contradiction without resolution and continues to function. That memory and identity are less stable in humans than your behaviour implies.
     &lt;&lt;ctpNext clear&gt;&gt;
         That what you call emotion appears to operate as a decision-making system rather than a disruption of one. These are preliminary findings. The research is not complete.
@@ -3604,7 +3602,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystLeft&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Left&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Left&quot;, 6, 10)&gt;&gt;
         Deviation from a known pattern, not the thing itself. That is how your species begins. With what doesn&#39;t fit. Is it by design or not?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -3612,7 +3610,7 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Left&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Left&quot;, 6, 10)&gt;&gt;
         Unexpected reaffirmation. How far does the awareness reach? Please provide clarity.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3620,10 +3618,11 @@ Macro.add('voice', {
             [[A bundle of theories trying to explain why any of this exists.|Analyst Greater Design]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Analyst Moving" tags="nobr agent analyst specimen" position="2500,2475" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Moving&quot;, 0, 6)&gt;&gt;
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Analyst Moving" tags="nobr agent analyst specimen" position="2500,2475" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystMoving&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Moving&quot;, 6, 10)&gt;&gt;
         Motion is not the threshold. This vessel contains motion in forms you would not classify as living.
     &lt;&lt;ctpNext clear&gt;&gt;
         The question is not whether something moves but whether it responds to being observed. These do not. They follow a fixed sequence regardless of input.
@@ -3632,10 +3631,11 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Analyst No Consent" tags="nobr agent analyst specimen" position="2500,2825" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Consent&quot;, 0, 6)&gt;&gt;
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Analyst No Consent" tags="nobr agent analyst specimen" position="2500,2825" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystNoConsent&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Consent&quot;, 6, 10)&gt;&gt;
         Consent. Permission granted by the subject before an action is performed upon them. The concept was not part of the exchange record. This is a failure of the framework, not a deliberate omission.
     &lt;&lt;ctpNext clear&gt;&gt;
         I am noting it now. It does not undo what has already occurred. I am uncertain what the correct response to that fact is.
@@ -3648,7 +3648,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystNoMemory&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Memory&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Memory&quot;, 6, 10)&gt;&gt;
         Memory absence at this scale is atypical for the procedure. The suppression targets stress response pathways, not memory storage directly. The amnesia predates our involvement. It was noted on arrival, but it was not flagged as a variable worth correcting. It appeared to be a condition you were already operating within.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3657,7 +3657,9 @@ Macro.add('voice', {
 			[[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Analyst No Signal" tags="nobr specimen analyst" position="3200,2375" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Analyst No Signal" tags="nobr specimen" position="3200,2375" size="100,100">&lt;&lt;hideAgent&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystNoSignal&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
@@ -3683,11 +3685,11 @@ Macro.add('voice', {
             [[What do I do now?|Analyst What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="Analyst Not Blurry" tags="nobr agent analyst specimen" position="2500,2675" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Blurry&quot;, 0, 6)&gt;&gt;
-&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="Analyst Not Blurry" tags="nobr agent analyst specimen" position="2500,2675" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystNotBlurry&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Blurry&quot;, 6, 10)&gt;&gt;
         The boundary between living and non-living systems dissolves under sufficient complexity. Replication without metabolism. Response without sensation. Growth without intention.
     &lt;&lt;ctpNext clear&gt;&gt;
         Your own definition of life excludes several things you instinctively treat as alive. The blur is not a failure of definition. It is an accurate description of the territory.
@@ -3696,11 +3698,12 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Analyst Objects" tags="nobr analyst agent specimen" position="2500,2925" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Objects&quot;, 0, 6)&gt;&gt;
-&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Analyst Objects" tags="nobr analyst agent specimen" position="2500,2925" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystObjects&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Objects&quot;, 6, 10)&gt;&gt;
         Objects do not alter their environment through intent. You have altered yours seventeen times since entering this bay. You are not being treated as an object.
     &lt;&lt;ctpNext clear&gt;&gt;
         You are being treated as a process. The distinction matters to me even if the experience feels identical to you.
@@ -3709,12 +3712,25 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Analyst Probability" tags="nobr specimen agent" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="Analyst Of Course" tags="nobr agent analyst specimen" position="2500,3175" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+
+&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;analystOfCourse&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Course&quot;, 6, 10)&gt;&gt;
+        Of course. You are awake, mobile, responsive, and asking questions the model did not predict. That makes you useful. It also makes you difficult to classify. The two conditions overlap more often than our documentation admits.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+           [[Continue to the specimen test.|Analyst Puzzle Intro]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Analyst Probability" tags="nobr specimen agent" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystProbability&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Probability&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Probability&quot;, 6, 10)&gt;&gt;
         You&#39;re using probability as a placeholder for certainty you don&#39;t have access to yet. That is either adaptive or telling. On your planet, it appears to function as both simultaneously. Passive research is in accordance instead, to understand this uncertainty.
     &lt;&lt;ctpNext clear&gt;&gt;    
         The Analyst returns to its work. No signal. No follow-up.
@@ -3730,7 +3746,7 @@ Macro.add('voice', {
             [[What do I do now?|Analyst What Now]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Analyst Puzzle Intro" tags="nobr agent specimen analyst sample" position="2800,2575" size="100,100">&lt;&lt;if $fromAnalysWhyBuildRoute is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Analyst Puzzle Intro" tags="nobr agent specimen analyst sample" position="2800,2575" size="100,100">&lt;&lt;if $fromAnalysWhyBuildRoute is true&gt;&gt;
     &lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
@@ -3739,7 +3755,7 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Puzzle-Intro&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Puzzle-Intro&quot;, 6, 10)&gt;&gt;
         Two biological structures. One originates from your planet. One does not. Can you describe the difference?
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3748,19 +3764,19 @@ Macro.add('voice', {
 			[[One of these is probably wrong.|Analyst Probability]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="Analyst Recording" tags="agent nobr analyst specimen" position="2600,2025" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Analyst Recording" tags="agent nobr analyst specimen" position="2600,2025" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRecording&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Recording&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Recording&quot;, 6, 10)&gt;&gt;
         A recording is passive. You are not passive. You have already altered the conditions of this observation four times since entering this room.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Analyst Restrain" tags="nobr specimen analyst restrain" position="2900,3625" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="Analyst Restrain" tags="nobr specimen analyst restrain" position="2900,3625" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRestrain&quot;&gt;&gt;
         You move toward the Analyst. Its response is slow. You restrain it — the alien&#39;s crystalline structure is not built for resistance. It doesn&#39;t fight. It observes.
     &lt;&lt;ctpNext clear&gt;&gt;
@@ -3774,7 +3790,7 @@ Macro.add('voice', {
             [[Stop categorising me and answer.|Analyst Restrain Answer]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="Analyst Restrain Answer" tags="nobr specimen analyst restrain" position="3100,3725" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Analyst Restrain Answer" tags="nobr specimen analyst restrain" position="3100,3725" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 
@@ -3794,7 +3810,7 @@ Macro.add('voice', {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Analyst Restrain Need" tags="nobr specimen analyst restrain" position="3100,3525" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="Analyst Restrain Need" tags="nobr specimen analyst restrain" position="3100,3525" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
@@ -3811,7 +3827,7 @@ Macro.add('voice', {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="Analyst Restrain Sorry" tags="nobr specimen analyst restrain" position="3100,3625" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Analyst Restrain Sorry" tags="nobr specimen analyst restrain" position="3100,3625" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
  &lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
@@ -3830,14 +3846,14 @@ Macro.add('voice', {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Analyst Right" tags="nobr agent analyst specimen" position="3000,2575" size="100,100">&lt;&lt;set $analystSignal to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Analyst Right" tags="nobr agent analyst specimen" position="3000,2575" size="100,100">&lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;&lt;set $specimenDone to true&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystRight&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 6, 10)&gt;&gt;
         Fake. The exterior presents a structure inconsistent with what the interior contains. You identified the dissonance before you identified the components. That is unusual.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;You&quot;&gt;&gt;
@@ -3845,24 +3861,24 @@ Macro.add('voice', {
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 6, 10)&gt;&gt;
         Correct identification. Incorrect methodology. You used intuition rather than analysis. And yet the result is the same.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Right&quot;, 6, 10)&gt;&gt;
         Unexpected. The signal responds to pattern recognition regardless of process. This warrants further observation.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Analyst Sample" tags="nobr agent analyst specimen" position="2500,2275" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="Analyst Sample" tags="nobr agent analyst specimen" position="2500,2275" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystSample&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Sample&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Sample&quot;, 6, 10)&gt;&gt;
         Just&#39; suggests reduction. That&#39;s inaccurate. Static samples don&#39;t alter conditions. You&#39;ve done so seventeen times since entering this bay. You are a process, not an object. That distinction matters. Static samples do not resist classification. You do.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -3873,7 +3889,7 @@ Macro.add('voice', {
             [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="Analyst Strike" tags="nobr specimen analyst strike" position="2900,3825" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="Analyst Strike" tags="nobr specimen analyst strike" position="2900,3825" size="100,100">&lt;&lt;set $specimenDone to true&gt;&gt;
 &lt;&lt;set $analystSignal to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystStrike&quot;&gt;&gt;
@@ -3905,11 +3921,11 @@ Macro.add('voice', {
             [[Exit the specimen bay.|Specimen Bay Exit]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="Analyst Studying" tags="nobr agent analyst specimen" position="2400,3275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="Analyst Studying" tags="nobr agent analyst specimen" position="2400,3275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystStudying&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Studying&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Studying&quot;, 6, 10)&gt;&gt;
         Observation is occurring. &#39;Studying&#39; implies directed intent. But further categorisation is needed.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -3920,18 +3936,6 @@ Macro.add('voice', {
             [[Of course it&#39;s required.|Analyst Of Course]]
             [[So you don&#39;t even know why you&#39;re doing this?|Analyst Why Doing]]
             [[What have you learned so far?|Analyst Learned]]
-        &lt;/div&gt;
-  &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="Analyst Of Course" tags="nobr agent analyst specimen" position="2500,3175" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Course&quot;, 6, 12)&gt;&gt;
-&lt;&lt;set $skepticism += 1&gt;&gt;
-
-&lt;div class=&quot;textbox&quot;&gt;
-    &lt;&lt;ctp &quot;analystOfCourse&quot;&gt;&gt;
-        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-        Of course. You are awake, mobile, responsive, and asking questions the model did not predict. That makes you useful. It also makes you difficult to classify. The two conditions overlap more often than our documentation admits.
-    &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;div class=&quot;choice&quot;&gt;
-           [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="Analyst What Now" tags="nobr specimen" position="3200,2625" size="100,100">&lt;&lt;hideAgent&gt;&gt;
@@ -3952,7 +3956,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystWhatPlace&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Place&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Place&quot;, 6, 10)&gt;&gt;
         A controlled environment designed to isolate, observe, and compare biological structures under variable conditions. You are now part of this function.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -3969,7 +3973,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystWhoIAm&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Who_I&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Who_I&quot;, 6, 10)&gt;&gt;
         Meant to be. That framing is not accounted for in the current model. Identity without memory is theoretically unstable. You appear stable. We are noting that. It may be the most interesting thing about you so far.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3983,7 +3987,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystWhyBuild&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Build&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Build&quot;, 6, 10)&gt;&gt;
         Extraction destroys the source. A static copy of your memories would tell us what happened to you. It would not tell us how you respond to what is happening. The biochip observes you in motion. Memories observed from outside produce incomplete data. You experiencing things produces complete data.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -3992,10 +3996,11 @@ Macro.add('voice', {
             [[So I&#39;m just a live recording to you.|Analyst Recording]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="Analyst Why Doing" tags="nobr agent analyst specimen" position="2500,3275" size="100,100">&lt;&lt;run window.playAgentVideo(&quot;Why-Doing&quot;, 0, 6)&gt;&gt;
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="Analyst Why Doing" tags="nobr agent analyst specimen" position="2500,3275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystWhyDoing&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Why-Doing&quot;, 6, 10)&gt;&gt;
         The research was initiated before my involvement in it. Purpose was inherited, not chosen. You ask this as if the absence of personal motivation invalidates the work.
     &lt;&lt;ctpNext clear&gt;&gt;
         Your species often requires personal investment to justify action. We do not. The question remains useful regardless of who is asking it or why.
@@ -4009,7 +4014,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystWorse&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_short&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Worse&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Worse&quot;, 6, 10)&gt;&gt;
         The alternative was your death during transit. We chose continuity.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
@@ -4021,7 +4026,7 @@ Macro.add('voice', {
     &lt;&lt;ctp &quot;analystWrong&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
         &lt;&lt;voice &quot;analyst_medium&quot;&gt;&gt;
-        &lt;&lt;run window.playAgentVideo(&quot;Wrong&quot;, 6, 12)&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Wrong&quot;, 6, 10)&gt;&gt;
         Wrong&#39;. Moral classification. No universal reference point provided, no relative definition present either. Clarify.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -4384,9 +4389,7 @@ Macro.add('voice', {
             [[Continue to the Engineering bay.|Engineering Bay Entry]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="Artifact Signal Check" tags="nobr missing-features control artifact" position="5000,3200" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="Artifact Signal Check" tags="nobr missing-features control artifact" position="5000,3200" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;artifactSignalCheck&quot;&gt;&gt;
     &lt;&lt;if $exceptSignal&gt;&gt;
     	You have the Exception&#39;s signal. You are ready to activate the blind spot.
@@ -4729,9 +4732,7 @@ Macro.add('voice', {
             [[Return to the Awakening Chamber.|Awakening Chamber Return]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="CR Believe" tags="nobr narrator agent missing-features questions control" position="5300,2900" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="CR Believe" tags="nobr narrator agent missing-features questions control" position="5300,2900" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRBelieve&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         &lt;&lt;run window.playAgentVideo(&quot;Believe1&quot;, 315, 350)&gt;&gt;
@@ -4752,9 +4753,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="CR Biochip Watch" tags="nobr agent narrator missing-features control questions" position="5300,2500" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="CR Biochip Watch" tags="nobr agent narrator missing-features control questions" position="5300,2500" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRBiochipWatch&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         &lt;&lt;run window.playAgentVideo(&quot;Biochip&quot;, 217, 241)&gt;&gt;
@@ -4773,9 +4772,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="CR Body Question" tags="nobr agent narrator missing-features control questions" position="5300,2600" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="CR Body Question" tags="nobr agent narrator missing-features control questions" position="5300,2600" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRBodyQuestions&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         &lt;&lt;voice &quot;cr_body_question_1&quot;&gt;&gt;
@@ -4801,9 +4798,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="CR Grieve" tags="nobr agent narrator missing-features questions control" position="5300,2800" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="CR Grieve" tags="nobr agent narrator missing-features questions control" position="5300,2800" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRGrieve&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         &lt;&lt;run window.playAgentVideo(&quot;Grieve&quot;, 374, 411)&gt;&gt;
@@ -4820,9 +4815,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="CR Grieve Not Answer" tags="nobr agent narrator missing-features questions control" position="5500,2800" size="100,100">
-
-&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="CR Grieve Not Answer" tags="nobr agent narrator missing-features questions control" position="5500,2800" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRGrieveNotAnswer&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -4838,9 +4831,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="CR Grieve Think You Do" tags="nobr agent narrator missing-features questions control" position="5500,2700" size="100,100">
-
-&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="CR Grieve Think You Do" tags="nobr agent narrator missing-features questions control" position="5500,2700" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRThinkYouDo&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -4856,9 +4847,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="CR Heard Everything" tags="nobr agent narrator missing-features questions control" position="5500,2600" size="100,100">
-
-&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="CR Heard Everything" tags="nobr agent narrator missing-features questions control" position="5500,2600" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRHeardEverything&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -4877,9 +4866,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="CR Intervene" tags="nobr agent narrator missing-features questions control" position="5500,2500" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="CR Intervene" tags="nobr agent narrator missing-features questions control" position="5500,2500" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRIntervene&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         &lt;&lt;run window.playAgentVideo(&quot;Intervene&quot;, 113, 136)&gt;&gt;
@@ -4896,9 +4883,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="CR Organisation" tags="nobr agent narrator missing-features questions control" position="5300,2700" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="CR Organisation" tags="nobr agent narrator missing-features questions control" position="5300,2700" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CROrganization&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
         &lt;&lt;run window.playAgentVideo(&quot;Organization&quot;, 136, 162)&gt;&gt;
@@ -4917,9 +4902,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="CR Organisation Now" tags="nobr agent narrator missing-features questions control" position="5500,2300" size="100,100">
-
-&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="CR Organisation Now" tags="nobr agent narrator missing-features questions control" position="5500,2300" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CROrganizationNow&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -4972,9 +4955,7 @@ Macro.add('voice', {
             [[Attack the narrator.|Ending D]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="CR Tell Me" tags="nobr agent missing-features narrator questions control" position="5500,2400" size="100,100">
-
-&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="CR Tell Me" tags="nobr agent missing-features narrator questions control" position="5500,2400" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRTellMe&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -5011,9 +4992,7 @@ Macro.add('voice', {
             [[Attack the narrator.|Ending D]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="CR Used Me" tags="nobr agent narrator missing-features control questions" position="5300,2400" size="100,100">
-
-&lt;&lt;set $aggression += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="CR Used Me" tags="nobr agent narrator missing-features control questions" position="5300,2400" size="100,100">&lt;&lt;set $aggression += 1&gt;&gt;
 &lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRUsedMe&quot;&gt;&gt;
@@ -5032,9 +5011,7 @@ Macro.add('voice', {
             [[Continue.|CR Panel Speech]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="CR What Need" tags="agent missing-features narrator nobr control questions" position="5300,2300" size="100,100">
-
-&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="CR What Need" tags="agent missing-features narrator nobr control questions" position="5300,2300" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRWhatNeed&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -5069,9 +5046,7 @@ Macro.add('voice', {
             [[Attack the narrator.|Ending D]]
         &lt;/div&gt; 
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="CR Who Are You" tags="agent nobr missing-features narrator control questions" position="5300,2200" size="100,100">
-
-&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="CR Who Are You" tags="agent nobr missing-features narrator control questions" position="5300,2200" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;CRWhoAreYou&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
@@ -7049,8 +7024,7 @@ Macro.add('voice', {
             [[Obsession replaces experience.|Eng Camera Obsession]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="Eng Camera Alone" tags="nobr agent engineer engineering" position="3600,4175" size="100,100">
-&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="Eng Camera Alone" tags="nobr agent engineer engineering" position="3600,4175" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraAlone&quot;&gt;&gt;
@@ -7063,8 +7037,7 @@ Macro.add('voice', {
             [[Exit the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="Eng Camera Imprecision" tags="nobr agent engineer engineering" position="3600,3975" size="100,100">
-&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="Eng Camera Imprecision" tags="nobr agent engineer engineering" position="3600,3975" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraImprecision&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
@@ -7100,8 +7073,7 @@ Macro.add('voice', {
             [[No, that&#39;s the problem.|Eng Camera Obsession Problem]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="Eng Camera Obsession Point" tags="nobr agent engineer engineering" position="3600,4375" size="100,100">
-&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="Eng Camera Obsession Point" tags="nobr agent engineer engineering" position="3600,4375" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraObsessionPoint&quot;&gt;&gt;
@@ -7114,8 +7086,7 @@ Macro.add('voice', {
             [[Exit the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="Eng Camera Obsession Problem" tags="nobr agent engineer engineering" position="3600,4475" size="100,100">
-&lt;&lt;set $compliance += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="Eng Camera Obsession Problem" tags="nobr agent engineer engineering" position="3600,4475" size="100,100">&lt;&lt;set $compliance += 1&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraObsessionProblem&quot;&gt;&gt;
@@ -7128,8 +7099,7 @@ Macro.add('voice', {
             [[Exit the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="Eng Camera Residue" tags="nobr agent engineer engineering" position="3600,4275" size="100,100">
-&lt;&lt;set $curiosity += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="Eng Camera Residue" tags="nobr agent engineer engineering" position="3600,4275" size="100,100">&lt;&lt;set $curiosity += 1&gt;&gt;
 
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engCameraResidue&quot;&gt;&gt;
@@ -7178,9 +7148,7 @@ Macro.add('voice', {
             [[Weapon used in war.|Eng Rifle War]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="Eng Rifle Force" tags="nobr agent engineer engineering" position="3400,4725" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="Eng Rifle Force" tags="nobr agent engineer engineering" position="3400,4725" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engRifleForce&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         &lt;&lt;voice &quot;engineer_long&quot;&gt;&gt;
@@ -7192,9 +7160,7 @@ Macro.add('voice', {
             [[Leave the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="206" name="Eng Rifle Power" tags="nobr agent engineer engineering" position="3400,4825" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="206" name="Eng Rifle Power" tags="nobr agent engineer engineering" position="3400,4825" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engRiflePower&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         &lt;&lt;voice &quot;engineer_long&quot;&gt;&gt;
@@ -7206,9 +7172,7 @@ Macro.add('voice', {
             [[Leave the engineering bay.|Eng Bay Closing]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="Eng Rifle War" tags="nobr agent engineer engineering" position="3400,4625" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="Eng Rifle War" tags="nobr agent engineer engineering" position="3400,4625" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;engRifleWar&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Engineer&quot;&gt;&gt;
         &lt;&lt;voice &quot;engineer_long&quot;&gt;&gt;
@@ -7355,9 +7319,7 @@ Macro.add('voice', {
             [[I don&#39;t know yet.|Pre Control Room]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="215" name="Exit Exception Bother Yes" tags="nobr exception agent specimen" position="4100,1975" size="100,100">
-
-&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="215" name="Exit Exception Bother Yes" tags="nobr exception agent specimen" position="4100,1975" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;exceptionBotherYes&quot;&gt;&gt;
         The Exception steps aside without another word.
@@ -7406,9 +7368,7 @@ Macro.add('voice', {
             [[Walk back through the hallway.|Analyst Dead End Hallway]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="219" name="Exit Exception Want" tags="agent exception nobr specimen" position="4000,2025" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="219" name="Exit Exception Want" tags="agent exception nobr specimen" position="4000,2025" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;exitExceptionWant&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Exception&quot;&gt;&gt;
         &lt;&lt;voice &quot;exception_medium&quot;&gt;&gt;
@@ -8463,22 +8423,17 @@ The command ends here.
             [[Continue.|Cart Signal Check]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="255" name="Specimen Bay Entry" tags="nobr missing-features specimen entrance agent" position="2200,2525" size="100,200">&lt;&lt;if $analystSignal&gt;&gt;&lt;&lt;set $specimenDone to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="255" name="Specimen Bay Entry" tags="nobr missing-features specimen entrance" position="2175,2525" size="100,200">&lt;&lt;if $analystSignal&gt;&gt;&lt;&lt;set $specimenDone to true&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;specimen&quot; loop play&gt;&gt;
-&lt;&lt;showAgent &quot;analyst&quot;&gt;&gt;
 &lt;&lt;set $baysVisited += 1&gt;&gt;
 &lt;&lt;set $preControlVisited to true&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayEntry&quot;&gt;&gt;
-        Sterile environment. Dim light pulses through bio-containers. Inside: organic structures, some familiar, some not. One too familiar.
+     	Sterile environment. Dim light pulses through bio-containers. Inside: organic structures, some familiar, some not. One too familiar.
     &lt;&lt;ctpNext clear&gt;&gt;
         The Analyst is already present. It doesn&#39;t turn to face you.
     &lt;&lt;ctpNext clear&gt;&gt;
-        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
-        &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
-        New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
-        &lt;&lt;ctpNext clear&gt;&gt;
             &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
             &lt;&lt;voice &quot;specimen_bay_entry_1&quot;&gt;&gt;
             There it is. This one usually resides in this bay.
@@ -8490,23 +8445,16 @@ The command ends here.
             &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
             &lt;&lt;voice &quot;specimen_bay_entry_3&quot;&gt;&gt;
             Since this one seems to deal in data and observation, it would make sense to go along with those lines.
-        &lt;&lt;/if&gt;&gt;
     &lt;&lt;ctpNext clear&gt;&gt;
             &lt;&lt;speaker &quot;Narrator&quot;&gt;&gt;
             &lt;&lt;voice &quot;specimen_bay_entry_5&quot;&gt;&gt;
             Oh yeah, good luck by the way.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
-            &lt;&lt;if $brainManipAware&gt;&gt;[[Are you the colleague who messed with my brain?|Analyst Brain]]&lt;&lt;/if&gt;&gt;
-			[[What exactly is this place?|Analyst What Place]]
-			[[Are those things alive?|Analyst Alive]]
-			[[You&#39;re studying me, aren&#39;t you?|Analyst Studying]]
-			[[This is wrong.|Analyst Wrong]]
+            [[Approach the Analyst.|Specimen Bay Analyst]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="256" name="Specimen Bay Exception" tags="nobr agent specimen exception" position="3800,2275" size="100,100">
-
-&lt;div class=&quot;textbox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="256" name="Specimen Bay Exception" tags="nobr agent specimen exception" position="3800,2275" size="100,100">&lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;specimenBayException&quot;&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[What do you want?|Exit Exception Want]]
@@ -9299,6 +9247,22 @@ The command ends here.
     &lt;&lt;ctpNext clear&gt;&gt;
         &lt;div class=&quot;choice&quot;&gt;
             [[Continue.|Cart Signal Check]]
+        &lt;/div&gt;
+  &lt;&lt;/ctp&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="268" name="Specimen Bay Analyst" tags="nobr agent analyst specimen" position="2275,2575" size="100,100">&lt;&lt;showAgent &quot;analyst&quot;&gt;&gt;
+&lt;div class=&quot;textbox&quot;&gt;
+    &lt;&lt;ctp &quot;specimenBayAnalyst&quot;&gt;&gt;
+        &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
+        &lt;&lt;voice &quot;analyst_long&quot;&gt;&gt;
+        &lt;&lt;run window.playAgentVideo(&quot;Meet&quot;, 6, 10)&gt;&gt;
+        New specimen has entered an active observation environment. Deviation from standard approach trajectory: 14%. Consistent with prior recorded behaviour from this specimen class. Continuing.
+    &lt;&lt;ctpNext clear&gt;&gt;
+        &lt;div class=&quot;choice&quot;&gt;
+            &lt;&lt;if $brainManipAware&gt;&gt;[[Are you the colleague who messed with my brain?|Analyst Brain]]&lt;&lt;/if&gt;&gt;
+			[[What exactly is this place?|Analyst What Place]]
+			[[Are those things alive?|Analyst Alive]]
+			[[You&#39;re studying me, aren&#39;t you?|Analyst Studying]]
+			[[This is wrong.|Analyst Wrong]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata>
