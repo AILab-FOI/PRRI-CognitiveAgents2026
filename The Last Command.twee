@@ -2131,7 +2131,7 @@ The Last Command
 </div>
 
 
-:: Analyst Probability [nobr specimen agent] {"position":"3000,2825","size":"100,100"}
+:: Analyst Probability [nobr specimen agent analyst] {"position":"3000,2825","size":"100,100"}
 <<set $skepticism += 1>>
 <div class="textbox">
     <<ctp "analystProbability">>
@@ -7803,6 +7803,9 @@ The command ends here.
 <</widget>>
 
 <<widget "hideAgent">>
+    <<run if (typeof clearAgentVoiceEndedHandler === "function") clearAgentVoiceEndedHandler()>>
+    <<run window.agentVideoActive = false>>
+    <<run window.currentVideoEnd = 0>>
     <<run $('#agent-container').hide()>>
     
     <<run $('#agent-iframe').attr('src', '')>> 
@@ -7880,6 +7883,12 @@ The command ends here.
         const tags = tagString.split(" ").filter(Boolean);
 
         const isAgentPassage = tags.includes("agent");
+        if (!isAgentPassage && window.agentVideoActive) {
+            if (typeof clearAgentVoiceEndedHandler === "function") clearAgentVoiceEndedHandler();
+            window.agentVideoActive = false;
+            if (typeof agentVideoActive !== "undefined") agentVideoActive = false;
+            if (typeof currentVideoEnd !== "undefined") currentVideoEnd = 0;
+        }
 
         let video = null;
 
@@ -7917,13 +7926,13 @@ The command ends here.
             video = "FirstRoom.mp4";
         }
         else if (tags.includes("room1") && tags.includes("device")) {
-            video = "Room_Device.mp4";
+            video = "Room.mp4";
         }
         else if (tags.includes("room1")) {
             video = "Room.mp4";
         }
         else if (tags.includes("contact") && tags.includes("device")) {
-            video = "Contact_Device.mp4";
+            video = "Contact.mp4";
         }
         else if (tags.includes("contact")) {
             video = "Contact.mp4";
@@ -7933,10 +7942,10 @@ The command ends here.
              video = "Hallway_Exception.mp4";
         }
         else if (tags.includes("hallway") && tags.includes("watcher")) {
-            video = "Hallway_Watcher.mp4";
+            video = "Hallway.mp4";
         }
         else if (tags.includes("hallway") && tags.includes("dark")) {
-            video = "Hallway_Dark.mp4";
+            video = "Hallway.mp4";
         }
         else if (tags.includes("hallway") && (tags.includes("control-door") || tags.includes("controldoor"))) {
             video = "Hallway_ControlDoor.mp4";
@@ -7977,6 +7986,9 @@ The command ends here.
             video = "EngineeringBay.mp4";
         }
         
+        else if (tags.includes("specimen") && tags.includes("analyst")) {
+    		video = "SpecimenBay_Analyst.mp4";
+		}
         else if (tags.includes("specimen") && tags.includes("strike")) {
     		video = "SpecimenBay_Strike.mp4";
 		}
@@ -7991,9 +8003,6 @@ The command ends here.
 		}
 		else if (tags.includes("specimen") && tags.includes("entrance")) {
     		video = "SpecimenBay_Entrance.mp4";
-		}
-		else if (tags.includes("specimen") && tags.includes("analyst")) {
-    		video = "SpecimenBay_Analyst.mp4";
 		}
 		else if (tags.includes("specimen")) {
     		video = "SpecimenBay.mp4";
@@ -8019,19 +8028,19 @@ The command ends here.
             video = "ControlRoom_Narrator.mp4";
         }
         else if (tags.includes("control") && tags.includes("questions")) {
-            video = "ControlRoom_Questions.mp4";
+            video = "ControlRoom.mp4";
         }
         else if (tags.includes("control") && tags.includes("artifact")) {
             video = "ControlRoom_Artifact.mp4";
         }
         else if (tags.includes("control") && tags.includes("success")) {
-            video = "ControlRoom_Success.mp4";
+            video = "ControlRoom.mp4";
         }
         else if (tags.includes("control") && tags.includes("door")) {
-            video = "ControlRoom_Door.mp4";
+            video = "ControlRoom.mp4";
         }
         else if (tags.includes("control") && tags.includes("distant")) {
-            video = "ControlRoom_Distant.mp4";
+            video = "ControlRoom.mp4";
         }
         else if (tags.includes("control") && tags.includes("gameover")) {
     		video = "Ending_GameOver.mp4";
@@ -8055,20 +8064,20 @@ The command ends here.
     		video = "Ending_Compliance.mp4";
 		}
         else if (tags.includes("control") && tags.includes("final")) {
-            video = "ControlRoom_Final.mp4";
+            video = "ControlRoom.mp4";
         }
         else if (tags.includes("control")) {
             video = "ControlRoom.mp4";
         }
 
         else if (tags.includes("core") && tags.includes("brightburn")) {
-            video = "FusionCore_BrightBurn.mp4";
+            video = "FusionCore_Burn.mp4";
         }
         else if (tags.includes("core") && tags.includes("overload")) {
-            video = "FusionCore_Overload.mp4";
+            video = "FusionCore_Warning.mp4";
         }
         else if (tags.includes("core") && tags.includes("finalchoice")) {
-            video = "FusionCore_FinalChoice.mp4";
+            video = "FusionCore.mp4";
         }
         else if (tags.includes("core") && tags.includes("warning")) {
             video = "FusionCore_Warning.mp4";
@@ -8751,6 +8760,29 @@ var currentVideoStart = 0;
 var currentVideoEnd   = 0;
 var currentVideoPart  = "";
 var agentVideoActive  = false;
+var agentVideoLoopUntilVoiceEnds = false;
+var agentVoiceEndedHandler = null;
+
+function clearAgentVoiceEndedHandler() {
+    var voiceAudio = document.getElementById('voiceAudio');
+    if (voiceAudio && agentVoiceEndedHandler) {
+        voiceAudio.removeEventListener('ended', agentVoiceEndedHandler);
+    }
+    agentVoiceEndedHandler = null;
+    agentVideoLoopUntilVoiceEnds = false;
+}
+
+function finishAgentVideoPart() {
+    clearAgentVoiceEndedHandler();
+    var bgVideo = document.getElementById('bgVideo');
+    if (bgVideo) bgVideo.pause();
+    agentVideoActive = false;
+    currentVideoEnd  = 0;
+    var iframe = document.getElementById('agent-iframe');
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ action: 'video_part_ended' }, '*');
+    }
+}
 
 
 // Iframe
@@ -8780,17 +8812,11 @@ function ensureAgentVideoListener() {
         if (!agentVideoActive || currentVideoEnd <= 0) return;
 
         if (bgVideo.currentTime >= currentVideoEnd) {
-            if (currentVideoPart === "tisina") {
+            if (currentVideoPart === "tisina" || agentVideoLoopUntilVoiceEnds) {
                 bgVideo.currentTime = currentVideoStart;
                 bgVideo.play();
             } else {
-                bgVideo.pause();
-                agentVideoActive = false;
-                currentVideoEnd  = 0;
-                var iframe = document.getElementById('agent-iframe');
-                if (iframe && iframe.contentWindow) {
-                    iframe.contentWindow.postMessage({ action: 'video_part_ended' }, '*');
-                }
+                finishAgentVideoPart();
             }
         }
     });
@@ -8826,6 +8852,7 @@ $(window).on('message', function (event) {
         currentVideoStart = data.start;
         currentVideoEnd   = data.end;
         currentVideoPart  = data.part;
+        clearAgentVoiceEndedHandler();
 
         var doSeekAndPlay = function () {
             bgVideo.currentTime = data.start;
@@ -8866,6 +8893,16 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         currentVideoStart = startTime;
         currentVideoEnd = endTime;
         currentVideoPart = partName;
+        clearAgentVoiceEndedHandler();
+
+        var voiceAudio = document.getElementById('voiceAudio');
+        if (partName !== "tisina" && voiceAudio && voiceAudio.currentSrc && !voiceAudio.ended) {
+            agentVideoLoopUntilVoiceEnds = true;
+            agentVoiceEndedHandler = function () {
+                finishAgentVideoPart();
+            };
+            voiceAudio.addEventListener('ended', agentVoiceEndedHandler, { once: true });
+        }
         
         bgVideo.currentTime = startTime;
         bgVideo.play();
@@ -8989,6 +9026,14 @@ body[data-tags~="room1"][data-tags~="exit"] {
 
 body[data-tags~="room1"][data-tags~="device"] {
     background-image: url('/media/Room_Device.png'), url('/media/Room.png');
+}
+
+body[data-tags~="contact"] {
+    background-image: url('/media/Contact.png'), url('/media/Room.png');
+}
+
+body[data-tags~="contact"][data-tags~="device"] {
+    background-image: url('/media/Contact_Device.png'), url('/media/Contact.png');
 }
 
 /* ---------- HALLWAY ---------- */

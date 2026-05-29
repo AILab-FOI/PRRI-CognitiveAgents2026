@@ -203,6 +203,14 @@ body[data-tags~="room1"][data-tags~="device"] {
     background-image: url('/media/Room_Device.png'), url('/media/Room.png');
 }
 
+body[data-tags~="contact"] {
+    background-image: url('/media/Contact.png'), url('/media/Room.png');
+}
+
+body[data-tags~="contact"][data-tags~="device"] {
+    background-image: url('/media/Contact_Device.png'), url('/media/Contact.png');
+}
+
 /* ---------- HALLWAY ---------- */
 
 body[data-tags~="hallway"] {
@@ -1775,6 +1783,29 @@ var currentVideoStart = 0;
 var currentVideoEnd   = 0;
 var currentVideoPart  = "";
 var agentVideoActive  = false;
+var agentVideoLoopUntilVoiceEnds = false;
+var agentVoiceEndedHandler = null;
+
+function clearAgentVoiceEndedHandler() {
+    var voiceAudio = document.getElementById('voiceAudio');
+    if (voiceAudio && agentVoiceEndedHandler) {
+        voiceAudio.removeEventListener('ended', agentVoiceEndedHandler);
+    }
+    agentVoiceEndedHandler = null;
+    agentVideoLoopUntilVoiceEnds = false;
+}
+
+function finishAgentVideoPart() {
+    clearAgentVoiceEndedHandler();
+    var bgVideo = document.getElementById('bgVideo');
+    if (bgVideo) bgVideo.pause();
+    agentVideoActive = false;
+    currentVideoEnd  = 0;
+    var iframe = document.getElementById('agent-iframe');
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ action: 'video_part_ended' }, '*');
+    }
+}
 
 
 // Iframe
@@ -1804,17 +1835,11 @@ function ensureAgentVideoListener() {
         if (!agentVideoActive || currentVideoEnd <= 0) return;
 
         if (bgVideo.currentTime >= currentVideoEnd) {
-            if (currentVideoPart === "tisina") {
+            if (currentVideoPart === "tisina" || agentVideoLoopUntilVoiceEnds) {
                 bgVideo.currentTime = currentVideoStart;
                 bgVideo.play();
             } else {
-                bgVideo.pause();
-                agentVideoActive = false;
-                currentVideoEnd  = 0;
-                var iframe = document.getElementById('agent-iframe');
-                if (iframe && iframe.contentWindow) {
-                    iframe.contentWindow.postMessage({ action: 'video_part_ended' }, '*');
-                }
+                finishAgentVideoPart();
             }
         }
     });
@@ -1850,6 +1875,7 @@ $(window).on('message', function (event) {
         currentVideoStart = data.start;
         currentVideoEnd   = data.end;
         currentVideoPart  = data.part;
+        clearAgentVoiceEndedHandler();
 
         var doSeekAndPlay = function () {
             bgVideo.currentTime = data.start;
@@ -1890,6 +1916,16 @@ window.playAgentVideo = function(partName, startTime, endTime) {
         currentVideoStart = startTime;
         currentVideoEnd = endTime;
         currentVideoPart = partName;
+        clearAgentVoiceEndedHandler();
+
+        var voiceAudio = document.getElementById('voiceAudio');
+        if (partName !== "tisina" && voiceAudio && voiceAudio.currentSrc && !voiceAudio.ended) {
+            agentVideoLoopUntilVoiceEnds = true;
+            agentVoiceEndedHandler = function () {
+                finishAgentVideoPart();
+            };
+            voiceAudio.addEventListener('ended', agentVoiceEndedHandler, { once: true });
+        }
         
         bgVideo.currentTime = startTime;
         bgVideo.play();
@@ -3725,7 +3761,7 @@ Macro.add('voice', {
            [[Continue to the specimen test.|Analyst Puzzle Intro]]
         &lt;/div&gt;
   &lt;&lt;/ctp&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Analyst Probability" tags="nobr specimen agent" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="Analyst Probability" tags="nobr specimen agent analyst" position="3000,2825" size="100,100">&lt;&lt;set $skepticism += 1&gt;&gt;
 &lt;div class=&quot;textbox&quot;&gt;
     &lt;&lt;ctp &quot;analystProbability&quot;&gt;&gt;
         &lt;&lt;speaker &quot;Analyst&quot;&gt;&gt;
@@ -8592,6 +8628,9 @@ The command ends here.
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget &quot;hideAgent&quot;&gt;&gt;
+    &lt;&lt;run if (typeof clearAgentVoiceEndedHandler === &quot;function&quot;) clearAgentVoiceEndedHandler()&gt;&gt;
+    &lt;&lt;run window.agentVideoActive = false&gt;&gt;
+    &lt;&lt;run window.currentVideoEnd = 0&gt;&gt;
     &lt;&lt;run $(&#39;#agent-container&#39;).hide()&gt;&gt;
     
     &lt;&lt;run $(&#39;#agent-iframe&#39;).attr(&#39;src&#39;, &#39;&#39;)&gt;&gt; 
@@ -8669,6 +8708,12 @@ The command ends here.
         const tags = tagString.split(&quot; &quot;).filter(Boolean);
 
         const isAgentPassage = tags.includes(&quot;agent&quot;);
+        if (!isAgentPassage &amp;&amp; window.agentVideoActive) {
+            if (typeof clearAgentVoiceEndedHandler === &quot;function&quot;) clearAgentVoiceEndedHandler();
+            window.agentVideoActive = false;
+            if (typeof agentVideoActive !== &quot;undefined&quot;) agentVideoActive = false;
+            if (typeof currentVideoEnd !== &quot;undefined&quot;) currentVideoEnd = 0;
+        }
 
         let video = null;
 
@@ -8706,13 +8751,13 @@ The command ends here.
             video = &quot;FirstRoom.mp4&quot;;
         }
         else if (tags.includes(&quot;room1&quot;) &amp;&amp; tags.includes(&quot;device&quot;)) {
-            video = &quot;Room_Device.mp4&quot;;
+            video = &quot;Room.mp4&quot;;
         }
         else if (tags.includes(&quot;room1&quot;)) {
             video = &quot;Room.mp4&quot;;
         }
         else if (tags.includes(&quot;contact&quot;) &amp;&amp; tags.includes(&quot;device&quot;)) {
-            video = &quot;Contact_Device.mp4&quot;;
+            video = &quot;Contact.mp4&quot;;
         }
         else if (tags.includes(&quot;contact&quot;)) {
             video = &quot;Contact.mp4&quot;;
@@ -8722,10 +8767,10 @@ The command ends here.
              video = &quot;Hallway_Exception.mp4&quot;;
         }
         else if (tags.includes(&quot;hallway&quot;) &amp;&amp; tags.includes(&quot;watcher&quot;)) {
-            video = &quot;Hallway_Watcher.mp4&quot;;
+            video = &quot;Hallway.mp4&quot;;
         }
         else if (tags.includes(&quot;hallway&quot;) &amp;&amp; tags.includes(&quot;dark&quot;)) {
-            video = &quot;Hallway_Dark.mp4&quot;;
+            video = &quot;Hallway.mp4&quot;;
         }
         else if (tags.includes(&quot;hallway&quot;) &amp;&amp; (tags.includes(&quot;control-door&quot;) || tags.includes(&quot;controldoor&quot;))) {
             video = &quot;Hallway_ControlDoor.mp4&quot;;
@@ -8766,6 +8811,9 @@ The command ends here.
             video = &quot;EngineeringBay.mp4&quot;;
         }
         
+        else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;analyst&quot;)) {
+    		video = &quot;SpecimenBay_Analyst.mp4&quot;;
+		}
         else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;strike&quot;)) {
     		video = &quot;SpecimenBay_Strike.mp4&quot;;
 		}
@@ -8780,9 +8828,6 @@ The command ends here.
 		}
 		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;entrance&quot;)) {
     		video = &quot;SpecimenBay_Entrance.mp4&quot;;
-		}
-		else if (tags.includes(&quot;specimen&quot;) &amp;&amp; tags.includes(&quot;analyst&quot;)) {
-    		video = &quot;SpecimenBay_Analyst.mp4&quot;;
 		}
 		else if (tags.includes(&quot;specimen&quot;)) {
     		video = &quot;SpecimenBay.mp4&quot;;
@@ -8808,19 +8853,19 @@ The command ends here.
             video = &quot;ControlRoom_Narrator.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;questions&quot;)) {
-            video = &quot;ControlRoom_Questions.mp4&quot;;
+            video = &quot;ControlRoom.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;artifact&quot;)) {
             video = &quot;ControlRoom_Artifact.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;success&quot;)) {
-            video = &quot;ControlRoom_Success.mp4&quot;;
+            video = &quot;ControlRoom.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;door&quot;)) {
-            video = &quot;ControlRoom_Door.mp4&quot;;
+            video = &quot;ControlRoom.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;distant&quot;)) {
-            video = &quot;ControlRoom_Distant.mp4&quot;;
+            video = &quot;ControlRoom.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;gameover&quot;)) {
     		video = &quot;Ending_GameOver.mp4&quot;;
@@ -8844,20 +8889,20 @@ The command ends here.
     		video = &quot;Ending_Compliance.mp4&quot;;
 		}
         else if (tags.includes(&quot;control&quot;) &amp;&amp; tags.includes(&quot;final&quot;)) {
-            video = &quot;ControlRoom_Final.mp4&quot;;
+            video = &quot;ControlRoom.mp4&quot;;
         }
         else if (tags.includes(&quot;control&quot;)) {
             video = &quot;ControlRoom.mp4&quot;;
         }
 
         else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;brightburn&quot;)) {
-            video = &quot;FusionCore_BrightBurn.mp4&quot;;
+            video = &quot;FusionCore_Burn.mp4&quot;;
         }
         else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;overload&quot;)) {
-            video = &quot;FusionCore_Overload.mp4&quot;;
+            video = &quot;FusionCore_Warning.mp4&quot;;
         }
         else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;finalchoice&quot;)) {
-            video = &quot;FusionCore_FinalChoice.mp4&quot;;
+            video = &quot;FusionCore.mp4&quot;;
         }
         else if (tags.includes(&quot;core&quot;) &amp;&amp; tags.includes(&quot;warning&quot;)) {
             video = &quot;FusionCore_Warning.mp4&quot;;
