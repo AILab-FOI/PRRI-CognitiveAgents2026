@@ -7986,7 +7986,7 @@ The command ends here.
             video = "EngineeringBay.mp4";
         }
         
-        else if (tags.includes("specimen") && tags.includes("analyst")) {
+        else if (tags.includes("specimen") && tags.includes("analyst") && !tags.includes("strike") && !tags.includes("restrain") && !tags.includes("sample")) {
     		video = "SpecimenBay_Analyst.mp4";
 		}
         else if (tags.includes("specimen") && tags.includes("strike")) {
