@@ -7893,7 +7893,7 @@ The command ends here.
         let video = null;
 
         if (tags.includes("intro") && tags.includes("title")) {
-            video = null;
+            video = "TitleScreen.mp4";
         }
         else if (tags.includes("intro") && tags.includes("backstory")) {
             video = "Intro_Backstory.mp4";
@@ -9890,8 +9890,9 @@ body[data-tags~="intro"][data-tags~="title"] {
     pointer-events: auto;
     width: auto !important;
     max-width: 340px !important;
-    margin-top: 42px !important;
+    margin-top: 24px !important;
     align-items: center !important;
+    transform: translateY(-18px);
 }
 
 .title-choice a {
@@ -10366,5 +10367,27 @@ body {
         font-size: 0.9rem !important;
 
         padding: 11px 22px !important;
+    }
+}
+
+/* ---------- TITLE START BUTTON POSITION ---------- */
+
+body[data-tags~="intro"][data-tags~="title"] .title-choice {
+    position: fixed !important;
+    left: 50% !important;
+    top: auto !important;
+    bottom: clamp(110px, 13vh, 150px) !important;
+    transform: translateX(-50%) !important;
+
+    width: min(420px, 80vw) !important;
+    max-width: 420px !important;
+
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+@media (max-width: 768px) {
+    body[data-tags~="intro"][data-tags~="title"] .title-choice {
+        bottom: 92px !important;
     }
 }
