@@ -11,18 +11,18 @@ Ova igra se pokreće lokalno preko Python servera. Nakon pokretanja servera igra
 Preuzmite datoteku:
 
 ```text
-PRRI-CognitiveAgents2026.rar
+PRRI-CognitiveAgents2026.zip
 ```
 
 Datoteku preuzmite s mjesta gdje je objavljena igra.
 
-Nakon preuzimanja nemojte pokretati igru direktno iz ZIP/RAR datoteke. ZIP/RAR datoteku prvo treba raspakirati.
+Nakon preuzimanja nemojte pokretati igru direktno iz ZIP datoteke. ZIP datoteku prvo treba raspakirati.
 
 ---
 
-## 2. Raspakiravanje ZIP/RAR datoteke
+## 2. Raspakiravanje ZIP datoteke
 
-Raspakirajte datoteku `PRRI-CognitiveAgents2026.rar` na željenu lokaciju na računalu.
+Raspakirajte datoteku `PRRI-CognitiveAgents2026.zip` na željenu lokaciju na računalu.
 
 Primjer lokacije na Windowsu:
 
@@ -268,9 +268,9 @@ python server.py --trainCartographer
 python server.py --trainNarrator
 ```
 
-### Otvorili ste ZIP/RAR, ali igra se ne pokreće
+### Otvorili ste ZIP, ali igra se ne pokreće
 
-ZIP/RAR datoteku treba prvo raspakirati. Igru ne pokretati direktno iz ZIP/RAR pregleda.
+ZIP datoteku treba prvo raspakirati. Igru ne pokretati direktno iz ZIP pregleda.
 
 ---
 
