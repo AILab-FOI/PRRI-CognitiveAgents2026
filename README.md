@@ -2,19 +2,39 @@
 
 Upute za preuzimanje i pokretanje igre.
 
-Ova igra se pokreće lokalno preko Python servera. Nakon pokretanja servera igra se otvara u web pregledniku na adresi `http://localhost:5000`.
+Igra je objavljena na itch.io stranici:
+
+```text
+https://ailab-foi.itch.io/prri-cognitiveagents2026
+```
+
+Na stranici preuzmite ZIP datoteku igre:
+
+```text
+PRRI-CognitiveAgents2026.zip
+```
+
+Igra se pokreće lokalno preko Python servera. Nakon pokretanja servera igra se otvara u web pregledniku na adresi:
+
+```text
+http://localhost:5000
+```
 
 ---
 
 ## 1. Preuzimanje igre
+
+Otvorite itch.io stranicu igre:
+
+```text
+https://ailab-foi.itch.io/prri-cognitiveagents2026
+```
 
 Preuzmite datoteku:
 
 ```text
 PRRI-CognitiveAgents2026.zip
 ```
-
-Datoteku preuzmite s mjesta gdje je objavljena igra.
 
 Nakon preuzimanja nemojte pokretati igru direktno iz ZIP datoteke. ZIP datoteku prvo treba raspakirati.
 
